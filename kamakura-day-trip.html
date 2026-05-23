@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="A perfect day trip to Kamakura with Terry — temples, the famous Great Buddha, coastal walks and hidden hiking trails through the surrounding hills."/>
+  <meta name="keywords" content="Kamakura day trip Tokyo, Kamakura private tour, Great Buddha Japan, Kamakura hiking trails, day trips from Tokyo, Japan tour guide"/>
+  <meta name="author" content="Tokyo Private Tours with Terry"/>
+  <meta name="robots" content="index, follow"/>
+  <meta property="og:title" content="Kamakura Day Trip from Tokyo | Tokyo Private Tours with Terry"/>
+  <meta property="og:description" content="A perfect day trip to Kamakura with Terry — temples, the famous Great Buddha, coastal walks and hidden hiking trails through the surrounding hills."/>
+  <meta property="og:type" content="website"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kamakura Day Trip from Tokyo | Tokyo Private Tours with Terry</title>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --ink: #14120e;
+      --paper: #f0ede6;
+      --moss: #3a5a3c;
+      --sage: #5c7a5e;
+      --stone: #7a7468;
+      --gold: #a08030;
+      --border: rgba(20,18,14,0.12);
+      --amber: #c07828;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    
+
+    
+
+    
+
+    /* Subtle vignette sides */
+    
+
+    
+
+    
+
+    .hero h1 {
+      position: relative;
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(3.5rem, 9vw, 7rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 0.88;
+      margin-bottom: 0.6rem;
+    }
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+      50%{opacity:.5;transform:scaleY(.55)}
+    }
+
+    /* ── INTRO ── */
+    .intro {
+      max-width: 800px;
+      margin: 5.5rem auto;
+      padding: 0 6vw;
+      text-align: center;
+    }
+
+    .intro-kicker {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--moss);
+      margin-bottom: 1.4rem;
+    }
+
+    .intro p {
+      font-size: 1.12rem;
+      line-height: 1.9;
+      color: var(--stone);
+    }
+
+    /* Train info bar */
+    .train-bar {
+      max-width: 900px;
+      margin: 0 auto 4rem;
+      padding: 0 6vw;
+    }
+
+    .train-inner {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      background: rgba(58,90,60,0.08);
+      border: 1px solid rgba(58,90,60,0.2);
+      border-left: 3px solid var(--moss);
+      padding: 1.2rem 1.8rem;
+      flex-wrap: wrap;
+    }
+
+    .train-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .train-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--moss);
+    }
+
+    .train-value {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .train-sep {
+      width: 1px;
+      height: 32px;
+      background: var(--border);
+      flex-shrink: 0;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin: 0 6vw 3rem;
+      color: var(--sage);
+      font-size: 0.67rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+    .divider::before, .divider::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+
+    /* ── STOPS ── */
+    .stops {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 6vw 8rem;
+    }
+
+    .stop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--border);
+      padding: 4rem 0;
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .stop.visible { opacity: 1; transform: translateY(0); }
+    .stop:nth-child(even) { direction: rtl; }
+    .stop:nth-child(even) > * { direction: ltr; }
+
+    .stop-img-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+
+    .stop-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.75s ease;
+    }
+    .stop:hover .stop-img-wrap img { transform: scale(1.05); }
+
+    .stop-badge {
+      position: absolute;
+      bottom: 1.2rem; left: 1.2rem;
+      background: rgba(14,18,12,0.7);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.82);
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      backdrop-filter: blur(6px);
+    }
+
+    .stop-num {
+      position: absolute;
+      top: 1rem; right: 1.2rem;
+      font-family: 'Shippori Mincho', serif;
+      font-size: 4.5rem; font-weight: 800;
+      color: rgba(255,255,255,0.13);
+      line-height: 1; pointer-events: none;
+    }
+
+    .stop-content {
+      padding: 2.8rem 3.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .stop-category {
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--moss);
+      margin-bottom: 1rem;
+    }
+
+    .stop-title {
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 0.35rem;
+    }
+
+    .stop-jp {
+      font-size: 0.82rem;
+      color: var(--stone);
+      margin-bottom: 1.6rem;
+      letter-spacing: 0.06em;
+    }
+
+    .stop-desc {
+      font-size: 0.94rem;
+      line-height: 1.88;
+      color: #3e3a34;
+      margin-bottom: 1.6rem;
+    }
+
+    .stop-tip {
+      border-left: 2px solid var(--gold);
+      padding-left: 1rem;
+      font-size: 0.82rem;
+      color: var(--stone);
+      font-style: italic;
+      line-height: 1.65;
+    }
+
+    .stop-footer {
+      margin-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .stop-rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      color: var(--stone);
+    }
+    .stars { color: var(--gold); }
+
+    .stop-map {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.76rem;
+      color: var(--moss);
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      transition: opacity 0.2s;
+    }
+    .stop-map:hover { opacity: 0.65; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 3rem 6vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    footer p { font-size: 0.8rem; color: var(--stone); }
+    .footer-logo {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 1.25rem; font-weight: 600;
+    }
+
+    @media (max-width: 700px) {
+      .stop { grid-template-columns: 1fr; direction: ltr !important; }
+      .stop-content { padding: 2rem 0; }
+      .stop:nth-child(even) > * { direction: ltr; }
+      .train-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .train-sep { display: none; }
+    }
+  
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    height: 90vh;
+    min-height: 560px;
+    overflow: hidden;
+  }
+  .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: none;
+    display: flex;
+    align-items: center;
+  }
+  .hero-content {
+    max-width: 560px;
+    padding: 0 2rem;
+    background: none;
+  }
+  .hero-eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #f9a07a;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(40px, 6vw, 64px);
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.9), 0 0 30px rgba(0,0,0,0.8);
+  }
+  .hero p {
+    font-size: 17px;
+    color: #ffffff;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 420px;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
+  }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-primary {
+    background: #D00000;
+    color: #fff;
+    border: none;
+    padding: 13px 26px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: #B00000; }
+  .btn-ghost {
+    background: rgba(0,0,0,0.45);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.6);
+    padding: 13px 26px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s;
+    display: inline-block;
+  }
+  .btn-ghost:hover { background: rgba(0,0,0,0.65); }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(0,0,0,0.1);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;">
+  <ul style="display:flex;list-style:none;justify-content:center;align-items:center;gap:2rem;flex:1;margin:0;padding:0;">
+    <li><a href="index.html#areas" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Areas</a></li>
+    <li><a href="index.html#tours" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Tours</a></li>
+    <li><a href="index.html#about" style="font-size:14px;color:#5D6D7E;text-decoration:none;">About</a></li>
+    <li><a href="index.html#contact" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Contact</a></li>
+  </ul>
+  <a href="index.html#contact" style="background:#D00000;color:#fff;border:none;padding:9px 20px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none;">Book a tour</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=1400&q=80&fit=crop" alt="Kamakura Day Trip" />
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <div class="hero-eyebrow">📍 Kamakura · 1 hour from Tokyo</div>
+      <h1>Kamakura<br>Day Trip</h1>
+      <p>Temples, the Great Buddha & scenic coastal paths.</p>
+      <div class="hero-btns">
+        <a href="#stop1" class="btn-primary">Explore stops ↓</a>
+        <a href="index.html#contact" class="btn-ghost">Book a tour</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<div class="intro">
+  <div class="intro-kicker">Ancient capital · Coastal escape</div>
+  <p>For three centuries, Kamakura was Japan's political capital and home to its most powerful samurai clans. Today it's a small coastal city of temples, shrines, forested hiking paths, and one of the most famous statues in Asia — all just an hour from Shinjuku. This is the day trip that explains medieval Japan.</p>
+</div>
+
+<!-- TRAIN INFO BAR -->
+<div class="train-bar">
+  <div class="train-inner">
+    <div class="train-item">
+      <span class="train-label">Depart from</span>
+      <span class="train-value">Shinjuku / Tokyo Station</span>
+    </div>
+    <div class="train-sep"></div>
+    <div class="train-item">
+      <span class="train-label">Journey time</span>
+      <span class="train-value">~55–65 minutes</span>
+    </div>
+    <div class="train-sep"></div>
+    <div class="train-item">
+      <span class="train-label">Line</span>
+      <span class="train-value">JR Yokosuka Line</span>
+    </div>
+    <div class="train-sep"></div>
+    <div class="train-item">
+      <span class="train-label">IC Card fare</span>
+      <span class="train-value">~¥940 each way</span>
+    </div>
+    <div class="train-sep"></div>
+    <div class="train-item">
+      <span class="train-label">Covered by</span>
+      <span class="train-value">JR Pass ✓</span>
+    </div>
+  </div>
+</div>
+
+<div class="divider">The Kamakura Itinerary</div>
+
+<!-- STOPS -->
+<div class="stops">
+
+  <!-- 1. Hase-dera Temple -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <div class="stop-num">01</div>
+      <img src="https://images.unsplash.com/photo-1590559899731-a382839e5549?w=800&q=80&fit=crop" alt="Hasedera temple garden Kamakura" loading="lazy"/>
+      <div class="stop-badge">Sea Views</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Buddhist Temple · Hase</div>
+      <h2 class="stop-title">Hase-dera Temple</h2>
+      <div class="stop-jp">長谷寺</div>
+      <p class="stop-desc">A five-minute walk from the Great Buddha brings you to Hase-dera, and the contrast is instructive — where Kōtoku-in is singular and monumental, Hasedera is layered and intimate. The temple climbs a hillside in terraces: a pond garden at the base, a cave carved with Buddhist figures midway, and at the top, an open terrace with a sweeping view across Kamakura's rooftops to Yuigahama beach and Sagami Bay beyond. The main hall houses a nine-metre gilded Kannon statue, carved from a single camphor log in the 8th century. Late afternoon, with the light falling across the bay, is one of the most beautiful moments in the Kamakura day.</p>
+      <div class="stop-tip">💡 Arrive 30–45 minutes before closing for quieter grounds and the best light on the coastal view. The cave walk (Benten-kutsu) is narrow and low — watch your head but don't skip it.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 16,400+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Hasedera+Temple+Kamakura" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Komachi-dōri -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <div class="stop-num">02</div>
+      <img src="https://images.unsplash.com/photo-1551641506-ee5bf4cb45f1?w=800&q=80&fit=crop" alt="Komachi-dori shopping street Kamakura" loading="lazy"/>
+      <div class="stop-badge">Street Food</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Shopping & Snacking · Central Kamakura</div>
+      <h2 class="stop-title">Komachi-dōri</h2>
+      <div class="stop-jp">小町通り</div>
+      <p class="stop-desc">Running parallel to the shrine's approach, Komachi-dōri is Kamakura's main commercial artery — and the perfect place for a mid-morning snack before the temples. Skewered grilled seafood, matcha soft-serve spiralling dangerously high in waffle cones, freshly made rice crackers, shirasu (whitebait) on everything — this street does not believe in subtlety. The shops selling lacquerware, ceramics, and locally made crafts balance the food stalls nicely. It's busy, colourful, and happily chaotic.</p>
+      <div class="stop-tip">💡 Look for shops selling Kamakura's local speciality: shirasu-don (whitebait rice bowl). The fishing boats that supply the restaurants work out of nearby Yuigahama and Zaimokuza beaches — it doesn't get fresher.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 215 reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Komachi-dori+Kamakura" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Kōtoku-in — The Great Buddha -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <div class="stop-num">03</div>
+      <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&q=80&fit=crop" alt="Great Buddha Kamakura Daibutsu" loading="lazy"/>
+      <div class="stop-badge">Icon of Kamakura</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Buddhist Temple · Hase</div>
+      <h2 class="stop-title">Kōtoku-in — The Great Buddha</h2>
+      <div class="stop-jp">高徳院 · 鎌倉大仏</div>
+      <p class="stop-desc">No photograph prepares you for the scale or the serenity of the Kamakura Daibutsu. Cast in bronze in 1252, the seated Amida Buddha stands 11.4 metres tall and weighs 121 tonnes. It originally sat inside a large temple hall; that building was destroyed by typhoons and a tsunami in the late 15th century, leaving the statue in the open air, where it has sat ever since — perfectly still, framed by forested hills, radiating a quietness that silences even the busiest tour groups. You can enter the statue itself through small doors in its back for an additional ¥50.</p>
+      <div class="stop-tip">💡 Visit in the morning before midday crowds arrive. The approach path offers a sequence of framed views as the Buddha gradually reveals itself through the temple gate — walk slowly and let it unfold.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★</span> 4.4 · 31,000+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Kotoku-in+Great+Buddha+Kamakura" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Tsurugaoka Hachimangū -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <div class="stop-num">04</div>
+      <img src="https://images.unsplash.com/photo-1570459027562-4a916cc6113f?w=800&q=80&fit=crop" alt="Tsurugaoka Hachimangu shrine Kamakura" loading="lazy"/>
+      <div class="stop-badge">Start Here</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Shinto Shrine · Central Kamakura</div>
+      <h2 class="stop-title">Tsurugaoka Hachimangū</h2>
+      <div class="stop-jp">鶴岡八幡宮</div>
+      <p class="stop-desc">Begin where Kamakura's story begins. Tsurugaoka Hachimangū was founded in 1063 and rebuilt by the first shogun Minamoto no Yoritomo in 1180, making it the spiritual heart of the entire Kamakura period. A long approach called the Dan-kazura — a raised central path flanked by cherry trees — leads from the sea straight to the shrine steps. The complex sits at the top of broad stone stairs, its vermilion buildings framed against a wooded hillside. On weekends you may witness a traditional wedding procession or a Shinto ceremony — real, unhurried, and open to respectful onlookers.</p>
+      <div class="stop-tip">💡 Arrive by 9 AM before the tour groups. The pond near the entrance has lotus flowers in summer and hosts ducks year-round — a peaceful spot to collect yourself before climbing to the main hall.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★</span> 4.4 · 28,000+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Tsurugaoka+Hachimangu+Kamakura" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Yuigahama Beach -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <div class="stop-num">05</div>
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80&fit=crop" alt="Yuigahama beach Kamakura coast" loading="lazy"/>
+      <div class="stop-badge">End of Day</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Coastal Beach · Hase</div>
+      <h2 class="stop-title">Yuigahama Beach</h2>
+      <div class="stop-jp">由比ヶ浜</div>
+      <p class="stop-desc">End the day the right way. Yuigahama is Kamakura's main beach — a long, grey-sand stretch where surfers read the Pacific swells, beach restaurants serve cold Shonan Beer, and the day empties out of its urgency. It's not a tropical postcard beach; it's a Japanese beach, which means it's blustery and overcast as often as it's sunny, and somehow better for it. Walk south along the shore toward Zaimokuza as the light fades, watch the surfers catch the last waves of the evening, and take the train back to Tokyo feeling like you've been somewhere genuinely far away.</p>
+      <div class="stop-tip">💡 The beach restaurants (海の家) set up seasonal huts in summer with food, beer, and deck chairs. Outside summer, you'll often have long stretches entirely to yourself — its own kind of luxury.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★</span> 4.2 · 3,600+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Yuigahama+Beach+Kamakura" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- 6. Zeniarai Benzaiten -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <div class="stop-num">06</div>
+      <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80&fit=crop" alt="Zeniarai Benzaiten hidden shrine Kamakura" loading="lazy"/>
+      <div class="stop-badge">Hidden Shrine</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Shinto Cave Shrine · Western Hills</div>
+      <h2 class="stop-title">Zeniarai Benzaiten</h2>
+      <div class="stop-jp">銭洗弁財天宇賀福神社</div>
+      <p class="stop-desc">Few places in Japan are as genuinely surprising on arrival. Zeniarai Benzaiten — founded in 1185 — is entered through a tunnel carved through a cliff face. On the other side, a cave complex is filled with flickering candles, incense smoke, and small waterfalls trickling over moss-covered rock. The shrine is dedicated to the goddess of fortune, and its central ritual involves washing banknotes or coins in spring water from the cave — legend says it multiplies whatever you wash. Whether or not you believe it, the atmosphere is unlike anything else in Kamakura.</p>
+      <div class="stop-tip">💡 Bring cash to wash — the ritual requires coins or small notes placed in a bamboo basket and rinsed in the cave spring. The walk up from the main road is a pleasant 10-minute hill climb through a quiet residential neighbourhood.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★</span> 4.3 · 7,600+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Zeniarai+Benzaiten+Shrine+Kamakura" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">鎌倉 · Kamakura Day Trip</div>
+  <p>A full-day guided experience · From ¥18,000 per person</p>
+  <p>© 2026 Tokyo Highlights Tour</p>
+  <div style="text-align:center; padding: 1.5rem 0 2rem;">
+    <a href="index.html" style="
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--stone);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 2px;
+      transition: opacity 0.2s;
+    " onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">
+      ← Back to Home
+    </a>
+  </div>
+  <div style="text-align:center; padding: 1.5rem 0 2rem;">
+    <a href="index.html" style="
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--stone);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 2px;
+      transition: opacity 0.2s;
+    " onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">
+      ← Back to Home
+    </a>
+  </div>
+</footer>
+
+<script>
+  const stops = document.querySelectorAll('.stop');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  stops.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>

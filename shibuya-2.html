@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Go deeper into Shibuya with Terry — beyond the famous crossing into the backstreets, hidden bars, local restaurants and lesser-known corners of this iconic district."/>
+  <meta name="keywords" content="Shibuya hidden spots, Shibuya backstreets, Tokyo private tour, Shibuya local guide, beyond Shibuya crossing, explore Tokyo"/>
+  <meta name="author" content="Tokyo Private Tours with Terry"/>
+  <meta name="robots" content="index, follow"/>
+  <meta property="og:title" content="Shibuya Deeper — Beyond the Crossing | Tokyo Private Tours with Terry"/>
+  <meta property="og:description" content="Go deeper into Shibuya with Terry — beyond the famous crossing into the backstreets, hidden bars, local restaurants and lesser-known corners of this iconic district."/>
+  <meta property="og:type" content="website"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shibuya Deeper — Beyond the Crossing | Tokyo Private Tours with Terry</title>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --ink: #14120e;
+      --paper: #f0ede6;
+      --moss: #2d5a2d;
+      --sage: #3d6e3d;
+      --stone: #7a7468;
+      --gold: #a07020;
+      --border: rgba(20,18,14,0.12);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    .hero h1 {
+      position: relative;
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(3.5rem, 9vw, 7rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 0.88;
+      margin-bottom: 0.6rem;
+    }
+
+    
+
+    
+
+    
+    
+
+    
+    
+    
+      50%{opacity:.5;transform:scaleY(.55)}
+    }
+
+    /* ── INTRO ── */
+    .intro {
+      max-width: 800px;
+      margin: 5.5rem auto;
+      padding: 0 6vw;
+      text-align: center;
+    }
+    .intro-kicker {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--moss);
+      margin-bottom: 1.4rem;
+    }
+    .intro p {
+      font-size: 1.12rem;
+      line-height: 1.9;
+      color: var(--stone);
+    }
+
+    /* time of day bar */
+    .tod-bar {
+      max-width: 900px;
+      margin: 0 auto 4rem;
+      padding: 0 6vw;
+    }
+    .tod-inner {
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(45,90,45,0.18);
+      overflow: hidden;
+    }
+    .tod-item {
+      flex: 1;
+      padding: 1.1rem 1.4rem;
+      border-right: 1px solid rgba(45,90,45,0.18);
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .tod-item:last-child { border-right: none; }
+    .tod-label {
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--moss);
+    }
+    .tod-value {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.4;
+    }
+
+    /* nav */
+    .section-nav {
+      max-width: 900px;
+      margin: 0 auto 4rem;
+      padding: 0 6vw;
+    }
+    .section-nav-inner {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      background: rgba(45,90,45,0.06);
+      border: 1px solid rgba(45,90,45,0.18);
+      border-left: 3px solid var(--moss);
+      padding: 1.2rem 1.8rem;
+      flex-wrap: wrap;
+    }
+    .nav-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--moss);
+      flex-shrink: 0;
+    }
+    .nav-pills { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+    .nav-pill {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--ink);
+      background: rgba(45,90,45,0.08);
+      border: 1px solid rgba(45,90,45,0.2);
+      padding: 0.3rem 0.9rem;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+      letter-spacing: 0.03em;
+    }
+    .nav-pill:hover { background: var(--moss); color: #fff; border-color: var(--moss); }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin: 0 6vw 3rem;
+      color: var(--sage);
+      font-size: 0.67rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+    .divider::before, .divider::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+
+    /* ── STOPS ── */
+    .stops {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 6vw 8rem;
+    }
+
+    .stop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--border);
+      padding: 4rem 0;
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .stop.visible { opacity: 1; transform: translateY(0); }
+    .stop:nth-child(even) { direction: rtl; }
+    .stop:nth-child(even) > * { direction: ltr; }
+
+    .stop-img-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+    .stop-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.75s ease;
+    }
+    .stop:hover .stop-img-wrap img { transform: scale(1.05); }
+
+    .stop-badge {
+      position: absolute;
+      bottom: 1.2rem; left: 1.2rem;
+      background: rgba(6,14,6,0.75);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.82);
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      backdrop-filter: blur(6px);
+    }
+
+    .stop-time {
+      position: absolute;
+      top: 1rem; left: 1.2rem;
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      background: rgba(6,14,6,0.55);
+      padding: 0.2rem 0.6rem;
+      backdrop-filter: blur(4px);
+    }
+
+    .stop-num {
+      position: absolute;
+      top: 1rem; right: 1.2rem;
+      font-family: 'Shippori Mincho', serif;
+      font-size: 4.5rem; font-weight: 800;
+      color: rgba(255,255,255,0.13);
+      line-height: 1; pointer-events: none;
+    }
+
+    .stop-content {
+      padding: 2.8rem 3.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .stop-category {
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--moss);
+      margin-bottom: 1rem;
+    }
+    .stop-title {
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 0.35rem;
+    }
+    .stop-jp {
+      font-size: 0.82rem;
+      color: var(--stone);
+      margin-bottom: 1.6rem;
+      letter-spacing: 0.06em;
+    }
+    .stop-desc {
+      font-size: 0.94rem;
+      line-height: 1.88;
+      color: #3e3a34;
+      margin-bottom: 1.6rem;
+    }
+    .stop-tip {
+      border-left: 2px solid var(--gold);
+      padding-left: 1rem;
+      font-size: 0.82rem;
+      color: var(--stone);
+      font-style: italic;
+      line-height: 1.65;
+    }
+    .stop-footer {
+      margin-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+    .stop-rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      color: var(--stone);
+    }
+    .stars { color: var(--gold); }
+    .stop-map {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.76rem;
+      color: var(--moss);
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      transition: opacity 0.2s;
+    }
+    .stop-map:hover { opacity: 0.65; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 3rem 6vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    footer p { font-size: 0.8rem; color: var(--stone); }
+    .footer-logo {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 1.25rem; font-weight: 600;
+    }
+
+    @media (max-width: 700px) {
+      .stop { grid-template-columns: 1fr; direction: ltr !important; }
+      .stop-content { padding: 2rem 0; }
+      .stop:nth-child(even) > * { direction: ltr; }
+      .tod-inner { flex-direction: column; }
+      .tod-item { border-right: none; border-bottom: 1px solid rgba(45,90,45,0.18); }
+      .tod-item:last-child { border-bottom: none; }
+      .section-nav-inner { flex-direction: column; align-items: flex-start; }
+    }
+  
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    height: 50vh;
+    min-height: 560px;
+    overflow: hidden;
+  }
+  .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: none;
+    display: flex;
+    align-items: center;
+  }
+  .hero-content {
+    max-width: 560px;
+    padding: 0 2rem;
+    background: none;
+  }
+  .hero-eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #f9a07a;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(40px, 6vw, 64px);
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.9), 0 0 30px rgba(0,0,0,0.8);
+  }
+  .hero p {
+    font-size: 17px;
+    color: #ffffff;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 420px;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
+  }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-primary {
+    background: #D00000;
+    color: #fff;
+    border: none;
+    padding: 13px 26px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: #B00000; }
+  .btn-ghost {
+    background: rgba(0,0,0,0.45);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.6);
+    padding: 13px 26px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s;
+    display: inline-block;
+  }
+  .btn-ghost:hover { background: rgba(0,0,0,0.65); }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(0,0,0,0.1);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;">
+  <ul style="display:flex;list-style:none;justify-content:center;align-items:center;gap:2rem;flex:1;margin:0;padding:0;">
+    <li><a href="index.html#areas" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Areas</a></li>
+    <li><a href="index.html#tours" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Tours</a></li>
+    <li><a href="index.html#about" style="font-size:14px;color:#5D6D7E;text-decoration:none;">About</a></li>
+    <li><a href="index.html#contact" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Contact</a></li>
+  </ul>
+  <a href="index.html#contact" style="background:#D00000;color:#fff;border:none;padding:9px 20px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none;">Book a tour</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?w=1400&q=80&fit=crop" alt="Shibuya Deeper" />
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <div class="hero-eyebrow">📍 Shibuya, Tokyo · Deeper Shibuya</div>
+      <h1>Shibuya<br>Deeper</h1>
+      <p>Shrine forests, teen streets & Omotesando's mile.</p>
+      <div class="hero-btns">
+        <a href="#stop1" class="btn-primary">Explore stops ↓</a>
+        <a href="index.html#contact" class="btn-ghost">Book a tour</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<div class="intro">
+  <div class="intro-kicker">Meiji Shrine · Harajuku · Takeshita · Omotesando · Yoyogi · Bunkamura</div>
+  <p>The northern half of Shibuya Ward tells a completely different story from the scramble crossing and the neon. Here the city opens into 70 hectares of ancient forest surrounding one of Japan's most revered shrines; narrows into a single lane of extraordinary teenage fashion; widens again into the most architecturally significant shopping boulevard in Asia; and exhales into the vast open lawns of Yoyogi Park. End the day at Bunkamura — the cultural complex that has anchored Shibuya's serious arts scene for over 30 years. This is a full day in one of the world's great urban corridors.</p>
+</div>
+
+<!-- TIME OF DAY BAR -->
+<div class="tod-bar">
+  <div class="tod-inner">
+    <div class="tod-item">
+      <span class="tod-label">Morning</span>
+      <span class="tod-value">Meiji Shrine · Forest Walk</span>
+    </div>
+    <div class="tod-item">
+      <span class="tod-label">Mid-Morning</span>
+      <span class="tod-value">Takeshita Street · Harajuku</span>
+    </div>
+    <div class="tod-item">
+      <span class="tod-label">Afternoon</span>
+      <span class="tod-value">Omotesando · Yoyogi Park</span>
+    </div>
+    <div class="tod-item">
+      <span class="tod-label">Evening</span>
+      <span class="tod-value">Bunkamura · Shibuya Arts</span>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="section-nav">
+  <div class="section-nav-inner">
+    <span class="nav-label">Jump to</span>
+    <div class="nav-pills">
+      <a class="nav-pill" href="#meiji">Meiji Shrine</a>
+      <a class="nav-pill" href="#harajuku">Harajuku</a>
+      <a class="nav-pill" href="#takeshita">Takeshita Street</a>
+      <a class="nav-pill" href="#omotesando">Omotesando</a>
+      <a class="nav-pill" href="#yoyogi">Yoyogi Park</a>
+      <a class="nav-pill" href="#bunkamura">Bunkamura</a>
+    </div>
+  </div>
+</div>
+
+<div class="divider">One Corridor · A Full Day</div>
+
+<div class="stops">
+
+  <!-- 1. Meiji Shrine -->
+  <div class="stop" id="meiji">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Morning</div>
+      <div class="stop-num">01</div>
+      <img src="https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?w=800&q=80&fit=crop" alt="Meiji Shrine Harajuku forest torii gate Tokyo" loading="lazy"/>
+      <div class="stop-badge">Start Here</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Shinto Shrine · Dedicated 1920</div>
+      <h2 class="stop-title">Meiji Jingu</h2>
+      <div class="stop-jp">明治神宮</div>
+      <p class="stop-desc">In the middle of one of the world's densest cities, 70 hectares of ancient forest surround the shrine dedicated to Emperor Meiji and Empress Shoken — the rulers who oversaw Japan's transformation into a modern nation in the late 19th century. The forest itself is the miracle: entirely artificial, planted with 100,000 trees donated from across Japan when the shrine was built in 1920, it has grown into something that feels primordial. The gravel path from the great southern torii gate to the main shrine buildings takes about 15 minutes at a slow walk, passing under an unbroken canopy of camphor, zelkova, and oak. The transition from the street to the forest happens in about ten footsteps and is one of the most striking urban contrasts in Japan.</p>
+      <div class="stop-tip">💡 Visit on a weekday morning before 9 AM when the shrine is at its most peaceful. If you're lucky enough to arrive during a Shinto wedding procession — held most weekend mornings — stop and watch from the side: the costumes, the music, and the ritual are extraordinary. Entry to the shrine grounds is free.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.6 · 74,000+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Meiji+Jingu+Shrine+Tokyo" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Harajuku -->
+  <div class="stop" id="harajuku">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Mid-Morning</div>
+      <div class="stop-num">02</div>
+      <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&q=80&fit=crop" alt="Harajuku Tokyo fashion youth culture street" loading="lazy"/>
+      <div class="stop-badge">Fashion District</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Youth Culture · JR Harajuku Station</div>
+      <h2 class="stop-title">Harajuku</h2>
+      <div class="stop-jp">原宿</div>
+      <p class="stop-desc">The area around Harajuku Station has been the epicentre of Tokyo's youth fashion culture since the 1970s, when young people began gathering on Omotesando on Sundays to show off elaborate street styles — a tradition that gave birth to the global idea of Harajuku fashion. The neighbourhood today is more commercially developed than it once was, but it retains an energy and a density of interesting fashion that is unlike anywhere else in the city. The station itself — a small wooden structure built in 1924 and one of the oldest surviving station buildings in Tokyo — was recently rebuilt, though the original building stood long enough to become an institution. Between the shrine and the shopping street, Harajuku is the hinge of the day.</p>
+      <div class="stop-tip">💡 The original wooden Harajuku Station building (1924) stood until 2020 — the current building is a replica. The Omotesando Hills complex just south of the station, designed by Tadao Ando, is worth entering even if you're not shopping — the architecture of the central atrium is remarkable.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★</span> 4.3 · 31,000+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Harajuku+Tokyo" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Takeshita Street -->
+  <div class="stop" id="takeshita">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Mid-Morning</div>
+      <div class="stop-num">03</div>
+      <img src="https://images.unsplash.com/photo-1606318801954-d46d2be41e6a?w=800&q=80&fit=crop" alt="Takeshita Street Harajuku Tokyo teen fashion colourful" loading="lazy"/>
+      <div class="stop-badge">Teen Street</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Shopping Street · Behind Harajuku Station</div>
+      <h2 class="stop-title">Takeshita-dori</h2>
+      <div class="stop-jp">竹下通り</div>
+      <p class="stop-desc">Takeshita Street is a 350-metre pedestrian lane running from Harajuku Station into the heart of the fashion district — one of the most concentrated and chaotic retail experiences in Tokyo, where fast fashion, kawaii accessories, vintage finds, crepe stands, and costume shops compress into a single lane of extraordinary density. It is loud, colourful, and completely unpretentious. The street has been the laboratory of Japanese youth fashion since the 1980s, when the styles developed here began influencing designers worldwide. On weekends it becomes genuinely difficult to move; on weekday mornings it's considerably calmer and the shops are easier to browse.</p>
+      <div class="stop-tip">💡 The Harajuku crepe — a Tokyo institution sold from several competing stands on the street — is the essential Takeshita snack: a thin crepe wrapped into a cone around fruit, cream, and a bewildering range of fillings. Marion Crepes near the station entrance is the oldest and most famous. Eat while walking.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★</span> 4.2 · 26,000+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Takeshita+Street+Harajuku+Tokyo" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Omotesando -->
+  <div class="stop" id="omotesando">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Afternoon</div>
+      <div class="stop-num">04</div>
+      <img src="https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?w=800&q=80&fit=crop" alt="Omotesando boulevard Tokyo keyaki trees fashion avenue" loading="lazy"/>
+      <div class="stop-badge">Tokyo's Champs-Élysées</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Boulevard · Harajuku to Aoyama</div>
+      <h2 class="stop-title">Omotesando</h2>
+      <div class="stop-jp">表参道</div>
+      <p class="stop-desc">Originally built as the approach road to Meiji Shrine in 1920, Omotesando has become the most architecturally ambitious shopping street in Asia — a broad, zelkova-lined boulevard where every major luxury brand has commissioned a significant building from a significant architect. The Prada building by Herzog & de Meuron, the Tod's building by Toyo Ito, the Louis Vuitton tower by Jun Aoki, Tadao Ando's subterranean Omotesando Hills — the street is essentially an open-air museum of early 21st-century commercial architecture. Even if fashion is not your interest, the quality of the buildings and the zelkova canopy overhead make it one of the most pleasant walks in Tokyo at any time of year.</p>
+      <div class="stop-tip">💡 Walk the full length from Harajuku Station to Aoyama-itchome — about 1.2 km — and then return on the opposite pavement. The small side streets running north off Omotesando (the "Ura-Harajuku" area) contain some of the most interesting independent fashion boutiques and vintage shops in the city. The zelkova trees are illuminated in December for one of Tokyo's best Christmas light displays.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 39,000+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Omotesando+Tokyo" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Yoyogi Park -->
+  <div class="stop" id="yoyogi">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Afternoon</div>
+      <div class="stop-num">05</div>
+      <img src="https://images.unsplash.com/photo-1551641506-ee5bf4cb45f1?w=800&q=80&fit=crop" alt="Yoyogi Park Tokyo open lawn cherry blossoms picnic" loading="lazy"/>
+      <div class="stop-badge">The Big Lawn</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Park · Between Harajuku & Yoyogi Stations</div>
+      <h2 class="stop-title">Yoyogi Park</h2>
+      <div class="stop-jp">代々木公園</div>
+      <p class="stop-desc">Adjacent to Meiji Shrine and covering 54 hectares of the former site of the 1964 Olympic athletes' village, Yoyogi Park is Tokyo's great public commons — the place where the city comes to do nothing in particular. On weekends the open lawns fill with amateur musicians, frisbee players, dog walkers, picnicking families, cycling clubs, hula hoopers, and a rotating cast of event organisers hosting everything from Thai food festivals to rockabilly dance-offs. It is ordinary urban life at its most festive. The park's woodland paths and rose garden on the western side are considerably quieter and reward slower exploration.</p>
+      <div class="stop-tip">💡 The cherry blossoms in late March make Yoyogi one of the best hanami (blossom viewing) spots in Tokyo — arrive early to claim a spot on the main lawn. The outdoor stage area near the Harajuku Gate sometimes hosts free weekend performances. Bring something to eat from the Omotesando convenience stores and stay for an hour.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 47,000+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Yoyogi+Park+Tokyo" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Bunkamura -->
+  <div class="stop" id="bunkamura">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Evening</div>
+      <div class="stop-num">06</div>
+      <img src="https://images.unsplash.com/photo-1522383225653-ed111181a951?w=800&q=80&fit=crop" alt="Bunkamura Shibuya arts complex theatre cinema Tokyo" loading="lazy"/>
+      <div class="stop-badge">Arts & Culture</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Arts Complex · Behind Shibuya Tokyu</div>
+      <h2 class="stop-title">Bunkamura</h2>
+      <div class="stop-jp">Bunkamura · 文化村</div>
+      <p class="stop-desc">Opened in 1989 by the Tokyu department store group, Bunkamura — "culture village" — is Shibuya's anchor for serious arts programming and one of Tokyo's most important mid-size cultural venues. The complex houses the Orchard Hall concert hall (2,150 seats, home to major orchestral and opera performances), the Theatre Cocoon (800 seats, contemporary theatre and dance), the Museum of Arts Bunkamura (rotating exhibitions of international fine art), and Le Cinema (two-screen arthouse cinema showing the best of world film). An evening at Bunkamura — whether for a concert, an exhibition, or a film — is a reminder that Tokyo's cultural life runs considerably deeper than its reputation for pop culture suggests.</p>
+      <div class="stop-tip">💡 Check the Bunkamura website before your visit — the programming is consistently excellent and often includes international touring productions that don't appear elsewhere in Tokyo. The museum exhibitions change every few weeks and lean toward European modernism and photography. The café inside is good for a pre-show drink.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 8,400+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Bunkamura+Shibuya+Tokyo" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">渋谷 II · Shibuya — Forest, Fashion & the Avenue</div>
+  <p>A full day guide · North & west Shibuya Ward</p>
+  <p>© 2026 Tokyo Highlights Tour</p>
+  <div style="text-align:center; padding: 1.5rem 0 2rem;">
+    <a href="index.html" style="
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--stone);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 2px;
+      transition: opacity 0.2s;
+    " onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">
+      ← Back to Home
+    </a>
+  </div>
+</footer>
+
+<script>
+  const stops = document.querySelectorAll('.stop');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  stops.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>

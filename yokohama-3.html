@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Explore Yokohama's harbour depths and hidden quarters with Terry — beyond Chinatown into the port city's fascinating history and lesser-known districts."/>
+  <meta name="keywords" content="Yokohama tour, Yokohama guide, Yokohama harbour, day trip from Tokyo, Yokohama hidden spots, private tour Yokohama Japan"/>
+  <meta name="author" content="Tokyo Private Tours with Terry"/>
+  <meta name="robots" content="index, follow"/>
+  <meta property="og:title" content="Yokohama — Harbour, History & Hidden Quarters | Tokyo Private Tours with Terry"/>
+  <meta property="og:description" content="Explore Yokohama's harbour depths and hidden quarters with Terry — beyond Chinatown into the port city's fascinating history and lesser-known districts."/>
+  <meta property="og:type" content="website"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yokohama — Harbour, History & Hidden Quarters | Tokyo Private Tours with Terry</title>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --ink: #14120e;
+      --paper: #f0ede6;
+      --moss: #2a3a5a;
+      --sage: #364a70;
+      --stone: #7a7468;
+      --gold: #9a8030;
+      --border: rgba(20,18,14,0.12);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--paper); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 300; overflow-x: hidden; }
+
+    
+    
+    
+    
+    
+    
+    .hero h1 { position: relative; font-family: 'Shippori Mincho', serif; font-size: clamp(3.5rem, 9vw, 7rem); font-weight: 800; color: #fff; line-height: 0.88; margin-bottom: 0.6rem; }
+    
+    
+    
+    
+    
+    
+     50%{opacity:.5;transform:scaleY(.55)} }
+
+    .intro { max-width: 800px; margin: 5.5rem auto; padding: 0 6vw; text-align: center; }
+    .intro-kicker { display: inline-block; font-size: 0.65rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--moss); margin-bottom: 1.4rem; }
+    .intro p { font-size: 1.12rem; line-height: 1.9; color: var(--stone); }
+
+    .tod-bar { max-width: 900px; margin: 0 auto 4rem; padding: 0 6vw; }
+    .tod-inner { display: flex; align-items: center; border: 1px solid rgba(42,58,90,0.18); overflow: hidden; }
+    .tod-item { flex: 1; padding: 1.1rem 1.4rem; border-right: 1px solid rgba(42,58,90,0.18); display: flex; flex-direction: column; gap: 0.25rem; }
+    .tod-item:last-child { border-right: none; }
+    .tod-label { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--moss); }
+    .tod-value { font-size: 0.82rem; font-weight: 500; color: var(--ink); line-height: 1.4; }
+
+    .section-nav { max-width: 900px; margin: 0 auto 4rem; padding: 0 6vw; }
+    .section-nav-inner { display: flex; align-items: center; gap: 1.2rem; background: rgba(42,58,90,0.06); border: 1px solid rgba(42,58,90,0.18); border-left: 3px solid var(--moss); padding: 1.2rem 1.8rem; flex-wrap: wrap; }
+    .nav-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--moss); flex-shrink: 0; }
+    .nav-pills { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+    .nav-pill { font-size: 0.75rem; font-weight: 500; color: var(--ink); background: rgba(42,58,90,0.08); border: 1px solid rgba(42,58,90,0.2); padding: 0.3rem 0.9rem; border-radius: 100px; text-decoration: none; transition: background 0.2s, color 0.2s; letter-spacing: 0.03em; }
+    .nav-pill:hover { background: var(--moss); color: #fff; border-color: var(--moss); }
+
+    .divider { display: flex; align-items: center; gap: 1.2rem; margin: 0 6vw 3rem; color: var(--sage); font-size: 0.67rem; letter-spacing: 0.22em; text-transform: uppercase; }
+    .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    .stops { max-width: 1100px; margin: 0 auto; padding: 0 6vw 8rem; }
+    .stop { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--border); padding: 4rem 0; opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .stop.visible { opacity: 1; transform: translateY(0); }
+    .stop:nth-child(even) { direction: rtl; }
+    .stop:nth-child(even) > * { direction: ltr; }
+    .stop-img-wrap { position: relative; overflow: hidden; aspect-ratio: 4/3; }
+    .stop-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.75s ease; }
+    .stop:hover .stop-img-wrap img { transform: scale(1.05); }
+    .stop-badge { position: absolute; bottom: 1.2rem; left: 1.2rem; background: rgba(6,10,18,0.75); border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.82); font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; padding: 0.3rem 0.75rem; backdrop-filter: blur(6px); }
+    .stop-time { position: absolute; top: 1rem; left: 1.2rem; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.6); background: rgba(6,10,18,0.55); padding: 0.2rem 0.6rem; backdrop-filter: blur(4px); }
+    .stop-num { position: absolute; top: 1rem; right: 1.2rem; font-family: 'Shippori Mincho', serif; font-size: 4.5rem; font-weight: 800; color: rgba(255,255,255,0.13); line-height: 1; pointer-events: none; }
+    .stop-content { padding: 2.8rem 3.5rem; display: flex; flex-direction: column; justify-content: center; }
+    .stop-category { font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--moss); margin-bottom: 1rem; }
+    .stop-title { font-family: 'Shippori Mincho', serif; font-size: clamp(1.7rem, 2.8vw, 2.4rem); font-weight: 600; line-height: 1.2; margin-bottom: 0.35rem; }
+    .stop-jp { font-size: 0.82rem; color: var(--stone); margin-bottom: 1.6rem; letter-spacing: 0.06em; }
+    .stop-desc { font-size: 0.94rem; line-height: 1.88; color: #3e3a34; margin-bottom: 1.6rem; }
+    .stop-tip { border-left: 2px solid var(--gold); padding-left: 1rem; font-size: 0.82rem; color: var(--stone); font-style: italic; line-height: 1.65; }
+    .stop-footer { margin-top: 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem; }
+    .stop-rating { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; color: var(--stone); }
+    .stars { color: var(--gold); }
+    .stop-map { display: inline-flex; align-items: center; gap: 0.45rem; font-size: 0.76rem; color: var(--moss); text-decoration: none; font-weight: 500; letter-spacing: 0.04em; transition: opacity 0.2s; }
+    .stop-map:hover { opacity: 0.65; }
+
+    footer { border-top: 1px solid var(--border); padding: 3rem 6vw; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    footer p { font-size: 0.8rem; color: var(--stone); }
+    .footer-logo { font-family: 'Shippori Mincho', serif; font-size: 1.25rem; font-weight: 600; }
+
+    @media (max-width: 700px) {
+      .stop { grid-template-columns: 1fr; direction: ltr !important; }
+      .stop-content { padding: 2rem 0; }
+      .stop:nth-child(even) > * { direction: ltr; }
+      .tod-inner { flex-direction: column; }
+      .tod-item { border-right: none; border-bottom: 1px solid rgba(42,58,90,0.18); }
+      .tod-item:last-child { border-bottom: none; }
+      .section-nav-inner { flex-direction: column; align-items: flex-start; }
+    }
+  
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    height: 90vh;
+    min-height: 560px;
+    overflow: hidden;
+  }
+  .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: none;
+    display: flex;
+    align-items: center;
+  }
+  .hero-content {
+    max-width: 560px;
+    padding: 0 2rem;
+    background: none;
+  }
+  .hero-eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #f9a07a;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(40px, 6vw, 64px);
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.9), 0 0 30px rgba(0,0,0,0.8);
+  }
+  .hero p {
+    font-size: 17px;
+    color: #ffffff;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 420px;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
+  }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-primary {
+    background: #D00000;
+    color: #fff;
+    border: none;
+    padding: 13px 26px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: #B00000; }
+  .btn-ghost {
+    background: rgba(0,0,0,0.45);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.6);
+    padding: 13px 26px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s;
+    display: inline-block;
+  }
+  .btn-ghost:hover { background: rgba(0,0,0,0.65); }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(0,0,0,0.1);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;">
+  <ul style="display:flex;list-style:none;justify-content:center;align-items:center;gap:2rem;flex:1;margin:0;padding:0;">
+    <li><a href="index.html#areas" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Areas</a></li>
+    <li><a href="index.html#tours" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Tours</a></li>
+    <li><a href="index.html#about" style="font-size:14px;color:#5D6D7E;text-decoration:none;">About</a></li>
+    <li><a href="index.html#contact" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Contact</a></li>
+  </ul>
+  <a href="index.html#contact" style="background:#D00000;color:#fff;border:none;padding:9px 20px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none;">Book a tour</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="../Travel with Terry/Photos/Yokohona Night View.jpg" width="2048" height="796" alt=""/>
+<div class="hero-overlay">
+    <div class="hero-content">
+      <div class="hero-eyebrow">📍 Yokohama · 30 min from Tokyo</div>
+      <h1>Yokohama<br>Deeper</h1>
+      <p>Ramen stadium, art districts & the harbour depths.</p>
+      <div class="hero-btns">
+        <a href="#stop1" class="btn-primary">Explore stops ↓</a>
+        <a href="index.html#contact" class="btn-ghost">Book a tour</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="intro">
+  <div class="intro-kicker">Honmoku · Isogo · Koganecho · Negishi · Shin-Yokohama · Yokohama Museum of Art</div>
+  <p>The third Yokohama goes deeper still — into the ramen museum that started Japan's food theme park boom; an arts district that grew out of a cleaned-up red light area; a clifftop American-era residential neighbourhood with sweeping bay views; a forest park wrapped around an ancient burial ground; the city's finest art museum; and a quiet coastal suburb that most Yokohama visitors never reach. This is the city at its most unscripted.</p>
+</div>
+
+<div class="tod-bar">
+  <div class="tod-inner">
+    <div class="tod-item"><span class="tod-label">Morning</span><span class="tod-value">Shin-Yokohama Ramen Museum</span></div>
+    <div class="tod-item"><span class="tod-label">Afternoon</span><span class="tod-value">Koganecho · Honmoku</span></div>
+    <div class="tod-item"><span class="tod-label">Late Afternoon</span><span class="tod-value">Negishi Forest Park</span></div>
+    <div class="tod-item"><span class="tod-label">Evening</span><span class="tod-value">Museum of Art · Minatomirai</span></div>
+  </div>
+</div>
+
+<div class="section-nav">
+  <div class="section-nav-inner">
+    <span class="nav-label">Jump to</span>
+    <div class="nav-pills">
+      <a class="nav-pill" href="#honmoku">Honmoku</a>
+      <a class="nav-pill" href="#isogo">Isogo & Coast</a>
+      <a class="nav-pill" href="#koganecho">Koganecho</a>
+      <a class="nav-pill" href="#mot">Museum of Art</a>
+      <a class="nav-pill" href="#negishi">Negishi Forest</a>
+      <a class="nav-pill" href="#ramen">Ramen Museum</a>
+    </div>
+  </div>
+</div>
+
+<div class="divider">Six Hidden Quarters · One Full Day</div>
+
+<div class="stops">
+
+  <div class="stop" id="honmoku">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Afternoon</div>
+      <div class="stop-num">01</div>
+      <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80&fit=crop" alt="Honmoku Yokohama clifftop neighbourhood bay views" loading="lazy"/>
+      <div class="stop-badge">American-Era Clifftop</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Neighbourhood · Honmoku</div>
+      <h2 class="stop-title">Honmoku</h2>
+      <div class="stop-jp">本牧</div>
+      <p class="stop-desc">Honmoku is a clifftop residential neighbourhood south of Yamate that was occupied by the US military after 1945 and only returned to Japanese control in 1982 — giving it a cultural imprint unlike anywhere else in Yokohama. The area developed a strong American subculture during the occupation years, and traces of it survive in the form of old diners, a long-standing blues and soul music scene, and a neighbourhood character that feels slightly apart from the rest of the city. The clifftop park at Honmoku Sankeien-mae gives sweeping views across Yokohama Bay, and the residential streets retain a spaciousness — wide roads, generous gardens — that reflects their American-planned origins.</p>
+      <div class="stop-tip">💡 Honmoku Marine Park on the reclaimed land below the cliff is good for a waterfront walk with port views. The neighbourhood's old American-era diners — some still serving hamburgers and chilli dogs to local devotees — are worth seeking out for lunch. The Sankeien Garden is a short walk away if you haven't visited it on a previous trip.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★</span> 4.2 · Local neighbourhood</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Honmoku+Yokohama" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="stop" id="isogo">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Coastal Extension</div>
+      <div class="stop-num">02</div>
+      <img src="https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?w=800&q=80&fit=crop" alt="Isogo Yokohama coastal port industrial waterfront" loading="lazy"/>
+      <div class="stop-badge">End of the Line</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Coastal Suburb · Isogo</div>
+      <h2 class="stop-title">Isogo & the Southern Shore</h2>
+      <div class="stop-jp">磯子 · 南部海岸</div>
+      <p class="stop-desc">Isogo is where Yokohama runs out of city and meets the sea — a quiet, largely residential coastal suburb at the southern end of the Negishi Bay that sees almost no tourists and has the unhurried quality of a neighbourhood with nothing to prove. The coastal path along Negishi Bay gives unobstructed views across the industrial port to the container cranes and tankers that remind you this is still one of Japan's great working harbours. The Isogo district's small shotengai, its old fishing neighbourhood remnants, and the sea-level perspective on the port make for one of the most genuinely off-the-beaten-track afternoons available within the city limits.</p>
+      <div class="stop-tip">💡 Take the JR Negishi Line from Yokohama Station south to Isogo — about 20 minutes — and walk the coastal path north toward Honmoku for the best port views. The Umi-no-Miえる-Oka park area near the waterfront is good for picnicking with a view. Combine with Negishi Forest Park for a full southern Yokohama afternoon.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★</span> 4.1 · Local gem</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Isogo+Yokohama" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="stop" id="koganecho">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Afternoon</div>
+      <div class="stop-num">03</div>
+      <img src="https://images.unsplash.com/photo-1561016444-14f747499547?w=800&q=80&fit=crop" alt="Koganecho arts district Yokohama under railway galleries" loading="lazy"/>
+      <div class="stop-badge">Arts District</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Art & Culture · Koganecho</div>
+      <h2 class="stop-title">Koganecho Arts District</h2>
+      <div class="stop-jp">黄金町アートタウン</div>
+      <p class="stop-desc">Koganecho was, until 2005, one of Yokohama's most notorious red-light districts — a stretch of railway arches beneath the Keikyu Line packed with illicit businesses. A sustained police crackdown and a subsequent arts regeneration programme transformed the arches into artist studios, small galleries, and project spaces that have made Koganecho one of the most genuinely interesting arts districts in Japan. The annual Koganecho Bazaar art festival draws artists from across the world. Outside festival periods the studios are often open and the area's low-key, work-in-progress energy — the opposite of a polished gallery district — makes it one of the most authentic art neighbourhoods in the Yokohama-Tokyo corridor.</p>
+      <div class="stop-tip">💡 The Koganecho Bazaar typically runs in autumn — check the dates as it transforms the entire district and is one of the better free art events in the region. The Hinode-cho end of the arches has the highest concentration of open studios. The Ooka River running alongside is pleasant to walk, with cherry trees in spring.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★</span> 4.3 · 3,100+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Koganecho+Yokohama" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="stop" id="negishi">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Late Afternoon</div>
+      <div class="stop-num">04</div>
+      <img src="https://images.unsplash.com/photo-1559025393-8be0ec4767c8?w=800&q=80&fit=crop" alt="Negishi Forest Park Yokohama kofun burial mounds woodland" loading="lazy"/>
+      <div class="stop-badge">Ancient Forest Park</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Forest Park · Negishi</div>
+      <h2 class="stop-title">Negishi Forest Park</h2>
+      <div class="stop-jp">根岸森林公園</div>
+      <p class="stop-desc">Negishi Forest Park occupies a broad hilltop above the industrial port area — formerly the site of Japan's first Western-style horse racing track, opened in 1866 for the foreign community, whose grandstand ruins still stand at the park's edge like a crumbling Roman folly. The park itself is a wide open space of old-growth trees, meadow, and walking paths wrapping around a cluster of kofun — ancient burial mounds from the 5th and 6th centuries — that sit incongruously in the middle of this former racecourse. The combination of Meiji-era ruins, prehistoric earthworks, and a functioning public park is entirely typical of Yokohama's tendency to layer its history without resolving the contradictions.</p>
+      <div class="stop-tip">💡 The old grandstand ruins (Kyuba-jo Ichibankan) are a registered cultural property and freely accessible — the crumbling iron-and-brick structure, overgrown with vines and partially collapsed, is one of the most atmospheric ruins in the greater Tokyo region. The park is rarely crowded and is good for a quiet late afternoon walk before heading back toward the waterfront.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★</span> 4.3 · 4,600+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Negishi+Forest+Park+Yokohama" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="stop" id="ramen">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Morning</div>
+      <div class="stop-num">05</div>
+      <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800&q=80&fit=crop" alt="Shin-Yokohama Ramen Museum retro Japan food" loading="lazy"/>
+      <div class="stop-badge">Start Here</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Food Museum · Shin-Yokohama</div>
+      <h2 class="stop-title">Shin-Yokohama Ramen Museum</h2>
+      <div class="stop-jp">新横浜ラーメン博物館</div>
+      <p class="stop-desc">Opened in 1994, the Shin-Yokohama Ramen Museum was Japan's first food theme park and remains one of its best — a basement recreation of a 1958 Tokyo shitamachi streetscape housing nine ramen restaurants, each representing a distinct regional style from across Japan. Sapporo miso, Hakata tonkotsu, Tokyo shoyu, Kyushu nagahama — all under one retro roof, with the neon signs, the fake drizzle effect on the windows, and the crackling radio broadcasts giving the whole thing a genuinely atmospheric quality that goes well beyond the gimmick. It is an earnest and well-executed celebration of Japan's most beloved dish.</p>
+      <div class="stop-tip">💡 Go early when it opens (11 AM) to avoid queues at the most popular stalls. The mini-size portions (kogata) available at most restaurants let you try two or three different styles in one visit. The museum itself documents the history of instant noodles — invented in 1958 by Nissin's Momofuku Ando, whose product changed how the world eats.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★</span> 4.3 · 18,000+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Shin-Yokohama+Ramen+Museum" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="stop" id="mot">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Evening</div>
+      <div class="stop-num">06</div>
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&fit=crop" alt="Yokohama Museum of Art Minato Mirai modern building" loading="lazy"/>
+      <div class="stop-badge">Best Art Museum</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Art Museum · Minato Mirai</div>
+      <h2 class="stop-title">Yokohama Museum of Art</h2>
+      <div class="stop-jp">横浜美術館</div>
+      <p class="stop-desc">Designed by Kenzo Tange and opened in 1989, the Yokohama Museum of Art is the city's flagship fine art institution — a grand atrium building in the heart of Minato Mirai with a permanent collection of over 12,000 works focused on modern and contemporary art, photography, and works with connections to Yokohama's port history. The museum's temporary exhibition programme is consistently ambitious, drawing major international touring shows as well as significant Japanese retrospectives. The scale of the building, the quality of the permanent collection, and the central location make it the natural conclusion to a full day of the city's less-visited quarters.</p>
+      <div class="stop-tip">💡 The museum shop is one of the better art book shops in Yokohama. The Grand Gallery — the vast atrium entrance hall — is freely accessible and worth seeing even without a ticket to the exhibitions. Evening opening hours on some days make it a good end-of-day stop when other attractions have closed.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.4 · 7,200+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Yokohama+Museum+of+Art" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div></div>
+
+<footer>
+  <div class="footer-logo">横浜 III · Yokohama — Harbour Depths & Hidden Quarters</div>
+  <p>A full day guide · The Yokohama beyond the tourist trail</p>
+  <p>© 2026 Tokyo Highlights Tour</p>
+  <div style="text-align:center; padding: 1.5rem 0 2rem;">
+    <a href="index.html" style="
+      display: inline-block;
+      font-family: inherit;
+      font-size: 0.78rem;
+      color: #7a7468;
+      text-decoration: none;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border-bottom: 1px solid #8a7040;
+      padding-bottom: 3px;
+    ">← Back to Home</a>
+  </div>
+  <div style="text-align:center; padding: 1.5rem 0 2rem;">
+    <a href="index.html" style="
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--stone);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 2px;
+      transition: opacity 0.2s;
+    " onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">
+      ← Back to Home
+    </a>
+  </div>
+</footer>
+
+<script>
+  const stops = document.querySelectorAll('.stop');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  stops.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

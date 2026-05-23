@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Explore Odawara with Terry — a historic castle town on the Tokaido highway, gateway to Hakone and home to one of Japan's finest restored castles."/>
+  <meta name="keywords" content="Odawara castle, Odawara tour, day trip from Tokyo, Odawara Japan, Hakone gateway, private tour Odawara, Japan castle tour"/>
+  <meta name="author" content="Tokyo Private Tours with Terry"/>
+  <meta name="robots" content="index, follow"/>
+  <meta property="og:title" content="Odawara Castle & Town | Tokyo Private Tours with Terry"/>
+  <meta property="og:description" content="Explore Odawara with Terry — a historic castle town on the Tokaido highway, gateway to Hakone and home to one of Japan's finest restored castles."/>
+  <meta property="og:type" content="website"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Odawara Castle & Town | Tokyo Private Tours with Terry</title>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --ink: #14120e;
+      --paper: #f0ede6;
+      --moss: #3a2a0a;
+      --sage: #4e3a14;
+      --stone: #7a7468;
+      --gold: #a08030;
+      --border: rgba(20,18,14,0.12);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--paper); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 300; overflow-x: hidden; }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     50%{opacity:.5;transform:scaleY(.55)} }
+
+    .intro { max-width: 800px; margin: 5.5rem auto; padding: 0 6vw; text-align: center; }
+    .intro-kicker { display: inline-block; font-size: 0.65rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--moss); margin-bottom: 1.4rem; }
+    .intro p { font-size: 1.12rem; line-height: 1.9; color: var(--stone); }
+
+    .transport-bar { max-width: 960px; margin: 0 auto 4rem; padding: 0 6vw; }
+    .transport-inner { display: flex; align-items: stretch; border: 1px solid rgba(58,42,10,0.18); overflow: hidden; }
+    .transport-item { flex: 1; padding: 1.1rem 1.2rem; border-right: 1px solid rgba(58,42,10,0.18); display: flex; flex-direction: column; gap: 0.25rem; }
+    .transport-item:last-child { border-right: none; }
+    .transport-label { font-size: 0.56rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--moss); }
+    .transport-value { font-size: 0.78rem; font-weight: 500; color: var(--ink); line-height: 1.4; }
+
+    .section-nav { max-width: 900px; margin: 0 auto 4rem; padding: 0 6vw; }
+    .section-nav-inner { display: flex; align-items: center; gap: 1.2rem; background: rgba(58,42,10,0.06); border: 1px solid rgba(58,42,10,0.18); border-left: 3px solid var(--moss); padding: 1.2rem 1.8rem; flex-wrap: wrap; }
+    .nav-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--moss); flex-shrink: 0; }
+    .nav-pills { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+    .nav-pill { font-size: 0.75rem; font-weight: 500; color: var(--ink); background: rgba(58,42,10,0.08); border: 1px solid rgba(58,42,10,0.2); padding: 0.3rem 0.9rem; border-radius: 100px; text-decoration: none; transition: background 0.2s, color 0.2s; letter-spacing: 0.03em; }
+    .nav-pill:hover { background: var(--moss); color: #fff; border-color: var(--moss); }
+
+    .divider { display: flex; align-items: center; gap: 1.2rem; margin: 0 6vw 3rem; color: var(--sage); font-size: 0.67rem; letter-spacing: 0.22em; text-transform: uppercase; }
+    .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    .stops { max-width: 1100px; margin: 0 auto; padding: 0 6vw 8rem; }
+    .stop { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--border); padding: 4rem 0; opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .stop.visible { opacity: 1; transform: translateY(0); }
+    .stop:nth-child(even) { direction: rtl; }
+    .stop:nth-child(even) > * { direction: ltr; }
+    .stop-img-wrap { position: relative; overflow: hidden; aspect-ratio: 4/3; }
+    .stop-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.75s ease; }
+    .stop:hover .stop-img-wrap img { transform: scale(1.05); }
+    .stop-badge { position: absolute; bottom: 1.2rem; left: 1.2rem; background: rgba(12,8,4,0.75); border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.82); font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; padding: 0.3rem 0.75rem; backdrop-filter: blur(6px); }
+    .stop-time { position: absolute; top: 1rem; left: 1.2rem; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.6); background: rgba(12,8,4,0.55); padding: 0.2rem 0.6rem; backdrop-filter: blur(4px); }
+    .stop-num { position: absolute; top: 1rem; right: 1.2rem; font-family: 'Shippori Mincho', serif; font-size: 4.5rem; font-weight: 800; color: rgba(255,255,255,0.13); line-height: 1; pointer-events: none; }
+    .stop-content { padding: 2.8rem 3.5rem; display: flex; flex-direction: column; justify-content: center; }
+    .stop-category { font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--moss); margin-bottom: 1rem; }
+    .stop-title { font-family: 'Shippori Mincho', serif; font-size: clamp(1.7rem, 2.8vw, 2.4rem); font-weight: 600; line-height: 1.2; margin-bottom: 0.35rem; }
+    .stop-jp { font-size: 0.82rem; color: var(--stone); margin-bottom: 1.6rem; letter-spacing: 0.06em; }
+    .stop-desc { font-size: 0.94rem; line-height: 1.88; color: #3e3a34; margin-bottom: 1.6rem; }
+    .stop-tip { border-left: 2px solid var(--gold); padding-left: 1rem; font-size: 0.82rem; color: var(--stone); font-style: italic; line-height: 1.65; }
+    .stop-footer { margin-top: 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem; }
+    .stop-rating { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; color: var(--stone); }
+    .stars { color: var(--gold); }
+    .stop-map { display: inline-flex; align-items: center; gap: 0.45rem; font-size: 0.76rem; color: var(--moss); text-decoration: none; font-weight: 500; letter-spacing: 0.04em; transition: opacity 0.2s; }
+    .stop-map:hover { opacity: 0.65; }
+
+    footer { border-top: 1px solid var(--border); padding: 3rem 6vw; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    footer p { font-size: 0.8rem; color: var(--stone); }
+    .footer-logo { font-family: 'Shippori Mincho', serif; font-size: 1.25rem; font-weight: 600; }
+
+    @media (max-width: 700px) {
+      .stop { grid-template-columns: 1fr; direction: ltr !important; }
+      .stop-content { padding: 2rem 0; }
+      .stop:nth-child(even) > * { direction: ltr; }
+      .transport-inner { flex-direction: column; }
+      .transport-item { border-right: none; border-bottom: 1px solid rgba(58,42,10,0.18); }
+      .transport-item:last-child { border-bottom: none; }
+      .section-nav-inner { flex-direction: column; align-items: flex-start; }
+    }
+  
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    height: 50vh;
+    min-height: 560px;
+    overflow: hidden;
+  }
+  .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: none;
+    display: flex;
+    align-items: center;
+  }
+  .hero-content {
+    max-width: 560px;
+    padding: 0 2rem;
+    background: none;
+  }
+  .hero-eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #f9a07a;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(40px, 6vw, 64px);
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.9), 0 0 30px rgba(0,0,0,0.8);
+  }
+  .hero p {
+    font-size: 17px;
+    color: #ffffff;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 420px;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
+  }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-primary {
+    background: #D00000;
+    color: #fff;
+    border: none;
+    padding: 13px 26px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: #B00000; }
+  .btn-ghost {
+    background: rgba(0,0,0,0.45);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.6);
+    padding: 13px 26px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s;
+    display: inline-block;
+  }
+  .btn-ghost:hover { background: rgba(0,0,0,0.65); }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(0,0,0,0.1);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;">
+  <ul style="display:flex;list-style:none;justify-content:center;align-items:center;gap:2rem;flex:1;margin:0;padding:0;">
+    <li><a href="index.html#areas" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Areas</a></li>
+    <li><a href="index.html#tours" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Tours</a></li>
+    <li><a href="index.html#about" style="font-size:14px;color:#5D6D7E;text-decoration:none;">About</a></li>
+    <li><a href="index.html#contact" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Contact</a></li>
+  </ul>
+  <a href="index.html#contact" style="background:#D00000;color:#fff;border:none;padding:9px 20px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none;">Book a tour</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <<img src="Photos/Odawara.jpg" width="1000" height="667" alt=""/>>>
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <div class="hero-eyebrow">📍 Odawara · 45 min from Tokyo</div>
+      <h1>Odawara</h1>
+      <p>Samurai castle, fish markets & the old Tōkaidō.</p>
+      <div class="hero-btns">
+        <a href="#stop1" class="btn-primary">Explore stops ↓</a>
+        <a href="index.html#contact" class="btn-ghost">Book a tour</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="intro">
+  <div class="intro-kicker">Odawara Castle · Fish Market · Tokaido · Ninomaru · Kamaboko · Coastal Walk</div>
+  <p>Odawara is a castle town that most people pass through on the way to Hakone and never stop to explore — which is their loss. The city was the stronghold of the Hojo clan for over a century, and its castle, fish market, old Tokaido highway remnants, and shogunate-era merchant quarters give it a depth of history that few comparable towns in the Kanto region can match. Add one of the finest kamaboko (fish cake) traditions in Japan, a coastal promenade with views to Izu, and some excellent seafood restaurants, and Odawara earns a full day of its own.</p>
+</div>
+
+<div class="transport-bar">
+  <div class="transport-inner">
+    <div class="transport-item"><span class="transport-label">From Tokyo</span><span class="transport-value">Odakyu Romancecar · 70 min</span></div>
+    <div class="transport-item"><span class="transport-label">Or JR</span><span class="transport-value">Tokaido Line from Tokyo · 85 min</span></div>
+    <div class="transport-item"><span class="transport-label">Or Shinkansen</span><span class="transport-value">Kodama from Tokyo · 35 min</span></div>
+    <div class="transport-item"><span class="transport-label">Onwards</span><span class="transport-value">Hakone loop starts here</span></div>
+    <div class="transport-item"><span class="transport-label">Best Season</span><span class="transport-value">Cherry blossom · late March</span></div>
+  </div>
+</div>
+
+<div class="section-nav">
+  <div class="section-nav-inner">
+    <span class="nav-label">Jump to</span>
+    <div class="nav-pills">
+      <a class="nav-pill" href="#castle">Odawara Castle</a>
+      <a class="nav-pill" href="#ninomaru">Ninomaru Garden</a>
+      <a class="nav-pill" href="#tokaido">Old Tokaido</a>
+      <a class="nav-pill" href="#fish">Fish Market</a>
+      <a class="nav-pill" href="#kamaboko">Kamaboko</a>
+      <a class="nav-pill" href="#coast">Coastal Walk</a>
+    </div>
+  </div>
+</div>
+
+<div class="divider">One Castle Town · A Full Day</div>
+
+<div class="stops">
+
+  <div class="stop" id="castle">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Morning</div>
+      <div class="stop-num">01</div>
+      <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80&fit=crop" alt="Odawara Castle cherry blossoms keep tower Kanagawa" loading="lazy"/>
+      <div class="stop-badge">Start Here</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Castle · Hojo Clan Stronghold · Rebuilt 1960</div>
+      <h2 class="stop-title">Odawara Castle</h2>
+      <div class="stop-jp">小田原城</div>
+      <p class="stop-desc">Odawara Castle was the impregnable stronghold of the Hojo clan — the most powerful warlords of the Kanto region — for nearly a century, and the last great castle to fall to Toyotomi Hideyoshi's unification campaign in 1590. The current keep is a 1960 concrete reconstruction of the Edo-period original, but it sits within an extensive park of original moats, stone walls, and gate structures that convey the castle's genuine scale. The keep museum documents the Hojo clan's extraordinary 100-year dominance of eastern Japan in considerable detail. In late March the castle park's 300 cherry trees make it one of the finest blossom spots in the greater Tokyo region.</p>
+      <div class="stop-tip">💡 The castle park is freely accessible; the keep interior charges ¥510. Arrive early in cherry blossom season — the park fills completely by late morning on peak weekends. The outer moat, the Sumiyoshi-bashi bridge, and the Higashi-Akagane-mon gate are all original or carefully restored structures worth examining closely.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★</span> 4.3 · 16,000+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Odawara+Castle+Kanagawa" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="stop" id="ninomaru">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Morning</div>
+      <div class="stop-num">02</div>
+      <img src="https://images.unsplash.com/photo-1551641506-ee5bf4cb45f1?w=800&q=80&fit=crop" alt="Ninomaru Garden Odawara Castle traditional Japanese garden" loading="lazy"/>
+      <div class="stop-badge">Inner Garden</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Traditional Garden · Within the Castle Grounds</div>
+      <h2 class="stop-title">Ninomaru Garden</h2>
+      <div class="stop-jp">二の丸広場 · 本丸庭園</div>
+      <p class="stop-desc">Within the castle's second bailey, the Ninomaru Garden is a traditional Japanese stroll garden of considerable beauty — iris beds, a central pond, stone lanterns, and old pine trees arranged around a garden that originally served the Edo-period castle lord's inner compound. In June the irises are spectacular; in April the plum and cherry extend the castle park's blossom season beyond the main cherry trees. The garden is frequently overlooked by visitors focused on the keep, making it one of the quieter and more pleasant spots within the castle grounds. The restored Tokiwagi-mon gate at the garden's north entrance is one of the finest surviving Edo-period gate structures in Kanagawa.</div>
+      <div class="stop-tip">💡 The iris garden peaks in mid-June and is one of the best in the Kanto region at that time — a specific reason to visit Odawara outside cherry blossom season. The Odawara Samurai Museum adjacent to the castle grounds has good interactive exhibits on samurai equipment and the Hojo clan.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★</span> 4.3 · 4,100+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Ninomaru+Garden+Odawara+Castle" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="stop" id="tokaido">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Afternoon</div>
+      <div class="stop-num">03</div>
+      <img src="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=800&q=80&fit=crop" alt="Old Tokaido highway Odawara merchant town post station" loading="lazy"/>
+      <div class="stop-badge">The Old Highway</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Historic Street · Odawara-juku Post Town</div>
+      <h2 class="stop-title">The Old Tokaido</h2>
+      <div class="stop-jp">東海道 · 小田原宿</div>
+      <p class="stop-desc">Odawara was the 9th of the 53 post stations on the old Tokaido highway between Edo and Kyoto, and the town's merchant quarter along the old highway route retains more of its Edo-period character than most surviving post towns in the Kanto region. The street running north from the castle toward the station follows the original Tokaido alignment, and along it a number of old merchant houses, some converted into shops and restaurants, still show the deep eaves, thick plaster walls, and latticed fronts of Edo-period commercial architecture. Several of Odawara's famous kamaboko (fish cake) shops have been trading on this street for generations.</p>
+      <div class="stop-tip">💡 The Odawara-juku Honjin Kinenkan near the station marks the site of the official post station inn where daimyo and officials rested on the highway — a small but well-presented museum explaining the Tokaido's significance. The walk from the castle to the station along the old highway takes about 20 minutes and passes the best concentration of historic buildings.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★</span> 4.2 · Historic route</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Tokaido+Odawara-juku+historic+street" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="stop" id="fish">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Afternoon</div>
+      <div class="stop-num">04</div>
+      <img src="https://images.unsplash.com/photo-1559054663-e8d23213f55c?w=800&q=80&fit=crop" alt="Odawara fish market seafood fresh local port" loading="lazy"/>
+      <div class="stop-badge">Fresh from Sagami Bay</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Fish Market & Seafood · Port Area</div>
+      <h2 class="stop-title">Odawara Fish Market</h2>
+      <div class="stop-jp">小田原漁港 · 魚市場</div>
+      <p class="stop-desc">Odawara's fishing port on the coast below the castle has supplied the city — and Tokyo — with seafood from Sagami Bay for centuries. The Odawara Uoichiba (fish market complex) near the port is open to the general public and houses a dozen seafood restaurants and stalls offering the day's catch in sashimi sets, grilled fish, and the various kamaboko and himono (dried fish) products that Odawara is famous for producing. The fishing boats work the bay for aji (horse mackerel), saba (mackerel), and sakura ebi (cherry shrimp) that appear on the restaurant menus according to season. It's one of the most accessible and enjoyable fish market lunch experiences within reach of Tokyo.</p>
+      <div class="stop-tip">💡 The Odawara Uoichiba restaurant complex is busiest at lunchtime — arrive by 11:30 AM for the best selection and shortest queues. The aji (horse mackerel) dishes are the local speciality — aji sashimi, aji fry, and aji-no-himono (dried mackerel) are all worth trying. The port itself is a 15-minute walk or short bus ride from the castle.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★</span> 4.3 · 5,800+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Odawara+Fish+Market+port" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="stop" id="kamaboko">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Afternoon</div>
+      <div class="stop-num">05</div>
+      <img src="https://images.unsplash.com/photo-1580835845-a8d7b1c4ee92?w=800&q=80&fit=crop" alt="Odawara kamaboko fish cake traditional craft shops" loading="lazy"/>
+      <div class="stop-badge">Odawara's Famous Craft</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Food Culture · Throughout the Town</div>
+      <h2 class="stop-title">Kamaboko — The Fish Cake Tradition</h2>
+      <div class="stop-jp">蒲鉾 · 小田原名産</div>
+      <p class="stop-desc">Odawara has been producing kamaboko — steamed fish cake, a staple of Japanese cuisine — since the Edo period, when the abundant fish of Sagami Bay and the town's position on the Tokaido made it the natural place to perfect and distribute the product. Today the city has over 70 kamaboko producers, ranging from centuries-old traditional shops to modern factory outlets, and the craft has been designated an Odawara traditional industry. The shops along the old Tokaido and near the castle offer tastings, workshops where you can make your own kamaboko, and a range of products that show how far beyond simple fish cake the tradition extends — soufflés, grilled slabs, decorative shapes, and seasonal varieties.</p>
+      <div class="stop-tip">💡 Suzuhiro Kamaboko-no-Sato — a kamaboko museum and workshop complex — offers hands-on making sessions (book in advance), a restaurant, and an extensive shop about 10 minutes from the station by bus. The simpler option is to buy directly from the old shops along the Tokaido and eat while walking. Kamaboko keeps well and makes an excellent omiyage (souvenir) to take back to Tokyo.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.4 · Odawara institution</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Suzuhiro+Kamaboko+Museum+Odawara" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="stop" id="coast">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Late Afternoon</div>
+      <div class="stop-num">06</div>
+      <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80&fit=crop" alt="Odawara coastal promenade Sagami Bay Izu Peninsula views" loading="lazy"/>
+      <div class="stop-badge">End of Day</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Coastal Walk · Sagami Bay</div>
+      <h2 class="stop-title">The Coastal Promenade</h2>
+      <div class="stop-jp">海岸散歩道 · 相模湾</div>
+      <p class="stop-desc">Odawara's coast faces southwest across Sagami Bay toward the Izu Peninsula, and on clear afternoons the views from the coastal promenade extend across the bay to the mountains of Izu with Mount Fuji appearing above them on the best days. The beach itself is a working coast of grey pebbles rather than a resort beach, which keeps it quiet and genuine — local families, fishermen checking their gear, the occasional surfer. The walk along the promenade from the port back toward the station, with the castle visible on the hill above and the bay stretching south, is one of the most pleasant end-of-day walks in the greater Tokyo day-trip circuit.</p>
+      <div class="stop-tip">💡 The best Fuji views from the coast are in winter and early spring when the air is clearest — on a good day in January the mountain appears enormous above the bay. The coastal promenade is about 1.5 km from end to end and connects the port to the Odawara beach area; allow 30–40 minutes for a comfortable walk before catching the train back to Tokyo.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★</span> 4.2 · Local favourite</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Odawara+beach+coastal+promenade" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">小田原 · Odawara</div>
+  <p>A full day guide · Castle town at the sea · 45 min from Tokyo</p>
+  <p>© 2026 Tokyo Highlights Tour</p>
+  <div style="text-align:center; padding: 1.5rem 0 2rem;">
+    <a href="index.html" style="
+      display: inline-block;
+      font-family: inherit;
+      font-size: 0.78rem;
+      color: #7a7468;
+      text-decoration: none;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border-bottom: 1px solid #8a7040;
+      padding-bottom: 3px;
+    ">← Back to Home</a>
+  </div>
+  <div style="text-align:center; padding: 1.5rem 0 2rem;">
+    <a href="index.html" style="
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--stone);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 2px;
+      transition: opacity 0.2s;
+    " onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">
+      ← Back to Home
+    </a>
+  </div>
+</footer>
+
+<script>
+  const stops = document.querySelectorAll('.stop');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  stops.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

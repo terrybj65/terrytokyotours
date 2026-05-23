@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Walk through Yanaka with Terry — Tokyo's most beautifully preserved old neighbourhood, with its temple cemetery, wooden shopfronts and Showa-era shotengai."/>
+  <meta name="keywords" content="Yanaka Tokyo, Yanaka tour, old Tokyo, shitamachi Tokyo, Yanaka Ginza, Tokyo temple town, historic Tokyo neighbourhood, private tour Yanaka"/>
+  <meta name="author" content="Tokyo Private Tours with Terry"/>
+  <meta name="robots" content="index, follow"/>
+  <meta property="og:title" content="Yanaka — Old Tokyo Shitamachi | Tokyo Private Tours with Terry"/>
+  <meta property="og:description" content="Walk through Yanaka with Terry — Tokyo's most beautifully preserved old neighbourhood, with its temple cemetery, wooden shopfronts and Showa-era shotengai."/>
+  <meta property="og:type" content="website"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yanaka — Old Tokyo Shitamachi | Tokyo Private Tours with Terry</title>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --ink: #14120e;
+      --paper: #f0ede6;
+      --moss: #4a3a1a;
+      --sage: #5e4c24;
+      --stone: #7a7468;
+      --gold: #9a7010;
+      --border: rgba(20,18,14,0.12);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    .hero h1 {
+      position: relative;
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(3.5rem, 9vw, 7rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 0.88;
+      margin-bottom: 0.6rem;
+    }
+
+    
+
+    
+
+    
+    
+
+    
+    
+    
+      50%{opacity:.5;transform:scaleY(.55)}
+    }
+
+    /* ── INTRO ── */
+    .intro {
+      max-width: 800px;
+      margin: 5.5rem auto;
+      padding: 0 6vw;
+      text-align: center;
+    }
+    .intro-kicker {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--moss);
+      margin-bottom: 1.4rem;
+    }
+    .intro p {
+      font-size: 1.12rem;
+      line-height: 1.9;
+      color: var(--stone);
+    }
+
+    /* time of day bar */
+    .tod-bar {
+      max-width: 900px;
+      margin: 0 auto 4rem;
+      padding: 0 6vw;
+    }
+    .tod-inner {
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(74,58,26,0.18);
+      overflow: hidden;
+    }
+    .tod-item {
+      flex: 1;
+      padding: 1.1rem 1.4rem;
+      border-right: 1px solid rgba(74,58,26,0.18);
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .tod-item:last-child { border-right: none; }
+    .tod-label {
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--moss);
+    }
+    .tod-value {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.4;
+    }
+
+    /* nav */
+    .section-nav {
+      max-width: 900px;
+      margin: 0 auto 4rem;
+      padding: 0 6vw;
+    }
+    .section-nav-inner {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      background: rgba(74,58,26,0.06);
+      border: 1px solid rgba(74,58,26,0.18);
+      border-left: 3px solid var(--moss);
+      padding: 1.2rem 1.8rem;
+      flex-wrap: wrap;
+    }
+    .nav-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--moss);
+      flex-shrink: 0;
+    }
+    .nav-pills { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+    .nav-pill {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--ink);
+      background: rgba(74,58,26,0.08);
+      border: 1px solid rgba(74,58,26,0.2);
+      padding: 0.3rem 0.9rem;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+      letter-spacing: 0.03em;
+    }
+    .nav-pill:hover { background: var(--moss); color: #fff; border-color: var(--moss); }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin: 0 6vw 3rem;
+      color: var(--sage);
+      font-size: 0.67rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+    .divider::before, .divider::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+
+    /* ── STOPS ── */
+    .stops {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 6vw 8rem;
+    }
+
+    .stop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--border);
+      padding: 4rem 0;
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .stop.visible { opacity: 1; transform: translateY(0); }
+    .stop:nth-child(even) { direction: rtl; }
+    .stop:nth-child(even) > * { direction: ltr; }
+
+    .stop-img-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+    .stop-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.75s ease;
+    }
+    .stop:hover .stop-img-wrap img { transform: scale(1.05); }
+
+    .stop-badge {
+      position: absolute;
+      bottom: 1.2rem; left: 1.2rem;
+      background: rgba(14,10,4,0.75);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.82);
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      backdrop-filter: blur(6px);
+    }
+
+    .stop-time {
+      position: absolute;
+      top: 1rem; left: 1.2rem;
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      background: rgba(14,10,4,0.55);
+      padding: 0.2rem 0.6rem;
+      backdrop-filter: blur(4px);
+    }
+
+    .stop-num {
+      position: absolute;
+      top: 1rem; right: 1.2rem;
+      font-family: 'Shippori Mincho', serif;
+      font-size: 4.5rem; font-weight: 800;
+      color: rgba(255,255,255,0.13);
+      line-height: 1; pointer-events: none;
+    }
+
+    .stop-content {
+      padding: 2.8rem 3.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .stop-category {
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--moss);
+      margin-bottom: 1rem;
+    }
+    .stop-title {
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 0.35rem;
+    }
+    .stop-jp {
+      font-size: 0.82rem;
+      color: var(--stone);
+      margin-bottom: 1.6rem;
+      letter-spacing: 0.06em;
+    }
+    .stop-desc {
+      font-size: 0.94rem;
+      line-height: 1.88;
+      color: #3e3a34;
+      margin-bottom: 1.6rem;
+    }
+    .stop-tip {
+      border-left: 2px solid var(--gold);
+      padding-left: 1rem;
+      font-size: 0.82rem;
+      color: var(--stone);
+      font-style: italic;
+      line-height: 1.65;
+    }
+    .stop-footer {
+      margin-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+    .stop-rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      color: var(--stone);
+    }
+    .stars { color: var(--gold); }
+    .stop-map {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.76rem;
+      color: var(--moss);
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      transition: opacity 0.2s;
+    }
+    .stop-map:hover { opacity: 0.65; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 3rem 6vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    footer p { font-size: 0.8rem; color: var(--stone); }
+    .footer-logo {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 1.25rem; font-weight: 600;
+    }
+
+    @media (max-width: 700px) {
+      .stop { grid-template-columns: 1fr; direction: ltr !important; }
+      .stop-content { padding: 2rem 0; }
+      .stop:nth-child(even) > * { direction: ltr; }
+      .tod-inner { flex-direction: column; }
+      .tod-item { border-right: none; border-bottom: 1px solid rgba(74,58,26,0.18); }
+      .tod-item:last-child { border-bottom: none; }
+      .section-nav-inner { flex-direction: column; align-items: flex-start; }
+    }
+  
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    height: 90vh;
+    min-height: 560px;
+    overflow: hidden;
+  }
+  .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: none;
+    display: flex;
+    align-items: center;
+  }
+  .hero-content {
+    max-width: 560px;
+    padding: 0 2rem;
+    background: none;
+  }
+  .hero-eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #f9a07a;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(40px, 6vw, 64px);
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.9), 0 0 30px rgba(0,0,0,0.8);
+  }
+  .hero p {
+    font-size: 17px;
+    color: #ffffff;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 420px;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
+  }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-primary {
+    background: #D00000;
+    color: #fff;
+    border: none;
+    padding: 13px 26px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: #B00000; }
+  .btn-ghost {
+    background: rgba(0,0,0,0.45);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.6);
+    padding: 13px 26px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s;
+    display: inline-block;
+  }
+  .btn-ghost:hover { background: rgba(0,0,0,0.65); }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(0,0,0,0.1);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;">
+  <ul style="display:flex;list-style:none;justify-content:center;align-items:center;gap:2rem;flex:1;margin:0;padding:0;">
+    <li><a href="index.html#areas" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Areas</a></li>
+    <li><a href="index.html#tours" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Tours</a></li>
+    <li><a href="index.html#about" style="font-size:14px;color:#5D6D7E;text-decoration:none;">About</a></li>
+    <li><a href="index.html#contact" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Contact</a></li>
+  </ul>
+  <a href="index.html#contact" style="background:#D00000;color:#fff;border:none;padding:9px 20px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none;">Book a tour</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <<img src="Photos/Yanaka.jpg" width="1920" height="1080" alt=""/>>
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <div class="hero-eyebrow">📍 Yanaka, Tokyo · Old shitamachi</div>
+      <h1>Yanaka</h1>
+      <p>Temples, cats, shotengai & the slow life of old Tokyo.</p>
+      <div class="hero-btns">
+        <a href="#stop1" class="btn-primary">Explore stops ↓</a>
+        <a href="index.html#contact" class="btn-ghost">Book a tour</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<div class="intro">
+  <div class="intro-kicker">Nezu · Sendagi · Yanaka · The Yanesen Triangle</div>
+  <p>Yanaka is the part of Tokyo that the 20th century largely forgot to demolish. Escaping the 1923 Great Kanto Earthquake and the 1945 firebombing that levelled most of the city, the neighbourhood retains a dense fabric of wooden temples, old craftsmen's workshops, narrow winding lanes, and more than 70 Buddhist temple grounds — all within walking distance of each other. Cats sleep on stone lanterns. The shotengai smells of grilled fish and fresh tofu. Old ladies tend flower pots outside wooden houses that have stood since the Meiji era. It is, in the most unguarded way, the most Tokyo-feeling neighbourhood left in Tokyo.</p>
+</div>
+
+<!-- TIME OF DAY BAR -->
+<div class="tod-bar">
+  <div class="tod-inner">
+    <div class="tod-item">
+      <span class="tod-label">Morning</span>
+      <span class="tod-value">Yanaka Cemetery · Temple Walk</span>
+    </div>
+    <div class="tod-item">
+      <span class="tod-label">Mid-Morning</span>
+      <span class="tod-value">Yanaka Ginza Shotengai</span>
+    </div>
+    <div class="tod-item">
+      <span class="tod-label">Afternoon</span>
+      <span class="tod-value">Nezu Shrine · Backstreets</span>
+    </div>
+    <div class="tod-item">
+      <span class="tod-label">Late Afternoon</span>
+      <span class="tod-value">SCAI Bathhouse · Galleries</span>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="section-nav">
+  <div class="section-nav-inner">
+    <span class="nav-label">Jump to</span>
+    <div class="nav-pills">
+      <a class="nav-pill" href="#backstreets">The Backstreets</a>
+      <a class="nav-pill" href="#nezu">Nezu Shrine</a>
+      <a class="nav-pill" href="#scai">SCAI Bathhouse</a>
+      <a class="nav-pill" href="#cafe">Yanaka Cafés</a>
+      <a class="nav-pill" href="#cemetery">Yanaka Cemetery</a>
+      <a class="nav-pill" href="#ginza">Yanaka Ginza</a>
+    </div>
+  </div>
+</div>
+
+<div class="divider">One Ancient Quarter · A Full Slow Day</div>
+
+<div class="stops">
+
+  <!-- 1. The Machiya Cafés -->
+  <div class="stop" id="cafe">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Late Afternoon</div>
+      <div class="stop-num">01</div>
+      <img src="https://images.unsplash.com/photo-1522383225653-ed111181a951?w=800&q=80&fit=crop" alt="Yanaka coffee shop machiya townhouse cafe Tokyo old neighbourhood" loading="lazy"/>
+      <div class="stop-badge">End of Day</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Coffee & Craft · Throughout Yanaka</div>
+      <h2 class="stop-title">The Machiya Cafés</h2>
+      <div class="stop-jp">町家カフェ · 谷中</div>
+      <p class="stop-desc">Over the last decade, a quiet wave of independent coffee shops and craft studios has moved into Yanaka's old machiya townhouses and converted workshops — not displacing the existing character of the neighbourhood but layering something new on top of something very old. Kayaba Coffee, open since 1938 and still serving its original menu of coffee and egg sandwiches from its original wooden building, is the anchor. Around it, a cluster of smaller roasters, handcraft shops, and pottery studios occupy spaces that feel entirely unhurried. End the day here — with a coffee, a view of a wooden lane, and the sound of the neighbourhood settling into its evening — and Yanaka will have done what it does best: made time feel slower than it actually is.</p>
+      <div class="stop-tip">💡 Kayaba Coffee (open since 1938) is on the corner of a Yanaka backstreet about five minutes' walk from the cemetery — look for the old dark-wood building with the lantern outside. It opens at 8 AM and is best visited at opening or mid-afternoon when the lunchtime queue has cleared. The egg salad sandwich on thick white bread is the thing to order.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> Neighbourhood institution</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Kayaba+Coffee+Yanaka+Tokyo" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- 2. Nezu Shrine -->
+  <div class="stop" id="nezu">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Afternoon</div>
+      <div class="stop-num">02</div>
+      <img src="https://images.unsplash.com/photo-1551641506-ee5bf4cb45f1?w=800&q=80&fit=crop" alt="Nezu Shrine torii gates tunnel Yanaka Tokyo" loading="lazy"/>
+      <div class="stop-badge">Hidden Shrine</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Shinto Shrine · Nezu</div>
+      <h2 class="stop-title">Nezu Shrine</h2>
+      <div class="stop-jp">根津神社</div>
+      <p class="stop-desc">One of Tokyo's oldest and most complete shrines, Nezu Jinja was founded over 1,900 years ago and its current buildings date from 1706 — making them among the oldest surviving structures in the city. The shrine is famous for its tunnel of vermillion torii gates winding up through the wooded hillside behind the main hall, a miniature version of Kyoto's Fushimi Inari that most visitors to Tokyo never discover. In late April and early May the azalea garden on the eastern slope explodes into colour — 3,000 azalea bushes covering the hillside in pink, red, and white — during one of the city's most beautiful and least-publicised seasonal events.</p>
+      <div class="stop-tip">💡 The Nezu Shrine azalea festival (Tsutsuji Matsuri) runs from mid-April to early May and is genuinely spectacular — arrive on a weekday to avoid weekend crowds. The shrine complex is free to enter; the azalea garden charges a small admission during the festival period. The wooden main hall and its surrounding buildings are National Important Cultural Properties.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 11,800+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Nezu+Shrine+Tokyo" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. SCAI The Bathhouse -->
+  <div class="stop" id="scai">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Late Afternoon</div>
+      <div class="stop-num">03</div>
+      <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=800&q=80&fit=crop" alt="SCAI The Bathhouse Yanaka contemporary art gallery Tokyo" loading="lazy"/>
+      <div class="stop-badge">Art in an Edo Bathhouse</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Contemporary Art · SCAI The Bathhouse</div>
+      <h2 class="stop-title">SCAI The Bathhouse</h2>
+      <div class="stop-jp">SCAI THE BATHHOUSE</div>
+      <p class="stop-desc">Tucked into a Yanaka backstreet, SCAI The Bathhouse is one of Tokyo's most respected contemporary art galleries — housed in a 200-year-old public bathhouse (sento) whose high-ceilinged interior, original tile work, and wooden changing room fittings have been preserved and repurposed into an exhibition space of extraordinary character. The gallery represents some of Japan's most significant contemporary artists — including Kohei Nawa, Tatsuo Miyajima, and Lee Ufan — alongside international names, and the quality and ambition of its programming consistently punches above its small physical size. Entry is free. The contrast between the Edo-period building and the contemporary art inside is perfectly Yanaka.</p>
+      <div class="stop-tip">💡 SCAI is closed Sundays and Mondays and between exhibitions — check the website before visiting. The gallery is genuinely small (one main room plus the former changing area) so allow 30–45 minutes. The neighbourhood around it, particularly the lane immediately west, has several other small galleries worth finding.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 1,400+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=SCAI+The+Bathhouse+Yanaka+Tokyo" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. The Temple Town Backstreets -->
+  <div class="stop" id="backstreets">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Afternoon</div>
+      <div class="stop-num">04</div>
+      <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&q=80&fit=crop" alt="Yanaka backstreets wooden houses temples narrow lanes Tokyo" loading="lazy"/>
+      <div class="stop-badge">Old Edo Lanes</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Walking · Yanaka & Nezu Backstreets</div>
+      <h2 class="stop-title">The Temple Town Backstreets</h2>
+      <div class="stop-jp">寺町の路地 · 谷中</div>
+      <p class="stop-desc">The real treasure of Yanaka is not any single destination but the network of narrow lanes threading between the cemetery, the shrine, and the shotengai. More than 70 Buddhist temples are distributed across this small area — most with their gates open, their incense burning, and their grounds freely accessible. Wooden houses with tiled roofs and small gardens line lanes too narrow for cars. Craftsmen's workshops sit beside tiny galleries and coffee shops occupying converted machiya townhouses. Cats sleep on walls. There are no signs telling you where to go, which is the point — the pleasure of Yanaka is in wandering without a map and finding things that weren't in any guidebook.</p>
+      <div class="stop-tip">💡 Pick up a free neighbourhood walking map from the Yanaka information point near Nippori Station. The area between the cemetery and Nezu Shrine — roughly bounded by Yanaka Ginza to the north and Shinobazu-dori to the south — is the densest and most rewarding for aimless exploration. Allow at least two hours.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> Unmissable</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Yanaka+Tokyo+backstreets" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Yanaka Cemetery -->
+  <div class="stop" id="cemetery">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Morning</div>
+      <div class="stop-num">05</div>
+      <img src="https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?w=800&q=80&fit=crop" alt="Yanaka Cemetery Tokyo cherry blossoms path graves" loading="lazy"/>
+      <div class="stop-badge">Start Here</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Cemetery & Cherry Blossoms · Nippori</div>
+      <h2 class="stop-title">Yanaka Cemetery</h2>
+      <div class="stop-jp">谷中霊園</div>
+      <p class="stop-desc">Yanaka Cemetery is one of Tokyo's oldest public burial grounds, established in 1874 on the site of a former temple complex, and it is one of the most unexpectedly beautiful places in the city. The main avenue — a broad gravel path lined on both sides with enormous cherry trees — is one of the finest hanami spots in Tokyo in late March, when the blossoms create a complete canopy over the graves and the combination of beauty and mortality feels entirely Japanese. The grounds are vast enough to get genuinely lost in, and the mix of old stone lanterns, weathered family monuments, moss-covered graves, and the occasional cat makes it feel like a living document of the city's past 150 years.</p>
+      <div class="stop-tip">💡 The last shogun of the Edo period, Tokugawa Yoshinobu, is buried here — look for the signposted path to his grave in the eastern section. The cemetery is freely accessible at all hours. Morning is the best time: quiet, misty in autumn, and busy only with crows and the occasional elderly visitor tending a family grave.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.4 · 9,200+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Yanaka+Cemetery+Tokyo" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Yanaka Ginza -->
+  <div class="stop" id="ginza">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Mid-Morning</div>
+      <div class="stop-num">06</div>
+      <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80&fit=crop" alt="Yanaka Ginza shotengai shopping street old Tokyo" loading="lazy"/>
+      <div class="stop-badge">Best Shotengai in Tokyo</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Shopping Street · Yanaka Ginza</div>
+      <h2 class="stop-title">Yanaka Ginza</h2>
+      <div class="stop-jp">谷中銀座</div>
+      <p class="stop-desc">A 170-metre covered shopping street that has been feeding and supplying the neighbourhood since the postwar period, Yanaka Ginza is often called the most nostalgic shotengai in Tokyo — and it earns the title without effort. Fishmongers, tofu makers, sembei (rice cracker) bakeries, pickle sellers, handmade craft workshops, and a handful of old-fashioned sweet shops line both sides under hand-painted signs that look unchanged since the 1960s. Cats wander between the stalls; locals exchange gossip at doorways; the smell of grilled skewers drifts from the far end. At lunchtime it's at its most alive, with locals doing the shopping they've done here every day for decades.</p>
+      <div class="stop-tip">💡 The stone steps at the far (east) end of Yanaka Ginza — the "Yuyake Dandan," or sunset steps — lead up to a view back over the shotengai rooftops that is one of Yanaka's most photographed moments, particularly at dusk. The steps get their name from the orange light that fills them on clear evenings.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 14,000+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Yanaka+Ginza+Tokyo" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">谷中 · Yanaka</div>
+  <p>A full slow day · Tokyo's most timeless quarter</p>
+  <p>© 2026 Tokyo Highlights Tour</p>
+  <div style="text-align:center; padding: 1.5rem 0 2rem;">
+    <a href="index.html" style="
+      display: inline-block;
+      font-family: inherit;
+      font-size: 0.78rem;
+      color: #7a7468;
+      text-decoration: none;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border-bottom: 1px solid #8a7040;
+      padding-bottom: 3px;
+    ">← Back to Home</a>
+  </div>
+  <div style="text-align:center; padding: 1.5rem 0 2rem;">
+    <a href="index.html" style="
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--stone);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 2px;
+      transition: opacity 0.2s;
+    " onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">
+      ← Back to Home
+    </a>
+  </div>
+</footer>
+
+<script>
+  const stops = document.querySelectorAll('.stop');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  stops.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Go beyond the tourist trail with Terry — hidden shrines, backstreet bars, local markets and the secret Tokyo that most visitors never find."/>
+  <meta name="keywords" content="hidden Tokyo, secret Tokyo, off the beaten path Tokyo, local Tokyo tour, Tokyo backstreets, private tour Tokyo, Tokyo hidden gems"/>
+  <meta name="author" content="Tokyo Private Tours with Terry"/>
+  <meta name="robots" content="index, follow"/>
+  <meta property="og:title" content="Hidden Tokyo — Secret Spots & Local Life | Tokyo Private Tours with Terry"/>
+  <meta property="og:description" content="Go beyond the tourist trail with Terry — hidden shrines, backstreet bars, local markets and the secret Tokyo that most visitors never find."/>
+  <meta property="og:type" content="website"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hidden Tokyo — Secret Spots & Local Life | Tokyo Private Tours with Terry</title>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --ink: #1a1612;
+      --paper: #f2ede4;
+      --warm: #2c2318;
+      --accent: #7a5c3a;
+      --gold: #a07c3a;
+      --muted: #7a7068;
+      --border: rgba(26,22,18,0.12);
+      --green: #3d5a40;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    
+
+    
+
+    
+
+    /* Grain texture overlay */
+    
+
+    
+
+    
+
+    
+
+    .hero h1 {
+      position: relative;
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(3.2rem, 8.5vw, 6.5rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 0.92;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero h1 em {
+      display: block;
+      font-style: normal;
+      font-size: 0.42em;
+      font-weight: 400;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.06em;
+      margin-top: 0.5rem;
+    }
+
+    
+
+    
+
+    
+    
+    @keyframes line {
+      0%, 100% { opacity: 0.2; transform: scaleY(1); }
+      50% { opacity: 0.55; transform: scaleY(0.55); }
+    }
+
+    /* ── INTRO ── */
+    .intro {
+      max-width: 780px;
+      margin: 5.5rem auto;
+      padding: 0 6vw;
+      text-align: center;
+    }
+
+    .intro-kicker {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 1.4rem;
+    }
+
+    .intro p {
+      font-size: 1.12rem;
+      line-height: 1.9;
+      color: var(--muted);
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin: 0 6vw 3rem;
+      color: var(--accent);
+      font-size: 0.67rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── STOPS ── */
+    .stops {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 6vw 8rem;
+    }
+
+    .stop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--border);
+      padding: 4rem 0;
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.72s ease, transform 0.72s ease;
+    }
+
+    .stop.visible { opacity: 1; transform: translateY(0); }
+
+    .stop:nth-child(even) { direction: rtl; }
+    .stop:nth-child(even) > * { direction: ltr; }
+
+    .stop-img-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+
+    .stop-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.75s ease;
+    }
+    .stop:hover .stop-img-wrap img { transform: scale(1.05); }
+
+    .stop-badge {
+      position: absolute;
+      bottom: 1.2rem;
+      left: 1.2rem;
+      background: rgba(20,14,8,0.72);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.75);
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      backdrop-filter: blur(6px);
+    }
+
+    .stop-num {
+      position: absolute;
+      top: 1rem;
+      right: 1.2rem;
+      font-family: 'Shippori Mincho', serif;
+      font-size: 4.5rem;
+      font-weight: 800;
+      color: rgba(255,255,255,0.13);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .stop-content {
+      padding: 2.8rem 3.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .stop-category {
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 1rem;
+    }
+
+    .stop-title {
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 0.35rem;
+    }
+
+    .stop-jp {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 1.6rem;
+      letter-spacing: 0.06em;
+    }
+
+    .stop-desc {
+      font-size: 0.94rem;
+      line-height: 1.88;
+      color: #4a443c;
+      margin-bottom: 1.6rem;
+    }
+
+    .stop-tip {
+      border-left: 2px solid var(--gold);
+      padding-left: 1rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-style: italic;
+      line-height: 1.65;
+    }
+
+    .stop-footer {
+      margin-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .stop-rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .stars { color: var(--gold); }
+
+    .stop-map {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.76rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      transition: opacity 0.2s;
+    }
+    .stop-map:hover { opacity: 0.65; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 3rem 6vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    footer p { font-size: 0.8rem; color: var(--muted); }
+    .footer-logo {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    @media (max-width: 700px) {
+      .stop { grid-template-columns: 1fr; direction: ltr !important; }
+      .stop-content { padding: 2rem 0; }
+      .stop:nth-child(even) > * { direction: ltr; }
+    }
+  
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    height: 90vh;
+    min-height: 560px;
+    overflow: hidden;
+  }
+  .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: none;
+    display: flex;
+    align-items: center;
+  }
+  .hero-content {
+    max-width: 560px;
+    padding: 0 2rem;
+    background: none;
+  }
+  .hero-eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #f9a07a;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(40px, 6vw, 64px);
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.9), 0 0 30px rgba(0,0,0,0.8);
+  }
+  .hero p {
+    font-size: 17px;
+    color: #ffffff;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 420px;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
+  }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-primary {
+    background: #D00000;
+    color: #fff;
+    border: none;
+    padding: 13px 26px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: #B00000; }
+  .btn-ghost {
+    background: rgba(0,0,0,0.45);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.6);
+    padding: 13px 26px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s;
+    display: inline-block;
+  }
+  .btn-ghost:hover { background: rgba(0,0,0,0.65); }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(0,0,0,0.1);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;">
+  <ul style="display:flex;list-style:none;justify-content:center;align-items:center;gap:2rem;flex:1;margin:0;padding:0;">
+    <li><a href="index.html#areas" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Areas</a></li>
+    <li><a href="index.html#tours" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Tours</a></li>
+    <li><a href="index.html#about" style="font-size:14px;color:#5D6D7E;text-decoration:none;">About</a></li>
+    <li><a href="index.html#contact" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Contact</a></li>
+  </ul>
+  <a href="index.html#contact" style="background:#D00000;color:#fff;border:none;padding:9px 20px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none;">Book a tour</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1400&q=80&fit=crop" alt="Hidden Tokyo" />
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <div class="hero-eyebrow">📍 Tokyo · Off the tourist trail</div>
+      <h1>Hidden<br>Tokyo</h1>
+      <p>Shotengai, local markets, kissaten & neighbourhood life.</p>
+      <div class="hero-btns">
+        <a href="#stop1" class="btn-primary">See highlights ↓</a>
+        <a href="index.html#contact" class="btn-ghost">Book a tour</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<div class="intro">
+  <div class="intro-kicker">The other Tokyo</div>
+  <p>Behind the neon and the famous crossings, Tokyo keeps another self mostly hidden: quiet shotengai shopping streets where the same families have sold tofu for three generations, kissaten coffee shops frozen in time, and neighbourhoods where you could spend a morning without hearing another language spoken. This is that Tokyo.</p>
+</div>
+
+<div class="divider">The Hidden Itinerary</div>
+
+<!-- STOPS -->
+<div class="stops">
+
+  <!-- 1. Kagurazaka -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <div class="stop-num">01</div>
+      <img src="https://images.unsplash.com/photo-1510936111840-65e151ad71bb?w=800&q=80&fit=crop" alt="Kagurazaka alley Tokyo" loading="lazy"/>
+      <div class="stop-badge">Hidden Quarter</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Franco-Japanese Neighbourhood · Shinjuku</div>
+      <h2 class="stop-title">Kagurazaka</h2>
+      <div class="stop-jp">神楽坂</div>
+      <p class="stop-desc">Kagurazaka is Tokyo's most quietly sophisticated neighbourhood — a former geisha district that reinvented itself as the home of Tokyo's French expat community without losing its Japanese soul. Narrow stone alleys called yokochō wind between traditional kappo restaurants, French bistros, indie bookshops, and tea houses. It has the density of detail you find in Kyoto but the energy of Tokyo. The side street called Hyogo Yokochō — entirely paved in stone, fringed with wooden lattices — is one of the most beautiful lanes in the city.</p>
+      <div class="stop-tip">💡 Kagurazaka's French connection is real: there are more French restaurants per block here than anywhere outside Paris. Le Bretagne is the local institution for authentic Breton galettes.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★</span> 4.4 · Le Bretagne Creperie</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Kagurazaka+Tokyo" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Kayaba Coffee -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <div class="stop-num">02</div>
+      <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80&fit=crop" alt="Japanese kissaten coffee shop" loading="lazy"/>
+      <div class="stop-badge">Kissaten</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Historic Coffee House · Yanaka</div>
+      <h2 class="stop-title">Kayaba Coffee</h2>
+      <div class="stop-jp">カヤバ珈琲</div>
+      <p class="stop-desc">Kissaten — old-school Japanese coffee houses — are a dying breed, which makes Kayaba Coffee all the more precious. The building dates to 1938 and was restored by the local community specifically to preserve its retro character. Remove your shoes before ascending to the tatami floor upstairs, order the legendary egg toast (pillowy, kewpie mayo-laced, rosemary-scented), and drink your coffee at a pace that would confuse any third-wave barista. This is coffee as ritual, not transaction.</p>
+      <div class="stop-tip">💡 Reservations are released on an irregular schedule — follow them closely if you want a morning slot. Walk-ins are possible on quieter weekday afternoons.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★</span> 4.2 · 2,000+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Kayaba+Coffee+Yanaka+Tokyo" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Kōenji -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <div class="stop-num">03</div>
+      <img src="https://images.unsplash.com/photo-1604014237800-1c9102c219da?w=800&q=80&fit=crop" alt="Koenji vintage Tokyo" loading="lazy"/>
+      <div class="stop-badge">Vintage District</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Vintage & Subculture · Suginami</div>
+      <h2 class="stop-title">Kōenji</h2>
+      <div class="stop-jp">高円寺</div>
+      <p class="stop-desc">While Harajuku gets the fashion press, Kōenji is where Tokyo's subcultures actually live. This west-side neighbourhood is packed with vintage clothing stores, indie record shops, punk bars, and decades-old jazz cafés — all coexisting peacefully in a grid of low-rise streets. It's the anti-Shibuya: genuinely affordable, radically local, proudly weird. The area around the north exit is best for vintage hunting; the south side has the best cafés and live music venues.</p>
+      <div class="stop-tip">💡 The neighbourhood holds one of Tokyo's most beloved festivals each August — the Kōenji Awa Odori, when 10,000 dancers take over the streets. Atlantis Vintage near the south exit is exceptional for secondhand luxury bags.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.9 · Atlantis Vintage</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Koenji+vintage+Tokyo" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Nishi-Ogikubo -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <div class="stop-num">04</div>
+      <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?w=800&q=80&fit=crop" alt="Nishi-Ogikubo antique shops" loading="lazy"/>
+      <div class="stop-badge">Antique District</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Antiques & Slow Living · Suginami</div>
+      <h2 class="stop-title">Nishi-Ogikubo</h2>
+      <div class="stop-jp">西荻窪</div>
+      <p class="stop-desc">The streets around Nishi-Ogikubo station are lined with antique and used furniture shops unlike anything you'll find in central Tokyo — not curated boutiques, but genuine treasure-hunt territory. Dealers specialise in Meiji-era woodwork, Showa-period ceramics, vintage lamps, military memorabilia, and pieces that resist easy categorisation. In between the antique shops you'll find jazz cafés, secondhand bookshops, and restaurants where the menu hasn't changed since 1980. The neighbourhood rewards wandering slowly with no particular destination.</p>
+      <div class="stop-tip">💡 Many shops here are closed on Wednesdays. Prices are reasonable by Tokyo standards and often negotiable — especially if you show genuine interest in a piece's history.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★</span> Highly regarded antique district</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Nishi-Ogikubo+antiques+Tokyo" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- 5. Togoshi Ginza -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <div class="stop-num">05</div>
+      <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80&fit=crop" alt="Togoshi Ginza long shopping street" loading="lazy"/>
+      <div class="stop-badge">Japan's Longest Shotengai</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Local Shopping Street · Shinagawa</div>
+      <h2 class="stop-title">Togoshi Ginza</h2>
+      <div class="stop-jp">戸越銀座商店街</div>
+      <p class="stop-desc">At 1.3 kilometres, Togoshi Ginza is the longest shotengai in Japan — and almost no tourists know it exists. It winds through a genuine working-class Shinagawa neighbourhood where locals actually shop: butchers with handwritten price boards, bakeries run by the same family for sixty years, a train crossing that bisects the street mid-walk like a scene from a Koreeda film. Come hungry. The menchi katsu (minced meat cutlets) sold at the butchers here are some of the best street food in Tokyo.</p>
+      <div class="stop-tip">💡 Visit between 11 AM and 3 PM when the food stalls are at their most active. The Ozeki supermarket at the east end is a great place to pick up local snacks and lunch ingredients.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★</span> 4.0 · 2,300+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Togoshi+Ginza+Shopping+Street+Tokyo" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Yanaka Ginza -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <div class="stop-num">06</div>
+      <img src="https://images.unsplash.com/photo-1551641506-ee5bf4cb45f1?w=800&q=80&fit=crop" alt="Yanaka Ginza shopping street" loading="lazy"/>
+      <div class="stop-badge">Shotengai</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Old-Town Shopping Street · Taito</div>
+      <h2 class="stop-title">Yanaka Ginza</h2>
+      <div class="stop-jp">谷中銀座商店街</div>
+      <p class="stop-desc">Yanaka is one of the few parts of Tokyo that survived both the 1923 earthquake and the WWII firebombing largely intact — which means its streets still feel like pre-war Japan. Yanaka Ginza is the beating heart of the neighbourhood: a narrow shotengai lined with family-run fishmongers, snack stalls, ceramic shops, and an extraordinary number of cat-themed everything. Look up at the rooflines — ceramic cats peer down from almost every storefront. Wander into the side alleys for crumbling temple walls and moss-covered graves.</p>
+      <div class="stop-tip">💡 Come on a weekday morning to walk the street in near-quiet before it fills. The old lady with the wasabi pea stall near the entrance is a neighbourhood institution — don't walk past without stopping.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★</span> 4.1 · 11,000+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Yanaka+Ginza+Tokyo" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">裏東京 · Hidden Tokyo</div>
+  <p>A half-day off-the-beaten-track experience · From ¥9,000 per person</p>
+  <p>© 2026 Tokyo Highlights Tour</p>
+  <div style="text-align:center; padding: 1.5rem 0 2rem;">
+    <a href="index.html" style="
+      display: inline-block;
+      font-family: inherit;
+      font-size: 0.78rem;
+      color: #7a7468;
+      text-decoration: none;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border-bottom: 1px solid #8a7040;
+      padding-bottom: 3px;
+    ">← Back to Home</a>
+  </div>
+  <div style="text-align:center; padding: 1.5rem 0 2rem;">
+    <a href="index.html" style="
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--stone);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 2px;
+      transition: opacity 0.2s;
+    " onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">
+      ← Back to Home
+    </a>
+  </div>
+</footer>
+
+<script>
+  const stops = document.querySelectorAll('.stop');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  stops.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>

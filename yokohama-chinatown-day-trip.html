@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Visit Yokohama and Japan's largest Chinatown with Terry — harbour views, dim sum, the historic Yamate bluff and Minato Mirai waterfront on a perfect day trip from Tokyo."/>
+  <meta name="keywords" content="Yokohama Chinatown, Yokohama day trip, Japan Chinatown tour, Minato Mirai, Yokohama private tour, day trips from Tokyo, Yokohama guide"/>
+  <meta name="author" content="Tokyo Private Tours with Terry"/>
+  <meta name="robots" content="index, follow"/>
+  <meta property="og:title" content="Yokohama & Chinatown Day Trip | Tokyo Private Tours with Terry"/>
+  <meta property="og:description" content="Visit Yokohama and Japan's largest Chinatown with Terry — harbour views, dim sum, the historic Yamate bluff and Minato Mirai waterfront on a perfect day trip from Tokyo."/>
+  <meta property="og:type" content="website"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yokohama & Chinatown Day Trip | Tokyo Private Tours with Terry</title>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --ink: #14120e;
+      --paper: #f0ede6;
+      --moss: #8b2a2a;
+      --sage: #a84444;
+      --stone: #7a7468;
+      --gold: #c09030;
+      --border: rgba(20,18,14,0.12);
+      --amber: #c07828;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    .hero h1 {
+      position: relative;
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(3.5rem, 9vw, 7rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 0.88;
+      margin-bottom: 0.6rem;
+    }
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+      50%{opacity:.5;transform:scaleY(.55)}
+    }
+
+    /* ── INTRO ── */
+    .intro {
+      max-width: 800px;
+      margin: 5.5rem auto;
+      padding: 0 6vw;
+      text-align: center;
+    }
+
+    .intro-kicker {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--moss);
+      margin-bottom: 1.4rem;
+    }
+
+    .intro p {
+      font-size: 1.12rem;
+      line-height: 1.9;
+      color: var(--stone);
+    }
+
+    /* Train info bar */
+    .train-bar {
+      max-width: 900px;
+      margin: 0 auto 4rem;
+      padding: 0 6vw;
+    }
+
+    .train-inner {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      background: rgba(139,42,42,0.07);
+      border: 1px solid rgba(139,42,42,0.18);
+      border-left: 3px solid var(--moss);
+      padding: 1.2rem 1.8rem;
+      flex-wrap: wrap;
+    }
+
+    .train-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .train-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--moss);
+    }
+
+    .train-value {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .train-sep {
+      width: 1px;
+      height: 32px;
+      background: var(--border);
+      flex-shrink: 0;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin: 0 6vw 3rem;
+      color: var(--sage);
+      font-size: 0.67rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+    .divider::before, .divider::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+
+    /* ── STOPS ── */
+    .stops {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 6vw 8rem;
+    }
+
+    .stop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--border);
+      padding: 4rem 0;
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .stop.visible { opacity: 1; transform: translateY(0); }
+    .stop:nth-child(even) { direction: rtl; }
+    .stop:nth-child(even) > * { direction: ltr; }
+
+    .stop-img-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+
+    .stop-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.75s ease;
+    }
+    .stop:hover .stop-img-wrap img { transform: scale(1.05); }
+
+    .stop-badge {
+      position: absolute;
+      bottom: 1.2rem; left: 1.2rem;
+      background: rgba(14,8,8,0.7);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.82);
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      backdrop-filter: blur(6px);
+    }
+
+    .stop-num {
+      position: absolute;
+      top: 1rem; right: 1.2rem;
+      font-family: 'Shippori Mincho', serif;
+      font-size: 4.5rem; font-weight: 800;
+      color: rgba(255,255,255,0.13);
+      line-height: 1; pointer-events: none;
+    }
+
+    .stop-content {
+      padding: 2.8rem 3.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .stop-category {
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--moss);
+      margin-bottom: 1rem;
+    }
+
+    .stop-title {
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 0.35rem;
+    }
+
+    .stop-jp {
+      font-size: 0.82rem;
+      color: var(--stone);
+      margin-bottom: 1.6rem;
+      letter-spacing: 0.06em;
+    }
+
+    .stop-desc {
+      font-size: 0.94rem;
+      line-height: 1.88;
+      color: #3e3a34;
+      margin-bottom: 1.6rem;
+    }
+
+    .stop-tip {
+      border-left: 2px solid var(--gold);
+      padding-left: 1rem;
+      font-size: 0.82rem;
+      color: var(--stone);
+      font-style: italic;
+      line-height: 1.65;
+    }
+
+    .stop-footer {
+      margin-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .stop-rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      color: var(--stone);
+    }
+    .stars { color: var(--gold); }
+
+    .stop-map {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.76rem;
+      color: var(--moss);
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      transition: opacity 0.2s;
+    }
+    .stop-map:hover { opacity: 0.65; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 3rem 6vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    footer p { font-size: 0.8rem; color: var(--stone); }
+    .footer-logo {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 1.25rem; font-weight: 600;
+    }
+
+    @media (max-width: 700px) {
+      .stop { grid-template-columns: 1fr; direction: ltr !important; }
+      .stop-content { padding: 2rem 0; }
+      .stop:nth-child(even) > * { direction: ltr; }
+      .train-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .train-sep { display: none; }
+    }
+  
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    height: 90vh;
+    min-height: 560px;
+    overflow: hidden;
+  }
+  .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: none;
+    display: flex;
+    align-items: center;
+  }
+  .hero-content {
+    max-width: 560px;
+    padding: 0 2rem;
+    background: none;
+  }
+  .hero-eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #f9a07a;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(40px, 6vw, 64px);
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.9), 0 0 30px rgba(0,0,0,0.8);
+  }
+  .hero p {
+    font-size: 17px;
+    color: #ffffff;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 420px;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
+  }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-primary {
+    background: #D00000;
+    color: #fff;
+    border: none;
+    padding: 13px 26px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: #B00000; }
+  .btn-ghost {
+    background: rgba(0,0,0,0.45);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.6);
+    padding: 13px 26px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s;
+    display: inline-block;
+  }
+  .btn-ghost:hover { background: rgba(0,0,0,0.65); }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(0,0,0,0.1);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;">
+  <ul style="display:flex;list-style:none;justify-content:center;align-items:center;gap:2rem;flex:1;margin:0;padding:0;">
+    <li><a href="index.html#areas" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Areas</a></li>
+    <li><a href="index.html#tours" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Tours</a></li>
+    <li><a href="index.html#about" style="font-size:14px;color:#5D6D7E;text-decoration:none;">About</a></li>
+    <li><a href="index.html#contact" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Contact</a></li>
+  </ul>
+  <a href="index.html#contact" style="background:#D00000;color:#fff;border:none;padding:9px 20px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none;">Book a tour</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=1400&q=80&fit=crop" alt="Yokohama & Chinatown" />
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <div class="hero-eyebrow">📍 Yokohama · 30 min from Tokyo</div>
+      <h1>Yokohama &amp;<br>Chinatown</h1>
+      <p>Harbour views, Chinatown flavours & the Minato Mirai skyline.</p>
+      <div class="hero-btns">
+        <a href="#stop1" class="btn-primary">Explore stops ↓</a>
+        <a href="index.html#contact" class="btn-ghost">Book a tour</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<div class="intro">
+  <div class="intro-kicker">Asia's largest Chinatown · Port city</div>
+  <p>When Japan opened to the world in 1859, Yokohama was the port it chose. Within a generation, the city had grown into one of Asia's most cosmopolitan harbours — and it still feels that way. Today Yokohama is a city of red lanterns and steaming dumplings, Victorian warehouses turned into galleries and restaurants, sweeping waterfront promenades, and a hilltop neighbourhood of roses and foreign consulates. Just half an hour from Tokyo, yet completely its own world.</p>
+</div>
+
+<!-- TRAIN INFO BAR -->
+<div class="train-bar">
+  <div class="train-inner">
+    <div class="train-item">
+      <span class="train-label">Depart from</span>
+      <span class="train-value">Shinjuku / Tokyo Station</span>
+    </div>
+    <div class="train-sep"></div>
+    <div class="train-item">
+      <span class="train-label">Journey time</span>
+      <span class="train-value">~30–40 minutes</span>
+    </div>
+    <div class="train-sep"></div>
+    <div class="train-item">
+      <span class="train-label">Line</span>
+      <span class="train-value">JR Tōkaidō Line</span>
+    </div>
+    <div class="train-sep"></div>
+    <div class="train-item">
+      <span class="train-label">IC Card fare</span>
+      <span class="train-value">~¥580 each way</span>
+    </div>
+    <div class="train-sep"></div>
+    <div class="train-item">
+      <span class="train-label">Covered by</span>
+      <span class="train-value">JR Pass ✓</span>
+    </div>
+  </div>
+</div>
+
+<div class="divider">The Yokohama Itinerary</div>
+
+<!-- STOPS -->
+<div class="stops">
+
+  <!-- 1. Minato Mirai 21 -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <div class="stop-num">01</div>
+      <img src="https://images.unsplash.com/photo-1606820854416-439b3305ff39?w=800&q=80&fit=crop" alt="Minato Mirai 21 Yokohama skyline night" loading="lazy"/>
+      <div class="stop-badge">City Icon</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Waterfront District · Minato Mirai 21</div>
+      <h2 class="stop-title">Minato Mirai 21</h2>
+      <div class="stop-jp">みなとみらい21</div>
+      <p class="stop-desc">Yokohama's showpiece waterfront district was built on reclaimed land in the 1980s and 90s, and unlike most urban renewal projects, it actually worked. The Landmark Tower — Japan's second-tallest building — anchors one end; the restored red-brick Yokohama Port Opening Commemorative Hall anchors the other. Between them: the Cosmo World ferris wheel, the Yokohama Museum of Art, the Pacifico convention centre, and a network of elevated boardwalks that let you trace the harbour edge for nearly two kilometres. At night the entire district reflects across the water in streaks of blue and white light — one of the better urban night views in Japan.</p>
+      <div class="stop-tip">💡 Take the elevator to the Landmark Tower Sky Garden observation deck (69th floor) on a clear day for views stretching to Mount Fuji. The Yokohama Red Brick Warehouse nearby is worth a walk-through for its craft shops and harbour terrace café.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 56,000+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Minato+Mirai+21+Yokohama" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Red Brick Warehouse -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <div class="stop-num">02</div>
+      <img src="https://images.unsplash.com/photo-1569144157591-c60f3f82f137?w=800&q=80&fit=crop" alt="Yokohama Red Brick Warehouse evening harbour lights" loading="lazy"/>
+      <div class="stop-badge">End of Day</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Cultural Venue · Minato Mirai</div>
+      <h2 class="stop-title">Red Brick Warehouse</h2>
+      <div class="stop-jp">横浜赤レンガ倉庫</div>
+      <p class="stop-desc">End the day where the city's history meets its present. The two Meiji-era customs warehouses on the harbour edge were built between 1911 and 1913 and have been repurposed into a cultural venue with craft breweries, independent boutiques, art exhibitions, and one of the best outdoor terraces in the city. As the sun drops behind Minato Mirai and the ferris wheel starts to glow, the waterfront terrace in front of the warehouses fills with the particular ease of a city that knows how to exhale. There are worse places to have a final beer and watch the harbour lights come on before catching the train back to Tokyo.</p>
+      <div class="stop-tip">💡 The open-air terrace faces west — perfect for sunset. The Yokohama Craft Beer festival runs here several times a year, with dozens of small Japanese breweries pouring. Check the schedule before you visit.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★</span> 4.3 · 24,000+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Yokohama+Red+Brick+Warehouse" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- 3. Sankeien Garden -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <div class="stop-num">03</div>
+      <img src="https://images.unsplash.com/photo-1590559899731-a382839e5549?w=800&q=80&fit=crop" alt="Sankeien Garden Yokohama traditional pagoda" loading="lazy"/>
+      <div class="stop-badge">Hidden Gem</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Historic Garden · Honmoku</div>
+      <h2 class="stop-title">Sankeien Garden</h2>
+      <div class="stop-jp">三渓園</div>
+      <p class="stop-desc">A short bus ride from the waterfront, Sankeien is Yokohama's great secret — a sprawling traditional garden assembled by silk merchant Hara Sankei in the early 20th century from historic structures transplanted from Kyoto, Kamakura, and the Kinki region. Farmhouses, tea houses, temples, and a three-storey pagoda are scattered across 17.5 hectares of ponds, bamboo groves, and plum orchards. The inner garden, where the oldest structures are concentrated, is unhurried and genuinely beautiful in all seasons. Most visitors to Yokohama never come here, which makes it one of the most peaceful places in the entire city.</p>
+      <div class="stop-tip">💡 Combine a morning at the waterfront with an afternoon at Sankeien. The plum blossoms in February, irises in June, and autumn colour in November are each spectacular. Allow at least 90 minutes to walk the full garden.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★</span> 4.4 · 8,200+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Sankeien+Garden+Yokohama" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Yamashita Park -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <div class="stop-num">04</div>
+      <img src="https://images.unsplash.com/photo-1578469645742-46cae010e5d4?w=800&q=80&fit=crop" alt="Yokohama Yamashita Park harbour waterfront" loading="lazy"/>
+      <div class="stop-badge">Waterfront</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Park & Promenade · Waterfront</div>
+      <h2 class="stop-title">Yamashita Park</h2>
+      <div class="stop-jp">山下公園</div>
+      <p class="stop-desc">Running along the harbour edge directly south of Chinatown, Yamashita Park is Yokohama's great breathing space — a long, manicured promenade with flower beds, fountains, and uninterrupted views across the port. The retired ocean liner Hikawa Maru sits moored at the park's edge and can be toured inside; built in 1929, it once carried passengers between Yokohama and Seattle before becoming a floating museum. On clear days the Minato Mirai skyline and the distant hills of Kanagawa frame the view perfectly. This is the place to decompress between the sensory intensity of Chinatown and the rest of the day.</p>
+      <div class="stop-tip">💡 The park is lovely in any season — cherry blossoms in spring, rose blooms in May, lantern festivals in summer. The harbour cruise boats depart from the pier at the park's eastern end if you want to see the skyline from the water.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★</span> 4.4 · 19,000+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Yamashita+Park+Yokohama" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Yamate — The Bluff -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <div class="stop-num">05</div>
+      <img src="https://images.unsplash.com/photo-1553603228-a7441fcf744d?w=800&q=80&fit=crop" alt="Yamate Bluff Yokohama foreign settlement historic houses" loading="lazy"/>
+      <div class="stop-badge">Historic Quarter</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Historic District · Yamate</div>
+      <h2 class="stop-title">Yamate — The Bluff</h2>
+      <div class="stop-jp">山手</div>
+      <p class="stop-desc">When the port opened in 1859, foreign traders and diplomats were assigned to the hillside above the harbour — a district they called the Bluff. They planted rose gardens, built Victorian mansions and consulates, and laid out tree-lined streets that feel unlike anywhere else in Japan. Many of the original Western-style homes survive and are open to visitors: the Bluff 18 Residence, the Yamate Museum, the British House, the French consulate garden. Walking the main street, Yamate Honchō, through the dappled shade of old plane trees with glimpses of the port below is one of the most pleasant things you can do in Yokohama on a mild afternoon.</p>
+      <div class="stop-tip">💡 The rose garden at the Harbour View Park (Minato-no-Mieru-Oka Koen) peaks in May and October. The park also has the best free elevated view of Minato Mirai and the bay — bring a picnic and stay for the late afternoon light.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★</span> 4.3 · 5,400+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Yamate+Bluff+Yokohama" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Yokohama Chinatown -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <div class="stop-num">06</div>
+      <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=800&q=80&fit=crop" alt="Yokohama Chinatown red lanterns gate" loading="lazy"/>
+      <div class="stop-badge">Start Here</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Food & Culture · Chūkagai</div>
+      <h2 class="stop-title">Yokohama Chinatown</h2>
+      <div class="stop-jp">横浜中華街</div>
+      <p class="stop-desc">Asia's largest Chinatown — and by most measures the most spectacular — covers over half a square kilometre of Yokohama's downtown, with more than 600 restaurants, shops, and temples packed inside ten ornate gates. The main street, Chūkagai-dōri, runs under a canopy of red lanterns past roast duck windows and steamer carts piled high with xiaolongbao. The neighbourhood has been here since the 1860s, when Chinese merchants followed the early traders into the port, and the cooking reflects that deep rootedness — Cantonese, Shanghainese, and Sichuan traditions sit alongside one another on the same narrow block.</p>
+      <div class="stop-tip">💡 Arrive hungry and walk the whole perimeter before choosing where to eat. The best dim sum restaurants often have queues by 11 AM. Look for the Kantei-byo temple in the middle of the quarter — a working Taoist shrine draped in incense smoke, free to enter, and easy to miss.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 42,000+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Yokohama+Chinatown" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">横浜 · Yokohama Day Trip</div>
+  <p>A full-day guided experience · From ¥16,000 per person</p>
+  <p>© 2026 Tokyo Highlights Tour</p>
+  <div style="text-align:center; padding: 1.5rem 0 2rem;">
+    <a href="index.html" style="
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--stone);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 2px;
+      transition: opacity 0.2s;
+    " onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">
+      ← Back to Home
+    </a>
+  </div>
+  <div style="text-align:center; padding: 1.5rem 0 2rem;">
+    <a href="index.html" style="
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--stone);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 2px;
+      transition: opacity 0.2s;
+    " onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">
+      ← Back to Home
+    </a>
+  </div>
+</footer>
+
+<script>
+  const stops = document.querySelectorAll('.stop');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  stops.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
