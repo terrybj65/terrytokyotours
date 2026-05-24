@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Discover Tokyo's hidden shotengai shopping streets with Terry — Togoshi Ginza, Koenji, Monzen-Nakacho and the best off-the-beaten-path street food in the city."/>
+  <meta name="keywords" content="Tokyo shotengai, Tokyo street food, hidden Tokyo, Togoshi Ginza, Koenji food, Monzen-Nakacho, Tokyo local food tour, private food tour Tokyo"/>
+  <meta name="author" content="Tokyo Private Tours with Terry"/>
+  <meta name="robots" content="index, follow"/>
+  <meta property="og:title" content="Tokyo Shotengai — Hidden Street Food & Shopping Streets | Tokyo Private Tours with Terry"/>
+  <meta property="og:description" content="Discover Tokyo's hidden shotengai shopping streets with Terry — Togoshi Ginza, Koenji, Monzen-Nakacho and the best off-the-beaten-path street food in the city."/>
+  <meta property="og:type" content="website"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tokyo Shotengai — Hidden Street Food & Shopping Streets | Tokyo Private Tours with Terry</title>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --ink: #14120e;
+      --paper: #f0ede6;
+      --moss: #1a3a5a;
+      --sage: #265070;
+      --stone: #7a7468;
+      --gold: #8a7040;
+      --border: rgba(20,18,14,0.12);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    .hero h1 {
+      position: relative;
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(3rem, 9vw, 6.5rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 0.92;
+      margin-bottom: 0.6rem;
+    }
+
+    
+
+    
+
+    
+    
+
+    
+    
+    
+      50%{opacity:.5;transform:scaleY(.55)}
+    }
+
+    /* ── INTRO ── */
+    .intro {
+      max-width: 800px;
+      margin: 5.5rem auto;
+      padding: 0 6vw;
+      text-align: center;
+    }
+    .intro-kicker {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--moss);
+      margin-bottom: 1.4rem;
+    }
+    .intro p {
+      font-size: 1.12rem;
+      line-height: 1.9;
+      color: var(--stone);
+    }
+
+    /* info bar */
+    .transport-bar {
+      max-width: 960px;
+      margin: 0 auto 4rem;
+      padding: 0 6vw;
+    }
+    .transport-inner {
+      display: flex;
+      align-items: stretch;
+      border: 1px solid rgba(26,58,90,0.18);
+      overflow: hidden;
+    }
+    .transport-item {
+      flex: 1;
+      padding: 1.1rem 1.2rem;
+      border-right: 1px solid rgba(26,58,90,0.18);
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .transport-item:last-child { border-right: none; }
+    .transport-label {
+      font-size: 0.56rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--moss);
+    }
+    .transport-value {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.4;
+    }
+
+    /* section nav */
+    .section-nav {
+      max-width: 960px;
+      margin: 0 auto 4rem;
+      padding: 0 6vw;
+    }
+    .section-nav-inner {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      background: rgba(26,58,90,0.06);
+      border: 1px solid rgba(26,58,90,0.18);
+      border-left: 3px solid var(--moss);
+      padding: 1.2rem 1.8rem;
+      flex-wrap: wrap;
+    }
+    .nav-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--moss);
+      flex-shrink: 0;
+    }
+    .nav-pills { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .nav-pill {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--ink);
+      background: rgba(26,58,90,0.08);
+      border: 1px solid rgba(26,58,90,0.2);
+      padding: 0.28rem 0.8rem;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+      letter-spacing: 0.03em;
+    }
+    .nav-pill:hover { background: var(--moss); color: #fff; border-color: var(--moss); }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin: 0 6vw 3rem;
+      color: var(--sage);
+      font-size: 0.67rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+    .divider::before, .divider::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+
+    /* ── STOPS ── */
+    .stops {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 6vw 8rem;
+    }
+
+    .stop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--border);
+      padding: 4rem 0;
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .stop.visible { opacity: 1; transform: translateY(0); }
+    .stop:nth-child(even) { direction: rtl; }
+    .stop:nth-child(even) > * { direction: ltr; }
+
+    .stop-img-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+    .stop-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.75s ease;
+    }
+    .stop:hover .stop-img-wrap img { transform: scale(1.05); }
+
+    .stop-badge {
+      position: absolute;
+      bottom: 1.2rem; left: 1.2rem;
+      background: rgba(4,10,18,0.75);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.82);
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      backdrop-filter: blur(6px);
+    }
+
+    .stop-transport {
+      position: absolute;
+      top: 1rem; left: 1.2rem;
+      font-size: 0.6rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      background: rgba(4,10,18,0.55);
+      padding: 0.2rem 0.65rem;
+      backdrop-filter: blur(4px);
+    }
+
+    .stop-num {
+      position: absolute;
+      top: 1rem; right: 1.2rem;
+      font-family: 'Shippori Mincho', serif;
+      font-size: 4.5rem; font-weight: 800;
+      color: rgba(255,255,255,0.13);
+      line-height: 1; pointer-events: none;
+    }
+
+    .stop-content {
+      padding: 2.8rem 3.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .stop-category {
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--moss);
+      margin-bottom: 1rem;
+    }
+    .stop-title {
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 0.35rem;
+    }
+    .stop-jp {
+      font-size: 0.82rem;
+      color: var(--stone);
+      margin-bottom: 1.6rem;
+      letter-spacing: 0.06em;
+    }
+    .stop-desc {
+      font-size: 0.94rem;
+      line-height: 1.88;
+      color: #3e3a34;
+      margin-bottom: 1.6rem;
+    }
+    .stop-tip {
+      border-left: 2px solid var(--gold);
+      padding-left: 1rem;
+      font-size: 0.82rem;
+      color: var(--stone);
+      font-style: italic;
+      line-height: 1.65;
+    }
+    .stop-footer {
+      margin-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+    .stop-rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      color: var(--stone);
+    }
+    .stars { color: var(--gold); }
+    .stop-map {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.76rem;
+      color: var(--moss);
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      transition: opacity 0.2s;
+    }
+    .stop-map:hover { opacity: 0.65; }
+
+    /* food tags */
+    .food-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.4rem;
+    }
+    .food-tag {
+      font-size: 0.68rem;
+      font-weight: 500;
+      color: var(--moss);
+      background: rgba(26,58,90,0.08);
+      border: 1px solid rgba(26,58,90,0.18);
+      padding: 0.2rem 0.65rem;
+      border-radius: 100px;
+      letter-spacing: 0.03em;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 3rem 6vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    footer p { font-size: 0.8rem; color: var(--stone); }
+    .footer-logo {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 1.25rem; font-weight: 600;
+    }
+
+    @media (max-width: 700px) {
+      .stop { grid-template-columns: 1fr; direction: ltr !important; }
+      .stop-content { padding: 2rem 0; }
+      .stop:nth-child(even) > * { direction: ltr; }
+      .transport-inner { flex-direction: column; }
+      .transport-item { border-right: none; border-bottom: 1px solid rgba(26,58,90,0.18); }
+      .transport-item:last-child { border-bottom: none; }
+      .section-nav-inner { flex-direction: column; align-items: flex-start; }
+    }
+  
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    height: 90vh;
+    min-height: 560px;
+    overflow: hidden;
+  }
+  .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: none;
+    display: flex;
+    align-items: center;
+  }
+  .hero-content {
+    max-width: 560px;
+    padding: 0 2rem;
+    background: none;
+  }
+  .hero-eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #f9a07a;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(40px, 6vw, 64px);
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.9), 0 0 30px rgba(0,0,0,0.8);
+  }
+  .hero p {
+    font-size: 17px;
+    color: #ffffff;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 420px;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
+  }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-primary {
+    background: #D00000;
+    color: #fff;
+    border: none;
+    padding: 13px 26px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: #B00000; }
+  .btn-ghost {
+    background: rgba(0,0,0,0.45);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.6);
+    padding: 13px 26px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s;
+    display: inline-block;
+  }
+  .btn-ghost:hover { background: rgba(0,0,0,0.65); }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(0,0,0,0.1);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;">
+  <ul style="display:flex;list-style:none;justify-content:center;align-items:center;gap:2rem;flex:1;margin:0;padding:0;">
+    <li><a href="index.html#areas" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Areas</a></li>
+    <li><a href="index.html#tours" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Tours</a></li>
+    <li><a href="index.html#about" style="font-size:14px;color:#5D6D7E;text-decoration:none;">About</a></li>
+    <li><a href="index.html#contact" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Contact</a></li>
+  </ul>
+  <a href="index.html#contact" style="background:#D00000;color:#fff;border:none;padding:9px 20px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none;">Book a tour</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1400&q=80&fit=crop" alt="Shotengai" />
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <div class="hero-eyebrow">📍 Tokyo · Hidden shopping streets</div>
+      <h1>Shotengai</h1>
+      <p>Street food, covered arcades & the real neighbourhoods of Tokyo.</p>
+      <div class="hero-btns">
+        <a href="#stop1" class="btn-primary">Explore stops ↓</a>
+        <a href="index.html#contact" class="btn-ghost">Book a tour</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<div class="intro">
+  <div class="intro-kicker">Togoshi Ginza · Musashi-Koyama · Koenji · Nishi-Ogikubo · Monzen-Nakacho · Senju</div>
+  <p>While visitors queue at Tsukiji and Shibuya, Tokyo's real food life plays out in its shotengai — covered shopping streets strung between train stations in ordinary residential neighbourhoods, where the butcher has been selling croquettes from the same spot for forty years, the tofu shop still makes its blocks by hand each morning, and yakitori smoke drifts out of tiny counters no wider than a hallway. These six streets are where Terry takes people who want to eat like a Tokyoite, not a tourist.</p>
+</div>
+
+<!-- INFO BAR -->
+<div class="transport-bar">
+  <div class="transport-inner">
+    <div class="transport-item">
+      <span class="transport-label">Best Time</span>
+      <span class="transport-value">Late afternoon · 3pm–7pm</span>
+    </div>
+    <div class="transport-item">
+      <span class="transport-label">Budget</span>
+      <span class="transport-value">¥500–¥2,000 per street</span>
+    </div>
+    <div class="transport-item">
+      <span class="transport-label">Transport</span>
+      <span class="transport-value">All within 30 min of central Tokyo</span>
+    </div>
+    <div class="transport-item">
+      <span class="transport-label">Crowds</span>
+      <span class="transport-value">Locals only · no tourist buses</span>
+    </div>
+    <div class="transport-item">
+      <span class="transport-label">Style</span>
+      <span class="transport-value">Walk, graze, repeat</span>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="section-nav">
+  <div class="section-nav-inner">
+    <span class="nav-label">Jump to</span>
+    <div class="nav-pills">
+      <a class="nav-pill" href="#togoshi">Togoshi Ginza</a>
+      <a class="nav-pill" href="#musashikoyama">Musashi-Koyama</a>
+      <a class="nav-pill" href="#koenji">Koenji</a>
+      <a class="nav-pill" href="#nishiogikubo">Nishi-Ogikubo</a>
+      <a class="nav-pill" href="#monzenakacho">Monzen-Nakacho</a>
+      <a class="nav-pill" href="#senju">Senju</a>
+    </div>
+  </div>
+</div>
+
+<div class="divider">Six Hidden Streets · Tokyo's Real Food Neighbourhoods</div>
+
+<div class="stops">
+
+  <!-- 1. Togoshi Ginza -->
+  <div class="stop" id="togoshi">
+    <div class="stop-img-wrap">
+      <div class="stop-transport">🚃 Tokyu Oimachi Line · Togoshi-Koen Stn</div>
+      <div class="stop-num">01</div>
+      <img src="https://images.unsplash.com/photo-1569313602390-98c97b3c4e14?w=800&q=80&fit=crop" alt="Tokyo covered shopping street shotengai lanterns food stalls Japan" loading="lazy"/>
+      <div class="stop-badge">Japan's Longest Shotengai</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Shinagawa Ward · 1.3km Covered Arcade</div>
+      <h2 class="stop-title">Togoshi Ginza</h2>
+      <div class="stop-jp">戸越銀座商店街</div>
+      <div class="food-tags">
+        <span class="food-tag">🍢 Yakitori</span>
+        <span class="food-tag">🥟 Menchi katsu</span>
+        <span class="food-tag">🍡 Mitarashi dango</span>
+        <span class="food-tag">🐠 Fresh fish</span>
+      </div>
+      <p class="stop-desc">At 1.3 kilometres, Togoshi Ginza is the longest shotengai in Japan — a covered arcade of over 400 shops stretching through the residential backstreets of Shinagawa Ward, so long it crosses under three separate train lines along its length. The street took its name from the Ginza district in 1923 when local merchants bought leftover paving stones from the Ginza road-widening project after the Great Kanto Earthquake and used them to pave their own street. Today it is a magnificent cross-section of working-class Tokyo food culture: butchers frying menchi katsu (minced meat croquettes) in bubbling oil out front, tofu shops, fresh fish counters, mochi sellers, and a scatter of tiny yakitori stands that fill with salary workers at dusk.</p>
+      <div class="stop-tip">💡 Start at the Togoshi-Koen end and walk the full length — the street changes character as you go, from fruit sellers and fishmongers at one end to more food stalls and izakayas toward Nishi-Togoshi. The menchi katsu from Nikunoya is legendary among locals; arrive before 5pm or they sell out. This street is best on a weekday afternoon when the regulars are shopping.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 3,800+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Togoshi+Ginza+Shopping+Street+Tokyo" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Musashi-Koyama -->
+  <div class="stop" id="musashikoyama">
+    <div class="stop-img-wrap">
+      <div class="stop-transport">🚃 Tokyu Meguro Line · Musashi-Koyama Stn</div>
+      <div class="stop-num">02</div>
+      <img src="https://images.unsplash.com/photo-1604999333679-b86d54738315?w=800&q=80&fit=crop" alt="Japan covered shopping arcade interior shotengai retro signs food" loading="lazy"/>
+      <div class="stop-badge">800m of Pure Showa-Era Charm</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Meguro Ward · Underground Arcade</div>
+      <h2 class="stop-title">Musashi-Koyama</h2>
+      <div class="stop-jp">武蔵小山商店街パルム</div>
+      <div class="food-tags">
+        <span class="food-tag">🍜 Ramen</span>
+        <span class="food-tag">🧆 Korokke</span>
+        <span class="food-tag">🍺 Standing bars</span>
+        <span class="food-tag">🍰 Old-school bakeries</span>
+      </div>
+      <p class="stop-desc">Musashi-Koyama's Palm shopping street is one of Tokyo's best-kept secrets — an 800-metre fully covered arcade running from the station into the surrounding residential streets of Meguro Ward, with a retro Showa-era atmosphere that feels genuinely unchanged since the 1970s. The street is adored by the local community precisely because it has resisted the chain-store creep that has homogenised so many Tokyo neighbourhoods — independent butchers, old-fashioned sweet shops, standing ramen counters, and family-run izakayas dominate, with the occasional craft beer bar and vintage clothing shop adding a younger edge. The covered Palm arcade connects to an outdoor extension that leads into quieter backstreets worth wandering.</p>
+      <div class="stop-tip">💡 The standing bar scene here is excellent for early evening — several small tachinomi spots open from around 4pm and fill quickly with local regulars. The old-fashioned korokke from the butcher shops along the main arcade are some of the best in Tokyo: crisp, hot, and about ¥100 each. Musashi-Koyama pairs perfectly with Togoshi Ginza as an afternoon double-header — they're two stops apart on the Tokyu Oimachi Line.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★</span> 4.3 · 2,100+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Musashi-Koyama+Palm+Shopping+Street+Tokyo" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Koenji -->
+  <div class="stop" id="koenji">
+    <div class="stop-img-wrap">
+      <div class="stop-transport">🚃 JR Chuo Line · Koenji Stn</div>
+      <div class="stop-num">03</div>
+      <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&q=80&fit=crop" alt="Koenji Tokyo vintage street market food stalls retro neighbourhood" loading="lazy"/>
+      <div class="stop-badge">Tokyo's Bohemian Village</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Suginami Ward · Retro & Vintage</div>
+      <h2 class="stop-title">Koenji</h2>
+      <div class="stop-jp">高円寺商店街</div>
+      <div class="food-tags">
+        <span class="food-tag">🍛 Curry</span>
+        <span class="food-tag">🥙 Falafel</span>
+        <span class="food-tag">🍶 Natural wine bars</span>
+        <span class="food-tag">🍣 Standing sushi</span>
+      </div>
+      <p class="stop-desc">Koenji is Tokyo's most characterful neighbourhood shotengai — a bohemian tangle of covered arcades, back-alley drinking streets, vintage clothing markets, and independent food stalls that has been the city's counter-culture heartland since the 1970s. The shotengai network here is not a single street but a web of covered passages south of the station — Pal Shopping Street, Look Shopping Street, and the narrower Sun Mall arcade — that connect into the surrounding warren of tiny bars, curry houses, record shops, and second-hand bookstores. The food scene is genuinely eclectic: standing sushi bars next to Ethiopian restaurants next to 40-year-old ramen counters, all within a five-minute walk.</p>
+      <div class="stop-tip">💡 The evening alleyways around Koenji's south exit — particularly Awa-Odori Shotengai and the narrow streets behind it — are among the most atmospheric drinking spots in Tokyo. Tiny bars with five seats and handwritten menus pack in from 6pm. Terry recommends arriving at dusk, grazing through the shotengai for early food, then settling into one of the standing bars for the evening. Koenji hosts one of Tokyo's great summer festivals — the Awa-Odori dance festival in late August draws 10,000 dancers into the streets.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 5,200+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Koenji+Pal+Shopping+Street+Tokyo" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Nishi-Ogikubo -->
+  <div class="stop" id="nishiogikubo">
+    <div class="stop-img-wrap">
+      <div class="stop-transport">🚃 JR Chuo Line · Nishi-Ogikubo Stn</div>
+      <div class="stop-num">04</div>
+      <img src="https://images.unsplash.com/photo-1582560475093-ba66accbc424?w=800&q=80&fit=crop" alt="Tokyo quiet neighbourhood backstreet antique shop food Japan" loading="lazy"/>
+      <div class="stop-badge">Antiques & Hidden Kitchens</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Suginami Ward · Slow Food & Antiques</div>
+      <h2 class="stop-title">Nishi-Ogikubo</h2>
+      <div class="stop-jp">西荻窪商店街</div>
+      <div class="food-tags">
+        <span class="food-tag">☕ Third-wave coffee</span>
+        <span class="food-tag">🍱 Obanzai</span>
+        <span class="food-tag">🫖 Tea houses</span>
+        <span class="food-tag">🥘 Hidden lunch sets</span>
+      </div>
+      <p class="stop-desc">Nishi-Ogikubo — one stop west of the better-known Koenji on the Chuo Line — is Tokyo's quietest and most refined hidden neighbourhood, a place of antique dealers, independent bookshops, ceramics studios, and an extraordinary concentration of small restaurants serving careful, unhurried food to a local clientele that prizes quality over trend. The shotengai here is a gentle, uncovered street running north and south of the station, but the real discovery is in the surrounding backstreets — a neighbourhood that rewards slow exploration, where an unmarked door might open into a ten-seat natural wine bar or a lunch counter serving hand-cut soba to retired regulars who have been coming for twenty years.</p>
+      <div class="stop-tip">💡 Nishi-Ogikubo is at its best for lunch — the neighbourhood fills with a remarkable number of small restaurants serving daily set menus at prices that reflect local rather than tourist economics. Terry's favourite route combines the antique shops north of the station in the morning with a long lunch at one of the backstreet obanzai counters, followed by coffee at one of the several serious third-wave roasters in the area. This is the neighbourhood that feels most like the Tokyo that visitors rarely see.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★</span> 4.4 · 1,900+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Nishi-Ogikubo+Shopping+Street+Tokyo" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Monzen-Nakacho -->
+  <div class="stop" id="monzenakacho">
+    <div class="stop-img-wrap">
+      <div class="stop-transport">🚇 Tokyo Metro Tozai Line · Monzen-Nakacho Stn</div>
+      <div class="stop-num">05</div>
+      <img src="https://images.unsplash.com/photo-1562802378-063ec186a863?w=800&q=80&fit=crop" alt="Tokyo izakaya street lanterns night food alley Japan" loading="lazy"/>
+      <div class="stop-badge">Tokyo's Best Izakaya Street</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Koto Ward · Shitamachi Drinking Culture</div>
+      <h2 class="stop-title">Monzen-Nakacho</h2>
+      <div class="stop-jp">門前仲町商店街</div>
+      <div class="food-tags">
+        <span class="food-tag">🍻 Izakaya</span>
+        <span class="food-tag">🦑 Grilled seafood</span>
+        <span class="food-tag">🍾 Standing bars</span>
+        <span class="food-tag">🥢 Oden</span>
+      </div>
+      <p class="stop-desc">Monzen-Nakacho — known to Tokyoites simply as Mon-Naka — is the old shitamachi (low city) neighbourhood that best preserves the eating and drinking culture of pre-war Tokyo: a dense cluster of izakayas, standing bars, grilled seafood counters, and oden shops packed into the streets around Tomioka Hachimangu Shrine and the old Fukagawa area on the east bank of the Sumida River. The shotengai running from the station to the shrine is a working neighbourhood street by day — tofu, vegetables, fresh fish — that transforms completely after 5pm into one of the most lively and unpretentious eating and drinking strips in the city, with queues forming outside the best izakayas and the smell of grilled fish and yakitori drifting down every alley.</p>
+      <div class="stop-tip">💡 Mon-Naka is an evening destination — arrive around 6pm when the salarymen start filling the standing bars and the izakayas fire up. Terry recommends starting with a visit to Tomioka Hachimangu Shrine at dusk, then working along the shotengai grazing and drinking westward. The area around the old Fukagawa Edo Museum is quieter and gives a sense of what the neighbourhood looked like before the war. The standing oden counter at the back of one of the older izakayas is a definitive Tokyo winter experience.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.6 · 6,700+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Monzen-Nakacho+Shopping+Street+Tokyo" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Senju -->
+  <div class="stop" id="senju">
+    <div class="stop-img-wrap">
+      <div class="stop-transport">🚃 Tobu Skytree Line · Kita-Senju Stn</div>
+      <div class="stop-num">06</div>
+      <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80&fit=crop" alt="Tokyo old town shotengai fish market street food shitamachi" loading="lazy"/>
+      <div class="stop-badge">Last of Old Edo Tokyo</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Adachi Ward · Old Tokaido Highway</div>
+      <h2 class="stop-title">Senju</h2>
+      <div class="stop-jp">千住仲町商店街 · 旧日光街道</div>
+      <div class="food-tags">
+        <span class="food-tag">🐟 Fresh fish</span>
+        <span class="food-tag">🍢 Oden</span>
+        <span class="food-tag">🫙 Pickles</span>
+        <span class="food-tag">🍡 Wagashi sweets</span>
+      </div>
+      <p class="stop-desc">Senju is the most historically significant and least-visited of Tokyo's great shotengai neighbourhoods — a former post town on the old Tokaido and Nikko highways where Matsuo Basho began his famous journey north in 1689, and which retains more of the atmosphere of pre-war shitamachi Tokyo than almost anywhere else in the city. The shotengai along the old highway through Kita-Senju is a long, working food street — fishmongers with whole tuna on the counter, pickle shops with dozens of varieties in ceramic crocks, wagashi sweet makers, and family butchers — operating for a local community that has little reason to look outward. The surrounding neighbourhood, with its narrow lanes and surviving wooden shopfronts, is extraordinary for urban exploration.</p>
+      <div class="stop-tip">💡 Senju is Terry's personal favourite for the sense of discovery it gives even to people who have been visiting Tokyo for years. The fish market area near the old Senju Ohashi bridge is especially good in the morning. Walk the full length of the old highway shotengai south from Kita-Senju station, then turn into the backstreets east of the main road — the density of surviving old townhouses and tiny food businesses is unlike anywhere closer to the city centre. Basho's departure point is marked with a small stone near the river.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★</span> 4.4 · 2,300+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Senju+Shopping+Street+Adachi+Tokyo" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">商店街 · Shotengai</div>
+  <p>Six hidden streets · Tokyo's real food neighbourhoods · All by train</p>
+  <p>© 2026 Tokyo Highlights Tour</p>
+  <div style="text-align:center; padding: 1.5rem 0 2rem;">
+    <a href="index.html" style="
+      display: inline-block;
+      font-family: inherit;
+      font-size: 0.78rem;
+      color: #7a7468;
+      text-decoration: none;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border-bottom: 1px solid #8a7040;
+      padding-bottom: 3px;
+    ">← Back to Home</a>
+  </div>
+  <div style="text-align:center; padding: 1.5rem 0 2rem;">
+    <a href="index.html" style="
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--stone);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 2px;
+      transition: opacity 0.2s;
+    " onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">
+      ← Back to Home
+    </a>
+  </div>
+</footer>
+
+<script>
+  const stops = document.querySelectorAll('.stop');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  stops.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>

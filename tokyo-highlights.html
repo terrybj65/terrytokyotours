@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="See the best of Tokyo with Terry — a highlights tour covering the city's most iconic sights, hidden gems and essential experiences in one memorable day."/>
+  <meta name="keywords" content="Tokyo highlights tour, best of Tokyo, Tokyo sightseeing, private Tokyo tour, Tokyo one day, Tokyo guide, Japan travel Terry"/>
+  <meta name="author" content="Tokyo Private Tours with Terry"/>
+  <meta name="robots" content="index, follow"/>
+  <meta property="og:title" content="Tokyo Highlights Tour | Tokyo Private Tours with Terry"/>
+  <meta property="og:description" content="See the best of Tokyo with Terry — a highlights tour covering the city's most iconic sights, hidden gems and essential experiences in one memorable day."/>
+  <meta property="og:type" content="website"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tokyo Highlights Tour | Tokyo Private Tours with Terry</title>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --ink: #14120e;
+      --paper: #f0ede6;
+      --stone: #7a7468;
+      --border: rgba(20,18,14,0.1);
+      --gold: #a07828;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    
+
+    
+
+    
+
+    
+
+    
+
+    .hero h1 {
+      position: relative;
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 0.9;
+      margin-bottom: 0.8rem;
+      opacity: 0;
+      animation: fadeUp 0.9s ease 0.4s forwards;
+    }
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* scroll indicator */
+    
+    
+    
+      50%{opacity:.5;transform:scaleY(.5)}
+    }
+
+    /* ── SECTION LABELS ── */
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      padding: 4rem 6vw 2rem;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .section-label h2 {
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .section-label-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .section-label-count {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      color: var(--stone);
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    /* ── GRID ── */
+    .grid {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 6vw;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .grid.two-col {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* ── CARD ── */
+    .card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      overflow: hidden;
+      background: #1a1814;
+      cursor: pointer;
+    }
+
+    .card:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .card-img-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 3/2;
+    }
+
+    .card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.5s ease;
+      filter: brightness(0.85);
+    }
+
+    .card:hover .card-img-wrap img {
+      transform: scale(1.06);
+      filter: brightness(0.7);
+    }
+
+    .card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10,8,6,0.9) 0%, rgba(10,8,6,0.2) 50%, transparent 100%);
+      transition: opacity 0.4s ease;
+    }
+
+    .card:hover .card-overlay {
+      opacity: 1.2;
+    }
+
+    .card-tag {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      background: rgba(10,8,6,0.5);
+      padding: 0.22rem 0.65rem;
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .card-body {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 1.5rem;
+      transform: translateY(4px);
+      transition: transform 0.4s ease;
+    }
+
+    .card:hover .card-body {
+      transform: translateY(0);
+    }
+
+    .card-district {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 0.4rem;
+    }
+
+    .card-title {
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 0.3rem;
+    }
+
+    .card-jp {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.06em;
+      margin-bottom: 0.8rem;
+    }
+
+    .card-desc {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.6;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, opacity 0.4s ease;
+      opacity: 0;
+    }
+
+    .card:hover .card-desc {
+      max-height: 4rem;
+      opacity: 1;
+    }
+
+    .card-arrow {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+      transition: background 0.3s, color 0.3s, border-color 0.3s, transform 0.3s;
+      backdrop-filter: blur(4px);
+    }
+
+    .card:hover .card-arrow {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #fff;
+      transform: translate(2px, -2px);
+    }
+
+    /* ── FEATURED (large) card ── */
+    .card.featured .card-img-wrap {
+      aspect-ratio: 16/7;
+    }
+
+    .card.featured .card-title {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+    }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 3rem 6vw;
+      margin-top: 6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      max-width: 1300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .site-footer-logo {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .site-footer p {
+      font-size: 0.78rem;
+      color: var(--stone);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+      .grid.two-col { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .grid { grid-template-columns: 1fr; }
+      .card.featured .card-img-wrap { aspect-ratio: 3/2; }
+    }
+  
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    height: 90vh;
+    min-height: 560px;
+    overflow: hidden;
+  }
+  .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: none;
+    display: flex;
+    align-items: center;
+  }
+  .hero-content {
+    max-width: 560px;
+    padding: 0 2rem;
+    background: none;
+  }
+  .hero-eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #f9a07a;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(40px, 6vw, 64px);
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.9), 0 0 30px rgba(0,0,0,0.8);
+  }
+  .hero p {
+    font-size: 17px;
+    color: #ffffff;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 420px;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
+  }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-primary {
+    background: #D00000;
+    color: #fff;
+    border: none;
+    padding: 13px 26px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: #B00000; }
+  .btn-ghost {
+    background: rgba(0,0,0,0.45);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.6);
+    padding: 13px 26px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s;
+    display: inline-block;
+  }
+  .btn-ghost:hover { background: rgba(0,0,0,0.65); }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(0,0,0,0.1);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;">
+  <ul style="display:flex;list-style:none;justify-content:center;align-items:center;gap:2rem;flex:1;margin:0;padding:0;">
+    <li><a href="index.html#areas" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Areas</a></li>
+    <li><a href="index.html#tours" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Tours</a></li>
+    <li><a href="index.html#about" style="font-size:14px;color:#5D6D7E;text-decoration:none;">About</a></li>
+    <li><a href="index.html#contact" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Contact</a></li>
+  </ul>
+  <a href="index.html#contact" style="background:#D00000;color:#fff;border:none;padding:9px 20px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none;">Book a tour</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1600&q=80&fit=crop" alt="Tokyo Highlights" />
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <div class="hero-eyebrow">📍 Tokyo & surrounding areas, Japan</div>
+      <h1>Tokyo<br>Highlights</h1>
+      <p>Your complete guide to greater Tokyo — day trips, neighbourhoods & hidden Japan.</p>
+      <div class="hero-btns">
+        <a href="#stop1" class="btn-primary">Explore ↓</a>
+        <a href="index.html#contact" class="btn-ghost">Book a tour</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOKYO DISTRICTS -->
+<div class="section-label">
+  <h2>Tokyo Districts</h2>
+  <div class="section-label-line"></div>
+  <span class="section-label-count">5 guides</span>
+</div>
+
+<div class="grid" style="padding-bottom: 0;">
+
+  <a class="card featured" href="shinjuku.html" style="grid-column: span 2;">
+    <div class="card-img-wrap">
+      <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1200&q=80&fit=crop" alt="Shinjuku neon night Tokyo" loading="lazy"/>
+      <div class="card-overlay"></div>
+      <div class="card-tag">Day & Night</div>
+      <div class="card-arrow">→</div>
+    </div>
+    <div class="card-body">
+      <div class="card-district">Tokyo · West Side</div>
+      <div class="card-title">Shinjuku</div>
+      <div class="card-jp">新宿</div>
+      <div class="card-desc">Golden Gai, Kabukicho, Omoide Yokocho, Shinjuku Gyoen & the East Exit plaza.</div>
+    </div>
+  </a>
+
+  <a class="card" href="asakusa.html">
+    <div class="card-img-wrap">
+      <img src="https://images.unsplash.com/photo-1570521462033-3015e76e7432?w=800&q=80&fit=crop" alt="Asakusa Senso-ji temple Tokyo" loading="lazy"/>
+      <div class="card-overlay"></div>
+      <div class="card-tag">Full Day</div>
+      <div class="card-arrow">→</div>
+    </div>
+    <div class="card-body">
+      <div class="card-district">Tokyo · East Side</div>
+      <div class="card-title">Asakusa</div>
+      <div class="card-jp">浅草</div>
+      <div class="card-desc">Senso-ji, Nakamise, Hoppy Street & Tokyo Sky Tree.</div>
+    </div>
+  </a>
+
+</div>
+
+<div class="grid" style="padding-top: 1.5rem;">
+
+  <a class="card" href="shibuya.html">
+    <div class="card-img-wrap">
+      <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=800&q=80&fit=crop" alt="Shibuya scramble crossing Tokyo" loading="lazy"/>
+      <div class="card-overlay"></div>
+      <div class="card-tag">Day & Night</div>
+      <div class="card-arrow">→</div>
+    </div>
+    <div class="card-body">
+      <div class="card-district">Tokyo · Shibuya Ward</div>
+      <div class="card-title">Shibuya</div>
+      <div class="card-jp">渋谷</div>
+      <div class="card-desc">The Scramble, Hachiko, Hikarie, Daikanyama, Nakameguro & Nonbei Yokocho.</div>
+    </div>
+  </a>
+
+  <a class="card" href="shibuya-2.html">
+    <div class="card-img-wrap">
+      <img src="https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?w=800&q=80&fit=crop" alt="Meiji Shrine Harajuku forest Tokyo" loading="lazy"/>
+      <div class="card-overlay"></div>
+      <div class="card-tag">Full Day</div>
+      <div class="card-arrow">→</div>
+    </div>
+    <div class="card-body">
+      <div class="card-district">Tokyo · Shibuya Ward</div>
+      <div class="card-title">Shibuya II</div>
+      <div class="card-jp">渋谷 II</div>
+      <div class="card-desc">Meiji Shrine, Harajuku, Takeshita Street, Omotesando, Yoyogi Park & Bunkamura.</div>
+    </div>
+  </a>
+
+  <a class="card" href="yanaka.html">
+    <div class="card-img-wrap">
+      <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80&fit=crop" alt="Yanaka old Tokyo backstreets temples" loading="lazy"/>
+      <div class="card-overlay"></div>
+      <div class="card-tag">Full Day</div>
+      <div class="card-arrow">→</div>
+    </div>
+    <div class="card-body">
+      <div class="card-district">Tokyo · Taitō Ward</div>
+      <div class="card-title">Yanaka</div>
+      <div class="card-jp">谷中</div>
+      <div class="card-desc">Cemetery walks, Yanaka Ginza, Nezu Shrine, SCAI Bathhouse & the machiya cafés.</div>
+    </div>
+  </a>
+
+</div>
+
+<!-- SUBURBS -->
+<div class="section-label">
+  <h2>Tokyo Suburbs</h2>
+  <div class="section-label-line"></div>
+  <span class="section-label-count">1 guide · 6 suburbs</span>
+</div>
+
+<div class="grid two-col">
+
+  <a class="card featured" href="tokyo-suburbs-local-life.html">
+    <div class="card-img-wrap">
+      <img src="https://images.unsplash.com/photo-1490761668535-35497054a2b3?w=1200&q=80&fit=crop" alt="Tokyo suburbs local life Kawagoe shotengai" loading="lazy"/>
+      <div class="card-overlay"></div>
+      <div class="card-tag">Day Out</div>
+      <div class="card-arrow">→</div>
+    </div>
+    <div class="card-body">
+      <div class="card-district">Greater Tokyo · 6 Suburbs</div>
+      <div class="card-title">Tokyo Suburbs — Local Life</div>
+      <div class="card-jp">郊外</div>
+      <div class="card-desc">Kawagoe, Kichijoji, Nakano, Kokubunji, Machida & Tachikawa — the real suburban Tokyo.</div>
+    </div>
+  </a>
+
+</div>
+
+<!-- DAY TRIPS -->
+<div class="section-label">
+  <h2>Day Trips</h2>
+  <div class="section-label-line"></div>
+  <span class="section-label-count">4 guides</span>
+</div>
+
+<div class="grid">
+
+  <a class="card" href="yokohama-chinatown-day-trip.html">
+    <div class="card-img-wrap">
+      <img src="https://images.unsplash.com/photo-1529921879218-f99546d03a9d?w=800&q=80&fit=crop" alt="Yokohama Chinatown harbour" loading="lazy"/>
+      <div class="card-overlay"></div>
+      <div class="card-tag">30 min from Tokyo</div>
+      <div class="card-arrow">→</div>
+    </div>
+    <div class="card-body">
+      <div class="card-district">Kanagawa · Yokohama</div>
+      <div class="card-title">Yokohama & Chinatown</div>
+      <div class="card-jp">横浜</div>
+      <div class="card-desc">Chinatown, Yamashita Park, Minato Mirai, Sankeien Garden & the Red Brick Warehouse.</div>
+    </div>
+  </a>
+
+  <a class="card" href="yokohama-2.html">
+    <div class="card-img-wrap">
+      <img src="https://images.unsplash.com/photo-1559054663-e8d23213f55c?w=800&q=80&fit=crop" alt="Yokohama Noge jazz bars local" loading="lazy"/>
+      <div class="card-overlay"></div>
+      <div class="card-tag">Local Side</div>
+      <div class="card-arrow">→</div>
+    </div>
+    <div class="card-body">
+      <div class="card-district">Kanagawa · Yokohama</div>
+      <div class="card-title">Yokohama II</div>
+      <div class="card-jp">横浜 II</div>
+      <div class="card-desc">Bashamichi, Kannai, Isezakicho, Motomachi, the Stadium District & Noge jazz bars.</div>
+    </div>
+  </a>
+
+  <a class="card" href="hakone.html">
+    <div class="card-img-wrap">
+      <img src="https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?w=800&q=80&fit=crop" alt="Hakone Owakudani volcanic steam Mount Fuji" loading="lazy"/>
+      <div class="card-overlay"></div>
+      <div class="card-tag">90 min from Tokyo</div>
+      <div class="card-arrow">→</div>
+    </div>
+    <div class="card-body">
+      <div class="card-district">Kanagawa · Hakone</div>
+      <div class="card-title">Hakone</div>
+      <div class="card-jp">箱根</div>
+      <div class="card-desc">The classic loop — mountain railway, ropeway over Owakudani, Lake Ashi & Hakone Shrine.</div>
+    </div>
+  </a>
+
+</div>
+
+<!-- KAMAKURA -->
+<div class="section-label">
+  <h2>Kamakura</h2>
+  <div class="section-label-line"></div>
+  <span class="section-label-count">2 guides</span>
+</div>
+
+<div class="grid two-col">
+
+  <a class="card" href="kamakura-day-trip.html">
+    <div class="card-img-wrap">
+      <img src="https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?w=800&q=80&fit=crop" alt="Kamakura Great Buddha temple" loading="lazy"/>
+      <div class="card-overlay"></div>
+      <div class="card-tag">60 min from Tokyo</div>
+      <div class="card-arrow">→</div>
+    </div>
+    <div class="card-body">
+      <div class="card-district">Kanagawa · Kamakura</div>
+      <div class="card-title">Kamakura</div>
+      <div class="card-jp">鎌倉</div>
+      <div class="card-desc">The Great Buddha, Tsurugaoka Hachimangu, Komachi-dori & the main sights.</div>
+    </div>
+  </a>
+
+  <a class="card" href="kamakura-2.html">
+    <div class="card-img-wrap">
+      <img src="https://images.unsplash.com/photo-1559025393-8be0ec4767c8?w=800&q=80&fit=crop" alt="Kamakura bamboo trail hiking temples" loading="lazy"/>
+      <div class="card-overlay"></div>
+      <div class="card-tag">Deeper Kamakura</div>
+      <div class="card-arrow">→</div>
+    </div>
+    <div class="card-body">
+      <div class="card-district">Kanagawa · Kamakura</div>
+      <div class="card-title">Kamakura II</div>
+      <div class="card-jp">鎌倉 II</div>
+      <div class="card-desc">Hase-dera, Hokokuji bamboo grove, Tenen trail, Zuisenji & the eastern temple cluster.</div>
+    </div>
+  </a>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="site-footer-logo">Tokyo Highlights</div>
+  <p>10 destinations · 60+ places · All within reach of Tokyo</p>
+  <p>© 2026 Tokyo Highlights Tour</p>
+  <div style="text-align:center; padding: 1.5rem 0 2rem;">
+    <a href="index.html" style="
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--stone);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 2px;
+      transition: opacity 0.2s;
+    " onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">
+      ← Back to Home
+    </a>
+  </div>
+  <div style="text-align:center; padding: 1.5rem 0 2rem;">
+    <a href="index.html" style="
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--stone);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 2px;
+      transition: opacity 0.2s;
+    " onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">
+      ← Back to Home
+    </a>
+  </div>
+</footer>
+
+<script>
+  /* Staggered card entrance animation */
+  const cards = document.querySelectorAll('.card');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        e.target.style.animationDelay = (i * 0.07) + 's';
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  cards.forEach(c => {
+    c.style.opacity = '0';
+    c.style.transform = 'translateY(24px)';
+    c.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(c);
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    cards.forEach(c => observer.observe(c));
+  });
+</script>
+
+<style>
+  .card.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+</style>
+
+</body>
+</html>
