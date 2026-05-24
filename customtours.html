@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Explore Japan beyond Tokyo with Terry — private guided day trips and overnight tours to Nikko, Matsumoto, Izu, Nagano Snow Monkeys, Kyoto, Osaka and Nara."/>
+  <meta name="keywords" content="private tours Japan, day trips from Tokyo, Nikko tour, Kyoto private tour, Osaka day trip, Nagano snow monkeys, Matsumoto castle, Izu Peninsula tour, Japan travel guide, Tokyo tour guide Terry"/>
+  <meta name="author" content="Tokyo Private Tours with Terry"/>
+  <meta name="robots" content="index, follow"/>
+  <meta property="og:title" content="Custom Private Tours Beyond Tokyo | Tokyo Private Tours with Terry"/>
+  <meta property="og:description" content="Explore Japan beyond Tokyo with Terry — private guided day trips and overnight tours to Nikko, Matsumoto, Izu, Nagano Snow Monkeys, Kyoto, Osaka and Nara."/>
+  <meta property="og:type" content="website"/>
+  <title>Custom Private Tours Beyond Tokyo | Tokyo Private Tours with Terry</title>
+  
+  
+  
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --ink: #14120e;
+      --paper: #f0ede6;
+      --moss: #1a3a5a;
+      --sage: #265070;
+      --stone: #7a7468;
+      --gold: #8a7040;
+      --border: rgba(20,18,14,0.12);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 4rem 6vw;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1400&q=80&fit=crop') center/cover no-repeat;
+    }
+
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(4,10,18,0.96) 0%, rgba(4,10,18,0.5) 50%, rgba(4,10,18,0.1) 100%);
+    }
+
+    .hero-vignette {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at center, transparent 55%, rgba(4,10,18,0.5) 100%);
+      pointer-events: none;
+    }
+
+    .hero-distance {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: rgba(160,200,240,0.85);
+      margin-bottom: 1.2rem;
+    }
+    .hero-distance::before { content: '→'; font-size: 0.8rem; }
+
+    .hero h1 {
+      position: relative;
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(3rem, 9vw, 6.5rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 0.92;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-sub {
+      position: relative;
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(1rem, 2.2vw, 1.5rem);
+      font-weight: 400;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.07em;
+      margin-bottom: 2rem;
+    }
+
+    .hero-meta {
+      position: relative;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-pill {
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.82);
+      font-size: 0.78rem;
+      padding: 0.42rem 1rem;
+      border-radius: 100px;
+      letter-spacing: 0.04em;
+      backdrop-filter: blur(8px);
+    }
+    .hero-pill.go {
+      background: var(--moss);
+      border-color: var(--moss);
+      color: rgba(255,255,255,0.95);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem; right: 6vw;
+      color: rgba(255,255,255,0.3);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      writing-mode: vertical-rl;
+      display: flex; align-items: center; gap: 0.8rem;
+    }
+    .hero-scroll::before {
+      content: '';
+      display: block; width: 1px; height: 60px;
+      background: rgba(255,255,255,0.18);
+      animation: sc 2.2s ease-in-out infinite;
+    }
+    @keyframes sc {
+      0%,100%{opacity:.18;transform:scaleY(1)}
+      50%{opacity:.5;transform:scaleY(.55)}
+    }
+
+    /* ── INTRO ── */
+    .intro {
+      max-width: 800px;
+      margin: 5.5rem auto;
+      padding: 0 6vw;
+      text-align: center;
+    }
+    .intro-kicker {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--moss);
+      margin-bottom: 1.4rem;
+    }
+    .intro p {
+      font-size: 1.12rem;
+      line-height: 1.9;
+      color: var(--stone);
+    }
+
+    /* transport bar */
+    .transport-bar {
+      max-width: 960px;
+      margin: 0 auto 4rem;
+      padding: 0 6vw;
+    }
+    .transport-inner {
+      display: flex;
+      align-items: stretch;
+      border: 1px solid rgba(26,58,90,0.18);
+      overflow: hidden;
+    }
+    .transport-item {
+      flex: 1;
+      padding: 1.1rem 1.2rem;
+      border-right: 1px solid rgba(26,58,90,0.18);
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .transport-item:last-child { border-right: none; }
+    .transport-label {
+      font-size: 0.56rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--moss);
+    }
+    .transport-value {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.4;
+    }
+
+    /* section nav */
+    .section-nav {
+      max-width: 960px;
+      margin: 0 auto 4rem;
+      padding: 0 6vw;
+    }
+    .section-nav-inner {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      background: rgba(26,58,90,0.06);
+      border: 1px solid rgba(26,58,90,0.18);
+      border-left: 3px solid var(--moss);
+      padding: 1.2rem 1.8rem;
+      flex-wrap: wrap;
+    }
+    .nav-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--moss);
+      flex-shrink: 0;
+    }
+    .nav-pills { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .nav-pill {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--ink);
+      background: rgba(26,58,90,0.08);
+      border: 1px solid rgba(26,58,90,0.2);
+      padding: 0.28rem 0.8rem;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+      letter-spacing: 0.03em;
+    }
+    .nav-pill:hover { background: var(--moss); color: #fff; border-color: var(--moss); }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin: 0 6vw 3rem;
+      color: var(--sage);
+      font-size: 0.67rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+    .divider::before, .divider::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+
+    /* ── STOPS ── */
+    .stops {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 6vw 8rem;
+    }
+
+    .stop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--border);
+      padding: 4rem 0;
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .stop.visible { opacity: 1; transform: translateY(0); }
+    .stop:nth-child(even) { direction: rtl; }
+    .stop:nth-child(even) > * { direction: ltr; }
+
+    .stop-img-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+    .stop-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.75s ease;
+    }
+    .stop:hover .stop-img-wrap img { transform: scale(1.05); }
+
+    .stop-badge {
+      position: absolute;
+      bottom: 1.2rem; left: 1.2rem;
+      background: rgba(4,10,18,0.75);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.82);
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      backdrop-filter: blur(6px);
+    }
+
+    .stop-transport {
+      position: absolute;
+      top: 1rem; left: 1.2rem;
+      font-size: 0.6rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      background: rgba(4,10,18,0.55);
+      padding: 0.2rem 0.65rem;
+      backdrop-filter: blur(4px);
+    }
+
+    .stop-num {
+      position: absolute;
+      top: 1rem; right: 1.2rem;
+      font-family: 'Shippori Mincho', serif;
+      font-size: 4.5rem; font-weight: 800;
+      color: rgba(255,255,255,0.13);
+      line-height: 1; pointer-events: none;
+    }
+
+    .stop-content {
+      padding: 2.8rem 3.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .stop-category {
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--moss);
+      margin-bottom: 1rem;
+    }
+    .stop-title {
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 0.35rem;
+    }
+    .stop-jp {
+      font-size: 0.82rem;
+      color: var(--stone);
+      margin-bottom: 1.6rem;
+      letter-spacing: 0.06em;
+    }
+    .stop-desc {
+      font-size: 0.94rem;
+      line-height: 1.88;
+      color: #3e3a34;
+      margin-bottom: 1.6rem;
+    }
+    .stop-tip {
+      border-left: 2px solid var(--gold);
+      padding-left: 1rem;
+      font-size: 0.82rem;
+      color: var(--stone);
+      font-style: italic;
+      line-height: 1.65;
+    }
+    .stop-footer {
+      margin-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+    .stop-rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      color: var(--stone);
+    }
+    .stars { color: var(--gold); }
+    .stop-map {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.76rem;
+      color: var(--moss);
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      transition: opacity 0.2s;
+    }
+    .stop-map:hover { opacity: 0.65; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 3rem 6vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    footer p { font-size: 0.8rem; color: var(--stone); }
+    .footer-logo {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 1.25rem; font-weight: 600;
+    }
+
+    @media (max-width: 700px) {
+      .stop { grid-template-columns: 1fr; direction: ltr !important; }
+      .stop-content { padding: 2rem 0; }
+      .stop:nth-child(even) > * { direction: ltr; }
+      .transport-inner { flex-direction: column; }
+      .transport-item { border-right: none; border-bottom: 1px solid rgba(26,58,90,0.18); }
+      .transport-item:last-child { border-bottom: none; }
+      .section-nav-inner { flex-direction: column; align-items: flex-start; }
+    }
+  
+    /* ── MOBILE RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .stop {
+        grid-template-columns: 1fr !important;
+        direction: ltr !important;
+      }
+      .stop:nth-child(even) {
+        direction: ltr !important;
+      }
+      .stop-content {
+        padding: 1.5rem 0;
+      }
+      .stop-img-wrap {
+        aspect-ratio: 16/9;
+      }
+      .hero {
+        padding: 2rem 5vw;
+        min-height: 70vh;
+      }
+      .hero h1 {
+        font-size: clamp(2.5rem, 12vw, 4rem);
+      }
+      .transport-inner {
+        flex-direction: column;
+      }
+      .transport-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(26,58,90,0.18);
+      }
+      .transport-item:last-child {
+        border-bottom: none;
+      }
+      .section-nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .areas-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .route-chain {
+        gap: 0.3rem;
+        font-size: 0.65rem;
+      }
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+      .col-headers div, .phrase-table td {
+        padding: 2mm 2mm;
+        font-size: 7.5pt;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-vignette"></div>
+  <div class="hero-distance">Your Japan, your way — fully tailored private tours</div>
+  <h1>Custom Private Tours</h1>
+  <div class="hero-sub">Beyond Tokyo — temples, mountains, hot springs & ancient cities</div>
+  <div class="hero-meta">
+    <span class="hero-pill go">🗾 Fully Private</span>
+    <span class="hero-pill">Day Trips & Overnight</span>
+    <span class="hero-pill">7 Destinations</span>
+    <span class="hero-pill">All by Train</span>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- INTRO -->
+<div class="intro">
+  <div class="intro-kicker">Nikko · Matsumoto · Izu · Nagano · Kyoto · Osaka · Nara</div>
+  <p>Not every traveller wants to follow the same path — and that's exactly why Terry offers fully custom private tours tailored just for you. Whether you want to stand before gilded shrines in the mountains of Nikko, sleep in a castle town inn in Matsumoto, walk the coastal cliffs of the Izu Peninsula, or spend a full day lost in the temples and alleyways of Kyoto, Terry will build the perfect itinerary around your interests. No set schedules, no rushing, and no sharing the experience with strangers. Just you, your group, and a local guide who genuinely loves showing people the Japan they never knew existed.</p>
+</div>
+
+<!-- INFO BAR -->
+<div class="transport-bar">
+  <div class="transport-inner">
+    <div class="transport-item">
+      <span class="transport-label">Format</span>
+      <span class="transport-value">Fully private · your group only</span>
+    </div>
+    <div class="transport-item">
+      <span class="transport-label">Duration</span>
+      <span class="transport-value">Day trips or overnight stays</span>
+    </div>
+    <div class="transport-item">
+      <span class="transport-label">Travel</span>
+      <span class="transport-value">All accessible by train from Tokyo</span>
+    </div>
+    <div class="transport-item">
+      <span class="transport-label">Itinerary</span>
+      <span class="transport-value">Built around your interests</span>
+    </div>
+    <div class="transport-item">
+      <span class="transport-label">Booking</span>
+      <span class="transport-value">Contact Terry to plan your trip</span>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="section-nav">
+  <div class="section-nav-inner">
+    <span class="nav-label">Jump to</span>
+    <div class="nav-pills">
+      <a class="nav-pill" href="#nikko">Nikko</a>
+      <a class="nav-pill" href="#matsumoto">Matsumoto</a>
+      <a class="nav-pill" href="#izu">Izu Peninsula</a>
+      <a class="nav-pill" href="#nagano">Nagano & Snow Monkeys</a>
+      <a class="nav-pill" href="#kyoto">Kyoto</a>
+      <a class="nav-pill" href="#osaka">Osaka</a>
+      <a class="nav-pill" href="#nara">Nara</a>
+    </div>
+  </div>
+</div>
+
+<div class="divider">Seven Destinations · All Tailored to You</div>
+
+<div class="stops">
+
+  <!-- 1. Nikko -->
+  <div class="stop" id="nikko">
+    <div class="stop-img-wrap">
+      <div class="stop-transport">🚄 Shinkansen + Limited Express · 2 hrs</div>
+      <div class="stop-num">01</div>
+      <img src="https://images.unsplash.com/photo-1570459027562-4a916cc6113f?w=800&q=80&fit=crop" alt="Nikko Toshogu shrine ornate gilded gate Japan mountains" loading="lazy"/>
+      <div class="stop-badge">UNESCO World Heritage</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Mountain Shrines · Tochigi Prefecture</div>
+      <h2 class="stop-title">Nikko</h2>
+      <div class="stop-jp">日光 · Sunlight</div>
+      <p class="stop-desc">Nikko sits in the forested mountains of Tochigi Prefecture, two hours north of Tokyo by train, and contains some of the most ornate religious architecture in Japan. The Toshogu Shrine complex — built in the 17th century as a mausoleum for Tokugawa Ieyasu, the shogun who unified Japan — is a riot of gilded carvings, lacquered gates, and painted panels set beneath towering cedar trees that have stood for four centuries. Beyond the shrine complex, Nikko National Park offers waterfalls, mountain lakes, hot springs, and a stretch of the old Edo-period highway lined with ancient cryptomeria cedars that is one of the most atmospheric walks in Japan.</p>
+      <div class="stop-tip">💡 Terry recommends arriving early — the Toshogu inner sanctum fills up by mid-morning. The Shinkansen to Utsunomiya followed by the Nikko Limited Express is faster and more comfortable than the direct Tobu Nikko Line from Asakusa. Don't miss the Shinkyo sacred bridge and the quieter Futarasan Shrine just beyond the crowds.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.6 · 30,000+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Nikko+Toshogu+Shrine+Tochigi" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Matsumoto -->
+  <div class="stop" id="matsumoto">
+    <div class="stop-img-wrap">
+      <div class="stop-transport">🚄 Azusa Limited Express · 2.5 hrs</div>
+      <div class="stop-num">02</div>
+      <img src="https://images.unsplash.com/photo-1493780474015-ba834fd0ce2f?w=800&q=80&fit=crop" alt="Matsumoto Castle black crow castle Japan Alps" loading="lazy"/>
+      <div class="stop-badge">National Treasure Castle</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Castle Town · Nagano Prefecture</div>
+      <h2 class="stop-title">Matsumoto</h2>
+      <div class="stop-jp">松本 · Pine Origin</div>
+      <p class="stop-desc">Matsumoto is a beautifully preserved castle town in the Japan Alps, two and a half hours west of Tokyo on the Azusa Limited Express from Shinjuku. Its centrepiece is Matsumoto Castle — nicknamed the Crow Castle for its dramatic black exterior — one of only twelve original castles remaining in Japan and a National Treasure. The castle sits at the edge of the old town, reflected in the moat, with the snow-capped Japanese Alps rising behind it. The surrounding streets of the Nakamachi and Nawate districts are lined with Edo-period kura storehouses, sake breweries, and craft shops that give Matsumoto a character unlike anywhere closer to Tokyo.</p>
+      <div class="stop-tip">💡 The castle interior is open to climb — the wooden staircases are steep and original, giving a genuine sense of the building's age. Terry recommends pairing Matsumoto with an overnight stay and a morning visit to the Daio Wasabi Farm nearby — one of Japan's largest wasabi plantations, set along a clear mountain river and extraordinarily photogenic.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.7 · 28,000+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Matsumoto+Castle+Nagano" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Izu -->
+  <div class="stop" id="izu">
+    <div class="stop-img-wrap">
+      <div class="stop-transport">🚄 Odoriko Express · 1.5–2 hrs</div>
+      <div class="stop-num">03</div>
+      <img src="https://images.unsplash.com/photo-1601042879364-f3947d3f9c16?w=800&q=80&fit=crop" alt="Izu Peninsula coastline ocean cliffs Japan hot springs" loading="lazy"/>
+      <div class="stop-badge">Coastal Escape</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Peninsula · Shizuoka Prefecture</div>
+      <h2 class="stop-title">Izu Peninsula</h2>
+      <div class="stop-jp">伊豆半島 · Hot Spring Coast</div>
+      <p class="stop-desc">The Izu Peninsula juts into the Pacific south of Tokyo and is one of the most scenically varied day trip destinations in the region — a landscape of dramatic sea cliffs, hidden coves, bamboo forests, geothermal hot springs, and quiet fishing villages strung along a coastline that faces both the open Pacific and the calmer waters of Suruga Bay, with Mount Fuji visible from the west coast on clear days. The peninsula has been a retreat for artists, writers, and the Tokyo wealthy since the Meiji era, and its towns — Atami, Ito, Shuzenji, Shimoda — each have a distinct character ranging from the onsen resort bustle of Atami to the quiet beauty of Shuzenji's temple valley.</p>
+      <div class="stop-tip">💡 Terry's favourite Izu route takes you to Shuzenji — a small temple town set in a bamboo-lined valley around a hot spring that has flowed since the 9th century — followed by the coastal road south to Dogashima for the sea caves and dramatic volcanic rock formations. An overnight ryokan stay with a private open-air bath overlooking the ocean is the definitive Izu experience.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★</span> 4.4 · 15,000+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Shuzenji+Izu+Shizuoka" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Nagano & Snow Monkeys -->
+  <div class="stop" id="nagano">
+    <div class="stop-img-wrap">
+      <div class="stop-transport">🚄 Hokuriku Shinkansen · 1 hr 40 min</div>
+      <div class="stop-num">04</div>
+      <img src="https://images.unsplash.com/photo-1547149600-a6cdf8fce60c?w=800&q=80&fit=crop" alt="Japanese snow monkeys macaques hot spring Jigokudani Nagano winter" loading="lazy"/>
+      <div class="stop-badge">Snow Monkey Country</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Mountains & Wildlife · Nagano Prefecture</div>
+      <h2 class="stop-title">Nagano & Snow Monkeys</h2>
+      <div class="stop-jp">長野 · 地獄谷野猿公苑</div>
+      <p class="stop-desc">Nagano Prefecture is one of Japan's most dramatic mountain landscapes — a landlocked region of soaring peaks, deep river valleys, and ancient temple towns that hosted the 1998 Winter Olympics and remains one of the country's premier destinations for winter travel. The star attraction is Jigokudani Monkey Park, set in a steep snow-covered valley north of Nagano city, where a troop of wild Japanese macaques descends from the forest each winter morning to soak in a natural hot spring pool — one of the most extraordinary wildlife spectacles in Japan and unlike anything else in East Asia. The nearby town of Yudanaka is a classic hot spring resort, and Zenko-ji Temple in Nagano city, one of Japan's most important Buddhist pilgrimage sites, is a magnificent stop in its own right.</p>
+      <div class="stop-tip">💡 The snow monkeys are present year-round but the iconic images — macaques submerged to their shoulders in steaming water surrounded by deep snow — happen from December through March. Terry recommends taking the early Shinkansen, reaching Jigokudani by 9am before the day-trippers arrive, then spending the afternoon at Zenko-ji and finishing with a soak at a Yudanaka ryokan. An overnight stay in a traditional inn here is one of the most memorable experiences in Japan.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.7 · 22,000+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Jigokudani+Monkey+Park+Nagano" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Kyoto -->
+  <div class="stop" id="kyoto">
+    <div class="stop-img-wrap">
+      <div class="stop-transport">🚄 Shinkansen Nozomi · 2 hrs 15 min</div>
+      <div class="stop-num">05</div>
+      <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&q=80&fit=crop" alt="Kyoto Fushimi Inari torii gates shrine Japan" loading="lazy"/>
+      <div class="stop-badge">Japan's Cultural Heart</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Imperial City · Kyoto Prefecture</div>
+      <h2 class="stop-title">Kyoto</h2>
+      <div class="stop-jp">京都 · Capital City</div>
+      <p class="stop-desc">Kyoto was Japan's imperial capital for over a thousand years and remains the country's most concentrated repository of traditional culture — a city of 1,600 Buddhist temples, 400 Shinto shrines, 17 UNESCO World Heritage Sites, geisha districts, imperial palaces, zen rock gardens, and some of the finest kaiseki cuisine in the world. With two and a quarter hours by Shinkansen from Tokyo, it is the most rewarding single long day trip or overnight destination from the capital. The city is large but its historic areas — Higashiyama, Arashiyama, Fushimi, Nishiki — are distinct enough that a well-planned itinerary with Terry can take in three or four of them in a single focused day.</p>
+      <div class="stop-tip">💡 Terry's Kyoto day covers the pre-dawn approach to Fushimi Inari (before the crowds), Nishiki Market for breakfast, the Higashiyama temple walk, and a late afternoon in the Philosopher's Path — finishing with dinner in Gion as the lanterns come on. Staying overnight unlocks early morning Arashiyama bamboo, one of the most extraordinary experiences in Japan.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.8 · 85,000+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Kyoto+Japan" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Osaka -->
+  <div class="stop" id="osaka">
+    <div class="stop-img-wrap">
+      <div class="stop-transport">🚄 Shinkansen Nozomi · 2 hrs 30 min</div>
+      <div class="stop-num">06</div>
+      <img src="https://images.unsplash.com/photo-1589452271712-64b8a66c7b71?w=800&q=80&fit=crop" alt="Osaka Dotonbori neon lights canal night Japan" loading="lazy"/>
+      <div class="stop-badge">Japan's Kitchen</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Food City · Osaka Prefecture</div>
+      <h2 class="stop-title">Osaka</h2>
+      <div class="stop-jp">大阪 · Great Hill</div>
+      <p class="stop-desc">Osaka is Japan's most extroverted city — louder, friendlier, and hungrier than Tokyo, with a food culture so celebrated that the phrase kuidaore ("eat until you drop") is the city's unofficial motto. The historic castle, the neon-lit Dotonbori canal district, the covered shopping streets of Shinsaibashi, and the underground food universe of Kuromon Market together make Osaka one of the most immediately enjoyable cities in Japan. It pairs naturally with Kyoto, just 15 minutes away by Shinkansen, making a combined overnight trip that covers Japan's two great contrasting urban personalities — refined imperial culture and joyful street-level energy — in a single journey.</p>
+      <div class="stop-tip">💡 Terry's Osaka essentials: takoyaki octopus balls from Wanaka, a sunset view from Osaka Castle park, the Dotonbori walk at dusk, and a proper kushikatsu dinner in Shinsekai. Don't leave without trying okonomiyaki — Osaka's savoury layered pancake — at a restaurant where they cook it at your table.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.7 · 60,000+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Dotonbori+Osaka+Japan" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Nara -->
+  <div class="stop" id="nara">
+    <div class="stop-img-wrap">
+      <div class="stop-transport">🚄 Shinkansen + Kintetsu · 4 hrs</div>
+      <div class="stop-num">07</div>
+      <img src="https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?w=800&q=80&fit=crop" alt="Nara deer park Todaiji temple Japan" loading="lazy"/>
+      <div class="stop-badge">Japan's First Capital</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Ancient Capital · Nara Prefecture</div>
+      <h2 class="stop-title">Nara</h2>
+      <div class="stop-jp">奈良 · Place of Peace</div>
+      <p class="stop-desc">Nara was Japan's first permanent capital (710–784 AD) and contains a remarkable concentration of ancient Buddhist temples, Shinto shrines, and artifacts from Japan's earliest recorded history — including Todaiji, the world's largest wooden structure, which houses a 15-metre bronze Buddha cast in the 8th century. The central Nara Park, a vast green space connecting the major historic sites, is home to over 1,000 freely roaming sika deer that have been considered sacred messengers of the gods since the city's founding and show a disconcerting willingness to bow in exchange for the deer crackers sold throughout the park. Nara combines best with Kyoto or Osaka as part of an overnight trip to the Kansai region.</p>
+      <div class="stop-tip">💡 The deer are charming but assertive — hold your cracker bag close and buy only what you can feed quickly. Terry recommends the quieter eastern path from Todaiji through Kasuga Grand Shrine and into the ancient forested hillside beyond, where the deer thin out and the 1,300-year-old lantern-lined paths feel genuinely unchanged. Late afternoon light through the shrine's cedar forest is extraordinary.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.7 · 52,000+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Nara+Park+Todaiji+Japan" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">カスタムツアー · Custom Private Tours</div>
+  <p>Fully tailored · Private groups only · All destinations by train from Tokyo</p>
+  <p>© 2026 Tokyo Highlights Tour</p>
+  <div style="text-align:center; padding: 1.5rem 0 2rem;">
+    <a href="index.html" style="
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--stone);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 2px;
+      transition: opacity 0.2s;
+    " onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">
+      ← Back to Home
+    </a>
+  </div>
+</footer>
+
+<script>
+  const stops = document.querySelectorAll('.stop');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  stops.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
