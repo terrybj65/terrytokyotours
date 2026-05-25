@@ -1,1 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+  <meta name="description" content="Private guided tours of Tokyo and Japan with Terry — Shinjuku, Hakone, Kyoto, street food shotengai, custom day trips and more. Your personal guide to Japan."/>
+  <meta name="keywords" content="Tokyo private tour, Tokyo tour guide, private tours Japan, Tokyo guide, Japan travel, Tokyo day trips, custom Japan tours, Terry Tokyo guide"/>
+  <meta name="author" content="Tokyo Private Tours with Terry"/>
+  <meta name="robots" content="index, follow"/>
+  <meta property="og:title" content="Tokyo Private Tours with Terry — Your Personal Guide to Japan"/>
+  <meta property="og:description" content="Private guided tours of Tokyo and Japan with Terry — Shinjuku, Hakone, Kyoto, street food shotengai, custom day trips and more. Your personal guide to Japan."/>
+  <meta property="og:type" content="website"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tokyo Private Tours with Terry — Your Personal Guide to Japan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
+  :root {
+    --red: #D00000;
+    --red-dark: #B00000;
+    --red-light: #FFE5E5;
+    --text: #1C2833;
+    --text-muted: #5D6D7E;
+    --border: rgba(0,0,0,0.1);
+    --bg: #FAFAF8;
+    --bg-card: #ffffff;
+    --bg-surface: #F4F3EF;
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250,250,248,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--red); }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a { font-size: 14px; color: var(--text-muted); text-decoration: none; transition: color 0.15s; }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta {
+    background: var(--red);
+    color: #fff;
+    border: none;
+    padding: 9px 20px;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    transition: background 0.15s;
+    text-decoration: none;
+  }
+  .nav-cta:hover { background: var(--red-dark); }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+  section { padding: 5rem 0; }
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+  .section-sub { font-size: 16px; color: var(--text-muted); margin-bottom: 2.5rem; max-width: 560px; }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    height: 90vh;
+    min-height: 560px;
+    overflow: hidden;
+  }
+  .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: none;
+    display: flex;
+    align-items: center;
+  }
+  .hero-content {
+    max-width: 560px;
+    padding: 0 2rem;
+    background: none;
+  }
+  .hero-eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #f9a07a;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(40px, 6vw, 64px);
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.9), 0 0 30px rgba(0,0,0,0.8);
+  }
+  .hero p {
+    font-size: 17px;
+    color: #ffffff;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 420px;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
+  }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--red);
+    color: #fff;
+    border: none;
+    padding: 13px 26px;
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--red-dark); }
+  .btn-ghost {
+    background: rgba(0,0,0,0.45);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.6);
+    padding: 13px 26px;
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s;
+    display: inline-block;
+  }
+  .btn-ghost:hover { background: rgba(0,0,0,0.65); }
+
+  /* ── STATS ── */
+  .stats-section { background: var(--bg-card); border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); }
+  .stats-section .container { display: grid; grid-template-columns: repeat(3,1fr); }
+  .stat-item { padding: 2.5rem 2rem; text-align: center; border-right: 0.5px solid var(--border); }
+  .stat-item:last-child { border-right: none; }
+  .stat-num { font-family: 'DM Serif Display', serif; font-size: 48px; color: var(--red); font-weight: 400; }
+  .stat-label { font-size: 14px; color: var(--text-muted); margin-top: 4px; }
+
+  /* ── PROFILE ── */
+  .profile-section { background: var(--bg-surface); }
+  .profile-grid { display: grid; grid-template-columns: 260px 1fr; gap: 3rem; align-items: start; background: var(--bg-card); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 2.5rem; }
+  .profile-avatar {
+    width: 260px; height: 320px; border-radius: var(--radius);
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  }
+  .profile-avatar img {
+    width: 100%; height: 100%; object-fit: cover; object-position: top center;
+    display: block;
+  }
+  .profile-name { font-family: 'DM Serif Display', serif; font-size: 28px; font-weight: 400; margin-bottom: 4px; }
+  .profile-sub { font-size: 14px; color: var(--text-muted); margin-bottom: 1rem; }
+  .profile-bio { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 1.25rem; max-width: 560px; }
+  .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.25rem; }
+  .tag { font-size: 12px; padding: 4px 12px; border-radius: 999px; }
+  .tag-red { background: #FFE5E5; color: #B00000; }
+  .tag-blue { background: #E6F1FB; color: #185FA5; }
+  .tag-purple { background: #EEEDFE; color: #3C3489; }
+  .tag-green { background: #EAF3DE; color: #3B6D11; }
+  .profile-badges { display: flex; gap: 24px; padding-top: 1.25rem; border-top: 0.5px solid var(--border); flex-wrap: wrap; }
+  .badge-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-muted); }
+  .badge-icon { color: var(--red); font-size: 16px; }
+
+  /* ── TOURS ── */
+  .tours-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+  .tour-card {
+    background: var(--bg-card);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform 0.15s, box-shadow 0.15s;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  .tour-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+  .tour-img { width: 100%; height: 200px; object-fit: cover; display: block; }
+  .tour-body { padding: 1.25rem 1.5rem; }
+  .tour-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 6px; }
+  .tour-desc { font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 1rem; }
+  .tour-meta { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 0.5px solid var(--border); }
+  .tour-dur { font-size: 13px; color: var(--text-muted); }
+  .tour-price { font-size: 15px; font-weight: 500; color: var(--red); }
+
+  /* ── AREAS ── */
+  .areas-section { background: var(--bg-surface); }
+  .areas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+  .area-card { position: relative; border-radius: var(--radius); overflow: hidden; height: 160px; cursor: pointer; }
+  .area-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
+  .area-card:hover img { transform: scale(1.05); }
+  .area-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.65) 40%, rgba(0,0,0,0.1));
+    display: flex; flex-direction: column; justify-content: flex-end; padding: 1rem;
+  }
+  .area-name { font-family: 'DM Serif Display', serif; font-size: 18px; color: #fff; font-weight: 400; }
+  .area-desc { font-size: 12px; color: rgba(255,255,255,0.75); }
+
+  /* ── REVIEWS ── */
+  .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+  .review-card { background: var(--bg-card); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+  .stars { color: #BA7517; font-size: 14px; margin-bottom: 10px; }
+  .review-text { font-size: 15px; color: var(--text-muted); line-height: 1.7; font-style: italic; margin-bottom: 1.25rem; }
+  .reviewer { display: flex; align-items: center; gap: 12px; }
+  .reviewer-avatar { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #fff; font-weight: 500; flex-shrink: 0; }
+  .reviewer-name { font-size: 14px; font-weight: 500; }
+  .reviewer-from { font-size: 12px; color: var(--text-muted); }
+
+  /* ── CTA ── */
+  .cta-section { position: relative; overflow: hidden; min-height: 400px; display: flex; align-items: center; }
+  .cta-section img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .cta-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to right, rgba(15,15,30,0.88) 50%, rgba(15,15,30,0.4));
+  }
+  .cta-content { position: relative; padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
+  .cta-content h2 { font-family: 'DM Serif Display', serif; font-size: 44px; color: #fff; font-weight: 400; margin-bottom: 0.75rem; }
+  .cta-content p { font-size: 17px; color: rgba(255,255,255,0.65); margin-bottom: 2rem; max-width: 440px; }
+  .cta-form { display: flex; gap: 10px; flex-wrap: wrap; }
+  .cta-input {
+    padding: 13px 18px;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    font-size: 15px;
+    font-family: 'DM Sans', sans-serif;
+    width: 260px;
+    outline: none;
+  }
+  .cta-input::placeholder { color: rgba(255,255,255,0.4); }
+  .cta-input:focus { border-color: rgba(255,255,255,0.45); }
+
+  /* ── FOOTER ── */
+  footer { background: #111; color: rgba(255,255,255,0.5); padding: 2rem; text-align: center; font-size: 13px; }
+  footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 700px) {
+    .nav-links { display: none; }
+    .stats-section .container { grid-template-columns: 1fr; }
+    .stat-item { border-right: none; border-bottom: 0.5px solid var(--border); }
+    .stat-item:last-child { border-bottom: none; }
+    .profile-grid { grid-template-columns: 1fr; }
+    .profile-avatar { width: 100%; height: 220px; }
+    .section-title { font-size: 28px; }
+    .hero h1 { font-size: 36px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <ul class="nav-links" style="display:flex; list-style:none; justify-content:center; align-items:center; gap:2rem; flex:1; margin:0; padding:0;">
+  <li><a href="#areas">Areas</a></li>
+  <li><a href="#tours">Tours</a></li>
+  <li><a href="#about">About</a></li>
+  <li><a href="#contact">Contact</a></li>
+</ul>
+<a href="#contact" class="nav-cta">Book a tour</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="destinationtokyo.jpg" alt="Tokyo skyline"/>  
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <div class="hero-eyebrow">📍 Tokyo & surrounding areas, Japan</div>
+      <h1>Discover Tokyo<br>like a local</h1>
+      <p>Skip the guidebook. Terry has lived in Japan for 27 years and knows every neighborhood, hidden gem, and local secret worth knowing.</p>
+      <div class="hero-btns">
+        <a href="#tours" class="btn-primary">See tours ↓</a>
+        <a href="#about" class="btn-ghost">Meet Terry</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-section" style="padding:0">
+  <div class="container">
+    <div class="stat-item"><div class="stat-num">27</div><div class="stat-label">Years living locally</div></div>
+    <div class="stat-item"><div class="stat-num">80+</div><div class="stat-label">Tours led</div></div>
+    <div class="stat-item"><div class="stat-num">5.0 ★</div><div class="stat-label">Average guest rating</div></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="profile-section" id="about">
+  <div class="container">
+    <div class="section-label">Your guide</div>
+    <div class="section-title">Meet Terry</div>
+    <div class="section-sub">A familiar face in Japan with deep roots across the greater Tokyo area.</div>
+    <div class="profile-grid">
+      <div class="profile-avatar">
+        <img src="profilephoto.png" alt="Terry B. Johnson — Tokyo private tour guide" />
+      </div>
+      <div>
+        <div class="profile-name">Terry B. Johnson</div>
+        <div class="profile-sub">Local guide · Japan</div>
+        <div class="profile-bio">Hi, I'm Terry! I've been living in Japan for 27 years, and over that time I've developed a deep knowledge and appreciation of Japanese culture, food, history, and everyday life. I love sharing both the famous sights and the hidden local spots that many visitors would never find on their own. Whether you're interested in traditional culture, modern city life, amazing food, local neighborhoods, or just experiencing Japan in a more relaxed and personal way, I'm here to help make your trip fun, comfortable, and memorable. I enjoy meeting people from all over the world and creating tours that feel friendly, informative, and easygoing. Looking forward to exploring Japan together!</div>
+        <div class="tags">
+          <span class="tag tag-red">Tokyo neighborhoods</span>
+          <span class="tag tag-blue">Cultural context</span>
+          <span class="tag tag-purple">Language support</span>
+          <span class="tag tag-green">Tokyo & surrounding areas</span>
+        </div>
+        <div class="profile-badges">
+          <span class="badge-item"><span class="badge-icon">🇯🇵</span> English & Japanese only</span>
+          <span class="badge-item">🕐 Flexible scheduling</span>
+          <span class="badge-item">👥 Solo & small groups</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOURS -->
+<section id="tours">
+  <div class="container">
+    <div class="section-label">Tours</div>
+    <div class="section-title">What's on offer</div>
+    <div class="section-sub">From half-day strolls to full-day deep dives — customized to your pace and interests.</div>
+    <div class="tours-grid">
+      <a href="tokyo-highlights.html" class="tour-card">
+      <img class="tour-img" src="tokyo2.jpg" alt="Tokyo highlights"/>
+<div class="tour-body">
+        <div class="tour-title">Tokyo highlights</div>
+        <div class="tour-desc">Shibuya, Asakusa, Harajuku & more — with local insight and stories at every stop.</div>
+        <div class="tour-meta"><span class="tour-dur">⏱ Full day</span><span class="tour-price">From ¥15,000 pp</span></div>
+        </div>
+      </a>
+      <a href="hidden-tokyo.html" class="tour-card">
+        <img class="tour-img" src="hiddenTokyo.jpg" alt="Hidden Tokyo"/>
+<div class="tour-body">
+          <div class="tour-title">Hidden Tokyo</div>
+          <div class="tour-desc">Off the tourist trail — shotengai, local markets, kissaten & neighborhood life.</div>
+          <div class="tour-meta"><span class="tour-dur">⏱ Half day</span><span class="tour-price">From ¥12,000 pp</span></div>
+        </div>
+      </a>
+      <a href="food-culture-tokyo.html" class="tour-card">
+        <img class="tour-img" src="food_Culture.jpg" alt="Food and culture Tokyo"/>
+        <div class="tour-body">
+          <div class="tour-title">Food & culture</div>
+          <div class="tour-desc">Ramen, sushi, izakayas & street food — eat your way through Tokyo with a local.</div>
+          <div class="tour-meta"><span class="tour-dur">⏱ Half day</span><span class="tour-price">From ¥12,000 pp</span></div>
+        </div>
+      </a>
+      <a href="kamakura-day-trip.html" class="tour-card">
+        <img class="tour-img" src="kamakura.jpg" alt="Kamakura"/>
+<div class="tour-body">
+          <div class="tour-title">Kamakura day trip</div>
+          <div class="tour-desc">Temples, the Great Buddha & scenic coastal paths — just 1 hour from Tokyo.</div>
+          <div class="tour-meta"><span class="tour-dur">⏱ Full day</span><span class="tour-price">From ¥12,000 pp</span></div>
+        </div>
+      </a>
+      <a href="yokohama-chinatown-day-trip.html" class="tour-card">
+        <img class="tour-img" src="yokohama.jpg" alt="Yokohama"/>
+<div class="tour-body">
+          <div class="tour-title">Yokohama & Chinatown</div>
+          <div class="tour-desc">Waterfront promenades, Chinatown flavors & the stunning Minato Mirai skyline.</div>
+          <div class="tour-meta"><span class="tour-dur">⏱ Full day</span><span class="tour-price">From ¥15,000 pp</span></div>
+        </div>
+      </a>
+      <a href="#contact" class="tour-card">
+        <img class="tour-img" src="https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?w=600&q=80&fit=crop" alt="Tokyo temple garden" />
+        <div class="tour-body">
+          <div class="tour-title">Custom private tour</div>
+          <div class="tour-desc">Your interests, your pace. Tell Terry what you want to see and he'll make it happen.</div>
+          <div class="tour-meta"><span class="tour-dur">⏱ Flexible</span><span class="tour-price">Custom quote</span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- AREAS -->
+<section class="areas-section" id="areas">
+  <div class="container">
+    <div class="section-label">Areas covered</div>
+    <div class="section-title">Where Terry takes you</div>
+    <div class="section-sub">Greater Tokyo and beyond — all easily accessible by train.</div>
+    <div class="areas-grid">
+      <div class="area-card">
+        <a href="shinjuku.html" style="pointer-events:all;">
+          <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=400&q=75&fit=crop" width="3162" height="4216" alt="Shinjuku"/>
+          <div class="area-overlay" style="pointer-events:none;"><div class="area-name">Shinjuku</div><div class="area-desc">Neon & nightlife</div></div>
+        </a>
+      </div>
+      <div class="area-card">
+        <a href="asakusa.html" style="pointer-events:all;">
+          <img src="https://images.unsplash.com/photo-1583405963363-588941225fc2?w=400&q=75&fit=crop" alt="Sensoji Temple Asakusa daytime"/>
+          <div class="area-overlay" style="pointer-events:none;"><div class="area-name">Asakusa</div><div class="area-desc">Old Tokyo</div></div>
+        </a>
+      </div>
+      <div class="area-card">
+        <a href="shibuya.html" style="pointer-events:all;">
+          <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=400&q=75&fit=crop" onerror="this.src='https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=400&q=75&fit=crop'" alt="Shibuya crossing daytime"/>
+          <div class="area-overlay" style="pointer-events:none;"><div class="area-name">Shibuya</div><div class="area-desc">Modern Tokyo</div></div>
+        </a>
+      </div>
+      <div class="area-card">
+        <a href="yanaka.html" style="pointer-events:all;">
+          <img src="https://images.unsplash.com/photo-1578469550956-0e16b69c6a3d?w=400&q=75&fit=crop" onerror="this.src='https://images.unsplash.com/photo-1578469550956-0e16b69c6a3d?w=400&q=75&fit=crop'" alt="Yanaka daytime"/>
+          <div class="area-overlay" style="pointer-events:none;"><div class="area-name">Yanaka</div><div class="area-desc">Old shitamachi</div></div>
+        </a>
+      </div>
+      <div class="area-card">
+        <a href="yokohama-3.html" style="pointer-events:all;">
+          <img src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=400&q=75&fit=crop" onerror="this.src='https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=400&q=75&fit=crop'" alt="Yokohama"/>
+          <div class="area-overlay" style="pointer-events:none;"><div class="area-name">Yokohama</div><div class="area-desc">Port city</div></div>
+        </a>
+      </div>
+      <div class="area-card">
+        <a href="kamakura-2.html" style="pointer-events:all;">
+          <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=400&q=75&fit=crop" alt="Kamakura"/>
+          <div class="area-overlay" style="pointer-events:none;"><div class="area-name">Kamakura</div><div class="area-desc">Temples & coast</div></div>
+        </a>
+      </div>
+      <div class="area-card">
+        <a href="hakone.html" style="pointer-events:all;">
+          <img src="https://images.unsplash.com/photo-1672594859456-50b7dc769a69?w=400&q=75&fit=crop" alt="Hakone Lake Ashi Mt Fuji"/>
+          <div class="area-overlay" style="pointer-events:none;"><div class="area-name">Hakone</div><div class="area-desc">Onsen & Fuji</div></div>
+        </a>
+      </div>
+      <div class="area-card">
+        <a href="tokyo-suburbs-local-life.html" style="pointer-events:all;">
+          <img src="https://images.unsplash.com/photo-1480796927426-f609979314bd?w=400&q=75&fit=crop" onerror="this.src='https://images.unsplash.com/photo-1480796927426-f609979314bd?w=400&q=75&fit=crop'" alt="Tokyo suburbs"/>
+          <div class="area-overlay" style="pointer-events:none;"><div class="area-name">Tokyo suburbs</div><div class="area-desc">Local life</div></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section>
+  <div class="container">
+    <div class="section-label">Reviews</div>
+    <div class="section-title">What visitors say</div>
+    <div class="section-sub">Straight from people Terry has guided around Tokyo.</div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <div class="review-text">"Terry took us to places we never would have found on our own. The izakaya he chose for dinner was absolutely incredible — and we never would have walked in without him."</div>
+        <div class="reviewer">
+          <div class="reviewer-avatar" style="background:#185FA5">SM</div>
+          <div><div class="reviewer-name">Sarah M.</div><div class="reviewer-from">London, UK</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <div class="review-text">"His Japanese made everything so smooth. We got to have real conversations with locals that we never could have managed on our own. Truly special experience."</div>
+        <div class="reviewer">
+          <div class="reviewer-avatar" style="background:#3B6D11">JK</div>
+          <div><div class="reviewer-name">James K.</div><div class="reviewer-from">Sydney, Australia</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <div class="review-text">"Best day of our whole Japan trip. Terry's knowledge of the culture added so much depth to everything we saw. Book him — you won't regret it."</div>
+        <div class="reviewer">
+          <div class="reviewer-avatar" style="background:#B00000">MR</div>
+          <div><div class="reviewer-name">Maria R.</div><div class="reviewer-from">Toronto, Canada</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <img class="tour-img" src="https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?w=1600&q=85&fit=crop" alt="Tokyo street scene at dusk" />
+  <div class="cta-overlay"></div>
+  <div class="cta-content">
+    <h2>Ready to see Tokyo<br>differently?</h2>
+    <p>Drop your email and Terry will be in touch to plan your perfect day out.</p>
+    <div class="cta-form">
+      <input class="cta-input" type="email" placeholder="your@email.com" />
+      <a href="mailto:terrybj65@msn.com" class="btn-primary">Get in touch ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Tokyo with Terry · Japan</p>
+</footer>
+
+</body>
+</html>
