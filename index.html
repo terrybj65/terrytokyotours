@@ -191,13 +191,16 @@
 
   /* ── PROFILE ── */
   .profile-section { background: var(--bg-surface); }
-  .profile-grid { display: grid; grid-template-columns: auto 1fr; gap: 2.5rem; align-items: start; background: var(--bg-card); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 2.5rem; }
+  .profile-grid { display: grid; grid-template-columns: 260px 1fr; gap: 3rem; align-items: start; background: var(--bg-card); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 2.5rem; }
   .profile-avatar {
-    width: 110px; height: 110px; border-radius: 50%;
-    background: var(--red);
-    display: flex; align-items: center; justify-content: center;
-    color: #fff; font-family: 'DM Serif Display', serif; font-size: 36px;
+    width: 260px; height: 320px; border-radius: var(--radius);
+    overflow: hidden;
     flex-shrink: 0;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  }
+  .profile-avatar img {
+    width: 100%; height: 100%; object-fit: cover; object-position: top center;
+    display: block;
   }
   .profile-name { font-family: 'DM Serif Display', serif; font-size: 28px; font-weight: 400; margin-bottom: 4px; }
   .profile-sub { font-size: 14px; color: var(--text-muted); margin-bottom: 1rem; }
@@ -293,7 +296,7 @@
     .stat-item { border-right: none; border-bottom: 0.5px solid var(--border); }
     .stat-item:last-child { border-bottom: none; }
     .profile-grid { grid-template-columns: 1fr; }
-    .profile-avatar { width: 80px; height: 80px; font-size: 26px; }
+    .profile-avatar { width: 100%; height: 220px; }
     .section-title { font-size: 28px; }
     .hero h1 { font-size: 36px; }
   }
@@ -344,6 +347,9 @@
     <div class="section-title">Meet Terry</div>
     <div class="section-sub">A familiar face in Japan with deep roots across the greater Tokyo area.</div>
     <div class="profile-grid">
+      <div class="profile-avatar">
+        <img src="profilephoto.png" alt="Terry B. Johnson — Tokyo private tour guide" />
+      </div>
       <div>
         <div class="profile-name">Terry B. Johnson</div>
         <div class="profile-sub">Local guide · Japan</div>
