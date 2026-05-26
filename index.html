@@ -369,7 +369,30 @@
     overflow: hidden;
     min-width: 0;
   }
-  .c-day:hover:not(.c-other):not(.c-past) { border-color: var(--red); }
+  .c-day.c-clickable:hover:not(.c-other) { border-color: var(--red); }
+  .c-day.c-selected { border-color: var(--red) !important; box-shadow: 0 0 0 2px rgba(208,0,0,0.15); }
+
+  /* Day expand panel */
+  .day-panel {
+    margin-top: 12px;
+    background: var(--bg-card);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    animation: slideDown 0.18s ease;
+  }
+  @keyframes slideDown {
+    from { opacity:0; transform:translateY(-6px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+  .day-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 0.5px solid var(--border);
+  }
   .c-day.c-other { opacity: 0.2; pointer-events: none; }
   .c-day.c-past { opacity: 0.4; pointer-events: none; }
   .c-day.c-today { border: 1.5px solid #aaa; }
@@ -817,42 +840,55 @@
   <div class="container">
     <div class="section-label">Availability</div>
     <div class="section-title">Check &amp; book a date</div>
-    <div class="section-sub">See when Terry is available and mark your preferred dates. Holidays are highlighted automatically.</div>
+    <div class="section-sub">Click any date to see available slots. Customers can request a booking directly from open slots.</div>
 
     <div class="avail-layout">
 
-      <!-- LEFT: controls + summary -->
+      <!-- LEFT: PIN / controls + summary -->
       <div>
-        <div class="avail-controls">
-          <h3>Mark availability</h3>
-          <div class="mode-btns">
-            <button class="mode-btn active-avail" id="btn-avail" onclick="setMode('available')">Available</button>
-            <button class="mode-btn" id="btn-unavail" onclick="setMode('unavailable')">Unavailable</button>
-            <button class="mode-btn" id="btn-clear" onclick="setMode('clear')">Clear</button>
+        <!-- PIN gate (hidden — triggered by secret shortcut) -->
+        <div class="avail-controls" id="pin-panel" style="display:none;">
+          <h3>Admin login</h3>
+          <div style="display:flex;gap:8px;margin-bottom:6px;">
+            <input id="pin-input" type="password" maxlength="10" placeholder="PIN"
+              style="flex:1;padding:9px 14px;border-radius:var(--radius-sm);border:1px solid var(--border);font-size:14px;font-family:'DM Sans',sans-serif;outline:none;background:var(--bg-surface);"
+              onkeydown="if(event.key==='Enter')checkPin()" />
+            <button onclick="checkPin()" style="padding:9px 18px;border-radius:var(--radius-sm);border:none;background:var(--red);color:#fff;font-size:14px;font-family:'DM Sans',sans-serif;cursor:pointer;">Unlock</button>
           </div>
-          <div class="avail-hint" id="avail-hint">Click any date to mark it as <strong>available</strong>. Click again to toggle.</div>
+          <div id="pin-error" style="font-size:12px;color:var(--red);display:none;">Incorrect PIN.</div>
         </div>
 
+        <!-- Edit controls (hidden until unlocked) -->
+        <div class="avail-controls" id="edit-panel" style="display:none;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+            <h3 style="margin:0;">Edit slots</h3>
+            <button onclick="lockCalendar()" style="font-size:12px;color:var(--text-muted);background:none;border:none;cursor:pointer;padding:4px 8px;border-radius:4px;border:0.5px solid var(--border);">Lock</button>
+          </div>
+          <p style="font-size:13px;color:var(--text-muted);margin-bottom:1rem;">Click a date, then toggle each slot below.</p>
+          <div id="slot-editor" style="font-size:13px;color:var(--text-muted);">Select a date to edit its slots.</div>
+        </div>
+
+        <!-- Summary -->
         <div class="avail-summary">
-          <h3>This month at a glance</h3>
+          <h3>This month</h3>
           <div class="summary-stats">
             <div class="summary-stat s-green">
               <div class="s-num" id="count-avail">0</div>
-              <div class="s-label">Available days</div>
+              <div class="s-label">Days with open slots</div>
             </div>
             <div class="summary-stat">
               <div class="s-num" id="count-unavail">0</div>
-              <div class="s-label">Unavailable days</div>
+              <div class="s-label">Fully booked days</div>
             </div>
           </div>
           <div class="avail-list" id="avail-list">
-            <div style="font-size:13px;color:var(--text-muted);">No dates marked yet.</div>
+            <div style="font-size:13px;color:var(--text-muted);">No slots set this month.</div>
           </div>
           <button class="btn-export" onclick="copyAvailability()">Copy availability to clipboard</button>
         </div>
       </div>
 
-      <!-- RIGHT: calendar -->
+      <!-- RIGHT: calendar + day panel -->
       <div>
         <div class="cal-wrap">
           <div class="cal-header">
@@ -860,25 +896,26 @@
             <div class="cal-title-text" id="cal-title"></div>
             <button class="cal-nav-btn" onclick="changeMonth(1)" aria-label="Next month">&rarr;</button>
           </div>
-
           <div class="grid-header-row">
-            <span class="col-sun">Sun</span>
-            <span>Mon</span>
-            <span>Tue</span>
-            <span>Wed</span>
-            <span>Thu</span>
-            <span>Fri</span>
-            <span class="col-sat">Sat</span>
+            <span class="col-sun">Sun</span><span>Mon</span><span>Tue</span>
+            <span>Wed</span><span>Thu</span><span>Fri</span><span class="col-sat">Sat</span>
           </div>
-
           <div class="cal-grid" id="cal-grid"></div>
-
           <div class="cal-legend">
-            <div class="leg-item"><div class="leg-box leg-avail"></div>Available</div>
-            <div class="leg-item"><div class="leg-box leg-unavail"></div>Unavailable</div>
-            <div class="leg-item"><div class="leg-box leg-holiday"></div>Holiday</div>
-            <div class="leg-item"><div class="leg-box leg-today"></div>Today</div>
+            <div class="leg-item"><div class="leg-box" style="background:#eaf7ee;border:1.5px solid #4caf50;"></div>Some slots open</div>
+            <div class="leg-item"><div class="leg-box" style="background:#ffeaea;border:1.5px solid #e53935;"></div>Fully busy</div>
+            <div class="leg-item"><div class="leg-box" style="background:#fff5f7;border:1.5px solid #BC002D;"></div>Holiday</div>
+            <div class="leg-item"><div class="leg-box" style="background:#fff;border:1.5px solid #aaa;"></div>Today</div>
           </div>
+        </div>
+
+        <!-- Day expand panel -->
+        <div id="day-panel" style="display:none;" class="day-panel">
+          <div class="day-panel-header">
+            <span id="day-panel-title" style="font-family:'DM Serif Display',serif;font-size:18px;"></span>
+            <button onclick="closePanel()" style="background:none;border:none;cursor:pointer;font-size:18px;color:var(--text-muted);line-height:1;">&#10005;</button>
+          </div>
+          <div id="day-panel-slots"></div>
         </div>
       </div>
 
@@ -889,166 +926,287 @@
 <script>
 (function() {
   const HOLIDAYS = {
-    "01-01": "New Year's Day|元日",
-    "01-13": "Coming of Age Day|成人の日",
-    "02-11": "National Foundation Day|建国記念の日",
-    "02-23": "Emperor's Birthday|天皇誕生日",
-    "03-20": "Vernal Equinox Day|春分の日",
-    "04-29": "Showa Day|昭和の日",
-    "05-03": "Constitution Memorial Day|憲法記念日",
-    "05-04": "Greenery Day|みどりの日",
-    "05-05": "Children's Day|こどもの日",
-    "07-21": "Marine Day|海の日",
-    "08-11": "Mountain Day|山の日",
-    "09-15": "Respect for the Aged Day|敬老の日",
-    "09-23": "Autumnal Equinox Day|秋分の日",
-    "10-13": "Sports Day|体育の日",
-    "11-03": "Culture Day|文化の日",
-    "11-23": "Labour Thanksgiving Day|勤労感謝の日",
-    "11-24": "Substitute Holiday|振替休日"
+    "01-01":"New Year's Day|元日","01-13":"Coming of Age Day|成人の日",
+    "02-11":"National Foundation Day|建国記念の日","02-23":"Emperor's Birthday|天皇誕生日",
+    "03-20":"Vernal Equinox Day|春分の日","04-29":"Showa Day|昭和の日",
+    "05-03":"Constitution Memorial Day|憲法記念日","05-04":"Greenery Day|みどりの日",
+    "05-05":"Children's Day|こどもの日","07-21":"Marine Day|海の日",
+    "08-11":"Mountain Day|山の日","09-15":"Respect for the Aged Day|敬老の日",
+    "09-23":"Autumnal Equinox Day|秋分の日","10-13":"Sports Day|体育の日",
+    "11-03":"Culture Day|文化の日","11-23":"Labour Thanksgiving Day|勤労感謝の日",
+    "11-24":"Substitute Holiday|振替休日"
   };
+  const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  const SLOTS = ["Full Day","Morning","Afternoon","Evening"];
+  const TERRY_EMAIL = "terrybj65@msn.com";
 
-  const MONTHS = ["January","February","March","April","May","June",
-                  "July","August","September","October","November","December"];
-
-  const availability = {};
-  let currentMode = 'available';
+  // slotData[dateKey] = { "Full Day": "busy"|"free"|undefined, "Morning": ..., ... }
+  const slotData = {};
+  let isUnlocked = false;
+  let selectedKey = null;
+  const CORRECT_PIN = '1234'; // <-- change this to your PIN
 
   const today = new Date();
   let cur = new Date(today.getFullYear(), today.getMonth(), 1);
 
-  window.setMode = function(mode) {
-    currentMode = mode;
-    document.getElementById('btn-avail').className = 'mode-btn' + (mode === 'available' ? ' active-avail' : '');
-    document.getElementById('btn-unavail').className = 'mode-btn' + (mode === 'unavailable' ? ' active-unavail' : '');
-    document.getElementById('btn-clear').className = 'mode-btn' + (mode === 'clear' ? ' active-clear' : '');
-    const hints = {
-      available: 'Click any date to mark it as <strong>available</strong>.',
-      unavailable: 'Click any date to mark it as <strong>unavailable</strong>.',
-      clear: 'Click a marked date to <strong>clear</strong> it.'
-    };
-    document.getElementById('avail-hint').innerHTML = hints[mode];
-  };
+  function pad(n) { return String(n).padStart(2,'0'); }
+  function dateKey(y,m,d) { return y+'-'+pad(m+1)+'-'+pad(d); }
+  function getHoliday(m1,d) { return HOLIDAYS[pad(m1)+'-'+pad(d)]||null; }
 
-  window.changeMonth = function(dir) {
-    cur = new Date(cur.getFullYear(), cur.getMonth() + dir, 1);
-    render();
-  };
-
-  function pad(n) { return String(n).padStart(2, '0'); }
-  function dateKey(y, m, d) { return y + '-' + pad(m+1) + '-' + pad(d); }
-  function getHoliday(m1, d) { return HOLIDAYS[pad(m1) + '-' + pad(d)] || null; }
-
-  window.toggleDay = function(key) {
-    if (currentMode === 'clear') {
-      delete availability[key];
-    } else {
-      availability[key] = currentMode;
+  // ── PIN ──
+  // Secret shortcut: type T then J then 3 anywhere on the page to reveal the PIN box
+  var keySeq = [];
+  document.addEventListener('keydown', function(e) {
+    keySeq.push(e.key);
+    if (keySeq.length > 3) keySeq.shift();
+    if (keySeq.join('') === 'tj3') {
+      if (!isUnlocked) {
+        document.getElementById('pin-panel').style.display = 'block';
+        setTimeout(function(){ document.getElementById('pin-input').focus(); }, 50);
+      }
+      keySeq = [];
     }
+  });
+
+  window.checkPin = function() {
+    const inp = document.getElementById('pin-input');
+    if (inp.value === CORRECT_PIN) {
+      isUnlocked = true;
+      document.getElementById('pin-panel').style.display = 'none';
+      document.getElementById('edit-panel').style.display = 'block';
+      inp.value = '';
+      render();
+      if (selectedKey) renderSlotEditor(selectedKey);
+    } else {
+      document.getElementById('pin-error').style.display = 'block';
+      inp.value = ''; inp.focus();
+    }
+  };
+  window.lockCalendar = function() {
+    isUnlocked = false;
+    document.getElementById('edit-panel').style.display = 'none';
+    document.getElementById('pin-panel').style.display = 'none';
+    render();
+    if (selectedKey) renderDayPanel(selectedKey);
+  };
+
+  // ── SLOT HELPERS ──
+  function getSlots(key) { return slotData[key] || {}; }
+  function setSlot(key, slot, val) {
+    if (!slotData[key]) slotData[key] = {};
+    if (val === undefined) delete slotData[key][slot];
+    else slotData[key][slot] = val;
+    if (Object.keys(slotData[key]).length === 0) delete slotData[key];
+  }
+  function daySummary(key) {
+    // returns: 'all-busy', 'some-free', 'all-free', 'empty'
+    const slots = getSlots(key);
+    const set = Object.values(slots);
+    if (set.length === 0) return 'empty';
+    const hasFree = set.some(function(v){return v==='free';});
+    const hasBusy = set.some(function(v){return v==='busy';});
+    if (hasFree && !hasBusy) return 'all-free';
+    if (hasFree && hasBusy) return 'some-free';
+    return 'all-busy';
+  }
+
+  // ── NAVIGATE ──
+  window.changeMonth = function(dir) {
+    cur = new Date(cur.getFullYear(), cur.getMonth()+dir, 1);
+    selectedKey = null;
+    document.getElementById('day-panel').style.display = 'none';
     render();
   };
 
+  // ── CLICK DAY ──
+  window.openDay = function(key) {
+    selectedKey = key;
+    renderDayPanel(key);
+    if (isUnlocked) renderSlotEditor(key);
+    render();
+  };
+  window.closePanel = function() {
+    selectedKey = null;
+    document.getElementById('day-panel').style.display = 'none';
+    document.getElementById('slot-editor').innerHTML = 'Select a date to edit its slots.';
+    render();
+  };
+
+  function renderDayPanel(key) {
+    const parts = key.split('-');
+    const y=parseInt(parts[0]), m=parseInt(parts[1])-1, d=parseInt(parts[2]);
+    const dateObj = new Date(y,m,d);
+    const dayNames = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    const titleStr = dayNames[dateObj.getDay()] + ', ' + MONTHS[m] + ' ' + d + ', ' + y;
+    document.getElementById('day-panel-title').textContent = titleStr;
+
+    const slots = getSlots(key);
+    const hol = getHoliday(m+1, d);
+    let html = '';
+    if (hol) html += '<div style="font-size:12px;color:#BC002D;font-weight:600;margin-bottom:10px;">🗓 '+hol.split('|')[0]+' (Public Holiday)</div>';
+
+    const hasAny = Object.keys(slots).length > 0;
+    if (!hasAny) {
+      html += '<div style="font-size:13px;color:var(--text-muted);padding:8px 0;">No slots set for this day yet.</div>';
+    } else {
+      SLOTS.forEach(function(slot) {
+        const state = slots[slot];
+        if (!state) return;
+        const isFree = state === 'free';
+        const bg = isFree ? '#eaf7ee' : '#ffeaea';
+        const col = isFree ? '#2e7d32' : '#c62828';
+        const label = isFree ? 'Available' : 'Busy';
+        const icon = isFree ? '✅' : '❌';
+        let bookBtn = '';
+        if (isFree) {
+          const subject = encodeURIComponent('Tour booking enquiry – ' + titleStr + ' (' + slot + ')');
+          const body = encodeURIComponent('Hi Terry,\n\nI\'d like to book a tour on ' + titleStr + ' (' + slot + ').\n\nPlease let me know availability and next steps.\n\nThanks!');
+          bookBtn = '<a href="mailto:'+TERRY_EMAIL+'?subject='+subject+'&body='+body+'" style="margin-left:auto;font-size:12px;padding:5px 12px;border-radius:6px;background:var(--red);color:#fff;text-decoration:none;white-space:nowrap;">Book this slot ↗</a>';
+        }
+        html += '<div style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;background:'+bg+';margin-bottom:6px;">'
+          +'<span style="font-size:14px;">'+icon+'</span>'
+          +'<span style="font-size:13px;font-weight:500;color:'+col+';">'+slot+'</span>'
+          +'<span style="font-size:11px;color:'+col+';opacity:0.75;margin-left:2px;">'+label+'</span>'
+          +bookBtn
+          +'</div>';
+      });
+    }
+
+    if (!isUnlocked && !hasAny) {
+      html = '<div style="font-size:13px;color:var(--text-muted);padding:8px 0;">No availability set for this day.</div>';
+    }
+
+    document.getElementById('day-panel-slots').innerHTML = html;
+    document.getElementById('day-panel').style.display = 'block';
+  }
+
+  function renderSlotEditor(key) {
+    const parts = key.split('-');
+    const y=parseInt(parts[0]), m=parseInt(parts[1])-1, d=parseInt(parts[2]);
+    const titleStr = MONTHS[m] + ' ' + d;
+    let html = '<div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:10px;">'+titleStr+'</div>';
+
+    SLOTS.forEach(function(slot) {
+      const state = (getSlots(key))[slot];
+      const freeActive = state === 'free';
+      const busyActive = state === 'busy';
+      html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">'
+        +'<span style="font-size:13px;min-width:80px;color:var(--text);">'+slot+'</span>'
+        +'<button onclick="setSlotUnlocked(\''+key+'\',\''+slot+'\',\'free\')" style="flex:1;padding:6px 0;border-radius:6px;border:1px solid '+(freeActive?'#4caf50':'var(--border)')+';background:'+(freeActive?'#eaf7ee':'var(--bg-surface)')+';color:'+(freeActive?'#2e7d32':'var(--text-muted)')+';font-size:12px;cursor:pointer;font-family:\'DM Sans\',sans-serif;">Free</button>'
+        +'<button onclick="setSlotUnlocked(\''+key+'\',\''+slot+'\',\'busy\')" style="flex:1;padding:6px 0;border-radius:6px;border:1px solid '+(busyActive?'#e53935':'var(--border)')+';background:'+(busyActive?'#ffeaea':'var(--bg-surface)')+';color:'+(busyActive?'#c62828':'var(--text-muted)')+';font-size:12px;cursor:pointer;font-family:\'DM Sans\',sans-serif;">Busy</button>'
+        +'<button onclick="setSlotUnlocked(\''+key+'\',\''+slot+'\',null)" style="padding:6px 10px;border-radius:6px;border:1px solid var(--border);background:var(--bg-surface);color:var(--text-muted);font-size:12px;cursor:pointer;font-family:\'DM Sans\',sans-serif;">✕</button>'
+        +'</div>';
+    });
+    document.getElementById('slot-editor').innerHTML = html;
+  }
+
+  window.setSlotUnlocked = function(key, slot, val) {
+    if (!isUnlocked) return;
+    setSlot(key, slot, val === null ? undefined : val);
+    render();
+    renderDayPanel(key);
+    renderSlotEditor(key);
+  };
+
+  // ── RENDER CALENDAR ──
   function render() {
     const y = cur.getFullYear(), m = cur.getMonth();
     document.getElementById('cal-title').textContent = MONTHS[m] + ' ' + y;
-
-    const firstDay = new Date(y, m, 1).getDay();
-    const daysInMonth = new Date(y, m + 1, 0).getDate();
-    const daysInPrev = new Date(y, m, 0).getDate();
-
+    const firstDay = new Date(y,m,1).getDay();
+    const daysInMonth = new Date(y,m+1,0).getDate();
+    const daysInPrev = new Date(y,m,0).getDate();
     let cells = '';
 
-    for (let i = 0; i < firstDay; i++) {
-      const d = daysInPrev - firstDay + 1 + i;
-      cells += '<div class="c-day c-other"><span class="c-day-num">' + d + '</span></div>';
+    for (let i=0;i<firstDay;i++) {
+      const d = daysInPrev-firstDay+1+i;
+      cells += '<div class="c-day c-other"><span class="c-day-num">'+d+'</span></div>';
     }
 
-    let availCount = 0, unavailCount = 0;
+    let openCount=0, busyCount=0;
 
-    for (let d = 1; d <= daysInMonth; d++) {
-      const dow = (firstDay + d - 1) % 7;
-      const key = dateKey(y, m, d);
-      const isToday = y === today.getFullYear() && m === today.getMonth() && d === today.getDate();
-      const isPast = new Date(y, m, d) < new Date(today.getFullYear(), today.getMonth(), today.getDate());
-      const hol = getHoliday(m + 1, d);
-      const avail = availability[key];
+    for (let d=1;d<=daysInMonth;d++) {
+      const dow = (firstDay+d-1)%7;
+      const key = dateKey(y,m,d);
+      const isToday = y===today.getFullYear()&&m===today.getMonth()&&d===today.getDate();
+      const isPast = new Date(y,m,d)<new Date(today.getFullYear(),today.getMonth(),today.getDate());
+      const hol = getHoliday(m+1,d);
+      const summary = daySummary(key);
+      const isSelected = key === selectedKey;
 
-      if (avail === 'available') availCount++;
-      if (avail === 'unavailable') unavailCount++;
+      if (summary==='some-free'||summary==='all-free') openCount++;
+      if (summary==='all-busy') busyCount++;
 
       let cls = 'c-day';
       if (isPast) cls += ' c-past';
+      else cls += ' c-clickable';
       if (isToday) cls += ' c-today';
       if (hol) cls += ' c-holiday';
-      if (dow === 0) cls += ' c-day-sun';
-      if (dow === 6) cls += ' c-day-sat';
-      if (avail === 'available') cls += ' c-available';
-      if (avail === 'unavailable') cls += ' c-unavailable';
+      if (dow===0) cls += ' c-day-sun';
+      if (dow===6) cls += ' c-day-sat';
+      if (summary==='some-free'||summary==='all-free') cls += ' c-available';
+      if (summary==='all-busy') cls += ' c-unavailable';
+      if (isSelected) cls += ' c-selected';
 
-      const holHtml = hol ? '<span class="c-hol-name">' + hol.split('|')[0] + '</span>' : '';
-      const dotHtml = avail ? '<div class="c-avail-dot"></div>' : '';
+      const holHtml = hol ? '<span class="c-hol-name">'+hol.split('|')[0]+'</span>' : '';
+      const dotHtml = summary!=='empty' ? '<div class="c-avail-dot"></div>' : '';
+      const clickHandler = isPast ? '' : 'onclick="openDay(\''+key+'\')"';
 
-      cells += '<div class="' + cls + '" onclick="toggleDay(\'' + key + '\')"><span class="c-day-num">' + d + '</span>' + holHtml + dotHtml + '</div>';
+      cells += '<div class="'+cls+'" '+clickHandler+'><span class="c-day-num">'+d+'</span>'+holHtml+dotHtml+'</div>';
     }
 
-    const remaining = 42 - firstDay - daysInMonth;
-    for (let d = 1; d <= remaining; d++) {
-      cells += '<div class="c-day c-other"><span class="c-day-num">' + d + '</span></div>';
+    const remaining = 42-firstDay-daysInMonth;
+    for (let d=1;d<=remaining;d++) {
+      cells += '<div class="c-day c-other"><span class="c-day-num">'+d+'</span></div>';
     }
 
     document.getElementById('cal-grid').innerHTML = cells;
-    document.getElementById('count-avail').textContent = availCount;
-    document.getElementById('count-unavail').textContent = unavailCount;
-    renderList(y, m);
+    document.getElementById('count-avail').textContent = openCount;
+    document.getElementById('count-unavail').textContent = busyCount;
+    renderList(y,m);
   }
 
-  function renderList(y, m) {
-    const prefix = y + '-' + pad(m + 1);
-    const entries = Object.entries(availability)
-      .filter(function(e) { return e[0].indexOf(prefix) === 0; })
-      .sort(function(a, b) { return a[0].localeCompare(b[0]); });
-
+  function renderList(y,m) {
+    const prefix = y+'-'+pad(m+1);
+    const keys = Object.keys(slotData).filter(function(k){return k.indexOf(prefix)===0;}).sort();
     const list = document.getElementById('avail-list');
-    if (entries.length === 0) {
-      list.innerHTML = '<div style="font-size:13px;color:var(--text-muted);">No dates marked this month.</div>';
+    if (keys.length===0) {
+      list.innerHTML = '<div style="font-size:13px;color:var(--text-muted);">No slots set this month.</div>';
       return;
     }
-    list.innerHTML = entries.map(function(e) {
-      const key = e[0], state = e[1];
+    list.innerHTML = keys.map(function(key) {
       const d = parseInt(key.split('-')[2]);
-      const dateStr = MONTHS[m] + ' ' + d;
-      const pillCls = state === 'available' ? 'pill-avail' : 'pill-unavail';
-      const label = state === 'available' ? 'Available' : 'Unavailable';
-      return '<div class="avail-list-item"><span class="avail-pill ' + pillCls + '">' + label + '</span><span>' + dateStr + '</span></div>';
+      const slots = getSlots(key);
+      const freeSlots = SLOTS.filter(function(s){return slots[s]==='free';});
+      const busySlots = SLOTS.filter(function(s){return slots[s]==='busy';});
+      let detail = '';
+      if (freeSlots.length) detail += '<span style="color:#2e7d32;">'+freeSlots.join(', ')+'</span>';
+      if (freeSlots.length && busySlots.length) detail += ' · ';
+      if (busySlots.length) detail += '<span style="color:#c62828;text-decoration:line-through;">'+busySlots.join(', ')+'</span>';
+      return '<div class="avail-list-item" style="flex-direction:column;align-items:flex-start;gap:2px;">'
+        +'<span style="font-weight:500;font-size:13px;">'+MONTHS[m]+' '+d+'</span>'
+        +'<span style="font-size:12px;">'+detail+'</span>'
+        +'</div>';
     }).join('');
   }
 
   window.copyAvailability = function() {
-    const avail = Object.entries(availability)
-      .filter(function(e) { return e[1] === 'available'; })
-      .sort(function(a, b) { return a[0].localeCompare(b[0]); })
-      .map(function(e) {
-        const parts = e[0].split('-');
-        return MONTHS[parseInt(parts[1])-1] + ' ' + parseInt(parts[2]) + ', ' + parts[0];
-      });
-    const unavail = Object.entries(availability)
-      .filter(function(e) { return e[1] === 'unavailable'; })
-      .sort(function(a, b) { return a[0].localeCompare(b[0]); })
-      .map(function(e) {
-        const parts = e[0].split('-');
-        return MONTHS[parseInt(parts[1])-1] + ' ' + parseInt(parts[2]) + ', ' + parts[0];
-      });
-
-    let text = "Terry's Availability\n\n";
-    if (avail.length) text += 'AVAILABLE:\n' + avail.join('\n') + '\n\n';
-    if (unavail.length) text += 'UNAVAILABLE:\n' + unavail.join('\n');
-    if (!avail.length && !unavail.length) text += '(No dates marked yet)';
-
-    navigator.clipboard.writeText(text).then(function() {
+    const lines = ["Terry's Availability\n"];
+    Object.keys(slotData).sort().forEach(function(key) {
+      const parts = key.split('-');
+      const label = MONTHS[parseInt(parts[1])-1]+' '+parseInt(parts[2])+', '+parts[0];
+      const slots = getSlots(key);
+      const freeSlots = SLOTS.filter(function(s){return slots[s]==='free';});
+      const busySlots = SLOTS.filter(function(s){return slots[s]==='busy';});
+      lines.push(label+':');
+      if (freeSlots.length) lines.push('  Free: '+freeSlots.join(', '));
+      if (busySlots.length) lines.push('  Busy: '+busySlots.join(', '));
+    });
+    if (lines.length===1) lines.push('(No slots set yet)');
+    navigator.clipboard.writeText(lines.join('\n')).then(function() {
       const btn = document.querySelector('.btn-export');
       const orig = btn.textContent;
-      btn.textContent = 'Copied to clipboard!';
-      setTimeout(function() { btn.textContent = orig; }, 2000);
+      btn.textContent = 'Copied!';
+      setTimeout(function(){btn.textContent=orig;},2000);
     });
   };
 
