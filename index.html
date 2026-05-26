@@ -333,7 +333,7 @@
 
   .grid-header-row {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(7, minmax(0, 1fr));
     gap: 3px;
     margin-bottom: 3px;
   }
@@ -351,7 +351,7 @@
 
   .cal-grid {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(7, minmax(0, 1fr));
     gap: 3px;
   }
 
@@ -366,6 +366,8 @@
     transition: border-color 0.15s, background 0.15s;
     position: relative;
     user-select: none;
+    overflow: hidden;
+    min-width: 0;
   }
   .c-day:hover:not(.c-other):not(.c-past) { border-color: var(--red); }
   .c-day.c-other { opacity: 0.2; pointer-events: none; }
