@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Reserve your private Tokyo tour with Terry — pay by PayPal, credit card, or Revolut. Clear cancellation policy and fast confirmation."/>
+<title>Reservations & Policies — Tokyo Private Tours with Terry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --red:#D00000;--red-dark:#B00000;--red-light:#FFF0F0;
+  --text:#1C2833;--text-muted:#5D6D7E;--border:rgba(0,0,0,0.1);
+  --bg:#FAFAF8;--bg-card:#ffffff;--bg-surface:#F4F3EF;
+  --radius:12px;--radius-sm:8px;
+  --green:#2e7d32;--green-bg:#f1f8f1;--green-border:#a5d6a7;
+  --amber:#b45309;--amber-bg:#fffbeb;--amber-border:#fcd34d;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.6;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.94);backdrop-filter:blur(12px);border-bottom:0.5px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:20px;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:6px;}
+.nav-logo span{color:var(--red);}
+.nav-right{display:flex;align-items:center;gap:1.5rem;}
+.nav-link{font-size:14px;color:var(--text-muted);text-decoration:none;transition:color .15s;}
+.nav-link:hover{color:var(--text);}
+.nav-btn{background:var(--red);color:#fff;padding:9px 20px;border-radius:var(--radius-sm);font-size:14px;text-decoration:none;transition:background .15s;}
+.nav-btn:hover{background:var(--red-dark);}
+
+/* PAGE HEADER */
+.page-header{background:var(--bg-card);border-bottom:0.5px solid var(--border);padding:3.5rem 2rem 3rem;}
+.page-header .container{max-width:960px;margin:0 auto;}
+.section-label{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--red);margin-bottom:.5rem;}
+.page-header h1{font-family:'DM Serif Display',serif;font-size:clamp(32px,5vw,48px);font-weight:400;color:var(--text);line-height:1.15;margin-bottom:.75rem;}
+.page-header p{font-size:17px;color:var(--text-muted);max-width:560px;}
+
+/* LAYOUT */
+.main-wrap{max-width:960px;margin:0 auto;padding:3rem 2rem 5rem;}
+.two-col{display:grid;grid-template-columns:1fr 380px;gap:2.5rem;align-items:start;}
+
+/* CARDS */
+.card{background:var(--bg-card);border:0.5px solid var(--border);border-radius:var(--radius);padding:2rem;margin-bottom:1.5rem;}
+.card h2{font-family:'DM Serif Display',serif;font-size:22px;font-weight:400;color:var(--text);margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:0.5px solid var(--border);}
+.card h3{font-size:15px;font-weight:600;color:var(--text);margin-bottom:.5rem;margin-top:1.25rem;}
+.card h3:first-of-type{margin-top:0;}
+.card p{font-size:14px;color:var(--text-muted);line-height:1.8;}
+
+/* FORM */
+.form-group{margin-bottom:1.25rem;}
+.form-group label{display:block;font-size:13px;font-weight:500;color:var(--text);margin-bottom:.4rem;}
+.form-group input,
+.form-group select,
+.form-group textarea{
+  width:100%;padding:10px 14px;border-radius:var(--radius-sm);
+  border:1px solid var(--border);font-size:14px;
+  font-family:'DM Sans',sans-serif;background:#fff;
+  color:var(--text);outline:none;transition:border-color .15s;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{border-color:var(--red);}
+.form-group textarea{resize:vertical;min-height:90px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.form-note{font-size:12px;color:var(--text-muted);margin-top:.35rem;}
+
+/* SUBMIT BTN */
+.submit-btn{
+  width:100%;padding:14px;border-radius:var(--radius-sm);
+  border:none;background:var(--red);color:#fff;
+  font-size:15px;font-weight:500;font-family:'DM Sans',sans-serif;
+  cursor:pointer;transition:background .15s;margin-top:.5rem;
+}
+.submit-btn:hover{background:var(--red-dark);}
+
+/* PAYPAL BOX */
+.paypal-box{
+  background:var(--bg-surface);border-radius:var(--radius-sm);
+  padding:1.25rem;margin-top:1rem;text-align:center;
+  border:1px dashed var(--border);
+}
+.paypal-logo{font-size:22px;font-weight:700;margin-bottom:.4rem;}
+.paypal-logo .pp-blue{color:#003087;}
+.paypal-logo .pp-sky{color:#009cde;}
+.paypal-box p{font-size:13px;color:var(--text-muted);line-height:1.6;}
+.paypal-box .paypal-email{
+  display:inline-block;margin-top:.6rem;
+  background:#003087;color:#fff;padding:8px 20px;
+  border-radius:6px;font-size:13px;font-weight:500;
+  text-decoration:none;letter-spacing:.02em;
+}
+
+/* CANCELLATION TABLE */
+.cancel-table{width:100%;border-collapse:collapse;margin-top:.75rem;font-size:14px;}
+.cancel-table th{text-align:left;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);padding:8px 12px;background:var(--bg-surface);border-radius:4px;}
+.cancel-table td{padding:12px;border-bottom:0.5px solid var(--border);vertical-align:middle;}
+.cancel-table tr:last-child td{border-bottom:none;}
+.cancel-table tr:hover td{background:#fafaf8;}
+.refund-pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:600;}
+.pill-full{background:#e8f5e9;color:#2e7d32;}
+.pill-75{background:#e3f2fd;color:#1565c0;}
+.pill-50{background:#fff8e1;color:#f57f17;}
+.pill-25{background:#fff3e0;color:#e65100;}
+.pill-none{background:#fce4ec;color:#c62828;}
+
+/* POLICY TIMELINE */
+.timeline{position:relative;padding-left:2rem;margin-top:.75rem;}
+.timeline::before{content:'';position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--border);}
+.tl-item{position:relative;margin-bottom:1.25rem;}
+.tl-item:last-child{margin-bottom:0;}
+.tl-dot{position:absolute;left:-2rem;top:4px;width:14px;height:14px;border-radius:50%;border:2px solid #fff;flex-shrink:0;}
+.tl-item h4{font-size:14px;font-weight:600;color:var(--text);margin-bottom:2px;}
+.tl-item p{font-size:13px;color:var(--text-muted);line-height:1.6;}
+
+/* STICKY SIDEBAR */
+.sidebar{position:sticky;top:80px;}
+.info-list{list-style:none;display:flex;flex-direction:column;gap:.85rem;margin-top:.25rem;}
+.info-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text-muted);}
+.info-list li span:first-child{font-size:18px;flex-shrink:0;margin-top:1px;}
+
+/* NOTICE BOXES */
+.notice{border-radius:var(--radius-sm);padding:1rem 1.25rem;font-size:13px;line-height:1.7;margin-bottom:1.25rem;display:flex;gap:10px;align-items:flex-start;}
+.notice-icon{font-size:18px;flex-shrink:0;margin-top:1px;}
+.notice.green{background:var(--green-bg);border:1px solid var(--green-border);color:#1b5e20;}
+.notice.amber{background:var(--amber-bg);border:1px solid var(--amber-border);color:#92400e;}
+.notice.red{background:var(--red-light);border:1px solid #f5c6cb;color:#7f1d1d;}
+
+/* REFUND CALCULATOR */
+.calc-wrap{background:var(--bg-surface);border-radius:var(--radius-sm);padding:1.25rem;margin-top:.75rem;}
+.calc-wrap label{font-size:13px;font-weight:500;color:var(--text);display:block;margin-bottom:.5rem;}
+.calc-wrap input[type=range]{width:100%;accent-color:var(--red);margin-bottom:.75rem;}
+.calc-result{text-align:center;padding:.75rem;background:#fff;border-radius:8px;border:1px solid var(--border);}
+.calc-result .refund-amt{font-family:'DM Serif Display',serif;font-size:28px;color:var(--red);}
+.calc-result .refund-lbl{font-size:12px;color:var(--text-muted);margin-top:2px;}
+
+/* SUCCESS STATE */
+.success-msg{display:none;text-align:center;padding:2.5rem 1.5rem;}
+.success-msg .tick{font-size:52px;margin-bottom:1rem;}
+.success-msg h3{font-family:'DM Serif Display',serif;font-size:26px;font-weight:400;margin-bottom:.75rem;}
+.success-msg p{font-size:15px;color:var(--text-muted);max-width:400px;margin:0 auto;}
+
+footer{background:#111;color:rgba(255,255,255,0.5);padding:2.5rem 2rem;font-size:13px;}
+.footer-inner{max-width:960px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-logo{font-size:15px;font-weight:600;color:rgba(255,255,255,0.85);margin-bottom:4px;letter-spacing:0.02em;}
+.footer-desc{font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:4px;}
+.footer-copy{font-size:12px;color:rgba(255,255,255,0.3);}
+.footer-links{display:flex;gap:1.25rem;align-items:center;}
+.footer-links a{color:rgba(255,255,255,0.55);text-decoration:none;font-size:13px;transition:color .15s;}
+.footer-links a:hover{color:rgba(255,255,255,0.9);}
+
+@media(max-width:760px){
+  .two-col{grid-template-columns:1fr;}
+  .sidebar{position:static;}
+  .form-row{grid-template-columns:1fr;}
+  .page-header{padding:2.5rem 1.25rem 2rem;}
+  .main-wrap{padding:2rem 1.25rem 4rem;}
+}
+
+/* PAYMENT METHODS */
+.payment-methods{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-top:1.25rem;}
+.pay-option{background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1.25rem;text-align:center;}
+.pay-option h4{font-size:13px;font-weight:600;color:var(--text);margin-bottom:.5rem;margin-top:.5rem;}
+.pay-option p{font-size:12px;color:var(--text-muted);line-height:1.6;}
+.card-logos{display:flex;justify-content:center;gap:6px;margin-bottom:.25rem;flex-wrap:wrap;}
+.card-chip{display:inline-flex;align-items:center;justify-content:center;padding:4px 10px;border-radius:5px;font-size:11px;font-weight:700;letter-spacing:.04em;height:26px;}
+.chip-visa{background:#1a1f71;color:#fff;}
+.chip-mc{background:#eb001b;color:#fff;}
+.chip-amex{background:#007bc1;color:#fff;}
+.pay-note{background:var(--bg-surface);border-radius:var(--radius-sm);padding:1rem 1.25rem;font-size:13px;color:var(--text-muted);margin-top:1rem;border:1px solid var(--border);line-height:1.8;}
+@media(max-width:600px){.payment-methods{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Tokyo with <span>Terry</span></a>
+  <div class="nav-right">
+    <a class="nav-link" href="index.html">&#8592; Home</a>
+    <a class="nav-link" href="availability.html">Availability</a>
+    <a class="nav-btn" href="availability.html">Check dates</a>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="container">
+    <div class="section-label">Reservations</div>
+    <h1>Book your private tour</h1>
+    <p>Fill in your details below, choose your payment method, and Terry will confirm your booking within 24 hours.</p>
+  </div>
+</div>
+
+<div class="main-wrap">
+  <div class="two-col">
+
+    <!-- LEFT: BOOKING FORM + POLICIES -->
+    <div>
+
+      <!-- STEP 1: BOOKING FORM -->
+      <div class="card" id="booking-form-card">
+        <h2>Step 1 — Your booking details</h2>
+
+        <div id="the-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First name *</label>
+              <input type="text" id="fname" placeholder="e.g. Sarah" required/>
+            </div>
+            <div class="form-group">
+              <label for="lname">Last name *</label>
+              <input type="text" id="lname" placeholder="e.g. Mitchell" required/>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email address *</label>
+            <input type="email" id="email" placeholder="your@email.com" required/>
+            <div class="form-note">Confirmation and booking details will be sent here.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="tour">Tour *</label>
+            <select id="tour" required>
+              <option value="" disabled selected>Select a tour…</option>
+              <option value="Tokyo Highlights — Full Day (¥15,000 pp)">Tokyo Highlights — Full Day (¥15,000 pp)</option>
+              <option value="Hidden Tokyo — Half Day (¥12,000 pp)">Hidden Tokyo — Half Day (¥12,000 pp)</option>
+              <option value="Food & Culture — Half Day (¥12,000 pp)">Food & Culture — Half Day (¥12,000 pp)</option>
+              <option value="Kamakura Day Trip — Full Day (¥12,000 pp)">Kamakura Day Trip — Full Day (¥12,000 pp)</option>
+              <option value="Yokohama & Chinatown — Full Day (¥15,000 pp)">Yokohama & Chinatown — Full Day (¥15,000 pp)</option>
+              <option value="Custom Private Tour — Custom quote">Custom Private Tour — Custom quote</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="tour-date">Preferred date *</label>
+              <input type="date" id="tour-date" required/>
+            </div>
+            <div class="form-group">
+              <label for="guests">Number of guests *</label>
+              <select id="guests" required>
+                <option value="" disabled selected>Select…</option>
+                <option value="1">1 person</option>
+                <option value="2">2 people</option>
+                <option value="3">3 people</option>
+                <option value="4">4 people</option>
+                <option value="5">5 people</option>
+                <option value="6">6 people (max group)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="slot">Preferred time slot *</label>
+            <select id="slot" required>
+              <option value="" disabled selected>Select…</option>
+              <option value="Full Day (all day)">Full Day (all day)</option>
+              <option value="Morning (8am – 12pm)">Morning (8am – 12pm)</option>
+              <option value="Afternoon (12pm – 5pm)">Afternoon (12pm – 5pm)</option>
+              <option value="Evening (5pm – 9pm)">Evening (5pm – 9pm)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="requests">Special requests or questions (optional)</label>
+            <textarea id="requests" placeholder="Dietary requirements, mobility considerations, specific interests, places you'd love to visit…"></textarea>
+          </div>
+
+          <div class="notice amber">
+            <span class="notice-icon">ℹ️</span>
+            <div>By submitting this form you confirm you have read and agree to the <a href="#cancellation-policy" style="color:var(--amber);font-weight:500;">cancellation & refund policy</a> below. Payment is collected via PayPal, credit card, or Revolut after Terry confirms availability.</div>
+          </div>
+
+          <button class="submit-btn" onclick="submitBooking()">Send booking request &#8594;</button>
+        </div>
+
+        <!-- SUCCESS STATE -->
+        <div class="success-msg" id="success-msg">
+          <div class="tick">✅</div>
+          <h3>Booking request sent!</h3>
+          <p>Terry will review your request and get back to you within 24 hours with a PayPal payment link to confirm your spot.</p>
+          <p style="margin-top:1rem;font-size:13px;">Keep an eye on your inbox — check your spam folder just in case.</p>
+        </div>
+      </div>
+
+      <!-- STEP 2: PAYMENT -->
+      <div class="card">
+        <h2>Step 2 — Payment</h2>
+        <p>Once Terry confirms your tour date and availability, he will send you payment details by email. Full payment is due at the time of reservation to secure your booking. Choose whichever method suits you best.</p>
+
+        <div class="payment-methods">
+          <div class="pay-option">
+            <div class="paypal-logo" style="font-size:20px;font-weight:700;margin-bottom:.25rem;"><span class="pp-blue">Pay</span><span class="pp-sky">Pal</span></div>
+            <h4>PayPal</h4>
+            <p>Pay using your PayPal balance, linked bank account, or any card saved in PayPal.</p>
+          </div>
+          <div class="pay-option">
+            <div class="card-logos">
+              <span class="card-chip chip-visa">VISA</span>
+              <span class="card-chip chip-mc">MC</span>
+              <span class="card-chip chip-amex">AMEX</span>
+            </div>
+            <h4>Credit or debit card</h4>
+            <p>No PayPal account needed — pay by card directly through the secure PayPal checkout.</p>
+          </div>
+          <div class="pay-option">
+            <div style="font-size:20px;font-weight:800;color:#0666eb;margin-bottom:.25rem;letter-spacing:-.5px;">Revolut</div>
+            <h4>Bank transfer</h4>
+            <p>Terry will send his Revolut details by email. Allow 1–3 business days to clear before your booking is confirmed.</p>
+          </div>
+        </div>
+
+        <div class="pay-note">
+          💳 &nbsp;<strong>Card payments</strong> are processed securely via PayPal's encrypted gateway — Terry never sees your card details directly. Visa, Mastercard, and American Express accepted.<br><br>
+          🏦 &nbsp;<strong>Revolut bank transfer</strong> — ideal if you'd prefer not to use PayPal. Terry will email you his Revolut payment details after confirming your date. Booking is confirmed once the transfer clears.<br><br>
+          ⚠️ &nbsp;PayPal requests come from Terry's verified account (<strong>terrybj65@msn.com</strong>). Never send money to an unverified address.
+        </div>
+
+        <h3>What happens after payment</h3>
+        <div class="timeline" style="margin-top:1rem;">
+          <div class="tl-item">
+            <div class="tl-dot" style="background:#4caf50;"></div>
+            <h4>Booking request received</h4>
+            <p>Terry reviews your date and tour choice — usually within a few hours.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot" style="background:#1565c0;"></div>
+            <h4>Payment details sent</h4>
+            <p>You receive a secure PayPal invoice by email (pay by card or PayPal), or Revolut bank details if you prefer a direct transfer.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot" style="background:#D00000;"></div>
+            <h4>Booking confirmed</h4>
+            <p>Once payment is received, Terry sends a full confirmation with meeting point, time, and what to bring.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot" style="background:#b45309;"></div>
+            <h4>Your tour day</h4>
+            <p>Meet Terry at the agreed point and enjoy your private Tokyo experience.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CANCELLATION POLICY -->
+      <div class="card" id="cancellation-policy">
+        <h2>Cancellation & refund policy</h2>
+
+        <p>We understand that plans change. The following refund scale applies to all cancellations made by the customer. All cancellation requests must be sent by email to <strong>terrybj65@msn.com</strong>.</p>
+
+        <table class="cancel-table" style="margin-top:1.5rem;">
+          <thead>
+            <tr>
+              <th>Notice given</th>
+              <th>Refund</th>
+              <th>You receive</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>30+ days before</strong></td>
+              <td><span class="refund-pill pill-full">100% refund</span></td>
+              <td>Full amount returned</td>
+            </tr>
+            <tr>
+              <td><strong>14–29 days before</strong></td>
+              <td><span class="refund-pill pill-75">75% refund</span></td>
+              <td>25% retained as admin fee</td>
+            </tr>
+            <tr>
+              <td><strong>7–13 days before</strong></td>
+              <td><span class="refund-pill pill-50">50% refund</span></td>
+              <td>Half the tour cost returned</td>
+            </tr>
+            <tr>
+              <td><strong>3–6 days before</strong></td>
+              <td><span class="refund-pill pill-25">25% refund</span></td>
+              <td>Small partial refund only</td>
+            </tr>
+            <tr>
+              <td><strong>0–2 days before</strong></td>
+              <td><span class="refund-pill pill-none">No refund</span></td>
+              <td>No refund can be issued</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- REFUND CALCULATOR -->
+        <div class="calc-wrap" style="margin-top:1.75rem;">
+          <label>Refund calculator — drag to see how much you'd receive</label>
+          <p style="font-size:12px;color:var(--text-muted);margin-bottom:.75rem;">Tour price per person: <strong id="calc-price-label">¥15,000</strong> &nbsp;·&nbsp; Guests: <strong id="calc-guests-label">1</strong></p>
+          <label style="margin-top:.5rem;">Days before tour you are cancelling: <strong id="days-label">30</strong> days</label>
+          <input type="range" min="0" max="60" value="30" id="days-slider" oninput="updateCalc()"/>
+          <div class="calc-result">
+            <div class="refund-amt" id="calc-refund">¥15,000</div>
+            <div class="refund-lbl" id="calc-lbl">Full refund (30+ days notice)</div>
+          </div>
+          <p style="font-size:11px;color:var(--text-muted);margin-top:.6rem;text-align:center;">Calculator is illustrative. Actual refund based on your tour price and group size.</p>
+        </div>
+
+        <h3 style="margin-top:1.75rem;">Cancellations by Terry</h3>
+        <div class="notice green" style="margin-top:.5rem;">
+          <span class="notice-icon">✅</span>
+          <div>If Terry has to cancel due to illness, emergency, or severe weather, you will receive a <strong>full 100% refund</strong> — or the option to reschedule at no extra cost.</div>
+        </div>
+
+        <h3>Rescheduling</h3>
+        <p>If you need to change your tour date, Terry will do his best to accommodate you. Rescheduling requests made 7 or more days before the tour are free of charge. Changes within 7 days are subject to availability and may incur the cancellation fee for the original date.</p>
+
+        <h3>No-shows</h3>
+        <div class="notice red" style="margin-top:.5rem;">
+          <span class="notice-icon">⚠️</span>
+          <div>Customers who do not appear at the meeting point without prior notice will be treated as a same-day cancellation. <strong>No refund</strong> will be issued.</div>
+        </div>
+
+        <h3>How refunds are processed</h3>
+        <p>All refunds are returned via PayPal to the original payment method within <strong>5–7 business days</strong> of the cancellation being confirmed by Terry.</p>
+      </div>
+
+      <!-- ADDITIONAL POLICIES -->
+      <div class="card">
+        <h2>Additional policies</h2>
+
+        <h3>Group size</h3>
+        <p>Tours are private and limited to a maximum of 6 guests. This keeps the experience personal and ensures Terry can give everyone proper attention.</p>
+
+        <h3>Children</h3>
+        <p>Children are welcome on all tours. Please mention ages when booking — Terry will tailor the pace and content accordingly. Children under 5 are free of charge.</p>
+
+        <h3>Accessibility</h3>
+        <p>Please mention any mobility requirements or accessibility needs in your booking request. Terry will plan a route that works for everyone in your group.</p>
+
+        <h3>Weather</h3>
+        <p>Tours run in most weather conditions. Japan's seasons are part of the experience. In cases of typhoons or extreme weather warnings issued by the Japan Meteorological Agency, Terry reserves the right to cancel with a full refund.</p>
+
+        <h3>Meeting point</h3>
+        <p>Full meeting point details, a map link, and what to bring will be sent with your booking confirmation. If you are unsure how to get there, Terry is always happy to help navigate.</p>
+
+        <h3>Photography</h3>
+        <p>Terry is happy to take photos for you throughout the day. Please respect local rules at temples and shrines — some areas prohibit photography and Terry will advise on the spot.</p>
+
+        <h3>Liability</h3>
+        <p>Terry provides guidance and local knowledge. Customers participate in all activities at their own risk. Terry is not responsible for lost property, personal injury, or third-party costs (transport, entry fees, food) incurred during the tour.</p>
+      </div>
+
+    </div><!-- /left col -->
+
+    <!-- RIGHT: STICKY SIDEBAR -->
+    <div class="sidebar">
+
+      <div class="card">
+        <h2>Tour prices</h2>
+        <ul class="info-list">
+          <li><span>🗾</span><div><strong>Tokyo Highlights</strong><br>Full day · From ¥15,000 pp</div></li>
+          <li><span>🌆</span><div><strong>Hidden Tokyo</strong><br>Half day · From ¥12,000 pp</div></li>
+          <li><span>🍜</span><div><strong>Food & Culture</strong><br>Half day · From ¥12,000 pp</div></li>
+          <li><span>🙏</span><div><strong>Kamakura Day Trip</strong><br>Full day · From ¥12,000 pp</div></li>
+          <li><span>🏮</span><div><strong>Yokohama & Chinatown</strong><br>Full day · From ¥15,000 pp</div></li>
+          <li><span>✨</span><div><strong>Custom Private Tour</strong><br>Flexible · Custom quote</div></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Good to know</h2>
+        <ul class="info-list">
+          <li><span>👥</span><span>Private tours only — no shared groups</span></li>
+          <li><span>💳</span><span>Pay by PayPal, credit/debit card, or Revolut bank transfer</span></li>
+          <li><span>✅</span><span>Confirmation within 24 hours</span></li>
+          <li><span>🇯🇵</span><span>English & Japanese spoken throughout</span></li>
+          <li><span>🕐</span><span>Flexible scheduling — tell Terry your pace</span></li>
+          <li><span>📍</span><span>Meeting point sent with confirmation</span></li>
+          <li><span>❓</span><span>Questions? Email <a href="mailto:terrybj65@msn.com" style="color:var(--red);">terrybj65@msn.com</a></span></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Cancellation at a glance</h2>
+        <ul class="info-list">
+          <li><span>🟢</span><span><strong>30+ days</strong> — full refund</span></li>
+          <li><span>🔵</span><span><strong>14–29 days</strong> — 75% refund</span></li>
+          <li><span>🟡</span><span><strong>7–13 days</strong> — 50% refund</span></li>
+          <li><span>🟠</span><span><strong>3–6 days</strong> — 25% refund</span></li>
+          <li><span>🔴</span><span><strong>0–2 days</strong> — no refund</span></li>
+        </ul>
+        <div style="margin-top:1.25rem;padding-top:1rem;border-top:0.5px solid var(--border);font-size:13px;color:var(--text-muted);">
+          Terry cancels → <strong>full refund always</strong>
+        </div>
+      </div>
+
+      <div class="card" style="background:var(--red);border-color:var(--red);">
+        <h2 style="color:#fff;border-bottom-color:rgba(255,255,255,0.2);">Check availability first</h2>
+        <p style="color:rgba(255,255,255,0.85);font-size:14px;line-height:1.7;">Before booking, check Terry's calendar to make sure your preferred date and slot are open.</p>
+        <a href="availability.html" style="display:block;margin-top:1.25rem;text-align:center;padding:11px 0;border-radius:var(--radius-sm);background:#fff;color:var(--red);font-size:14px;font-weight:500;text-decoration:none;">View availability &#8594;</a>
+      </div>
+
+    </div><!-- /sidebar -->
+
+  </div><!-- /two-col -->
+</div><!-- /main-wrap -->
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="footer-logo">予約 · Reservations</div>
+      <div class="footer-desc">Private tours · Secure PayPal payment · Flexible cancellation</div>
+      <div class="footer-copy">© 2026 Tokyo with Terry · Japan</div>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">&#8592; Home</a>
+      <a href="availability.html">Availability</a>
+      <a href="mailto:terrybj65@msn.com">terrybj65@msn.com</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── FORM SUBMIT ──────────────────────────────────────────────────────────────
+function submitBooking() {
+  var fname    = document.getElementById('fname').value.trim();
+  var lname    = document.getElementById('lname').value.trim();
+  var email    = document.getElementById('email').value.trim();
+  var tour     = document.getElementById('tour').value;
+  var date     = document.getElementById('tour-date').value;
+  var guests   = document.getElementById('guests').value;
+  var slot     = document.getElementById('slot').value;
+  var requests = document.getElementById('requests').value.trim();
+
+  if (!fname || !lname || !email || !tour || !date || !guests || !slot) {
+    alert('Please fill in all required fields before submitting.');
+    return;
+  }
+  var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRe.test(email)) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+
+  // Build mailto with all details
+  var subject = encodeURIComponent('Tour booking request: ' + tour + ' on ' + date);
+  var body = encodeURIComponent(
+    'BOOKING REQUEST\n'
+    + '══════════════════════════════\n'
+    + 'Name:      ' + fname + ' ' + lname + '\n'
+    + 'Email:     ' + email + '\n'
+    + 'Tour:      ' + tour + '\n'
+    + 'Date:      ' + date + '\n'
+    + 'Guests:    ' + guests + '\n'
+    + 'Slot:      ' + slot + '\n'
+    + (requests ? 'Requests:  ' + requests + '\n' : '')
+    + '══════════════════════════════\n'
+    + 'Customer confirms they have read and agree to the cancellation & refund policy.'
+  );
+
+  window.location.href = 'mailto:terrybj65@msn.com?subject=' + subject + '&body=' + body;
+
+  // Show success state
+  setTimeout(function() {
+    document.getElementById('the-form').style.display = 'none';
+    document.getElementById('success-msg').style.display = 'block';
+  }, 800);
+}
+
+// ── REFUND CALCULATOR ────────────────────────────────────────────────────────
+var PRICES = {
+  'Tokyo Highlights — Full Day (¥15,000 pp)': 15000,
+  'Hidden Tokyo — Half Day (¥12,000 pp)': 12000,
+  'Food & Culture — Half Day (¥12,000 pp)': 12000,
+  'Kamakura Day Trip — Full Day (¥12,000 pp)': 12000,
+  'Yokohama & Chinatown — Full Day (¥15,000 pp)': 15000,
+  'Custom Private Tour — Custom quote': 15000
+};
+
+function updateCalc() {
+  var days    = parseInt(document.getElementById('days-slider').value);
+  var tourSel = document.getElementById('tour').value;
+  var guestSel= parseInt(document.getElementById('guests').value) || 1;
+  var price   = tourSel ? (PRICES[tourSel] || 15000) : 15000;
+  var total   = price * guestSel;
+
+  document.getElementById('days-label').textContent = days;
+  document.getElementById('calc-price-label').textContent = '¥' + price.toLocaleString();
+  document.getElementById('calc-guests-label').textContent = guestSel;
+
+  var pct, lbl;
+  if      (days >= 30) { pct = 1.00; lbl = 'Full refund (30+ days notice)'; }
+  else if (days >= 14) { pct = 0.75; lbl = '75% refund (14–29 days notice)'; }
+  else if (days >= 7)  { pct = 0.50; lbl = '50% refund (7–13 days notice)'; }
+  else if (days >= 3)  { pct = 0.25; lbl = '25% refund (3–6 days notice)'; }
+  else                 { pct = 0.00; lbl = 'No refund (0–2 days notice)'; }
+
+  var refund = Math.round(total * pct);
+  document.getElementById('calc-refund').textContent = pct > 0 ? '¥' + refund.toLocaleString() : 'No refund';
+  document.getElementById('calc-lbl').textContent = lbl + (guestSel > 1 ? ' · ' + guestSel + ' guests' : '');
+}
+
+// Keep calculator in sync with form tour/guest selections
+document.getElementById('tour').addEventListener('change', updateCalc);
+document.getElementById('guests').addEventListener('change', updateCalc);
+updateCalc();
+
+// Set min date on date picker to today
+var today = new Date();
+var yyyy = today.getFullYear();
+var mm   = String(today.getMonth()+1).padStart(2,'0');
+var dd   = String(today.getDate()).padStart(2,'0');
+document.getElementById('tour-date').min = yyyy+'-'+mm+'-'+dd;
+</script>
+
+</body>
+</html>
