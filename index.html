@@ -299,8 +299,6 @@
     .profile-avatar { width: 100%; height: 220px; }
     .section-title { font-size: 28px; }
     .hero h1 { font-size: 36px; }
-    .avail-layout { grid-template-columns: 1fr; }
-    .cal-wrap { position: static; }
   }
 </style>
 </head>
@@ -528,675 +526,310 @@
 
 <!-- AVAILABILITY CALENDAR -->
 <style>
-/* ── CALENDAR SECTION ── */
-.cal-section { background: var(--bg); padding: 5rem 0; }
-.cal-section .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
-
-.cal-shell {
-  background: #fff;
-  border-radius: 16px;
-  border: 1px solid var(--border);
-  box-shadow: 0 4px 32px rgba(0,0,0,0.07);
-  overflow: hidden;
-}
-
-/* Header bar */
-.cal-topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.25rem 1.5rem;
-  border-bottom: 1px solid var(--border);
-  background: #fff;
-}
-.cal-month-label {
-  font-family: 'DM Serif Display', serif;
-  font-size: 22px;
-  color: var(--text);
-}
-.cal-nav { display: flex; gap: 8px; }
-.cal-nav button {
-  width: 36px; height: 36px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  background: #fff;
-  font-size: 16px;
-  cursor: pointer;
-  color: var(--text);
-  transition: background .15s, border-color .15s;
-  display: flex; align-items: center; justify-content: center;
-}
-.cal-nav button:hover { background: var(--bg-surface); border-color: var(--red); }
-
-/* Day-of-week header */
-.cal-dow {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  background: var(--bg-surface);
-  border-bottom: 1px solid var(--border);
-}
-.cal-dow span {
-  text-align: center;
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--text-muted);
-  padding: 8px 0;
-  text-transform: uppercase;
-  letter-spacing: .6px;
-}
-.cal-dow span:first-child { color: var(--red); }
-.cal-dow span:last-child  { color: #1a5fa5; }
-
-/* Grid */
-.cal-grid-wrap {
-  display: grid;
-  grid-template-columns: repeat(7, minmax(0,1fr));
-}
-.cal-cell {
-  min-height: 72px;
-  border-right: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 6px;
-  background: #fff;
-  cursor: pointer;
-  transition: background .12s;
-  position: relative;
-  overflow: hidden;
-}
-.cal-cell:nth-child(7n) { border-right: none; }
-.cal-cell.faded   { opacity: .3; pointer-events: none; cursor: default; }
-.cal-cell.is-past { background: #fafafa; cursor: default; }
-.cal-cell.is-past:hover { background: #fafafa; }
-.cal-cell:not(.faded):not(.is-past):hover { background: #fff8f8; }
-.cal-cell.is-today { box-shadow: inset 0 0 0 2px #aaa; }
-.cal-cell.is-hol   { background: #fff5f7; }
-.cal-cell.is-selected { box-shadow: inset 0 0 0 2.5px var(--red); background: #fff8f8; }
-
-.cell-num {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--text);
-  display: block;
-  line-height: 1;
-}
-.cal-cell.sun .cell-num { color: var(--red); }
-.cal-cell.sat .cell-num { color: #1a5fa5; }
-.cal-cell.is-past .cell-num { color: #bbb; }
-
-.cell-hol {
-  font-size: 8px;
-  color: var(--red);
-  font-weight: 600;
-  display: block;
-  margin-top: 2px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* Slot pip dots */
-.cell-pips {
-  display: flex;
-  gap: 2px;
-  flex-wrap: wrap;
-  margin-top: 4px;
-}
-.pip {
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-.pip.free { background: #4caf50; }
-.pip.busy { background: #e53935; }
-
-/* ── MODAL ── */
-.cal-modal-bg {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.5);
-  z-index: 9000;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-}
-.cal-modal-bg.open { display: flex; }
-
-.cal-modal {
-  background: #fff;
-  border-radius: 16px;
-  width: min(96vw, 480px);
-  max-height: 90vh;
-  overflow-y: auto;
-  box-shadow: 0 16px 64px rgba(0,0,0,.2);
-  animation: modalPop .18s ease;
-}
-@keyframes modalPop {
-  from { opacity:0; transform: scale(.94) translateY(8px); }
-  to   { opacity:1; transform: scale(1)  translateY(0); }
-}
-
-.modal-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.25rem 1.5rem 1rem;
-  border-bottom: 1px solid var(--border);
-  position: sticky;
-  top: 0;
-  background: #fff;
-  z-index: 1;
-}
-.modal-head h2 {
-  font-family: 'DM Serif Display', serif;
-  font-size: 20px;
-  font-weight: 400;
-  color: var(--text);
-}
-.modal-close {
-  width: 32px; height: 32px;
-  border-radius: 50%;
-  border: 1px solid var(--border);
-  background: #fff;
-  font-size: 18px;
-  cursor: pointer;
-  color: var(--text-muted);
-  display: flex; align-items: center; justify-content: center;
-  transition: background .12s;
-}
-.modal-close:hover { background: var(--bg-surface); }
-
-.modal-body { padding: 1.25rem 1.5rem 1.5rem; }
-
-.modal-hol {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--red);
-  background: #fff5f7;
-  padding: 7px 12px;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
-
-.slot-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-.slot-card {
-  border-radius: 12px;
-  padding: 14px;
-  border: 1.5px solid #e0e0e0;
-  background: #f9f9f9;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.slot-card.free  { border-color: #a5d6a7; background: #f1f8f1; }
-.slot-card.busy  { border-color: #ef9a9a; background: #fdf2f2; }
-.slot-card.open  { border-color: #e0e0e0; background: #f9f9f9; }
-
-.slot-icon { font-size: 20px; line-height: 1; }
-.slot-name {
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--text);
-  margin-top: 2px;
-}
-.slot-card.free  .slot-name { color: #2e7d32; }
-.slot-card.busy  .slot-name { color: #c62828; }
-
-.slot-status {
-  font-size: 11px;
-  color: var(--text-muted);
-}
-.slot-card.free  .slot-status { color: #388e3c; }
-.slot-card.busy  .slot-status { color: #d32f2f; }
-
-.slot-book-btn {
-  display: block;
-  margin-top: 10px;
-  text-align: center;
-  padding: 8px 0;
-  border-radius: 8px;
-  font-size: 13px;
-  font-weight: 500;
-  font-family: 'DM Sans', sans-serif;
-  text-decoration: none;
-  color: #fff;
-  transition: opacity .15s;
-}
-.slot-book-btn:hover { opacity: .88; }
-.slot-book-btn.btn-book    { background: var(--red); }
-.slot-book-btn.btn-enquire { background: #888; }
-
-/* Admin slot toggles */
-.admin-slot-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 10px;
-}
-.admin-slot-name { font-size: 13px; min-width: 90px; color: var(--text); }
-.admin-toggle {
-  flex: 1;
-  padding: 7px 0;
-  border-radius: 8px;
-  border: 1.5px solid #ddd;
-  background: #fff;
-  font-size: 12px;
-  font-family: 'DM Sans', sans-serif;
-  cursor: pointer;
-  transition: all .12s;
-  color: #888;
-}
-.admin-toggle.active-free { border-color: #4caf50; background: #eaf7ee; color: #2e7d32; font-weight: 600; }
-.admin-toggle.active-busy { border-color: #e53935; background: #ffeaea; color: #c62828; font-weight: 600; }
-.admin-toggle-clear {
-  padding: 7px 10px;
-  border-radius: 8px;
-  border: 1.5px solid #ddd;
-  background: #fff;
-  font-size: 13px;
-  cursor: pointer;
-  color: #aaa;
-}
-
-.modal-divider {
-  border: none;
-  border-top: 1px solid var(--border);
-  margin: 1.25rem 0;
-}
-
-/* Admin panel inside modal */
-.admin-section { display: none; }
-.admin-section.visible { display: block; }
-.admin-section h3 {
-  font-size: 13px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .5px;
-  color: var(--text-muted);
-  margin-bottom: 1rem;
-}
-
-/* PIN prompt (hidden inline at top of page, triggered by shortcut) */
-.cal-pin-bar {
-  display: none;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 14px;
-  background: var(--bg-surface);
-  border-radius: 10px;
-  margin-bottom: 1.25rem;
-}
-.cal-pin-bar.visible { display: flex; }
-.cal-pin-bar input {
-  flex: 1;
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  font-size: 14px;
-  font-family: 'DM Sans', sans-serif;
-  outline: none;
-  background: #fff;
-}
-.cal-pin-bar button {
-  padding: 8px 16px;
-  border-radius: 8px;
-  border: none;
-  background: var(--red);
-  color: #fff;
-  font-size: 13px;
-  font-family: 'DM Sans', sans-serif;
-  cursor: pointer;
-}
-.cal-pin-err { font-size: 12px; color: var(--red); margin-top: 4px; display: none; }
-
-/* Unlock bar shown above calendar when admin is in */
-.cal-admin-bar {
-  display: none;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 16px;
-  background: #fff8e1;
-  border-bottom: 1px solid #ffe082;
-}
-.cal-admin-bar.visible { display: flex; }
-.cal-admin-bar span { font-size: 13px; color: #795548; }
-.cal-admin-bar button {
-  font-size: 12px;
-  padding: 5px 12px;
-  border-radius: 6px;
-  border: 1px solid #ffe082;
-  background: #fff;
-  cursor: pointer;
-  color: #795548;
-  font-family: 'DM Sans', sans-serif;
-}
-
-/* Legend */
-.cal-legend {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  padding: 12px 16px;
-  border-top: 1px solid var(--border);
-  background: #fff;
-}
-.leg { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-muted); }
-.leg-dot { width: 10px; height: 10px; border-radius: 50%; }
-
-@media (max-width: 600px) {
-  .cal-cell { min-height: 48px; padding: 4px; }
-  .cell-num { font-size: 11px; }
-  .slot-grid { grid-template-columns: 1fr; }
-  .cal-section .container { padding: 0 1rem; }
+.tcal-section{background:var(--bg);padding:5rem 0;}
+.tcal-section .container{max-width:860px;margin:0 auto;padding:0 2rem;}
+.tcal-wrap{background:#fff;border-radius:16px;border:1px solid var(--border);box-shadow:0 4px 24px rgba(0,0,0,.07);overflow:hidden;margin-top:2rem;}
+.tcal-bar{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid var(--border);}
+.tcal-month{font-family:'DM Serif Display',serif;font-size:22px;color:var(--text);}
+.tcal-navbtn{width:38px;height:38px;border-radius:8px;border:1px solid var(--border);background:#fff;font-size:18px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:background .15s;}
+.tcal-navbtn:hover{background:var(--bg-surface);border-color:var(--red);}
+.tcal-dow{display:grid;grid-template-columns:repeat(7,1fr);background:var(--bg-surface);border-bottom:1px solid var(--border);}
+.tcal-dow span{text-align:center;font-size:11px;font-weight:600;color:var(--text-muted);padding:8px 0;text-transform:uppercase;letter-spacing:.5px;}
+.tcal-dow span:first-child{color:var(--red);}
+.tcal-dow span:last-child{color:#1a5fa5;}
+.tcal-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));}
+.tc{min-height:70px;border-right:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0;padding:6px;background:#fff;position:relative;overflow:hidden;}
+.tc:nth-child(7n){border-right:none;}
+.tc.clickable{cursor:pointer;}
+.tc.clickable:hover{background:#fff8f8;}
+.tc.dim{opacity:.25;pointer-events:none;}
+.tc.past{background:#fafafa;cursor:default;}
+.tc.past .tcn{color:#ccc;}
+.tc.istoday{box-shadow:inset 0 0 0 2px #999;}
+.tc.ishol{background:#fff5f7;}
+.tc.sel{box-shadow:inset 0 0 0 2.5px var(--red);background:#fff3f3;}
+.tcn{font-size:13px;font-weight:500;color:var(--text);display:block;line-height:1;}
+.tc.sun .tcn{color:var(--red);}
+.tc.sat .tcn{color:#1a5fa5;}
+.tchn{font-size:8px;color:var(--red);font-weight:600;display:block;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.tcpips{display:flex;gap:2px;flex-wrap:wrap;margin-top:5px;}
+.pip{width:7px;height:7px;border-radius:50%;}
+.pip.f{background:#4caf50;}
+.pip.b{background:#e53935;}
+.tcal-legend{display:flex;gap:14px;flex-wrap:wrap;padding:10px 16px;border-top:1px solid var(--border);background:#fff;}
+.tleg{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--text-muted);}
+.tleg-d{width:10px;height:10px;border-radius:50%;}
+/* Admin bar */
+.tcal-adminbar{display:none;align-items:center;justify-content:space-between;padding:8px 16px;background:#fff8e1;border-bottom:1px solid #ffe082;font-size:13px;color:#795548;}
+.tcal-adminbar.on{display:flex;}
+.tcal-adminbar button{font-size:12px;padding:4px 12px;border-radius:6px;border:1px solid #ffe082;background:#fff;cursor:pointer;color:#795548;font-family:'DM Sans',sans-serif;}
+/* PIN bar */
+.tcal-pinbar{display:none;align-items:center;gap:8px;background:var(--bg-surface);border-radius:10px;padding:10px 14px;margin-bottom:1.25rem;}
+.tcal-pinbar.on{display:flex;}
+.tcal-pinbar input{flex:1;padding:8px 12px;border-radius:8px;border:1px solid var(--border);font-size:14px;font-family:'DM Sans',sans-serif;outline:none;}
+.tcal-pinbar button{padding:8px 16px;border-radius:8px;border:none;background:var(--red);color:#fff;font-size:13px;cursor:pointer;font-family:'DM Sans',sans-serif;}
+.tcal-pinerr{font-size:12px;color:var(--red);margin-top:4px;display:none;}
+/* Modal */
+.tcal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:9000;align-items:center;justify-content:center;padding:1rem;}
+.tcal-overlay.on{display:flex;}
+.tcal-modal{background:#fff;border-radius:16px;width:min(95vw,460px);max-height:88vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.25);animation:mpop .18s ease;}
+@keyframes mpop{from{opacity:0;transform:scale(.93) translateY(10px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.tcal-mhead{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem 1rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:#fff;z-index:1;}
+.tcal-mhead h2{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;color:var(--text);}
+.tcal-mclose{width:32px;height:32px;border-radius:50%;border:1px solid var(--border);background:#fff;font-size:18px;cursor:pointer;color:#888;display:flex;align-items:center;justify-content:center;}
+.tcal-mclose:hover{background:var(--bg-surface);}
+.tcal-mbody{padding:1.25rem 1.5rem 1.5rem;}
+.tcal-holtag{font-size:12px;font-weight:600;color:var(--red);background:#fff5f7;padding:7px 12px;border-radius:8px;margin-bottom:1rem;}
+.tcal-slots{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.tslot{border-radius:12px;padding:14px;border:1.5px solid #e0e0e0;background:#f9f9f9;display:flex;flex-direction:column;gap:3px;}
+.tslot.f{border-color:#a5d6a7;background:#f1f8f1;}
+.tslot.b{border-color:#ef9a9a;background:#fdf2f2;}
+.tslot-icon{font-size:20px;line-height:1;}
+.tslot-name{font-size:15px;font-weight:600;color:var(--text);}
+.tslot.f .tslot-name{color:#2e7d32;}
+.tslot.b .tslot-name{color:#c62828;}
+.tslot-time{font-size:11px;color:var(--text-muted);}
+.tslot.f .tslot-time{color:#388e3c;}
+.tslot.b .tslot-time{color:#d32f2f;}
+.tslot-status{font-size:11px;color:var(--text-muted);}
+.tslot-btn{display:block;margin-top:10px;text-align:center;padding:8px 0;border-radius:8px;font-size:13px;font-weight:500;font-family:'DM Sans',sans-serif;text-decoration:none;color:#fff;}
+.tslot-btn.book{background:var(--red);}
+.tslot-btn.enq{background:#888;}
+.tslot-btn:hover{opacity:.87;}
+.tcal-mdiv{border:none;border-top:1px solid var(--border);margin:1.25rem 0;}
+.tcal-adminedit h3{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:1rem;}
+.tcal-adminedit{display:none;}
+.tcal-adminedit.on{display:block;}
+.tarow{display:flex;align-items:center;gap:6px;margin-bottom:9px;}
+.tarow span{font-size:13px;min-width:88px;color:var(--text);}
+.tabtn{flex:1;padding:7px 0;border-radius:8px;border:1.5px solid #ddd;background:#fff;font-size:12px;font-family:'DM Sans',sans-serif;cursor:pointer;color:#888;transition:all .12s;}
+.tabtn.af{border-color:#4caf50;background:#eaf7ee;color:#2e7d32;font-weight:600;}
+.tabtn.ab{border-color:#e53935;background:#ffeaea;color:#c62828;font-weight:600;}
+.tabtn-x{padding:7px 10px;border-radius:8px;border:1.5px solid #ddd;background:#fff;font-size:13px;cursor:pointer;color:#bbb;}
+@media(max-width:600px){
+  .tcal-slots{grid-template-columns:1fr;}
+  .tcal-section .container{padding:0 1rem;}
+  .tc{min-height:48px;padding:4px;}
+  .tcn{font-size:11px;}
 }
 </style>
 
-<!-- AVAILABILITY CALENDAR -->
-<section class="cal-section" id="availability">
+<section class="tcal-section" id="availability">
   <div class="container">
     <div class="section-label">Availability</div>
     <div class="section-title">Check &amp; book a date</div>
-    <div class="section-sub" style="margin-bottom:2rem;">Click any date to see Terry's availability and send a booking request.</div>
+    <div class="section-sub">Click any date to see Terry's availability and send a booking request.</div>
 
-    <!-- Admin PIN bar (hidden; revealed by typing tj3) -->
-    <div class="cal-pin-bar" id="cal-pin-bar">
-      <input type="password" id="cal-pin-input" placeholder="Admin PIN" maxlength="12"
-        onkeydown="if(event.key==='Enter')TCAL.checkPin()">
-      <button onclick="TCAL.checkPin()">Unlock</button>
+    <div class="tcal-pinbar" id="tcPinBar">
+      <input type="password" id="tcPinInput" placeholder="Admin PIN" maxlength="12" onkeydown="if(event.key==='Enter')TC.pin()">
+      <button onclick="TC.pin()">Unlock</button>
     </div>
-    <div class="cal-pin-err" id="cal-pin-err">Incorrect PIN.</div>
+    <div class="tcal-pinerr" id="tcPinErr">Incorrect PIN — try again.</div>
 
-    <div class="cal-shell">
-      <!-- Admin bar (shown when unlocked) -->
-      <div class="cal-admin-bar" id="cal-admin-bar">
+    <div class="tcal-wrap">
+      <div class="tcal-adminbar" id="tcAdminBar">
         <span>🔓 Admin mode — click any date to set availability</span>
-        <button onclick="TCAL.lock()">Lock &amp; exit</button>
+        <button onclick="TC.lock()">Lock &amp; exit</button>
       </div>
-
-      <!-- Top nav bar -->
-      <div class="cal-topbar">
-        <div class="cal-month-label" id="cal-month-label"></div>
-        <div class="cal-nav">
-          <button onclick="TCAL.prevMonth()" title="Previous month">&#8592;</button>
-          <button onclick="TCAL.nextMonth()" title="Next month">&#8594;</button>
+      <div class="tcal-bar">
+        <div class="tcal-month" id="tcMonthLabel"></div>
+        <div style="display:flex;gap:6px;">
+          <button class="tcal-navbtn" onclick="TC.nav(-1)">&#8592;</button>
+          <button class="tcal-navbtn" onclick="TC.nav(1)">&#8594;</button>
         </div>
       </div>
-
-      <!-- Day headers -->
-      <div class="cal-dow">
-        <span>Sun</span><span>Mon</span><span>Tue</span>
-        <span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+      <div class="tcal-dow">
+        <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
       </div>
-
-      <!-- Calendar grid -->
-      <div class="cal-grid-wrap" id="cal-grid-wrap"></div>
-
-      <!-- Legend -->
-      <div class="cal-legend">
-        <div class="leg"><div class="leg-dot" style="background:#4caf50"></div>Available</div>
-        <div class="leg"><div class="leg-dot" style="background:#e53935"></div>Busy</div>
-        <div class="leg"><div class="leg-dot" style="background:#BC002D;width:10px;height:10px;border-radius:2px;"></div>Holiday</div>
-        <div class="leg"><div class="leg-dot" style="background:transparent;border:2px solid #aaa;"></div>Today</div>
+      <div class="tcal-grid" id="tcGrid"></div>
+      <div class="tcal-legend">
+        <div class="tleg"><div class="tleg-d" style="background:#4caf50"></div>Available</div>
+        <div class="tleg"><div class="tleg-d" style="background:#e53935"></div>Busy</div>
+        <div class="tleg"><div class="tleg-d" style="background:#BC002D;border-radius:2px;"></div>Holiday</div>
+        <div class="tleg"><div class="tleg-d" style="background:transparent;border:2px solid #999;"></div>Today</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- DAY MODAL -->
-<div class="cal-modal-bg" id="cal-modal-bg" onclick="if(event.target===this)TCAL.closeModal()">
-  <div class="cal-modal" id="cal-modal">
-    <div class="modal-head">
-      <h2 id="modal-date-title"></h2>
-      <button class="modal-close" onclick="TCAL.closeModal()">&#10005;</button>
+<!-- MODAL -->
+<div class="tcal-overlay" id="tcOverlay">
+  <div class="tcal-modal" id="tcModal">
+    <div class="tcal-mhead">
+      <h2 id="tcMTitle"></h2>
+      <button class="tcal-mclose" onclick="TC.close()">&#10005;</button>
     </div>
-    <div class="modal-body" id="modal-body"></div>
+    <div class="tcal-mbody" id="tcMBody"></div>
   </div>
 </div>
 
 <script>
-var TCAL = (function(){
-  'use strict';
+!function(){
+var MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+var DAYS=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+var SLOTS=[{n:'Full Day',t:'All day',i:'🗾'},{n:'Morning',t:'8am – 12pm',i:'🌅'},{n:'Afternoon',t:'12pm – 5pm',i:'☀️'},{n:'Evening',t:'5pm – 9pm',i:'🌆'}];
+var HOL={'01-01':"New Year's Day",'01-13':'Coming of Age Day','02-11':'National Foundation Day','02-23':"Emperor's Birthday",'03-20':'Vernal Equinox Day','04-29':'Showa Day','05-03':'Constitution Memorial Day','05-04':'Greenery Day','05-05':"Children's Day",'07-21':'Marine Day','08-11':'Mountain Day','09-15':'Respect for the Aged Day','09-23':'Autumnal Equinox Day','10-13':'Sports Day','11-03':'Culture Day','11-23':'Labour Thanksgiving Day','11-24':'Substitute Holiday'};
+var EMAIL='terrybj65@msn.com';
+var PIN='1234';
+var D={};
+var unlocked=false;
+var today=new Date();
+var vy=today.getFullYear(),vm=today.getMonth();
+var curKey=null;
 
-  var MONTHS = ['January','February','March','April','May','June',
-                'July','August','September','October','November','December'];
-  var DAYS   = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  var SLOTS  = ['Full Day','Morning','Afternoon','Evening'];
-  var SLOT_TIMES = { 'Full Day':'All day', 'Morning':'8am – 12pm', 'Afternoon':'12pm – 5pm', 'Evening':'5pm – 9pm' };
-  var SLOT_ICON  = { 'Full Day':'🗾', 'Morning':'🌅', 'Afternoon':'☀️', 'Evening':'🌆' };
-  var EMAIL  = 'terrybj65@msn.com';
-  var PIN    = '1234'; // ← change this
+function p2(n){return String(n).padStart(2,'0');}
+function key(y,m,d){return y+'-'+p2(m+1)+'-'+p2(d);}
+function hol(m,d){return HOL[p2(m)+'-'+p2(d)]||null;}
+function sd(k){return D[k]||{};}
 
-  // Data store: key = "YYYY-MM-DD", value = { "Full Day":"free"|"busy", ... }
-  var data = {};
-  var unlocked = false;
-  var today = new Date();
-  var viewYear  = today.getFullYear();
-  var viewMonth = today.getMonth(); // 0-indexed
-
-  var HOL = {
-    '01-01':"New Year's Day",'01-13':'Coming of Age Day',
-    '02-11':'National Foundation Day','02-23':"Emperor's Birthday",
-    '03-20':'Vernal Equinox Day','04-29':'Showa Day',
-    '05-03':'Constitution Memorial Day','05-04':'Greenery Day',
-    '05-05':"Children's Day",'07-21':'Marine Day',
-    '08-11':'Mountain Day','09-15':'Respect for the Aged Day',
-    '09-23':'Autumnal Equinox Day','10-13':'Sports Day',
-    '11-03':'Culture Day','11-23':'Labour Thanksgiving Day','11-24':'Substitute Holiday'
-  };
-
-  function pad(n){ return String(n).padStart(2,'0'); }
-  function toKey(y,m,d){ return y+'-'+pad(m+1)+'-'+pad(d); }
-  function getHol(m,d){ return HOL[pad(m)+'-'+pad(d)]||null; }
-  function getSlots(key){ return data[key]||{}; }
-
-  // ── RENDER GRID ──────────────────────────────────────────
-  function renderGrid(){
-    var y=viewYear, m=viewMonth;
-    document.getElementById('cal-month-label').textContent = MONTHS[m]+' '+y;
-
-    var firstDow = new Date(y,m,1).getDay();
-    var daysInMonth = new Date(y,m+1,0).getDate();
-    var prevDays = new Date(y,m,0).getDate();
-
-    var html='';
-
-    // Filler cells from previous month
-    for(var i=0;i<firstDow;i++){
-      html+='<div class="cal-cell faded"><span class="cell-num">'+(prevDays-firstDow+1+i)+'</span></div>';
-    }
-
-    for(var d=1;d<=daysInMonth;d++){
-      var dow=(firstDow+d-1)%7;
-      var key=toKey(y,m,d);
-      var cellDate=new Date(y,m,d);
-      var isTodayCell=(y===today.getFullYear()&&m===today.getMonth()&&d===today.getDate());
-      var isPast=cellDate<new Date(today.getFullYear(),today.getMonth(),today.getDate());
-      var hol=getHol(m+1,d);
-      var slots=getSlots(key);
-      var slotVals=Object.values(slots);
-
-      // Build pip dots
-      var pips='';
-      SLOTS.forEach(function(s){
-        if(slots[s]==='free') pips+='<div class="pip free"></div>';
-        else if(slots[s]==='busy') pips+='<div class="pip busy"></div>';
-      });
-
-      var cls='cal-cell';
-      if(dow===0) cls+=' sun';
-      if(dow===6) cls+=' sat';
-      if(isTodayCell) cls+=' is-today';
-      if(isPast) cls+=' is-past';
-      if(hol) cls+=' is-hol';
-
-      var clickAttr = isPast ? '' : 'onclick="TCAL.openDay(\''+key+'\')" role="button" tabindex="0"';
-
-      html+='<div class="'+cls+'" '+clickAttr+'>'
-           +'<span class="cell-num">'+d+'</span>'
-           +(hol?'<span class="cell-hol">'+hol+'</span>':'')
-           +(pips?'<div class="cell-pips">'+pips+'</div>':'')
-           +'</div>';
-    }
-
-    // Filler cells for next month
-    var total = firstDow+daysInMonth;
-    var rem = total%7===0 ? 0 : 7-(total%7);
-    for(var dd=1;dd<=rem;dd++){
-      html+='<div class="cal-cell faded"><span class="cell-num">'+dd+'</span></div>';
-    }
-
-    document.getElementById('cal-grid-wrap').innerHTML=html;
+function draw(){
+  document.getElementById('tcMonthLabel').textContent=MONTHS[vm]+' '+vy;
+  var fd=new Date(vy,vm,1).getDay();
+  var dim=new Date(vy,vm+1,0).getDate();
+  var pd=new Date(vy,vm,0).getDate();
+  var h='';
+  for(var i=0;i<fd;i++){
+    h+='<div class="tc dim"><span class="tcn">'+(pd-fd+1+i)+'</span></div>';
   }
+  for(var d=1;d<=dim;d++){
+    var dow=(fd+d-1)%7;
+    var k=key(vy,vm,d);
+    var isTod=(vy===today.getFullYear()&&vm===today.getMonth()&&d===today.getDate());
+    var isPast=new Date(vy,vm,d)<new Date(today.getFullYear(),today.getMonth(),today.getDate());
+    var hl=hol(vm+1,d);
+    var s=sd(k);
+    var cls='tc';
+    if(dow===0)cls+=' sun';
+    if(dow===6)cls+=' sat';
+    if(isTod)cls+=' istoday';
+    if(isPast)cls+=' past';else cls+=' clickable';
+    if(hl)cls+=' ishol';
+    if(k===curKey)cls+=' sel';
+    var pips='';
+    SLOTS.forEach(function(sl){
+      if(s[sl.n]==='free')pips+='<div class="pip f"></div>';
+      else if(s[sl.n]==='busy')pips+='<div class="pip b"></div>';
+    });
+    var click=isPast?'':'onclick="TC.open(\''+k+'\')"';
+    h+='<div class="'+cls+'" '+click+'>'
+      +'<span class="tcn">'+d+'</span>'
+      +(hl?'<span class="tchn">'+hl+'</span>':'')
+      +(pips?'<div class="tcpips">'+pips+'</div>':'')
+      +'</div>';
+  }
+  var tot=fd+dim,rem=tot%7===0?0:7-(tot%7);
+  for(var x=1;x<=rem;x++)h+='<div class="tc dim"><span class="tcn">'+x+'</span></div>';
+  document.getElementById('tcGrid').innerHTML=h;
+}
 
-  // ── OPEN DAY MODAL ────────────────────────────────────────
-  function openDay(key){
-    var parts=key.split('-');
-    var y=parseInt(parts[0]),mo=parseInt(parts[1])-1,d=parseInt(parts[2]);
-    var dateObj=new Date(y,mo,d);
-    var titleStr=DAYS[dateObj.getDay()]+', '+MONTHS[mo]+' '+d+', '+y;
-    document.getElementById('modal-date-title').textContent=titleStr;
-
-    var hol=getHol(mo+1,d);
-    var slots=getSlots(key);
-    var bodyHTML='';
-
-    if(hol){
-      bodyHTML+='<div class="modal-hol">🗓 '+hol+' — Public Holiday</div>';
+function openModal(k){
+  curKey=k;
+  var pts=k.split('-');
+  var y=+pts[0],m=+pts[1]-1,d=+pts[2];
+  var dn=DAYS[new Date(y,m,d).getDay()];
+  var title=dn+', '+MONTHS[m]+' '+d+', '+y;
+  document.getElementById('tcMTitle').textContent=title;
+  var hl=hol(m+1,d);
+  var s=sd(k);
+  var b='';
+  if(hl)b+='<div class="tcal-holtag">🗓 '+hl+' — Public Holiday</div>';
+  b+='<div class="tcal-slots">';
+  SLOTS.forEach(function(sl){
+    var st=s[sl.n]||null;
+    var isF=st==='free',isB=st==='busy';
+    var cls=isF?'f':isB?'b':'';
+    var status=isF?'Available':isB?'Unavailable':'Not yet confirmed';
+    var btn='';
+    if(!isB){
+      var verb=isF?'Book this slot':'Send enquiry';
+      var subj=encodeURIComponent((isF?'Booking: ':'Enquiry: ')+title+' – '+sl.n);
+      var body=encodeURIComponent('Hi Terry,\n\nI\'d like to '+(isF?'book':'enquire about')+' a tour.\n\nDate: '+title+'\nSlot: '+sl.n+' ('+sl.t+')\n\nPlease let me know next steps.\n\nThanks!');
+      btn='<a href="mailto:'+EMAIL+'?subject='+subj+'&body='+body+'" class="tslot-btn '+(isF?'book':'enq')+'">'+verb+' ↗</a>';
     }
-
-    // ── Slot cards (customer view) ──
-    bodyHTML+='<div class="slot-grid">';
-    SLOTS.forEach(function(slot){
-      var state=slots[slot]||null;
-      var isFree=state==='free';
-      var isBusy=state==='busy';
-      var cardCls=isFree?'free':isBusy?'busy':'open';
-      var icon=SLOT_ICON[slot];
-      var times=SLOT_TIMES[slot];
-      var statusTxt=isFree?'Available':isBusy?'Unavailable':'Not yet confirmed';
-
-      var btn='';
-      if(!isBusy){
-        var verb=isFree?'Book this slot':'Send enquiry';
-        var subj=encodeURIComponent((isFree?'Booking request':'Tour enquiry')+': '+titleStr+' — '+slot);
-        var body=encodeURIComponent(
-          'Hi Terry,\n\n'+(isFree?'I would like to book':'I am interested in')
-          +' a tour on '+titleStr+'.\n\nPreferred slot: '+slot+' ('+times
-          +')\n\nPlease let me know next steps.\n\nThank you!');
-        btn='<a href="mailto:'+EMAIL+'?subject='+subj+'&body='+body
-            +'" class="slot-book-btn '+(isFree?'btn-book':'btn-enquire')+'">'+verb+' ↗</a>';
-      }
-
-      bodyHTML+='<div class="slot-card '+cardCls+'">'
-        +'<div class="slot-icon">'+icon+'</div>'
-        +'<div class="slot-name">'+slot+'</div>'
-        +'<div class="slot-status">'+times+'</div>'
-        +'<div class="slot-status">'+statusTxt+'</div>'
-        +btn
+    b+='<div class="tslot '+cls+'">'
+      +'<div class="tslot-icon">'+sl.i+'</div>'
+      +'<div class="tslot-name">'+sl.n+'</div>'
+      +'<div class="tslot-time">'+sl.t+'</div>'
+      +'<div class="tslot-status">'+status+'</div>'
+      +btn
+      +'</div>';
+  });
+  b+='</div>';
+  if(unlocked){
+    b+='<hr class="tcal-mdiv"><div class="tcal-adminedit on" id="tcAdminEdit"><h3>Edit – '+MONTHS[m]+' '+d+'</h3>';
+    SLOTS.forEach(function(sl){
+      var st=s[sl.n]||'';
+      b+='<div class="tarow"><span>'+sl.n+'</span>'
+        +'<button class="tabtn'+(st==='free'?' af':'')+'" onclick="TC.set(\''+k+'\',\''+sl.n+'\',\'free\')">✅ Free</button>'
+        +'<button class="tabtn'+(st==='busy'?' ab':'')+'" onclick="TC.set(\''+k+'\',\''+sl.n+'\',\'busy\')">❌ Busy</button>'
+        +'<button class="tabtn-x" onclick="TC.set(\''+k+'\',\''+sl.n+'\',null)">✕</button>'
         +'</div>';
     });
-    bodyHTML+='</div>'; // end slot-grid
-
-    // ── Admin edit section (only if unlocked) ──
-    if(unlocked){
-      bodyHTML+='<hr class="modal-divider">';
-      bodyHTML+='<div class="admin-section visible" id="admin-edit">'
-        +'<h3>Edit availability — '+MONTHS[mo]+' '+d+'</h3>';
-      SLOTS.forEach(function(slot){
-        var state=slots[slot]||'';
-        bodyHTML+='<div class="admin-slot-row">'
-          +'<span class="admin-slot-name">'+slot+'</span>'
-          +'<button class="admin-toggle'+(state==='free'?' active-free':'')+'" onclick="TCAL.setSlot(\''+key+'\',\''+slot+'\',\'free\')">✅ Free</button>'
-          +'<button class="admin-toggle'+(state==='busy'?' active-busy':'')+'" onclick="TCAL.setSlot(\''+key+'\',\''+slot+'\',\'busy\')">❌ Busy</button>'
-          +'<button class="admin-toggle-clear" onclick="TCAL.setSlot(\''+key+'\',\''+slot+'\',null)">✕</button>'
-          +'</div>';
-      });
-      bodyHTML+='</div>';
-    }
-
-    document.getElementById('modal-body').innerHTML=bodyHTML;
-    document.getElementById('cal-modal-bg').classList.add('open');
-    document.body.style.overflow='hidden';
+    b+='</div>';
   }
+  document.getElementById('tcMBody').innerHTML=b;
+  document.getElementById('tcOverlay').classList.add('on');
+  document.body.style.overflow='hidden';
+  draw();
+}
 
-  // ── PUBLIC API ────────────────────────────────────────────
-  return {
-    openDay: openDay,
+window.TC={
+  open:function(k){openModal(k);},
+  close:function(){
+    document.getElementById('tcOverlay').classList.remove('on');
+    document.body.style.overflow='';
+    curKey=null;draw();
+  },
+  nav:function(dir){
+    vm+=dir;
+    if(vm<0){vm=11;vy--;}
+    if(vm>11){vm=0;vy++;}
+    draw();
+  },
+  set:function(k,slot,val){
+    if(!unlocked)return;
+    if(!D[k])D[k]={};
+    if(val===null){delete D[k][slot];if(!Object.keys(D[k]).length)delete D[k];}
+    else D[k][slot]=val;
+    openModal(k);
+  },
+  pin:function(){
+    var inp=document.getElementById('tcPinInput');
+    var err=document.getElementById('tcPinErr');
+    if(inp.value===PIN){
+      unlocked=true;
+      document.getElementById('tcPinBar').classList.remove('on');
+      document.getElementById('tcAdminBar').classList.add('on');
+      err.style.display='none';inp.value='';draw();
+    }else{err.style.display='block';inp.value='';inp.focus();}
+  },
+  lock:function(){
+    unlocked=false;
+    document.getElementById('tcAdminBar').classList.remove('on');
+    document.getElementById('tcPinBar').classList.remove('on');
+    draw();
+  }
+};
 
-    closeModal: function(){
-      document.getElementById('cal-modal-bg').classList.remove('open');
-      document.body.style.overflow='';
-    },
+// Secret shortcut tj3 → show PIN box
+var seq=[];
+document.addEventListener('keydown',function(e){
+  seq.push(e.key);if(seq.length>3)seq.shift();
+  if(seq.join('')==='tj3'&&!unlocked){
+    document.getElementById('tcPinBar').classList.add('on');
+    setTimeout(function(){document.getElementById('tcPinInput').focus();},50);
+    seq=[];
+  }
+  if(e.key==='Escape')TC.close();
+});
 
-    prevMonth: function(){
-      viewMonth--;
-      if(viewMonth<0){ viewMonth=11; viewYear--; }
-      renderGrid();
-    },
+// Click overlay background to close
+document.getElementById('tcOverlay').addEventListener('click',function(e){
+  if(e.target===this)TC.close();
+});
 
-    nextMonth: function(){
-      viewMonth++;
-      if(viewMonth>11){ viewMonth=0; viewYear++; }
-      renderGrid();
-    },
-
-    setSlot: function(key,slot,val){
-      if(!unlocked) return;
-      if(!data[key]) data[key]={};
-      if(val===null){ delete data[key][slot]; if(!Object.keys(data[key]).length) delete data[key]; }
-      else data[key][slot]=val;
-      renderGrid();
-      openDay(key); // refresh modal
-    },
-
-    checkPin: function(){
-      var inp=document.getElementById('cal-pin-input');
-      var err=document.getElementById('cal-pin-err');
-      if(inp.value===PIN){
-        unlocked=true;
-        document.getElementById('cal-pin-bar').classList.remove('visible');
-        document.getElementById('cal-admin-bar').classList.add('visible');
-        err.style.display='none'; inp.value='';
-        renderGrid();
-      } else {
-        err.style.display='block'; inp.value=''; inp.focus();
-      }
-    },
-
-    lock: function(){
-      unlocked=false;
-      document.getElementById('cal-admin-bar').classList.remove('visible');
-      document.getElementById('cal-pin-bar').classList.remove('visible');
-      renderGrid();
-    },
-
-    init: function(){
-      renderGrid();
-      // Secret shortcut: type t then j then 3 to reveal PIN box
-      var seq=[];
-      document.addEventListener('keydown',function(e){
-        seq.push(e.key); if(seq.length>3) seq.shift();
-        if(seq.join('')==='tj3'){
-          if(!unlocked){
-            document.getElementById('cal-pin-bar').classList.add('visible');
-            setTimeout(function(){ document.getElementById('cal-pin-input').focus(); },50);
-          }
-          seq=[];
-        }
-      });
-      // Close modal on Escape
-      document.addEventListener('keydown',function(e){
-        if(e.key==='Escape') TCAL.closeModal();
-      });
-    }
-  };
-})();
-
-TCAL.init();
+draw();
+}();
 </script>
 
 
