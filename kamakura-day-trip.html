@@ -58,9 +58,16 @@ section{padding:5rem 0;}
 .cta-card p{font-size:15px;color:rgba(255,255,255,.8);margin-top:.35rem;}
 .cta-card a{background:#fff;color:var(--red);padding:12px 26px;border-radius:var(--radius-sm);font-size:15px;font-weight:500;text-decoration:none;white-space:nowrap;transition:opacity .15s;}
 .cta-card a:hover{opacity:.88;}
-footer{background:#111;color:rgba(255,255,255,0.5);padding:2rem;text-align:center;font-size:13px;}
-footer a{color:rgba(255,255,255,0.7);text-decoration:none;}
+
 @media(max-width:700px){.info-grid{grid-template-columns:1fr;}.page-hero{height:42vh;}.nav-right .back-link{display:none;}}
+footer{background:#111;color:rgba(255,255,255,0.5);padding:2.5rem 2rem;font-size:13px;}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-logo{font-size:15px;font-weight:600;color:rgba(255,255,255,0.85);margin-bottom:4px;letter-spacing:0.02em;}
+.footer-desc{font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:4px;}
+.footer-copy{font-size:12px;color:rgba(255,255,255,0.3);}
+.footer-links{display:flex;gap:1.25rem;align-items:center;}
+.footer-links a{color:rgba(255,255,255,0.55);text-decoration:none;font-size:13px;transition:color .15s;}
+.footer-links a:hover{color:rgba(255,255,255,0.9);}
 </style>
 </head>
 <body>
@@ -68,6 +75,7 @@ footer a{color:rgba(255,255,255,0.7);text-decoration:none;}
   <a class="nav-logo" href="index.html">Tokyo with <span>Terry</span></a>
   <div class="nav-right">
     <a class="back-link" href="index.html">&#8592; Home</a>
+    <a class="back-link" href="reservations.html">Reserve</a>
     <a class="book-btn" href="availability.html">Check availability</a>
   </div>
 </nav>
@@ -137,7 +145,18 @@ footer a{color:rgba(255,255,255,0.7);text-decoration:none;}
 <div style="padding-bottom:2rem;"></div>
 
 <footer>
-  <p>© 2026 Tokyo with Terry · Japan &nbsp;·&nbsp; <a href="index.html">Home</a> &nbsp;·&nbsp; <a href="availability.html">Availability</a></p>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="footer-logo">鎌倉 · Kamakura Day Trip</div>
+      <div class="footer-desc">A full-day guided experience · From ¥12,000 per person</div>
+      <div class="footer-copy">© 2026 Tokyo with Terry · Japan</div>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">&#8592; Home</a>
+      <a href="availability.html">Availability</a>
+      <a href="reservations.html">Reserve</a>
+    </div>
+  </div>
 </footer>
 </body>
 </html>
