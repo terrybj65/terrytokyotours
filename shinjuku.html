@@ -1,666 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="description" content="Explore Shinjuku with Terry — neon-lit Golden Gai, Kabukicho entertainment district, secret alleyway bars and the best ramen in Tokyo."/>
-  <meta name="keywords" content="Shinjuku tour, Shinjuku night tour, Golden Gai Tokyo, Kabukicho, Shinjuku private guide, Tokyo nightlife tour, Shinjuku bars"/>
-  <meta name="author" content="Tokyo Private Tours with Terry"/>
-  <meta name="robots" content="index, follow"/>
-  <meta property="og:title" content="Shinjuku — Neon, Nightlife & Hidden Alleys | Tokyo Private Tours with Terry"/>
-  <meta property="og:description" content="Explore Shinjuku with Terry — neon-lit Golden Gai, Kabukicho entertainment district, secret alleyway bars and the best ramen in Tokyo."/>
-  <meta property="og:type" content="website"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shinjuku — Neon, Nightlife & Hidden Alleys | Tokyo Private Tours with Terry</title>
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
-  <style>
-    :root {
-      --ink: #14120e;
-      --paper: #f0ede6;
-      --moss: #6a1a6a;
-      --sage: #882288;
-      --stone: #7a7468;
-      --gold: #c08000;
-      --border: rgba(20,18,14,0.12);
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      background: var(--paper);
-      color: var(--ink);
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
-      overflow-x: hidden;
-    }
-
-    /* ── HERO ── */
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    .hero h1 {
-      position: relative;
-      font-family: 'Shippori Mincho', serif;
-      font-size: clamp(3.5rem, 9vw, 7rem);
-      font-weight: 800;
-      color: #fff;
-      line-height: 0.88;
-      margin-bottom: 0.6rem;
-    }
-
-    
-
-    
-
-    
-    
-
-    
-    
-    
-      50%{opacity:.5;transform:scaleY(.55)}
-    }
-
-    /* ── INTRO ── */
-    .intro {
-      max-width: 800px;
-      margin: 5.5rem auto;
-      padding: 0 6vw;
-      text-align: center;
-    }
-    .intro-kicker {
-      display: inline-block;
-      font-size: 0.65rem;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--moss);
-      margin-bottom: 1.4rem;
-    }
-    .intro p {
-      font-size: 1.12rem;
-      line-height: 1.9;
-      color: var(--stone);
-    }
-
-    /* time-of-day bar */
-    .tod-bar {
-      max-width: 900px;
-      margin: 0 auto 4rem;
-      padding: 0 6vw;
-    }
-    .tod-inner {
-      display: flex;
-      align-items: center;
-      gap: 0;
-      border: 1px solid rgba(106,26,106,0.18);
-      overflow: hidden;
-    }
-    .tod-item {
-      flex: 1;
-      padding: 1.1rem 1.4rem;
-      border-right: 1px solid rgba(106,26,106,0.18);
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
-    .tod-item:last-child { border-right: none; }
-    .tod-label {
-      font-size: 0.58rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--moss);
-    }
-    .tod-value {
-      font-size: 0.82rem;
-      font-weight: 500;
-      color: var(--ink);
-      line-height: 1.4;
-    }
-
-    /* nav */
-    .section-nav {
-      max-width: 900px;
-      margin: 0 auto 4rem;
-      padding: 0 6vw;
-    }
-    .section-nav-inner {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-      background: rgba(106,26,106,0.06);
-      border: 1px solid rgba(106,26,106,0.18);
-      border-left: 3px solid var(--moss);
-      padding: 1.2rem 1.8rem;
-      flex-wrap: wrap;
-    }
-    .nav-label {
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--moss);
-      flex-shrink: 0;
-    }
-    .nav-pills { display: flex; gap: 0.6rem; flex-wrap: wrap; }
-    .nav-pill {
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: var(--ink);
-      background: rgba(106,26,106,0.08);
-      border: 1px solid rgba(106,26,106,0.2);
-      padding: 0.3rem 0.9rem;
-      border-radius: 100px;
-      text-decoration: none;
-      transition: background 0.2s, color 0.2s;
-      letter-spacing: 0.03em;
-    }
-    .nav-pill:hover { background: var(--moss); color: #fff; border-color: var(--moss); }
-
-    .divider {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-      margin: 0 6vw 3rem;
-      color: var(--sage);
-      font-size: 0.67rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-    }
-    .divider::before, .divider::after {
-      content: ''; flex: 1; height: 1px; background: var(--border);
-    }
-
-    /* ── STOPS ── */
-    .stops {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 6vw 8rem;
-    }
-
-    .stop {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      border-top: 1px solid var(--border);
-      padding: 4rem 0;
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .stop.visible { opacity: 1; transform: translateY(0); }
-    .stop:nth-child(even) { direction: rtl; }
-    .stop:nth-child(even) > * { direction: ltr; }
-
-    .stop-img-wrap {
-      position: relative;
-      overflow: hidden;
-      aspect-ratio: 4/3;
-    }
-    .stop-img-wrap img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      transition: transform 0.75s ease;
-    }
-    .stop:hover .stop-img-wrap img { transform: scale(1.05); }
-
-    .stop-badge {
-      position: absolute;
-      bottom: 1.2rem; left: 1.2rem;
-      background: rgba(12,6,18,0.75);
-      border: 1px solid rgba(255,255,255,0.15);
-      color: rgba(255,255,255,0.82);
-      font-size: 0.62rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      padding: 0.3rem 0.75rem;
-      backdrop-filter: blur(6px);
-    }
-
-    .stop-time {
-      position: absolute;
-      top: 1rem; left: 1.2rem;
-      font-size: 0.6rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.6);
-      background: rgba(12,6,18,0.55);
-      padding: 0.2rem 0.6rem;
-      backdrop-filter: blur(4px);
-    }
-
-    .stop-num {
-      position: absolute;
-      top: 1rem; right: 1.2rem;
-      font-family: 'Shippori Mincho', serif;
-      font-size: 4.5rem; font-weight: 800;
-      color: rgba(255,255,255,0.13);
-      line-height: 1; pointer-events: none;
-    }
-
-    .stop-content {
-      padding: 2.8rem 3.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .stop-category {
-      font-size: 0.62rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--moss);
-      margin-bottom: 1rem;
-    }
-    .stop-title {
-      font-family: 'Shippori Mincho', serif;
-      font-size: clamp(1.7rem, 2.8vw, 2.4rem);
-      font-weight: 600;
-      line-height: 1.2;
-      margin-bottom: 0.35rem;
-    }
-    .stop-jp {
-      font-size: 0.82rem;
-      color: var(--stone);
-      margin-bottom: 1.6rem;
-      letter-spacing: 0.06em;
-    }
-    .stop-desc {
-      font-size: 0.94rem;
-      line-height: 1.88;
-      color: #3e3a34;
-      margin-bottom: 1.6rem;
-    }
-    .stop-tip {
-      border-left: 2px solid var(--gold);
-      padding-left: 1rem;
-      font-size: 0.82rem;
-      color: var(--stone);
-      font-style: italic;
-      line-height: 1.65;
-    }
-    .stop-footer {
-      margin-top: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-    }
-    .stop-rating {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.78rem;
-      color: var(--stone);
-    }
-    .stars { color: var(--gold); }
-    .stop-map {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-size: 0.76rem;
-      color: var(--moss);
-      text-decoration: none;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      transition: opacity 0.2s;
-    }
-    .stop-map:hover { opacity: 0.65; }
-
-    /* ── FOOTER ── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 3rem 6vw;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    footer p { font-size: 0.8rem; color: var(--stone); }
-    .footer-logo {
-      font-family: 'Shippori Mincho', serif;
-      font-size: 1.25rem; font-weight: 600;
-    }
-
-    @media (max-width: 700px) {
-      .stop { grid-template-columns: 1fr; direction: ltr !important; }
-      .stop-content { padding: 2rem 0; }
-      .stop:nth-child(even) > * { direction: ltr; }
-      .tod-inner { flex-direction: column; }
-      .tod-item { border-right: none; border-bottom: 1px solid rgba(106,26,106,0.18); }
-      .tod-item:last-child { border-bottom: none; }
-      .section-nav-inner { flex-direction: column; align-items: flex-start; }
-    }
-  
-  /* ── HERO ── */
-  .hero {
-    position: relative;
-    height: 90vh;
-    min-height: 560px;
-    overflow: hidden;
-  }
-  .hero img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: none;
-    display: flex;
-    align-items: center;
-  }
-  .hero-content {
-    max-width: 560px;
-    padding: 0 2rem;
-    background: none;
-  }
-  .hero-eyebrow {
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #f9a07a;
-    margin-bottom: 1rem;
-    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
-  }
-  .hero h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(40px, 6vw, 64px);
-    color: #ffffff;
-    line-height: 1.1;
-    margin-bottom: 1rem;
-    font-weight: 400;
-    text-shadow: 1px 1px 8px rgba(0,0,0,0.9), 0 0 30px rgba(0,0,0,0.8);
-  }
-  .hero p {
-    font-size: 17px;
-    color: #ffffff;
-    line-height: 1.7;
-    margin-bottom: 2rem;
-    max-width: 420px;
-    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
-  }
-  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
-  .btn-primary {
-    background: #D00000;
-    color: #fff;
-    border: none;
-    padding: 13px 26px;
-    border-radius: 8px;
-    font-size: 15px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.15s;
-    display: inline-block;
-  }
-  .btn-primary:hover { background: #B00000; }
-  .btn-ghost {
-    background: rgba(0,0,0,0.45);
-    color: #fff;
-    border: 1px solid rgba(255,255,255,0.6);
-    padding: 13px 26px;
-    border-radius: 8px;
-    font-size: 15px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.15s;
-    display: inline-block;
-  }
-  .btn-ghost:hover { background: rgba(0,0,0,0.65); }
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Explore Shinjuku with Terry — private guided tours of Shinjuku, Tokyo."/>
+<title>Shinjuku — Tokyo Private Tours with Terry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{--red:#D00000;--red-dark:#B00000;--red-light:#FFE5E5;--text:#1C2833;--text-muted:#5D6D7E;--border:rgba(0,0,0,0.1);--bg:#FAFAF8;--bg-card:#ffffff;--bg-surface:#F4F3EF;--radius:12px;--radius-sm:8px;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.6;}
+nav{position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:20px;color:var(--text);display:flex;align-items:center;gap:8px;text-decoration:none;}
+.nav-logo span{color:var(--red);}
+.nav-right{display:flex;align-items:center;gap:1.5rem;}
+.back-link{font-size:14px;color:var(--text-muted);text-decoration:none;transition:color .15s;}
+.back-link:hover{color:var(--text);}
+.book-btn{background:var(--red);color:#fff;padding:9px 20px;border-radius:var(--radius-sm);font-size:14px;font-family:'DM Sans',sans-serif;text-decoration:none;transition:background .15s;}
+.book-btn:hover{background:var(--red-dark);}
+.container{max-width:1100px;margin:0 auto;padding:0 2rem;}
+section{padding:5rem 0;}
+.section-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem;}
+.section-title{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,42px);font-weight:400;margin-bottom:.5rem;line-height:1.2;}
+.section-sub{font-size:16px;color:var(--text-muted);margin-bottom:2.5rem;max-width:560px;}
+/* Hero */
+.page-hero{position:relative;height:52vh;min-height:340px;overflow:hidden;}
+.page-hero img{width:100%;height:100%;object-fit:cover;display:block;}
+.page-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.72) 40%,rgba(0,0,0,.2));display:flex;align-items:flex-end;}
+.page-hero-content{padding:2.5rem 2rem;max-width:1100px;margin:0 auto;width:100%;}
+.page-hero-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#f9a07a;margin-bottom:.5rem;}
+.page-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(32px,5vw,52px);color:#fff;font-weight:400;line-height:1.15;text-shadow:0 2px 12px rgba(0,0,0,.5);}
+.page-hero p{font-size:16px;color:rgba(255,255,255,.8);margin-top:.75rem;max-width:480px;text-shadow:0 1px 6px rgba(0,0,0,.5);}
+/* Content cards */
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+.info-card{background:var(--bg-card);border:0.5px solid var(--border);border-radius:var(--radius);padding:1.75rem;}
+.info-card h3{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;margin-bottom:.75rem;}
+.info-card p,.info-card li{font-size:15px;color:var(--text-muted);line-height:1.8;}
+.info-card ul{padding-left:1.25rem;}
+.info-card li{margin-bottom:.35rem;}
+/* Highlights */
+.highlights{display:flex;gap:2rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+.highlight{display:flex;align-items:flex-start;gap:12px;}
+.highlight-icon{font-size:24px;flex-shrink:0;}
+.highlight-text h4{font-size:15px;font-weight:600;margin-bottom:2px;}
+.highlight-text p{font-size:14px;color:var(--text-muted);}
+/* Meta strip */
+.meta-strip{display:flex;gap:2rem;flex-wrap:wrap;padding:1.5rem 0;border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);margin-bottom:2.5rem;}
+.meta-item{display:flex;flex-direction:column;gap:3px;}
+.meta-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);}
+.meta-value{font-size:15px;font-weight:500;color:var(--text);}
+/* CTA card */
+.cta-card{background:var(--red);border-radius:var(--radius);padding:2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-top:3rem;}
+.cta-card h3{font-family:'DM Serif Display',serif;font-size:26px;color:#fff;font-weight:400;}
+.cta-card p{font-size:15px;color:rgba(255,255,255,.8);margin-top:.35rem;}
+.cta-card a{background:#fff;color:var(--red);padding:12px 26px;border-radius:var(--radius-sm);font-size:15px;font-weight:500;text-decoration:none;white-space:nowrap;transition:opacity .15s;}
+.cta-card a:hover{opacity:.88;}
+footer{background:#111;color:rgba(255,255,255,0.5);padding:2rem;text-align:center;font-size:13px;}
+footer a{color:rgba(255,255,255,0.7);text-decoration:none;}
+@media(max-width:700px){.info-grid{grid-template-columns:1fr;}.page-hero{height:42vh;}.nav-right .back-link{display:none;}}
 </style>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
 </head>
 <body>
-
-<!-- NAV -->
-<nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(0,0,0,0.1);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;">
-  <ul style="display:flex;list-style:none;justify-content:center;align-items:center;gap:2rem;flex:1;margin:0;padding:0;">
-    <li><a href="index.html#areas" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Areas</a></li>
-    <li><a href="index.html#tours" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Tours</a></li>
-    <li><a href="index.html#about" style="font-size:14px;color:#5D6D7E;text-decoration:none;">About</a></li>
-    <li><a href="index.html#contact" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Contact</a></li>
-  </ul>
-  <a href="index.html#contact" style="background:#D00000;color:#fff;border:none;padding:9px 20px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none;">Book a tour</a>
+<nav>
+  <a class="nav-logo" href="index.html">Tokyo with <span>Terry</span></a>
+  <div class="nav-right">
+    <a class="back-link" href="index.html">&#8592; Home</a>
+    <a class="book-btn" href="availability.html">Check availability</a>
+  </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <img src="photos/shinjukuskyline.jpg" width="2048" height="683" alt=""/>
-  <div class="hero-overlay">
-    <div class="hero-content">
-      <div class="hero-eyebrow">📍 Shinjuku, Tokyo · 3.5M people a day</div>
+<div class="page-hero">
+  <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1200&q=85&fit=crop" alt="Shinjuku"/>
+  <div class="page-hero-overlay">
+    <div class="page-hero-content container">
+      <div class="page-hero-label">Tokyo Area Guide</div>
       <h1>Shinjuku</h1>
-      <p>Gardens, neon, memory lanes & the night.</p>
-      <div class="hero-btns">
-        <a href="#stop1" class="btn-primary">Explore stops ↓</a>
-        <a href="index.html#contact" class="btn-ghost">Book a tour</a>
+      <p>Neon, nightlife, and the world's busiest train station.</p>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="meta-strip">
+      <div class="meta-item"><div class="meta-label">Best for</div><div class="meta-value">Nightlife, photography, people-watching, urban energy</div></div>
+      <div class="meta-item"><div class="meta-label">Best time to visit</div><div class="meta-value">Late afternoon into evening — neon looks best after dark</div></div>
+    </div>
+
+    <div class="section-label">Tokyo Area Guide</div>
+    <div class="section-title">Shinjuku</div>
+    <p style="font-size:16px;color:var(--text-muted);line-height:1.9;max-width:680px;margin-bottom:3rem;">Shinjuku is Tokyo at full volume — a district of extreme contrasts where gleaming skyscrapers share streets with the narrow red-lit lanes of Golden Gai and Kabukicho. It's exhausting, thrilling, and completely unmissable. Terry knows every corner, from the tiny jazz bars that hold ten people to the rooftop views that make the whole city snap into focus.</p>
+
+    <div class="section-label">What to see</div>
+    <div class="section-title" style="font-size:28px;">Highlights</div>
+    <div class="highlights" style="margin-top:1.5rem;"><div class="highlight">
+      <div class="highlight-icon">🏙️</div>
+      <div class="highlight-text"><h4>Kabukicho</h4><p>Tokyo's famous entertainment district — neon streets, arcades, and nightlife</p></div>
+    </div><div class="highlight">
+      <div class="highlight-icon">🍻</div>
+      <div class="highlight-text"><h4>Golden Gai</h4><p>A maze of tiny bars, each with its own personality — Tokyo's best-kept open secret</p></div>
+    </div><div class="highlight">
+      <div class="highlight-icon">🌳</div>
+      <div class="highlight-text"><h4>Shinjuku Gyoen</h4><p>A vast garden that feels impossible inside the city</p></div>
+    </div><div class="highlight">
+      <div class="highlight-icon">🛍️</div>
+      <div class="highlight-text"><h4>Takashimaya Times Square</h4><p>Shopping on a scale that has to be seen</p></div>
+    </div><div class="highlight">
+      <div class="highlight-icon">🎌</div>
+      <div class="highlight-text"><h4>Hanazono Shrine</h4><p>A quiet Shinto sanctuary hidden in the middle of the chaos</p></div>
+    </div></div>
+
+    <div class="info-grid" style="margin-top:2rem;">
+      <div class="info-card">
+        <h3>Touring this area with Terry</h3>
+        <p>Terry has been exploring Shinjuku for years and knows it at every level — the famous spots and the hidden ones. He can include it as part of a wider day tour, or design a visit specifically around it.</p>
+        <p style="margin-top:1rem;">All tours are fully private — no shared groups, no set script. Tell Terry what you're interested in and he'll shape the experience around you.</p>
+      </div>
+      <div class="info-card">
+        <h3>Getting here</h3>
+        <p>Terry will advise on the best way to reach Shinjuku from wherever you're staying. Tokyo's train network is excellent, and he'll make sure you don't spend time lost at stations.</p>
+        <p style="margin-top:1rem;">Most areas in Greater Tokyo are within 30–60 minutes of central Tokyo by train.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- INTRO -->
-<div class="intro">
-  <div class="intro-kicker">East & West · Shinjuku · Tokyo Metropolitan Government</div>
-  <p>Shinjuku contains multitudes. The world's busiest train station sits at the centre of a district that manages to be simultaneously a major business hub, a vast entertainment quarter, one of Tokyo's finest gardens, a postwar memory lane of yakitori smoke and cheap whisky, and a warren of tiny bars where the 20th century never quite ended. It rewards both the first-time visitor and the person who has been coming for decades — there is always another alley, another door, another version of the city behind the one you know.</p>
-</div>
+<div class="container"><div class="cta-card">
+  <div><h3>Ready to book a tour of Shinjuku?</h3><p>Check Terry's availability and send a booking request — it only takes a minute.</p></div>
+  <a href="availability.html">View availability &amp; book &#8594;</a>
+</div></div>
+<div style="padding-bottom:2rem;"></div>
 
-<!-- TIME OF DAY BAR -->
-<div class="tod-bar">
-  <div class="tod-inner">
-    <div class="tod-item">
-      <span class="tod-label">Morning</span>
-      <span class="tod-value">Shinjuku Gyoen · East Exit</span>
-    </div>
-    <div class="tod-item">
-      <span class="tod-label">Afternoon</span>
-      <span class="tod-value">Takashimaya · West Side</span>
-    </div>
-    <div class="tod-item">
-      <span class="tod-label">Sunset</span>
-      <span class="tod-value">Omoide Yokocho</span>
-    </div>
-    <div class="tod-item">
-      <span class="tod-label">Night</span>
-      <span class="tod-value">Golden Gai · Kabukicho</span>
-    </div>
-  </div>
-</div>
-
-<!-- NAV -->
-<div class="section-nav">
-  <div class="section-nav-inner">
-    <span class="nav-label">Jump to</span>
-    <div class="nav-pills">
-      <a class="nav-pill" href="#eastxit">East Exit Plaza</a>
-      <a class="nav-pill" href="#goldengai">Golden Gai</a>
-      <a class="nav-pill" href="#kabukicho">Kabukicho</a>
-      <a class="nav-pill" href="#omoide">Omoide Yokocho</a>
-      <a class="nav-pill" href="#gyoen">Shinjuku Gyoen</a>
-      <a class="nav-pill" href="#takashimaya">Takashimaya</a>
-    </div>
-  </div>
-</div>
-
-<div class="divider">One District · A Full Day & Night</div>
-
-<div class="stops">
-
-  <!-- 1. East Exit Plaza & Yasukuni-dori -->
-  <div class="stop" id="eastxit">
-    <div class="stop-img-wrap">
-      <div class="stop-time">Mid-Morning</div>
-      <div class="stop-num">01</div>
-      <img class="tour-img" src="shinjukueast.png" alt="Shinjuku East"/>
-      <div class="stop-badge">Pulse of the City</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Streets & Energy · East Exit</div>
-      <h2 class="stop-title">East Exit Plaza & Yasukuni-dori</h2>
-      <div class="stop-jp">東口広場 · 靖国通り</div>
-      <p class="stop-desc">The East Exit of Shinjuku Station opens onto a perpetually busy plaza that is both a crossroads and a spectacle — the meeting point of commuters, tourists, street performers, and the full human spectrum of one of the world's largest cities. Yasukuni-dori running east from the exit is lined with electronics shops, music stores, pachinko parlours, and department stores that merge into one another without pause. The area immediately east of the station — Studio Alta and its giant screen, the covered Shinjuku Marui department store arcade, the small camera shops — is best experienced on foot, slowly, with no particular destination.</p>
-      <div class="stop-tip">💡 The large Studio Alta screen above the east exit plaza has been one of Tokyo's famous meeting points since the 1980s — "meet you under Alta" is still how locals arrange to find each other in Shinjuku. The underground shopping arcades below the plaza connect east and west without surfacing — useful to know in rain.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★</span> Iconic landmark</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Shinjuku+Station+East+Exit+Tokyo" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 2. Golden Gai -->
-  <div class="stop" id="goldengai">
-    <div class="stop-img-wrap">
-      <div class="stop-time">Night</div>
-      <div class="stop-num">02</div>
-      <img src="https://images.unsplash.com/photo-1554797589-7241bb691973?w=800&q=80&fit=crop" alt="Golden Gai Shinjuku tiny bars night alley Tokyo" loading="lazy"/>
-      <div class="stop-badge">Tokyo's Best Bar District</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Bars & Night Culture · Kabukicho Area</div>
-      <h2 class="stop-title">Golden Gai</h2>
-      <div class="stop-jp">ゴールデン街</div>
-      <p class="stop-desc">Golden Gai is a six-lane network of narrow alleys containing approximately 200 tiny bars, most with capacity for between 5 and 12 people. The bars date from the 1950s and 60s and the buildings have been repeatedly threatened with demolition — saved each time by a combination of local resistance and the sheer improbability of replacing something so specific and irreplaceable. Each bar has its own character: some cater to writers, some to musicians, some to film directors, some to foreign visitors, some to regulars who have been coming for forty years. Walking the alleys, looking at the handwritten signs and faded photographs taped to windows, and choosing a door to open is one of the finest things you can do in Tokyo at night.</p>
-      <div class="stop-tip">💡 Most bars charge a small table fee (¥500–1,000) that covers snacks or a drink — check before sitting. Some bars are regulars-only, marked with signs; if in doubt, peek in and ask. Wander the alleys first before choosing — the variety is half the pleasure.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.4 · 19,000+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Golden+Gai+Shinjuku+Tokyo" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 3. Kabukicho -->
-  <div class="stop" id="kabukicho">
-    <div class="stop-img-wrap">
-      <div class="stop-time">Late Night</div>
-      <div class="stop-num">03</div>
-      <img src="https://images.unsplash.com/photo-1606318801954-d46d2be41e6a?w=800&q=80&fit=crop" alt="Kabukicho Shinjuku neon night entertainment district Tokyo" loading="lazy"/>
-      <div class="stop-badge">The Neon Quarter</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Entertainment District · Northeast of Station</div>
-      <h2 class="stop-title">Kabukicho</h2>
-      <div class="stop-jp">歌舞伎町</div>
-      <p class="stop-desc">Kabukicho is Tokyo's most famous entertainment district — a dense grid of neon, host clubs, cinemas, game centres, karaoke buildings, and restaurants that operates at maximum intensity from early evening until well past dawn. It was named after a kabuki theatre that was planned but never built after the war, and it has been the city's pleasure district ever since. The main boulevard, Ichibangai, runs north from the east exit under an arch of neon signs; on either side the streets become progressively more intense. The new Kabukicho Tower — a 48-storey entertainment and hotel complex that opened in 2023 — now anchors the north end of the district and contains theatres, restaurants, and a hotel with direct views over the neon grid below.</p>
-      <div class="stop-tip">💡 Kabukicho is safe to walk during both day and night, but keep your wits about you and decline approaches from touts on the street. The south end of the district near the Don Quijote store has the best concentration of late-night ramen shops for a post-Golden Gai meal. The Toho Cinemas in the new tower shows both Japanese and international films.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★</span> 4.2 · 31,000+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Kabukicho+Shinjuku+Tokyo" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-
-
-  <!-- 4. Omoide Yokocho -->
-  <div class="stop" id="omoide">
-    <div class="stop-img-wrap">
-      <div class="stop-time">Early Evening</div>
-      <div class="stop-num">04</div>
-      <img src="https://images.unsplash.com/photo-1513185158878-8d8c2a2a3da3?w=800&q=80&fit=crop" alt="Omoide Yokocho Memory Lane Shinjuku yakitori alley smoke" loading="lazy"/>
-      <div class="stop-badge">Memory Lane</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Food & History · West Exit</div>
-      <h2 class="stop-title">Omoide Yokocho</h2>
-      <div class="stop-jp">思い出横丁</div>
-      <p class="stop-desc">Immediately west of Shinjuku Station, Omoide Yokocho — Memory Lane — is a narrow alley of tiny yakitori restaurants and drinking stalls that has existed since the postwar black market of the late 1940s. The lane is barely wide enough for two people to pass, the ceilings are low, the ventilation is non-existent, and the smoke from the charcoal grills fills everything with the smell of charred chicken skin and scallions. Most restaurants have fewer than ten seats; some have four. The menu at each is similar — chicken skewers, cold beer, cheap whisky highballs — and the experience is as close as you can get in modern Tokyo to the city as it was 70 years ago.</p>
-      <div class="stop-tip">💡 Arrive at 5–6 PM before the seats fill completely. Just walk in to whichever restaurant has a gap. Don't overthink it — they're all roughly the same quality and the experience is about the atmosphere, not a particular restaurant. Order the negima (chicken and spring onion) skewers and a draft beer first.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.3 · 14,000+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Omoide+Yokocho+Shinjuku+Tokyo" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 5. Shinjuku Gyoen -->
-  <div class="stop" id="gyoen">
-    <div class="stop-img-wrap">
-      <div class="stop-time">Morning</div>
-      <div class="stop-num">05</div>
-      <img src="https://images.unsplash.com/photo-1522383225653-ed111181a951?w=800&q=80&fit=crop" alt="Shinjuku Gyoen garden cherry blossoms spring" loading="lazy"/>
-      <div class="stop-badge">Start Here</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">National Garden · Shinjuku & Sendagaya Gates</div>
-      <h2 class="stop-title">Shinjuku Gyoen</h2>
-      <div class="stop-jp">新宿御苑</div>
-      <p class="stop-desc">Shinjuku Gyoen is Tokyo's finest public garden and one of the great urban parks of Asia — 58 hectares of immaculately maintained landscape that blends a formal French garden, an English landscape garden, and a traditional Japanese garden into a single coherent whole. The grounds were originally an imperial garden and retain that sense of deliberate, unhurried beauty. On weekday mornings it's nearly empty, and the combination of old-growth plane trees, greenhouse-warm conservatories, and carefully raked gravel gives it the feeling of an entirely separate city within the city. In late March the cherry blossoms here are unmatched in central Tokyo.</p>
-      <div class="stop-tip">💡 Enter via the Shinjuku Gate (closest to the station) for the formal French garden first, then work east toward the Japanese garden and pond. The greenhouse is often overlooked — it houses an extraordinary tropical and desert plant collection and is worth 30 minutes on its own. Entry is ¥500.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.6 · 48,000+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Shinjuku+Gyoen+National+Garden+Tokyo" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 6. Takashimaya Times Square -->
-  <div class="stop" id="takashimaya">
-    <div class="stop-img-wrap">
-      <div class="stop-time">Afternoon</div>
-      <div class="stop-num">06</div>
-      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&fit=crop" alt="Takashimaya Times Square Shinjuku department store interior" loading="lazy"/>
-      <div class="stop-badge">Department Store Culture</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Shopping & Food · South Exit</div>
-      <h2 class="stop-title">Takashimaya Times Square</h2>
-      <div class="stop-jp">タカシマヤ タイムズスクエア</div>
-      <p class="stop-desc">Directly connected to Shinjuku Station's south exit, Takashimaya Times Square is one of the great Japanese department stores — 15 floors of curated retail, restaurants, and food halls that represent the Japanese depato at its most complete. The basement food halls (depachika) alone are worth an extended visit: two floors of prepared foods, patisseries, sake specialists, wagashi sweets, bento counters, and fresh produce from across Japan, presented with the kind of care that makes grocery shopping feel like a cultural activity. The upper floors transition from fashion through homeware to a rooftop garden. The restaurant floors (12–14F) cover Japanese, French, Chinese, and everything in between.</p>
-      <div class="stop-tip">💡 The basement food halls get extremely busy at lunchtime and after 5 PM — visit mid-afternoon for the best experience. The Tokyu Hands store attached to the building is several floors of inspired Japanese stationery, tools, and lifestyle goods and can absorb an hour without difficulty.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.4 · 22,000+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Takashimaya+Times+Square+Shinjuku+Tokyo" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div></div>
-
-<!-- FOOTER -->
-
-<!-- PRICING -->
-<div style="background:#f9f6f0; border-top:1px solid rgba(0,0,0,0.08); padding:2.5rem 6vw; text-align:center;">
-  <p style="font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:#8a7040; margin-bottom:0.5rem;">Full day · per person</p>
-  <p style="font-family:'DM Serif Display','Shippori Mincho',serif; font-size:2.5rem; color:#1C2833; margin-bottom:0.5rem;">From ¥15,000</p>
-  <p style="font-size:0.85rem; color:#7a7468; margin-bottom:1.5rem;">Price varies by group size · Transport not included</p>
-  <a href="index.html#contact" style="display:inline-block; background:#D00000; color:#fff; padding:12px 28px; border-radius:8px; font-size:0.9rem; text-decoration:none; letter-spacing:0.05em;">Book this tour</a>
-</div>
 <footer>
-  <div class="footer-logo">新宿 · Shinjuku</div>
-  <p>A full day & night guide · Tokyo's electric heart</p>
-  <p>© 2026 Tokyo Highlights Tour</p>
-  <div style="text-align:center; padding: 1.5rem 0 2rem;">
-    <a href="index.html" style="
-      display: inline-block;
-      font-family: inherit;
-      font-size: 0.78rem;
-      color: #7a7468;
-      text-decoration: none;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      border-bottom: 1px solid #8a7040;
-      padding-bottom: 3px;
-    ">← Back to Home</a>
-  </div>
+  <p>© 2026 Tokyo with Terry · Japan &nbsp;·&nbsp; <a href="index.html">Home</a> &nbsp;·&nbsp; <a href="availability.html">Availability</a></p>
 </footer>
-
-<script>
-  const stops = document.querySelectorAll('.stop');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  stops.forEach(s => observer.observe(s));
-</script>
-
 </body>
 </html>

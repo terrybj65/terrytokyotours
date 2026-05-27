@@ -1,365 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="description" content="Visit Kamakura with Terry — the Great Buddha, ancient temples, bamboo trails and coastal views just one hour from Tokyo."/>
-  <meta name="keywords" content="Kamakura tour, Kamakura day trip, Great Buddha Kamakura, Kamakura temples, day trip from Tokyo, private tour Kamakura, Kamakura hiking"/>
-  <meta name="author" content="Tokyo Private Tours with Terry"/>
-  <meta name="robots" content="index, follow"/>
-  <meta property="og:title" content="Kamakura Guide — Temples, Buddha & Coast | Tokyo Private Tours with Terry"/>
-  <meta property="og:description" content="Visit Kamakura with Terry — the Great Buddha, ancient temples, bamboo trails and coastal views just one hour from Tokyo."/>
-  <meta property="og:type" content="website"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kamakura Guide — Temples, Buddha & Coast | Tokyo Private Tours with Terry</title>
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
-  <style>
-    :root {
-      --ink: #14120e;
-      --paper: #f0ede6;
-      --moss: #2a4a20;
-      --sage: #385e2c;
-      --stone: #7a7468;
-      --gold: #8a7030;
-      --border: rgba(20,18,14,0.12);
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      background: var(--paper);
-      color: var(--ink);
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
-      overflow-x: hidden;
-    }
-
-    /* ── HERO ── */
-  .hero {
-    position: relative;
-    height: 50vh;
-    min-height: 560px;
-    overflow: hidden;
-  }
-  .hero img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: none;
-    display: flex;
-    align-items: center;
-  }
-  .hero-content {
-    max-width: 560px;
-    padding: 0 2rem;
-    background: none;
-  }
-  .hero-eyebrow {
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #f9a07a;
-    margin-bottom: 1rem;
-    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
-  }
-  .hero h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(40px, 6vw, 64px);
-    color: #ffffff;
-    line-height: 1.1;
-    margin-bottom: 1rem;
-    font-weight: 400;
-    text-shadow: 1px 1px 8px rgba(0,0,0,0.9), 0 0 30px rgba(0,0,0,0.8);
-  }
-  .hero p {
-    font-size: 17px;
-    color: #ffffff;
-    line-height: 1.7;
-    margin-bottom: 2rem;
-    max-width: 420px;
-    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
-  }
-  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
-  .btn-primary {
-    background: #D00000;
-    color: #fff;
-    border: none;
-    padding: 13px 26px;
-    border-radius: 8px;
-    font-size: 15px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.15s;
-    display: inline-block;
-  }
-  .btn-primary:hover { background: #B00000; }
-  .btn-ghost {
-    background: rgba(0,0,0,0.45);
-    color: #fff;
-    border: 1px solid rgba(255,255,255,0.6);
-    padding: 13px 26px;
-    border-radius: 8px;
-    font-size: 15px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.15s;
-    display: inline-block;
-  }
-  .btn-ghost:hover { background: rgba(0,0,0,0.65); }
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Explore Kamakura with Terry — private guided tours of Kamakura, Tokyo."/>
+<title>Kamakura — Tokyo Private Tours with Terry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{--red:#D00000;--red-dark:#B00000;--red-light:#FFE5E5;--text:#1C2833;--text-muted:#5D6D7E;--border:rgba(0,0,0,0.1);--bg:#FAFAF8;--bg-card:#ffffff;--bg-surface:#F4F3EF;--radius:12px;--radius-sm:8px;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.6;}
+nav{position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:20px;color:var(--text);display:flex;align-items:center;gap:8px;text-decoration:none;}
+.nav-logo span{color:var(--red);}
+.nav-right{display:flex;align-items:center;gap:1.5rem;}
+.back-link{font-size:14px;color:var(--text-muted);text-decoration:none;transition:color .15s;}
+.back-link:hover{color:var(--text);}
+.book-btn{background:var(--red);color:#fff;padding:9px 20px;border-radius:var(--radius-sm);font-size:14px;font-family:'DM Sans',sans-serif;text-decoration:none;transition:background .15s;}
+.book-btn:hover{background:var(--red-dark);}
+.container{max-width:1100px;margin:0 auto;padding:0 2rem;}
+section{padding:5rem 0;}
+.section-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem;}
+.section-title{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,42px);font-weight:400;margin-bottom:.5rem;line-height:1.2;}
+.section-sub{font-size:16px;color:var(--text-muted);margin-bottom:2.5rem;max-width:560px;}
+/* Hero */
+.page-hero{position:relative;height:52vh;min-height:340px;overflow:hidden;}
+.page-hero img{width:100%;height:100%;object-fit:cover;display:block;}
+.page-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.72) 40%,rgba(0,0,0,.2));display:flex;align-items:flex-end;}
+.page-hero-content{padding:2.5rem 2rem;max-width:1100px;margin:0 auto;width:100%;}
+.page-hero-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#f9a07a;margin-bottom:.5rem;}
+.page-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(32px,5vw,52px);color:#fff;font-weight:400;line-height:1.15;text-shadow:0 2px 12px rgba(0,0,0,.5);}
+.page-hero p{font-size:16px;color:rgba(255,255,255,.8);margin-top:.75rem;max-width:480px;text-shadow:0 1px 6px rgba(0,0,0,.5);}
+/* Content cards */
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+.info-card{background:var(--bg-card);border:0.5px solid var(--border);border-radius:var(--radius);padding:1.75rem;}
+.info-card h3{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;margin-bottom:.75rem;}
+.info-card p,.info-card li{font-size:15px;color:var(--text-muted);line-height:1.8;}
+.info-card ul{padding-left:1.25rem;}
+.info-card li{margin-bottom:.35rem;}
+/* Highlights */
+.highlights{display:flex;gap:2rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+.highlight{display:flex;align-items:flex-start;gap:12px;}
+.highlight-icon{font-size:24px;flex-shrink:0;}
+.highlight-text h4{font-size:15px;font-weight:600;margin-bottom:2px;}
+.highlight-text p{font-size:14px;color:var(--text-muted);}
+/* Meta strip */
+.meta-strip{display:flex;gap:2rem;flex-wrap:wrap;padding:1.5rem 0;border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);margin-bottom:2.5rem;}
+.meta-item{display:flex;flex-direction:column;gap:3px;}
+.meta-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);}
+.meta-value{font-size:15px;font-weight:500;color:var(--text);}
+/* CTA card */
+.cta-card{background:var(--red);border-radius:var(--radius);padding:2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-top:3rem;}
+.cta-card h3{font-family:'DM Serif Display',serif;font-size:26px;color:#fff;font-weight:400;}
+.cta-card p{font-size:15px;color:rgba(255,255,255,.8);margin-top:.35rem;}
+.cta-card a{background:#fff;color:var(--red);padding:12px 26px;border-radius:var(--radius-sm);font-size:15px;font-weight:500;text-decoration:none;white-space:nowrap;transition:opacity .15s;}
+.cta-card a:hover{opacity:.88;}
+footer{background:#111;color:rgba(255,255,255,0.5);padding:2rem;text-align:center;font-size:13px;}
+footer a{color:rgba(255,255,255,0.7);text-decoration:none;}
+@media(max-width:700px){.info-grid{grid-template-columns:1fr;}.page-hero{height:42vh;}.nav-right .back-link{display:none;}}
 </style>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
 </head>
 <body>
-
-<!-- NAV -->
-<nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(0,0,0,0.1);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;">
-  <ul style="display:flex;list-style:none;justify-content:center;align-items:center;gap:2rem;flex:1;margin:0;padding:0;">
-    <li><a href="index.html#areas" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Areas</a></li>
-    <li><a href="index.html#tours" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Tours</a></li>
-    <li><a href="index.html#about" style="font-size:14px;color:#5D6D7E;text-decoration:none;">About</a></li>
-    <li><a href="index.html#contact" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Contact</a></li>
-  </ul>
-  <a href="index.html#contact" style="background:#D00000;color:#fff;border:none;padding:9px 20px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none;">Book a tour</a>
+<nav>
+  <a class="nav-logo" href="index.html">Tokyo with <span>Terry</span></a>
+  <div class="nav-right">
+    <a class="back-link" href="index.html">&#8592; Home</a>
+    <a class="book-btn" href="availability.html">Check availability</a>
+  </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <<img src="Photos/Kamakura2.jpg" width="680" height="452" alt=""/>>
-  <div class="hero-overlay">
-    <div class="hero-content">
-      <div class="hero-eyebrow">📍 Kamakura · 60 min from Tokyo</div>
-      <h1>Kamakura<br>Deeper</h1>
-      <p>Bamboo groves, ridge trails & the quieter temples.</p>
-      <div class="hero-btns">
-        <a href="#stop1" class="btn-primary">Explore stops ↓</a>
-        <a href="index.html#contact" class="btn-ghost">Book a tour</a>
+<div class="page-hero">
+  <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=1200&q=85&fit=crop" alt="Kamakura"/>
+  <div class="page-hero-overlay">
+    <div class="page-hero-content container">
+      <div class="page-hero-label">Area Guide</div>
+      <h1>Kamakura</h1>
+      <p>Ancient capital, great Buddha, and cedar forests by the sea.</p>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="meta-strip">
+      <div class="meta-item"><div class="meta-label">Best for</div><div class="meta-value">Day trips, temples, hiking, coastal scenery</div></div>
+      <div class="meta-item"><div class="meta-label">Best time to visit</div><div class="meta-value">Weekday mornings — crowds are far smaller and the temples feel meditative</div></div>
+    </div>
+
+    <div class="section-label">Area Guide</div>
+    <div class="section-title">Kamakura</div>
+    <p style="font-size:16px;color:var(--text-muted);line-height:1.9;max-width:680px;margin-bottom:3rem;">Kamakura was Japan's capital in the 12th century and the landscape still carries that weight — dozens of temples and shrines folded into forested hills that fall directly to the Pacific coast. The Great Buddha sits serenely in an outdoor valley, unchanged for 800 years. Terry loves the combination of cultural depth and natural beauty here — it's unlike anywhere else in Japan.</p>
+
+    <div class="section-label">What to see</div>
+    <div class="section-title" style="font-size:28px;">Highlights</div>
+    <div class="highlights" style="margin-top:1.5rem;"><div class="highlight">
+      <div class="highlight-icon">🙏</div>
+      <div class="highlight-text"><h4>Kotoku-in Great Buddha</h4><p>One of Japan's most recognisable icons — you can go inside</p></div>
+    </div><div class="highlight">
+      <div class="highlight-icon">⛩️</div>
+      <div class="highlight-text"><h4>Tsurugaoka Hachimangu</h4><p>The city's most important shrine, at the end of a long avenue</p></div>
+    </div><div class="highlight">
+      <div class="highlight-icon">🌲</div>
+      <div class="highlight-text"><h4>Hiking trails</h4><p>Forest paths connecting temples — the Daibutsu Trail is unmissable</p></div>
+    </div><div class="highlight">
+      <div class="highlight-icon">🌊</div>
+      <div class="highlight-text"><h4>Yuigahama & Kamakurakokomae</h4><p>Beautiful Pacific coastline — popular with surfers</p></div>
+    </div><div class="highlight">
+      <div class="highlight-icon">🥐</div>
+      <div class="highlight-text"><h4>Komachi Street</h4><p>Charming lane of cafes, shops, and street food</p></div>
+    </div></div>
+
+    <div class="info-grid" style="margin-top:2rem;">
+      <div class="info-card">
+        <h3>Touring this area with Terry</h3>
+        <p>Terry has been exploring Kamakura for years and knows it at every level — the famous spots and the hidden ones. He can include it as part of a wider day tour, or design a visit specifically around it.</p>
+        <p style="margin-top:1rem;">All tours are fully private — no shared groups, no set script. Tell Terry what you're interested in and he'll shape the experience around you.</p>
+      </div>
+      <div class="info-card">
+        <h3>Getting here</h3>
+        <p>Terry will advise on the best way to reach Kamakura from wherever you're staying. Tokyo's train network is excellent, and he'll make sure you don't spend time lost at stations.</p>
+        <p style="margin-top:1rem;">Most areas in Greater Tokyo are within 30–60 minutes of central Tokyo by train.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- INTRO -->
-<div class="intro">
-  <div class="intro-kicker">Egara Tenjin · Hase-dera · Hokokuji · Jomyoji · Tenen Trail · Zuisenji</div>
-  <p>The Kamakura that most visitors see — the Great Buddha, Tsurugaoka Hachimangu, the main shopping street — is only the surface of a city built on fourteen hills and riddled with ancient temple grounds, hidden valleys, and ridge trails that connect them all. The deeper Kamakura rewards the visitor who arrives early, wears good shoes, and is willing to climb. Here the hydrangea gardens descend into moss-covered valleys; bamboo groves filter the light into green columns; and the hiking trails along the ridgelines give views over the ocean and the temple rooftops that the crowds on the main street never see.</p>
-</div>
+<div class="container"><div class="cta-card">
+  <div><h3>Ready to book a tour of Kamakura?</h3><p>Check Terry's availability and send a booking request — it only takes a minute.</p></div>
+  <a href="availability.html">View availability &amp; book &#8594;</a>
+</div></div>
+<div style="padding-bottom:2rem;"></div>
 
-<!-- INFO BAR -->
-<div class="info-bar">
-  <div class="info-inner">
-    <div class="info-item">
-      <span class="info-label">From Tokyo</span>
-      <span class="info-value">JR Yokosuka Line from Tokyo · 60 min</span>
-    </div>
-    <div class="info-item">
-      <span class="info-label">Hiking Level</span>
-      <span class="info-value">Easy to moderate · Some steep sections</span>
-    </div>
-    <div class="info-item">
-      <span class="info-label">Wear</span>
-      <span class="info-value">Trainers or light hiking shoes · No heels</span>
-    </div>
-    <div class="info-item">
-      <span class="info-label">Best Seasons</span>
-      <span class="info-value">June (hydrangea) · Nov (autumn colour)</span>
-    </div>
-    <div class="info-item">
-      <span class="info-label">Local Bus</span>
-      <span class="info-value">Kamakura Enoden & city buses connect all stops</span>
-    </div>
-  </div>
-</div>
-
-<!-- NAV -->
-<div class="section-nav">
-  <div class="section-nav-inner">
-    <span class="nav-label">Jump to</span>
-    <div class="nav-pills">
-      <a class="nav-pill" href="#egaratenjin">Egara Tenjin</a>
-      <a class="nav-pill" href="#hasedera">Hase-dera</a>
-      <a class="nav-pill" href="#hokokuji">Hokokuji</a>
-      <a class="nav-pill" href="#jomyoji">Jomyoji</a>
-      <a class="nav-pill" href="#tenen">Tenen Trail</a>
-      <a class="nav-pill" href="#zuisenji">Zuisenji</a>
-    </div>
-  </div>
-</div>
-
-<div class="divider">Six Deeper Stops · One Full Day in the Hills</div>
-
-<div class="stops">
-
-  <!-- 1. Egara Tenjin Shrine -->
-  <div class="stop" id="egaratenjin">
-    <div class="stop-img-wrap">
-      <div class="stop-time">Afternoon · Short walk from Zuisenji</div>
-      <div class="stop-num">01</div>
-      <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80&fit=crop" alt="Egara Tenjin shrine Kamakura wisteria plum tree ancient" loading="lazy"/>
-      <div class="stop-badge">Oldest Shrine in Kamakura</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Shinto Shrine · Nikaido · Founded 1104</div>
-      <h2 class="stop-title">Egara Tenjin Shrine</h2>
-      <div class="stop-jp">荏柄天神社</div>
-      <p class="stop-desc">Founded in 1104 and the oldest surviving shrine in Kamakura, Egara Tenjin is dedicated to Sugawara no Michizane — the scholar deity of learning and the arts — and was the spiritual guardian of the Kamakura shogunate for 150 years. The shrine sits in a quiet wooded enclosure with a main hall designated as an Important Cultural Property; the ancient plum tree in the courtyard blooms white in February and is one of the earliest signs of spring in the area. The surrounding cryptomeria forest gives the shrine an atmosphere of age and stillness that the better-known shrines in central Kamakura, battered by visitor numbers, can rarely match.</p>
-      <div class="stop-tip">💡 Egara Tenjin is particularly associated with students praying for exam success — the ema votive plaques hanging around the main hall are almost all academic in their requests, many written in the careful handwriting of middle school students. The shrine's annual plum festival in late February draws local visitors but few tourists. Entry is free.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★</span> 4.3 · 2,800+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Egara+Tenjin+Shrine+Kamakura" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 2. Hase-dera -->
-  <div class="stop" id="hasedera">
-    <div class="stop-img-wrap">
-      <div class="stop-time">Morning · Enoden from Kamakura</div>
-      <div class="stop-num">02</div>
-      <img src="https://images.unsplash.com/photo-1570521462033-3015e76e7432?w=800&q=80&fit=crop" alt="Hase-dera temple Kamakura Kannon hydrangea garden sea view" loading="lazy"/>
-      <div class="stop-badge">Start Here</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Temple & Garden · Hase · Founded 736 AD</div>
-      <h2 class="stop-title">Hase-dera</h2>
-      <div class="stop-jp">長谷寺</div>
-      <p class="stop-desc">Hase-dera is one of the most beautiful temple complexes in the Kanto region — a hillside garden of extraordinary care and layered beauty set above the Enoden railway line on the western side of Kamakura. The main hall houses a 9.18-metre gilded wooden statue of the eleven-faced Kannon, carved from a single camphor tree and one of the largest wooden sculptures in Japan. Behind it, the garden descends through hydrangea paths, koi ponds, a cave sanctuary carved into the hillside, and a belfry terrace with sweeping views over Sagami Bay. In June the hydrangeas — thousands of them in every shade of blue and purple — make this arguably the finest single garden in Kamakura at any season.</p>
-      <div class="stop-tip">💡 Arrive when the temple opens at 8 AM to have the garden largely to yourself — by 10 AM the hydrangea paths in June have queuing systems in place. The cave sanctuary (Benten-kutsu) carved into the cliff behind the main hall is easy to miss but extraordinary: a low tunnel lined with small carvings of Benzaiten, the goddess of music and art, lit by candlelight.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 18,000+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Hase-dera+Temple+Kamakura" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 3. Hokokuji — The Bamboo Temple -->
-  <div class="stop" id="hokokuji">
-    <div class="stop-img-wrap">
-      <div class="stop-time">Mid-Morning · Bus from Kamakura Station</div>
-      <div class="stop-num">03</div>
-      <img src="https://images.unsplash.com/photo-1551641506-ee5bf4cb45f1?w=800&q=80&fit=crop" alt="Hokokuji bamboo grove Kamakura green light temple" loading="lazy"/>
-      <div class="stop-badge">The Bamboo Temple</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Rinzai Zen Temple · Eastern Kamakura</div>
-      <h2 class="stop-title">Hokokuji — The Bamboo Temple</h2>
-      <div class="stop-jp">報国寺 · 竹の庭</div>
-      <p class="stop-desc">Hokokuji is a Rinzai Zen temple in the quieter eastern hills of Kamakura, founded in 1334, and it contains one of the most remarkable garden spaces in Japan: a grove of 2,000 moso bamboo whose canopy filters the light into columns of pale green that shift and whisper with every movement of the air. The bamboo garden is compact — about 100 metres at its deepest — but the quality of light inside it is unlike anywhere else in Kamakura. A small matcha tea house operates at the garden's heart, where you can sit on a low bench with a bowl of tea and listen to the sound of bamboo. The experience is as close to a living Zen meditation as a garden can provide.</p>
-      <div class="stop-tip">💡 The bamboo garden charges a small separate admission (¥300) on top of the temple entry. The matcha tea set (¥600) includes a seasonal wagashi sweet and is served in the garden itself — one of the finest settings for a bowl of tea in Japan. Arrive early on weekdays for near-solitude inside the grove; weekend afternoons can be crowded.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 14,000+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Hokokuji+Temple+Kamakura" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 4. Jomyoji -->
-  <div class="stop" id="jomyoji">
-    <div class="stop-img-wrap">
-      <div class="stop-time">Late Afternoon · End of Day</div>
-      <div class="stop-num">04</div>
-      <img src="https://images.unsplash.com/photo-1522383225653-ed111181a951?w=800&q=80&fit=crop" alt="Jomyoji temple Kamakura matcha tea garden moss quiet" loading="lazy"/>
-      <div class="stop-badge">End of Day</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Rinzai Zen Temple · Eastern Kamakura</div>
-      <h2 class="stop-title">Jomyoji</h2>
-      <div class="stop-jp">浄妙寺</div>
-      <p class="stop-desc">Jomyoji is a Rinzai Zen temple of the same eastern Kamakura cluster as Hokokuji, smaller and quieter and considerably less visited — which makes it a perfect final stop on a day that has already covered considerable ground. The temple grounds are beautifully maintained, with a moss garden, a series of raked gravel courts, and old stone lanterns under the cedars that catch the late afternoon light in ways that reward sitting still for a while. The Ishikawa-tei café, housed in a traditional building within the temple grounds, serves matcha and seasonal sweets in a setting of complete calm — an ideal place to rest before the bus back to Kamakura Station and the train to Tokyo.</p>
-      <div class="stop-tip">💡 Jomyoji is rarely crowded even on weekends — it lies just far enough from the main tourist circuit to deter most visitors. The Ishikawa-tei café (closed Thursdays) serves its matcha set overlooking the moss garden and is one of the most peaceful places to sit in all of Kamakura. The walk between Hokokuji and Jomyoji takes about ten minutes through a quiet residential lane.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.4 · 4,100+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Jomyoji+Temple+Kamakura" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-
-
-  <!-- 5. Tenen Hiking Trail -->
-  <div class="stop" id="tenen">
-    <div class="stop-img-wrap">
-      <div class="stop-time">Late Morning · On Foot from Hokokuji</div>
-      <div class="stop-num">05</div>
-      <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80&fit=crop" alt="Tenen hiking trail Kamakura ridge ocean views forest path" loading="lazy"/>
-      <div class="stop-badge">Best Ridge Walk</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Hiking Trail · Eastern Kamakura Hills</div>
-      <h2 class="stop-title">Tenen Hiking Trail</h2>
-      <div class="stop-jp">天園ハイキングコース</div>
-      <p class="stop-desc">The Tenen Trail is the finest hiking route in the Kamakura hills — a 5.8-kilometre ridge path running from Zuisenji in the east to Kenchoji in the north-west, crossing the highest point in the Kamakura hills at 159 metres and passing through cedar and oak forest, over rocky outcrops with views toward the ocean, and past the ruins of medieval fortifications and cave tombs. The full trail takes two to three hours at a comfortable pace; shorter sections can be walked from either end. The trailhead near Hokokuji makes it easy to combine the bamboo temple with the beginning of the ridge walk, continuing west along the hills before descending to Kenchoji or Zuisenji.</p>
-      <div class="stop-tip">💡 The best views on the trail are from the rocky summit area near Taiheki-yama, about halfway along — on clear days you can see both Sagami Bay to the south and the hills of the Miura Peninsula across the water. Wear proper shoes; the trail is well-maintained but has muddy sections after rain. Carry water — there are no facilities on the trail itself.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 6,800+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Tenen+Hiking+Trail+Kamakura" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 6. Zuisenji -->
-  <div class="stop" id="zuisenji">
-    <div class="stop-img-wrap">
-      <div class="stop-time">Afternoon · Trail descent or bus</div>
-      <div class="stop-num">06</div>
-      <img src="https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?w=800&q=80&fit=crop" alt="Zuisenji garden Kamakura moss valley seasonal flowers" loading="lazy"/>
-      <div class="stop-badge">Hidden Valley Garden</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Zen Garden · Eastern Kamakura · Founded 1327</div>
-      <h2 class="stop-title">Zuisenji</h2>
-      <div class="stop-jp">瑞泉寺</div>
-      <p class="stop-desc">Zuisenji sits at the head of a narrow valley in the eastern hills, reached by a long approach path through bamboo and cedar that prepares the visitor for the extraordinary garden that lies at the end of it. Founded in 1327 by the Zen master Muso Soseki — who also designed the famous gardens at Tenryuji in Kyoto — the garden at Zuisenji is considered one of the finest medieval Zen gardens in Japan, cut directly into the rock face of the valley with cave meditation chambers, a lotus pond, and rock-cut channels that still flow with spring water. In February the plum blossoms here are among the earliest in Kamakura; in autumn the maple trees flame over the moss-covered garden floor.</p>
-      <div class="stop-tip">💡 Zuisenji is one of Kamakura's least-visited major temples and is often nearly empty even in peak season — the approach path through the valley puts off visitors who find it too far from the station. This is entirely to your advantage. The rock-cut cave at the back of the garden, where Muso Soseki meditated, is the oldest surviving structure on the site and freely accessible.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.4 · 3,200+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Zuisenji+Temple+Kamakura" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div></div>
-
-<!-- FOOTER -->
-<footer style="border-top:1px solid rgba(0,0,0,0.1); padding:3rem 6vw; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
-  <div class="footer-logo">鎌倉 II · Kamakura</div>
-  <p>A full day in the deeper hills · Temples, bamboo &amp; the ridge trails</p>
-  <p>© 2026 Tokyo Highlights Tour</p>
-  <div style="text-align:center; padding: 1.5rem 0 2rem;">
-    <a href="index.html" style="
-      display: inline-block;
-      font-family: inherit;
-      font-size: 0.78rem;
-      color: #7a7468;
-      text-decoration: none;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      border-bottom: 1px solid #8a7040;
-      padding-bottom: 3px;
-    ">← Back to Home</a>
-  </div>
+<footer>
+  <p>© 2026 Tokyo with Terry · Japan &nbsp;·&nbsp; <a href="index.html">Home</a> &nbsp;·&nbsp; <a href="availability.html">Availability</a></p>
 </footer>
-<script>
-  const stops = document.querySelectorAll('.stop');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  stops.forEach(s => observer.observe(s));
-</script>
-
-
-<!-- PRICING -->
-<div style="background:#f9f6f0; border-top:1px solid rgba(0,0,0,0.08); padding:2.5rem 6vw; text-align:center;">
-  <p style="font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:#8a7040; margin-bottom:0.5rem;">Full day · per person</p>
-  <p style="font-family:'DM Serif Display','Shippori Mincho',serif; font-size:2.5rem; color:#1C2833; margin-bottom:0.5rem;">From ¥20,000</p>
-  <p style="font-size:0.85rem; color:#7a7468; margin-bottom:1.5rem;">Price varies by group size · Transport not included</p>
-  <a href="index.html#contact" style="display:inline-block; background:#D00000; color:#fff; padding:12px 28px; border-radius:8px; font-size:0.9rem; text-decoration:none; letter-spacing:0.05em;">Book this tour</a>
-</div>
 </body>
 </html>

@@ -1,793 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="description" content="Experience real Tokyo suburban life with Terry — local shotengai, neighbourhood parks, family restaurants and the everyday Tokyo that tourists rarely see."/>
-  <meta name="keywords" content="Tokyo suburbs tour, local Tokyo life, Tokyo residential areas, Tachikawa, real Tokyo, off the beaten path Tokyo, local Japan experience"/>
-  <meta name="author" content="Tokyo Private Tours with Terry"/>
-  <meta name="robots" content="index, follow"/>
-  <meta property="og:title" content="Tokyo Suburbs & Local Life | Tokyo Private Tours with Terry"/>
-  <meta property="og:description" content="Experience real Tokyo suburban life with Terry — local shotengai, neighbourhood parks, family restaurants and the everyday Tokyo that tourists rarely see."/>
-  <meta property="og:type" content="website"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tokyo Suburbs & Local Life | Tokyo Private Tours with Terry</title>
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
-  <style>
-    :root {
-      --ink: #14120e;
-      --paper: #f0ede6;
-      --moss: #3a5c3a;
-      --sage: #527052;
-      --stone: #7a7468;
-      --gold: #a07830;
-      --border: rgba(20,18,14,0.12);
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      background: var(--paper);
-      color: var(--ink);
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
-      overflow-x: hidden;
-    }
-
-    /* ── HERO ── */
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    .hero h1 {
-      position: relative;
-      font-family: 'Shippori Mincho', serif;
-      font-size: clamp(3.5rem, 9vw, 7rem);
-      font-weight: 800;
-      color: #fff;
-      line-height: 0.88;
-      margin-bottom: 0.6rem;
-    }
-
-    
-
-    
-
-    
-    
-
-    
-    
-    
-      50%{opacity:.5;transform:scaleY(.55)}
-    }
-
-    /* ── INTRO ── */
-    .intro {
-      max-width: 800px;
-      margin: 5.5rem auto;
-      padding: 0 6vw;
-      text-align: center;
-    }
-    .intro-kicker {
-      display: inline-block;
-      font-size: 0.65rem;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--moss);
-      margin-bottom: 1.4rem;
-    }
-    .intro p {
-      font-size: 1.12rem;
-      line-height: 1.9;
-      color: var(--stone);
-    }
-
-    /* nav bar */
-    .neighbourhood-nav {
-      max-width: 960px;
-      margin: 0 auto 4rem;
-      padding: 0 6vw;
-    }
-    .neighbourhood-nav-inner {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-      background: rgba(58,92,58,0.07);
-      border: 1px solid rgba(58,92,58,0.18);
-      border-left: 3px solid var(--moss);
-      padding: 1.2rem 1.8rem;
-      flex-wrap: wrap;
-    }
-    .nav-label {
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--moss);
-      flex-shrink: 0;
-    }
-    .nav-pills { display: flex; gap: 0.6rem; flex-wrap: wrap; }
-    .nav-pill {
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: var(--ink);
-      background: rgba(58,92,58,0.08);
-      border: 1px solid rgba(58,92,58,0.2);
-      padding: 0.3rem 0.9rem;
-      border-radius: 100px;
-      text-decoration: none;
-      transition: background 0.2s, color 0.2s;
-      letter-spacing: 0.03em;
-    }
-    .nav-pill:hover { background: var(--moss); color: #fff; border-color: var(--moss); }
-
-    .divider {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-      margin: 0 6vw 3rem;
-      color: var(--sage);
-      font-size: 0.67rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-    }
-    .divider::before, .divider::after {
-      content: ''; flex: 1; height: 1px; background: var(--border);
-    }
-
-    /* ── STOPS ── */
-    .stops {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 6vw 8rem;
-    }
-
-    .neighbourhood-header { padding: 3rem 0 0; }
-    .neighbourhood-header h2 {
-      font-family: 'Shippori Mincho', serif;
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 800;
-      line-height: 1;
-      margin-bottom: 0.3rem;
-    }
-    .nh-meta {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-bottom: 1rem;
-    }
-    .nh-jp { font-size: 0.8rem; color: var(--stone); letter-spacing: 0.08em; }
-    .nh-tag {
-      font-size: 0.62rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--moss);
-      background: rgba(58,92,58,0.1);
-      border: 1px solid rgba(58,92,58,0.2);
-      padding: 0.18rem 0.6rem;
-      border-radius: 100px;
-    }
-    .nh-train { font-size: 0.72rem; color: var(--stone); }
-    .nh-desc {
-      font-size: 0.9rem;
-      color: var(--stone);
-      line-height: 1.75;
-      max-width: 640px;
-      margin-bottom: 2.5rem;
-      border-left: 2px solid var(--moss);
-      padding-left: 1rem;
-    }
-
-    .stop {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      border-top: 1px solid var(--border);
-      padding: 4rem 0;
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .stop.visible { opacity: 1; transform: translateY(0); }
-    .stop:nth-child(even) { direction: rtl; }
-    .stop:nth-child(even) > * { direction: ltr; }
-
-    .stop-img-wrap {
-      position: relative;
-      overflow: hidden;
-      aspect-ratio: 4/3;
-    }
-    .stop-img-wrap img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      transition: transform 0.75s ease;
-    }
-    .stop:hover .stop-img-wrap img { transform: scale(1.05); }
-
-    .stop-badge {
-      position: absolute;
-      bottom: 1.2rem; left: 1.2rem;
-      background: rgba(10,14,10,0.72);
-      border: 1px solid rgba(255,255,255,0.15);
-      color: rgba(255,255,255,0.82);
-      font-size: 0.62rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      padding: 0.3rem 0.75rem;
-      backdrop-filter: blur(6px);
-    }
-    .stop-num {
-      position: absolute;
-      top: 1rem; right: 1.2rem;
-      font-family: 'Shippori Mincho', serif;
-      font-size: 4.5rem; font-weight: 800;
-      color: rgba(255,255,255,0.13);
-      line-height: 1; pointer-events: none;
-    }
-
-    .stop-content {
-      padding: 2.8rem 3.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .stop-category {
-      font-size: 0.62rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--moss);
-      margin-bottom: 1rem;
-    }
-    .stop-title {
-      font-family: 'Shippori Mincho', serif;
-      font-size: clamp(1.7rem, 2.8vw, 2.4rem);
-      font-weight: 600;
-      line-height: 1.2;
-      margin-bottom: 0.35rem;
-    }
-    .stop-jp {
-      font-size: 0.82rem;
-      color: var(--stone);
-      margin-bottom: 1.6rem;
-      letter-spacing: 0.06em;
-    }
-    .stop-desc {
-      font-size: 0.94rem;
-      line-height: 1.88;
-      color: #3e3a34;
-      margin-bottom: 1.6rem;
-    }
-    .stop-tip {
-      border-left: 2px solid var(--gold);
-      padding-left: 1rem;
-      font-size: 0.82rem;
-      color: var(--stone);
-      font-style: italic;
-      line-height: 1.65;
-    }
-    .stop-footer {
-      margin-top: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-    }
-    .stop-rating {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.78rem;
-      color: var(--stone);
-    }
-    .stars { color: var(--gold); }
-    .stop-map {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-size: 0.76rem;
-      color: var(--moss);
-      text-decoration: none;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      transition: opacity 0.2s;
-    }
-    .stop-map:hover { opacity: 0.65; }
-
-    .section-break {
-      margin-top: 5rem;
-      border-top: 2px solid var(--border);
-      padding-top: 3rem !important;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 3rem 6vw;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    footer p { font-size: 0.8rem; color: var(--stone); }
-    .footer-logo {
-      font-family: 'Shippori Mincho', serif;
-      font-size: 1.25rem; font-weight: 600;
-    }
-
-    @media (max-width: 700px) {
-      .stop { grid-template-columns: 1fr; direction: ltr !important; }
-      .stop-content { padding: 2rem 0; }
-      .stop:nth-child(even) > * { direction: ltr; }
-      .neighbourhood-nav-inner { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
-    }
-  
-  /* ── HERO ── */
-  .hero {
-    position: relative;
-    height: 90vh;
-    min-height: 560px;
-    overflow: hidden;
-  }
-  .hero img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: none;
-    display: flex;
-    align-items: center;
-  }
-  .hero-content {
-    max-width: 560px;
-    padding: 0 2rem;
-    background: none;
-  }
-  .hero-eyebrow {
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #f9a07a;
-    margin-bottom: 1rem;
-    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
-  }
-  .hero h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(40px, 6vw, 64px);
-    color: #ffffff;
-    line-height: 1.1;
-    margin-bottom: 1rem;
-    font-weight: 400;
-    text-shadow: 1px 1px 8px rgba(0,0,0,0.9), 0 0 30px rgba(0,0,0,0.8);
-  }
-  .hero p {
-    font-size: 17px;
-    color: #ffffff;
-    line-height: 1.7;
-    margin-bottom: 2rem;
-    max-width: 420px;
-    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
-  }
-  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
-  .btn-primary {
-    background: #D00000;
-    color: #fff;
-    border: none;
-    padding: 13px 26px;
-    border-radius: 8px;
-    font-size: 15px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.15s;
-    display: inline-block;
-  }
-  .btn-primary:hover { background: #B00000; }
-  .btn-ghost {
-    background: rgba(0,0,0,0.45);
-    color: #fff;
-    border: 1px solid rgba(255,255,255,0.6);
-    padding: 13px 26px;
-    border-radius: 8px;
-    font-size: 15px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.15s;
-    display: inline-block;
-  }
-  .btn-ghost:hover { background: rgba(0,0,0,0.65); }
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Explore Tokyo Suburbs with Terry — private guided tours of Tokyo Suburbs, Tokyo."/>
+<title>Tokyo Suburbs — Tokyo Private Tours with Terry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{--red:#D00000;--red-dark:#B00000;--red-light:#FFE5E5;--text:#1C2833;--text-muted:#5D6D7E;--border:rgba(0,0,0,0.1);--bg:#FAFAF8;--bg-card:#ffffff;--bg-surface:#F4F3EF;--radius:12px;--radius-sm:8px;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.6;}
+nav{position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:20px;color:var(--text);display:flex;align-items:center;gap:8px;text-decoration:none;}
+.nav-logo span{color:var(--red);}
+.nav-right{display:flex;align-items:center;gap:1.5rem;}
+.back-link{font-size:14px;color:var(--text-muted);text-decoration:none;transition:color .15s;}
+.back-link:hover{color:var(--text);}
+.book-btn{background:var(--red);color:#fff;padding:9px 20px;border-radius:var(--radius-sm);font-size:14px;font-family:'DM Sans',sans-serif;text-decoration:none;transition:background .15s;}
+.book-btn:hover{background:var(--red-dark);}
+.container{max-width:1100px;margin:0 auto;padding:0 2rem;}
+section{padding:5rem 0;}
+.section-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem;}
+.section-title{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,42px);font-weight:400;margin-bottom:.5rem;line-height:1.2;}
+.section-sub{font-size:16px;color:var(--text-muted);margin-bottom:2.5rem;max-width:560px;}
+/* Hero */
+.page-hero{position:relative;height:52vh;min-height:340px;overflow:hidden;}
+.page-hero img{width:100%;height:100%;object-fit:cover;display:block;}
+.page-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.72) 40%,rgba(0,0,0,.2));display:flex;align-items:flex-end;}
+.page-hero-content{padding:2.5rem 2rem;max-width:1100px;margin:0 auto;width:100%;}
+.page-hero-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#f9a07a;margin-bottom:.5rem;}
+.page-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(32px,5vw,52px);color:#fff;font-weight:400;line-height:1.15;text-shadow:0 2px 12px rgba(0,0,0,.5);}
+.page-hero p{font-size:16px;color:rgba(255,255,255,.8);margin-top:.75rem;max-width:480px;text-shadow:0 1px 6px rgba(0,0,0,.5);}
+/* Content cards */
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+.info-card{background:var(--bg-card);border:0.5px solid var(--border);border-radius:var(--radius);padding:1.75rem;}
+.info-card h3{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;margin-bottom:.75rem;}
+.info-card p,.info-card li{font-size:15px;color:var(--text-muted);line-height:1.8;}
+.info-card ul{padding-left:1.25rem;}
+.info-card li{margin-bottom:.35rem;}
+/* Highlights */
+.highlights{display:flex;gap:2rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+.highlight{display:flex;align-items:flex-start;gap:12px;}
+.highlight-icon{font-size:24px;flex-shrink:0;}
+.highlight-text h4{font-size:15px;font-weight:600;margin-bottom:2px;}
+.highlight-text p{font-size:14px;color:var(--text-muted);}
+/* Meta strip */
+.meta-strip{display:flex;gap:2rem;flex-wrap:wrap;padding:1.5rem 0;border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);margin-bottom:2.5rem;}
+.meta-item{display:flex;flex-direction:column;gap:3px;}
+.meta-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);}
+.meta-value{font-size:15px;font-weight:500;color:var(--text);}
+/* CTA card */
+.cta-card{background:var(--red);border-radius:var(--radius);padding:2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-top:3rem;}
+.cta-card h3{font-family:'DM Serif Display',serif;font-size:26px;color:#fff;font-weight:400;}
+.cta-card p{font-size:15px;color:rgba(255,255,255,.8);margin-top:.35rem;}
+.cta-card a{background:#fff;color:var(--red);padding:12px 26px;border-radius:var(--radius-sm);font-size:15px;font-weight:500;text-decoration:none;white-space:nowrap;transition:opacity .15s;}
+.cta-card a:hover{opacity:.88;}
+footer{background:#111;color:rgba(255,255,255,0.5);padding:2rem;text-align:center;font-size:13px;}
+footer a{color:rgba(255,255,255,0.7);text-decoration:none;}
+@media(max-width:700px){.info-grid{grid-template-columns:1fr;}.page-hero{height:42vh;}.nav-right .back-link{display:none;}}
 </style>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
 </head>
 <body>
-
-<!-- NAV -->
-<nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(0,0,0,0.1);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;">
-  <ul style="display:flex;list-style:none;justify-content:center;align-items:center;gap:2rem;flex:1;margin:0;padding:0;">
-    <li><a href="index.html#areas" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Areas</a></li>
-    <li><a href="index.html#tours" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Tours</a></li>
-    <li><a href="index.html#about" style="font-size:14px;color:#5D6D7E;text-decoration:none;">About</a></li>
-    <li><a href="index.html#contact" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Contact</a></li>
-  </ul>
-  <a href="index.html#contact" style="background:#D00000;color:#fff;border:none;padding:9px 20px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none;">Book a tour</a>
+<nav>
+  <a class="nav-logo" href="index.html">Tokyo with <span>Terry</span></a>
+  <div class="nav-right">
+    <a class="back-link" href="index.html">&#8592; Home</a>
+    <a class="book-btn" href="availability.html">Check availability</a>
+  </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <img src="https://images.unsplash.com/photo-1490761668535-35497054a2b3?w=1400&q=80&fit=crop" alt="Tokyo Suburbs" />
-  <div class="hero-overlay">
-    <div class="hero-content">
-      <div class="hero-eyebrow">📍 Tokyo suburbs · 20–50 min from Shinjuku</div>
-      <h1>Tokyo<br>Suburbs</h1>
-      <p>Castle towns, shotengai, parks & everyday local life.</p>
-      <div class="hero-btns">
-        <a href="#stop1" class="btn-primary">Explore stops ↓</a>
-        <a href="index.html#contact" class="btn-ghost">Book a tour</a>
+<div class="page-hero">
+  <img src="https://images.unsplash.com/photo-1480796927426-f609979314bd?w=1200&q=85&fit=crop" alt="Tokyo Suburbs"/>
+  <div class="page-hero-overlay">
+    <div class="page-hero-content container">
+      <div class="page-hero-label">Area Guide</div>
+      <h1>Tokyo Suburbs</h1>
+      <p>Local life, residential Tokyo, and the city beyond the guidebook.</p>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="meta-strip">
+      <div class="meta-item"><div class="meta-label">Best for</div><div class="meta-value">Authentic local life, music culture, slow exploration, off the beaten path</div></div>
+      <div class="meta-item"><div class="meta-label">Best time to visit</div><div class="meta-value">Weekend afternoons — neighbourhood markets and events come alive</div></div>
+    </div>
+
+    <div class="section-label">Area Guide</div>
+    <div class="section-title">Tokyo Suburbs</div>
+    <p style="font-size:16px;color:var(--text-muted);line-height:1.9;max-width:680px;margin-bottom:3rem;">Most visitors never leave the tourist circuit between Shinjuku and Asakusa. But the suburbs — Shimokitazawa, Koenji, Sangenjaya, Kichijoji — are where Tokyo's real personality lives. Independent music venues, second-hand bookshops, neighbourhood festivals, parks where families spend their Sunday. Terry grew up in this kind of environment and loves showing visitors what daily life in Japan actually looks like.</p>
+
+    <div class="section-label">What to see</div>
+    <div class="section-title" style="font-size:28px;">Highlights</div>
+    <div class="highlights" style="margin-top:1.5rem;"><div class="highlight">
+      <div class="highlight-icon">🎸</div>
+      <div class="highlight-text"><h4>Shimokitazawa</h4><p>Tokyo's bohemian neighbourhood — vintage fashion, live music, theatre</p></div>
+    </div><div class="highlight">
+      <div class="highlight-icon">🎵</div>
+      <div class="highlight-text"><h4>Koenji</h4><p>Alternative culture, retro shops, and one of Tokyo's best matsuri festivals</p></div>
+    </div><div class="highlight">
+      <div class="highlight-icon">🦆</div>
+      <div class="highlight-text"><h4>Inokashira Park, Kichijoji</h4><p>Beautiful park with boating lake, street performers, and weekend markets</p></div>
+    </div><div class="highlight">
+      <div class="highlight-icon">🍺</div>
+      <div class="highlight-text"><h4>Sangenjaya</h4><p>Neighbourhood izakayas and a genuinely local bar scene</p></div>
+    </div><div class="highlight">
+      <div class="highlight-icon">📚</div>
+      <div class="highlight-text"><h4>Jimbocho book town</h4><p>Dozens of second-hand bookshops — a paradise for bibliophiles</p></div>
+    </div></div>
+
+    <div class="info-grid" style="margin-top:2rem;">
+      <div class="info-card">
+        <h3>Touring this area with Terry</h3>
+        <p>Terry has been exploring Tokyo Suburbs for years and knows it at every level — the famous spots and the hidden ones. He can include it as part of a wider day tour, or design a visit specifically around it.</p>
+        <p style="margin-top:1rem;">All tours are fully private — no shared groups, no set script. Tell Terry what you're interested in and he'll shape the experience around you.</p>
+      </div>
+      <div class="info-card">
+        <h3>Getting here</h3>
+        <p>Terry will advise on the best way to reach Tokyo Suburbs from wherever you're staying. Tokyo's train network is excellent, and he'll make sure you don't spend time lost at stations.</p>
+        <p style="margin-top:1rem;">Most areas in Greater Tokyo are within 30–60 minutes of central Tokyo by train.</p>
       </div>
     </div>
   </div>
 </section>
 
-<div class="intro">
-  <div class="intro-kicker">Kawagoe · Kichijoji · Kokubunji · Machida · Nakano · Tachikawa</div>
-  <p>Tokyo doesn't end at the Yamanote Line. Spread across the Musashino Plateau and the Tama River basin, the city's true suburbs are where most Tokyoites actually live — and where the city reveals a quieter, more layered version of itself. Castle towns, century-old covered shotengai, riverside parks, jazz coffee shops, and one of the largest public art installations in Japan: this is the Tokyo that exists when nobody is performing for the camera.</p>
-</div>
+<div class="container"><div class="cta-card">
+  <div><h3>Ready to book a tour of Tokyo Suburbs?</h3><p>Check Terry's availability and send a booking request — it only takes a minute.</p></div>
+  <a href="availability.html">View availability &amp; book &#8594;</a>
+</div></div>
+<div style="padding-bottom:2rem;"></div>
 
-<div class="neighbourhood-nav">
-  <div class="neighbourhood-nav-inner">
-    <span class="nav-label">Jump to</span>
-    <div class="nav-pills">
-      <a class="nav-pill" href="#kawagoe">Kawagoe</a>
-      <a class="nav-pill" href="#kichijoji">Kichijoji</a>
-      <a class="nav-pill" href="#kokubunji">Kokubunji</a>
-      <a class="nav-pill" href="#machida">Machida</a>
-      <a class="nav-pill" href="#nakano">Nakano</a>
-      <a class="nav-pill" href="#tachikawa">Tachikawa</a>
-    </div>
-  </div>
-</div>
-
-<div class="divider">Six Suburbs · Six Different Tokyos</div>
-
-<div class="stops">
-
-  <div class="stop">
-    <div class="stop-img-wrap">
-      <div class="stop-num">01</div>
-      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80&fit=crop" alt="Kokubunji antique shops coffee Tokyo suburbs" loading="lazy"/>
-      <div class="stop-badge">Antique Hunting</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Antiques & Vintage · South Exit</div>
-      <h2 class="stop-title">The Antique District</h2>
-      <div class="stop-jp">骨董品街 · 国分寺</div>
-      <p class="stop-desc">The streets south of Kokubunji Station have accumulated one of the densest concentrations of antique and second-hand shops in the western suburbs, drawing dealers and collectors from across the city. The shops range from formal antique dealers handling Meiji-era ceramics and woodblock prints to casual junk shops piled floor-to-ceiling with old kitchenware, Showa-era furniture, and miscellaneous curiosities. Prices and finds are considerably better here than anything you'll encounter in Shimokitazawa or central Tokyo.</p>
-      <div class="stop-tip">💡 The monthly flea market at Kokubunji Hikawa Shrine draws vendors from across the region — check dates before visiting. Combine with a stop at one of the surviving jazz kissaten nearby for the full Kokubunji experience.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★</span> Local favourite</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Kokubunji+antique+street+Tokyo" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-img-wrap">
-      <div class="stop-num">02</div>
-      <img src="https://images.unsplash.com/photo-1561016444-14f747499547?w=800&q=80&fit=crop" alt="Faret Tachikawa public art sculpture outdoor installation" loading="lazy"/>
-      <div class="stop-badge">Street Art</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Public Art · Faret Tachikawa</div>
-      <h2 class="stop-title">Faret Tachikawa</h2>
-      <div class="stop-jp">ファーレ立川</div>
-      <p class="stop-desc">Faret Tachikawa is a public art project embedded into the redeveloped area north of the station — 109 works by 92 artists from 36 countries, installed across plazas, pavements, car parks, and building facades of an otherwise unremarkable suburban shopping district. The result is genuinely strange and wonderful: round a corner and find a full-scale military jet embedded in a building facade, or a fire hydrant reimagined as sculpture, or a maintenance hatch turned into art. Most people walk past the majority of works without noticing — which is partly the point.</p>
-      <div class="stop-tip">💡 Pick up the official art map from the information desk near the station's north exit — it's the only way to find all 109 works. The scavenger-hunt quality of finding them all makes for one of the more enjoyable afternoons in the western suburbs.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★</span> 4.1 · 2,900+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Faret+Tachikawa+art+Tokyo" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-
-
-  <div class="stop">
-    <div class="stop-img-wrap">
-      <div class="stop-num">03</div>
-      <img src="https://images.unsplash.com/photo-1559054663-e8d23213f55c?w=800&q=80&fit=crop" alt="Kichijoji Harmonica Yokocho alley bars Tokyo" loading="lazy"/>
-      <div class="stop-badge">Jazz Alley</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Food, Drink & Music · Harmonica Yokocho</div>
-      <h2 class="stop-title">Harmonica Yokocho</h2>
-      <div class="stop-jp">ハーモニカ横丁</div>
-      <p class="stop-desc">Just north of Kichijoji Station, a postwar black-market alley has survived into the 21st century as one of Tokyo's most charming drinking and dining lanes. Named for its grid of tiny alley slots resembling harmonica holes, it's a labyrinth of 70-odd tiny bars, yakitori counters, jazz listening rooms, and standing izakayas — many running in the same spot for 50 years. The lanes are so narrow that you could reach out and touch both walls. It opens early and closes very late.</p>
-      <div class="stop-tip">💡 Lunch in the alley is quieter and cheaper than evenings — several shops open from noon. The jazz kissaten (listening cafés) in and around Harmonica Yokocho are among the last surviving examples of a uniquely Japanese institution: find one, sit down, order a coffee.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.4 · 6,200+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Harmonica+Yokocho+Kichijoji" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 3. Harmonica Yokocho -->
-  <div class="neighbourhood-header section-break" id="nakano">
-    <h2>Nakano</h2>
-    <div class="nh-meta">
-      <span class="nh-jp">中野 · Nakano Ward</span>
-      <span class="nh-tag">Otaku & Retro</span>
-      <span class="nh-train">🚃 ~8 min from Shinjuku · Chuo Line</span>
-    </div>
-    <div class="nh-desc">Nakano is Akihabara's quieter, more approachable cousin — a suburb where manga, anime, and retro toy culture runs just as deep but without the crowds or the neon. The Broadway shopping complex is legendary among collectors worldwide, and the shotengai outside it is one of the best-preserved covered arcades in Tokyo.</div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-img-wrap">
-      <div class="stop-num">04</div>
-      <img src="https://images.unsplash.com/photo-1551641506-ee5bf4cb45f1?w=800&q=80&fit=crop" alt="Inokashira Park Kichijoji pond cherry blossoms" loading="lazy"/>
-      <div class="stop-badge">Park Life</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Park & Pond · Inokashira</div>
-      <h2 class="stop-title">Inokashira Park</h2>
-      <div class="stop-jp">井の頭恩賜公園</div>
-      <p class="stop-desc">A 37-hectare public park centred on a large natural pond, Inokashira has been Kichijoji's living room for over a century. Rowing boats can be hired by the hour, the path around the pond takes about twenty minutes at a gentle pace, and the Benzaiten shrine sits on a small island in the middle of the water. On weekends the paths fill with musicians, artists selling work, and families who have been coming here every Sunday for thirty years. In late March it's one of the finest cherry blossom spots in the entire metro area.</p>
-      <div class="stop-tip">💡 The Ghibli Museum is a ten-minute walk through the park's west end — book tickets months in advance as they sell out immediately. Even without a ticket, the walk through this corner of the park is lovely.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.6 · 32,000+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Inokashira+Park+Kichijoji" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-img-wrap">
-      <div class="stop-num">05</div>
-      <img src="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=800&q=80&fit=crop" alt="Kawagoe Kashiya Yokocho candy lane sweets" loading="lazy"/>
-      <div class="stop-badge">Street Snacks</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Food & Culture · Kashiya Yokocho</div>
-      <h2 class="stop-title">Kashiya Yokocho — Candy Lane</h2>
-      <div class="stop-jp">菓子屋横丁</div>
-      <p class="stop-desc">A short walk from the kurazukuri district, Kashiya Yokocho is a narrow lane of old wooden sweet shops selling traditional Japanese confectionery since the Meiji era. Around 20 shops remain, all selling handmade dagashi, ramune candy, mochi, and the sweet potato products Kawagoe has been famous for since the Edo period. The wooden shopfronts are original, the recipes unchanged, and the prices low enough to try everything without thinking twice.</p>
-      <div class="stop-tip">💡 Most shops let you sample before buying. The lane is about 200 metres long — walk the full length before committing to anything. The sweet potato soft-serve stall at the entrance is worth the queue.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★</span> 4.3 · 9,500+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Kashiya+Yokocho+Kawagoe" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 5. Kashiya Yokocho — Candy Lane -->
-  <div class="neighbourhood-header section-break" id="kichijoji">
-    <h2>Kichijoji</h2>
-    <div class="nh-meta">
-      <span class="nh-jp">吉祥寺 · Musashino City</span>
-      <span class="nh-tag">Most Liveable</span>
-      <span class="nh-train">🚃 ~15 min from Shinjuku · Chuo Line</span>
-    </div>
-    <div class="nh-desc">Kichijoji regularly tops polls of Tokyo's most desirable place to live, and spending a day here makes it easy to understand why. It has everything in the right proportions: a large park, a covered shotengai, excellent independent restaurants and jazz bars, and Inokashira Pond with its rowing boats and shrine — all within ten minutes of the station.</div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-img-wrap">
-      <div class="stop-num">06</div>
-      <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80&fit=crop" alt="Kawagoe kurazukuri old warehouse district" loading="lazy"/>
-      <div class="stop-badge">Little Edo</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Historic District · Kurazukuri</div>
-      <h2 class="stop-title">Kurazukuri Street</h2>
-      <div class="stop-jp">蔵造りの街並み</div>
-      <p class="stop-desc">The kurazukuri district is a 400-metre stretch of Edo-period clay-walled merchant warehouses that have traded continuously since the 18th century. The thick earthen walls were built to resist the fires that repeatedly destroyed other Kanto towns, and their survival is a stroke of extraordinary historical luck. Ground floors house craft shops, confectionery, and sake dealers while the upper floors remain essentially unchanged. The Toki no Kane bell tower at the north end rings four times daily, just as it has for 400 years.</p>
-      <div class="stop-tip">💡 Arrive by 9:30 AM before tour groups arrive from Tokyo. Start at the bell tower and work south, stopping into the free museum buildings along the way. The sweet potato soft-serve (imo) is Kawagoe's signature — try it.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 18,000+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Kurazukuri+Street+Kawagoe" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-img-wrap">
-      <div class="stop-num">07</div>
-      <img src="https://images.unsplash.com/photo-1580835845-a8d7b1c4ee92?w=800&q=80&fit=crop" alt="Machida shotengai covered shopping arcade suburb Tokyo" loading="lazy"/>
-      <div class="stop-badge">Shotengai Town</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Shopping Street · Central Machida</div>
-      <h2 class="stop-title">Machida Shotengai District</h2>
-      <div class="stop-jp">町田仲見世商店街</div>
-      <p class="stop-desc">Machida's network of covered and semi-covered shopping streets radiating from the station is among the most intact examples of postwar shotengai culture in the southern suburbs. Several distinct arcades connect into a continuous zone: the Nakamise covered lane, and the quieter backstreets lined with independent ramen shops, used CD stores, and clothing outlets. What makes Machida's shotengai distinct from smarter suburban centres is its lack of pretension — the shops are practical, the customers local, the prices honest. The second-hand book and music district east of the station is particularly good.</p>
-      <div class="stop-tip">💡 Machida has a notably strong used CD and vinyl culture, with several dedicated shops in the backstreets east of the station carrying a wider selection at lower prices than central Tokyo equivalents.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★</span> 4.2 · 7,600+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Machida+shopping+street+Tokyo" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-img-wrap">
-      <div class="stop-num">08</div>
-      <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=800&q=80&fit=crop" alt="Nakano Broadway manga anime retro Tokyo" loading="lazy"/>
-      <div class="stop-badge">Collector's Paradise</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Pop Culture · Nakano Broadway</div>
-      <h2 class="stop-title">Nakano Broadway</h2>
-      <div class="stop-jp">中野ブロードウェイ</div>
-      <p class="stop-desc">A multi-storey shopping complex that has been the spiritual home of Tokyo's otaku collector culture since the 1980s, when Mandarake — Japan's largest used manga and anime goods chain — opened its first store here. The upper floors are an almost entirely self-contained universe of used manga, vintage anime figures, retro game cartridges, rare trading cards, and cult film memorabilia. Unlike Akihabara, the crowds are manageable, prices are often better, and the atmosphere is absorbed rather than touristy.</p>
-      <div class="stop-tip">💡 The ground floor is an ordinary supermarket — take the escalators up to floors 2–4 for the collector shops. Mandarake occupies numerous separate units, each specialising in a different category. Allow at least two hours.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★</span> 4.3 · 14,000+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Nakano+Broadway+Tokyo" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-img-wrap">
-      <div class="stop-num">09</div>
-      <img src="https://images.unsplash.com/photo-1490761668535-35497054a2b3?w=800&q=80&fit=crop" alt="Nakano Sun Mall covered shopping arcade shotengai" loading="lazy"/>
-      <div class="stop-badge">Shotengai Life</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Shopping Street · Sun Mall</div>
-      <h2 class="stop-title">Nakano Sun Mall</h2>
-      <div class="stop-jp">中野サンモール</div>
-      <p class="stop-desc">The 230-metre covered shopping arcade connecting Nakano Station's north exit to Broadway is one of the finest examples of a working postwar shotengai still operating as intended — a neighbourhood high street rather than a tourist attraction. Family-run lunch spots, independent clothing stores, a fishmonger, a traditional wagashi sweet shop, a standing soba counter, and a wide variety of small businesses have been trading here since the 1950s. At lunchtime it fills with local workers; on Saturday mornings it's families doing the weekly shop.</p>
-      <div class="stop-tip">💡 Shotengai lunch sets inside the arcade are some of the best-value meals in the western suburbs — rice, miso, a main, and pickles for ¥800–1,000. Look for the handwritten daily specials boards at each restaurant entrance.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★</span> 4.2 · 5,100+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Nakano+Sun+Mall+Tokyo" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 9. Nakano Sun Mall -->
-  <div class="neighbourhood-header section-break" id="kokubunji">
-    <h2>Kokubunji</h2>
-    <div class="nh-meta">
-      <span class="nh-jp">国分寺 · Kokubunji City</span>
-      <span class="nh-tag">Antiques & Jazz</span>
-      <span class="nh-train">🚃 ~25 min from Shinjuku · Chuo Line</span>
-    </div>
-    <div class="nh-desc">Kokubunji has a reputation among Tokyo locals as a quiet, slightly eccentric suburb with an unusually good concentration of antique shops, jazz kissaten, and old-fashioned coffee houses. It lacks the polish of Kichijoji but more than makes up for it in authentic neighbourhood character — and some of the best second-hand furniture and ceramics hunting in the region.</div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-img-wrap">
-      <div class="stop-num">10</div>
-      <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=800&q=80&fit=crop" alt="Nogawa Park river Kokubunji western Tokyo nature" loading="lazy"/>
-      <div class="stop-badge">Ancient Ruins</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Park & History · Musashi Kokubunji</div>
-      <h2 class="stop-title">Nogawa Park & Temple Ruins</h2>
-      <div class="stop-jp">野川公園 · 武蔵国分寺跡</div>
-      <p class="stop-desc">A fifteen-minute walk south of the station brings you to the ruins of Musashi Kokubunji — an 8th-century provincial temple complex established by Emperor Shomu, whose earthwork footings and stone lanterns remain across a wide grassy site. Adjacent Nogawa Park follows the Nogawa River through woodland and open meadow, with walking and cycling paths that feel entirely removed from the city. The juxtaposition of 1,300-year-old temple ruins with a suburban river walk is distinctly, pleasantly Kokubunji.</p>
-      <div class="stop-tip">💡 The Musashi Kokubunji ruins museum (¥100 entry) gives good context before walking the site. In early spring the surrounding area has excellent plum blossoms; the maple trees along Nogawa in autumn are quietly spectacular.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★</span> 4.3 · 3,800+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Nogawa+Park+Kokubunji+Tokyo" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 10. Nogawa Park & Temple Ruins -->
-  <div class="neighbourhood-header section-break" id="machida">
-    <h2>Machida</h2>
-    <div class="nh-meta">
-      <span class="nh-jp">町田 · Machida City</span>
-      <span class="nh-tag">South Suburb</span>
-      <span class="nh-train">🚃 ~35 min from Shinjuku · Odakyu Line</span>
-    </div>
-    <div class="nh-desc">Machida sits at the southern edge of Tokyo Prefecture, closer in spirit to Kanagawa than to central Tokyo. It's a proper mid-size suburban city with a long shotengai culture, a strong used-book and music scene, a beautiful designated national garden, and a café culture that has grown up around its two universities.</div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-img-wrap">
-      <div class="stop-num">11</div>
-      <img src="https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?w=800&q=80&fit=crop" alt="Showa Kinen Park Tachikawa flowers cosmos autumn" loading="lazy"/>
-      <div class="stop-badge">Best Park in Tokyo</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">National Park · Showa Kinen</div>
-      <h2 class="stop-title">Showa Kinen Park</h2>
-      <div class="stop-jp">国営昭和記念公園</div>
-      <p class="stop-desc">Built on the site of a former US Air Force base and opened in 1983, Showa Kinen Park covers 165 hectares of landscaped gardens, cycling paths, forest walks, and seasonal flower fields. Each season brings a different spectacle: tulips and rapeseed in spring, sunflowers in summer, cosmos fields and ginkgo avenues in autumn, and illuminations in winter. The cycling rental service lets you cover the park's full extent, and the Japanese garden at the centre — with its formal pond, tea ceremony house, and raked gravel garden — is as good as anything in Kyoto.</p>
-      <div class="stop-tip">💡 The cosmos fields in October are extraordinary — a sea of pink and white stretching to the horizon. The autumn ginkgo avenue in mid-November is equally worth a special trip. Rent a bicycle at the West Gate and allow at least three hours.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.6 · 28,000+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Showa+Kinen+Park+Tachikawa" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-img-wrap">
-      <div class="stop-num">12</div>
-      <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80&fit=crop" alt="Yakushi Pond Park Machida traditional Japanese garden" loading="lazy"/>
-      <div class="stop-badge">Garden Retreat</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Garden & Nature · Yakushi Pond Park</div>
-      <h2 class="stop-title">Yakushi Pond Park</h2>
-      <div class="stop-jp">薬師池公園</div>
-      <p class="stop-desc">A short bus ride from Machida Station, Yakushi Pond Park is one of Tokyo's designated "100 Famous Gardens" and one of the least-visited. A large natural pond sits at the centre of a traditional garden with teahouses, a working watermill, iris beds, and a grove of old plum trees that bloom in late January and February. The surrounding park extends into woodland walks. It's the kind of place you don't expect to find in the outer suburbs — a genuinely serene garden that rewards the slight effort to reach it.</p>
-      <div class="stop-tip">💡 Plum blossom season (mid-January to mid-February) and iris season (mid-June) are the most spectacular times to visit. The park teahouse serves matcha and seasonal wagashi — combine with a slow walk around the pond before heading back.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 4,200+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Yakushi+Pond+Park+Machida" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 12. Yakushi Pond Park -->
-  <div class="neighbourhood-header section-break" id="tachikawa">
-    <h2>Tachikawa</h2>
-    <div class="nh-meta">
-      <span class="nh-jp">立川 · Tachikawa City</span>
-      <span class="nh-tag">Parks & Art</span>
-      <span class="nh-train">🚃 ~35 min from Shinjuku · Chuo Line</span>
-    </div>
-    <div class="nh-desc">Tachikawa is the commercial hub of the Tama region. It repays a stop of its own: Showa Kinen Park is one of the largest and most spectacular public parks in the entire metropolitan area, and Faret Tachikawa is one of the strangest and most interesting public art installations in Japan — 109 works embedded invisibly into an ordinary suburban shopping district.</div>
-  </div></div>
-
-
-<!-- PRICING -->
-<div style="background:#f9f6f0; border-top:1px solid rgba(0,0,0,0.08); padding:2.5rem 6vw; text-align:center;">
-  <p style="font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:#8a7040; margin-bottom:0.5rem;">Full day · per person</p>
-  <p style="font-family:'DM Serif Display','Shippori Mincho',serif; font-size:2.5rem; color:#1C2833; margin-bottom:0.5rem;">From ¥15,000</p>
-  <p style="font-size:0.85rem; color:#7a7468; margin-bottom:1.5rem;">Price varies by group size · Transport not included</p>
-  <a href="index.html#contact" style="display:inline-block; background:#D00000; color:#fff; padding:12px 28px; border-radius:8px; font-size:0.9rem; text-decoration:none; letter-spacing:0.05em;">Book this tour</a>
-</div>
 <footer>
-  <div class="footer-logo">郊外 · Tokyo Suburbs Local Life</div>
-  <p>Self-guided day trips · All reachable by JR or private rail from Shinjuku</p>
-  <p>© 2026 Tokyo Highlights Tour</p>
-  <div style="text-align:right; padding: 1.5rem 0 2rem;">
-    <a href="index.html" style="
-      display: inline-block;
-      margin-top: 1rem;
-      font-size: 0.8rem;
-      color: var(--stone);
-      text-decoration: none;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      border-bottom: 1px solid var(--gold);
-      padding-bottom: 2px;
-      transition: opacity 0.2s;
-    " onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">
-      ← Back to Home
-    </a>
-  </div>
-  </footer>
-
-<script>
-  const stops = document.querySelectorAll('.stop');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  stops.forEach(s => observer.observe(s));
-</script>
-
+  <p>© 2026 Tokyo with Terry · Japan &nbsp;·&nbsp; <a href="index.html">Home</a> &nbsp;·&nbsp; <a href="availability.html">Availability</a></p>
+</footer>
 </body>
 </html>

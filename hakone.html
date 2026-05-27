@@ -1,730 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="description" content="Explore Hakone with Terry — Mount Fuji views, volcanic hot springs, the Hakone Ropeway, Lake Ashi ferry and the classic Hakone loop from Tokyo."/>
-  <meta name="keywords" content="Hakone day trip, Hakone tour guide, Mount Fuji view, Hakone onsen, Lake Ashi, Hakone ropeway, day trip from Tokyo, private tour Hakone"/>
-  <meta name="author" content="Tokyo Private Tours with Terry"/>
-  <meta name="robots" content="index, follow"/>
-  <meta property="og:title" content="Hakone Day Trip — Onsen, Fuji & Mountains | Tokyo Private Tours with Terry"/>
-  <meta property="og:description" content="Explore Hakone with Terry — Mount Fuji views, volcanic hot springs, the Hakone Ropeway, Lake Ashi ferry and the classic Hakone loop from Tokyo."/>
-  <meta property="og:type" content="website"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hakone Day Trip — Onsen, Fuji & Mountains | Tokyo Private Tours with Terry</title>
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
-  <style>
-    :root {
-      --ink: #14120e;
-      --paper: #f0ede6;
-      --moss: #1a3a5a;
-      --sage: #265070;
-      --stone: #7a7468;
-      --gold: #8a7040;
-      --border: rgba(20,18,14,0.12);
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      background: var(--paper);
-      color: var(--ink);
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
-      overflow-x: hidden;
-    }
-
-    /* ── HERO ── */
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    .hero h1 {
-      position: relative;
-      font-family: 'Shippori Mincho', serif;
-      font-size: clamp(3.5rem, 9vw, 7rem);
-      font-weight: 800;
-      color: #fff;
-      line-height: 0.88;
-      margin-bottom: 0.6rem;
-    }
-
-    
-
-    
-
-    
-    
-
-    
-    
-    
-      50%{opacity:.5;transform:scaleY(.55)}
-    }
-
-    /* ── INTRO ── */
-    .intro {
-      max-width: 800px;
-      margin: 5.5rem auto;
-      padding: 0 6vw;
-      text-align: center;
-    }
-    .intro-kicker {
-      display: inline-block;
-      font-size: 0.65rem;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--moss);
-      margin-bottom: 1.4rem;
-    }
-    .intro p {
-      font-size: 1.12rem;
-      line-height: 1.9;
-      color: var(--stone);
-    }
-
-    /* transport bar */
-    .transport-bar {
-      max-width: 960px;
-      margin: 0 auto 4rem;
-      padding: 0 6vw;
-    }
-    .transport-inner {
-      display: flex;
-      align-items: stretch;
-      border: 1px solid rgba(26,58,90,0.18);
-      overflow: hidden;
-    }
-    .transport-item {
-      flex: 1;
-      padding: 1.1rem 1.2rem;
-      border-right: 1px solid rgba(26,58,90,0.18);
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
-    .transport-item:last-child { border-right: none; }
-    .transport-label {
-      font-size: 0.56rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--moss);
-    }
-    .transport-value {
-      font-size: 0.78rem;
-      font-weight: 500;
-      color: var(--ink);
-      line-height: 1.4;
-    }
-
-    /* route nav */
-    .section-nav {
-      max-width: 960px;
-      margin: 0 auto 4rem;
-      padding: 0 6vw;
-    }
-    .section-nav-inner {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-      background: rgba(26,58,90,0.06);
-      border: 1px solid rgba(26,58,90,0.18);
-      border-left: 3px solid var(--moss);
-      padding: 1.2rem 1.8rem;
-      flex-wrap: wrap;
-    }
-    .nav-label {
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--moss);
-      flex-shrink: 0;
-    }
-    .nav-pills { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-    .nav-pill {
-      font-size: 0.72rem;
-      font-weight: 500;
-      color: var(--ink);
-      background: rgba(26,58,90,0.08);
-      border: 1px solid rgba(26,58,90,0.2);
-      padding: 0.28rem 0.8rem;
-      border-radius: 100px;
-      text-decoration: none;
-      transition: background 0.2s, color 0.2s;
-      letter-spacing: 0.03em;
-    }
-    .nav-pill:hover { background: var(--moss); color: #fff; border-color: var(--moss); }
-
-    /* route arrow chain */
-    .route-chain {
-      max-width: 960px;
-      margin: 0 auto 4rem;
-      padding: 0 6vw;
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-    }
-    .route-step {
-      font-size: 0.7rem;
-      font-weight: 500;
-      color: var(--moss);
-      letter-spacing: 0.04em;
-    }
-    .route-arrow {
-      font-size: 0.7rem;
-      color: var(--stone);
-      opacity: 0.5;
-    }
-    .route-transport {
-      font-size: 0.62rem;
-      color: var(--stone);
-      background: rgba(26,58,90,0.07);
-      border: 1px solid rgba(26,58,90,0.15);
-      padding: 0.15rem 0.5rem;
-      border-radius: 100px;
-    }
-
-    .divider {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-      margin: 0 6vw 3rem;
-      color: var(--sage);
-      font-size: 0.67rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-    }
-    .divider::before, .divider::after {
-      content: ''; flex: 1; height: 1px; background: var(--border);
-    }
-
-    /* ── STOPS ── */
-    .stops {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 6vw 8rem;
-    }
-
-    .stop {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      border-top: 1px solid var(--border);
-      padding: 4rem 0;
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .stop.visible { opacity: 1; transform: translateY(0); }
-    .stop:nth-child(even) { direction: rtl; }
-    .stop:nth-child(even) > * { direction: ltr; }
-
-    .stop-img-wrap {
-      position: relative;
-      overflow: hidden;
-      aspect-ratio: 4/3;
-    }
-    .stop-img-wrap img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      transition: transform 0.75s ease;
-    }
-    .stop:hover .stop-img-wrap img { transform: scale(1.05); }
-
-    .stop-badge {
-      position: absolute;
-      bottom: 1.2rem; left: 1.2rem;
-      background: rgba(4,10,18,0.75);
-      border: 1px solid rgba(255,255,255,0.15);
-      color: rgba(255,255,255,0.82);
-      font-size: 0.62rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      padding: 0.3rem 0.75rem;
-      backdrop-filter: blur(6px);
-    }
-
-    .stop-transport {
-      position: absolute;
-      top: 1rem; left: 1.2rem;
-      font-size: 0.6rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.7);
-      background: rgba(4,10,18,0.55);
-      padding: 0.2rem 0.65rem;
-      backdrop-filter: blur(4px);
-    }
-
-    .stop-num {
-      position: absolute;
-      top: 1rem; right: 1.2rem;
-      font-family: 'Shippori Mincho', serif;
-      font-size: 4.5rem; font-weight: 800;
-      color: rgba(255,255,255,0.13);
-      line-height: 1; pointer-events: none;
-    }
-
-    .stop-content {
-      padding: 2.8rem 3.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .stop-category {
-      font-size: 0.62rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--moss);
-      margin-bottom: 1rem;
-    }
-    .stop-title {
-      font-family: 'Shippori Mincho', serif;
-      font-size: clamp(1.7rem, 2.8vw, 2.4rem);
-      font-weight: 600;
-      line-height: 1.2;
-      margin-bottom: 0.35rem;
-    }
-    .stop-jp {
-      font-size: 0.82rem;
-      color: var(--stone);
-      margin-bottom: 1.6rem;
-      letter-spacing: 0.06em;
-    }
-    .stop-desc {
-      font-size: 0.94rem;
-      line-height: 1.88;
-      color: #3e3a34;
-      margin-bottom: 1.6rem;
-    }
-    .stop-tip {
-      border-left: 2px solid var(--gold);
-      padding-left: 1rem;
-      font-size: 0.82rem;
-      color: var(--stone);
-      font-style: italic;
-      line-height: 1.65;
-    }
-    .stop-footer {
-      margin-top: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-    }
-    .stop-rating {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.78rem;
-      color: var(--stone);
-    }
-    .stars { color: var(--gold); }
-    .stop-map {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-size: 0.76rem;
-      color: var(--moss);
-      text-decoration: none;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      transition: opacity 0.2s;
-    }
-    .stop-map:hover { opacity: 0.65; }
-
-    /* ── FOOTER ── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 3rem 6vw;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    footer p { font-size: 0.8rem; color: var(--stone); }
-    .footer-logo {
-      font-family: 'Shippori Mincho', serif;
-      font-size: 1.25rem; font-weight: 600;
-    }
-
-    @media (max-width: 700px) {
-      .stop { grid-template-columns: 1fr; direction: ltr !important; }
-      .stop-content { padding: 2rem 0; }
-      .stop:nth-child(even) > * { direction: ltr; }
-      .transport-inner { flex-direction: column; }
-      .transport-item { border-right: none; border-bottom: 1px solid rgba(26,58,90,0.18); }
-      .transport-item:last-child { border-bottom: none; }
-      .section-nav-inner { flex-direction: column; align-items: flex-start; }
-      .route-chain { gap: 0.3rem; }
-    }
-  
-  /* ── HERO ── */
-  .hero {
-    position: relative;
-    height: 50vh;
-    min-height: 560px;
-    overflow: hidden;
-  }
-  .hero img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: none;
-    display: flex;
-    align-items: center;
-  }
-  .hero-content {
-    max-width: 560px;
-    padding: 0 2rem;
-    background: none;
-  }
-  .hero-eyebrow {
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #f9a07a;
-    margin-bottom: 1rem;
-    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
-  }
-  .hero h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(40px, 6vw, 64px);
-    color: #ffffff;
-    line-height: 1.1;
-    margin-bottom: 1rem;
-    font-weight: 400;
-    text-shadow: 1px 1px 8px rgba(0,0,0,0.9), 0 0 30px rgba(0,0,0,0.8);
-  }
-  .hero p {
-    font-size: 17px;
-    color: #ffffff;
-    line-height: 1.7;
-    margin-bottom: 2rem;
-    max-width: 420px;
-    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
-  }
-  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
-  .btn-primary {
-    background: #D00000;
-    color: #fff;
-    border: none;
-    padding: 13px 26px;
-    border-radius: 8px;
-    font-size: 15px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.15s;
-    display: inline-block;
-  }
-  .btn-primary:hover { background: #B00000; }
-  .btn-ghost {
-    background: rgba(0,0,0,0.45);
-    color: #fff;
-    border: 1px solid rgba(255,255,255,0.6);
-    padding: 13px 26px;
-    border-radius: 8px;
-    font-size: 15px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.15s;
-    display: inline-block;
-  }
-  .btn-ghost:hover { background: rgba(0,0,0,0.65); }
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Explore Hakone with Terry — private guided tours of Hakone, Tokyo."/>
+<title>Hakone — Tokyo Private Tours with Terry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{--red:#D00000;--red-dark:#B00000;--red-light:#FFE5E5;--text:#1C2833;--text-muted:#5D6D7E;--border:rgba(0,0,0,0.1);--bg:#FAFAF8;--bg-card:#ffffff;--bg-surface:#F4F3EF;--radius:12px;--radius-sm:8px;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.6;}
+nav{position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:20px;color:var(--text);display:flex;align-items:center;gap:8px;text-decoration:none;}
+.nav-logo span{color:var(--red);}
+.nav-right{display:flex;align-items:center;gap:1.5rem;}
+.back-link{font-size:14px;color:var(--text-muted);text-decoration:none;transition:color .15s;}
+.back-link:hover{color:var(--text);}
+.book-btn{background:var(--red);color:#fff;padding:9px 20px;border-radius:var(--radius-sm);font-size:14px;font-family:'DM Sans',sans-serif;text-decoration:none;transition:background .15s;}
+.book-btn:hover{background:var(--red-dark);}
+.container{max-width:1100px;margin:0 auto;padding:0 2rem;}
+section{padding:5rem 0;}
+.section-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem;}
+.section-title{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,42px);font-weight:400;margin-bottom:.5rem;line-height:1.2;}
+.section-sub{font-size:16px;color:var(--text-muted);margin-bottom:2.5rem;max-width:560px;}
+/* Hero */
+.page-hero{position:relative;height:52vh;min-height:340px;overflow:hidden;}
+.page-hero img{width:100%;height:100%;object-fit:cover;display:block;}
+.page-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.72) 40%,rgba(0,0,0,.2));display:flex;align-items:flex-end;}
+.page-hero-content{padding:2.5rem 2rem;max-width:1100px;margin:0 auto;width:100%;}
+.page-hero-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#f9a07a;margin-bottom:.5rem;}
+.page-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(32px,5vw,52px);color:#fff;font-weight:400;line-height:1.15;text-shadow:0 2px 12px rgba(0,0,0,.5);}
+.page-hero p{font-size:16px;color:rgba(255,255,255,.8);margin-top:.75rem;max-width:480px;text-shadow:0 1px 6px rgba(0,0,0,.5);}
+/* Content cards */
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+.info-card{background:var(--bg-card);border:0.5px solid var(--border);border-radius:var(--radius);padding:1.75rem;}
+.info-card h3{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;margin-bottom:.75rem;}
+.info-card p,.info-card li{font-size:15px;color:var(--text-muted);line-height:1.8;}
+.info-card ul{padding-left:1.25rem;}
+.info-card li{margin-bottom:.35rem;}
+/* Highlights */
+.highlights{display:flex;gap:2rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+.highlight{display:flex;align-items:flex-start;gap:12px;}
+.highlight-icon{font-size:24px;flex-shrink:0;}
+.highlight-text h4{font-size:15px;font-weight:600;margin-bottom:2px;}
+.highlight-text p{font-size:14px;color:var(--text-muted);}
+/* Meta strip */
+.meta-strip{display:flex;gap:2rem;flex-wrap:wrap;padding:1.5rem 0;border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);margin-bottom:2.5rem;}
+.meta-item{display:flex;flex-direction:column;gap:3px;}
+.meta-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);}
+.meta-value{font-size:15px;font-weight:500;color:var(--text);}
+/* CTA card */
+.cta-card{background:var(--red);border-radius:var(--radius);padding:2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-top:3rem;}
+.cta-card h3{font-family:'DM Serif Display',serif;font-size:26px;color:#fff;font-weight:400;}
+.cta-card p{font-size:15px;color:rgba(255,255,255,.8);margin-top:.35rem;}
+.cta-card a{background:#fff;color:var(--red);padding:12px 26px;border-radius:var(--radius-sm);font-size:15px;font-weight:500;text-decoration:none;white-space:nowrap;transition:opacity .15s;}
+.cta-card a:hover{opacity:.88;}
+footer{background:#111;color:rgba(255,255,255,0.5);padding:2rem;text-align:center;font-size:13px;}
+footer a{color:rgba(255,255,255,0.7);text-decoration:none;}
+@media(max-width:700px){.info-grid{grid-template-columns:1fr;}.page-hero{height:42vh;}.nav-right .back-link{display:none;}}
 </style>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
 </head>
 <body>
-
-<!-- NAV -->
-<nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(0,0,0,0.1);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;">
-  <ul style="display:flex;list-style:none;justify-content:center;align-items:center;gap:2rem;flex:1;margin:0;padding:0;">
-    <li><a href="index.html#areas" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Areas</a></li>
-    <li><a href="index.html#tours" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Tours</a></li>
-    <li><a href="index.html#about" style="font-size:14px;color:#5D6D7E;text-decoration:none;">About</a></li>
-    <li><a href="index.html#contact" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Contact</a></li>
-  </ul>
-  <a href="index.html#contact" style="background:#D00000;color:#fff;border:none;padding:9px 20px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none;">Book a tour</a>
+<nav>
+  <a class="nav-logo" href="index.html">Tokyo with <span>Terry</span></a>
+  <div class="nav-right">
+    <a class="back-link" href="index.html">&#8592; Home</a>
+    <a class="book-btn" href="availability.html">Check availability</a>
+  </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <img src="https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?w=1400&q=80&fit=crop" alt="Hakone" />
-  <div class="hero-overlay">
-    <div class="hero-content">
-      <div class="hero-eyebrow">📍 Hakone · 90 min from Tokyo</div>
+<div class="page-hero">
+  <img src="https://images.unsplash.com/photo-1672594859456-50b7dc769a69?w=1200&q=85&fit=crop" alt="Hakone"/>
+  <div class="page-hero-overlay">
+    <div class="page-hero-content container">
+      <div class="page-hero-label">Area Guide</div>
       <h1>Hakone</h1>
-      <p>Hot springs, volcanic peaks & Fuji on the horizon.</p>
-      <div class="hero-btns">
-        <a href="#stop1" class="btn-primary">Explore stops ↓</a>
-        <a href="index.html#contact" class="btn-ghost">Book a tour</a>
+      <p>Onsen, Mt Fuji views, and mountain air — 90 minutes from Tokyo.</p>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="meta-strip">
+      <div class="meta-item"><div class="meta-label">Best for</div><div class="meta-value">Nature, relaxation, Mt Fuji views, onsen culture</div></div>
+      <div class="meta-item"><div class="meta-label">Best time to visit</div><div class="meta-value">Clear mornings in autumn or winter for the best Fuji visibility</div></div>
+    </div>
+
+    <div class="section-label">Area Guide</div>
+    <div class="section-title">Hakone</div>
+    <p style="font-size:16px;color:var(--text-muted);line-height:1.9;max-width:680px;margin-bottom:3rem;">Hakone is where Tokyo goes to exhale. A volcanic mountain resort in Kanagawa, it offers the best accessible views of Mt Fuji, traditional ryokan inn culture, open-air hot spring baths, and a stunning national park. Terry can help plan an overnight stay or a full-day loop on the famous Romancecar train, ropeway, and pirate ship across Lake Ashi.</p>
+
+    <div class="section-label">What to see</div>
+    <div class="section-title" style="font-size:28px;">Highlights</div>
+    <div class="highlights" style="margin-top:1.5rem;"><div class="highlight">
+      <div class="highlight-icon">🗻</div>
+      <div class="highlight-text"><h4>Mt Fuji views</h4><p>Lake Ashi provides Japan's most photographed Fuji reflection on clear days</p></div>
+    </div><div class="highlight">
+      <div class="highlight-icon">♨️</div>
+      <div class="highlight-text"><h4>Onsen hot springs</h4><p>Natural volcanic baths — rotenburo outdoor baths are unforgettable</p></div>
+    </div><div class="highlight">
+      <div class="highlight-icon">🚡</div>
+      <div class="highlight-text"><h4>Hakone Ropeway</h4><p>Gondola over volcanic steam vents with Fuji views</p></div>
+    </div><div class="highlight">
+      <div class="highlight-icon">⛴️</div>
+      <div class="highlight-text"><h4>Lake Ashi pirate ship</h4><p>Cheesy but wonderful — a classic Hakone experience</p></div>
+    </div><div class="highlight">
+      <div class="highlight-icon">🎨</div>
+      <div class="highlight-text"><h4>Hakone Open Air Museum</h4><p>Sculpture park with a Picasso pavilion and mountain backdrop</p></div>
+    </div></div>
+
+    <div class="info-grid" style="margin-top:2rem;">
+      <div class="info-card">
+        <h3>Touring this area with Terry</h3>
+        <p>Terry has been exploring Hakone for years and knows it at every level — the famous spots and the hidden ones. He can include it as part of a wider day tour, or design a visit specifically around it.</p>
+        <p style="margin-top:1rem;">All tours are fully private — no shared groups, no set script. Tell Terry what you're interested in and he'll shape the experience around you.</p>
+      </div>
+      <div class="info-card">
+        <h3>Getting here</h3>
+        <p>Terry will advise on the best way to reach Hakone from wherever you're staying. Tokyo's train network is excellent, and he'll make sure you don't spend time lost at stations.</p>
+        <p style="margin-top:1rem;">Most areas in Greater Tokyo are within 30–60 minutes of central Tokyo by train.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- INTRO -->
-<div class="intro">
-  <div class="intro-kicker">Gora · Hakone-Yumoto · Miyanoshita · Moto-Hakone · Owakudani · Togendai</div>
-  <p>Hakone is where Tokyo goes when it needs to breathe. Ninety minutes from Shinjuku by the Romancecar express, the national park wraps a chain of volcanic mountains, hot spring valleys, a crater still venting sulphurous steam, and a vast caldera lake around one of the most celebrated views of Mount Fuji on earth. The classic Hakone route is a loop — mountain railway, cable car, ropeway, lake ferry, and mountain highway — that connects seven forms of transport into one continuous journey through landscape that shifts from cedar forest to open volcanic hillside to the lake's edge, with Fuji appearing and disappearing through the cloud as it pleases.</p>
-</div>
+<div class="container"><div class="cta-card">
+  <div><h3>Ready to book a tour of Hakone?</h3><p>Check Terry's availability and send a booking request — it only takes a minute.</p></div>
+  <a href="availability.html">View availability &amp; book &#8594;</a>
+</div></div>
+<div style="padding-bottom:2rem;"></div>
 
-<!-- TRANSPORT BAR -->
-<div class="transport-bar">
-  <div class="transport-inner">
-    <div class="transport-item">
-      <span class="transport-label">From Tokyo</span>
-      <span class="transport-value">Romancecar from Shinjuku · 85 min</span>
-    </div>
-    <div class="transport-item">
-      <span class="transport-label">Best Pass</span>
-      <span class="transport-value">Hakone Free Pass · ~¥6,500</span>
-    </div>
-    <div class="transport-item">
-      <span class="transport-label">Covers</span>
-      <span class="transport-value">Train, cable car, ropeway, ferry, bus</span>
-    </div>
-    <div class="transport-item">
-      <span class="transport-label">Stay</span>
-      <span class="transport-value">Ryokan overnight recommended</span>
-    </div>
-    <div class="transport-item">
-      <span class="transport-label">Fuji Views</span>
-      <span class="transport-value">Best on clear mornings</span>
-    </div>
-  </div>
-</div>
-
-<!-- ROUTE CHAIN -->
-<div class="route-chain">
-  <span class="route-step">Shinjuku</span>
-  <span class="route-arrow">→</span>
-  <span class="route-transport">Romancecar 85min</span>
-  <span class="route-arrow">→</span>
-  <span class="route-step">Hakone-Yumoto</span>
-  <span class="route-arrow">→</span>
-  <span class="route-transport">Mountain Railway</span>
-  <span class="route-arrow">→</span>
-  <span class="route-step">Miyanoshita · Gora</span>
-  <span class="route-arrow">→</span>
-  <span class="route-transport">Cable Car</span>
-  <span class="route-arrow">→</span>
-  <span class="route-step">Sounzan</span>
-  <span class="route-arrow">→</span>
-  <span class="route-transport">Ropeway</span>
-  <span class="route-arrow">→</span>
-  <span class="route-step">Owakudani</span>
-  <span class="route-arrow">→</span>
-  <span class="route-transport">Ropeway continues</span>
-  <span class="route-arrow">→</span>
-  <span class="route-step">Togendai · Lake Ashi</span>
-  <span class="route-arrow">→</span>
-  <span class="route-transport">Lake Ferry</span>
-  <span class="route-arrow">→</span>
-  <span class="route-step">Moto-Hakone</span>
-</div>
-
-<!-- NAV -->
-<div class="section-nav">
-  <div class="section-nav-inner">
-    <span class="nav-label">Jump to</span>
-    <div class="nav-pills">
-      <a class="nav-pill" href="#gora">Gora & Sounzan</a>
-      <a class="nav-pill" href="#yumoto">Hakone-Yumoto</a>
-      <a class="nav-pill" href="#ashi">Lake Ashi</a>
-      <a class="nav-pill" href="#motohakone">Moto-Hakone</a>
-      <a class="nav-pill" href="#railway">Mountain Railway</a>
-      <a class="nav-pill" href="#owakudani">Owakudani</a>
-    </div>
-  </div>
-</div>
-
-<div class="divider">The Classic Hakone Loop · One Full Day</div>
-
-<div class="stops">
-
-  <!-- 1. Gora & the Cable Car -->
-  <div class="stop" id="gora">
-    <div class="stop-img-wrap">
-      <div class="stop-transport">🚡 Cable Car · Gora to Sounzan</div>
-      <div class="stop-num">01</div>
-      <img src="https://images.unsplash.com/photo-1559025393-8be0ec4767c8?w=800&q=80&fit=crop" alt="Hakone Gora cable car mountain forest Japan" loading="lazy"/>
-      <div class="stop-badge">Into the Mountains</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Cable Car & Park · Gora</div>
-      <h2 class="stop-title">Gora & the Cable Car</h2>
-      <div class="stop-jp">強羅 · ケーブルカー</div>
-      <p class="stop-desc">Gora is the mountain railway's upper terminus and the transfer point for the cable car ascending to Sounzan, where the ropeway begins. The town itself is pleasant — a spread of ryokan and small restaurants on the steep hillside with a well-maintained public park, the Hakone Museum of Art, and the Gora Kadan, one of Japan's most celebrated traditional ryokan. The cable car from Gora to Sounzan takes about 10 minutes and rises through dense forest before emerging at the ropeway terminal. The Hakone Open-Air Museum, a ten-minute walk from Gora or one stop on the mountain railway at Chokoku-no-Mori, is one of Japan's finest outdoor sculpture parks and merits a full visit if time allows.</p>
-      <div class="stop-tip">💡 The Hakone Open-Air Museum (one stop before Gora at Chokoku-no-Mori) has a superb collection of Picasso ceramics and graphics alongside major outdoor sculptures by Moore, Rodin, and Giacometti — set across a hillside with Fuji visible on clear days. Allow 90 minutes and factor it into the day's timing. Entry is covered by some Hakone passes.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★</span> 4.3 · 6,200+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Gora+Station+Hakone+Japan" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 2. Hakone Tozan Railway -->
-  <div class="stop" id="railway">
-    <div class="stop-img-wrap">
-      <div class="stop-transport">🚞 Hakone Tozan Railway</div>
-      <div class="stop-num">02</div>
-      <img src="https://images.unsplash.com/photo-1551641506-ee5bf4cb45f1?w=800&q=80&fit=crop" alt="Hakone Tozan mountain railway switchback hydrangeas forest" loading="lazy"/>
-      <div class="stop-badge">Steepest Railway in Japan</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Mountain Railway · Yumoto to Gora</div>
-      <h2 class="stop-title">Hakone Tozan Railway</h2>
-      <div class="stop-jp">箱根登山鉄道</div>
-      <p class="stop-desc">The Hakone Tozan Railway is one of Japan's most celebrated mountain railways — a narrow-gauge line climbing 445 metres from Hakone-Yumoto to Gora through steep cedar forest, crossing its own tracks three times via switchback turns that allow it to gain altitude on gradients too steep for a conventional railway. The journey takes 40 minutes and is best experienced in a window seat on the left side heading up. In June and July the lineside hydrangeas — tens of thousands of them, planted along the entire route — come into full bloom and the railway runs special late evening services so passengers can view the illuminated flowers in the dark. At other seasons the autumn maples and winter snow are equally beautiful.</p>
-      <div class="stop-tip">💡 Board at Hakone-Yumoto and sit on the left side (window seat) heading toward Gora for the best views of the valley below. The Miyanoshita stop midway is worth a brief detour for the historic Fujiya Hotel — Japan's oldest Western-style resort hotel, opened in 1878, with a lobby worth seeing even if you're not staying.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 8,400+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Hakone+Tozan+Railway+Gora" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 3. Hakone-Yumoto -->
-  <div class="stop" id="yumoto">
-    <div class="stop-img-wrap">
-      <div class="stop-transport">🚃 Romancecar from Shinjuku</div>
-      <div class="stop-num">03</div>
-      <img src="https://images.unsplash.com/photo-1532236204992-f5e85c024202?w=800&q=80&fit=crop" alt="Hakone Yumoto hot spring town river Kanagawa" loading="lazy"/>
-      <div class="stop-badge">Gateway to Hakone</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Hot Spring Town · Arrival Point</div>
-      <h2 class="stop-title">Hakone-Yumoto</h2>
-      <div class="stop-jp">箱根湯本</div>
-      <p class="stop-desc">The gateway to Hakone and the terminus of the Odakyu Romancecar from Shinjuku, Hakone-Yumoto is a classic Japanese hot spring town strung along the Hayakawa River — a compact strip of ryokan, souvenir shops, onsen day-bath facilities, and small restaurants that has been welcoming travellers from Tokyo since the Edo period when the town sat on the old Tokaido highway. The river itself, flanked by cedar and maple, is a pleasure to walk along, and the town has enough charm to justify an hour before boarding the mountain railway. The Tenzan Tohji-kyo outdoor bath complex up the valley road is one of the best value day-use onsen in Hakone.</p>
-      <div class="stop-tip">💡 Pick up your Hakone Free Pass from the Odakyu kiosk at Hakone-Yumoto Station if you didn't get it at Shinjuku — it covers everything from here on. Leave heavy luggage at the station coin lockers and travel light for the loop. The Minatoya shop near the station is the place for Hakone's famous Yumoto manju sweet bean cakes.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★</span> 4.3 · 12,000+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Hakone-Yumoto+Station+Kanagawa" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 4. Lake Ashi -->
-  <div class="stop" id="ashi">
-    <div class="stop-img-wrap">
-      <div class="stop-transport">⛵ Lake Ferry · Togendai to Moto-Hakone</div>
-      <div class="stop-num">04</div>
-      <img src="https://images.unsplash.com/photo-1606318801954-d46d2be41e6a?w=800&q=80&fit=crop" alt="Lake Ashi Hakone torii gate Mount Fuji reflection ferry" loading="lazy"/>
-      <div class="stop-badge">The Fuji View</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Caldera Lake · Togendai Pier</div>
-      <h2 class="stop-title">Lake Ashi</h2>
-      <div class="stop-jp">芦ノ湖</div>
-      <p class="stop-desc">The ropeway descends from Owakudani to Togendai on the northern shore of Lake Ashi — a vast caldera lake formed in the same volcanic event as Owakudani, 11 km in circumference and 43 metres at its deepest. From Togendai pier, replica pirate galleons operated by Izuhakone Steamship Company cross the lake to Hakone-machi and Moto-Hakone in about 40 minutes — one of the most scenic ferry crossings in Japan. On clear mornings, Mount Fuji is reflected in the lake's surface to the southwest, giving rise to one of Japan's most iconic and reproduced views. The Hakone Shrine torii gate standing in the lake at Moto-Hakone, visible from the ferry's approach, is the other defining image of the area.</p>
-      <div class="stop-tip">💡 The best Fuji views from the lake are from the western and southern shores — sit on the starboard (right) side of the ferry heading from Togendai to Moto-Hakone for the mountain to be in view. Early morning and winter days give the clearest sightlines; by afternoon clouds often obscure the summit. The pirate galleons are kitsch but genuinely fun.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 19,000+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Lake+Ashi+Hakone+Japan" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 5. Moto-Hakone & Hakone Shrine -->
-  <div class="stop" id="motohakone">
-    <div class="stop-img-wrap">
-      <div class="stop-transport">🚶 Walk · Moto-Hakone Pier</div>
-      <div class="stop-num">05</div>
-      <img src="https://images.unsplash.com/photo-1490761668535-35497054a2b3?w=800&q=80&fit=crop" alt="Moto-Hakone shrine torii lake cedar avenue Hakone" loading="lazy"/>
-      <div class="stop-badge">End of the Loop</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Shrine & Old Highway · South Shore</div>
-      <h2 class="stop-title">Moto-Hakone & Hakone Shrine</h2>
-      <div class="stop-jp">元箱根 · 箱根神社</div>
-      <p class="stop-desc">The southern shore of Lake Ashi is Hakone's most historically layered area. Hakone Shrine, founded in 757 AD and approached through a cedar avenue that runs for over a kilometre from the lake shore up into the forest, is one of the most atmospheric shrines in the Kanto region — its famous red torii gate standing in the shallows of the lake is the image that defines Hakone internationally. Nearby, a preserved section of the old Tokaido highway runs under 400-year-old cedar trees — the same road that Edo-period travellers walked between Tokyo and Kyoto. The village of Moto-Hakone at the lake's edge has good restaurants for a final meal before the bus back to Hakone-Yumoto and the Romancecar home.</p>
-      <div class="stop-tip">💡 Walk the full cedar avenue to Hakone Shrine — about 20 minutes from the lake — rather than taking the shortcut. The avenue, planted with trees that have stood for four centuries, is one of the finest walks in the national park. The lake torii is accessible on foot from the shrine's lower gate; arrive early morning for the mist-on-water effect that makes the photographs look like paintings.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.6 · 21,000+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Hakone+Shrine+Moto-Hakone+Japan" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-
-
-  <!-- 6. Owakudani -->
-  <div class="stop" id="owakudani">
-    <div class="stop-img-wrap">
-      <div class="stop-transport">🚠 Hakone Ropeway</div>
-      <div class="stop-num">06</div>
-      <img src="https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?w=800&q=80&fit=crop" alt="Owakudani volcanic valley sulphur steam Hakone Fuji" loading="lazy"/>
-      <div class="stop-badge">Volcanic Valley</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Volcanic Crater · Ropeway Stop</div>
-      <h2 class="stop-title">Owakudani</h2>
-      <div class="stop-jp">大涌谷 · Great Boiling Valley</div>
-      <p class="stop-desc">Owakudani — the Great Boiling Valley — is the most dramatic stop on the Hakone loop: a still-active volcanic crater formed 3,000 years ago when Mount Hakone last erupted, its vents still releasing sulphurous steam and boiling water that has been used to cook eggs since the Edo period. The ropeway passes directly over the crater on its way between Sounzan and Togendai, giving a bird's-eye view of the steaming vents and ashen ground below. At the Owakudani station, a short (sometimes closed) walking trail leads into the crater area where the famous kuro-tamago — eggs hard-boiled black in the sulphurous spring water — are sold. On clear days Mount Fuji is framed perfectly to the west.</p>
-      <div class="stop-tip">💡 Kuro-tamago (black eggs) are sold in bags of five for around ¥600 — legend says each egg extends your life by seven years, making a bag of five worth 35 extra years. The Owakudani station has the best accessible Fuji view on the entire loop; if the mountain is visible, spend time here before continuing down to the lake. Note the crater walking trail is sometimes closed due to volcanic activity — check before visiting.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.4 · 24,000+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Owakudani+Hakone+Japan" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div></div>
-
-<!-- FOOTER -->
-
-<!-- PRICING -->
-<div style="background:#f9f6f0; border-top:1px solid rgba(0,0,0,0.08); padding:2.5rem 6vw; text-align:center;">
-  <p style="font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:#8a7040; margin-bottom:0.5rem;">Full day · per person</p>
-  <p style="font-family:'DM Serif Display','Shippori Mincho',serif; font-size:2.5rem; color:#1C2833; margin-bottom:0.5rem;">From ¥22,000</p>
-  <p style="font-size:0.85rem; color:#7a7468; margin-bottom:1.5rem;">Price varies by group size · Transport not included</p>
-  <a href="index.html#contact" style="display:inline-block; background:#D00000; color:#fff; padding:12px 28px; border-radius:8px; font-size:0.9rem; text-decoration:none; letter-spacing:0.05em;">Book this tour</a>
-</div>
 <footer>
-  <div class="footer-logo">箱根 · Hakone</div>
-  <p>The classic loop · From ¥14,000 with Hakone Free Pass · Day trip or overnight from Tokyo</p>
-  <p>© 2026 Tokyo Highlights Tour</p>
-  <div style="text-align:center; padding: 1.5rem 0 2rem;">
-    <a href="index.html" style="
-      display: inline-block;
-      font-family: inherit;
-      font-size: 0.78rem;
-      color: #7a7468;
-      text-decoration: none;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      border-bottom: 1px solid #8a7040;
-      padding-bottom: 3px;
-    ">← Back to Home</a>
-  </div>
-  
+  <p>© 2026 Tokyo with Terry · Japan &nbsp;·&nbsp; <a href="index.html">Home</a> &nbsp;·&nbsp; <a href="availability.html">Availability</a></p>
 </footer>
-
-<script>
-  const stops = document.querySelectorAll('.stop');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  stops.forEach(s => observer.observe(s));
-</script>
-
 </body>
 </html>

@@ -1,665 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="description" content="Discover Asakusa with Terry — Senso-ji Temple, the Nakamise shopping street, rickshaw rides and the most atmospheric old Tokyo neighbourhood still standing."/>
-  <meta name="keywords" content="Asakusa tour, Senso-ji temple, Asakusa Tokyo guide, old Tokyo, Nakamise shopping, Tokyo temple tour, private tour Asakusa, traditional Tokyo"/>
-  <meta name="author" content="Tokyo Private Tours with Terry"/>
-  <meta name="robots" content="index, follow"/>
-  <meta property="og:title" content="Asakusa — Old Tokyo & Senso-ji Temple | Tokyo Private Tours with Terry"/>
-  <meta property="og:description" content="Discover Asakusa with Terry — Senso-ji Temple, the Nakamise shopping street, rickshaw rides and the most atmospheric old Tokyo neighbourhood still standing."/>
-  <meta property="og:type" content="website"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Asakusa — Old Tokyo & Senso-ji Temple | Tokyo Private Tours with Terry</title>
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
-  <style>
-    :root {
-      --ink: #14120e;
-      --paper: #f0ede6;
-      --moss: #8b2000;
-      --sage: #a83010;
-      --stone: #7a7468;
-      --gold: #b08000;
-      --border: rgba(20,18,14,0.12);
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      background: var(--paper);
-      color: var(--ink);
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
-      overflow-x: hidden;
-    }
-
-    /* ── HERO ── */
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    .hero h1 {
-      position: relative;
-      font-family: 'Shippori Mincho', serif;
-      font-size: clamp(3.5rem, 9vw, 7rem);
-      font-weight: 800;
-      color: #fff;
-      line-height: 0.88;
-      margin-bottom: 0.6rem;
-    }
-
-    
-
-    
-
-    
-    
-
-    
-    
-    
-      50%{opacity:.5;transform:scaleY(.55)}
-    }
-
-    /* ── INTRO ── */
-    .intro {
-      max-width: 800px;
-      margin: 5.5rem auto;
-      padding: 0 6vw;
-      text-align: center;
-    }
-    .intro-kicker {
-      display: inline-block;
-      font-size: 0.65rem;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--moss);
-      margin-bottom: 1.4rem;
-    }
-    .intro p {
-      font-size: 1.12rem;
-      line-height: 1.9;
-      color: var(--stone);
-    }
-
-    /* time of day bar */
-    .tod-bar {
-      max-width: 900px;
-      margin: 0 auto 4rem;
-      padding: 0 6vw;
-    }
-    .tod-inner {
-      display: flex;
-      align-items: center;
-      border: 1px solid rgba(139,32,0,0.18);
-      overflow: hidden;
-    }
-    .tod-item {
-      flex: 1;
-      padding: 1.1rem 1.4rem;
-      border-right: 1px solid rgba(139,32,0,0.18);
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
-    .tod-item:last-child { border-right: none; }
-    .tod-label {
-      font-size: 0.58rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--moss);
-    }
-    .tod-value {
-      font-size: 0.82rem;
-      font-weight: 500;
-      color: var(--ink);
-      line-height: 1.4;
-    }
-
-    /* nav */
-    .section-nav {
-      max-width: 900px;
-      margin: 0 auto 4rem;
-      padding: 0 6vw;
-    }
-    .section-nav-inner {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-      background: rgba(139,32,0,0.06);
-      border: 1px solid rgba(139,32,0,0.18);
-      border-left: 3px solid var(--moss);
-      padding: 1.2rem 1.8rem;
-      flex-wrap: wrap;
-    }
-    .nav-label {
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--moss);
-      flex-shrink: 0;
-    }
-    .nav-pills { display: flex; gap: 0.6rem; flex-wrap: wrap; }
-    .nav-pill {
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: var(--ink);
-      background: rgba(139,32,0,0.07);
-      border: 1px solid rgba(139,32,0,0.2);
-      padding: 0.3rem 0.9rem;
-      border-radius: 100px;
-      text-decoration: none;
-      transition: background 0.2s, color 0.2s;
-      letter-spacing: 0.03em;
-    }
-    .nav-pill:hover { background: var(--moss); color: #fff; border-color: var(--moss); }
-
-    .divider {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-      margin: 0 6vw 3rem;
-      color: var(--sage);
-      font-size: 0.67rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-    }
-    .divider::before, .divider::after {
-      content: ''; flex: 1; height: 1px; background: var(--border);
-    }
-
-    /* ── STOPS ── */
-    .stops {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 6vw 8rem;
-    }
-
-    .stop {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      border-top: 1px solid var(--border);
-      padding: 4rem 0;
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .stop.visible { opacity: 1; transform: translateY(0); }
-    .stop:nth-child(even) { direction: rtl; }
-    .stop:nth-child(even) > * { direction: ltr; }
-
-    .stop-img-wrap {
-      position: relative;
-      overflow: hidden;
-      aspect-ratio: 4/3;
-    }
-    .stop-img-wrap img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      transition: transform 0.75s ease;
-    }
-    .stop:hover .stop-img-wrap img { transform: scale(1.05); }
-
-    .stop-badge {
-      position: absolute;
-      bottom: 1.2rem; left: 1.2rem;
-      background: rgba(18,6,4,0.75);
-      border: 1px solid rgba(255,255,255,0.15);
-      color: rgba(255,255,255,0.82);
-      font-size: 0.62rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      padding: 0.3rem 0.75rem;
-      backdrop-filter: blur(6px);
-    }
-
-    .stop-time {
-      position: absolute;
-      top: 1rem; left: 1.2rem;
-      font-size: 0.6rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.6);
-      background: rgba(18,6,4,0.55);
-      padding: 0.2rem 0.6rem;
-      backdrop-filter: blur(4px);
-    }
-
-    .stop-num {
-      position: absolute;
-      top: 1rem; right: 1.2rem;
-      font-family: 'Shippori Mincho', serif;
-      font-size: 4.5rem; font-weight: 800;
-      color: rgba(255,255,255,0.13);
-      line-height: 1; pointer-events: none;
-    }
-
-    .stop-content {
-      padding: 2.8rem 3.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .stop-category {
-      font-size: 0.62rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--moss);
-      margin-bottom: 1rem;
-    }
-    .stop-title {
-      font-family: 'Shippori Mincho', serif;
-      font-size: clamp(1.7rem, 2.8vw, 2.4rem);
-      font-weight: 600;
-      line-height: 1.2;
-      margin-bottom: 0.35rem;
-    }
-    .stop-jp {
-      font-size: 0.82rem;
-      color: var(--stone);
-      margin-bottom: 1.6rem;
-      letter-spacing: 0.06em;
-    }
-    .stop-desc {
-      font-size: 0.94rem;
-      line-height: 1.88;
-      color: #3e3a34;
-      margin-bottom: 1.6rem;
-    }
-    .stop-tip {
-      border-left: 2px solid var(--gold);
-      padding-left: 1rem;
-      font-size: 0.82rem;
-      color: var(--stone);
-      font-style: italic;
-      line-height: 1.65;
-    }
-    .stop-footer {
-      margin-top: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-    }
-    .stop-rating {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.78rem;
-      color: var(--stone);
-    }
-    .stars { color: var(--gold); }
-    .stop-map {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-size: 0.76rem;
-      color: var(--moss);
-      text-decoration: none;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      transition: opacity 0.2s;
-    }
-    .stop-map:hover { opacity: 0.65; }
-
-    /* ── FOOTER ── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 3rem 6vw;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    footer p { font-size: 0.8rem; color: var(--stone); }
-    .footer-logo {
-      font-family: 'Shippori Mincho', serif;
-      font-size: 1.25rem; font-weight: 600;
-    }
-
-    @media (max-width: 700px) {
-      .stop { grid-template-columns: 1fr; direction: ltr !important; }
-      .stop-content { padding: 2rem 0; }
-      .stop:nth-child(even) > * { direction: ltr; }
-      .tod-inner { flex-direction: column; }
-      .tod-item { border-right: none; border-bottom: 1px solid rgba(139,32,0,0.18); }
-      .tod-item:last-child { border-bottom: none; }
-      .section-nav-inner { flex-direction: column; align-items: flex-start; }
-    }
-  
-  /* ── HERO ── */
-  .hero {
-    position: relative;
-    height: 90vh;
-    min-height: 560px;
-    overflow: hidden;
-  }
-  .hero img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: none;
-    display: flex;
-    align-items: center;
-  }
-  .hero-content {
-    max-width: 560px;
-    padding: 0 2rem;
-    background: none;
-  }
-  .hero-eyebrow {
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #f9a07a;
-    margin-bottom: 1rem;
-    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
-  }
-  .hero h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(40px, 6vw, 64px);
-    color: #ffffff;
-    line-height: 1.1;
-    margin-bottom: 1rem;
-    font-weight: 400;
-    text-shadow: 1px 1px 8px rgba(0,0,0,0.9), 0 0 30px rgba(0,0,0,0.8);
-  }
-  .hero p {
-    font-size: 17px;
-    color: #ffffff;
-    line-height: 1.7;
-    margin-bottom: 2rem;
-    max-width: 420px;
-    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
-  }
-  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
-  .btn-primary {
-    background: #D00000;
-    color: #fff;
-    border: none;
-    padding: 13px 26px;
-    border-radius: 8px;
-    font-size: 15px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.15s;
-    display: inline-block;
-  }
-  .btn-primary:hover { background: #B00000; }
-  .btn-ghost {
-    background: rgba(0,0,0,0.45);
-    color: #fff;
-    border: 1px solid rgba(255,255,255,0.6);
-    padding: 13px 26px;
-    border-radius: 8px;
-    font-size: 15px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.15s;
-    display: inline-block;
-  }
-  .btn-ghost:hover { background: rgba(0,0,0,0.65); }
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Explore Asakusa with Terry — private guided tours of Asakusa, Tokyo."/>
+<title>Asakusa — Tokyo Private Tours with Terry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{--red:#D00000;--red-dark:#B00000;--red-light:#FFE5E5;--text:#1C2833;--text-muted:#5D6D7E;--border:rgba(0,0,0,0.1);--bg:#FAFAF8;--bg-card:#ffffff;--bg-surface:#F4F3EF;--radius:12px;--radius-sm:8px;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.6;}
+nav{position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:20px;color:var(--text);display:flex;align-items:center;gap:8px;text-decoration:none;}
+.nav-logo span{color:var(--red);}
+.nav-right{display:flex;align-items:center;gap:1.5rem;}
+.back-link{font-size:14px;color:var(--text-muted);text-decoration:none;transition:color .15s;}
+.back-link:hover{color:var(--text);}
+.book-btn{background:var(--red);color:#fff;padding:9px 20px;border-radius:var(--radius-sm);font-size:14px;font-family:'DM Sans',sans-serif;text-decoration:none;transition:background .15s;}
+.book-btn:hover{background:var(--red-dark);}
+.container{max-width:1100px;margin:0 auto;padding:0 2rem;}
+section{padding:5rem 0;}
+.section-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem;}
+.section-title{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,42px);font-weight:400;margin-bottom:.5rem;line-height:1.2;}
+.section-sub{font-size:16px;color:var(--text-muted);margin-bottom:2.5rem;max-width:560px;}
+/* Hero */
+.page-hero{position:relative;height:52vh;min-height:340px;overflow:hidden;}
+.page-hero img{width:100%;height:100%;object-fit:cover;display:block;}
+.page-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.72) 40%,rgba(0,0,0,.2));display:flex;align-items:flex-end;}
+.page-hero-content{padding:2.5rem 2rem;max-width:1100px;margin:0 auto;width:100%;}
+.page-hero-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#f9a07a;margin-bottom:.5rem;}
+.page-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(32px,5vw,52px);color:#fff;font-weight:400;line-height:1.15;text-shadow:0 2px 12px rgba(0,0,0,.5);}
+.page-hero p{font-size:16px;color:rgba(255,255,255,.8);margin-top:.75rem;max-width:480px;text-shadow:0 1px 6px rgba(0,0,0,.5);}
+/* Content cards */
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+.info-card{background:var(--bg-card);border:0.5px solid var(--border);border-radius:var(--radius);padding:1.75rem;}
+.info-card h3{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;margin-bottom:.75rem;}
+.info-card p,.info-card li{font-size:15px;color:var(--text-muted);line-height:1.8;}
+.info-card ul{padding-left:1.25rem;}
+.info-card li{margin-bottom:.35rem;}
+/* Highlights */
+.highlights{display:flex;gap:2rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+.highlight{display:flex;align-items:flex-start;gap:12px;}
+.highlight-icon{font-size:24px;flex-shrink:0;}
+.highlight-text h4{font-size:15px;font-weight:600;margin-bottom:2px;}
+.highlight-text p{font-size:14px;color:var(--text-muted);}
+/* Meta strip */
+.meta-strip{display:flex;gap:2rem;flex-wrap:wrap;padding:1.5rem 0;border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);margin-bottom:2.5rem;}
+.meta-item{display:flex;flex-direction:column;gap:3px;}
+.meta-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);}
+.meta-value{font-size:15px;font-weight:500;color:var(--text);}
+/* CTA card */
+.cta-card{background:var(--red);border-radius:var(--radius);padding:2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-top:3rem;}
+.cta-card h3{font-family:'DM Serif Display',serif;font-size:26px;color:#fff;font-weight:400;}
+.cta-card p{font-size:15px;color:rgba(255,255,255,.8);margin-top:.35rem;}
+.cta-card a{background:#fff;color:var(--red);padding:12px 26px;border-radius:var(--radius-sm);font-size:15px;font-weight:500;text-decoration:none;white-space:nowrap;transition:opacity .15s;}
+.cta-card a:hover{opacity:.88;}
+footer{background:#111;color:rgba(255,255,255,0.5);padding:2rem;text-align:center;font-size:13px;}
+footer a{color:rgba(255,255,255,0.7);text-decoration:none;}
+@media(max-width:700px){.info-grid{grid-template-columns:1fr;}.page-hero{height:42vh;}.nav-right .back-link{display:none;}}
 </style>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
 </head>
 <body>
-
-<!-- NAV -->
-<nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(0,0,0,0.1);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;">
-  <ul style="display:flex;list-style:none;justify-content:center;align-items:center;gap:2rem;flex:1;margin:0;padding:0;">
-    <li><a href="index.html#areas" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Areas</a></li>
-    <li><a href="index.html#tours" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Tours</a></li>
-    <li><a href="index.html#about" style="font-size:14px;color:#5D6D7E;text-decoration:none;">About</a></li>
-    <li><a href="index.html#contact" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Contact</a></li>
-  </ul>
-  <a href="index.html#contact" style="background:#D00000;color:#fff;border:none;padding:9px 20px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none;">Book a tour</a>
+<nav>
+  <a class="nav-logo" href="index.html">Tokyo with <span>Terry</span></a>
+  <div class="nav-right">
+    <a class="back-link" href="index.html">&#8592; Home</a>
+    <a class="book-btn" href="availability.html">Check availability</a>
+  </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <img src="https://images.unsplash.com/photo-1570521462033-3015e76e7432?w=1400&q=80&fit=crop" alt="Asakusa Old Tokyo" />
-  <div class="hero-overlay">
-    <div class="hero-content">
-      <div class="hero-eyebrow">📍 Asakusa, Tokyo · Founded 628 AD</div>
-      <h1>Asakusa<br>Old Tokyo</h1>
-      <p>Temples, incense, rickshaws & the Sumida River.</p>
-      <div class="hero-btns">
-        <a href="#hoppy" class="btn-primary">Explore stops ↓</a>
-        <a href="index.html#contact" class="btn-ghost">Book a tour</a>
+<div class="page-hero">
+  <img src="https://images.unsplash.com/photo-1583405963363-588941225fc2?w=1200&q=85&fit=crop" alt="Asakusa"/>
+  <div class="page-hero-overlay">
+    <div class="page-hero-content container">
+      <div class="page-hero-label">Tokyo Area Guide</div>
+      <h1>Asakusa</h1>
+      <p>Old Tokyo — temples, rickshaws, and the smell of incense.</p>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="meta-strip">
+      <div class="meta-item"><div class="meta-label">Best for</div><div class="meta-value">Culture, temples, traditional crafts, photography</div></div>
+      <div class="meta-item"><div class="meta-label">Best time to visit</div><div class="meta-value">Early morning (7–9am) before crowds; or late afternoon for golden light on the temple</div></div>
+    </div>
+
+    <div class="section-label">Tokyo Area Guide</div>
+    <div class="section-title">Asakusa</div>
+    <p style="font-size:16px;color:var(--text-muted);line-height:1.9;max-width:680px;margin-bottom:3rem;">Asakusa is the part of Tokyo that survived — or at least remembers — the Edo period. Senso-ji temple draws millions, but step one street back from the tourist flow and you're in a neighbourhood of traditional craft shops, sembei bakeries, and residents who've lived here for generations. Terry loves this area in the early morning, before the tour groups arrive.</p>
+
+    <div class="section-label">What to see</div>
+    <div class="section-title" style="font-size:28px;">Highlights</div>
+    <div class="highlights" style="margin-top:1.5rem;"><div class="highlight">
+      <div class="highlight-icon">🏯</div>
+      <div class="highlight-text"><h4>Senso-ji Temple</h4><p>Tokyo's oldest and most visited temple — worth it early morning</p></div>
+    </div><div class="highlight">
+      <div class="highlight-icon">🎎</div>
+      <div class="highlight-text"><h4>Nakamise Shopping Street</h4><p>Traditional souvenirs, snacks, and crafts lining the approach</p></div>
+    </div><div class="highlight">
+      <div class="highlight-icon">🛺</div>
+      <div class="highlight-text"><h4>Rickshaw rides</h4><p>A uniquely Asakusa experience</p></div>
+    </div><div class="highlight">
+      <div class="highlight-icon">🍡</div>
+      <div class="highlight-text"><h4>Street food</h4><p>Ningyo-yaki, melonpan, and fresh-grilled rice crackers</p></div>
+    </div><div class="highlight">
+      <div class="highlight-icon">🌸</div>
+      <div class="highlight-text"><h4>Sumida River</h4><p>Cherry blossom capital of Tokyo in spring</p></div>
+    </div></div>
+
+    <div class="info-grid" style="margin-top:2rem;">
+      <div class="info-card">
+        <h3>Touring this area with Terry</h3>
+        <p>Terry has been exploring Asakusa for years and knows it at every level — the famous spots and the hidden ones. He can include it as part of a wider day tour, or design a visit specifically around it.</p>
+        <p style="margin-top:1rem;">All tours are fully private — no shared groups, no set script. Tell Terry what you're interested in and he'll shape the experience around you.</p>
+      </div>
+      <div class="info-card">
+        <h3>Getting here</h3>
+        <p>Terry will advise on the best way to reach Asakusa from wherever you're staying. Tokyo's train network is excellent, and he'll make sure you don't spend time lost at stations.</p>
+        <p style="margin-top:1rem;">Most areas in Greater Tokyo are within 30–60 minutes of central Tokyo by train.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- INTRO -->
-<div class="intro">
-  <div class="intro-kicker">Hoppy Street · Kaminarimon · Nakamise · Senso-ji · Sky Tree · Sumida</div>
-  <p>Asakusa is the part of Tokyo that was already old when the rest of the city was still rice paddies. Built around Senso-ji — Tokyo's oldest and most visited temple, founded in 628 AD — the district has been the city's spiritual and entertainment centre for over a millennium. Rickshaws, paper lanterns, hand-pulled sembei, traditional craft workshops, incense smoke drifting over ancient courtyards: Asakusa holds the texture of old Edo more completely than anywhere else in the modern city, and does so without feeling like a museum. It's still a living neighbourhood, and that vitality is what makes it extraordinary.</p>
-</div>
+<div class="container"><div class="cta-card">
+  <div><h3>Ready to book a tour of Asakusa?</h3><p>Check Terry's availability and send a booking request — it only takes a minute.</p></div>
+  <a href="availability.html">View availability &amp; book &#8594;</a>
+</div></div>
+<div style="padding-bottom:2rem;"></div>
 
-<!-- TIME OF DAY BAR -->
-<div class="tod-bar">
-  <div class="tod-inner">
-    <div class="tod-item">
-      <span class="tod-label">Early Morning</span>
-      <span class="tod-value">Senso-ji before crowds</span>
-    </div>
-    <div class="tod-item">
-      <span class="tod-label">Morning</span>
-      <span class="tod-value">Nakamise · Kaminarimon</span>
-    </div>
-    <div class="tod-item">
-      <span class="tod-label">Afternoon</span>
-      <span class="tod-value">Sumida River · Sky Tree</span>
-    </div>
-    <div class="tod-item">
-      <span class="tod-label">Evening</span>
-      <span class="tod-value">Hoppy Street · Izakayas</span>
-    </div>
-  </div>
-</div>
-
-<!-- NAV -->
-<div class="section-nav">
-  <div class="section-nav-inner">
-    <span class="nav-label">Jump to</span>
-    <div class="nav-pills">
-      <a class="nav-pill" href="#hoppy">Hoppy Street</a>
-      <a class="nav-pill" href="#kaminarimon">Kaminarimon</a>
-      <a class="nav-pill" href="#nakamise">Nakamise</a>
-      <a class="nav-pill" href="#sensoji">Senso-ji</a>
-      <a class="nav-pill" href="#sumida">Sumida River</a>
-      <a class="nav-pill" href="#skytree">Tokyo Sky Tree</a>
-    </div>
-  </div>
-</div>
-
-<div class="divider">One Ancient District · A Full Day</div>
-
-<div class="stops">
-
-  <!-- 1. Hoppy Street -->
-  <div class="stop" id="hoppy">
-    <div class="stop-img-wrap">
-      <div class="stop-time">Evening</div>
-      <div class="stop-num">01</div>
-      <img src="https://images.unsplash.com/photo-1559054663-e8d23213f55c?w=800&q=80&fit=crop" alt="Hoppy Street Asakusa outdoor dining izakaya evening" loading="lazy"/>
-      <div class="stop-badge">Shitamachi Drinking</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Food & Drink · West of Senso-ji</div>
-      <h2 class="stop-title">Hoppy Street</h2>
-      <div class="stop-jp">ホッピー通り</div>
-      <p class="stop-desc">Running west from the Nitenmon gate of Senso-ji, Hoppy Street is a short lane of open-fronted izakayas and food stalls that has been feeding and watering Asakusa visitors since the postwar period. The street is named after Hoppy — a low-alcohol beer substitute invented in 1948 when real beer was too expensive for ordinary Tokyoites — which is still served here mixed with shochu in the traditional way. Plastic chairs and tables spill onto the street; the food is classic izakaya — motsuni (offal stew), yakitori, oden — and the atmosphere in the early evening, with the last light falling over the temple neighbourhood and the first lanterns coming on, is as good as anywhere in the city.</p>
-      <div class="stop-tip">💡 Arrive at 5 PM when the restaurants open and the street is at its most relaxed. Order Hoppy with shochu (ask for "naka" for the shochu refill and "soto" for the Hoppy itself — the glass and ice stay, only the liquid changes). The motsuni — braised offal stew — is the dish Hoppy Street is known for and costs around ¥500.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★</span> 4.3 · 7,200+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Hoppy+Street+Asakusa+Tokyo" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 2. Kaminarimon -->
-  <div class="stop" id="kaminarimon">
-    <div class="stop-img-wrap">
-      <div class="stop-time">Morning</div>
-      <div class="stop-num">02</div>
-      <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80&fit=crop" alt="Kaminarimon Thunder Gate Asakusa giant lantern" loading="lazy"/>
-      <div class="stop-badge">Thunder Gate</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Gate & Icon · Entrance to Nakamise</div>
-      <h2 class="stop-title">Kaminarimon</h2>
-      <div class="stop-jp">雷門 · Thunder Gate</div>
-      <p class="stop-desc">Kaminarimon — the Thunder Gate — is the outer gate of Senso-ji and the most recognisable single image in Asakusa: a vast red gate hung with an enormous red paper lantern, flanked by the gods of wind and thunder in their niches. The current gate dates from 1960, funded by the founder of Panasonic, Konosuke Matsushita, in gratitude for his recovery from illness after praying at Senso-ji. The lantern, which weighs 670 kg and is 3.9 metres tall, is replaced every decade. Beyond the gate, the Nakamise shopping street runs north to the temple's inner gate — one of the oldest continuously operating shopping streets in Japan.</p>
-      <div class="stop-tip">💡 The underside of the giant lantern is decorated with a large carved dragon — easy to miss in the crowds but worth looking up for. The best photographs of the gate are taken from the south, looking north with the temple pagoda visible over the roofline beyond.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.6 · 58,000+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Kaminarimon+Asakusa+Tokyo" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 3. Nakamise-dori -->
-  <div class="stop" id="nakamise">
-    <div class="stop-img-wrap">
-      <div class="stop-time">Morning</div>
-      <div class="stop-num">03</div>
-      <img src="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=800&q=80&fit=crop" alt="Nakamise shopping street Asakusa traditional snacks souvenirs" loading="lazy"/>
-      <div class="stop-badge">Oldest Shopping Street</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Shopping Street · Between the Gates</div>
-      <h2 class="stop-title">Nakamise-dori</h2>
-      <div class="stop-jp">仲見世通り</div>
-      <p class="stop-desc">The 250-metre shopping street connecting Kaminarimon to Senso-ji's inner Hozomon gate has been selling traditional snacks, souvenirs, and craft goods to temple visitors for over 1,000 years — making it arguably the oldest continuously operating shopping street in Japan. The 89 stalls lining both sides of the covered lane sell ningyo-yaki (small bean paste cakes moulded into temple shapes), kaminari-okoshi (puffed rice brittle that has been made in Asakusa since the Edo period), traditional paper fans, wooden geta sandals, and a remarkable quantity of beautifully packaged regional sweets. The stalls are small, the shopkeepers are often elderly, and the merchandise is overwhelmingly edible or handmade.</p>
-      <div class="stop-tip">💡 The side streets running east and west off Nakamise — particularly Shin-Nakamise — hold smaller, quieter shops with better prices and fewer crowds. The traditional craft shops on the western side streets sell genuine Asakusa-made goods: combs, fans, lanterns, and lacquerware at prices that reflect real craft rather than tourist markup.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 44,000+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Nakamise+Asakusa+Tokyo" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 4. Senso-ji Temple -->
-  <div class="stop" id="sensoji">
-    <div class="stop-img-wrap">
-      <div class="stop-time">Early Morning</div>
-      <div class="stop-num">04</div>
-      <img src="https://images.unsplash.com/photo-1570521462033-3015e76e7432?w=800&q=80&fit=crop" alt="Senso-ji temple Asakusa Tokyo pagoda" loading="lazy"/>
-      <div class="stop-badge">Start Here</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Temple · Founded 628 AD</div>
-      <h2 class="stop-title">Senso-ji Temple</h2>
-      <div class="stop-jp">浅草寺</div>
-      <p class="stop-desc">Tokyo's oldest temple and its most visited, Senso-ji was founded in 628 AD when two fishermen pulled a golden image of Kannon — the goddess of mercy — from the Sumida River. The current main hall dates from 1958, rebuilt after wartime destruction, but the temple's spiritual authority and its grip on the neighbourhood remain entirely undiminished. The vast main courtyard, the five-storey pagoda rising over the surrounding rooftops, the enormous bronze lanterns, the incense cauldron where worshippers wave smoke over themselves for good health — all of it operates with the full weight of 1,400 years of continuous religious practice behind it.</p>
-      <div class="stop-tip">💡 Arrive before 7 AM to experience the temple grounds in near-silence — the contrast with the midday crowds is extraordinary. Draw an omikuji (fortune slip) from the metal cylinders near the main hall: shake until a numbered stick falls out, then find the corresponding drawer. If you draw a bad fortune, tie it to the rack and leave it at the temple.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.7 · 92,000+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Senso-ji+Temple+Asakusa+Tokyo" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 5. Sumida River & Park -->
-  <div class="stop" id="sumida">
-    <div class="stop-img-wrap">
-      <div class="stop-time">Afternoon</div>
-      <div class="stop-num">05</div>
-      <img src="https://images.unsplash.com/photo-1551641506-ee5bf4cb45f1?w=800&q=80&fit=crop" alt="Sumida River Tokyo waterfront Sky Tree view" loading="lazy"/>
-      <div class="stop-badge">River Walk</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Waterfront · Sumida Park</div>
-      <h2 class="stop-title">Sumida River & Park</h2>
-      <div class="stop-jp">隅田川 · 隅田公園</div>
-      <p class="stop-desc">The Sumida River has been Asakusa's eastern boundary and its lifeline since the Edo period, when it carried the rice, timber, and merchandise that fed the growing city. Today the western bank is lined with Sumida Park — a long riverside promenade of cherry trees, benches, and open lawn that gives the best ground-level view of the Tokyo Sky Tree rising across the water. Water buses run from the Asakusa pier south to Hinode and Odaiba, and the 40-minute river journey downstream past the bridges of central Tokyo is one of the most quietly enjoyable ways to see the city from a different angle. In late July, the Sumida Fireworks Festival is one of the oldest and largest in Japan.</p>
-      <div class="stop-tip">💡 The Sumida Park cherry blossoms in late March are exceptional — over 600 trees line the riverbank on both sides. The Tokyo Cruise water bus from Asakusa pier to Odaiba (¥1,720) passes under 12 bridges and gives a completely different view of the city than any train or taxi. Book the earlier departures to avoid the afternoon crowds.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★</span> 4.4 · 16,000+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Sumida+Park+Asakusa+Tokyo" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 6. Tokyo Sky Tree -->
-  <div class="stop" id="skytree">
-    <div class="stop-img-wrap">
-      <div class="stop-time">Night</div>
-      <div class="stop-num">06</div>
-      <img src="https://images.unsplash.com/photo-1606318801954-d46d2be41e6a?w=800&q=80&fit=crop" alt="Tokyo Sky Tree night illumination Asakusa" loading="lazy"/>
-      <div class="stop-badge">World's Tallest Tower</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Observation Tower · Oshiage</div>
-      <h2 class="stop-title">Tokyo Sky Tree</h2>
-      <div class="stop-jp">東京スカイツリー</div>
-      <p class="stop-desc">Rising 634 metres from the flatlands east of Asakusa, Tokyo Sky Tree is the tallest tower in the world and the defining feature of the eastern Tokyo skyline. The two observation decks — at 350 metres (Tembo Deck) and 450 metres (Tembo Galleria) — give panoramic views stretching to Mount Fuji on clear days and across the entire Tokyo metropolitan area at all times. At night the tower is illuminated in rotating colour schemes, and the view from the upper deck over the city's sea of lights — with the Sumida River winding through it and the glow of Shinjuku and Shibuya visible 15 km to the west — is genuinely breathtaking. The base complex, Solamachi, contains over 300 shops and restaurants.</p>
-      <div class="stop-tip">💡 Book tickets online in advance — queues for same-day tickets can be two hours or more on weekends. Sunset plus one hour is the optimal time: you see the city in daylight, watch the sun go down, and then see the lights come on across the entire metropolis. The Tembo Deck at 350m is genuinely impressive; the Tembo Galleria at 450m adds a glass-floored spiral walkway that is not for the faint-hearted.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 54,000+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Tokyo+Sky+Tree+Asakusa" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-<!-- FOOTER -->
-
-<!-- PRICING -->
-<div style="background:#f9f6f0; border-top:1px solid rgba(0,0,0,0.08); padding:2.5rem 6vw; text-align:center;">
-  <p style="font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:#8a7040; margin-bottom:0.5rem;">Full day · per person</p>
-  <p style="font-family:'DM Serif Display','Shippori Mincho',serif; font-size:2.5rem; color:#1C2833; margin-bottom:0.5rem;">From ¥15,000</p>
-  <p style="font-size:0.85rem; color:#7a7468; margin-bottom:1.5rem;">Price varies by group size · Transport not included</p>
-  <a href="index.html#contact" style="display:inline-block; background:#D00000; color:#fff; padding:12px 28px; border-radius:8px; font-size:0.9rem; text-decoration:none; letter-spacing:0.05em;">Book this tour</a>
-</div>
 <footer>
-  <div class="footer-logo">浅草 · Asakusa</div>
-  <p>A full day guide · Tokyo's ancient heart</p>
-  <p>© 2026 Tokyo Highlights Tour</p>
-  <div style="text-align:center; padding: 1.5rem 0 2rem;">
-    <a href="index.html" style="
-      display: inline-block;
-      font-family: inherit;
-      font-size: 0.78rem;
-      color: #7a7468;
-      text-decoration: none;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      border-bottom: 1px solid #8a7040;
-      padding-bottom: 3px;
-    ">← Back to Home</a>
-  </div>
-  </footer>
-
-<script>
-  const stops = document.querySelectorAll('.stop');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  stops.forEach(s => observer.observe(s));
-</script>
-
+  <p>© 2026 Tokyo with Terry · Japan &nbsp;·&nbsp; <a href="index.html">Home</a> &nbsp;·&nbsp; <a href="availability.html">Availability</a></p>
+</footer>
 </body>
 </html>
