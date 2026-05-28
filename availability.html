@@ -27,15 +27,8 @@ nav{position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop
 .section-label{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--red);margin-bottom:.5rem;}
 .section-title{font-family:'DM Serif Display',serif;font-size:40px;font-weight:400;line-height:1.15;color:var(--text);margin-bottom:.75rem;}
 .section-sub{font-size:17px;color:var(--text-muted);max-width:560px;}
-
-footer{background:#111;color:rgba(255,255,255,0.5);padding:2.5rem 2rem;font-size:13px;}
-.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
-.footer-logo{font-size:15px;font-weight:600;color:rgba(255,255,255,0.85);margin-bottom:4px;letter-spacing:0.02em;}
-.footer-desc{font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:4px;}
-.footer-copy{font-size:12px;color:rgba(255,255,255,0.3);}
-.footer-links{display:flex;gap:1.25rem;align-items:center;}
-.footer-links a{color:rgba(255,255,255,0.55);text-decoration:none;font-size:13px;transition:color .15s;}
-.footer-links a:hover{color:rgba(255,255,255,0.9);}
+footer{background:#2C2825;color:rgba(255,255,255,0.5);padding:2rem;text-align:center;font-size:13px;}
+footer a{color:rgba(255,255,255,0.7);text-decoration:none;}
 </style>
 </head>
 <body>
@@ -91,7 +84,7 @@ footer{background:#111;color:rgba(255,255,255,0.5);padding:2.5rem 2rem;font-size
 .tcal-pinbar button{padding:8px 16px;border-radius:8px;border:none;background:var(--red);color:#fff;font-size:13px;cursor:pointer;font-family:'DM Sans',sans-serif;}
 .tcal-pinerr{font-size:12px;color:var(--red);margin-top:4px;display:none;}
 /* Modal */
-.tcal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:9000;align-items:center;justify-content:center;padding:1rem;}
+.tcal-overlay{display:none;position:fixed;inset:0;background:transparent;z-index:9000;align-items:center;justify-content:center;padding:1rem;}
 .tcal-overlay.on{display:flex;}
 .tcal-modal{background:#fff;border-radius:16px;width:min(95vw,460px);max-height:88vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.25);animation:mpop .18s ease;}
 @keyframes mpop{from{opacity:0;transform:scale(.93) translateY(10px)}to{opacity:1;transform:scale(1) translateY(0)}}
@@ -354,18 +347,7 @@ draw();
 </script>
 
 <footer>
-  <div class="footer-inner">
-    <div class="footer-left">
-      <div class="footer-logo">予約可能 · Availability</div>
-      <div class="footer-desc">Check Terry's available dates · Tokyo Private Tours</div>
-      <div class="footer-copy">© 2026 Tokyo with Terry · Japan</div>
-    </div>
-    <div class="footer-links">
-      <a href="index.html">&#8592; Home</a>
-      <a href="availability.html">Availability</a>
-      <a href="reservations.html">Reserve</a>
-    </div>
-  </div>
+  <p>© 2026 Tokyo with Terry · Japan &nbsp;·&nbsp; <a href="index.html">Back to home</a></p>
 </footer>
 
 </body>
