@@ -286,12 +286,19 @@
     font-size: 15px;
 
   /* ── FOOTER ── */
+
+  /* ── FOOTER ── */
   footer { background: #2C2825; color: rgba(255,255,255,0.5); padding: 2rem; text-align: center; font-size: 13px; }
   footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 700px) {
     .nav-links { display: none; }
+    
+    /* ADD THESE TWO LINES HERE */
+    .areas-grid { grid-template-columns: 1fr 1fr !important; gap: 10px; }
+    .area-card { height: 140px; }
+
     .stats-section .container { grid-template-columns: 1fr; }
     .stat-item { border-right: none; border-bottom: 0.5px solid var(--border); }
     .stat-item:last-child { border-bottom: none; }
