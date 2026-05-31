@@ -1,1 +1,371 @@
-google-site-verification: google33fbe074aa59b9d1.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="google-site-verification" content="33fbe074aa59b9d1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Availability — Tokyo Private Tours with Terry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --red:#D00000;--red-dark:#B00000;--red-light:#FFE5E5;
+  --text:#1C2833;--text-muted:#5D6D7E;--border:rgba(0,0,0,0.1);
+  --bg:#FAFAF8;--bg-card:#ffffff;--bg-surface:#F4F3EF;
+  --radius:12px;--radius-sm:8px;
+}
+html{scroll-behavior:smooth;}html,body{overflow-x:hidden;}img,video{max-width:100%;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.6;}
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:20px;color:var(--text);display:flex;align-items:center;gap:8px;text-decoration:none;}
+.nav-logo span{color:var(--red);}
+.back-btn{font-size:14px;color:var(--text-muted);text-decoration:none;display:flex;align-items:center;gap:6px;transition:color .15s;}
+.back-btn:hover{color:var(--text);}
+/* Section base */
+.section-label{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--red);margin-bottom:.5rem;}
+.section-title{font-family:'DM Serif Display',serif;font-size:40px;font-weight:400;line-height:1.15;color:var(--text);margin-bottom:.75rem;}
+.section-sub{font-size:17px;color:var(--text-muted);max-width:560px;}
+footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-size:13px;}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-logo{font-size:15px;font-weight:700;color:#2d3748;margin-bottom:4px;letter-spacing:0.02em;}
+.footer-desc{font-size:13px;color:#7a6652;margin-bottom:4px;}
+.footer-copy{font-size:12px;color:#a09080;}
+.footer-links{display:flex;gap:1.25rem;align-items:center;}
+.footer-links a{color:#a0522d;text-decoration:none;font-size:13px;transition:color .15s;}
+.footer-links a:hover{color:#de1c24;}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Tokyo with <span>Terry</span></a>
+  <a class="back-btn" href="index.html">&#8592; Back to main page</a>
+</nav>
+
+<!-- AVAILABILITY CALENDAR -->
+<style>
+.tcal-section{background:var(--bg);padding:5rem 0;}
+.tcal-section .container{max-width:860px;margin:0 auto;padding:0 2rem;}
+.tcal-wrap{background:#fff;border-radius:16px;border:1px solid var(--border);box-shadow:0 4px 24px rgba(0,0,0,.07);overflow:hidden;margin-top:2rem;}
+.tcal-bar{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid var(--border);}
+.tcal-month{font-family:'DM Serif Display',serif;font-size:22px;color:var(--text);}
+.tcal-navbtn{width:38px;height:38px;border-radius:8px;border:1px solid var(--border);background:#fff;font-size:18px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:background .15s;}
+.tcal-navbtn:hover{background:var(--bg-surface);border-color:var(--red);}
+.tcal-dow{display:grid;grid-template-columns:repeat(7,1fr);background:var(--bg-surface);border-bottom:1px solid var(--border);}
+.tcal-dow span{text-align:center;font-size:11px;font-weight:600;color:var(--text-muted);padding:8px 0;text-transform:uppercase;letter-spacing:.5px;}
+.tcal-dow span:first-child{color:var(--red);}
+.tcal-dow span:last-child{color:#1a5fa5;}
+.tcal-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));}
+.tc{min-height:70px;border-right:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0;padding:6px;background:#fff;position:relative;overflow:hidden;}
+.tc:nth-child(7n){border-right:none;}
+.tc.clickable{cursor:pointer;}
+.tc.clickable:hover{background:#fff8f8;}
+.tc.dim{opacity:.25;pointer-events:none;}
+.tc.past{background:#fafafa;cursor:default;}
+.tc.past .tcn{color:#ccc;}
+.tc.istoday{box-shadow:inset 0 0 0 2px #999;}
+.tc.ishol{background:#fff5f7;}
+.tc.sel{box-shadow:inset 0 0 0 2.5px var(--red);background:#fff3f3;}
+.tcn{font-size:13px;font-weight:500;color:var(--text);display:block;line-height:1;}
+.tc.sun .tcn{color:var(--red);}
+.tc.sat .tcn{color:#1a5fa5;}
+.tchn{font-size:8px;color:var(--red);font-weight:600;display:block;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.tcpips{display:flex;gap:2px;flex-wrap:wrap;margin-top:5px;}
+.pip{width:7px;height:7px;border-radius:50%;}
+.pip.f{background:#4caf50;}
+.pip.b{background:#e53935;}
+.tcal-legend{display:flex;gap:14px;flex-wrap:wrap;padding:10px 16px;border-top:1px solid var(--border);background:#fff;}
+.tleg{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--text-muted);}
+.tleg-d{width:10px;height:10px;border-radius:50%;}
+/* Admin bar */
+.tcal-adminbar{display:none;align-items:center;justify-content:space-between;padding:8px 16px;background:#fff8e1;border-bottom:1px solid #ffe082;font-size:13px;color:#795548;}
+.tcal-adminbar.on{display:flex;}
+.tcal-adminbar button{font-size:12px;padding:4px 12px;border-radius:6px;border:1px solid #ffe082;background:#fff;cursor:pointer;color:#795548;font-family:'DM Sans',sans-serif;}
+/* PIN bar */
+.tcal-pinbar{display:none;align-items:center;gap:8px;background:var(--bg-surface);border-radius:10px;padding:10px 14px;margin-bottom:1.25rem;}
+.tcal-pinbar.on{display:flex;}
+.tcal-pinbar input{flex:1;padding:8px 12px;border-radius:8px;border:1px solid var(--border);font-size:14px;font-family:'DM Sans',sans-serif;outline:none;}
+.tcal-pinbar button{padding:8px 16px;border-radius:8px;border:none;background:var(--red);color:#fff;font-size:13px;cursor:pointer;font-family:'DM Sans',sans-serif;}
+.tcal-pinerr{font-size:12px;color:var(--red);margin-top:4px;display:none;}
+/* Modal */
+.tcal-overlay{display:none;position:fixed;inset:0;background:transparent;z-index:9000;align-items:center;justify-content:center;padding:1rem;}
+.tcal-overlay.on{display:flex;}
+.tcal-modal{background:#fff;border-radius:16px;width:min(95vw,460px);max-height:88vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.25);animation:mpop .18s ease;}
+@keyframes mpop{from{opacity:0;transform:scale(.93) translateY(10px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.tcal-mhead{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem 1rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:#fff;z-index:1;}
+.tcal-mhead h2{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;color:var(--text);}
+.tcal-mclose{width:32px;height:32px;border-radius:50%;border:1px solid var(--border);background:#fff;font-size:18px;cursor:pointer;color:#888;display:flex;align-items:center;justify-content:center;}
+.tcal-mclose:hover{background:var(--bg-surface);}
+.tcal-mbody{padding:1.25rem 1.5rem 1.5rem;}
+.tcal-holtag{font-size:12px;font-weight:600;color:var(--red);background:#fff5f7;padding:7px 12px;border-radius:8px;margin-bottom:1rem;}
+.tcal-slots{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.tslot{border-radius:12px;padding:14px;border:1.5px solid #e0e0e0;background:#f9f9f9;display:flex;flex-direction:column;gap:3px;}
+.tslot.f{border-color:#a5d6a7;background:#f1f8f1;}
+.tslot.b{border-color:#ef9a9a;background:#fdf2f2;}
+.tslot-icon{font-size:20px;line-height:1;}
+.tslot-name{font-size:15px;font-weight:600;color:var(--text);}
+.tslot.f .tslot-name{color:#2e7d32;}
+.tslot.b .tslot-name{color:#c62828;}
+.tslot-time{font-size:11px;color:var(--text-muted);}
+.tslot.f .tslot-time{color:#388e3c;}
+.tslot.b .tslot-time{color:#d32f2f;}
+.tslot-status{font-size:11px;color:var(--text-muted);}
+.tslot-btn{display:block;margin-top:10px;text-align:center;padding:8px 0;border-radius:8px;font-size:13px;font-weight:500;font-family:'DM Sans',sans-serif;text-decoration:none;color:#fff;}
+.tslot-btn.book{background:var(--red);}
+.tslot-btn.enq{background:#888;}
+.tslot-btn:hover{opacity:.87;}
+.tcal-mdiv{border:none;border-top:1px solid var(--border);margin:1.25rem 0;}
+.tcal-adminedit h3{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:1rem;}
+.tcal-adminedit{display:none;}
+.tcal-adminedit.on{display:block;}
+.tarow{display:flex;align-items:center;gap:6px;margin-bottom:9px;}
+.tarow span{font-size:13px;min-width:88px;color:var(--text);}
+.tabtn{flex:1;padding:7px 0;border-radius:8px;border:1.5px solid #ddd;background:#fff;font-size:12px;font-family:'DM Sans',sans-serif;cursor:pointer;color:#888;transition:all .12s;}
+.tabtn.af{border-color:#4caf50;background:#eaf7ee;color:#2e7d32;font-weight:600;}
+.tabtn.ab{border-color:#e53935;background:#ffeaea;color:#c62828;font-weight:600;}
+.tabtn-x{padding:7px 10px;border-radius:8px;border:1.5px solid #ddd;background:#fff;font-size:13px;cursor:pointer;color:#bbb;}
+@media(max-width:600px){
+  .tcal-slots{grid-template-columns:1fr;}
+  .tcal-section .container{padding:0 1rem;}
+  .tc{min-height:48px;padding:4px;}
+  .tcn{font-size:11px;}
+}
+</style>
+
+<section class="tcal-section" id="availability">
+  <div class="container">
+    <div class="section-label">Availability</div>
+    <div class="section-title">Check &amp; book a date</div>
+    <div class="section-sub">Click any date to see Terry's availability and send a booking request.</div>
+
+    <div class="tcal-pinbar" id="tcPinBar">
+      <input type="password" id="tcPinInput" placeholder="Admin PIN" maxlength="12" onkeydown="if(event.key==='Enter')TC.pin()">
+      <button onclick="TC.pin()">Unlock</button>
+    </div>
+    <div class="tcal-pinerr" id="tcPinErr">Incorrect PIN — try again.</div>
+
+    <div class="tcal-wrap">
+      <div class="tcal-adminbar" id="tcAdminBar">
+        <span>🔓 Admin mode — click any date to set availability</span>
+        <button onclick="TC.lock()">Lock &amp; exit</button>
+      </div>
+      <div class="tcal-bar">
+        <div class="tcal-month" id="tcMonthLabel"></div>
+        <div style="display:flex;gap:6px;">
+          <button class="tcal-navbtn" onclick="TC.nav(-1)">&#8592;</button>
+          <button class="tcal-navbtn" onclick="TC.nav(1)">&#8594;</button>
+        </div>
+      </div>
+      <div class="tcal-dow">
+        <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+      </div>
+      <div class="tcal-grid" id="tcGrid"></div>
+      <div class="tcal-legend">
+        <div class="tleg"><div class="tleg-d" style="background:#4caf50"></div>Available</div>
+        <div class="tleg"><div class="tleg-d" style="background:#e53935"></div>Busy</div>
+        <div class="tleg"><div class="tleg-d" style="background:#BC002D;border-radius:2px;"></div>Holiday</div>
+        <div class="tleg"><div class="tleg-d" style="background:transparent;border:2px solid #999;"></div>Today</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div class="tcal-overlay" id="tcOverlay">
+  <div class="tcal-modal" id="tcModal">
+    <div class="tcal-mhead">
+      <h2 id="tcMTitle"></h2>
+      <button class="tcal-mclose" onclick="TC.close()">&#10005;</button>
+    </div>
+    <div class="tcal-mbody" id="tcMBody"></div>
+  </div>
+</div>
+
+<script>
+!function(){
+var MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+var DAYS=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+var SLOTS=[{n:'Full Day',t:'All day',i:'🗾'},{n:'Morning',t:'8am – 12pm',i:'🌅'},{n:'Afternoon',t:'12pm – 5pm',i:'☀️'},{n:'Evening',t:'5pm – 9pm',i:'🌆'}];
+var HOL={'01-01':"New Year's Day",'01-13':'Coming of Age Day','02-11':'National Foundation Day','02-23':"Emperor's Birthday",'03-20':'Vernal Equinox Day','04-29':'Showa Day','05-03':'Constitution Memorial Day','05-04':'Greenery Day','05-05':"Children's Day",'07-21':'Marine Day','08-11':'Mountain Day','09-15':'Respect for the Aged Day','09-23':'Autumnal Equinox Day','10-13':'Sports Day','11-03':'Culture Day','11-23':'Labour Thanksgiving Day','11-24':'Substitute Holiday'};
+var EMAIL='terrybj65@msn.com';
+var PIN='1994';
+var D={};
+var unlocked=false;
+var today=new Date();
+var vy=today.getFullYear(),vm=today.getMonth();
+var curKey=null;
+
+function p2(n){return String(n).padStart(2,'0');}
+function key(y,m,d){return y+'-'+p2(m+1)+'-'+p2(d);}
+function hol(m,d){return HOL[p2(m)+'-'+p2(d)]||null;}
+function sd(k){return D[k]||{};}
+
+function draw(){
+  document.getElementById('tcMonthLabel').textContent=MONTHS[vm]+' '+vy;
+  var fd=new Date(vy,vm,1).getDay();
+  var dim=new Date(vy,vm+1,0).getDate();
+  var pd=new Date(vy,vm,0).getDate();
+  var h='';
+  for(var i=0;i<fd;i++){
+    h+='<div class="tc dim"><span class="tcn">'+(pd-fd+1+i)+'</span></div>';
+  }
+  for(var d=1;d<=dim;d++){
+    var dow=(fd+d-1)%7;
+    var k=key(vy,vm,d);
+    var isTod=(vy===today.getFullYear()&&vm===today.getMonth()&&d===today.getDate());
+    var isPast=new Date(vy,vm,d)<new Date(today.getFullYear(),today.getMonth(),today.getDate());
+    var hl=hol(vm+1,d);
+    var s=sd(k);
+    var cls='tc';
+    if(dow===0)cls+=' sun';
+    if(dow===6)cls+=' sat';
+    if(isTod)cls+=' istoday';
+    if(isPast)cls+=' past';else cls+=' clickable';
+    if(hl)cls+=' ishol';
+    if(k===curKey)cls+=' sel';
+    var pips='';
+    SLOTS.forEach(function(sl){
+      if(s[sl.n]==='free')pips+='<div class="pip f"></div>';
+      else if(s[sl.n]==='busy')pips+='<div class="pip b"></div>';
+    });
+    var click=isPast?'':'onclick="TC.open(\''+k+'\')"';
+    h+='<div class="'+cls+'" '+click+'>'
+      +'<span class="tcn">'+d+'</span>'
+      +(hl?'<span class="tchn">'+hl+'</span>':'')
+      +(pips?'<div class="tcpips">'+pips+'</div>':'')
+      +'</div>';
+  }
+  var tot=fd+dim,rem=tot%7===0?0:7-(tot%7);
+  for(var x=1;x<=rem;x++)h+='<div class="tc dim"><span class="tcn">'+x+'</span></div>';
+  document.getElementById('tcGrid').innerHTML=h;
+}
+
+function openModal(k){
+  curKey=k;
+  var pts=k.split('-');
+  var y=+pts[0],m=+pts[1]-1,d=+pts[2];
+  var dn=DAYS[new Date(y,m,d).getDay()];
+  var title=dn+', '+MONTHS[m]+' '+d+', '+y;
+  document.getElementById('tcMTitle').textContent=title;
+  var hl=hol(m+1,d);
+  var s=sd(k);
+  var b='';
+  if(hl)b+='<div class="tcal-holtag">🗓 '+hl+' — Public Holiday</div>';
+  b+='<div class="tcal-slots">';
+  SLOTS.forEach(function(sl){
+    var st=s[sl.n]||null;
+    var isF=st==='free',isB=st==='busy';
+    var cls=isF?'f':isB?'b':'';
+    var status=isF?'Available':isB?'Unavailable':'Not yet confirmed';
+    var btn='';
+    if(!isB){
+      var verb=isF?'Book this slot':'Send enquiry';
+      var subj=encodeURIComponent((isF?'Booking: ':'Enquiry: ')+title+' – '+sl.n);
+      var body=encodeURIComponent('Hi Terry,\n\nI\'d like to '+(isF?'book':'enquire about')+' a tour.\n\nDate: '+title+'\nSlot: '+sl.n+' ('+sl.t+')\n\nPlease let me know next steps.\n\nThanks!');
+      btn='<a href="mailto:'+EMAIL+'?subject='+subj+'&body='+body+'" class="tslot-btn '+(isF?'book':'enq')+'">'+verb+' ↗</a>';
+    }
+    b+='<div class="tslot '+cls+'">'
+      +'<div class="tslot-icon">'+sl.i+'</div>'
+      +'<div class="tslot-name">'+sl.n+'</div>'
+      +'<div class="tslot-time">'+sl.t+'</div>'
+      +'<div class="tslot-status">'+status+'</div>'
+      +btn
+      +'</div>';
+  });
+  b+='</div>';
+  if(unlocked){
+    b+='<hr class="tcal-mdiv"><div class="tcal-adminedit on" id="tcAdminEdit"><h3>Edit – '+MONTHS[m]+' '+d+'</h3>';
+    SLOTS.forEach(function(sl){
+      var st=s[sl.n]||'';
+      b+='<div class="tarow"><span>'+sl.n+'</span>'
+        +'<button class="tabtn'+(st==='free'?' af':'')+'" onclick="TC.set(\''+k+'\',\''+sl.n+'\',\'free\')">✅ Free</button>'
+        +'<button class="tabtn'+(st==='busy'?' ab':'')+'" onclick="TC.set(\''+k+'\',\''+sl.n+'\',\'busy\')">❌ Busy</button>'
+        +'<button class="tabtn-x" onclick="TC.set(\''+k+'\',\''+sl.n+'\',null)">✕</button>'
+        +'</div>';
+    });
+    b+='</div>';
+  }
+  document.getElementById('tcMBody').innerHTML=b;
+  document.getElementById('tcOverlay').classList.add('on');
+  document.body.style.overflow='hidden';
+  draw();
+}
+
+window.TC={
+  open:function(k){openModal(k);},
+  close:function(){
+    document.getElementById('tcOverlay').classList.remove('on');
+    document.body.style.overflow='';
+    curKey=null;draw();
+  },
+  nav:function(dir){
+    vm+=dir;
+    if(vm<0){vm=11;vy--;}
+    if(vm>11){vm=0;vy++;}
+    draw();
+  },
+  set:function(k,slot,val){
+    if(!unlocked)return;
+    if(!D[k])D[k]={};
+    if(val===null){delete D[k][slot];if(!Object.keys(D[k]).length)delete D[k];}
+    else D[k][slot]=val;
+    openModal(k);
+  },
+  pin:function(){
+    var inp=document.getElementById('tcPinInput');
+    var err=document.getElementById('tcPinErr');
+    if(inp.value===PIN){
+      unlocked=true;
+      document.getElementById('tcPinBar').classList.remove('on');
+      document.getElementById('tcAdminBar').classList.add('on');
+      err.style.display='none';inp.value='';draw();
+    }else{err.style.display='block';inp.value='';inp.focus();}
+  },
+  lock:function(){
+    unlocked=false;
+    document.getElementById('tcAdminBar').classList.remove('on');
+    document.getElementById('tcPinBar').classList.remove('on');
+    draw();
+  }
+};
+
+// Secret shortcut tj3 → show PIN box
+var seq=[];
+document.addEventListener('keydown',function(e){
+  seq.push(e.key);if(seq.length>3)seq.shift();
+  if(seq.join('')==='tj3'&&!unlocked){
+    document.getElementById('tcPinBar').classList.add('on');
+    setTimeout(function(){document.getElementById('tcPinInput').focus();},50);
+    seq=[];
+  }
+  if(e.key==='Escape')TC.close();
+});
+
+// Click overlay background to close
+document.getElementById('tcOverlay').addEventListener('click',function(e){
+  if(e.target===this)TC.close();
+});
+
+draw();
+}();
+</script>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="footer-logo">空き状況 · Availability</div>
+      <div class="footer-desc">Check dates &amp; book · Tokyo Private Tours with Terry</div>
+      <div class="footer-copy">© 2026 Tokyo with Terry · Japan</div>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">&#8592; Home</a>
+      <a href="reservations.html">Reserve</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
