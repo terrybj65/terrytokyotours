@@ -324,24 +324,7 @@ window.TC={
       err.style.display='none';inp.value='';draw();
     }else{err.style.display='block';inp.value='';inp.focus();}
   },
-
-  export:function(){
-    var json=JSON.stringify(D,null,2);
-    var ta=document.createElement('textarea');
-    ta.value='var D='+JSON.stringify(D,null,0)+';';
-    ta.style.cssText='position:fixed;top:10px;left:10px;width:90vw;height:80vh;z-index:9999;font-size:12px;padding:1rem;font-family:monospace;background:#1e1e2e;color:#cdd6f4;border:2px solid #2563eb;border-radius:8px;';
-    var close=document.createElement('button');
-    close.textContent='✕ Close';
-    close.style.cssText='position:fixed;top:14px;right:14px;z-index:10000;padding:8px 16px;background:#de1c24;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;';
-    close.onclick=function(){document.body.removeChild(ta);document.body.removeChild(close);document.body.removeChild(msg);};
-    var msg=document.createElement('div');
-    msg.textContent='Select all (Ctrl+A / Cmd+A), copy, then paste over the var D=...; line in availability.html and re-upload to GitHub.';
-    msg.style.cssText='position:fixed;top:14px;left:10px;right:90px;z-index:10000;padding:8px 12px;background:#1e3a8a;color:#fff;border-radius:6px;font-size:13px;';
-    document.body.appendChild(ta);
-    document.body.appendChild(close);
-    document.body.appendChild(msg);
-    ta.focus();ta.select();
-  },  lock:function(){
+  lock:function(){
     unlocked=false;
     document.getElementById('tcAdminBar').classList.remove('on');
     document.getElementById('tcPinBar').classList.remove('on');

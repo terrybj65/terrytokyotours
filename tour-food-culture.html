@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Food & Culture — Tokyo with Terry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{--red:#D00000;--red-dark:#B00000;--text:#1C2833;--text-muted:#5D6D7E;--border:rgba(0,0,0,0.1);--bg:#FAFAF8;--bg-card:#fff;--radius:12px;--radius-sm:8px;--green:#25D366;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.7;}
+nav{position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.95);backdrop-filter:blur(12px);border-bottom:0.5px solid var(--border);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:19px;color:var(--text);text-decoration:none;}
+.nav-logo span{color:var(--red);}
+.nav-links{display:flex;align-items:center;gap:1rem;}
+.nav-links a{font-size:13px;color:var(--text-muted);text-decoration:none;}
+.wa-nav{background:var(--green);color:#fff!important;padding:8px 14px;border-radius:20px;font-weight:500;display:flex;align-items:center;gap:6px;}
+
+/* Page header */
+.page-header{background:var(--red);color:#fff;padding:2.5rem 1.5rem 2rem;}
+.page-header-inner{max-width:800px;margin:0 auto;}
+.page-emoji{font-size:40px;margin-bottom:.5rem;}
+.page-header h1{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,42px);font-weight:400;line-height:1.2;}
+.page-header p{font-size:15px;opacity:.85;margin-top:.5rem;}
+
+/* WhatsApp floating button */
+.wa-float{position:fixed;bottom:24px;right:20px;z-index:200;background:var(--green);color:#fff;border-radius:50px;padding:14px 20px;display:flex;align-items:center;gap:10px;text-decoration:none;font-size:15px;font-weight:600;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .15s,box-shadow .15s;}
+.wa-float:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(37,211,102,.5);}
+.wa-icon{width:26px;height:26px;flex-shrink:0;}
+
+/* Content */
+.content{max-width:800px;margin:0 auto;padding:2rem 1.5rem 6rem;}
+
+/* Section divider */
+.section-divider{margin:2.5rem 0 1.5rem;border-top:2px solid var(--red);padding-top:1.5rem;}
+.section-divider h2{font-family:'DM Serif Display',serif;font-size:24px;font-weight:400;color:var(--red);}
+
+/* Itinerary section */
+.itin-section h1{font-family:'DM Serif Display',serif;font-size:26px;font-weight:400;margin-bottom:.25rem;display:none;}
+.itin-section .subtitle{color:var(--text-muted);font-style:italic;margin-bottom:1rem;}
+.itin-section .route{background:#fff3f3;border-left:3px solid var(--red);padding:.6rem 1rem;border-radius:0 6px 6px 0;font-size:14px;color:var(--text-muted);margin-bottom:1.5rem;}
+
+/* Walking tour section */
+.walk-section h1{font-family:'DM Serif Display',serif;font-size:26px;font-weight:400;margin-bottom:.25rem;}
+.walk-section .subtitle{color:var(--text-muted);font-style:italic;margin-bottom:.75rem;}
+.walk-section .route{background:#f0f7ff;border-left:3px solid #3b82f6;padding:.6rem 1rem;border-radius:0 6px 6px 0;font-size:14px;color:var(--text-muted);margin-bottom:1.5rem;}
+.walk-section h2{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;margin:1.75rem 0 .6rem;color:var(--text);border-bottom:1px solid var(--border);padding-bottom:.4rem;}
+
+/* Tables */
+table{width:100%;border-collapse:collapse;margin:1rem 0 1.5rem;background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06);}
+th,td{padding:.7rem 1rem;border:0.5px solid var(--border);font-size:14px;vertical-align:top;}
+.table-header th{background:var(--red);color:#fff;font-weight:600;font-size:13px;letter-spacing:.03em;}
+tr.stop-row:nth-child(even){background:#fafaf8;}
+td.stop-time{width:110px;font-weight:600;color:var(--red);white-space:nowrap;font-size:13px;}
+td.stop-desc{line-height:1.65;}
+
+/* Paragraphs and lists */
+p{margin:.6rem 0;color:var(--text-muted);}
+li{margin:.3rem 0 .3rem 1.4rem;color:var(--text-muted);font-size:15px;}
+ul{margin:.5rem 0;}
+
+/* TIP rows */
+tr td:first-child strong{color:var(--red);}
+
+@media(max-width:600px){
+  td.stop-time{width:80px;font-size:12px;}
+  th,td{padding:.5rem .65rem;font-size:13px;}
+  .wa-float span{display:none;}
+  .wa-float{padding:14px;border-radius:50%;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Tokyo with <span>Terry</span></a>
+  <div class="nav-links">
+    <a href="index.html">← Home</a>
+    <a href="https://wa.me/819017468143?text=Hi%20Terry,%20I'm%20looking%20at%20the%20Food%20&%20Culture%20tour%20guide.%20" class="wa-nav">
+      <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Message Terry
+    </a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="page-emoji">🍜</div>
+    <h1>Food & Culture</h1>
+    <p>Your personal tour guide · Tokyo with Terry</p>
+  </div>
+</div>
+
+<div class="content">
+
+<div class="itin-section"><div class="section-divider"><h2>📋 Your Itinerary at a Glance</h2></div><p class="subtitle">Market mornings · Depachika afternoons · Standing bar evenings</p>
+
+<table>
+<tr class="table-header">
+<th><strong>Time</strong></th>
+<th><strong>Stop </strong><strong>&</strong><strong> Notes</strong></th>
+</tr>
+<tr class="table-header">
+<th><strong>9:00 AM</strong></th>
+<th><strong>Tsukiji Outer Market </strong>Start before the late-morning crowds. Fresh tamagoyaki, grilled scallops, and the city's best tuna onigiri from market stalls while the day is still quiet.</th>
+</tr>
+<tr class="table-header">
+<th><strong>10:30 AM</strong></th>
+<th><strong>Ameyoko Market — Ueno </strong>Head north to Ueno's Ameyoko for the chaotic, atmospheric street market energy. Dried goods, fresh produce, street snacks, and Tokyo's best dried seafood shops.</th>
+</tr>
+<tr class="table-header">
+<th><strong>12:00 PM</strong></th>
+<th><strong>Lunch — Ueno or Okachimachi </strong>A ramen counter or tonkatsu restaurant in the Ueno-Okachimachi area — workingman's food at workingman's prices, a world away from the food halls ahead.</th>
+</tr>
+<tr class="table-header">
+<th><strong>1:30 PM</strong></th>
+<th><strong>Nezu Shrine </strong>A short walk into the quiet backstreets of Yanaka-Nezu. One of Tokyo's most beautiful and rarely crowded shrines — a moment of calm before the afternoon's sensory overload.</th>
+</tr>
+<tr class="table-header">
+<th><strong>2:30 PM</strong></th>
+<th><strong>Depachika — Shibuya Tokyu Food Show </strong>Into the basement food hall at Shibuya Tokyu — one of the finest in Japan. Spend time understanding how the depachika system works: the perfectionism, the packaging, the theatre of Japanese food retail.</th>
+</tr>
+<tr class="table-header">
+<th><strong>4:00 PM</strong></th>
+<th><strong>Mark</strong><strong>'</strong><strong>s Tokyo — Craft Food </strong><strong>&</strong><strong> Drink </strong>Explore craft food and drink producers around Shibuya — small-batch makers, specialist sake shops, and the independent food culture alongside the department store world.</th>
+</tr>
+<tr class="table-header">
+<th><strong>5:30 PM</strong></th>
+<th><strong>Sake Bar KoKoN — Early Evening </strong>Settle in at KoKoN for a guided tasting of regional sake styles with small food pairings. The perfect bridge between the day's food exploration and the evening.</th>
+</tr>
+<tr class="table-header">
+<th><strong>7:00 PM</strong></th>
+<th><strong>Standing Bar — Shibuya Backstreets </strong>End the day in the narrow backstreets south of Shibuya station — the area around Nonbei Yokocho has some of the most atmospheric small bars in Tokyo.</th>
+</tr>
+</table>
+
+<p>Terry's Tokyo · Private Tours & Itineraries</p></div>
+
+<div class="walk-section">
+  <div class="section-divider"><h2>🗺️ Full Walking Tour Guide</h2></div>
+  <h1>TOKYO FOOD CULTURE</h1>
+
+<p><em>8-Hour Food <strong>&</strong> Market Tour Itinerary</em></p>
+
+<p class="route">Tsukiji  →  Ameyoko  →  Nezu Shrine  →  Depachika  →  Sake Bar KoKoN  →  Shibuya Backstreets</p>
+
+
+
+
+<h2>Tour Overview</h2>
+
+<p>This full-day food and market tour takes you through the layers of Tokyo’s extraordinary food culture — from the surviving stalls of the world’s most famous fish market to the hyper-refined basement food halls of the great department stores, from the chaotic energy of a working-class market street to the carefully curated world of specialist sake and craft food producers. By the end of the day you will have eaten and drunk your way through six of the most distinct food experiences Tokyo has to offer.</p>
+
+
+
+<h2>At a Glance</h2>
+
+<table>
+<tr class="table-header">
+<th><strong>Duration</strong></th>
+<th><strong>Distance</strong></th>
+<th><strong>Start</strong></th>
+<th><strong>Finish</strong></th>
+</tr>
+<tr>
+<td>8 Hours</td>
+<td>~9km across Tokyo</td>
+<td>Tsukiji</td>
+<td>Shibuya</td>
+</tr>
+</table>
+
+
+
+<h2>The Itinerary</h2>
+
+
+
+<table>
+<tr class="table-header">
+<th><strong>9:00 AM</strong></th>
+<th><strong>Stop 1 — Tsukiji Outer Market</strong></th>
+</tr>
+</table>
+
+
+
+<p>Begin at the Tsukiji Outer Market — the surviving street-level market that surrounds the site of the old inner wholesale market and remains one of the greatest food experiences in Tokyo. While the inner tuna auction moved to Toyosu in 2018, the outer market’s 400-odd stalls, shops and restaurants continue exactly as they have for decades: fishmongers, picklers, egg vendors, dashi makers, knife shops, and an extraordinary concentration of small restaurants serving some of the best and freshest food in the city.</p>
+
+<h2>What to eat at Tsukiji Outer Market:</h2>
+
+<li>Tamagoyaki — the thick, sweet rolled omelettes cooked fresh on rectangular pans; Tsukiji’s signature street food</li>
+
+<li>Tuna onigiri — the rice balls made with the morning’s off-cut tuna; significantly better than any convenience store version</li>
+
+<li>Grilled scallops — several stalls grill giant hotate scallops on the shell over charcoal from 9am</li>
+
+<li>Uni (sea urchin) — fresh from the tanks, eaten on a small piece of nori at the counter</li>
+
+<li>Katsuobushi — the shaved dried bonito flakes that form the base of Japanese dashi stock; the best producers are here</li>
+
+
+
+<table>
+<tr class="stop-row">
+<td class="stop-time"><strong>TIP</strong></td>
+<td class="stop-desc"><em>Arrive before 10am — the market’s best energy is in the early morning when the vendors are freshest and the cooking smells are strongest. The narrow lanes between the stalls are the most interesting: this is where the serious knife shops, the dashi specialists, and the lacquerware dealers are found.</em></td>
+</tr>
+</table>
+
+
+
+<table>
+<tr class="table-header">
+<th><strong>10:30 AM</strong></th>
+<th><strong>Stop 2 — Ameyoko Market, Ueno</strong></th>
+</tr>
+</table>
+
+
+
+<p>Take the subway north to Ueno and walk into Ameyoko — the long street market running under the JR elevated tracks between Ueno and Okachimachi stations. Ameyoko grew from the postwar black market that occupied this area when American military supplies — including candy, hence the name ‘ame-yoko’ (candy lane) — were sold informally alongside the tracks. Today it is a dense, chaotic, entirely genuine street market serving a working-class and immigrant community, a world away from the polished food halls you will visit later in the day.</p>
+
+<h2>What to find in Ameyoko:</h2>
+
+<li>Fresh fish and seafood — at prices that reflect the local customer base rather than tourist demand</li>
+
+<li>Dried goods and nuts — enormous sacks of dried shiitake, kombu, hijiki and mixed nuts at wholesale prices</li>
+
+<li>Pickles — dozens of varieties from the specialist pickle stalls under the tracks</li>
+
+<li>Korean and Chinese street food — the multicultural character of the neighbourhood is reflected in the food stalls</li>
+
+<li>Cheap clothing and sportswear — Ameyoko has always mixed food with cheap goods</li>
+
+
+
+<table>
+<tr class="stop-row">
+<td class="stop-time"><strong>TIP</strong></td>
+<td class="stop-desc"><em>The best part of Ameyoko is under the elevated railway tracks — the small izakayas, fish dealers, and pickle shops that line the narrow covered lane directly beneath the JR line. These have the most atmosphere and the lowest prices.</em></td>
+</tr>
+</table>
+
+
+
+<table>
+<tr class="table-header">
+<th><strong>12:00 PM</strong></th>
+<th><strong>Stop 3 — Lunch near Ueno</strong></th>
+</tr>
+</table>
+
+
+
+<p>Lunch in the streets around Ueno and Okachimachi — an area with an excellent selection of working-class Japanese restaurants that serve the neighbourhood rather than the tourists who visit Ueno Park and the museums above. Ramen, tonkatsu, curry rice, and teishoku (set meal) restaurants offer generous portions at prices that have barely changed in a decade.</p>
+
+
+
+<table>
+<tr class="stop-row">
+<td class="stop-time"><strong>TIP</strong></td>
+<td class="stop-desc"><em>The narrow streets east of Ameyoko — behind the market and away from the main road — have the best density of good-value lunch restaurants. Look for the handwritten daily specials boards outside the kitchen doors.</em></td>
+</tr>
+</table>
+
+
+
+<table>
+<tr class="table-header">
+<th><strong>1:30 PM</strong></th>
+<th><strong>Stop 4 — Nezu Shrine</strong></th>
+</tr>
+</table>
+
+
+
+<p>A short walk or taxi through the Yanaka backstreets brings you to Nezu Shrine — one of Tokyo’s most beautiful Shinto shrines and an essential pause in a day otherwise dominated by food and commerce. Founded in 1706 by the fifth Tokugawa shogun, Nezu Shrine sits in a hillside garden with a small but beautifully atmospheric tunnel of red torii gates winding up through a camellia grove. The main shrine buildings are preserved in their original Edo-period form — rare in a city that has burned and been rebuilt so many times.</p>
+
+
+
+<table>
+<tr class="stop-row">
+<td class="stop-time"><strong>TIP</strong></td>
+<td class="stop-desc"><em>The torii gate path at Nezu is shorter and more intimate than the famous version at Fushimi Inari in Kyoto, and rarely crowded. The shrine is free to enter and takes about 30 minutes to explore properly.</em></td>
+</tr>
+</table>
+
+
+
+<table>
+<tr class="table-header">
+<th><strong>2:30 PM</strong></th>
+<th><strong>Stop 5 — Depachika: Shibuya Tokyu Food Show</strong></th>
+</tr>
+</table>
+
+
+
+<p>Take the subway to Shibuya and descend into the basement of the Tokyu Department Store for the Food Show — one of the finest depachika (department store basement food halls) in Japan, and the best place in Tokyo to understand the extraordinary perfectionism that the Japanese bring to the production, presentation, and retailing of food. Spread across two basement floors, the Food Show brings together some of the most revered confectioners, bakers, deli counters, fruit sellers, and prepared food producers in the country.</p>
+
+<h2>What to explore in the Tokyu Food Show:</h2>
+
+<li>The confectionery floor — Japanese sweets from nationally renowned producers, packaged with extraordinary care</li>
+
+<li>The fruit section — Japanese premium fruit (perfectly formed Shine Muscat grapes, Yubari melons) priced to reflect the agricultural artistry involved</li>
+
+<li>The deli counters — prepared foods from specialist producers: the best katsu sandwiches, the finest chirashi sushi, prepared bento of extraordinary care</li>
+
+<li>The cheese and charcuterie section — European imports alongside Japanese-made versions; the quality is exceptional</li>
+
+<li>The sake and craft spirits aisle — a curated selection of regional producers rarely found in central Tokyo</li>
+
+
+
+<table>
+<tr class="stop-row">
+<td class="stop-time"><strong>TIP</strong></td>
+<td class="stop-desc"><em>The Food Show is a great place to buy gifts and food souvenirs to take home — the packaging is beautiful and the quality is reliable. Budget at least an hour to explore properly.</em></td>
+</tr>
+</table>
+
+
+
+<table>
+<tr class="table-header">
+<th><strong>4:00 PM</strong></th>
+<th><strong>Stop 6 — Mark’s Tokyo — Craft Producers</strong></th>
+</tr>
+</table>
+
+
+
+<p>Leave the department store and explore the craft food and drink scene that Terry has been tracking around the Shibuya and Daikanyama area — the small-batch sake producers’ retail outlets, the specialist tea merchants, the natural wine importers who work directly with Japanese natural wine producers, and the micro-roasters who source single-origin beans directly from farmers in Ethiopia, Colombia and Japan’s own Kagoshima.</p>
+
+
+
+<table>
+<tr class="stop-row">
+<td class="stop-time"><strong>TIP</strong></td>
+<td class="stop-desc"><em>This part of the day is the most flexible — Terry will take you to the producers and shops that are most relevant to your interests. If you’re more interested in sake than coffee, or more engaged by craft shochu than natural wine, the afternoon adjusts accordingly.</em></td>
+</tr>
+</table>
+
+
+
+<table>
+<tr class="table-header">
+<th><strong>5:30 PM</strong></th>
+<th><strong>Stop 7 — Sake Bar KoKoN</strong></th>
+</tr>
+</table>
+
+
+
+<p>Settle into KoKoN for the day’s essential sake experience — a guided tasting of regional sake styles from across Japan, paired with small seasonal food. KoKoN’s approach is educational without being academic: the bar works directly with small producers and their selection emphasises the extraordinary regional diversity of sake — the clean, dry styles of Niigata, the rich, fruity junmai daiginjo of Yamagata, the more complex, umami-rich kimoto styles of older breweries.</p>
+
+<h2>How the tasting works:</h2>
+
+<li>A flight of 4–6 sake from contrasting regions and brewing styles</li>
+
+<li>Each sake introduced with its brewery, region, and the rice and water that shaped it</li>
+
+<li>Paired with small seasonal dishes from KoKoN’s kitchen</li>
+
+<li>Time to ask questions and order more of anything you particularly like</li>
+
+
+
+<table>
+<tr class="stop-row">
+<td class="stop-time"><strong>TIP</strong></td>
+<td class="stop-desc"><em>If you’ve never been interested in sake before, KoKoN is the place to change that. If you’re already enthusiastic, the bar’s back catalogue of aged sake and rare regional producers will give you something genuinely new.</em></td>
+</tr>
+</table>
+
+
+
+<table>
+<tr class="table-header">
+<th><strong>7:00 PM</strong></th>
+<th><strong>Stop 8 — Shibuya Backstreet Bars</strong></th>
+</tr>
+</table>
+
+
+
+<p>End the day in the narrow backstreets south and west of Shibuya station — the area around Nonbei Yokocho (Drunkard’s Alley), Udagawacho, and the lanes behind the Bunkamura. This part of Shibuya is quieter, more local, and more atmospheric than the main shopping and entertainment district: tiny standing bars, wine bars in former machiya buildings, craft beer pubs with carefully curated tap lists, and a handful of excellent small restaurants serving creative Japanese food to a regular local clientele.</p>
+
+
+
+<table>
+<tr class="stop-row">
+<td class="stop-time"><strong>TIP</strong></td>
+<td class="stop-desc"><em>Nonbei Yokocho — the alleyway of small bars a few minutes from the south exit of Shibuya station — is one of the most atmospheric bar streets in the city. The bars are tiny (most seat 8–10 people maximum), which means the interaction with other customers and the bar owner is guaranteed.</em></td>
+</tr>
+</table>
+
+
+
+<h2>Practical Information</h2>
+
+<table>
+<tr class="stop-row">
+<td class="stop-time"><strong>Getting There</strong></td>
+<td class="stop-desc">Tsukiji is a 5-minute walk from Tsukiji-shijo Station on the Toei Oedo Line, or a 10-minute walk from Tsukiji Station on the Tokyo Metro Hibiya Line.</td>
+</tr>
+<tr class="stop-row">
+<td class="stop-time"><strong>IC Card</strong></td>
+<td class="stop-desc">Use your Suica or Pasmo IC card throughout — the tour crosses multiple subway and JR lines.</td>
+</tr>
+<tr class="stop-row">
+<td class="stop-time"><strong>Budget</strong></td>
+<td class="stop-desc">Allow ¥6,000–8,000 per person for the day including food tastings, the sake bar, transport between locations, and evening drinks.</td>
+</tr>
+<tr class="stop-row">
+<td class="stop-time"><strong>Best Season</strong></td>
+<td class="stop-desc">Any season — the food markets, depachika and sake bars are all year-round destinations. Tsukiji’s specialities change with the season: spring brings new bamboo shoots and sakura sea bream; autumn brings matsutake mushrooms and Pacific saury.</td>
+</tr>
+<tr>
+<td><strong>Dietary Notes</strong></td>
+<td>Most stops on this tour can accommodate dietary restrictions with advance notice — please inform Terry before the day so adjustments can be made where possible.</td>
+</tr>
+</table>
+
+
+
+
+</div>
+
+</div>
+
+<!-- Floating WhatsApp button -->
+<a href="https://wa.me/819017468143?text=Hi%20Terry,%20I'm%20looking%20at%20the%20Food%20&%20Culture%20tour%20guide.%20" class="wa-float" target="_blank">
+  <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span>Message Terry on WhatsApp</span>
+</a>
+
+<footer style="background:#f8f0e8;border-top:4px solid #de1c24;padding:2rem 1.5rem;font-size:13px;text-align:center;color:#7a6652;">
+  <strong style="color:#2d3748;">Tokyo with Terry</strong> · Private guided tours of Tokyo and beyond<br>
+  <a href="index.html" style="color:#a0522d;text-decoration:none;">← Back to main site</a>
+</footer>
+
+</body>
+</html>

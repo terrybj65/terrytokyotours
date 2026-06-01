@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Asakusa — Tokyo with Terry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{--red:#D00000;--red-dark:#B00000;--text:#1C2833;--text-muted:#5D6D7E;--border:rgba(0,0,0,0.1);--bg:#FAFAF8;--bg-card:#fff;--radius:12px;--radius-sm:8px;--green:#25D366;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.7;}
+nav{position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.95);backdrop-filter:blur(12px);border-bottom:0.5px solid var(--border);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:19px;color:var(--text);text-decoration:none;}
+.nav-logo span{color:var(--red);}
+.nav-links{display:flex;align-items:center;gap:1rem;}
+.nav-links a{font-size:13px;color:var(--text-muted);text-decoration:none;}
+.wa-nav{background:var(--green);color:#fff!important;padding:8px 14px;border-radius:20px;font-weight:500;display:flex;align-items:center;gap:6px;}
+
+/* Page header */
+.page-header{background:var(--red);color:#fff;padding:2.5rem 1.5rem 2rem;}
+.page-header-inner{max-width:800px;margin:0 auto;}
+.page-emoji{font-size:40px;margin-bottom:.5rem;}
+.page-header h1{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,42px);font-weight:400;line-height:1.2;}
+.page-header p{font-size:15px;opacity:.85;margin-top:.5rem;}
+
+/* WhatsApp floating button */
+.wa-float{position:fixed;bottom:24px;right:20px;z-index:200;background:var(--green);color:#fff;border-radius:50px;padding:14px 20px;display:flex;align-items:center;gap:10px;text-decoration:none;font-size:15px;font-weight:600;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .15s,box-shadow .15s;}
+.wa-float:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(37,211,102,.5);}
+.wa-icon{width:26px;height:26px;flex-shrink:0;}
+
+/* Content */
+.content{max-width:800px;margin:0 auto;padding:2rem 1.5rem 6rem;}
+
+/* Section divider */
+.section-divider{margin:2.5rem 0 1.5rem;border-top:2px solid var(--red);padding-top:1.5rem;}
+.section-divider h2{font-family:'DM Serif Display',serif;font-size:24px;font-weight:400;color:var(--red);}
+
+/* Itinerary section */
+.itin-section h1{font-family:'DM Serif Display',serif;font-size:26px;font-weight:400;margin-bottom:.25rem;display:none;}
+.itin-section .subtitle{color:var(--text-muted);font-style:italic;margin-bottom:1rem;}
+.itin-section .route{background:#fff3f3;border-left:3px solid var(--red);padding:.6rem 1rem;border-radius:0 6px 6px 0;font-size:14px;color:var(--text-muted);margin-bottom:1.5rem;}
+
+/* Walking tour section */
+.walk-section h1{font-family:'DM Serif Display',serif;font-size:26px;font-weight:400;margin-bottom:.25rem;}
+.walk-section .subtitle{color:var(--text-muted);font-style:italic;margin-bottom:.75rem;}
+.walk-section .route{background:#f0f7ff;border-left:3px solid #3b82f6;padding:.6rem 1rem;border-radius:0 6px 6px 0;font-size:14px;color:var(--text-muted);margin-bottom:1.5rem;}
+.walk-section h2{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;margin:1.75rem 0 .6rem;color:var(--text);border-bottom:1px solid var(--border);padding-bottom:.4rem;}
+
+/* Tables */
+table{width:100%;border-collapse:collapse;margin:1rem 0 1.5rem;background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06);}
+th,td{padding:.7rem 1rem;border:0.5px solid var(--border);font-size:14px;vertical-align:top;}
+.table-header th{background:var(--red);color:#fff;font-weight:600;font-size:13px;letter-spacing:.03em;}
+tr.stop-row:nth-child(even){background:#fafaf8;}
+td.stop-time{width:110px;font-weight:600;color:var(--red);white-space:nowrap;font-size:13px;}
+td.stop-desc{line-height:1.65;}
+
+/* Paragraphs and lists */
+p{margin:.6rem 0;color:var(--text-muted);}
+li{margin:.3rem 0 .3rem 1.4rem;color:var(--text-muted);font-size:15px;}
+ul{margin:.5rem 0;}
+
+/* TIP rows */
+tr td:first-child strong{color:var(--red);}
+
+@media(max-width:600px){
+  td.stop-time{width:80px;font-size:12px;}
+  th,td{padding:.5rem .65rem;font-size:13px;}
+  .wa-float span{display:none;}
+  .wa-float{padding:14px;border-radius:50%;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Tokyo with <span>Terry</span></a>
+  <div class="nav-links">
+    <a href="index.html">← Home</a>
+    <a href="https://wa.me/819017468143?text=Hi%20Terry,%20I'm%20looking%20at%20the%20Asakusa%20tour%20guide.%20" class="wa-nav">
+      <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Message Terry
+    </a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="page-emoji">🏯</div>
+    <h1>Asakusa</h1>
+    <p>Your personal tour guide · Tokyo with Terry</p>
+  </div>
+</div>
+
+<div class="content">
+
+<div class="itin-section"><div class="section-divider"><h2>📋 Your Itinerary at a Glance</h2></div><p class="subtitle">Morning temples · Afternoon craft streets · Evening izakayas</p>
+
+<table>
+<tr class="table-header">
+<th><strong>Time</strong></th>
+<th><strong>Stop </strong><strong>&</strong><strong> Notes</strong></th>
+</tr>
+<tr class="table-header">
+<th><strong>9:00 AM</strong></th>
+<th><strong>Senso-ji Temple </strong>Arrive early before the crowds. Walk the inner precinct, the Nakamise approach, and Asakusa Jinja shrine behind the main hall in relative quiet.</th>
+</tr>
+<tr class="table-header">
+<th><strong>10:00 AM</strong></th>
+<th><strong>Kaminarimon </strong><strong>&</strong><strong> Nakamise-dori </strong>The great gate at its most photogenic, then a slow walk up Nakamise browsing sembei, paper fans, ningyo dolls, and Edo-period sweets.</th>
+</tr>
+<tr class="table-header">
+<th><strong>11:00 AM</strong></th>
+<th><strong>Denpoin-dori </strong><strong>&</strong><strong> Kappabashi Craft Streets </strong>Duck off the tourist route into Denpoin-dori and the Kappabashi area — knife shops, lacquerware, and Tokyo's best kitchen-supply street.</th>
+</tr>
+<tr class="table-header">
+<th><strong>12:30 PM</strong></th>
+<th><strong>Lunch — Asakusa Ramen or Tempura </strong>Old-school ramen counters and tempura restaurants that have been feeding the neighbourhood since the Showa era. Avoid tourist-facing places on Nakamise.</th>
+</tr>
+<tr class="table-header">
+<th><strong>2:00 PM</strong></th>
+<th><strong>Sumida River </strong><strong>&</strong><strong> Waterbus </strong>Walk east to the Sumida riverbank. Take the Tokyo Waterbus south toward Hamarikyu or walk the riverside promenade with views back to the Sky Tree.</th>
+</tr>
+<tr class="table-header">
+<th><strong>3:30 PM</strong></th>
+<th><strong>Tokyo Sky Tree </strong>Take the Sky Tree from Oshiage station (one stop on the Tobu Line). The Tembo Deck at 350m gives the best panoramic view of the Kanto plain on clear afternoons.</th>
+</tr>
+<tr class="table-header">
+<th><strong>5:30 PM</strong></th>
+<th><strong>Return to Asakusa — Early Evening </strong>Back in Asakusa as the paper lanterns begin to glow. Senso-ji takes on a completely different atmosphere at dusk.</th>
+</tr>
+<tr class="table-header">
+<th><strong>6:30 PM</strong></th>
+<th><strong>Hoppy Street Izakayas </strong>Settle into one of the long-running standing izakayas on Hoppy Street for yakitori, oden, and cold Hoppy — the Asakusa working-class beer substitute that became a Tokyo institution.</th>
+</tr>
+</table>
+
+<p>Terry's Tokyo · Private Tours & Itineraries</p></div>
+
+<div class="walk-section">
+  <div class="section-divider"><h2>🗺️ Full Walking Tour Guide</h2></div>
+  <h1>ASAKUSA</h1>
+
+<p class="subtitle">8-Hour Walking Tour Itinerary</p>
+
+<p class="route">Senso-ji  →  Nakamise  →  Kappabashi  →  Sumida River  →  Tokyo Sky Tree  →  Hoppy Street</p>
+
+
+
+
+<h2>Tour Overview</h2>
+
+<p>This full-day tour takes you through the heart of Asakusa — Tokyo’s best-preserved shitamachi (old low city) district and the spiritual and cultural home of Edo-period Tokyo. You will begin at the magnificent Senso-ji temple complex in the early morning quiet, walk the famous Nakamise shopping approach, explore the remarkable Kappabashi kitchen district, take a waterbus along the Sumida River, visit the soaring Tokyo Sky Tree, and end the evening at the legendary izakayas of Hoppy Street.</p>
+
+
+
+<h2>At a Glance</h2>
+
+<table>
+<tr class="table-header">
+<th><strong>Duration</strong></th>
+<th><strong>Distance</strong></th>
+<th><strong>Start</strong></th>
+<th><strong>Finish</strong></th>
+</tr>
+<tr>
+<td>8 Hours</td>
+<td>~7km walking</td>
+<td>Asakusa Stn</td>
+<td>Hoppy Street</td>
+</tr>
+</table>
+
+
+
+<h2>The Itinerary</h2>
+
+
+
+<table>
+<tr class="table-header">
+<th><strong>9:00 AM</strong></th>
+<th><strong>Stop 1 — Senso-ji Temple </strong><strong>&</strong><strong> Asakusa Jinja</strong></th>
+</tr>
+</table>
+
+
+
+<p>Arrive at Asakusa station and walk immediately to Senso-ji — Tokyo’s oldest and most visited temple, founded according to legend in 628 AD when two fishermen netted a small golden image of Kannon from the Sumida River. The great Kaminarimon gate with its enormous red paper lantern is the iconic image of Asakusa and the gateway to the inner temple precinct. In the early morning before the tourist groups arrive, the incense smoke drifts across the courtyard and the sounds of sutras being chanted inside the main hall drift out across the stone steps.</p>
+
+<h2>Key highlights at Senso-ji:</h2>
+
+<li>Kaminarimon — the Thunder Gate, with its 100kg red lantern and the guardian deities Fujin and Raijin on either side</li>
+
+<li>Nakamise-dori — the 250-metre covered shopping approach lined with traditional goods, sweets and souvenirs</li>
+
+<li>The main Hondo hall — always open, always smoky with incense, always atmospheric regardless of the crowds</li>
+
+<li>Asakusa Jinja — the Shinto shrine immediately adjacent to the Buddhist temple, dedicated to the two fishermen of the founding legend</li>
+
+<li>Denpoin Garden — the rarely-seen traditional garden behind the temple complex, open on selected dates</li>
+
+
+
+<table>
+<tr class="stop-row">
+<td class="stop-time"><strong>TIP</strong></td>
+<td class="stop-desc"><em>Arrive before 9:30am on weekdays to experience the inner precinct before the tour groups descend. The five-storey pagoda, visible above the rooftops from several angles, is at its most photogenic in early morning light from the west side of the complex.</em></td>
+</tr>
+</table>
+
+
+
+<table>
+<tr class="table-header">
+<th><strong>10:00 AM</strong></th>
+<th><strong>Stop 2 — Nakamise-dori </strong><strong>&</strong><strong> Traditional Shopping</strong></th>
+</tr>
+</table>
+
+
+
+<p>Walk the full length of Nakamise-dori at a leisurely pace, then turn into the smaller side streets and covered arcades that branch off it. The main Nakamise street is the most famous shopping approach in Tokyo — over 90 shops in two parallel covered rows selling everything from rice crackers and ningyo dolls to folding fans, tenugui towels, and traditional sweets. The side streets offer a quieter and more authentic browsing experience with smaller craft shops and confectionary makers.</p>
+
+<h2>Things to look for:</h2>
+
+<li>Ningyo-yaki — small cakes moulded into temple shapes, baked fresh in front of you on iron grills</li>
+
+<li>Kaminari okoshi — the famous Asakusa puffed rice confection, sold from shops that have been here for generations</li>
+
+<li>Tenugui — the traditional Japanese cotton hand towels, printed with seasonal and traditional designs</li>
+
+<li>Hagoita — decorative wooden paddles, originally used for a New Year’s shuttlecock game, now sold year-round as ornaments</li>
+
+
+
+<table>
+<tr class="stop-row">
+<td class="stop-time"><strong>TIP</strong></td>
+<td class="stop-desc"><em>The smaller lanes running parallel to Nakamise — particularly the Shin-Nakamise arcade and the streets around Denpoin-dori — have better quality craft shops with more variety and fewer crowds than the main approach.</em></td>
+</tr>
+</table>
+
+
+
+<table>
+<tr class="table-header">
+<th><strong>11:00 AM</strong></th>
+<th><strong>Stop 3 — Kappabashi ‘Kitchen Town’</strong></th>
+</tr>
+</table>
+
+
+
+<p>A 10-minute walk north of Senso-ji brings you to Kappabashi-dori — Tokyo’s remarkable wholesale kitchen district, a 800-metre street lined with over 170 specialist shops selling everything needed to equip a professional Japanese kitchen. Kappabashi is a working trade street that has been supplying Tokyo’s restaurants and food businesses since the early 20th century, and remains one of the most fascinating and photogenic streets in the city even for visitors with no intention of buying anything.</p>
+
+<h2>What to explore in Kappabashi:</h2>
+
+<li>Japanese knives — several shops carry extraordinary collections of hand-forged kitchen knives, from everyday santoku to specialist sashimi blades</li>
+
+<li>Ceramic tableware — the plates, bowls and cups used in Japanese restaurants, often available at wholesale prices</li>
+
+<li>Food samples — the hyper-realistic plastic and wax food models (shokuhin sampuru) used in restaurant window displays</li>
+
+<li>Copper pots and laquerware — traditional Japanese cookware unavailable anywhere else at these prices</li>
+
+<li>Chef’s uniforms — the white jackets and striped trousers of the Japanese kitchen, surprisingly affordable</li>
+
+
+
+<table>
+<tr class="stop-row">
+<td class="stop-time"><strong>TIP</strong></td>
+<td class="stop-desc"><em>The giant chef’s head (Niimi Shoten building) at the southern end of Kappabashi is the landmark to look for. Most shops open by 10am and close around 5pm. The knife shops in particular are worth a long browse even without buying — the craftsmanship is extraordinary.</em></td>
+</tr>
+</table>
+
+
+
+<table>
+<tr class="table-header">
+<th><strong>12:30 PM</strong></th>
+<th><strong>Stop 4 — Lunch in Asakusa</strong></th>
+</tr>
+</table>
+
+
+
+<p>Return toward Asakusa for lunch in one of the neighbourhood’s excellent traditional restaurants. Asakusa has a particularly strong tradition of the kind of honest, unfussy Japanese cooking that the working-class shitamachi community has always favoured — tempura, soba, unagi (eel), and tonkatsu are the local specialities, and several restaurants in the area have been serving them from the same premises for 50 to 100 years.</p>
+
+<h2>Recommended lunch options:</h2>
+
+<li>Tempura — Asakusa’s most famous food; several long-established tempura restaurants near the temple serve set lunches at reasonable prices</li>
+
+<li>Soba — hand-cut buckwheat noodles, eaten hot or cold; Asakusa has excellent old-school soba restaurants away from the tourist strip</li>
+
+<li>Unagi — grilled freshwater eel on rice; an Edo-period speciality with deep roots in the shitamachi area</li>
+
+<li>Monjayaki — the older, runnier Tokyo version of okonomiyaki, cooked on a teppan griddle at the table</li>
+
+
+
+<table>
+<tr class="stop-row">
+<td class="stop-time"><strong>TIP</strong></td>
+<td class="stop-desc"><em>Avoid the restaurants immediately on and around Nakamise — they exist for the tourist trade. Walk three or four blocks east or north of the temple to find the restaurants that serve the neighbourhood.</em></td>
+</tr>
+</table>
+
+
+
+<table>
+<tr class="table-header">
+<th><strong>2:00 PM</strong></th>
+<th><strong>Stop 5 — Sumida River </strong><strong>&</strong><strong> Waterbus</strong></th>
+</tr>
+</table>
+
+
+
+<p>Walk east from Asakusa to the Sumida River and take the Tokyo Waterbus (Suijo Bus) southward toward Hamarikyu Garden. The Sumida River was the heart of Edo-period Tokyo — the great waterway along which goods, people and culture flowed through the city — and taking the waterbus today gives a completely different perspective on the city and its relationship with water. The journey passes under 12 bridges, each architecturally distinct, past the gardens and riverbanks that line the western shore.</p>
+
+<li>Tokyo Waterbus — runs between Asakusa and Hinode Pier via Hamarikyu, journey time approximately 40 minutes, ¥780</li>
+
+<li>Hamarikyu Garden — the beautiful tidal garden at the end of the waterbus route, a former shogunate hunting ground with a traditional tea house on an island in a tidal pond</li>
+
+<li>Sumida River Walk — the recently developed riverside promenade is excellent for a quiet walk with views back toward the Sky Tree</li>
+
+
+
+<table>
+<tr class="stop-row">
+<td class="stop-time"><strong>TIP</strong></td>
+<td class="stop-desc"><em>Book the waterbus ticket at the Asakusa pier before boarding. On weekends the boats fill quickly. The upper deck gives the best views but is exposed to wind — bring a layer in cooler months.</em></td>
+</tr>
+</table>
+
+
+
+<table>
+<tr class="table-header">
+<th><strong>3:30 PM</strong></th>
+<th><strong>Stop 6 — Tokyo Sky Tree</strong></th>
+</tr>
+</table>
+
+
+
+<p>Return from the waterbus to Oshiage station (one stop from Asakusa on the Tobu Line) and take the elevators to the Tokyo Sky Tree observation decks. At 634 metres, the Sky Tree is the tallest structure in Japan and the second tallest in the world, and the views from the Tembo Deck at 350 metres — or the Tembo Galleria at 450 metres — on a clear afternoon are extraordinary: the entire Kanto plain stretching to the horizon, Mount Fuji faintly visible to the southwest on clear days, and the dense urban grid of Tokyo spreading in every direction beneath you.</p>
+
+<li>Tembo Deck (350m) — the main observation floor, with glass-bottomed sections and 360-degree views; entry ¥2,100</li>
+
+<li>Tembo Galleria (450m) — the upper walkway with a spiralling glass tube ascending to the highest public point; additional ¥1,000</li>
+
+<li>Tower Village at the base — the shopping and restaurant complex beneath the tower is worth a quick browse for Sky Tree merchandise and the food options</li>
+
+
+
+<table>
+<tr class="stop-row">
+<td class="stop-time"><strong>TIP</strong></td>
+<td class="stop-desc"><em>Buy tickets online in advance to avoid the queues, particularly on weekends and public holidays. Late afternoon — around 4pm — is an excellent time to visit as the city transitions from afternoon light to the beginning of the evening illumination.</em></td>
+</tr>
+</table>
+
+
+
+<table>
+<tr class="table-header">
+<th><strong>5:30 PM</strong></th>
+<th><strong>Stop 7 — Return to Asakusa — Early Evening</strong></th>
+</tr>
+</table>
+
+
+
+<p>Return to Asakusa as the paper lanterns begin to glow and the temple takes on a completely different atmosphere in the evening light. The Senso-ji complex remains open into the evening and is extraordinarily atmospheric after dark — the incense smoke, the lantern light, the sounds of the neighbourhood settling into its evening rhythm. Take a final walk through the temple precincts before heading to the evening’s last stop.</p>
+
+
+
+<table>
+<tr class="stop-row">
+<td class="stop-time"><strong>TIP</strong></td>
+<td class="stop-desc"><em>The Nitenmon gate on the eastern side of the Senso-ji complex — slightly less visited than the main Kaminarimon — is beautiful in the evening light and gives access to the small Asakusa Jinja shrine garden.</em></td>
+</tr>
+</table>
+
+
+
+<table>
+<tr class="table-header">
+<th><strong>6:30 PM</strong></th>
+<th><strong>Stop 8 — Hoppy Street Izakayas</strong></th>
+</tr>
+</table>
+
+
+
+<p>End the day at Hoppy Street — the most atmospheric and historically resonant drinking street in Asakusa, named after the low-alcohol beer substitute that working-class Tokyoites drank during the postwar years when real beer was too expensive. The street is lined with long-running standing izakayas and sit-down bars that have been here for 50 to 70 years, serving yakitori, oden, grilled offal, and cold Hoppy to a lively mix of neighbourhood regulars and evening visitors.</p>
+
+<h2>How to drink on Hoppy Street:</h2>
+
+<li>Hoppy — order a set: a chilled mug of shochu (the ‘naka’, the inside) and a bottle of Hoppy (the ‘soto’, the outside) to mix at the table</li>
+
+<li>Yakitori — the charcoal grills fire up from around 5pm and the smell carries the full length of the street</li>
+
+<li>Oden — the slow-simmered winter hot pot; the best oden counters in Asakusa are on and around Hoppy Street</li>
+
+<li>Motsu — grilled beef offal, an Asakusa speciality that has been eaten here since the postwar black market era</li>
+
+
+
+<table>
+<tr class="stop-row">
+<td class="stop-time"><strong>TIP</strong></td>
+<td class="stop-desc"><em>Hoppy Street is best from around 6pm when the standing bars fill with the after-work crowd. The narrow street between the two rows of izakayas becomes a single, shared, outdoor drinking room — tables spill into the lane and the atmosphere builds through the evening.</em></td>
+</tr>
+</table>
+
+
+
+<h2>Practical Information</h2>
+
+<table>
+<tr class="stop-row">
+<td class="stop-time"><strong>Getting There</strong></td>
+<td class="stop-desc">Asakusa Station is served by the Tokyo Metro Ginza Line, Tobu Skytree Line, and Tsukuba Express. From Shinjuku: Metro Marunouchi Line to Akihabara, transfer to Tsukuba Express (~25 min). From Shibuya: Metro Ginza Line direct (~20 min).</td>
+</tr>
+<tr class="stop-row">
+<td class="stop-time"><strong>IC Card</strong></td>
+<td class="stop-desc">Use your Suica or Pasmo IC card throughout — all trains and buses in Tokyo accept it.</td>
+</tr>
+<tr class="stop-row">
+<td class="stop-time"><strong>Budget</strong></td>
+<td class="stop-desc">Allow ¥4,000–6,000 per person for the day including transport, lunch, Sky Tree entry, and evening drinks on Hoppy Street.</td>
+</tr>
+<tr class="stop-row">
+<td class="stop-time"><strong>Best Season</strong></td>
+<td class="stop-desc">March–April (cherry blossom along the Sumida River), May (Sanja Matsuri festival — the largest in Tokyo), and autumn (October–November) for clear skies and Mount Fuji views from the Sky Tree.</td>
+</tr>
+<tr class="stop-row">
+<td class="stop-time"><strong>Wear</strong></td>
+<td class="stop-desc">Comfortable walking shoes — the day covers approximately 7 kilometres on foot. The Senso-ji complex and Kappabashi involve some cobbled surfaces.</td>
+</tr>
+</table>
+
+
+
+
+</div>
+
+</div>
+
+<!-- Floating WhatsApp button -->
+<a href="https://wa.me/819017468143?text=Hi%20Terry,%20I'm%20looking%20at%20the%20Asakusa%20tour%20guide.%20" class="wa-float" target="_blank">
+  <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span>Message Terry on WhatsApp</span>
+</a>
+
+<footer style="background:#f8f0e8;border-top:4px solid #de1c24;padding:2rem 1.5rem;font-size:13px;text-align:center;color:#7a6652;">
+  <strong style="color:#2d3748;">Tokyo with Terry</strong> · Private guided tours of Tokyo and beyond<br>
+  <a href="index.html" style="color:#a0522d;text-decoration:none;">← Back to main site</a>
+</footer>
+
+</body>
+</html>
