@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" content="Private Food & Culture tour with Terry — Ramen, sushi, izakayas & street food — eat your way through Tokyo with a local."/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Private Food & Culture tour with Terry — Ramen, sushi, izakayas & street food — eat your way through Tokyo with a local."/>
+  
+  <!-- Open Graph / Meta -->
   <meta property="og:title" content="Food & Culture Tokyo — Tokyo with Terry"/>
   <meta property="og:description" content="Half-day private food and culture tour of Tokyo with Terry — ramen, sushi, izakayas and street food."/>
   <meta property="og:type" content="website"/>
@@ -15,175 +17,570 @@
   <meta name="twitter:description" content="Half-day private food and culture tour of Tokyo with Terry — ramen, sushi, izakayas and street food."/>
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=1200&q=85&fit=crop"/>
   <link rel="canonical" href="https://tokyowithterry.com/food-culture-tokyo.html"/>
-<title>Food & Culture — Tokyo Private Tours with Terry</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-:root{--red:#D00000;--red-dark:#B00000;--red-light:#FFE5E5;--text:#1C2833;--text-muted:#5D6D7E;--border:rgba(0,0,0,0.1);--bg:#FAFAF8;--bg-card:#ffffff;--bg-surface:#F4F3EF;--radius:12px;--radius-sm:8px;}
-html{scroll-behavior:smooth;}html,body{overflow-x:hidden;}img,video{max-width:100%;}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.6;}
-nav{position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;}
-.nav-logo{font-family:'DM Serif Display',serif;font-size:20px;color:var(--text);display:flex;align-items:center;gap:8px;text-decoration:none;}
-.nav-logo span{color:var(--red);}
-.nav-right{display:flex;align-items:center;gap:1.5rem;}
-.back-link{font-size:14px;color:var(--text-muted);text-decoration:none;transition:color .15s;}
-.back-link:hover{color:var(--text);}
-.book-btn{background:var(--red);color:#fff;padding:9px 20px;border-radius:var(--radius-sm);font-size:14px;font-family:'DM Sans',sans-serif;text-decoration:none;transition:background .15s;}
-.book-btn:hover{background:var(--red-dark);}
-.container{max-width:1100px;margin:0 auto;padding:0 2rem;}
-section{padding:5rem 0;}
-.section-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem;}
-.section-title{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,42px);font-weight:400;margin-bottom:.5rem;line-height:1.2;}
-.section-sub{font-size:16px;color:var(--text-muted);margin-bottom:2.5rem;max-width:560px;}
-/* Hero */
-.page-hero{position:relative;height:52vh;min-height:340px;overflow:hidden;}
-.page-hero img{width:100%;height:100%;object-fit:cover;display:block;}
-.page-hero-overlay{position:absolute;inset:0;background:transparent;display:flex;align-items:flex-end;}
-.page-hero-content{padding:2.5rem 2rem;max-width:1100px;margin:0 auto;width:100%;}
-.page-hero-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#f9a07a;margin-bottom:.5rem;}
-.page-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(32px,5vw,52px);color:#fff;font-weight:400;line-height:1.15;text-shadow:0 2px 12px rgba(0,0,0,.5);}
-.page-hero p{font-size:16px;color:rgba(255,255,255,.8);margin-top:.75rem;max-width:480px;text-shadow:0 1px 6px rgba(0,0,0,.5);}
-/* Content cards */
-.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
-.info-card{background:var(--bg-card);border:0.5px solid var(--border);border-radius:var(--radius);padding:1.75rem;}
-.info-card h3{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;margin-bottom:.75rem;}
-.info-card p,.info-card li{font-size:15px;color:var(--text-muted);line-height:1.8;}
-.info-card ul{padding-left:1.25rem;}
-.info-card li{margin-bottom:.35rem;}
-/* Highlights */
-.highlights{display:flex;gap:2rem;flex-wrap:wrap;margin-bottom:2.5rem;}
-.highlight{display:flex;align-items:flex-start;gap:12px;}
-.highlight-icon{font-size:24px;flex-shrink:0;}
-.highlight-text h4{font-size:15px;font-weight:600;margin-bottom:2px;}
-.highlight-text p{font-size:14px;color:var(--text-muted);}
-/* Meta strip */
-.meta-strip{display:flex;gap:2rem;flex-wrap:wrap;padding:1.5rem 0;border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);margin-bottom:2.5rem;}
-.meta-item{display:flex;flex-direction:column;gap:3px;}
-.meta-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);}
-.meta-value{font-size:15px;font-weight:500;color:var(--text);}
-/* CTA card */
-.cta-card{background:var(--red);border-radius:var(--radius);padding:2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-top:3rem;}
-.cta-card h3{font-family:'DM Serif Display',serif;font-size:26px;color:#fff;font-weight:400;}
-.cta-card p{font-size:15px;color:rgba(255,255,255,.8);margin-top:.35rem;}
-.cta-card a{background:#fff;color:var(--red);padding:12px 26px;border-radius:var(--radius-sm);font-size:15px;font-weight:500;text-decoration:none;white-space:nowrap;transition:opacity .15s;}
-.cta-card a:hover{opacity:.88;}
 
+  <title>Food & Culture — Tokyo Private Tours with Terry</title>
+  
+  <!-- Shared Premium Google Fonts Bundle -->
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+  
+  <style>
+    :root {
+      --ink: #14120e;
+      --paper: #f0ede6;
+      --moss: #1a4a6a;
+      --sage: #255a80;
+      --stone: #7a7468;
+      --gold: #b07820;
+      --border: rgba(20,18,14,0.12);
+      --red: #de1c24;
+      --radius: 12px;
+      --radius-sm: 8px;
+    }
 
-@media(max-width:700px){.info-grid{grid-template-columns:1fr;}.page-hero{height:42vh;}.nav-right .back-link{display:none;}}
-footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-size:13px;}
-.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
-.footer-logo{font-size:15px;font-weight:700;color:#2d3748;margin-bottom:4px;letter-spacing:0.02em;}
-.footer-desc{font-size:13px;color:#7a6652;margin-bottom:4px;}
-.footer-copy{font-size:12px;color:#a09080;}
-.footer-links{display:flex;gap:1.25rem;align-items:center;}
-.footer-links a{color:#a0522d;text-decoration:none;font-size:13px;transition:color .15s;}
-.footer-links a:hover{color:#de1c24;}
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ── PRICING BLOCK ── */
-.pricing-block{background:var(--bg-card);border:0.5px solid var(--border);border-radius:var(--radius);padding:2rem;margin:2rem 0;}
-.pricing-intro{font-size:15px;color:var(--text-muted);line-height:1.7;margin-bottom:1.25rem;}
-.pricing-section-title{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--red);font-weight:600;margin:1.25rem 0 .5rem;}
-.pricing-grid{margin:.5rem 0 1.25rem;}
-.pricing-row{display:flex;align-items:baseline;justify-content:space-between;padding:.65rem 0;border-bottom:0.5px solid var(--border);}
-.pricing-row:last-child{border-bottom:none;}
-.pricing-group{font-weight:600;font-size:15px;color:var(--text);}
-.pricing-amount{font-size:16px;color:var(--red);font-weight:600;text-align:right;}
-.pricing-amount span{font-size:13px;color:var(--text-muted);font-weight:400;}
-.pricing-amount em{font-size:13px;color:var(--text-muted);font-weight:400;font-style:normal;}
-.pricing-notes{margin-top:1.25rem;display:flex;flex-direction:column;gap:.5rem;border-top:0.5px solid var(--border);padding-top:1rem;}
-.pricing-notes p{font-size:14px;color:var(--text-muted);line-height:1.6;}
-.pricing-notes strong{color:var(--text);}
-</style>
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 4vw;
+    }
+
+    /* ── HERO SECTION ── */
+    .hero {
+      position: relative;
+      height: 70vh;
+      min-height: 480px;
+      overflow: hidden;
+    }
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.25);
+      display: flex;
+      align-items: center;
+    }
+    .hero-content {
+      width: 100%;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 4vw;
+    }
+    .hero-text-wrap {
+      max-width: 650px;
+    }
+    .hero-eyebrow {
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #f9a07a;
+      margin-bottom: 1rem;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
+    }
+    .hero h1 {
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(44px, 5vw, 64px);
+      color: #ffffff;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      font-weight: 800;
+      text-shadow: 1px 1px 8px rgba(0,0,0,0.8);
+    }
+    .hero p {
+      font-size: 18px;
+      color: #ffffff;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
+    }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--red);
+      color: #fff;
+      border: none;
+      padding: 13px 28px;
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s;
+      display: inline-block;
+      font-weight: 500;
+    }
+    .btn-primary:hover { background: #B00000; }
+    .btn-ghost {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.7);
+      padding: 13px 28px;
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s;
+      display: inline-block;
+    }
+
+    /* ── EDITORIAL INTRO ── */
+    .intro {
+      max-width: 900px;
+      margin: 5rem auto;
+      padding: 0 4vw;
+      text-align: center;
+    }
+    .intro-kicker {
+      display: inline-block;
+      font-size: 0.7rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--moss);
+      margin-bottom: 1.2rem;
+      font-weight: 500;
+    }
+    .intro p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: var(--stone);
+    }
+
+    /* ── METRIC STRIP ── */
+    .tod-bar {
+      max-width: 1300px;
+      margin: 0 auto 4.5rem;
+      padding: 0 4vw;
+    }
+    .tod-inner {
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(26,74,106,0.15);
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .tod-item {
+      flex: 1;
+      padding: 1.25rem 1.75rem;
+      border-right: 1px solid rgba(26,74,106,0.15);
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .tod-item:last-child { border-right: none; }
+    .tod-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--moss);
+    }
+    .tod-value {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.4;
+    }
+
+    /* ── SECTION SEPARATOR ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      max-width: 1300px;
+      margin: 0 auto 3rem;
+      padding: 0 4vw;
+      color: var(--sage);
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+    .divider::before, .divider::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+
+    /* ── HIGHLIGHT STOPS GRID ── */
+    .stops {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 4vw 2rem;
+    }
+    .stop {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3.5rem;
+      border-top: 1px solid var(--border);
+      padding: 4rem 0;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      align-items: center;
+    }
+    .stop.visible { opacity: 1; transform: translateY(0); }
+    .stop:nth-child(even) { direction: rtl; }
+    .stop:nth-child(even) > * { direction: ltr; }
+
+    .stop-img-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 16/11;
+      border-radius: 6px;
+    }
+    .stop-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .stop:hover .stop-img-wrap img { transform: scale(1.02); }
+
+    .stop-badge {
+      position: absolute;
+      bottom: 1.25rem; left: 1.25rem;
+      background: rgba(6,12,20,0.8);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.85);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.8rem;
+      backdrop-filter: blur(6px);
+    }
+    .stop-time {
+      position: absolute;
+      top: 1rem; left: 1rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      background: rgba(6,12,20,0.6);
+      padding: 0.2rem 0.6rem;
+      backdrop-filter: blur(4px);
+    }
+    .stop-num {
+      position: absolute;
+      top: 0.25rem; right: 1.25rem;
+      font-family: 'Shippori Mincho', serif;
+      font-size: 5rem; font-weight: 800;
+      color: rgba(255,255,255,0.12);
+      line-height: 1; pointer-events: none;
+    }
+
+    .stop-content {
+      padding: 0.5rem 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .stop-category {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--moss);
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+    .stop-title {
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(2rem, 2.4vw, 2.6rem);
+      font-weight: 600;
+      line-height: 1.25;
+      margin-bottom: 0.3rem;
+    }
+    .stop-jp {
+      font-size: 0.88rem;
+      color: var(--stone);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.06em;
+    }
+    .stop-desc {
+      font-size: 0.98rem;
+      line-height: 1.8;
+      color: #3e3a34;
+      margin-bottom: 1.5rem;
+    }
+    .stop-tip {
+      border-left: 3px solid var(--gold);
+      padding-left: 1.1rem;
+      font-size: 0.85rem;
+      color: var(--stone);
+      font-style: italic;
+      line-height: 1.65;
+    }
+
+    /* ── OVERVIEW BOXES ── */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      max-width: 1300px;
+      margin: 4.5rem auto;
+      padding: 0 4vw;
+    }
+    .info-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+    }
+    .info-card h3 {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      color: var(--ink);
+    }
+    .info-card ul { padding-left: 1.4rem; }
+    .info-card li, .info-card p {
+      font-size: 14px;
+      color: var(--stone);
+      line-height: 1.7;
+      margin-bottom: 0.65rem;
+    }
+
+    @media (max-width: 1024px) {
+      .stop { gap: 2rem; }
+    }
+
+    @media (max-width: 768px) {
+      .stop { grid-template-columns: 1fr; direction: ltr !important; gap: 1.5rem; padding: 2.5rem 0; }
+      .stop:nth-child(even) > * { direction: ltr; }
+      .tod-inner { flex-direction: column; }
+      .tod-item { border-right: none; border-bottom: 1px solid rgba(26,74,106,0.15); padding: 1.1rem; }
+      .tod-item:last-child { border-bottom: none; }
+      .info-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .info-card { padding: 2rem; }
+    }
+  </style>
 </head>
 <body>
-<nav>
-  <a class="nav-logo" href="index.html">Tokyo with <span>Terry</span></a>
-  <div class="nav-right">
-    <a class="back-link" href="index.html">&#8592; Home</a>
-    <a class="back-link" href="reservations.html">Reserve</a>
-    <a class="book-btn" href="availability.html">Check availability</a>
-  </div>
+
+<!-- UNIFIED STICKY NAVIGATION -->
+<nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(0,0,0,0.1);padding:0 4vw;display:flex;align-items:center;justify-content:space-between;height:65px;">
+  <div style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--ink);">Tokyo with <span style="color:var(--red);">Terry</span></div>
+  <ul style="display:flex;list-style:none;justify-content:center;align-items:center;gap:2.5rem;margin:0;padding:0;">
+    <li><a href="index.html#areas" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Areas</a></li>
+    <li><a href="index.html#tours" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Tours</a></li>
+    <li><a href="index.html#about" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">About</a></li>
+    <li><a href="index.html#contact" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Contact</a></li>
+  </ul>
+  <a href="availability.html" style="background:var(--red);color:#fff;border:none;padding:10px 22px;border-radius:var(--radius-sm);font-size:14px;cursor:pointer;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:500;">Book a tour</a>
 </nav>
 
-<div class="page-hero">
-  <img src="https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=1200&q=85&fit=crop" alt="Food & Culture"/>
-  <div class="page-hero-overlay">
-    <div class="page-hero-content container">
-      <div class="page-hero-label">Half Day Tour</div>
-      <h1>Food & Culture</h1>
-      <p>Ramen, sushi, izakayas & street food — eat your way through Tokyo with a local.</p>
-    </div>
-  </div>
-</div>
-
-<section>
-  <div class="container">
-    <div class="meta-strip">
-      <div class="meta-item"><div class="meta-label">Duration</div><div class="meta-value">Half day (~4 hrs)</div></div>
-      
-      <div class="meta-item"><div class="meta-label">Group size</div><div class="meta-value">Solo & small groups</div></div>
-      <div class="meta-item"><div class="meta-label">Languages</div><div class="meta-value">English & Japanese</div></div>
-    </div>
-
-    <div class="section-label">About this tour</div>
-    <div class="section-title">Food & Culture</div>
-    <p style="font-size:16px;color:var(--text-muted);line-height:1.9;max-width:680px;margin-bottom:3rem;">Japanese food culture runs far deeper than sushi and ramen. This tour is for people who want to eat like a local — navigating standing ramen bars, trying seasonal street food, sitting at an izakaya counter with a cold beer while Terry orders in Japanese. Food is the best way into a culture, and Terry knows exactly where to take you.</p>
-
-    <div class="section-label">What you'll see</div>
-    <div class="section-title" style="font-size:28px;">Tour highlights</div>
-    <div class="highlights" style="margin-top:1.5rem;"><div class="highlight">
-      <div class="highlight-icon">🍜</div>
-      <div class="highlight-text"><h4>Ramen shop deep dive</h4><p>How to read the menu, what to order, the etiquette</p></div>
-    </div><div class="highlight">
-      <div class="highlight-icon">🍣</div>
-      <div class="highlight-text"><h4>Sushi counter experience</h4><p>A neighbourhood sushiya — not a tourist conveyor belt</p></div>
-    </div><div class="highlight">
-      <div class="highlight-icon">🍢</div>
-      <div class="highlight-text"><h4>Izakaya evening stop</h4><p>Japan's pub culture explained from the inside</p></div>
-    </div><div class="highlight">
-      <div class="highlight-icon">🥟</div>
-      <div class="highlight-text"><h4>Street food exploration</h4><p>Takoyaki, yakitori, tamagoyaki and more</p></div>
-    </div><div class="highlight">
-      <div class="highlight-icon">🍵</div>
-      <div class="highlight-text"><h4>Green tea & wagashi</h4><p>A moment of calm with traditional sweets</p></div>
-    </div></div>
-
-    <div class="info-grid" style="margin-top:2rem;">
-      <div class="info-card">
-        <h3>What's included</h3>
-        <ul><li>All food recommendations & guidance</li><li>Terry ordering in Japanese</li><li>Cultural context at every stop</li><li>Flexible to your tastes — tell Terry any dietary needs</li></ul>
-      </div>
-      <div class="info-card">
-        <h3>Good to know</h3>
-        <p>Come hungry. Seriously.</p>
-        <p style="margin-top:1rem;">All tours are private — just you (and your group) with Terry. No strangers, no shared buses, no rushing.</p>
-        <p style="margin-top:1rem;">Terry speaks fluent English and Japanese, which opens doors that most tourists never get through.</p>
+<!-- HERO BLOCK -->
+<section class="hero">
+  <img src="https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=1600&q=85&fit=crop" alt="Tokyo Izakaya and Food Alley" />
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <div class="hero-text-wrap">
+        <div class="hero-eyebrow">🍱 Culinary Traditions · Local Flavors</div>
+        <h1>Food & Culture</h1>
+        <p>Ramen, sushi, izakayas & street food — eat your way through Tokyo with a local.</p>
+        <div class="hero-btns">
+          <a href="#highlights-start" class="btn-primary">Explore highlights ↓</a>
+          <a href="availability.html" class="btn-ghost">Check availability</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="container"><div class="cta-card">
-  <div><h3>Ready to book Food & Culture?</h3><p>Check Terry's availability and send a booking request — it only takes a minute.</p></div>
-  <a href="availability.html">View availability &amp; book &#8594;</a>
-</div></div>
-<div style="padding-bottom:2rem;"></div>
+<!-- EDITORIAL INTRO -->
+<div class="intro">
+  <div class="intro-kicker">Generational Recipes · Counter Dining · Inside Etiquette</div>
+  <p>Japanese food culture runs far deeper than sushi and ramen. This tour is for people who want to eat like a local — navigating standing ramen bars, trying seasonal street food, sitting at an izakaya counter with a cold beer while Terry orders in Japanese. Food is the best way into a culture, and Terry knows exactly where to take you.</p>
+</div>
 
-<footer>
-  <div class="footer-inner">
-    <div class="footer-left">
-      <div class="footer-logo">食文化 · Food & Culture</div>
-      <div class="footer-desc">A half-day guided experience · From ¥12,000 per person</div>
-      <div class="footer-copy">© 2026 Tokyo with Terry · Japan</div>
+<!-- METRICS STRIP -->
+<div class="tod-bar">
+  <div class="tod-inner">
+    <div class="tod-item">
+      <span class="tod-label">Duration</span>
+      <span class="tod-value">Half day (~4 hours)</span>
     </div>
-    <div class="footer-links">
-      <a href="index.html">&#8592; Home</a>
-      <a href="availability.html">Availability</a>
-      <a href="reservations.html">Reserve</a>
+    <div class="tod-item">
+      <span class="tod-label">Group Size</span>
+      <span class="tod-value">Solo & Small Private Groups Only</span>
+    </div>
+    <div class="tod-item">
+      <span class="tod-label">Languages</span>
+      <span class="tod-value">English & Fluent Japanese</span>
+    </div>
+  </div>
+</div>
+
+<div class="divider" id="highlights-start">Our Path · A Culinary Journey</div>
+
+<!-- STOPS GRID -->
+<div class="stops">
+
+  <!-- Stop 1 -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Stop 01</div>
+      <div class="stop-num">01</div>
+      <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=1000&q=80&fit=crop" alt="Ramen Master Preparations" loading="lazy"/>
+      <div class="stop-badge">Local Masterclass</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Artisanal Noodles · Standing Bars</div>
+      <h2 class="stop-title">Ramen Shop Deep Dive</h2>
+      <div class="stop-jp">ラーメン</div>
+      <p class="stop-desc">Demystify Tokyo's fast-paced ramen subculture. Terry maps out how to read complex ticket machines, identify regional broth foundations, and observe traditional counter etiquette seamlessly.</p>
+      <div class="stop-tip">💡 Learn custom order profiles, subtle ingredient additions, and the cultural rules of the perfect broth slurp.</div>
+    </div>
+  </div>
+
+  <!-- Stop 2 -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Stop 02</div>
+      <div class="stop-num">02</div>
+      <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=1000&q=80&fit=crop" alt="Authentic Tokyo Sushi Counter Chef" loading="lazy"/>
+      <div class="stop-badge">Generational Skills</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Neighborhood Sushiya · Seasonal Catch</div>
+      <h2 class="stop-title">Sushi Counter Experience</h2>
+      <div class="stop-jp">鮨・寿司</div>
+      <p class="stop-desc">Bypass the loud commercial conveyor belts and tourist traps. Pull up a stool at a hidden neighborhood gem where master chefs mold fish sourced directly from morning market selections.</p>
+      <div class="stop-tip">💡 Enjoy pristine configurations served in proper traditional sequences that standard travel guides overlook.</div>
+    </div>
+  </div>
+
+  <!-- Stop 3 -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Stop 03</div>
+      <div class="stop-num">03</div>
+      <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&q=80&fit=crop" alt="Cozy Japanese Izakaya Pub Interior" loading="lazy"/>
+      <div class="stop-badge">Nightlife Culture</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Lantern Alleys · Shared Small Plates</div>
+      <h2 class="stop-title">Izakaya Evening Stop</h2>
+      <div class="stop-jp">居酒屋</div>
+      <p class="stop-desc">Conclude by entering the classic smoke-tinged underbelly of Tokyo's neighborhood pubs. Sit at lively wooden counters while Terry introduces seasonal sharing plates and explains historic social customs.</p>
+      <div class="stop-tip">💡 Experience a warm evening atmosphere while Terry navigates complex chalkboards and unlisted specials.</div>
+    </div>
+  </div>
+
+  <!-- Stop 4 -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Stop 04</div>
+      <div class="stop-num">04</div>
+      <img src="https://images.unsplash.com/photo-1582450871972-ab5ca641643d?w=1000&q=80&fit=crop" alt="Fresh Takoyaki Japanese Street Food" loading="lazy"/>
+      <div class="stop-badge">Market Bites</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Everyday Grills · Historic Pastries</div>
+      <h2 class="stop-title">Street Food Exploration</h2>
+      <div class="stop-jp">食べ歩き</div>
+      <p class="stop-desc">Sample a continuous rotation of piping-hot street provisions on the move. Sample savory takoyaki, grilled yakitori skewers, custom tamagoyaki eggs, and sweet delicacies handcrafted by neighborhood institutions.</p>
+      <div class="stop-tip">💡 This route prioritizes independent family stalls that have anchoring roots inside the community.</div>
+    </div>
+  </div>
+
+  <!-- Stop 5 -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Stop 05</div>
+      <div class="stop-num">05</div>
+      <img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=1000&q=80&fit=crop" alt="Traditional Matcha Green Tea and Japanese Wagashi Sweets" loading="lazy"/>
+      <div class="stop-badge">Mindful Finish</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Zen Aesthetics · Tea Ceremonial Arts</div>
+      <h2 class="stop-title">Green Tea & Wagashi</h2>
+      <div class="stop-jp">抹茶と和菓子</div>
+      <p class="stop-desc">Balance the bold, savory neighborhood flavors with a deliberate moment of complete calm. Savor premium stone-ground matcha prepared beside seasonal wagashi sweets designed to mirror current environmental changes.</p>
+      <div class="stop-tip">💡 Discover the foundational concepts of flavor balance that ground modern Japanese dining architecture.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- DETAILS BLOCKS -->
+<div class="info-grid">
+  <div class="info-card">
+    <h3>What's Included</h3>
+    <ul>
+      <li>All personalized food recommendations & micro-district navigation</li>
+      <li>Terry ordering custom selections in fluent Japanese at every stall</li>
+      <li>Deep historical and cultural context surrounding food production</li>
+      <li>Completely flexible pairings tailored directly to your personal dietary needs</li>
+    </ul>
+  </div>
+  <div class="info-card">
+    <h3>Good to Know</h3>
+    <p>Come hungry. Seriously. We will be sampling continuously throughout the walk.</p>
+    <p style="margin-top: 1rem;">All tours are strictly private — just your personal group with Terry. No strangers, no rushing schedules, no megaphone tour groups.</p>
+    <p style="margin-top: 1rem;">Terry speaks fluent English and Japanese, seamlessly unlocking local interactions that remain inaccessible to solo travelers.</p>
+  </div>
+</div>
+
+<!-- PRICING, CTA AND FOOTER -->
+<div style="width: 100%; background: #f9f6f0; border-top: 1px solid rgba(0,0,0,0.08); box-sizing: border-box;">
+  <div style="max-width: 1300px; margin: 0 auto; padding: 2.5rem 4vw; text-align: center; box-sizing: border-box;">
+    <p style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: #8a7040; margin: 0 0 0.5rem 0; font-family: 'DM Sans', sans-serif;">Half day · per person</p>
+    <p style="font-family: 'Shippori Mincho', serif; font-size: 2.5rem; font-weight: 800; color: #1C2833; margin: 0 0 0.5rem 0;">From ¥12,000</p>
+    <p style="font-size: 0.85rem; color: #7a7468; margin: 0 0 1.5rem 0; font-family: 'DM Sans', sans-serif;">Price varies by group size · Food purchases and transport costs are paid on location</p>
+    <a href="availability.html" style="display: inline-block; background: #de1c24; color: #fff; padding: 12px 28px; border-radius: 8px; font-size: 0.9rem; text-decoration: none; letter-spacing: 0.05em; font-family: 'DM Sans', sans-serif; font-weight: 500;">Book this tour</a>
+  </div>
+</div>
+
+<div style="width: 100%; background: transparent; box-sizing: border-box;">
+  <div style="max-width: 1300px; margin: 4rem auto 0; padding: 0 4vw; box-sizing: border-box;">
+    <div style="background: #de1c24; border-radius: 12px; padding: 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; box-sizing: border-box; text-align: left;">
+      <div style="flex: 2; min-width: 300px; box-sizing: border-box;">
+        <h3 style="font-family: 'DM Serif Display', serif; font-size: 28px; color: #ffffff; font-weight: 400; margin: 0; padding: 0; line-height: 1.2;">Ready to book Food & Culture?</h3>
+        <p style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: rgba(255, 255, 255, 0.8); margin: 0.5rem 0 0 0; padding: 0; font-weight: 300; line-height: 1.4;">Check Terry's availability and send a booking request — it only takes a minute.</p>
+      </div>
+      <div style="flex: 1; text-align: right; min-width: 200px; box-sizing: border-box;">
+        <a href="availability.html" style="background: #ffffff; color: #de1c24; padding: 13px 26px; border-radius: 8px; font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap; transition: opacity 0.15s; display: inline-block; font-family: 'DM Sans', sans-serif; box-sizing: border-box;">View availability &amp; book &#8594;</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="padding-bottom: 4rem;"></div>
+
+<footer style="background: #f8f0e8; border-top: 4px solid #de1c24; padding: 2.5rem 4vw; font-family: 'DM Sans', sans-serif; box-sizing: border-box; width: 100%;">
+  <div style="max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; box-sizing: border-box;">
+    <div style="text-align: left; box-sizing: border-box;">
+      <div style="font-size: 15px; font-weight: 700; color: #2d3748; margin-bottom: 4px; letter-spacing: 0.02em;">食文化 · Food & Culture</div>
+      <div style="font-size: 13px; color: #7a6652; margin-bottom: 4px;">A half-day guided experience · From ¥12,000 per person</div>
+      <div style="font-size: 12px; color: #a09080;">© 2026 Tokyo with Terry · Japan</div>
+    </div>
+    <div style="display: flex; gap: 1.5rem; align-items: center; box-sizing: border-box;">
+      <a href="index.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">&#8592; Home</a>
+      <a href="availability.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">Availability</a>
+      <a href="reservations.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">Reserve</a>
     </div>
   </div>
 </footer>
+
+<!-- VIEWPORT ANIMATION CONTROLLER -->
+<script>
+  const stops = document.querySelectorAll('.stop');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  stops.forEach(s => observer.observe(s));
+</script>
+
 </body>
 </html>
