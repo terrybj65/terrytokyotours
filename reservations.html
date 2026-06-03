@@ -128,7 +128,15 @@ nav{position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.94);backdrop
 
 /* STICKY SIDEBAR */
 .sidebar{position:sticky;top:80px;}
-.info-list{list-style:none;display:flex;flex-direction:column;gap:.85rem;margin-top:.25rem;}
+CSS
+.info-list {
+  list-style: disc; /* Adds the bullet point */
+  padding-left: 1.2rem; /* Indents them nicely */
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+  margin-top: .25rem;
+}
 .info-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text-muted);}
 .info-list li span:first-child{font-size:18px;flex-shrink:0;margin-top:1px;}
 
@@ -628,3 +636,5 @@ window.onload = function() {
   document.getElementById('guests').onchange = updateCalc;
 };
 </script>
+</body>
+</html>

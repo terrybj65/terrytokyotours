@@ -70,7 +70,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop
 .tcal-adminbar.on{display:flex;}
 .tcal-adminbar button{font-size:12px;padding:4px 12px;border-radius:6px;border:1px solid #ffe082;background:#fff;cursor:pointer;color:#795548;}
 .tcal-pinbar{display:none;align-items:center;gap:8px;background:var(--bg-surface);border-radius:10px;padding:10px 14px;margin-bottom:1.25rem;}
-.tcal-pinbar.on{display:flex;}
+.tcal-pinbar.on{display:flex !important;}
 .tcal-pinbar input{flex:1;padding:8px 12px;border-radius:8px;border:1px solid var(--border);font-size:14px;outline:none;}
 .tcal-pinbar button{padding:8px 16px;border-radius:8px;border:none;background:var(--red);color:#fff;font-size:13px;cursor:pointer;}
 .tcal-pinerr{font-size:12px;color:var(--red);margin-top:4px;display:none;}
@@ -115,38 +115,28 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
 <section class="tcal-section" id="availability">
   <div class="container">
     <div class="section-label">Availability</div>
-    <div class="section-title">Check &amp; book a date</div>
-    <div class="section-sub">Click any date to see Terry's availability and send a booking request.</div>
-
-    <!-- Exposed the pinbar by adding 'on' to class list so users can locate it -->
-    <div class="tcal-pinbar on" id="tcPinBar">
-      <input type="password" id="tcPinInput" placeholder="Admin PIN" maxlength="12">
-      <button onclick="TC.pin()">Unlock</button>
+	<div class="tcal-adminbar" id="tcAdminBar">
+      <span>Logged in as Admin</span>
+      <button onclick="TC.lock()">Lock Panels</button>
+    </div>  
+    <div class="tcal-bar">
+      <div class="tcal-month" id="tcMonthLabel">Month Year</div>
+      <div class="tcal-nav">
+        <button class="tcal-navbtn" onclick="TC.nav(-1)">&#8592;</button>
+        <button class="tcal-navbtn" onclick="TC.nav(1)">&#8594;</button>
+      </div>
     </div>
-    <div class="tcal-pinerr" id="tcPinErr">Incorrect PIN — try again.</div>
 
+   <div class="tcal-pinbar" id="tcPinBar">
+  <input type="password" id="tcPinInput" placeholder="Admin PIN">
+  <button onclick="TC.pin()">Unlock</button>
+  <div class="tcal-pinerr" id="tcPinErr" style="display:none; color:red;">Invalid PIN</div>
+</div>
     <div class="tcal-wrap">
-      <div class="tcal-adminbar" id="tcAdminBar">
-        <span>🔓 Admin mode — click any date to set availability</span>
-        <button onclick="TC.lock()">Lock &amp; exit</button>
-      </div>
-      <div class="tcal-bar">
-        <div class="tcal-month" id="tcMonthLabel"></div>
-        <div style="display:flex;gap:6px;">
-          <button class="tcal-navbtn" onclick="TC.nav(-1)">&#8592;</button>
-          <button class="tcal-navbtn" onclick="TC.nav(1)">&#8594;</button>
-        </div>
-      </div>
       <div class="tcal-dow">
         <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
       </div>
       <div class="tcal-grid" id="tcGrid"></div>
-      <div class="tcal-legend">
-        <div class="tleg"><div class="tleg-d" style="background:#4caf50"></div>Available</div>
-        <div class="tleg"><div class="tleg-d" style="background:#e53935"></div>Busy</div>
-        <div class="tleg"><div class="tleg-d" style="background:#BC002D;border-radius:2px;"></div>Holiday</div>
-        <div class="tleg"><div class="tleg-d" style="background:transparent;border:2px solid #999;"></div>Today</div>
-      </div>
     </div>
   </div>
 </section>
@@ -186,15 +176,12 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
   ];
   var PIN='1994';
   
-  // Dynamic persistent storage key mapping
   var D = JSON.parse(localStorage.getItem('terry_availability_slots')) || {};
-  
   var today = new Date();
   var currentYear = today.getFullYear();
   var currentMonth = today.getMonth();
   var isAdminMode = false;
 
-  // Basic map of recurring Japanese public holidays for display contexts
   var JP_HOLIDAYS = {
     '1-1':'New Year','1-2':'Holiday','1-3':'Holiday','2-11':'Nat. Found','2-23':'Emperor BD',
     '4-29':'Showa Day','5-3':'Const. Day','5-4':'Greenery','5-5':'Children','11-3':'Culture',
@@ -208,8 +195,9 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
   function renderCalendarGrid() {
     var grid = document.getElementById('tcGrid');
     var label = document.getElementById('tcMonthLabel');
-    grid.innerHTML = '';
+    if(!grid || !label) return;
     
+    grid.innerHTML = '';
     label.innerText = MONTHS[currentMonth] + ' ' + currentYear;
 
     var firstDayIdx = new Date(currentYear, currentMonth, 1).getDay();
@@ -217,7 +205,6 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
     var daysInPrevMonth = new Date(currentYear, currentMonth, 0).getDate();
     var todayKey = getFormatKey(today.getFullYear(), today.getMonth(), today.getDate());
 
-    // 1. Structural padding cells from the trailing month
     for (var i = firstDayIdx - 1; i >= 0; i--) {
       var d = daysInPrevMonth - i;
       var cell = document.createElement('div');
@@ -226,15 +213,11 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
       grid.appendChild(cell);
     }
 
-    // 2. Main active calendar days loop
     for (var d = 1; d <= daysInMonth; d++) {
       var cell = document.createElement('div');
       var dateKey = getFormatKey(currentYear, currentMonth, d);
       
-      // Default each layout array slot to free ('f') if uninitialized
-      if (!D[dateKey]) {
-        D[dateKey] = { full: 'f', morning: 'f', afternoon: 'f', evening: 'f' };
-      }
+      if (!D[dateKey]) { D[dateKey] = { full: 'f', morning: 'f', afternoon: 'f', evening: 'f' }; }
 
       var dayOfWeek = new Date(currentYear, currentMonth, d).getDay();
       var checkPast = new Date(currentYear, currentMonth, d).setHours(0,0,0,0) < new Date().setHours(0,0,0,0);
@@ -245,30 +228,20 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
       if (dayOfWeek === 6) dynamicClasses.push('sat');
       if (dateKey === todayKey) dynamicClasses.push('istoday');
       if (publicHoliday) dynamicClasses.push('ishol');
-      
-      if (checkPast) {
-        dynamicClasses.push('past');
-        if (!isAdminMode) dynamicClasses = dynamicClasses.filter(function(cls) { return cls !== 'clickable'; });
-      }
+      if (checkPast && !isAdminMode) dynamicClasses.push('past');
 
       cell.className = dynamicClasses.join(' ');
-
       var cellInner = '<span class="tcn">' + d + '</span>';
-      if (publicHoliday) {
-        cellInner += '<span class="tchn">' + publicHoliday + '</span>';
-      }
+      if (publicHoliday) { cellInner += '<span class="tchn">' + publicHoliday + '</span>'; }
 
-      // Appending Claude's signature dot pip indicators
       cellInner += '<div class="tcpips">';
-      SLOTS.forEach(function(slotObj) {
-        var status = D[dateKey][slotObj.id] || 'f';
+      SLOTS.forEach(function(s) {
+        var status = D[dateKey][s.id] || 'f';
         cellInner += '<div class="pip ' + status + '"></div>';
       });
       cellInner += '</div>';
-      
       cell.innerHTML = cellInner;
 
-      // Scoping closure references inside loop cycles
       (function(boundKey, boundTitle, isDayPast){
         cell.onclick = function() {
           if (isDayPast && !isAdminMode) return;
@@ -279,7 +252,6 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
       grid.appendChild(cell);
     }
 
-    // 3. Structural padding cells for a perfectly squared grid row alignment
     var accumulatedCells = firstDayIdx + daysInMonth;
     var finalPaddingCells = (7 - (accumulatedCells % 7)) % 7;
     for (var i = 1; i <= finalPaddingCells; i++) {
@@ -293,13 +265,8 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
   window.TC = {
     nav: function(dir) {
       currentMonth += dir;
-      if (currentMonth > 11) {
-        currentMonth = 0;
-        currentYear++;
-      } else if (currentMonth < 0) {
-        currentMonth = 11;
-        currentYear--;
-      }
+      if (currentMonth > 11) { currentMonth = 0; currentYear++; } 
+      else if (currentMonth < 0) { currentMonth = 11; currentYear--; }
       renderCalendarGrid();
     },
 
@@ -321,7 +288,6 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
     lock: function() {
       isAdminMode = false;
       document.getElementById('tcAdminBar').classList.remove('on');
-      document.getElementById('tcPinBar').classList.add('on');
       renderCalendarGrid();
     },
 
@@ -329,7 +295,6 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
       document.getElementById('tcMTitle').innerText = displayTitle;
       var containerBody = document.getElementById('tcMBody');
       containerBody.innerHTML = '';
-
       var interactiveGrid = document.createElement('div');
       interactiveGrid.className = 'tcal-slots';
 
@@ -338,15 +303,13 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
         var slotCard = document.createElement('div');
         slotCard.className = 'tslot ' + currentStatus;
 
-        var cardTemplate = '<span class="tslot-name">' + slotObj.i + ' ' + slotObj.n + '</span>' +
-                           '<span class="tslot-time">' + slotObj.t + '</span>';
+        var cardContent = '<span class="tslot-name">' + slotObj.i + ' ' + slotObj.n + '</span>' +
+                          '<span class="tslot-time">' + slotObj.t + '</span>';
 
-        if (isAdminMode) 
-
-         slotCard.querySelector('button').onclick = function() {
-          D[key][slotObj.id] = (currentStatus === 'f') ? 'b' : 'f';
-        // ...
-
+        if (isAdminMode) {
+          var btnLabel = (currentStatus === 'f') ? 'Mark Busy' : 'Make Free';
+          cardContent += '<button class="tslot-btn admin-toggle">' + btnLabel + '</button>';
+          slotCard.innerHTML = cardContent;
           slotCard.querySelector('button').onclick = function() {
             D[key][slotObj.id] = (currentStatus === 'f') ? 'b' : 'f';
             localStorage.setItem('terry_availability_slots', JSON.stringify(D));
@@ -355,24 +318,27 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
           };
         } else {
           if (currentStatus === 'f') {
-            cardTemplate += '<a href="reservations.html?date=' + encodeURIComponent(key) + '&slot=' + encodeURIComponent(slotObj.id) + '" class="tslot-btn book">Book Slot</a>';
+            cardContent += '<a href="reservations.html?date=' + encodeURIComponent(key) + '&slot=' + encodeURIComponent(slotObj.id) + '" class="tslot-btn book">Book Slot</a>';
           } else {
-            cardTemplate += '<span class="tslot-btn" style="background:#ccc; color:#777; cursor:not-allowed;">Booked Out</span>';
+            cardContent += '<span class="tslot-btn" style="background:#ccc; color:#777; cursor:not-allowed;">Booked Out</span>';
           }
-          slotCard.innerHTML = cardTemplate;
+          slotCard.innerHTML = cardContent;
         }
-
         interactiveGrid.appendChild(slotCard);
       });
-
       containerBody.appendChild(interactiveGrid);
       document.getElementById('tcOverlay').classList.add('on');
     },
 
-    close: function() {
-      document.getElementById('tcOverlay').classList.remove('on');
-    }
+    close: function() { document.getElementById('tcOverlay').classList.remove('on'); }
   };
+
+  // Secret Key Trigger: Press 'L' to show/hide the PIN bar
+  document.addEventListener('keydown', function(e) {
+    if (e.key.toLowerCase() === 'l') {
+      document.getElementById('tcPinBar').classList.toggle('on');
+    }
+  });
 
   renderCalendarGrid();
 }();
