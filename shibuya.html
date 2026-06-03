@@ -34,25 +34,80 @@
     }
 
     /* ── HERO ── */
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    .hero h1 {
+    .hero {
       position: relative;
+      height: 90vh;
+      min-height: 560px;
+      overflow: hidden;
+    }
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+    }
+    .hero-content {
+      max-width: 560px;
+      padding: 0 2rem;
+      background: none;
+    }
+    .hero-eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #f9a07a;
+      margin-bottom: 1rem;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
+    }
+    .hero h1 {
       font-family: 'Shippori Mincho', serif;
-      font-size: clamp(3.5rem, 9vw, 7rem);
+      font-size: clamp(40px, 6vw, 64px);
+      color: #ffffff;
+      line-height: 1.1;
+      margin-bottom: 1rem;
       font-weight: 800;
+      text-shadow: 1px 1px 8px rgba(0,0,0,0.9), 0 0 30px rgba(0,0,0,0.8);
+    }
+    .hero p {
+      font-size: 17px;
+      color: #ffffff;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 420px;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
+    }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary {
+      background: #D00000;
       color: #fff;
-      line-height: 0.88;
-      margin-bottom: 0.6rem;
+      border: none;
+      padding: 13px 26px;
+      border-radius: 8px;
+      font-size: 15px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: #B00000; }
+    .btn-ghost {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.6);
+      padding: 13px 26px;
+      border-radius: 8px;
+      font-size: 15px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s;
+      display: inline-block;
     }
 
     /* ── INTRO ── */
@@ -298,7 +353,110 @@
     .stop-map:hover { opacity: 0.65; }
 
     /* ── FOOTER ── */
-    
+    footer { background: #f8f0e8; border-top: 4px solid #de1c24; padding: 2.5rem 2rem; font-size: 13px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-logo { font-size: 15px; font-weight: 700; color: #2d3748; margin-bottom: 4px; letter-spacing: 0.02em; }
+    .footer-desc { font-size: 13px; color: #7a6652; margin-bottom: 4px; }
+    .footer-copy { font-size: 12px; color: #a09080; }
+    .footer-links { display: flex; gap: 1.25rem; align-items: center; }
+    .footer-links a { color: #a0522d; text-decoration: none; font-size: 13px; transition: color .15s; }
+    .footer-links a:hover { color: #de1c24; }
+
+    /* ── CALENDAR BLOCK ── */
+    .tcal-container {
+      max-width: 900px;
+      margin: 0 auto 5rem;
+      padding: 0 6vw;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .tcal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    .tcal-month-title {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .tcal-nav-btn {
+      background: none;
+      border: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-size: 0.85rem;
+      color: var(--stone);
+      transition: all 0.2s;
+    }
+    .tcal-nav-btn:hover {
+      background: var(--moss);
+      color: #fff;
+      border-color: var(--moss);
+    }
+    .tcal-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 8px;
+    }
+    .tcal-day-name {
+      text-align: center;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--stone);
+      padding-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    .tcal-cell {
+      background: rgba(26,74,106,0.03);
+      border: 1px solid var(--border);
+      aspect-ratio: 1;
+      padding: 6px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    .tcal-cell.empty {
+      background: none;
+      border: none;
+    }
+    .tcal-date-num {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--stone);
+    }
+    .tcal-cell.today .tcal-date-num {
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .tcal-slots {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      margin-top: 4px;
+    }
+    .tcal-slot-pill {
+      font-size: 0.65rem;
+      padding: 2px 4px;
+      border-radius: 3px;
+      background: #e2e8f0;
+      color: #4a5568;
+      cursor: pointer;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .tcal-slot-pill.booked {
+      background: #fed7d7;
+      color: #c53030;
+      text-decoration: line-through;
+    }
+    .tcal-admin-active .tcal-slot-pill {
+      border: 1px dashed var(--gold);
+    }
 
     @media (max-width: 700px) {
       .stop { grid-template-columns: 1fr; direction: ltr !important; }
@@ -309,108 +467,7 @@
       .tod-item:last-child { border-bottom: none; }
       .section-nav-inner { flex-direction: column; align-items: flex-start; }
     }
-  
-  /* ── HERO ── */
-  .hero {
-    position: relative;
-    height: 90vh;
-    min-height: 560px;
-    overflow: hidden;
-  }
-  .hero img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: none;
-    display: flex;
-    align-items: center;
-  }
-  .hero-content {
-    max-width: 560px;
-    padding: 0 2rem;
-    background: none;
-  }
-  .hero-eyebrow {
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #f9a07a;
-    margin-bottom: 1rem;
-    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
-  }
-  .hero h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(40px, 6vw, 64px);
-    color: #ffffff;
-    line-height: 1.1;
-    margin-bottom: 1rem;
-    font-weight: 400;
-    text-shadow: 1px 1px 8px rgba(0,0,0,0.9), 0 0 30px rgba(0,0,0,0.8);
-  }
-  .hero p {
-    font-size: 17px;
-    color: #ffffff;
-    line-height: 1.7;
-    margin-bottom: 2rem;
-    max-width: 420px;
-    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
-  }
-  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
-  .btn-primary {
-    background: #D00000;
-    color: #fff;
-    border: none;
-    padding: 13px 26px;
-    border-radius: 8px;
-    font-size: 15px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.15s;
-    display: inline-block;
-  }
-  .btn-primary:hover { background: #B00000; }
-  .btn-ghost {
-    background:transparent;
-    color: #fff;
-    border: 1px solid rgba(255,255,255,0.6);
-    padding: 13px 26px;
-    border-radius: 8px;
-    font-size: 15px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.15s;
-    display: inline-block;
-  }
-  .btn-ghost:hover { background:transparent; }
-footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-size:13px;}
-.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
-.footer-logo{font-size:15px;font-weight:700;color:#2d3748;margin-bottom:4px;letter-spacing:0.02em;}
-.footer-desc{font-size:13px;color:#7a6652;margin-bottom:4px;}
-.footer-copy{font-size:12px;color:#a09080;}
-.footer-links{display:flex;gap:1.25rem;align-items:center;}
-.footer-links a{color:#a0522d;text-decoration:none;font-size:13px;transition:color .15s;}
-.footer-links a:hover{color:#de1c24;}
-
-/* ── PRICING BLOCK ── */
-.pricing-block{background:var(--bg-card);border:0.5px solid var(--border);border-radius:var(--radius);padding:2rem;margin:2rem 0;}
-.pricing-intro{font-size:15px;color:var(--text-muted);line-height:1.7;margin-bottom:1.25rem;}
-.pricing-section-title{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--red);font-weight:600;margin:1.25rem 0 .5rem;}
-.pricing-grid{margin:.5rem 0 1.25rem;}
-.pricing-row{display:flex;align-items:baseline;justify-content:space-between;padding:.65rem 0;border-bottom:0.5px solid var(--border);}
-.pricing-row:last-child{border-bottom:none;}
-.pricing-group{font-weight:600;font-size:15px;color:var(--text);}
-.pricing-amount{font-size:16px;color:var(--red);font-weight:600;text-align:right;}
-.pricing-amount span{font-size:13px;color:var(--text-muted);font-weight:400;}
-.pricing-amount em{font-size:13px;color:var(--text-muted);font-weight:400;font-style:normal;}
-.pricing-notes{margin-top:1.25rem;display:flex;flex-direction:column;gap:.5rem;border-top:0.5px solid var(--border);padding-top:1rem;}
-.pricing-notes p{font-size:14px;color:var(--text-muted);line-height:1.6;}
-.pricing-notes strong{color:var(--text);}
-</style>
+  </style>
 </head>
 <body>
 
@@ -427,14 +484,14 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
 
 <!-- HERO -->
 <section class="hero">
-  <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=1400&q=80&fit=crop" alt="shibuya" />
+  <img src="shibuya.jpg" alt="Shibuya Scramble Crossing Crowds" />
   <div class="hero-overlay">
     <div class="hero-content">
       <div class="hero-eyebrow">📍 Shibuya, Tokyo · Modern Tokyo</div>
       <h1>Shibuya</h1>
       <p>The famous crossing, teen culture & everything beyond.</p>
       <div class="hero-btns">
-        <a href="#stop1" class="btn-primary">Explore stops ↓</a>
+        <a href="#daikanyama" class="btn-primary">Explore stops ↓</a>
         <a href="index.html#contact" class="btn-ghost">Book a tour</a>
       </div>
     </div>
@@ -444,7 +501,7 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
 <!-- ADMIN CONTROLS -->
 <div class="tcal-adminbar" id="tcAdminBar" style="display:none; align-items:center; justify-content:space-between; padding:12px 6vw; background:#fff8e1; border-bottom:1px solid #ffe082; font-size:13px; color:#795548;">
   <span>Logged in as Admin</span>
-  <button onclick="TC.lock()" style="font-size:12px; padding:4px 12px; border-radius:6px; border:1px solid #ffe082; background:#fff; cursor:pointer; color:#7955brown;">Lock Panels</button>
+  <button onclick="TC.lock()" style="font-size:12px; padding:4px 12px; border-radius:6px; border:1px solid #ffe082; background:#fff; cursor:pointer; color:#795548;">Lock Panels</button>
 </div>
 
 <div class="tcal-pinbar" id="tcPinBar" style="display:none; align-items:center; gap:12px; background:rgba(26,74,106,0.06); border:1px solid rgba(26,74,106,0.18); padding:12px 6vw;">
@@ -452,6 +509,7 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
   <button onclick="TC.pin()" style="padding:8px 16px; border-radius:6px; border:none; background:var(--moss); color:#fff; font-size:13px; cursor:pointer;">Unlock</button>
   <div class="tcal-pinerr" id="tcPinErr" style="display:none; color:#D00000; font-size:12px; margin-left:12px;">Invalid PIN</div>
 </div>	
+
 <!-- INTRO -->
 <div class="intro">
   <div class="intro-kicker">Daikanyama · Harajuku · Nakameguro · Shibuya</div>
@@ -480,7 +538,7 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
   </div>
 </div>
 
-<!-- NAV -->
+<!-- JUMP NAV PILLS -->
 <div class="section-nav">
   <div class="section-nav-inner">
     <span class="nav-label">Jump to</span>
@@ -495,8 +553,23 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
   </div>
 </div>
 
+<!-- CALENDAR SECTION -->
+<div class="tcal-container">
+  <div class="tcal-header">
+    <h3 class="tcal-month-title" id="tcalMonthTitle">Loading Month...</h3>
+    <div style="display: flex; gap: 8px;">
+      <button class="tcal-nav-btn" onclick="renderPrev()">← Prev</button>
+      <button class="tcal-nav-btn" onclick="renderNext()">Next →</button>
+    </div>
+  </div>
+  <div class="tcal-grid" id="tcalGrid">
+    <!-- filled dynamically by javascript -->
+  </div>
+</div>
+
 <div class="divider">One District · A Full Day & Night</div>
 
+<!-- STOPS LIST -->
 <div class="stops">
 
   <!-- 1. Daikanyama -->
@@ -583,8 +656,6 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
     </div>
   </div>
 
-
-
   <!-- 5. The Scramble Crossing -->
   <div class="stop" id="scramble">
     <div class="stop-img-wrap">
@@ -625,9 +696,9 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
         <a class="stop-map" href="https://maps.google.com/?q=Shibuya+Hikarie+Tokyo" target="_blank">→ Google Maps</a>
       </div>
     </div>
-  </div></div>
+  </div>
 
-<!-- FOOTER -->
+</div>
 
 <!-- PRICING -->
 <div style="background:#f9f6f0; border-top:1px solid rgba(0,0,0,0.08); padding:2.5rem 6vw; text-align:center;">
@@ -636,6 +707,8 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
   <p style="font-size:0.85rem; color:#7a7468; margin-bottom:1.5rem;">Price varies by group size · Transport not included</p>
   <a href="index.html#contact" style="display:inline-block; background:#D00000; color:#fff; padding:12px 28px; border-radius:8px; font-size:0.9rem; text-decoration:none; letter-spacing:0.05em;">Book this tour</a>
 </div>
+
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-left">
@@ -651,6 +724,7 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
   </div>
 </footer>
 
+<!-- SCRIPTS -->
 <script>
   const stops = document.querySelectorAll('.stop');
   const observer = new IntersectionObserver((entries) => {
@@ -667,16 +741,21 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
 <script>
 !function(){
   var MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var DAYS=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
   var SLOTS=[
-    {id:'full', n:'Full Day', t:'All day', i:'🗾'},
-    {id:'morning', n:'Morning', t:'8am – 12pm', i:'🌅'},
-    {id:'afternoon', n:'Afternoon', t:'12pm – 5pm', i:'☀️'},
-    {id:'evening', n:'Evening', t:'5pm – 9pm', i:'🌆'}
+    {id:'full', n:'Full Day', i:'🗾'},
+    {id:'morning', n:'Morning', i:'🌅'},
+    {id:'afternoon', n:'Afternoon', i:'☀️'},
+    {id:'evening', n:'Evening', i:'🌆'}
   ];
   var PIN='1994';
   
   var D = JSON.parse(localStorage.getItem('terry_availability_slots')) || {};
   var isAdminMode = false;
+  
+  var currentLocalDate = new Date();
+  var currYear = currentLocalDate.getFullYear();
+  var currMonth = currentLocalDate.getMonth();
 
   window.TC = {
     pin: function() {
@@ -687,7 +766,9 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
         errLabel.style.display = 'none';
         document.getElementById('tcPinBar').style.display = 'none';
         document.getElementById('tcAdminBar').style.display = 'flex';
+        document.querySelector('.tcal-container').classList.add('tcal-admin-active');
         passInput.value = '';
+        renderCalendar();
       } else {
         errLabel.style.display = 'block';
       }
@@ -695,8 +776,89 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
     lock: function() {
       isAdminMode = false;
       document.getElementById('tcAdminBar').style.display = 'none';
+      document.querySelector('.tcal-container').classList.remove('tcal-admin-active');
+      renderCalendar();
+    },
+    toggleSlot: function(dateKey, slotId) {
+      if (!isAdminMode) return;
+      if (!D[dateKey]) D[dateKey] = {};
+      D[dateKey][slotId] = !D[dateKey][slotId];
+      localStorage.setItem('terry_availability_slots', JSON.stringify(D));
+      renderCalendar();
     }
   };
+
+  window.renderNext = function() {
+    currMonth++;
+    if(currMonth > 11) { currMonth = 0; currYear++; }
+    renderCalendar();
+  };
+
+  window.renderPrev = function() {
+    currMonth--;
+    if(currMonth < 0) { currMonth = 11; currYear--; }
+    renderCalendar();
+  };
+
+  function renderCalendar() {
+    var container = document.getElementById('tcalGrid');
+    var title = document.getElementById('tcalMonthTitle');
+    if (!container) return;
+    
+    container.innerHTML = '';
+    title.innerText = MONTHS[currMonth] + ' ' + currYear;
+
+    DAYS.forEach(function(d){
+      var div = document.createElement('div');
+      div.className = 'tcal-day-name';
+      div.innerText = d;
+      container.appendChild(div);
+    });
+
+    var firstDay = new Date(currYear, currMonth, 1).getDay();
+    var numDays = new Date(currYear, currMonth + 1, 0).getDate();
+
+    for (var i = 0; i < firstDay; i++) {
+      var empty = document.createElement('div');
+      empty.className = 'tcal-cell empty';
+      container.appendChild(empty);
+    }
+
+    var today = new Date();
+    for (var day = 1; day <= numDays; day++) {
+      var cell = document.createElement('div');
+      cell.className = 'tcal-cell';
+      if(day === today.getDate() && currMonth === today.getMonth() && currYear === today.getFullYear()) {
+        cell.classList.add('today');
+      }
+
+      var numSpan = document.createElement('span');
+      numSpan.className = 'tcal-date-num';
+      numSpan.innerText = day;
+      cell.appendChild(numSpan);
+
+      var mStr = ('0' + (currMonth + 1)).slice(-2);
+      var dStr = ('0' + day).slice(-2);
+      var dateKey = currYear + '-' + mStr + '-' + dStr;
+
+      var slotsDiv = document.createElement('div');
+      slotsDiv.className = 'tcal-slots';
+
+      SLOTS.forEach(function(s){
+        var isBooked = D[dateKey] && D[dateKey][s.id];
+        if (!isAdminMode && isBooked) return;
+
+        var pill = document.createElement('div');
+        pill.className = 'tcal-slot-pill' + (isBooked ? ' booked' : '');
+        pill.innerText = s.i + ' ' + s.n;
+        pill.setAttribute('onclick', 'TC.toggleSlot("' + dateKey + '", "' + s.id + '")');
+        slotsDiv.appendChild(pill);
+      });
+
+      cell.appendChild(slotsDiv);
+      container.appendChild(cell);
+    }
+  }
 
   document.addEventListener('keydown', function(e) {
     if (e.key.toLowerCase() === 'l') {
@@ -708,6 +870,8 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
       }
     }
   });
+
+  renderCalendar();
 }();
 </script>
 
