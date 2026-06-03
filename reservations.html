@@ -527,97 +527,104 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
 </footer>
 
 <script>
-// ── FORM SUBMIT ──────────────────────────────────────────────────────────────
+// 1. Auto-Fill Form from URL Parameters
+function autoFillFromURL() {
+  var params = new URLSearchParams(window.location.search);
+  var dateParam = params.get('date'); // Expects YYYY-MM-DD
+  var slotParam = params.get('slot'); // Expects 'full', 'morning', 'afternoon', 'evening'
+
+  if (dateParam) {
+    document.getElementById('tour-date').value = dateParam;
+  }
+
+  if (slotParam) {
+    var slotSelect = document.getElementById('slot');
+    // Map internal IDs to form option values
+    if (slotParam === 'full') slotSelect.value = 'Full Day (all day)';
+    if (slotParam === 'morning') slotSelect.value = 'Morning (8am – 12pm)';
+    if (slotParam === 'afternoon') slotSelect.value = 'Afternoon (12pm – 5pm)';
+    if (slotParam === 'evening') slotSelect.value = 'Evening (5pm – 9pm)';
+  }
+}
+
+// 2. Interactive Refund Calculator Logic
+function updateCalc() {
+  var slider = document.getElementById('days-slider');
+  var days = parseInt(slider.value, 10);
+  
+  // Dynamic labels
+  document.getElementById('days-label').innerText = days;
+  
+  // Read current tour selection to estimate price base
+  var tourSelect = document.getElementById('tour').value;
+  var pricePerPerson = 15000; // Default fallback
+  if (tourSelect.indexOf('12,000') !== -1) {
+    pricePerPerson = 12000;
+  }
+  
+  var guestsSelect = document.getElementById('guests').value || "1";
+  var guestCount = parseInt(guestsSelect, 10);
+  
+  var totalCost = pricePerPerson * guestCount;
+  
+  // Calculate refund percentages based on policy thresholds
+  var refundPercent = 0;
+  var labelText = "No refund (0–2 days notice)";
+  
+  if (days >= 30) {
+    refundPercent = 1.00;
+    labelText = "Full refund (30+ days notice)";
+  } else if (days >= 14) {
+    refundPercent = 0.75;
+    labelText = "75% refund (14–29 days notice)";
+  } else if (days >= 7) {
+    refundPercent = 0.50;
+    labelText = "50% refund (7–13 days notice)";
+  } else if (days >= 3) {
+    refundPercent = 0.25;
+    labelText = "25% refund (3–6 days notice)";
+  }
+  
+  var refundAmount = Math.floor(totalCost * refundPercent);
+  
+  // Update UI display
+  document.getElementById('calc-price-label').innerText = "¥" + pricePerPerson.toLocaleString();
+  document.getElementById('calc-guests-label').innerText = guestCount;
+  document.getElementById('calc-refund').innerText = "¥" + refundAmount.toLocaleString();
+  document.getElementById('calc-lbl').innerText = labelText;
+}
+
+// 3. Form Submission Handling
 function submitBooking() {
-  var fname    = document.getElementById('fname').value.trim();
-  var lname    = document.getElementById('lname').value.trim();
-  var email    = document.getElementById('email').value.trim();
-  var tour     = document.getElementById('tour').value;
-  var date     = document.getElementById('tour-date').value;
-  var guests   = document.getElementById('guests').value;
-  var slot     = document.getElementById('slot').value;
-  var requests = document.getElementById('requests').value.trim();
+  // Check required validation variables manually
+  var fname = document.getElementById('fname').value.trim();
+  var lname = document.getElementById('lname').value.trim();
+  var email = document.getElementById('email').value.trim();
+  var tour = document.getElementById('tour').value;
+  var date = document.getElementById('tour-date').value;
+  var guests = document.getElementById('guests').value;
+  var slot = document.getElementById('slot').value;
 
   if (!fname || !lname || !email || !tour || !date || !guests || !slot) {
-    alert('Please fill in all required fields before submitting.');
-    return;
-  }
-  var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRe.test(email)) {
-    alert('Please enter a valid email address.');
+    alert('Please fill in all required fields marked with an asterisk (*).');
     return;
   }
 
-  // Build mailto with all details
-  var subject = encodeURIComponent('Tour booking request: ' + tour + ' on ' + date);
-  var body = encodeURIComponent(
-    'BOOKING REQUEST\n'
-    + '══════════════════════════════\n'
-    + 'Name:      ' + fname + ' ' + lname + '\n'
-    + 'Email:     ' + email + '\n'
-    + 'Tour:      ' + tour + '\n'
-    + 'Date:      ' + date + '\n'
-    + 'Guests:    ' + guests + '\n'
-    + 'Slot:      ' + slot + '\n'
-    + (requests ? 'Requests:  ' + requests + '\n' : '')
-    + '══════════════════════════════\n'
-    + 'Customer confirms they have read and agree to the cancellation & refund policy.'
-  );
-
-  window.location.href = 'mailto:terrybj65@msn.com?subject=' + subject + '&body=' + body;
-
-  // Show success state
-  setTimeout(function() {
-    document.getElementById('the-form').style.display = 'none';
-    document.getElementById('success-msg').style.display = 'block';
-  }, 800);
+  // Hide form view container and reveal success message state
+  document.getElementById('the-form').style.display = 'none';
+  document.getElementById('success-msg').style.display = 'block';
+  
+  // Smoothly scroll user view back up to the confirmation screen frame
+  document.getElementById('booking-form-card').scrollIntoView({ behavior: 'smooth' });
 }
 
-// ── REFUND CALCULATOR ────────────────────────────────────────────────────────
-var PRICES = {
-  'Tokyo Highlights — Full Day (¥15,000 pp)': 15000,
-  'Hidden Tokyo — Half Day (¥12,000 pp)': 12000,
-  'Food & Culture — Half Day (¥12,000 pp)': 12000,
-  'Kamakura Day Trip — Full Day (¥12,000 pp)': 12000,
-  'Yokohama & Chinatown — Full Day (¥15,000 pp)': 15000,
-  'Custom Private Tour — Custom quote': 15000
+// Initialize logic setups on window page load states
+window.onload = function() {
+  autoFillFromURL();
+  updateCalc();
+  
+  // Recalculate if user shifts tour or guest dropdown selections
+  document.getElementById('tour').onchange = updateCalc;
+  document.getElementById('guests').onchange = updateCalc;
 };
-
-function updateCalc() {
-  var days    = parseInt(document.getElementById('days-slider').value);
-  var tourSel = document.getElementById('tour').value;
-  var guestSel= parseInt(document.getElementById('guests').value) || 1;
-  var price   = tourSel ? (PRICES[tourSel] || 15000) : 15000;
-  var total   = price * guestSel;
-
-  document.getElementById('days-label').textContent = days;
-  document.getElementById('calc-price-label').textContent = '¥' + price.toLocaleString();
-  document.getElementById('calc-guests-label').textContent = guestSel;
-
-  var pct, lbl;
-  if      (days >= 30) { pct = 1.00; lbl = 'Full refund (30+ days notice)'; }
-  else if (days >= 14) { pct = 0.75; lbl = '75% refund (14–29 days notice)'; }
-  else if (days >= 7)  { pct = 0.50; lbl = '50% refund (7–13 days notice)'; }
-  else if (days >= 3)  { pct = 0.25; lbl = '25% refund (3–6 days notice)'; }
-  else                 { pct = 0.00; lbl = 'No refund (0–2 days notice)'; }
-
-  var refund = Math.round(total * pct);
-  document.getElementById('calc-refund').textContent = pct > 0 ? '¥' + refund.toLocaleString() : 'No refund';
-  document.getElementById('calc-lbl').textContent = lbl + (guestSel > 1 ? ' · ' + guestSel + ' guests' : '');
-}
-
-// Keep calculator in sync with form tour/guest selections
-document.getElementById('tour').addEventListener('change', updateCalc);
-document.getElementById('guests').addEventListener('change', updateCalc);
-updateCalc();
-
-// Set min date on date picker to today
-var today = new Date();
-var yyyy = today.getFullYear();
-var mm   = String(today.getMonth()+1).padStart(2,'0');
-var dd   = String(today.getDate()).padStart(2,'0');
-document.getElementById('tour-date').min = yyyy+'-'+mm+'-'+dd;
 </script>
-
-</body>
-</html>

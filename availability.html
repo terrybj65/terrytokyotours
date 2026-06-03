@@ -341,10 +341,11 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
         var cardTemplate = '<span class="tslot-name">' + slotObj.i + ' ' + slotObj.n + '</span>' +
                            '<span class="tslot-time">' + slotObj.t + '</span>';
 
-        if (isAdminMode) {
-          var actionLabel = (currentStatus === 'f') ? 'Mark Busy' : 'Mark Available';
-          cardTemplate += '<button class="tslot-btn toggle">' + actionLabel + '</button>';
-          slotCard.innerHTML = cardTemplate;
+        if (isAdminMode) 
+
+         slotCard.querySelector('button').onclick = function() {
+          D[key][slotObj.id] = (currentStatus === 'f') ? 'b' : 'f';
+        // ...
 
           slotCard.querySelector('button').onclick = function() {
             D[key][slotObj.id] = (currentStatus === 'f') ? 'b' : 'f';
