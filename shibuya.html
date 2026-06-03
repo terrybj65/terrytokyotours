@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Shibuya — Tokyo's Most Exciting District | Tokyo Private Tours with Terry</title>
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <!-- Included DM Serif Display explicitly so the CTA header matches your exact size and font weight -->
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
   <style>
     :root {
       --ink: #14120e;
@@ -14,6 +15,11 @@
       --stone: #7a7468;
       --gold: #b07820;
       --border: rgba(20,18,14,0.12);
+      
+      /* Global variables mapped from your standard page style */
+      --red: #de1c24;
+      --radius: 12px;
+      --radius-sm: 8px;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -24,6 +30,13 @@
       font-family: 'DM Sans', sans-serif;
       font-weight: 300;
       overflow-x: hidden;
+    }
+
+    /* ── CONTAINER ── */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 6vw;
     }
 
     /* ── HERO ── */
@@ -78,11 +91,11 @@
     }
     .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
     .btn-primary {
-      background: #D00000;
+      background: var(--red);
       color: #fff;
       border: none;
       padding: 13px 26px;
-      border-radius: 8px;
+      border-radius: var(--radius-sm);
       font-size: 15px;
       cursor: pointer;
       text-decoration: none;
@@ -95,7 +108,7 @@
       color: #fff;
       border: 1px solid rgba(255,255,255,0.6);
       padding: 13px 26px;
-      border-radius: 8px;
+      border-radius: var(--radius-sm);
       font-size: 15px;
       cursor: pointer;
       text-decoration: none;
@@ -124,7 +137,7 @@
       color: var(--stone);
     }
 
-    /* time of day bar */
+    /* Time of Day Bar */
     .tod-bar {
       max-width: 900px;
       margin: 0 auto 4rem;
@@ -158,7 +171,7 @@
       line-height: 1.4;
     }
 
-    /* nav */
+    /* Navigation Pills */
     .section-nav {
       max-width: 900px;
       margin: 0 auto 4rem;
@@ -214,9 +227,8 @@
     .stops {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 0 6vw 8rem;
+      padding: 0 6vw 2rem;
     }
-
     .stop {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -254,7 +266,6 @@
       padding: 0.3rem 0.75rem;
       backdrop-filter: blur(6px);
     }
-
     .stop-time {
       position: absolute;
       top: 1rem; left: 1.2rem;
@@ -266,7 +277,6 @@
       padding: 0.2rem 0.6rem;
       backdrop-filter: blur(4px);
     }
-
     .stop-num {
       position: absolute;
       top: 1rem; right: 1.2rem;
@@ -345,6 +355,290 @@
     }
     .stop-map:hover { opacity: 0.65; }
 
-    /* ── FOOTER ── */
-    footer { background: #f8f0e8; border-top: 4px solid #de1c24; padding: 2.5rem 2rem; font-size: 13px; }
-    .footer-inner { max-width: 1100px; margin:
+    /* ── DIRECT CODE COPY MATCH: CTA CARD ── */
+    .cta-card{background:var(--red);border-radius:var(--radius);padding:2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-top:3rem;}
+    .cta-card h3{font-family:'DM Serif Display',serif;font-size:26px;color:#fff;font-weight:400;}
+    .cta-card p{font-size:15px;color:rgba(255,255,255,.8);margin-top:.35rem;}
+    .cta-card a{background:#fff;color:var(--red);padding:12px 26px;border-radius:var(--radius-sm);font-size:15px;font-weight:500;text-decoration:none;white-space:nowrap;transition:opacity .15s;}
+    .cta-card a:hover{opacity:.88;}
+
+    /* ── DIRECT CODE COPY MATCH: FOOTER ── */
+    footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-size:13px;}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+    .footer-logo{font-size:15px;font-weight:700;color:#2d3748;margin-bottom:4px;letter-spacing:0.02em;}
+    .footer-desc{font-size:13px;color:#7a6652;margin-bottom:4px;}
+    .footer-copy{font-size:12px;color:#a09080;}
+    .footer-links{display:flex;gap:1.25rem;align-items:center;}
+    .footer-links a{color:#a0522d;text-decoration:none;font-size:13px;transition:color .15s;}
+    .footer-links a:hover{color:#de1c24;}
+
+    @media (max-width: 700px) {
+      .stop { grid-template-columns: 1fr; direction: ltr !important; }
+      .stop-content { padding: 2rem 0; }
+      .stop:nth-child(even) > * { direction: ltr; }
+      .tod-inner { flex-direction: column; }
+      .tod-item { border-right: none; border-bottom: 1px solid rgba(26,74,106,0.18); }
+      .tod-item:last-child { border-bottom: none; }
+      .section-nav-inner { flex-direction: column; align-items: flex-start; }
+      .cta-card { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(0,0,0,0.1);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;">
+  <ul style="display:flex;list-style:none;justify-content:center;align-items:center;gap:2rem;flex:1;margin:0;padding:0;">
+    <li><a href="../../../Downloads/index.html#areas" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Areas</a></li>
+    <li><a href="../../../Downloads/index.html#tours" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Tours</a></li>
+    <li><a href="../../../Downloads/index.html#about" style="font-size:14px;color:#5D6D7E;text-decoration:none;">About</a></li>
+    <li><a href="../../../Downloads/index.html#contact" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Contact</a></li>
+  </ul>
+  <a href="../../../Downloads/index.html#contact" style="background:var(--red);color:#fff;border:none;padding:9px 20px;border-radius:var(--radius-sm);font-size:14px;cursor:pointer;text-decoration:none;">Book a tour</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="../../../Downloads/shibuya.jpg" alt="Shibuya Scramble Crossing Crowds" />
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <div class="hero-eyebrow">📍 Shibuya, Tokyo · Modern Tokyo</div>
+      <h1>Shibuya</h1>
+      <p>The famous crossing, teen culture & everything beyond.</p>
+      <div class="hero-btns">
+        <a href="#daikanyama" class="btn-primary">Explore stops ↓</a>
+        <a href="../../../Downloads/index.html#contact" class="btn-ghost">Book a tour</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<div class="intro">
+  <div class="intro-kicker">Daikanyama · Harajuku · Nakameguro · Shibuya</div>
+  <p>Shibuya is where Tokyo's present tense happens. The scramble crossing — five streams of people converging at once from every direction — has become the defining image of the modern city, but it's only the beginning. Behind it lies a district of sharp contrasts: teenage fashion temples and serious art museums, canal-side coffee shops and thundering club nights, the world's most famous dog statue and one of the most beautifully designed train stations on earth. Spend a full day here and you'll understand why half the world's idea of Tokyo was formed in this single postcode.</p>
+</div>
+
+<!-- TIME OF DAY BAR -->
+<div class="tod-bar">
+  <div class="tod-inner">
+    <div class="tod-item">
+      <span class="tod-label">Morning</span>
+      <span class="tod-value">Meiji Shrine · Yoyogi Park</span>
+    </div>
+    <div class="tod-item">
+      <span class="tod-label">Afternoon</span>
+      <span class="tod-value">Shibuya Scramble · Hikarie</span>
+    </div>
+    <div class="tod-item">
+      <span class="tod-label">Sunset</span>
+      <span class="tod-value">Daikanyama · Nakameguro</span>
+    </div>
+    <div class="tod-item">
+      <span class="tod-label">Night</span>
+      <span class="tod-value">Nonbei Yokocho · Clubs</span>
+    </div>
+  </div>
+</div>
+
+<!-- JUMP NAV PILLS -->
+<div class="section-nav">
+  <div class="section-nav-inner">
+    <span class="nav-label">Jump to</span>
+    <div class="nav-pills">
+      <a class="nav-pill" href="#daikanyama">Daikanyama</a>
+      <a class="nav-pill" href="#hachiko">Hachiko</a>
+      <a class="nav-pill" href="#nakameguro">Nakameguro</a>
+      <a class="nav-pill" href="#nonbei">Nonbei Yokocho</a>
+      <a class="nav-pill" href="#scramble">The Scramble</a>
+      <a class="nav-pill" href="#hikarie">Shibuya Hikarie</a>
+    </div>
+  </div>
+</div>
+
+<div class="divider">One District · A Full Day & Night</div>
+
+<!-- STOPS LIST -->
+<div class="stops">
+
+  <!-- 1. Daikanyama -->
+  <div class="stop" id="daikanyama">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Afternoon</div>
+      <div class="stop-num">01</div>
+      <img src="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=800&q=80&fit=crop" alt="Daikanyama Tsutaya books coffee Tokyo" loading="lazy"/>
+      <div class="stop-badge">Tokyo's Village</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Neighbourhood · 10 min walk from Shibuya</div>
+      <h2 class="stop-title">Daikanyama</h2>
+      <div class="stop-jp">代官山</div>
+      <p class="stop-desc">A ten-minute walk west from Shibuya, Daikanyama is the city's most quietly fashionable neighbourhood — tree-lined streets of independent boutiques, architect-designed apartment blocks, and the extraordinary Tsutaya Books T-Site, a sprawling bookshop and lifestyle complex set in a low-rise wood-and-glass campus that has become one of the best-designed retail environments in Asia.</p>
+      <div class="stop-tip">💡 Tsutaya T-Site is open until midnight and the Anjin bar inside is a particularly good spot for a mid-afternoon coffee or an evening drink.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 17,000+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Daikanyama+T-Site+Tokyo" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Hachiko Statue & Plaza -->
+  <div class="stop" id="hachiko">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Morning</div>
+      <div class="stop-num">02</div>
+      <img src="https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?w=800&q=80&fit=crop" alt="Hachiko statue Shibuya Tokyo meeting point" loading="lazy"/>
+      <div class="stop-badge">Tokyo's Dog</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Landmark · Hachiko Plaza</div>
+      <h2 class="stop-title">Hachiko Statue & Plaza</h2>
+      <div class="stop-jp">ハチ公像</div>
+      <p class="stop-desc">Outside the west exit of Shibuya Station, a bronze Akita dog sits on a low plinth and has been Tokyo's most beloved meeting point since the statue was unveiled in 1934.</p>
+      <div class="stop-tip">💡 Visit early morning before the crowds arrive for a clearer view and easier photos.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 38,000+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Hachiko+Statue+Shibuya+Tokyo" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Nakameguro Canal -->
+  <div class="stop" id="nakameguro">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Late Afternoon</div>
+      <div class="stop-num">03</div>
+      <img src="https://images.unsplash.com/photo-1551641506-ee5bf4cb45f1?w=800&q=80&fit=crop" alt="Nakameguro canal cherry blossoms Tokyo" loading="lazy"/>
+      <div class="stop-badge">Canal Life</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Canal & Cafés · 5 min from Daikanyama</div>
+      <h2 class="stop-title">Nakameguro Canal</h2>
+      <div class="stop-jp">中目黒 · 目黒川</div>
+      <p class="stop-desc">The Meguro River runs through Nakameguro in a gentle canal lined with cherry trees, independent coffee shops, and small restaurants.</p>
+      <div class="stop-tip">💡 Walk the full length of the canal rather than just the stretch immediately near the station.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 29,000+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Nakameguro+canal+Tokyo" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Nonbei Yokocho -->
+  <div class="stop" id="nonbei">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Night</div>
+      <div class="stop-num">04</div>
+      <img src="https://images.unsplash.com/photo-1513185158878-8d8c2a2a3da3?w=800&q=80&fit=crop" alt="Nonbei Yokocho Shibuya drunkard's alley night bars" loading="lazy"/>
+      <div class="stop-badge">Drunkard's Alley</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Bars & Night · Northwest of Station</div>
+      <h2 class="stop-title">Nonbei Yokocho</h2>
+      <div class="stop-jp">のんべい横丁</div>
+      <p class="stop-desc">Tucked behind the JR tracks, Nonbei Yokocho — "Drunkard's Alley" — is a narrow lane of tiny old bars from the postwar era.</p>
+      <div class="stop-tip">💡 The bars here are cozy and intimate. Combine with a late ramen stop nearby.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★</span> 4.3 · 5,800+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Nonbei+Yokocho+Shibuya+Tokyo" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. The Scramble Crossing -->
+  <div class="stop" id="scramble">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Any Time</div>
+      <div class="stop-num">05</div>
+      <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=800&q=80&fit=crop" alt="Shibuya Scramble Crossing crowds Tokyo" loading="lazy"/>
+      <div class="stop-badge">Start Here</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Icon · Shibuya Station Exit</div>
+      <h2 class="stop-title">The Scramble Crossing</h2>
+      <div class="stop-jp">渋谷スクランブル交差点</div>
+      <p class="stop-desc">When the lights turn red, traffic stops in every direction simultaneously and up to 3,000 pedestrians cross at once.</p>
+      <div class="stop-tip">💡 The crossing is busiest — and most photogenic — in the early evening.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.6 · 62,000+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Shibuya+Scramble+Crossing+Tokyo" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Shibuya Hikarie -->
+  <div class="stop" id="hikarie">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Afternoon</div>
+      <div class="stop-num">06</div>
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&fit=crop" alt="Shibuya Hikarie department store design Tokyo" loading="lazy"/>
+      <div class="stop-badge">Design & Food</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Shopping & Culture · East Side</div>
+      <h2 class="stop-title">Shibuya Hikarie</h2>
+      <div class="stop-jp">渋谷ヒカリエ</div>
+      <p class="stop-desc">Hikarie is Shibuya's design-conscious vertical shopping complex, featuring art galleries and a superior food hall.</p>
+      <div class="stop-tip">💡 The d47 Museum on the 8th floor is free and always interesting.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★</span> 4.3 · 11,000+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Shibuya+Hikarie+Tokyo" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- PRICING BLOCKS -->
+<div style="background:#f9f6f0; border-top:1px solid rgba(0,0,0,0.08); padding:2.5rem 6vw; text-align:center;">
+  <p style="font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:#8a7040; margin-bottom:0.5rem;">Full day · per person</p>
+  <p style="font-family:'DM Serif Display','Shippori Mincho',serif; font-size:2.5rem; color:#1C2833; margin-bottom:0.5rem;">From ¥15,000</p>
+  <p style="font-size:0.85rem; color:#7a7468; margin-bottom:1.5rem;">Price varies by group size · Transport not included</p>
+  <a href="../../../Downloads/availability.html" style="display:inline-block; background:var(--red); color:#fff; padding:12px 28px; border-radius:var(--radius-sm); font-size:0.9rem; text-decoration:none; letter-spacing:0.05em;">Book this tour</a>
+</div>
+
+<!-- ── ISOLATED CTA CARD ── -->
+<div style="max-width: 900px; margin: 3rem auto 0; padding: 0 6vw; box-sizing: border-box;">
+  <div style="background: #de1c24; border-radius: 12px; padding: 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; box-sizing: border-box; text-align: left;">
+    <div style="flex: 1; min-width: 250px;">
+      <h3 style="font-family: 'DM Serif Display', serif; font-size: 26px; color: #ffffff; font-weight: 400; margin: 0; padding: 0; line-height: 1.2;">Ready to book Shibuya?</h3>
+      <p style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: rgba(255, 255, 255, 0.8); margin: 0.35rem 0 0 0; padding: 0; font-weight: 300; line-height: 1.4;">Check Terry's availability and send a booking request — it only takes a minute.</p>
+    </div>
+    <a href="availability.html" style="background: #ffffff; color: #de1c24; padding: 12px 26px; border-radius: 8px; font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap; transition: opacity 0.15s; display: inline-block; font-family: 'DM Sans', sans-serif;">View availability &amp; book &#8594;</a>
+  </div>
+</div>
+
+<div style="padding-bottom: 3rem;"></div>
+
+<!-- ── ISOLATED FOOTER ── -->
+<footer style="background: #f8f0e8; border-top: 4px solid #de1c24; padding: 2.5rem 2rem; font-family: 'DM Sans', sans-serif; box-sizing: border-box;">
+  <div style="max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; box-sizing: border-box;">
+    <div style="text-align: left;">
+      <div style="font-size: 15px; font-weight: 700; color: #2d3748; margin-bottom: 4px; letter-spacing: 0.02em;">東京 · Shibuya</div>
+      <div style="font-size: 13px; color: #7a6652; margin-bottom: 4px;">A full-day guided experience · From ¥15,000 per person</div>
+      <div style="font-size: 12px; color: #a09080;">© 2026 Tokyo with Terry · Japan</div>
+    </div>
+    <div style="display: flex; gap: 1.25rem; align-items: center;">
+      <a href="index.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s;">&#8592; Home</a>
+      <a href="availability.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s;">Availability</a>
+      <a href="reservations.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s;">Reserve</a>
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+  const stops = document.querySelectorAll('.stop');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  stops.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
