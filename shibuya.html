@@ -441,6 +441,17 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
   </div>
 </section>
 
+<!-- ADMIN CONTROLS -->
+<div class="tcal-adminbar" id="tcAdminBar" style="display:none; align-items:center; justify-content:space-between; padding:12px 6vw; background:#fff8e1; border-bottom:1px solid #ffe082; font-size:13px; color:#795548;">
+  <span>Logged in as Admin</span>
+  <button onclick="TC.lock()" style="font-size:12px; padding:4px 12px; border-radius:6px; border:1px solid #ffe082; background:#fff; cursor:pointer; color:#7955brown;">Lock Panels</button>
+</div>
+
+<div class="tcal-pinbar" id="tcPinBar" style="display:none; align-items:center; gap:12px; background:rgba(26,74,106,0.06); border:1px solid rgba(26,74,106,0.18); padding:12px 6vw;">
+  <input type="password" id="tcPinInput" placeholder="Admin PIN" style="padding:8px 12px; border-radius:6px; border:1px solid var(--border); font-size:14px; outline:none;">
+  <button onclick="TC.pin()" style="padding:8px 16px; border-radius:6px; border:none; background:var(--moss); color:#fff; font-size:13px; cursor:pointer;">Unlock</button>
+  <div class="tcal-pinerr" id="tcPinErr" style="display:none; color:#D00000; font-size:12px; margin-left:12px;">Invalid PIN</div>
+</div>	
 <!-- INTRO -->
 <div class="intro">
   <div class="intro-kicker">Daikanyama · Harajuku · Nakameguro · Shibuya</div>
@@ -651,6 +662,53 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
     });
   }, { threshold: 0.12 });
   stops.forEach(s => observer.observe(s));
+</script>
+	
+<script>
+!function(){
+  var MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var SLOTS=[
+    {id:'full', n:'Full Day', t:'All day', i:'🗾'},
+    {id:'morning', n:'Morning', t:'8am – 12pm', i:'🌅'},
+    {id:'afternoon', n:'Afternoon', t:'12pm – 5pm', i:'☀️'},
+    {id:'evening', n:'Evening', t:'5pm – 9pm', i:'🌆'}
+  ];
+  var PIN='1994';
+  
+  var D = JSON.parse(localStorage.getItem('terry_availability_slots')) || {};
+  var isAdminMode = false;
+
+  window.TC = {
+    pin: function() {
+      var passInput = document.getElementById('tcPinInput');
+      var errLabel = document.getElementById('tcPinErr');
+      if (passInput.value === PIN) {
+        isAdminMode = true;
+        errLabel.style.display = 'none';
+        document.getElementById('tcPinBar').style.display = 'none';
+        document.getElementById('tcAdminBar').style.display = 'flex';
+        passInput.value = '';
+      } else {
+        errLabel.style.display = 'block';
+      }
+    },
+    lock: function() {
+      isAdminMode = false;
+      document.getElementById('tcAdminBar').style.display = 'none';
+    }
+  };
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key.toLowerCase() === 'l') {
+      var pinBar = document.getElementById('tcPinBar');
+      if (pinBar.style.display === 'none' || pinBar.style.display === '') {
+        pinBar.style.display = 'flex';
+      } else {
+        pinBar.style.display = 'none';
+      }
+    }
+  });
+}();
 </script>
 
 </body>
