@@ -2,16 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Discover Nikko with Terry — the gilded Toshogu Shrine, ancient cedar avenues, mountain waterfalls and Japan's most ornate religious architecture."/>
   <meta name="keywords" content="Nikko tour, Nikko day trip, Toshogu shrine, Nikko UNESCO, day trip from Tokyo, private tour Nikko Japan, Nikko national park"/>
   <meta name="author" content="Tokyo Private Tours with Terry"/>
   <meta name="robots" content="index, follow"/>
+  
+  <!-- Open Graph / Meta -->
   <meta property="og:title" content="Nikko — UNESCO Shrines & Mountain Forests | Tokyo Private Tours with Terry"/>
   <meta property="og:description" content="Discover Nikko with Terry — the gilded Toshogu Shrine, ancient cedar avenues, mountain waterfalls and Japan's most ornate religious architecture."/>
   <meta property="og:type" content="website"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nikko — UNESCO Shrines & Mountain Forests | Tokyo Private Tours with Terry</title>
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <link rel="canonical" href="https://tokyowithterry.com/nikko.html"/>
+
+  <title>Nikko — UNESCO Shrines &amp; Mountain Forests | Tokyo Private Tours with Terry</title>
+  
+  <!-- Shared Premium Google Fonts Bundle -->
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght=400;600;800&family=DM+Sans:ital,wght=0,300;0,400;0,500;1,300&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+  
   <style>
     :root {
       --ink: #14120e;
@@ -21,391 +28,633 @@
       --stone: #7a7468;
       --gold: #b08020;
       --border: rgba(20,18,14,0.12);
+      --red: #D00000;
+      --red-dark: #B00000;
+      --radius: 12px;
+      --radius-sm: 8px;
     }
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: var(--paper); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 300; overflow-x: hidden; }
 
-    
-    
-    
-    
-    
-    
-    .hero h1 { position: relative; font-family: 'Shippori Mincho', serif; font-size: clamp(3.5rem, 9vw, 7rem); font-weight: 800; color: #fff; line-height: 0.88; margin-bottom: 0.6rem; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
 
-    .intro { max-width: 800px; margin: 5.5rem auto; padding: 0 6vw; text-align: center; }
-    .intro-kicker { display: inline-block; font-size: 0.65rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--moss); margin-bottom: 1.4rem; }
-    .intro p { font-size: 1.12rem; line-height: 1.9; color: var(--stone); }
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 4vw;
+    }
 
-    .transport-bar { max-width: 960px; margin: 0 auto 4rem; padding: 0 6vw; }
-    .transport-inner { display: flex; align-items: stretch; border: 1px solid rgba(90,42,10,0.18); overflow: hidden; }
-    .transport-item { flex: 1; padding: 1.1rem 1.2rem; border-right: 1px solid rgba(90,42,10,0.18); display: flex; flex-direction: column; gap: 0.25rem; }
+    /* ── HERO SECTION ── */
+    .hero {
+      position: relative;
+      height: 75vh;
+      min-height: 520px;
+      overflow: hidden;
+    }
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+      display: flex;
+      align-items: center;
+    }
+    .hero-content {
+      width: 100%;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 4vw;
+    }
+    .hero-text-wrap {
+      max-width: 650px;
+    }
+    .hero-eyebrow {
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #f9a07a;
+      margin-bottom: 1rem;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
+    }
+    .hero h1 {
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(44px, 6vw, 72px);
+      color: #ffffff;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      font-weight: 800;
+      text-shadow: 1px 1px 8px rgba(0,0,0,0.8);
+    }
+    .hero p {
+      font-size: 18px;
+      color: #ffffff;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
+    }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--red);
+      color: #fff;
+      border: none;
+      padding: 13px 28px;
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s;
+      display: inline-block;
+      font-weight: 500;
+    }
+    .btn-primary:hover { background: var(--red-dark); }
+    .btn-ghost {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.7);
+      padding: 13px 28px;
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s;
+      display: inline-block;
+    }
+
+    /* ── EDITORIAL INTRO ── */
+    .intro {
+      max-width: 900px;
+      margin: 5rem auto;
+      padding: 0 4vw;
+      text-align: center;
+    }
+    .intro-kicker {
+      display: inline-block;
+      font-size: 0.7rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--moss);
+      margin-bottom: 1.2rem;
+      font-weight: 500;
+    }
+    .intro p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: var(--stone);
+    }
+
+    /* ── TRANSPORT METRIC STRIP ── */
+    .transport-bar {
+      max-width: 1300px;
+      margin: 0 auto 4.5rem;
+      padding: 0 4vw;
+    }
+    .transport-inner {
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(90,42,10,0.15);
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .transport-item {
+      flex: 1;
+      padding: 1.25rem 1.5rem;
+      border-right: 1px solid rgba(90,42,10,0.15);
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
     .transport-item:last-child { border-right: none; }
-    .transport-label { font-size: 0.56rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--moss); }
-    .transport-value { font-size: 0.78rem; font-weight: 500; color: var(--ink); line-height: 1.4; }
+    .transport-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--moss);
+    }
+    .transport-value {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.4;
+    }
 
-    .section-nav { max-width: 900px; margin: 0 auto 4rem; padding: 0 6vw; }
-    .section-nav-inner { display: flex; align-items: center; gap: 1.2rem; background: rgba(90,42,10,0.06); border: 1px solid rgba(90,42,10,0.18); border-left: 3px solid var(--moss); padding: 1.2rem 1.8rem; flex-wrap: wrap; }
-    .nav-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--moss); flex-shrink: 0; }
+    /* ── CHRONOLOGICAL PILLS ── */
+    .section-nav {
+      max-width: 1300px;
+      margin: 0 auto 4rem;
+      padding: 0 4vw;
+    }
+    .section-nav-inner {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      background: rgba(90,42,10,0.04);
+      border: 1px solid rgba(90,42,10,0.12);
+      border-left: 4px solid var(--moss);
+      padding: 1.2rem 1.8rem;
+      flex-wrap: wrap;
+    }
+    .nav-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--moss);
+      font-weight: 500;
+    }
     .nav-pills { display: flex; gap: 0.6rem; flex-wrap: wrap; }
-    .nav-pill { font-size: 0.75rem; font-weight: 500; color: var(--ink); background: rgba(90,42,10,0.08); border: 1px solid rgba(90,42,10,0.2); padding: 0.3rem 0.9rem; border-radius: 100px; text-decoration: none; transition: background 0.2s, color 0.2s; letter-spacing: 0.03em; }
+    .nav-pill {
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: var(--ink);
+      background: rgba(255,255,255,0.6);
+      border: 1px solid rgba(90,42,10,0.15);
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
     .nav-pill:hover { background: var(--moss); color: #fff; border-color: var(--moss); }
 
-    .divider { display: flex; align-items: center; gap: 1.2rem; margin: 0 6vw 3rem; color: var(--sage); font-size: 0.67rem; letter-spacing: 0.22em; text-transform: uppercase; }
-    .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    /* ── SECTION SEPARATOR ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      max-width: 1300px;
+      margin: 0 auto 3rem;
+      padding: 0 4vw;
+      color: var(--sage);
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+    .divider::before, .divider::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
 
-    .stops { max-width: 1100px; margin: 0 auto; padding: 0 6vw 8rem; }
-    .stop { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--border); padding: 4rem 0; opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    /* ── HIGHLIGHT STOPS GRID (STAGGERED Engine) ── */
+    .stops {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 4vw 2rem;
+    }
+    .stop {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+      border-top: 1px solid var(--border);
+      padding: 4.5rem 0;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      align-items: center;
+    }
     .stop.visible { opacity: 1; transform: translateY(0); }
     .stop:nth-child(even) { direction: rtl; }
     .stop:nth-child(even) > * { direction: ltr; }
-    .stop-img-wrap { position: relative; overflow: hidden; aspect-ratio: 4/3; }
-    .stop-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.75s ease; }
-    .stop:hover .stop-img-wrap img { transform: scale(1.05); }
-    .stop-badge { position: absolute; bottom: 1.2rem; left: 1.2rem; background: rgba(16,8,4,0.75); border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.82); font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; padding: 0.3rem 0.75rem; backdrop-filter: blur(6px); }
-    .stop-time { position: absolute; top: 1rem; left: 1.2rem; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.6); background: rgba(16,8,4,0.55); padding: 0.2rem 0.6rem; backdrop-filter: blur(4px); }
-    .stop-num { position: absolute; top: 1rem; right: 1.2rem; font-family: 'Shippori Mincho', serif; font-size: 4.5rem; font-weight: 800; color: rgba(255,255,255,0.13); line-height: 1; pointer-events: none; }
-    .stop-content { padding: 2.8rem 3.5rem; display: flex; flex-direction: column; justify-content: center; }
-    .stop-category { font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--moss); margin-bottom: 1rem; }
-    .stop-title { font-family: 'Shippori Mincho', serif; font-size: clamp(1.7rem, 2.8vw, 2.4rem); font-weight: 600; line-height: 1.2; margin-bottom: 0.35rem; }
-    .stop-jp { font-size: 0.82rem; color: var(--stone); margin-bottom: 1.6rem; letter-spacing: 0.06em; }
-    .stop-desc { font-size: 0.94rem; line-height: 1.88; color: #3e3a34; margin-bottom: 1.6rem; }
-    .stop-tip { border-left: 2px solid var(--gold); padding-left: 1rem; font-size: 0.82rem; color: var(--stone); font-style: italic; line-height: 1.65; }
-    .stop-footer { margin-top: 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem; }
-    .stop-rating { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; color: var(--stone); }
-    .stars { color: var(--gold); }
-    .stop-map { display: inline-flex; align-items: center; gap: 0.45rem; font-size: 0.76rem; color: var(--moss); text-decoration: none; font-weight: 500; letter-spacing: 0.04em; transition: opacity 0.2s; }
+
+    .stop-img-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 16/11;
+      border-radius: 6px;
+    }
+    .stop-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .stop:hover .stop-img-wrap img { transform: scale(1.02); }
+
+    .stop-badge {
+      position: absolute;
+      bottom: 1.25rem; left: 1.25rem;
+      background: rgba(16,8,4,0.8);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.85);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.8rem;
+      backdrop-filter: blur(6px);
+    }
+    .stop-time {
+      position: absolute;
+      top: 1rem; left: 1rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      background: rgba(16,8,4,0.6);
+      padding: 0.25rem 0.65rem;
+      backdrop-filter: blur(4px);
+    }
+    .stop-num {
+      position: absolute;
+      top: 0.25rem; right: 1.25rem;
+      font-family: 'Shippori Mincho', serif;
+      font-size: 5rem; font-weight: 800;
+      color: rgba(255,255,255,0.12);
+      line-height: 1; pointer-events: none;
+    }
+
+    .stop-content {
+      padding: 0.5rem 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .stop-category {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--moss);
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+    .stop-title {
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(2rem, 2.4vw, 2.6rem);
+      font-weight: 600;
+      line-height: 1.25;
+      margin-bottom: 0.3rem;
+    }
+    .stop-jp {
+      font-size: 0.88rem;
+      color: var(--stone);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.06em;
+    }
+    .stop-desc {
+      font-size: 0.98rem;
+      line-height: 1.8;
+      color: #3e3a34;
+      margin-bottom: 1.5rem;
+    }
+    .stop-tip {
+      border-left: 3px solid var(--gold);
+      padding-left: 1.1rem;
+      font-size: 0.85rem;
+      color: var(--stone);
+      font-style: italic;
+      line-height: 1.65;
+    }
+    .stop-footer {
+      margin-top: 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      border-top: 1px solid rgba(20,18,14,0.06);
+      padding-top: 1.25rem;
+    }
+    .stop-rating { font-size: 0.82rem; color: var(--stone); }
+    .stars { color: var(--gold); margin-right: 0.25rem; }
+    .stop-map {
+      font-size: 0.82rem;
+      color: var(--moss);
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
     .stop-map:hover { opacity: 0.65; }
 
-    footer { border-top: 1px solid var(--border); padding: 3rem 6vw; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-    footer p { font-size: 0.8rem; color: var(--stone); }
-    .footer-logo { font-family: 'Shippori Mincho', serif; font-size: 1.25rem; font-weight: 600; }
+    /* ── PRICING MATRIX ── */
+    .pricing-matrix {
+      max-width: 1300px;
+      margin: 4.5rem auto 0;
+      padding: 0 4vw;
+    }
+    .pricing-wrap {
+      background: #f9f6f0;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 3.5rem 2.5rem;
+      text-align: center;
+    }
+    .pricing-kicker {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #8a7040;
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+    .pricing-cost {
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    .pricing-meta {
+      font-size: 0.9rem;
+      color: var(--stone);
+      margin-bottom: 2rem;
+    }
 
-    @media (max-width: 700px) {
-      .stop { grid-template-columns: 1fr; direction: ltr !important; }
-      .stop-content { padding: 2rem 0; }
+    @media (max-width: 1024px) {
+      .stop { gap: 2.5rem; }
+    }
+
+    @media (max-width: 768px) {
+      .stop { grid-template-columns: 1fr; direction: ltr !important; gap: 1.5rem; padding: 2.5rem 0; }
       .stop:nth-child(even) > * { direction: ltr; }
       .transport-inner { flex-direction: column; }
-      .transport-item { border-right: none; border-bottom: 1px solid rgba(90,42,10,0.18); }
+      .transport-item { border-right: none; border-bottom: 1px solid rgba(90,42,10,0.15); width: 100%; }
       .transport-item:last-child { border-bottom: none; }
-      .section-nav-inner { flex-direction: column; align-items: flex-start; }
+      .section-nav-inner { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.2rem; }
     }
-  
-  /* ── HERO ── */
-  .hero {
-    position: relative;
-    height: 90vh;
-    min-height: 560px;
-    overflow: hidden;
-  }
-  .hero img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: none;
-    display: flex;
-    align-items: center;
-  }
-  .hero-content {
-    max-width: 560px;
-    padding: 0 2rem;
-    background: none;
-  }
-  .hero-eyebrow {
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #f9a07a;
-    margin-bottom: 1rem;
-    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
-  }
-  .hero h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(40px, 6vw, 64px);
-    color: #ffffff;
-    line-height: 1.1;
-    margin-bottom: 1rem;
-    font-weight: 400;
-    text-shadow: 1px 1px 8px rgba(0,0,0,0.9), 0 0 30px rgba(0,0,0,0.8);
-  }
-  .hero p {
-    font-size: 17px;
-    color: #ffffff;
-    line-height: 1.7;
-    margin-bottom: 2rem;
-    max-width: 420px;
-    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
-  }
-  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
-  .btn-primary {
-    background: #D00000;
-    color: #fff;
-    border: none;
-    padding: 13px 26px;
-    border-radius: 8px;
-    font-size: 15px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.15s;
-    display: inline-block;
-  }
-  .btn-primary:hover { background: #B00000; }
-  .btn-ghost {
-    background:transparent;
-    color: #fff;
-    border: 1px solid rgba(255,255,255,0.6);
-    padding: 13px 26px;
-    border-radius: 8px;
-    font-size: 15px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.15s;
-    display: inline-block;
-  }
-  .btn-ghost:hover { background:transparent; }
-footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-size:13px;}
-.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
-.footer-logo{font-size:15px;font-weight:700;color:#2d3748;margin-bottom:4px;letter-spacing:0.02em;}
-.footer-desc{font-size:13px;color:#7a6652;margin-bottom:4px;}
-.footer-copy{font-size:12px;color:#a09080;}
-.footer-links{display:flex;gap:1.25rem;align-items:center;}
-.footer-links a{color:#a0522d;text-decoration:none;font-size:13px;transition:color .15s;}
-.footer-links a:hover{color:#de1c24;}
-
-/* ── PRICING BLOCK ── */
-.pricing-block{background:var(--bg-card);border:0.5px solid var(--border);border-radius:var(--radius);padding:2rem;margin:2rem 0;}
-.pricing-intro{font-size:15px;color:var(--text-muted);line-height:1.7;margin-bottom:1.25rem;}
-.pricing-section-title{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--red);font-weight:600;margin:1.25rem 0 .5rem;}
-.pricing-grid{margin:.5rem 0 1.25rem;}
-.pricing-row{display:flex;align-items:baseline;justify-content:space-between;padding:.65rem 0;border-bottom:0.5px solid var(--border);}
-.pricing-row:last-child{border-bottom:none;}
-.pricing-group{font-weight:600;font-size:15px;color:var(--text);}
-.pricing-amount{font-size:16px;color:var(--red);font-weight:600;text-align:right;}
-.pricing-amount span{font-size:13px;color:var(--text-muted);font-weight:400;}
-.pricing-amount em{font-size:13px;color:var(--text-muted);font-weight:400;font-style:normal;}
-.pricing-notes{margin-top:1.25rem;display:flex;flex-direction:column;gap:.5rem;border-top:0.5px solid var(--border);padding-top:1rem;}
-.pricing-notes p{font-size:14px;color:var(--text-muted);line-height:1.6;}
-.pricing-notes strong{color:var(--text);}
-</style>
+  </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(0,0,0,0.1);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;">
-  <ul style="display:flex;list-style:none;justify-content:center;align-items:center;gap:2rem;flex:1;margin:0;padding:0;">
-    <li><a href="index.html#areas" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Areas</a></li>
-    <li><a href="index.html#tours" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Tours</a></li>
-    <li><a href="index.html#about" style="font-size:14px;color:#5D6D7E;text-decoration:none;">About</a></li>
-    <li><a href="index.html#contact" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Contact</a></li>
+<!-- UNIFIED STICKY NAVIGATION -->
+<nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(0,0,0,0.1);padding:0 4vw;display:flex;align-items:center;justify-content:space-between;height:65px;">
+  <div style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--ink);">Tokyo with <span style="color:var(--red);">Terry</span></div>
+  <ul style="display:flex;list-style:none;justify-content:center;align-items:center;gap:2.5rem;margin:0;padding:0;">
+    <li><a href="../../../Downloads/index.html#areas" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Areas</a></li>
+    <li><a href="../../../Downloads/index.html#tours" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Tours</a></li>
+    <li><a href="../../../Downloads/index.html#about" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">About</a></li>
+    <li><a href="../../../Downloads/index.html#contact" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Contact</a></li>
   </ul>
-  <a href="index.html#contact" style="background:#D00000;color:#fff;border:none;padding:9px 20px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none;">Book a tour</a>
+  <a href="../../../Downloads/availability.html" style="background:var(--red);color:#fff;border:none;padding:10px 22px;border-radius:var(--radius-sm);font-size:14px;cursor:pointer;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:500;">Book a tour</a>
 </nav>
 
-<!-- HERO -->
+<!-- HERO BLOCK -->
 <section class="hero">
-  <img src="https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?w=1400&q=80&fit=crop" alt="Nikkō" />
+  <img src="https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?w=1600&q=80&fit=crop" alt="The iconic red sacred Shinkyo Bridge arching gracefully across a pristine river canyon in Nikko" />
   <div class="hero-overlay">
     <div class="hero-content">
-      <div class="hero-eyebrow">📍 Nikkō · 2 hours from Tokyo · UNESCO</div>
-      <h1>Nikkō</h1>
-      <p>Gold shrines, sacred cedar forests & mountain lakes.</p>
-      <div class="hero-btns">
-        <a href="#stop1" class="btn-primary">Explore stops ↓</a>
-        <a href="index.html#contact" class="btn-ghost">Book a tour</a>
+      <div class="hero-text-wrap">
+        <div class="hero-eyebrow">📍 Nikkō · 2 hours from Tokyo · UNESCO</div>
+        <h1>Nikkō</h1>
+        <p>Gold shrines, sacred cedar forests &amp; mountain lakes[cite: 8].</p>
+        <div class="hero-btns">
+          <a href="#itinerary-start" class="btn-primary">Explore stops ↓</a>
+          <a href="../../../Downloads/availability.html" class="btn-ghost">Check availability</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- EDITORIAL INTRO -->
 <div class="intro">
-  <div class="intro-kicker">Futarasan · Kanmangafuchi · Kegon Falls · Rinnoji · Shinkyo Bridge · Tosho-gu</div>
-  <p>Nikko is where the Edo shogunate built its most extravagant monument — the Tosho-gu shrine complex, a UNESCO World Heritage site of almost hallucinatory gold and lacquer excess buried in a cedar forest two hours north of Tokyo. But Nikko is more than its most famous shrine: a sacred mountain town with over 1,200 years of religious history, it also holds a turquoise gorge, one of Japan's finest waterfalls, a riverside walk lined with stone Jizo statues, and a mountain lake ringed by volcanic peaks that turns a brilliant red in November.</p>
+  <div class="intro-kicker">Futarasan · Kanmangafuchi · Kegon Falls · Rinnoji · Shinkyo Bridge · Tosho-gu[cite: 8]</div>
+  <p>Nikko is where the Edo shogunate built its most extravagant monument — the Tosho-gu shrine complex, a UNESCO World Heritage site of almost hallucinatory gold and lacquer excess buried in a cedar forest two hours north of Tokyo[cite: 8]. But Nikko is more than its most famous shrine: a sacred mountain town with over 1,200 years of religious history, it also holds a turquoise gorge, one of Japan's finest waterfalls, a riverside walk lined with stone Jizo statues, and a mountain lake ringed by volcanic peaks that turns a brilliant red in November[cite: 8].</p>
 </div>
 
+<!-- TRANSPORT METRICS STRIP -->
 <div class="transport-bar">
   <div class="transport-inner">
-    <div class="transport-item"><span class="transport-label">From Tokyo</span><span class="transport-value">Tobu Nikko Line from Asakusa · ~2 hrs</span></div>
-    <div class="transport-item"><span class="transport-label">Or JR</span><span class="transport-value">Shinkansen to Utsunomiya + local · ~2 hrs</span></div>
-    <div class="transport-item"><span class="transport-label">Best Pass</span><span class="transport-value">Tobu Nikko All Area Pass · ~¥4,780</span></div>
-    <div class="transport-item"><span class="transport-label">Best Season</span><span class="transport-value">Autumn colour · mid-Oct to mid-Nov</span></div>
-    <div class="transport-item"><span class="transport-label">Stay</span><span class="transport-value">Overnight ryokan recommended</span></div>
+    <div class="transport-item"><span class="transport-label">From Tokyo</span><span class="transport-value">Tobu Nikko Line from Asakusa · ~2 hrs[cite: 8]</span></div>
+    <div class="transport-item"><span class="transport-label">Or JR</span><span class="transport-value">Shinkansen to Utsunomiya + local · ~2 hrs[cite: 8]</span></div>
+    <div class="transport-item"><span class="transport-label">Best Pass</span><span class="transport-value">Tobu Nikko All Area Pass · ~¥4,780[cite: 8]</span></div>
+    <div class="transport-item"><span class="transport-label">Best Season</span><span class="transport-value">Autumn colour · mid-Oct to mid-Nov[cite: 8]</span></div>
+    <div class="transport-item"><span class="transport-label">Stay</span><span class="transport-value">Overnight ryokan recommended[cite: 8]</span></div>
   </div>
 </div>
 
+<!-- CHRONOLOGICAL PILLS -->
 <div class="section-nav">
   <div class="section-nav-inner">
-    <span class="nav-label">Jump to</span>
+    <span class="nav-label">Chronological Route</span>
     <div class="nav-pills">
-      <a class="nav-pill" href="#futarasan">Futarasan</a>
-      <a class="nav-pill" href="#kanman">Kanmangafuchi</a>
-      <a class="nav-pill" href="#kegon">Kegon Falls</a>
-      <a class="nav-pill" href="#rinnoji">Rinnoji</a>
-      <a class="nav-pill" href="#shinkyo">Shinkyo Bridge</a>
-      <a class="nav-pill" href="#toshogu">Tosho-gu</a>
+      <a class="nav-pill" href="#shinkyo">01 Shinkyo Bridge</a>
+      <a class="nav-pill" href="#rinnoji">02 Rinnoji Temple</a>
+      <a class="nav-pill" href="#toshogu">03 Tosho-gu Shrine</a>
+      <a class="nav-pill" href="#futarasan">04 Futarasan Shrine</a>
+      <a class="nav-pill" href="#kanman">05 Kanmangafuchi Abyss</a>
+      <a class="nav-pill" href="#kegon">06 Kegon Falls &amp; Lake</a>
     </div>
   </div>
 </div>
 
-<div class="divider">One Sacred Mountain Town · A Full Day</div>
+<div class="divider" id="itinerary-start">One Sacred Mountain Town · A Full Day[cite: 8]</div>
 
+<!-- STOPS GRID (Chronological Order) -->
 <div class="stops">
 
-  <div class="stop" id="futarasan">
-    <div class="stop-img-wrap">
-      <div class="stop-time">Afternoon</div>
-      <div class="stop-num">01</div>
-      <img src="https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?w=800&q=80&fit=crop" alt="Futarasan Shrine Nikko cedar forest ancient stone lanterns" loading="lazy"/>
-      <div class="stop-badge">Oldest Shrine</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Shinto Shrine · Founded 782 AD</div>
-      <h2 class="stop-title">Futarasan Shrine</h2>
-      <div class="stop-jp">二荒山神社</div>
-      <p class="stop-desc">Founded in 782 AD by Shodo Shonin and dedicated to the three peaks of the Nikko mountains, Futarasan is the oldest of Nikko's three main shrines and the one that feels most genuinely sacred — less ornate than Tosho-gu, more deeply embedded in the cedar forest, its stone lanterns moss-covered and its pathways worn smooth by 1,200 years of pilgrims' feet. The shrine's inner garden contains the "Bake-doro" — the Goblin Lantern — a large bronze lantern said to be haunted, with sword marks on its surface from a samurai who attacked it in the night believing it to be a demon. The garden also holds a well of sacred spring water believed to bring good fortune in love.</p>
-      <div class="stop-tip">💡 Futarasan is included in the combined Nikko shrine ticket and is often rushed through by visitors eager to reach Tosho-gu — which means it's the most peaceful stop in the complex. The inner garden (¥200 additional) is worth the extra charge for the sacred spring and the Goblin Lantern. Allow 45 minutes.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 7,400+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Futarasan+Shrine+Nikko+Japan" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="stop" id="kanman">
-    <div class="stop-img-wrap">
-      <div class="stop-time">Afternoon</div>
-      <div class="stop-num">02</div>
-      <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=800&q=80&fit=crop" alt="Kanmangafuchi Abyss Nikko stone Jizo statues river gorge" loading="lazy"/>
-      <div class="stop-badge">The Haunted Jizo Walk</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Gorge Walk · Kanmangafuchi</div>
-      <h2 class="stop-title">Kanmangafuchi Abyss</h2>
-      <div class="stop-jp">含満ヶ淵</div>
-      <p class="stop-desc">A twenty-minute walk from the shrine complex brings you to Kanmangafuchi — a deep gorge carved by ancient volcanic eruptions through which the turquoise Daiya River flows between black basalt walls. The path along the gorge is lined with approximately 70 stone Jizo statues — the Buddhist guardian of travellers and children — placed here by monks over several centuries and now moss-covered and slightly tilted at different angles, giving the path a gently eerie quality that the crowds in the shrine complex entirely dispel. Local legend says that when you count the statues going in one direction and then count again coming back, you always get a different number.</p>
-      <div class="stop-tip">💡 Kanmangafuchi is one of Nikko's most beautiful and least crowded spots — the 20-minute walk from the shrine area keeps most tour groups away. Go in the late afternoon when the light comes low through the cedar and the moss on the Jizo statues glows green. The gorge walk takes about 30 minutes at a gentle pace; the river below the path is a beautiful turquoise year-round.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.6 · 6,200+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Kanmangafuchi+Abyss+Nikko+Japan" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="stop" id="kegon">
-    <div class="stop-img-wrap">
-      <div class="stop-time">Late Afternoon · Bus to Chuzenji</div>
-      <div class="stop-num">03</div>
-      <img src="https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?w=800&q=80&fit=crop" alt="Kegon Falls Nikko waterfall Lake Chuzenji autumn" loading="lazy"/>
-      <div class="stop-badge">Japan's Finest Waterfall</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Waterfall & Lake · Lake Chuzenji</div>
-      <h2 class="stop-title">Kegon Falls & Lake Chuzenji</h2>
-      <div class="stop-jp">華厳滝 · 中禅寺湖</div>
-      <p class="stop-desc">A bus ride up the spectacular switchback Irohazaka road — 48 hairpin bends ascending 400 metres in 9 kilometres — brings you to Lake Chuzenji, a caldera lake at 1,269 metres surrounded by volcanic peaks, and to Kegon Falls, which drops 97 metres from the lake's edge over a basalt cliff in one of the three waterfalls traditionally considered the finest in Japan. An elevator descends to an observation platform at the base of the falls, where the spray and the sound are overwhelming. In November the surrounding maple and beech trees turn every shade of red, orange, and gold, making this the finest autumn colour viewing in the Nikko area and one of the most celebrated seasonal landscapes in Japan.</p>
-      <div class="stop-tip">💡 The Irohazaka road is one-way going up and one-way going down — buses run frequently from Nikko Station. Time the visit to arrive at the falls by 3 PM to have time to walk the lakeshore before the last bus back. The observation elevator (¥570) is worth it — the view from the top is dramatic but the base view is extraordinary. In autumn book buses in advance as demand is intense.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.6 · 28,000+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Kegon+Falls+Nikko+Japan" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-
-
-  <div class="stop" id="rinnoji">
-    <div class="stop-img-wrap">
-      <div class="stop-time">Morning</div>
-      <div class="stop-num">04</div>
-      <img src="https://images.unsplash.com/photo-1570521462033-3015e76e7432?w=800&q=80&fit=crop" alt="Rinnoji Temple Nikko Buddhist hall gold statues" loading="lazy"/>
-      <div class="stop-badge">1,200 Year Old Temple</div>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Buddhist Temple · Founded 766 AD</div>
-      <h2 class="stop-title">Rinnoji Temple</h2>
-      <div class="stop-jp">輪王寺</div>
-      <p class="stop-desc">Founded by Shodo Shonin in 766 AD — nearly 900 years before Tosho-gu was built — Rinnoji is the oldest institution on the mountain and the head temple of the Tendai Buddhist sect in the Nikko area. The main hall, Sanbutsudo, houses three enormous gilded Buddhist statues standing 8 metres tall, their gold surfaces gleaming in the dim hall in a display of religious art that rivals anything in Kyoto. The Taiyuin-byo mausoleum complex within the Rinnoji precincts — the tomb of the third Tokugawa shogun Iemitsu — is architecturally comparable to Tosho-gu but sees far fewer visitors, giving it an atmosphere of genuine reverence.</p>
-      <div class="stop-tip">💡 The Treasure Hall (Homotsu-den) beside the main hall contains an extraordinary collection of Buddhist art, ritual objects, and treasures accumulated over 1,200 years. The Shoyoen garden behind the temple is a beautifully maintained stroll garden with a pond and tea house — worth 30 minutes and often nearly empty.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 9,800+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Rinnoji+Temple+Nikko+Japan" target="_blank">→ Google Maps</a>
-      </div>
-    </div>
-  </div>
-
+  <!-- Stop 1: Shinkyo Bridge -->
   <div class="stop" id="shinkyo">
     <div class="stop-img-wrap">
-      <div class="stop-time">Morning · Arrive Nikko Station</div>
-      <div class="stop-num">05</div>
-      <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80&fit=crop" alt="Shinkyo Sacred Bridge Nikko red lacquer river" loading="lazy"/>
-      <div class="stop-badge">Start Here</div>
+      <div class="stop-time">Morning · 09:00 AM</div>
+      <div class="stop-num">01</div>
+      <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1000&q=80&fit=crop" alt="Shinkyo Sacred Bridge Nikko red lacquer river" loading="lazy"/>
+      <div class="stop-badge">The Threshold</div>
     </div>
     <div class="stop-content">
-      <div class="stop-category">Sacred Bridge · Entrance to the Shrines</div>
+      <div class="stop-category">Sacred Bridge · Entrance to the Shrines[cite: 8]</div>
       <h2 class="stop-title">Shinkyo — The Sacred Bridge</h2>
       <div class="stop-jp">神橋</div>
-      <p class="stop-desc">The approach to Nikko's sacred precinct begins at the Shinkyo — a vermillion lacquered bridge arching over the Daiya River that has marked the boundary between the secular and sacred worlds here since the 8th century. According to legend, the holy priest Shodo Shonin crossed the river here on the backs of two giant serpents sent by the god Jinja Daioh when he founded the first temple on the mountain in 766 AD. The current bridge dates from 1636. It sits at the point where the old Nikko Kaido highway from Edo ended and the mountain path to the shrines began — a threshold that still carries a distinct charge even in the age of tour buses and selfie sticks.</p>
-      <div class="stop-tip">💡 The bridge itself charges a small admission to cross (¥300) but the view from the riverbank is free and arguably better. In autumn the maple trees on both banks turn brilliant red and orange, framing the red lacquer of the bridge in colours that seem almost artificially vivid. The 20-minute walk up the cedar avenue from the bridge to the shrine complex sets the atmosphere perfectly.</div>
+      <p class="stop-desc">The approach to Nikko's sacred precinct begins at the Shinkyo — a vermillion lacquered bridge arching over the Daiya River that has marked the boundary between the secular and sacred worlds here since the 8th century[cite: 8]. According to legend, the holy priest Shodo Shonin crossed the river here on the backs of two giant serpents sent by the god Jinja Daioh when he founded the first temple on the mountain in 766 AD[cite: 8]. The current bridge dates from 1636[cite: 8].</p>
+      <div class="stop-tip">💡 The bridge charges a small admission to cross (¥300) but the view from the riverbank is free and arguably better[cite: 8]. In autumn the maple trees frame the red lacquer of the bridge beautifully[cite: 8]. The 20-minute walk up the cedar avenue sets the atmosphere perfectly[cite: 8].</div>
       <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 14,000+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Shinkyo+Bridge+Nikko+Japan" target="_blank">→ Google Maps</a>
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 14,000+ reviews[cite: 8]</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Shinkyo+Bridge+Nikko+Japan" target="_blank">→ Google Maps[cite: 8]</a>
       </div>
     </div>
   </div>
 
-  <div class="stop" id="toshogu">
+  <!-- Stop 2: Rinnoji Temple -->
+  <div class="stop" id="rinnoji">
     <div class="stop-img-wrap">
-      <div class="stop-time">Mid-Morning</div>
-      <div class="stop-num">06</div>
-      <img src="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=800&q=80&fit=crop" alt="Toshogu Shrine Nikko gold lacquer ornate Yomeimon gate" loading="lazy"/>
-      <div class="stop-badge">The Gold Shrine</div>
+      <div class="stop-time">Morning · 10:00 AM</div>
+      <div class="stop-num">02</div>
+      <img src="https://images.unsplash.com/photo-1570521462033-3015e76e7432?w=1000&q=80&fit=crop" alt="Rinnoji Temple Nikko Buddhist hall gold statues" loading="lazy"/>
+      <div class="stop-badge">Oldest Institution</div>
     </div>
     <div class="stop-content">
-      <div class="stop-category">Shinto Shrine · UNESCO World Heritage · Built 1636</div>
-      <h2 class="stop-title">Tosho-gu Shrine</h2>
-      <div class="stop-jp">東照宮</div>
-      <p class="stop-desc">Tosho-gu is the mausoleum of Tokugawa Ieyasu — the shogun who unified Japan in 1603 — and the most ornately decorated shrine complex in Japan, possibly in the world. Built in 1636 by his grandson Iemitsu using the labour of 15,000 craftsmen over two years, the complex covers 22 structures decorated with over 5,000 carved and gilded sculptures, 2.4 million sheets of gold leaf, and lacquerwork of extraordinary complexity. The Yomeimon gate — the "Gate of Sundown," so named because visitors could spend all day admiring it — is covered in 508 individual carvings of flowers, animals, and mythological creatures. The famous three wise monkeys (see no evil, hear no evil, speak no evil) are carved above the sacred stable here.</p>
-      <div class="stop-tip">💡 Allow at least two hours for the full complex — the route leads through multiple gate courtyards and up 207 stone steps to the relatively simple tomb of Ieyasu at the top, which is the deliberately austere counterpoint to everything below it. The Nemuri-neko (Sleeping Cat) carving above one of the inner gates is one of the most famous single carvings in Japan — easy to miss if you don't know to look up.</div>
+      <div class="stop-category">Buddhist Temple · Founded 766 AD[cite: 8]</div>
+      <h2 class="stop-title">Rinnoji Temple</h2>
+      <div class="stop-jp">輪王寺</div>
+      <p class="stop-desc">Founded by Shodo Shonin in 766 AD — nearly 900 years before Tosho-gu was built — Rinnoji is the oldest institution on the mountain and the head temple of the Tendai Buddhist sect in the Nikko area[cite: 8]. The main hall, Sanbutsudo, houses three enormous gilded Buddhist statues standing 8 metres tall, their gold surfaces gleaming in the dim hall in a display of religious art that rivals anything in Kyoto[cite: 8].</p>
+      <div class="stop-tip">💡 The Treasure Hall (Homotsu-den) contains an extraordinary collection accumulated over 1,200 years[cite: 8]. The Shoyoen garden behind the temple is a beautifully maintained stroll garden with a pond and tea house — worth 30 minutes and often nearly empty[cite: 8].</div>
       <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.6 · 42,000+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Toshogu+Shrine+Nikko+Japan" target="_blank">→ Google Maps</a>
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 9,800+ reviews[cite: 8]</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Rinnoji+Temple+Nikko+Japan" target="_blank">→ Google Maps[cite: 8]</a>
       </div>
     </div>
-  </div></div>
+  </div>
 
-
-<!-- PRICING -->
-<div style="background:#f9f6f0; border-top:1px solid rgba(0,0,0,0.08); padding:2.5rem 6vw; text-align:center;">
-  <p style="font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:#8a7040; margin-bottom:0.5rem;">Full day · per person</p>
-  <p style="font-family:'DM Serif Display','Shippori Mincho',serif; font-size:2.5rem; color:#1C2833; margin-bottom:0.5rem;">From ¥22,000</p>
-  <p style="font-size:0.85rem; color:#7a7468; margin-bottom:1.5rem;">Price varies by group size · Transport not included</p>
-  <a href="index.html#contact" style="display:inline-block; background:#D00000; color:#fff; padding:12px 28px; border-radius:8px; font-size:0.9rem; text-decoration:none; letter-spacing:0.05em;">Book this tour</a>
-</div>
-<footer>
-  <div class="footer-inner">
-    <div class="footer-left">
-      <div class="footer-logo">日光 · Nikko</div>
-      <div class="footer-desc">A full-day guided experience · UNESCO World Heritage</div>
-      <div class="footer-copy">© 2026 Tokyo with Terry · Japan</div>
+  <!-- Stop 3: Tosho-gu Shrine -->
+  <div class="stop" id="toshogu">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Mid-Morning · 11:00 AM</div>
+      <div class="stop-num">03</div>
+      <img src="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=1000&q=80&fit=crop" alt="Toshogu Shrine Nikko gold lacquer ornate Yomeimon gate" loading="lazy"/>
+      <div class="stop-badge">Gold Masterpiece</div>
     </div>
-    <div class="footer-links">
-      <a href="index.html">&#8592; Home</a>
-      <a href="availability.html">Availability</a>
-      <a href="reservations.html">Reserve</a>
+    <div class="stop-content">
+      <div class="stop-category">Shinto Shrine · UNESCO World Heritage · Built 1636[cite: 8]</div>
+      <h2 class="stop-title">Tosho-gu Shrine</h2>
+      <div class="stop-jp">東照宮</div>
+      <p class="stop-desc">Tosho-gu is the mausoleum of Tokugawa Ieyasu — the shogun who unified Japan in 1603 — and the most ornately decorated shrine complex in Japan, possibly in the world[cite: 8]. Built in 1636 by his grandson Iemitsu using the labour of 15,000 craftsmen, the complex covers 22 structures decorated with over 5,000 carved sculptures and 2.4 million sheets of gold leaf[cite: 8]. The famous three wise monkeys are carved above the stable here[cite: 8].</p>
+      <div class="stop-tip">💡 Allow at least two hours for the full complex[cite: 8]. The route leads through multiple gate courtyards and up 207 stone steps to the relatively simple tomb of Ieyasu at the top[cite: 8]. The Nemuri-neko (Sleeping Cat) carving above an inner gate is easy to miss if you don't look up[cite: 8].</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.6 · 42,000+ reviews[cite: 8]</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Toshogu+Shrine+Nikko+Japan" target="_blank">→ Google Maps[cite: 8]</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stop 4: Futarasan Shrine -->
+  <div class="stop" id="futarasan">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Early Afternoon · 01:30 PM</div>
+      <div class="stop-num">04</div>
+      <img src="https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?w=1000&q=80&fit=crop" alt="Futarasan Shrine Nikko cedar forest ancient stone lanterns" loading="lazy"/>
+      <div class="stop-badge">Sacred Woods</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Shinto Shrine · Founded 782 AD[cite: 8]</div>
+      <h2 class="stop-title">Futarasan Shrine</h2>
+      <div class="stop-jp">二荒山神社</div>
+      <p class="stop-desc">Founded in 782 AD by Shodo Shonin and dedicated to the three peaks of the Nikko mountains, Futarasan is the oldest of Nikko's three main shrines and the one that feels most genuinely sacred — less ornate than Tosho-gu, more deeply embedded in the cedar forest, its pathways worn smooth by 1,200 years of pilgrims' feet[cite: 8]. The inner garden contains the "Bake-doro" (the Goblin Lantern), a large bronze lantern said to be haunted[cite: 8].</p>
+      <div class="stop-tip">💡 Futarasan is included in the combined Nikko shrine ticket and is often rushed through — which means it's the most peaceful stop in the complex[cite: 8]. The inner garden (¥200 additional) is absolutely worth the extra charge[cite: 8]. Allow 45 minutes[cite: 8].</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 7,400+ reviews[cite: 8]</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Futarasan+Shrine+Nikko+Japan" target="_blank">→ Google Maps[cite: 8]</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stop 5: Kanmangafuchi Abyss -->
+  <div class="stop" id="kanman">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Afternoon · 02:30 PM</div>
+      <div class="stop-num">05</div>
+      <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=1000&q=80&fit=crop" alt="Kanmangafuchi Abyss Nikko stone Jizo statues river gorge" loading="lazy"/>
+      <div class="stop-badge">The Jizo Walk</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Gorge Walk · Kanmangafuchi[cite: 8]</div>
+      <h2 class="stop-title">Kanmangafuchi Abyss</h2>
+      <div class="stop-jp">含満ヶ淵</div>
+      <p class="stop-desc">A twenty-minute walk from the shrine complex brings you to Kanmangafuchi — a deep gorge carved by ancient volcanic eruptions through which the turquoise Daiya River flows between black basalt walls[cite: 8]. The path along the gorge is lined with approximately 70 stone Jizo statues placed here by monks over several centuries and now heavily moss-covered[cite: 8]. Local legend says that you always get a different number when counting them coming and going[cite: 8].</p>
+      <div class="stop-tip">💡 Kanmangafuchi is one of Nikko's most beautiful and least crowded spots[cite: 8]. Go in the late afternoon when the light comes low through the cedar and the moss on the Jizo statues glows green[cite: 8]. The gorge walk takes about 30 minutes at a gentle pace[cite: 8].</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.6 · 6,200+ reviews[cite: 8]</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Kanmangafuchi+Abyss+Nikko+Japan" target="_blank">→ Google Maps[cite: 8]</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stop 6: Kegon Falls & Lake Chuzenji -->
+  <div class="stop" id="kegon">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Late Afternoon · 03:40 PM</div>
+      <div class="stop-num">06</div>
+      <img src="https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?w=1000&q=80&fit=crop" alt="Kegon Falls Nikko waterfall Lake Chuzenji autumn" loading="lazy"/>
+      <div class="stop-badge">Scenic Peak</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Waterfall &amp; Lake · Lake Chuzenji[cite: 8]</div>
+      <h2 class="stop-title">Kegon Falls &amp; Lake Chuzenji</h2>
+      <div class="stop-jp">華厳滝 · 中禅寺湖</div>
+      <p class="stop-desc">A bus ride up the spectacular switchback Irohazaka road — 48 hairpin bends ascending 400 metres in 9 kilometres — brings you to Lake Chuzenji, a caldera lake at 1,269 metres, and to Kegon Falls, which drops 97 metres from the lake's edge over a basalt cliff in one of the three finest waterfalls in Japan[cite: 8]. An elevator descends to an observation platform at the base of the falls where the spray is overwhelming[cite: 8].</p>
+      <div class="stop-tip">💡 Time the visit to arrive at the falls by 3 PM to have time to walk the lakeshore before the last bus back[cite: 8]. The observation elevator (¥570) is absolutely worth it — the base view is extraordinary[cite: 8]. In autumn, book buses well in advance as seasonal demand is intense[cite: 8].</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.6 · 28,000+ reviews[cite: 8]</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Kegon+Falls+Nikko+Japan" target="_blank">→ Google Maps[cite: 8]</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- PRICING MATRIX -->
+<div class="pricing-matrix">
+  <div class="pricing-wrap">
+    <div class="pricing-kicker">Full day · per person[cite: 8]</div>
+    <div class="pricing-cost">From ¥22,000[cite: 8]</div>
+    <div class="pricing-meta">Price varies by group size · Transport not included[cite: 8]</div>
+    <a href="../../../Downloads/index.html#contact" class="btn-primary">Book this private experience</a>
+  </div>
+</div>
+
+<div style="padding-bottom: 5rem;"></div>
+
+<!-- FOOTER -->
+<footer style="background: #f8f0e8; border-top: 4px solid #de1c24; padding: 2.5rem 4vw; font-family: 'DM Sans', sans-serif; box-sizing: border-box; width: 100%;">
+  <div style="max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; box-sizing: border-box;">
+    <div style="text-align: left; box-sizing: border-box;">
+      <div style="font-family:'Shippori Mincho', serif; font-size: 16px; font-weight: 700; color: #2d3748; margin-bottom: 4px; letter-spacing: 0.02em;">日光 · Nikko[cite: 8]</div>
+      <div style="font-size: 13px; color: #7a6652; margin-bottom: 4px;">A full-day guided experience · UNESCO World Heritage[cite: 8]</div>
+      <div style="font-size: 12px; color: #a09080;">© 2026 Tokyo with Terry · Japan[cite: 8]</div>
+    </div>
+    <div style="display: flex; gap: 1.5rem; align-items: center; box-sizing: border-box;">
+      <a href="../../../Downloads/index.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">&#8592; Home[cite: 8]</a>
+      <a href="../../../Downloads/availability.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">Availability[cite: 8]</a>
+      <a href="../../../Downloads/reservations.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">Reserve[cite: 8]</a>
     </div>
   </div>
 </footer>
 
+<!-- INTERSECTION SCROLL ANIMATION SYSTEM -->
 <script>
   const stops = document.querySelectorAll('.stop');
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
   }, { threshold: 0.12 });
   stops.forEach(s => observer.observe(s));
 </script>
+
 </body>
 </html>
