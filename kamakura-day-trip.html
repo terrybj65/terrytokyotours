@@ -1,188 +1,719 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" content="Private Kamakura Day Trip tour with Terry — Temples, the Great Buddha & scenic coastal paths — just 1 hour from Tokyo."/>
-  <meta property="og:title" content="Kamakura Day Trip — Tokyo with Terry"/>
-  <meta property="og:description" content="Full-day private tour to Kamakura — Great Buddha, Daibutsu hiking trail, temples and coastal seafood."/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Explore Enoshima & Kamakura with Terry — From island shrines and coastal street food to the Great Buddha and hidden bamboo forest paths."/>
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Enoshima & Kamakura Full-Day Tour — Tokyo with Terry"/>
+  <meta property="og:description" content="Explore Enoshima & Kamakura with Terry — From island shrines and coastal street food to the Great Buddha and hidden bamboo forest paths."/>
   <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://tokyowithterry.com/kamakura-day-trip.html"/>
-  <meta property="og:image" content="https://tokyowithterry.com/kamakura.jpg"/>
+  <meta property="og:url" content="https://tokyowithterry.com/kamakura.html"/>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1542640244-7e672d6cef21?w=1200&q=85&fit=crop"/>
   <meta property="og:locale" content="en_GB"/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Kamakura Day Trip — Tokyo with Terry"/>
-  <meta name="twitter:description" content="Full-day private tour to Kamakura — Great Buddha, Daibutsu hiking trail, temples and coastal seafood."/>
-  <meta name="twitter:image" content="https://tokyowithterry.com/kamakura.jpg"/>
-  <link rel="canonical" href="https://tokyowithterry.com/kamakura-day-trip.html"/>
-<title>Kamakura Day Trip — Tokyo Private Tours with Terry</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-:root{--red:#D00000;--red-dark:#B00000;--red-light:#FFE5E5;--text:#1C2833;--text-muted:#5D6D7E;--border:rgba(0,0,0,0.1);--bg:#FAFAF8;--bg-card:#ffffff;--bg-surface:#F4F3EF;--radius:12px;--radius-sm:8px;}
-html{scroll-behavior:smooth;}html,body{overflow-x:hidden;}img,video{max-width:100%;}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.6;}
-nav{position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;}
-.nav-logo{font-family:'DM Serif Display',serif;font-size:20px;color:var(--text);display:flex;align-items:center;gap:8px;text-decoration:none;}
-.nav-logo span{color:var(--red);}
-.nav-right{display:flex;align-items:center;gap:1.5rem;}
-.back-link{font-size:14px;color:var(--text-muted);text-decoration:none;transition:color .15s;}
-.back-link:hover{color:var(--text);}
-.book-btn{background:var(--red);color:#fff;padding:9px 20px;border-radius:var(--radius-sm);font-size:14px;font-family:'DM Sans',sans-serif;text-decoration:none;transition:background .15s;}
-.book-btn:hover{background:var(--red-dark);}
-.container{max-width:1100px;margin:0 auto;padding:0 2rem;}
-section{padding:5rem 0;}
-.section-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem;}
-.section-title{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,42px);font-weight:400;margin-bottom:.5rem;line-height:1.2;}
-.section-sub{font-size:16px;color:var(--text-muted);margin-bottom:2.5rem;max-width:560px;}
-/* Hero */
-.page-hero{position:relative;height:52vh;min-height:340px;overflow:hidden;}
-.page-hero img{width:100%;height:100%;object-fit:cover;display:block;}
-.page-hero-overlay{position:absolute;inset:0;background:transparent;display:flex;align-items:flex-end;}
-.page-hero-content{padding:2.5rem 2rem;max-width:1100px;margin:0 auto;width:100%;}
-.page-hero-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#f9a07a;margin-bottom:.5rem;}
-.page-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(32px,5vw,52px);color:#fff;font-weight:400;line-height:1.15;text-shadow:0 2px 12px rgba(0,0,0,.5);}
-.page-hero p{font-size:16px;color:rgba(255,255,255,.8);margin-top:.75rem;max-width:480px;text-shadow:0 1px 6px rgba(0,0,0,.5);}
-/* Content cards */
-.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
-.info-card{background:var(--bg-card);border:0.5px solid var(--border);border-radius:var(--radius);padding:1.75rem;}
-.info-card h3{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;margin-bottom:.75rem;}
-.info-card p,.info-card li{font-size:15px;color:var(--text-muted);line-height:1.8;}
-.info-card ul{padding-left:1.25rem;}
-.info-card li{margin-bottom:.35rem;}
-/* Highlights */
-.highlights{display:flex;gap:2rem;flex-wrap:wrap;margin-bottom:2.5rem;}
-.highlight{display:flex;align-items:flex-start;gap:12px;}
-.highlight-icon{font-size:24px;flex-shrink:0;}
-.highlight-text h4{font-size:15px;font-weight:600;margin-bottom:2px;}
-.highlight-text p{font-size:14px;color:var(--text-muted);}
-/* Meta strip */
-.meta-strip{display:flex;gap:2rem;flex-wrap:wrap;padding:1.5rem 0;border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);margin-bottom:2.5rem;}
-.meta-item{display:flex;flex-direction:column;gap:3px;}
-.meta-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);}
-.meta-value{font-size:15px;font-weight:500;color:var(--text);}
-/* CTA card */
-.cta-card{background:var(--red);border-radius:var(--radius);padding:2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-top:3rem;}
-.cta-card h3{font-family:'DM Serif Display',serif;font-size:26px;color:#fff;font-weight:400;}
-.cta-card p{font-size:15px;color:rgba(255,255,255,.8);margin-top:.35rem;}
-.cta-card a{background:#fff;color:var(--red);padding:12px 26px;border-radius:var(--radius-sm);font-size:15px;font-weight:500;text-decoration:none;white-space:nowrap;transition:opacity .15s;}
-.cta-card a:hover{opacity:.88;}
+  <meta name="twitter:title" content="Enoshima & Kamakura Full-Day Tour — Tokyo with Terry"/>
+  <meta name="twitter:description" content="Explore Enoshima & Kamakura with Terry — From island shrines and coastal street food to the Great Buddha and hidden bamboo forest paths."/>
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1542640244-7e672d6cef21?w=1200&q=85&fit=crop"/>
+  <link rel="canonical" href="https://tokyowithterry.com/kamakura.html"/>
 
-@media(max-width:700px){.info-grid{grid-template-columns:1fr;}.page-hero{height:42vh;}.nav-right .back-link{display:none;}}
-footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-size:13px;}
-.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
-.footer-logo{font-size:15px;font-weight:700;color:#2d3748;margin-bottom:4px;letter-spacing:0.02em;}
-.footer-desc{font-size:13px;color:#7a6652;margin-bottom:4px;}
-.footer-copy{font-size:12px;color:#a09080;}
-.footer-links{display:flex;gap:1.25rem;align-items:center;}
-.footer-links a{color:#a0522d;text-decoration:none;font-size:13px;transition:color .15s;}
-.footer-links a:hover{color:#de1c24;}
+  <title>Enoshima & Kamakura Full-Day Tour — Tokyo Private Tours with Terry</title>
+  
+  <!-- Shared Premium Google Fonts Bundle -->
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght=400;600;800&family=DM+Sans:ital,wght=0,300;0,400;0,500;1,300&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+  
+  <style>
+    :root {
+      --ink: #14120e;
+      --paper: #f0ede6;
+      --moss: #1a4a6a;
+      --sage: #255a80;
+      --stone: #7a7468;
+      --gold: #b07820;
+      --border: rgba(20,18,14,0.12);
+      --red: #de1c24;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --bg-card: #ffffff;
+    }
 
-/* ── PRICING BLOCK ── */
-.pricing-block{background:var(--bg-card);border:0.5px solid var(--border);border-radius:var(--radius);padding:2rem;margin:2rem 0;}
-.pricing-intro{font-size:15px;color:var(--text-muted);line-height:1.7;margin-bottom:1.25rem;}
-.pricing-section-title{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--red);font-weight:600;margin:1.25rem 0 .5rem;}
-.pricing-grid{margin:.5rem 0 1.25rem;}
-.pricing-row{display:flex;align-items:baseline;justify-content:space-between;padding:.65rem 0;border-bottom:0.5px solid var(--border);}
-.pricing-row:last-child{border-bottom:none;}
-.pricing-group{font-weight:600;font-size:15px;color:var(--text);}
-.pricing-amount{font-size:16px;color:var(--red);font-weight:600;text-align:right;}
-.pricing-amount span{font-size:13px;color:var(--text-muted);font-weight:400;}
-.pricing-amount em{font-size:13px;color:var(--text-muted);font-weight:400;font-style:normal;}
-.pricing-notes{margin-top:1.25rem;display:flex;flex-direction:column;gap:.5rem;border-top:0.5px solid var(--border);padding-top:1rem;}
-.pricing-notes p{font-size:14px;color:var(--text-muted);line-height:1.6;}
-.pricing-notes strong{color:var(--text);}
-</style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 4vw;
+    }
+
+    /* ── GENERAL TYPOGRAPHY & HEADINGS ── */
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 36px;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+    .section-sub { font-size: 16px; color: var(--stone); margin-bottom: 2.5rem; max-width: 560px; }
+
+    /* ── HERO SECTION ── */
+    .hero {
+      position: relative;
+      height: 70vh;
+      min-height: 480px;
+      overflow: hidden;
+    }
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.25);
+      display: flex;
+      align-items: center;
+    }
+    .hero-content {
+      width: 100%;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 4vw;
+    }
+    .hero-text-wrap { max-width: 650px; }
+    .hero-eyebrow {
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #f9a07a;
+      margin-bottom: 1rem;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
+    }
+    .hero h1 {
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(38px, 5vw, 56px);
+      color: #ffffff;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      font-weight: 800;
+      text-shadow: 1px 1px 8px rgba(0,0,0,0.8);
+    }
+    .hero p {
+      font-size: 18px;
+      color: #ffffff;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
+    }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--red);
+      color: #fff;
+      border: none;
+      padding: 13px 28px;
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s;
+      display: inline-block;
+      font-weight: 500;
+    }
+    .btn-primary:hover { background: #B00000; }
+    .btn-ghost {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.7);
+      padding: 13px 28px;
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s;
+      display: inline-block;
+    }
+
+    /* ── EDITORIAL INTRO ── */
+    .intro {
+      max-width: 900px;
+      margin: 5rem auto;
+      padding: 0 4vw;
+      text-align: center;
+    }
+    .intro-kicker {
+      display: inline-block;
+      font-size: 0.7rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--moss);
+      margin-bottom: 1.2rem;
+      font-weight: 500;
+    }
+    .intro p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: var(--stone);
+    }
+
+    /* ── METRIC STRIP ── */
+    .tod-bar {
+      max-width: 1300px;
+      margin: 0 auto 2.5rem;
+      padding: 0 4vw;
+    }
+    .tod-inner {
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(26,74,106,0.15);
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .tod-item {
+      flex: 1;
+      padding: 1.25rem 1.75rem;
+      border-right: 1px solid rgba(26,74,106,0.15);
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .tod-item:last-child { border-right: none; }
+    .tod-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--moss);
+    }
+    .tod-value {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.4;
+    }
+
+    /* ── SECTION SEPARATOR ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      max-width: 1300px;
+      margin: 0 auto 3rem;
+      padding: 0 4vw;
+      color: var(--sage);
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+    .divider::before, .divider::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+
+    /* ── HIGHLIGHT STOPS GRID ── */
+    .stops {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 4vw 2rem;
+    }
+    .stop {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3.5rem;
+      border-top: 1px solid var(--border);
+      padding: 4rem 0;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      align-items: center;
+    }
+    .stop.visible { opacity: 1; transform: translateY(0); }
+    .stop:nth-child(even) { direction: rtl; }
+    .stop:nth-child(even) > * { direction: ltr; }
+
+    .stop-img-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 16/11;
+      border-radius: 6px;
+    }
+    .stop-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .stop:hover .stop-img-wrap img { transform: scale(1.02); }
+
+    .stop-content {
+      padding: 0.5rem 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .stop-category {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--moss);
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+    .stop-title {
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(1.8rem, 2.2vw, 2.4rem);
+      font-weight: 600;
+      line-height: 1.25;
+      margin-bottom: 0.3rem;
+    }
+    .stop-jp {
+      font-size: 0.88rem;
+      color: var(--stone);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.06em;
+    }
+    .stop-desc {
+      font-size: 0.98rem;
+      line-height: 1.8;
+      color: #3e3a34;
+      margin-bottom: 1.5rem;
+    }
+    .stop-tip {
+      border-left: 3px solid var(--gold);
+      padding-left: 1.1rem;
+      font-size: 0.85rem;
+      color: var(--stone);
+      font-style: italic;
+      line-height: 1.65;
+    }
+
+    /* ── PRICING CARD STYLES ── */
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .price-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .price-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--sage);
+    }
+    .price-card h3 {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 1.25rem;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+    .price-amt {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.2rem;
+      color: var(--red);
+      margin: 0.8rem 0;
+    }
+    .price-note {
+      font-size: 0.85rem;
+      color: var(--stone);
+      line-height: 1.4;
+    }
+
+    /* ── STANDARDIZED LOGISTICAL DETAILS GRID ── */
+    .details-section {
+      border-top: 1px solid var(--border);
+      padding-top: 5rem;
+      margin-top: 3rem;
+    }
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4rem;
+    }
+    .details-grid dt {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+    .details-grid dd { margin: 0; }
+    .details-grid ul { list-style: none; padding: 0; }
+    .details-grid li {
+      position: relative;
+      padding-left: 1.5rem;
+      font-size: 0.98rem;
+      line-height: 1.7;
+      color: var(--stone);
+      margin-bottom: 0.8rem;
+    }
+    .details-grid li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+    .details-grid p {
+      font-size: 0.98rem;
+      line-height: 1.75;
+      color: var(--stone);
+      margin-bottom: 1.2rem;
+    }
+    .details-grid p:last-child { margin-bottom: 0; }
+
+    /* ── REWORKED INLINE CARD CONTENT FROM PREVIOUS VERSIONS ── */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 2rem;
+    }
+    .info-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+    }
+    .info-card h3 {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      color: var(--ink);
+    }
+    .info-card ul { padding-left: 1.4rem; }
+    .info-card li, .info-card p {
+      font-size: 14px;
+      color: var(--stone);
+      line-height: 1.7;
+      margin-bottom: 0.65rem;
+    }
+
+    @media (max-width: 1024px) {
+      .stop { gap: 2rem; }
+      .details-grid { gap: 2.5rem; }
+      .price-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .stop { grid-template-columns: 1fr; direction: ltr !important; gap: 1.5rem; padding: 2.5rem 0; }
+      .stop:nth-child(even) > * { direction: ltr; }
+      .tod-inner { flex-direction: column; }
+      .tod-item { border-right: none; border-bottom: 1px solid rgba(26,74,106,0.15); padding: 1.1rem; }
+      .tod-item:last-child { border-bottom: none; }
+      .details-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .info-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .info-card { padding: 2rem; }
+    }
+  </style>
 </head>
 <body>
-<nav>
-  <a class="nav-logo" href="index.html">Tokyo with <span>Terry</span></a>
-  <div class="nav-right">
-    <a class="back-link" href="index.html">&#8592; Home</a>
-    <a class="back-link" href="reservations.html">Reserve</a>
-    <a class="book-btn" href="availability.html">Check availability</a>
-  </div>
+
+<!-- UNIFIED STICKY NAVIGATION -->
+<nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(0,0,0,0.1);padding:0 4vw;display:flex;align-items:center;justify-content:space-between;height:65px;">
+  <div style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--ink);">Tokyo with <span style="color:var(--red);">Terry</span></div>
+  <ul style="display:flex;list-style:none;justify-content:center;align-items:center;gap:2.5rem;margin:0;padding:0;">
+    <li><a href="../../../Downloads/index.html#areas" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Areas</a></li>
+    <li><a href="../../../Downloads/index.html#tours" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Tours</a></li>
+    <li><a href="../../../Downloads/index.html#about" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">About</a></li>
+    <li><a href="../../../Downloads/index.html#contact" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Contact</a></li>
+  </ul>
+  <a href="../../../Downloads/availability.html" style="background:var(--red);color:#fff;border:none;padding:10px 22px;border-radius:var(--radius-sm);font-size:14px;cursor:pointer;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:500;">Book a tour</a>
 </nav>
 
-<div class="page-hero">
-  <img src="kamakura.jpg" alt="Kamakura Day Trip"/>
-  <div class="page-hero-overlay">
-    <div class="page-hero-content container">
-      <div class="page-hero-label">Full Day Tour</div>
-      <h1>Kamakura Day Trip</h1>
-      <p>Temples, the Great Buddha & scenic coastal paths — just 1 hour from Tokyo.</p>
-    </div>
-  </div>
-</div>
-
-<section>
-  <div class="container">
-    <div class="meta-strip">
-      <div class="meta-item"><div class="meta-label">Duration</div><div class="meta-value">Full day (~8 hrs)</div></div>
-      
-      <div class="meta-item"><div class="meta-label">Group size</div><div class="meta-value">Solo & small groups</div></div>
-      <div class="meta-item"><div class="meta-label">Languages</div><div class="meta-value">English & Japanese</div></div>
-    </div>
-
-    <div class="section-label">About this tour</div>
-    <div class="section-title">Kamakura Day Trip</div>
-    <p style="font-size:16px;color:var(--text-muted);line-height:1.9;max-width:680px;margin-bottom:3rem;">Kamakura is everything Tokyo is not — quiet, forested, ancient. Just an hour by train, it feels like a different world. Terry will guide you through the major temples at the right time of day (before the crowds or after them), along the beautiful Daibutsu Hiking Trail through cedar forests, and down to the coast for fresh seafood. A perfect day out of the city.</p>
-
-    <div class="section-label">What you'll see</div>
-    <div class="section-title" style="font-size:28px;">Tour highlights</div>
-    <div class="highlights" style="margin-top:1.5rem;"><div class="highlight">
-      <div class="highlight-icon">🙏</div>
-      <div class="highlight-text"><h4>Kotoku-in Great Buddha</h4><p>13-metre bronze Buddha — one of Japan's most iconic sights</p></div>
-    </div><div class="highlight">
-      <div class="highlight-icon">⛩️</div>
-      <div class="highlight-text"><h4>Tsurugaoka Hachimangu</h4><p>Kamakura's most important Shinto shrine</p></div>
-    </div><div class="highlight">
-      <div class="highlight-icon">🌲</div>
-      <div class="highlight-text"><h4>Daibutsu Hiking Trail</h4><p>Forest path connecting temples — stunning in any season</p></div>
-    </div><div class="highlight">
-      <div class="highlight-icon">🏖️</div>
-      <div class="highlight-text"><h4>Yuigahama Beach</h4><p>Relax by the ocean after a day of temples</p></div>
-    </div><div class="highlight">
-      <div class="highlight-icon">🦞</div>
-      <div class="highlight-text"><h4>Coastal seafood lunch</h4><p>Fresh catch from Sagami Bay at a local restaurant</p></div>
-    </div></div>
-
-    <div class="info-grid" style="margin-top:2rem;">
-      <div class="info-card">
-        <h3>What's included</h3>
-        <ul><li>Train travel guidance from Tokyo</li><li>Temple entry recommendations</li><li>Hiking trail navigation</li><li>Local restaurant selection</li></ul>
-      </div>
-      <div class="info-card">
-        <h3>Good to know</h3>
-        <p>Wear comfortable walking shoes. The hiking trail is gentle but uneven underfoot.</p>
-        <p style="margin-top:1rem;">All tours are private — just you (and your group) with Terry. No strangers, no shared buses, no rushing.</p>
-        <p style="margin-top:1rem;">Terry speaks fluent English and Japanese, which opens doors that most tourists never get through.</p>
+<!-- HERO BLOCK -->
+<section class="hero">
+  <img src="https://images.unsplash.com/photo-1542640244-7e672d6cef21?w=1600&q=85&fit=crop" alt="The Great Buddha Monument at Kotoku-in Temple" />
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <div class="hero-text-wrap">
+        <div class="hero-eyebrow">🌊 Coastal Shrines · Retro Trams · Samurai History</div>
+        <h1>Enoshima &amp; Kamakura</h1>
+        <p>A comprehensive full-day escape tracking from the rugged sea caves and local markets of Enoshima Island to the monumental temples and hidden trails of ancient Kamakura.</p>
+        <div class="hero-btns">
+          <a href="#highlights-start" class="btn-primary">Explore the route ↓</a>
+          <a href="../../../Downloads/availability.html" class="btn-ghost">Check availability</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="container"><div class="cta-card">
-  <div><h3>Ready to book Kamakura Day Trip?</h3><p>Check Terry's availability and send a booking request — it only takes a minute.</p></div>
-  <a href="availability.html">View availability &amp; book &#8594;</a>
-</div></div>
-<div style="padding-bottom:2rem;"></div>
+<!-- EDITORIAL INTRO -->
+<div class="intro">
+  <div class="intro-kicker">Island Architecture · Medieval Capitals · Pacific Vistas</div>
+  <p>This curated day journey blends two of the most rewarding coastal regions within 90 minutes of Tokyo. From the island shrine layout of Enoshima with its coastal sea paths and lively street markets, we transition via the vintage Enoden train line into the mountain valley architecture of Kamakura. Experience an expertly balanced itinerary blending giant iconic shrines with peaceful, off-the-beaten-path paths that casual tourists miss.</p>
+</div>
 
-<footer>
-  <div class="footer-inner">
-    <div class="footer-left">
-      <div class="footer-logo">鎌倉 · Kamakura Day Trip</div>
-      <div class="footer-desc">A full-day guided experience · From ¥12,000 per person</div>
-      <div class="footer-copy">© 2026 Tokyo with Terry · Japan</div>
+<!-- METRICS STRIP -->
+<div class="tod-bar">
+  <div class="tod-inner">
+    <div class="tod-item">
+      <span class="tod-label">Duration &amp; Pace</span>
+      <span class="tod-value">Full Day (~10km walking)</span>
     </div>
-    <div class="footer-links">
-      <a href="index.html">&#8592; Home</a>
-      <a href="availability.html">Availability</a>
-      <a href="reservations.html">Reserve</a>
+    <div class="tod-item">
+      <span class="tod-label">Transit Base</span>
+      <span class="tod-value">Shinjuku Stn (Odakyu Line)</span>
+    </div>
+    <div class="tod-item">
+      <span class="tod-label">Best Transit Value</span>
+      <span class="tod-value">Enoshima-Kamakura Pass</span>
+    </div>
+  </div>
+</div>
+
+<!-- GOOGLE MAPS ROUTE INTEGRATION LINK -->
+<div class="container" style="margin-bottom: 4.5rem; text-align: center;">
+  <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; color: var(--moss); text-decoration: none; font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid rgba(26,74,106,0.25); padding: 10px 20px; background: rgba(255,255,255,0.5); border-radius: var(--radius-sm); transition: background 0.2s;">
+    📍 View Full Enoshima &amp; Kamakura Route on Google Maps ↗
+  </a>
+</div>
+
+<div class="divider" id="highlights-start">The Journey · Coastal Island to Ancient Capital</div>
+
+<!-- STOPS GRID -->
+<div class="stops">
+
+  <!-- Stop 1: Enoshima Shotengai -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <img src="https://images.unsplash.com/photo-1578991624414-276ef23a534f?w=1000&q=80&fit=crop" alt="Traditional Japanese shopping street shotengai" loading="lazy"/>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">09:45 AM · Traditional Marketways</div>
+      <h2 class="stop-title">Enoshima Shotengai Shopping Street</h2>
+      <div class="stop-jp">江の島弁財天仲見世通り</div>
+      <p class="stop-desc">Stroll along an atmospheric, 300-meter covered approach that has welcomed travelers since the Edo period. This incredibly well-preserved street serves up iconic local Shonan coast specialties like fresh Shirasu (whitebait), freshly pressed octopus rice crackers (takosen), and traditional sweet treats before the afternoon crowds stream in.</p>
+      <div class="stop-tip">💡 Getting here early is key. Grab a fresh shirasu don or street-side snack for an incredibly authentic breakfast on the move.</div>
+    </div>
+  </div>
+
+  <!-- Stop 2: Enoshima Island: Shrines, Caves & Views -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=1000&q=80&fit=crop" alt="Enoshima island coastal view" loading="lazy"/>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">10:15 AM · Sacred Islands &amp; Caves</div>
+      <h2 class="stop-title">Enoshima Island Exploration</h2>
+      <div class="stop-jp">江の島</div>
+      <p class="stop-desc">Cross the 600-meter causeway bridge to access a sacred rocky island dedicated to Benzaiten, the goddess of fortune and beauty. We wind through the interconnected multi-tier Enoshima Shrines, scale the modern Sea Candle lighthouse tower for views of Mt. Fuji, and descend down to the dramatic, lantern-lit Iwaya sea caves.</p>
+      <div class="stop-tip">💡 Most tourists miss the outer loop. We can navigate a quiet, lower rocky coastal path below the main cliffs for spectacular, crowd-free ocean vistas.</div>
+    </div>
+  </div>
+
+  <!-- Stop 3: The Enoden Train Ride -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <img src="https://images.unsplash.com/photo-1542640244-7e672d6cef21?w=1000&q=80&fit=crop" alt="Retro green Enoden train along the Shonan coast" loading="lazy"/>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">01:00 PM · Heritage Rail Lines</div>
+      <h2 class="stop-title">The Vintage Enoden Tramway</h2>
+      <div class="stop-jp">江ノ島電鉄</div>
+      <p class="stop-desc">Board the Enoden, a beloved 10-kilometer retro tramway line running from the coast directly through narrow residential garden frames. The spectacular seaside section between Enoshima and Kamakura-Koko-mae offers beautiful lookouts right over the crashing Pacific surf.</p>
+      <div class="stop-tip">💡 We'll claim seats on the left side of the carriage to guarantee front-row views of the open ocean landscape.</div>
+    </div>
+  </div>
+
+  <!-- Stop 4: Hase: Great Buddha & Hase-dera -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <img src="https://images.unsplash.com/photo-1601058333711-209bfd1956ce?w=1000&q=80&fit=crop" alt="The Great Bronze Buddha of Kamakura" loading="lazy"/>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">01:30 PM · Shogunate Masterpieces</div>
+      <h2 class="stop-title">Great Buddha &amp; Hase-dera Temple</h2>
+      <div class="stop-jp">鎌倉大仏 &amp; 長谷寺</div>
+      <p class="stop-desc">Disembark at Hase to explore the iconic, 121-ton open-air Bronze Amida Buddha, cast originally in 1252. Directly down the trail sits Hase-dera, an elevated temple framework housing a stunning 9-meter wooden Kannon statue and a hillside terrace that looks directly back across Sagami Bay.</p>
+      <div class="stop-tip">💡 For a nominal 20-yen coin surcharge, we can step cleanly inside the hollow belly of the Great Buddha to view its ancient casting joins.</div>
+    </div>
+  </div>
+
+  <!-- Stop 5: Central Kamakura & Komachi-dori -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1000&q=80&fit=crop" alt="Grand Tsurugaoka Hachimangu Shrine approach" loading="lazy"/>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">03:00 PM · Imperial Processions</div>
+      <h2 class="stop-title">Tsurugaoka Hachimangu Shrine</h2>
+      <div class="stop-jp">鶴岡八幡宮 &amp; 小町通り</div>
+      <p class="stop-desc">Arrive at central Kamakura Station to check out Tsurugaoka Hachimangu, the spiritual stronghold of the early Kamakura Shogunate. The historic approach features lotus ponds and a elevated grand processional walkway, which steps down directly to the artisan craft shops and dove-cookie stalls of Komachi-dori street.</p>
+      <div class="stop-tip">💡 We can wander past the historic Genpei lotus ponds, designed meticulously in the 12th century with symbolic counts representing rival samurai clans.</div>
+    </div>
+  </div>
+
+  <!-- Stop 6: Off the Beaten Path: Hidden Kamakura -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=1000&q=80&fit=crop" alt="Hidden serene temple path in Kamakura" loading="lazy"/>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">04:00 PM · Forest Trails &amp; Money Caves</div>
+      <h2 class="stop-title">Zeniarai Benzaiten &amp; Hidden Valleys</h2>
+      <div class="stop-jp">銭洗弁天 &amp; 隠れた名所</div>
+      <p class="stop-desc">Discover the true mystical heart of Kamakura by diving away from the commercial crowds. We'll cross through a low stone tunnel cut entirely into a solid cliff face to find Zeniarai Benzaiten, a hidden cave temple where visitors wash coins in a sacred mountain spring to multiply their fortunes.</p>
+      <div class="stop-tip">💡 From here, we can opt for a soft trek down the scenic Daibutsu Hiking Trail or wander the quiet, mossy residential 'Kakurei-ji' back lanes up to the north valley.</div>
+    </div>
+  </div>
+
+  <!-- Stop 7: Kita-Kamakura: Engakuji Serenity -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <img src="https://images.unsplash.com/photo-1542640244-7e672d6cef21?w=1000&q=80&fit=crop" alt="Zen temple gate at Engakuji" loading="lazy"/>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">05:00 PM · Zen Closures</div>
+      <h2 class="stop-title">Kita-Kamakura Sanctuary</h2>
+      <div class="stop-jp">北鎌倉 &amp; 円覚寺</div>
+      <p class="stop-desc">Conclude the travel loop in northern Kita-Kamakura, a deeply serene valley framed by ancient cedar trees. We will visit Engakuji, one of Japan's legendary Zen temple structures, boasting weathered thatched roofs, old meditation halls, and quiet stone pathways before taking a direct train line back to central Tokyo.</p>
+      <div class="stop-tip">💡 Late afternoon is the best time to visit; the golden sun rays filtering through the massive cedar forest create an unforgettable atmosphere.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- REWORKED PACKAGED CONTENT CARDS -->
+<div class="container">
+  <div class="info-grid">
+    <div class="info-card">
+      <h3>Terry's Insider Logistical Tips</h3>
+      <ul>
+        <li><strong>Transit Pass Selection:</strong> Purchase the Odakyu Enoshima-Kamakura Free Pass (~¥1,520) directly at the Shinjuku ticketing desk. It includes complete return transport and endless Enoden tram connections.</li>
+        <li><strong>Surcharge Upgrade:</strong> The Odakyu Romancecar limited express train features allocated window seating and is well worth the minor luxury fee on a busy day.</li>
+        <li><strong>Specialty Coastal Dining:</strong> Try fresh or tempura-fried *shirasu* (whitebait) dishes along the Enoshima Shotengai street rather than paying premium tourist markups directly on the island heights.</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <h3>The Custom Private Advantage</h3>
+      <p>Because Enoshima and Kamakura sit within separate coastal valleys, this loop naturally demands a fair bit of walking (~10km) across mixed pavement, stairs, and rustic temple paths.</p>
+      <p style="margin-top: 1rem;">Since this is a fully private guiding experience, we can quickly scale down the hiking components or utilize local buses on the fly to match your group's preferred physical pace perfectly.</p>
+    </div>
+  </div>
+</div>
+
+<!-- TOUR PRICING HOLDER SECTION -->
+<section id="tour-pricing" style="margin: 2rem 0; padding: 4rem 0; border-top: 1px solid var(--border);">
+  <div class="container">
+    <div class="section-label">Rates</div>
+    <h2 class="section-title">Private Guiding Fees</h2>
+    <div class="section-sub">Simple, flat-rate daily guiding fees. Transportation passes, temple admission fees, and meals are paid individually on location.</div>
+    
+    <div class="price-grid">
+      <!-- 1-2 Guests -->
+      <div class="price-card">
+        <h3>Solo / Couples</h3>
+        <div style="font-size: 0.85rem; color: var(--stone);">1 — 2 Guests</div>
+        <div class="price-amt">¥45,000</div>
+        <div class="price-note">Flat daily rate.<br>Includes fully tailored route coordination and dedicated execution.</div>
+      </div>
+      
+      <!-- 3-4 Guests -->
+      <div class="price-card">
+        <h3>Small Group</h3>
+        <div style="font-size: 0.85rem; color: var(--stone);">3 — 4 Guests</div>
+        <div class="price-amt">¥55,000</div>
+        <div class="price-note">Flat daily rate.<br>Ideal for friends or couples traveling together down the coast.</div>
+      </div>
+      
+      <!-- 5+ Guests -->
+      <div class="price-card">
+        <h3>Family Group</h3>
+        <div style="font-size: 0.85rem; color: var(--stone);">5 — 8 Guests</div>
+        <div class="price-amt">¥65,000</div>
+        <div class="price-note">Flat daily rate.<br>Perfect for multi-generational families requiring a seamless pace.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STANDARDIZED LOGISTICAL DETAILS BLOCK -->
+<div class="container details-section">
+  <dl class="details-grid">
+    <div>
+      <dt>What's Included</dt>
+      <dd>
+        <ul>
+          <li>All personalized route adjustments &amp; custom landmark combinations</li>
+          <li>Terry's comprehensive bilingual navigation, context, and historic commentary</li>
+          <li>Complete coordination handling for regional trains, ticketing, and Enoden tram connections</li>
+          <li>Complete freedom to speed up or slow down milestones based on weather patterns</li>
+        </ul>
+      </dd>
+    </div>
+    <div>
+      <dt>Good to Know</dt>
+      <dd>
+        <p>Please wear sturdy walking shoes with reliable grip. The coastal island rocks and certain mountain temple paths contain uneven stone steps.</p>
+        <p>Budget roughly ¥4,000 to ¥6,000 per person out-of-pocket to cover the transit pass, lunch, and direct temple admissions along the way.</p>
+        <p>Weekday excursions are highly recommended to steer clear of massive domestic weekend crowds at the primary shrine spots.</p>
+      </dd>
+    </div>
+  </dl>
+</div>
+
+<!-- INLINE BOOKING CTA BLOCK -->
+<div class="container" style="margin-top: 5rem; margin-bottom: 4rem;">
+  <div style="background: var(--red); border-radius: var(--radius); padding: 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; text-align: left;">
+    <div style="flex: 2; min-width: 300px;">
+      <h3 style="font-family: 'DM Serif Display', serif; font-size: 28px; color: #ffffff; font-weight: 400; margin: 0; line-height: 1.2;">Ready to experience Enoshima &amp; Kamakura?</h3>
+      <p style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: rgba(255, 255, 255, 0.8); margin: 0.5rem 0 0 0; font-weight: 300; line-height: 1.4;">Let's customize an incredible coastal itinerary tailored exactly to your group's pace.</p>
+    </div>
+    <div style="flex: 1; text-align: right; min-width: 200px;">
+      <a href="../../../Downloads/availability.html" style="background: #ffffff; color: var(--red); padding: 13px 26px; border-radius: var(--radius-sm); font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap; display: inline-block;">View availability &amp; book &#8594;</a>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCTION FOOTER -->
+<footer style="background: #f8f0e8; border-top: 4px solid var(--red); padding: 2.5rem 4vw; font-family: 'DM Sans', sans-serif; width: 100%;">
+  <div style="max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+    <div style="text-align: left;">
+      <div style="font-size: 15px; font-weight: 700; color: #2d3748; margin-bottom: 4px; letter-spacing: 0.02em;">江の島 · 鎌倉 · Enoshima &amp; Kamakura Area Guide</div>
+      <div style="font-size: 13px; color: #7a6652; margin-bottom: 4px;">Curated Neighborhood Profiles · Tokyo Private Tours with Terry</div>
+      <div style="font-size: 12px; color: #a09080;">© 2026 Tokyo with Terry · Japan</div>
+    </div>
+    <div style="display: flex; gap: 1.5rem; align-items: center;">
+      <a href="../../../Downloads/index.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">&#8592; Home</a>
+      <a href="../../../Downloads/availability.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">Availability</a>
+      <a href="../../../Downloads/reservations.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">Reserve</a>
     </div>
   </div>
 </footer>
+
+<!-- VIEWPORT ANIMATION CONTROLLER -->
+<script>
+  const stops = document.querySelectorAll('.stop');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  stops.forEach(s => observer.observe(s));
+</script>
+
 </body>
 </html>

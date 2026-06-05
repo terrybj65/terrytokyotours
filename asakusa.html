@@ -35,6 +35,12 @@
       --red: #de1c24;
       --radius: 12px;
       --radius-sm: 8px;
+
+      /* Added design variables to maintain semantic harmony with index.html colors */
+      --text: #1C2833;
+      --text-muted: #5D6D7E;
+      --bg: #FAFAF8;
+      --bg-card: #ffffff;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -52,6 +58,23 @@
       margin: 0 auto;
       padding: 0 4vw;
     }
+
+    /* ── SECTION BASICS ── */
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 36px;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+    .section-sub { font-size: 16px; color: var(--text-muted); margin-bottom: 2.5rem; max-width: 560px; }
 
     /* ── HERO SECTION ── */
     .hero {
@@ -241,38 +264,6 @@
     }
     .stop:hover .stop-img-wrap img { transform: scale(1.02); }
 
-    .stop-badge {
-      position: absolute;
-      bottom: 1.25rem; left: 1.25rem;
-      background: rgba(6,12,20,0.8);
-      border: 1px solid rgba(255,255,255,0.15);
-      color: rgba(255,255,255,0.85);
-      font-size: 0.65rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 0.35rem 0.8rem;
-      backdrop-filter: blur(6px);
-    }
-    .stop-time {
-      position: absolute;
-      top: 1rem; left: 1rem;
-      font-size: 0.62rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.65);
-      background: rgba(6,12,20,0.6);
-      padding: 0.2rem 0.6rem;
-      backdrop-filter: blur(4px);
-    }
-    .stop-num {
-      position: absolute;
-      top: 0.25rem; right: 1.25rem;
-      font-family: 'Shippori Mincho', serif;
-      font-size: 5rem; font-weight: 800;
-      color: rgba(255,255,255,0.12);
-      line-height: 1; pointer-events: none;
-    }
-
     .stop-content {
       padding: 0.5rem 0;
       display: flex;
@@ -420,10 +411,7 @@
   <!-- Stop 1: Senso-ji Temple -->
   <div class="stop">
     <div class="stop-img-wrap">
-      <div class="stop-time">Stop 01</div>
-      <div class="stop-num">01</div>
       <img src="https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?w=1000&q=80&fit=crop" alt="Senso-ji Temple main hall" loading="lazy"/>
-      <div class="stop-badge">Sacred Heart</div>
     </div>
     <div class="stop-content">
       <div class="stop-category">Ancient Shrines · Buddhist Architecture</div>
@@ -437,10 +425,7 @@
   <!-- Stop 2: Nakamise Shopping Street -->
   <div class="stop">
     <div class="stop-img-wrap">
-      <div class="stop-time">Stop 02</div>
-      <div class="stop-num">02</div>
       <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?w=1000&q=80&fit=crop" alt="Snack stalls lining Nakamise Street" loading="lazy"/>
-      <div class="stop-badge">Historic Market</div>
     </div>
     <div class="stop-content">
       <div class="stop-category">Edo Marketplaces · Street Food Craft</div>
@@ -454,10 +439,7 @@
   <!-- Stop 3: Kappabashi-dori (Kitchen Town) -->
   <div class="stop">
     <div class="stop-img-wrap">
-      <div class="stop-time">Stop 03</div>
-      <div class="stop-num">03</div>
       <img src="https://images.unsplash.com/photo-1542640244-7e672d6cef21?w=1000&q=80&fit=crop" alt="Artisan Japanese knives and culinary shops in Kappabashi" loading="lazy"/>
-      <div class="stop-badge">Artisan Capital</div>
     </div>
     <div class="stop-content">
       <div class="stop-category">Culinary Craft · Culinary Tools</div>
@@ -471,10 +453,7 @@
   <!-- Stop 4: Traditional Rickshaw Rides -->
   <div class="stop">
     <div class="stop-img-wrap">
-      <div class="stop-time">Stop 04</div>
-      <div class="stop-num">04</div>
       <img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=1000&q=80&fit=crop" alt="Traditional rickshaw navigating old backstreets" loading="lazy"/>
-      <div class="stop-badge">Vintage Transport</div>
     </div>
     <div class="stop-content">
       <div class="stop-category">Historic Transit · Hidden Backalleys</div>
@@ -488,10 +467,7 @@
   <!-- Stop 5: Sumida River Promenade -->
   <div class="stop">
     <div class="stop-img-wrap">
-      <div class="stop-time">Stop 05</div>
-      <div class="stop-num">05</div>
       <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=1000&q=80&fit=crop" alt="View across the Sumida River toward modern architecture" loading="lazy"/>
-      <div class="stop-badge">Waterfront Views</div>
     </div>
     <div class="stop-content">
       <div class="stop-category">Riverside Parks · Skyline Panoramas</div>
@@ -503,6 +479,58 @@
   </div>
 
 </div>
+
+<!-- TOUR PRICING SECTION -->
+<section id="tour-pricing" style="margin: 2rem 0; padding: 3rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="container">
+    <div class="section-label">Pricing</div>
+    <h2 class="section-title">Transparent, Private Rates</h2>
+    <div class="section-sub">This tour is 100% private and fully customized. Pricing is calculated on a per-person sliding scale to offer the best value for couples and families.</div>
+    
+    <!-- Sliding Scale Grid -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 2rem;">
+      <div style="background: var(--bg-card); padding: 1.5rem; border-radius: var(--radius); border: 0.5px solid var(--border); text-align: center;">
+        <div style="font-size: 14px; color: var(--text-muted); font-weight: 500;">1 Traveler (Solo)</div>
+        <div style="font-family: 'DM Serif Display', serif; font-size: 32px; color: var(--text); margin: 0.5rem 0;">¥5,000</div>
+        <div style="font-size: 13px; color: var(--text-muted);">per hour</div>
+        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 0.5px solid var(--border); font-size: 14px; font-weight: 500; color: var(--text-muted);">¥40,000 <span style="font-size: 12px; font-weight: 400;">/ 8-hr day</span></div>
+      </div>
+
+      <div style="background: var(--bg-card); padding: 1.5rem; border-radius: var(--radius); border: 0.5px solid var(--border); text-align: center;">
+        <div style="font-size: 14px; color: var(--text-muted); font-weight: 500;">2 Travelers (Couples)</div>
+        <div style="font-family: 'DM Serif Display', serif; font-size: 32px; color: var(--red); margin: 0.5rem 0;">¥3,500</div>
+        <div style="font-size: 13px; color: var(--text-muted);">per person / hour</div>
+        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 0.5px solid var(--border); font-size: 14px; font-weight: 500; color: var(--text-muted);">¥28,000 <span style="font-size: 12px; font-weight: 400;">pp / 8-hr day</span></div>
+      </div>
+
+      <div style="background: var(--bg-card); padding: 1.5rem; border-radius: var(--radius); border: 0.5px solid var(--border); text-align: center;">
+        <div style="font-size: 14px; color: var(--text-muted); font-weight: 500;">3 Travelers</div>
+        <div style="font-family: 'DM Serif Display', serif; font-size: 32px; color: var(--text); margin: 0.5rem 0;">¥3,000</div>
+        <div style="font-size: 13px; color: var(--text-muted);">per person / hour</div>
+        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 0.5px solid var(--border); font-size: 14px; font-weight: 500; color: var(--text-muted);">¥24,000 <span style="font-size: 12px; font-weight: 400;">pp / 8-hr day</span></div>
+      </div>
+
+      <div style="background: var(--bg-card); padding: 1.5rem; border-radius: var(--radius); border: 0.5px solid var(--border); text-align: center;">
+        <div style="font-size: 14px; color: var(--text-muted); font-weight: 500;">4 Travelers</div>
+        <div style="font-family: 'DM Serif Display', serif; font-size: 32px; color: var(--text); margin: 0.5rem 0;">¥2,500</div>
+        <div style="font-size: 13px; color: var(--text-muted);">per person / hour</div>
+        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 0.5px solid var(--border); font-size: 14px; font-weight: 500; color: var(--text-muted);">¥20,000 <span style="font-size: 12px; font-weight: 400;">pp / 8-hr day</span></div>
+      </div>
+    </div>
+
+    <!-- Details Breakdown -->
+    <div style="background: var(--bg-card); padding: 1.5rem; border-radius: var(--radius); border: 0.5px solid var(--border); font-size: 14px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+      <div>
+        <strong style="color: var(--text);">What's Included:</strong>
+        <p style="color: var(--text-muted); margin-top: 4px;">Terry’s dedicated guiding fee, customized itinerary planning, and 33 years of local expertise.</p>
+      </div>
+      <div>
+        <strong style="color: var(--text);">Separate Expenses:</strong>
+        <p style="color: var(--text-muted); margin-top: 4px;">Your personal meals, train/transit fares, and optional venue entry fees (for both you and the guide).</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- DETAILS BLOCKS -->
 <div class="info-grid">

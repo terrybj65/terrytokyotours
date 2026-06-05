@@ -35,6 +35,7 @@
       --red: #de1c24;
       --radius: 12px;
       --radius-sm: 8px;
+      --bg-card: #ffffff;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -52,6 +53,23 @@
       margin: 0 auto;
       padding: 0 4vw;
     }
+
+    /* ── GENERAL TYPOGRAPHY & HEADINGS ── */
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 36px;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+    .section-sub { font-size: 16px; color: var(--stone); margin-bottom: 2.5rem; max-width: 560px; }
 
     /* ── HERO SECTION ── */
     .hero {
@@ -79,9 +97,7 @@
       margin: 0 auto;
       padding: 0 4vw;
     }
-    .hero-text-wrap {
-      max-width: 650px;
-    }
+    .hero-text-wrap { max-width: 650px; }
     .hero-eyebrow {
       font-size: 13px;
       letter-spacing: 0.14em;
@@ -237,41 +253,10 @@
     .stop-img-wrap img {
       width: 100%; height: 100%;
       object-fit: cover;
+      display: block;
       transition: transform 0.6s ease;
     }
     .stop:hover .stop-img-wrap img { transform: scale(1.02); }
-
-    .stop-badge {
-      position: absolute;
-      bottom: 1.25rem; left: 1.25rem;
-      background: rgba(6,12,20,0.8);
-      border: 1px solid rgba(255,255,255,0.15);
-      color: rgba(255,255,255,0.85);
-      font-size: 0.65rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 0.35rem 0.8rem;
-      backdrop-filter: blur(6px);
-    }
-    .stop-time {
-      position: absolute;
-      top: 1rem; left: 1rem;
-      font-size: 0.62rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.65);
-      background: rgba(6,12,20,0.6);
-      padding: 0.2rem 0.6rem;
-      backdrop-filter: blur(4px);
-    }
-    .stop-num {
-      position: absolute;
-      top: 0.25rem; right: 1.25rem;
-      font-family: 'Shippori Mincho', serif;
-      font-size: 5rem; font-weight: 800;
-      color: rgba(255,255,255,0.12);
-      line-height: 1; pointer-events: none;
-    }
 
     .stop-content {
       padding: 0.5rem 0;
@@ -315,38 +300,89 @@
       line-height: 1.65;
     }
 
-    /* ── OVERVIEW BOXES ── */
-    .info-grid {
+    /* ── PRICING CARD STYLES ── */
+    .price-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5rem;
-      max-width: 1300px;
-      margin: 4.5rem auto;
-      padding: 0 4vw;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 1.5rem;
     }
-    .info-card {
-      background: #ffffff;
+    .price-card {
+      background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 2.5rem;
+      border-radius: var(--radius-sm);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: transform 0.2s, border-color 0.2s;
     }
-    .info-card h3 {
+    .price-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--sage);
+    }
+    .price-card h3 {
       font-family: 'Shippori Mincho', serif;
-      font-size: 22px;
-      font-weight: 600;
-      margin-bottom: 1.25rem;
+      font-size: 1.25rem;
       color: var(--ink);
+      margin-bottom: 0.5rem;
     }
-    .info-card ul { padding-left: 1.4rem; }
-    .info-card li, .info-card p {
-      font-size: 14px;
+    .price-amt {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      color: var(--red);
+      margin: 0.8rem 0;
+    }
+    .price-note {
+      font-size: 0.85rem;
       color: var(--stone);
-      line-height: 1.7;
-      margin-bottom: 0.65rem;
+      line-height: 1.4;
     }
+
+    /* ── STANDARDIZED LOGISTICAL DETAILS GRID ── */
+    .details-section {
+      border-top: 1px solid var(--border);
+      padding-top: 5rem;
+      margin-top: 3rem;
+    }
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4rem;
+    }
+    .details-grid dt {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+    .details-grid dd { margin: 0; }
+    .details-grid ul { list-style: none; padding: 0; }
+    .details-grid li {
+      position: relative;
+      padding-left: 1.5rem;
+      font-size: 0.98rem;
+      line-height: 1.7;
+      color: var(--stone);
+      margin-bottom: 0.8rem;
+    }
+    .details-grid li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+    .details-grid p {
+      font-size: 0.98rem;
+      line-height: 1.75;
+      color: var(--stone);
+      margin-bottom: 1.2rem;
+    }
+    .details-grid p:last-child { margin-bottom: 0; }
 
     @media (max-width: 1024px) {
       .stop { gap: 2rem; }
+      .details-grid { gap: 2.5rem; }
+      .price-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 768px) {
@@ -355,8 +391,7 @@
       .tod-inner { flex-direction: column; }
       .tod-item { border-right: none; border-bottom: 1px solid rgba(26,74,106,0.15); padding: 1.1rem; }
       .tod-item:last-child { border-bottom: none; }
-      .info-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-      .info-card { padding: 2rem; }
+      .details-grid { grid-template-columns: 1fr; gap: 3rem; }
     }
   </style>
 </head>
@@ -382,7 +417,7 @@
       <div class="hero-text-wrap">
         <div class="hero-eyebrow">🗻 Alpine Landscapes · Volcanic Passes</div>
         <h1>Hakone Day Trip</h1>
-        <p>Mountain railways, volcanic valley views, and a cruise across Lake Ashi beneath Mt. Fuji[cite: 6].</p>
+        <p>Mountain railways, volcanic valley views, and a cruise across Lake Ashi beneath Mt. Fuji.</p>
         <div class="hero-btns">
           <a href="#highlights-start" class="btn-primary">Explore highlights ↓</a>
           <a href="../../../Downloads/availability.html" class="btn-ghost">Check availability</a>
@@ -395,7 +430,7 @@
 <!-- EDITORIAL INTRO -->
 <div class="intro">
   <div class="intro-kicker">Volcanic Calderas · Switchback Rail · Sacred Horizons</div>
-  <p>Hakone is a vast, beautiful national park region nestled in the volcanic mountains near Mt. Fuji[cite: 6]. Traveling here is half the fun — the classic "Hakone Loop" involves an old switchback mountain train, a steep cable car, a ropeway over smoking sulphur vents, and a cruise across a crater lake on a pirate boat[cite: 6]. Terry handles all the logistics, ticketing, and timing, so you can just look at the mountains[cite: 6].</p>
+  <p>Hakone is a vast, beautiful national park region nestled in the volcanic mountains near Mt. Fuji. Traveling here is half the fun — the classic "Hakone Loop" involves an old switchback mountain train, a steep cable car, a ropeway over smoking sulphur vents, and a cruise across a crater lake on a pirate boat. Terry handles all the logistics, ticketing, and timing, so you can just look at the mountains.</p>
 </div>
 
 <!-- METRICS STRIP -->
@@ -403,15 +438,15 @@
   <div class="tod-inner">
     <div class="tod-item">
       <span class="tod-label">Duration</span>
-      <span class="tod-value">Full day (~9-10 hrs)[cite: 6]</span>
+      <span class="tod-value">Full day (~8-10 hrs)</span>
     </div>
     <div class="tod-item">
       <span class="tod-label">Group Size</span>
-      <span class="tod-value">Solo & Small Private Groups Only[cite: 6]</span>
+      <span class="tod-value">Solo & Small Private Groups Only</span>
     </div>
     <div class="tod-item">
       <span class="tod-label">Languages</span>
-      <span class="tod-value">English & Fluent Japanese[cite: 6]</span>
+      <span class="tod-value">English & Fluent Japanese</span>
     </div>
   </div>
 </div>
@@ -424,16 +459,13 @@
   <!-- Stop 1: Tozan Mountain Railway -->
   <div class="stop">
     <div class="stop-img-wrap">
-      <div class="stop-time">Stop 01</div>
-      <div class="stop-num">01</div>
       <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1000&q=80&fit=crop" alt="Scenic Mountain Railway train" loading="lazy"/>
-      <div class="stop-badge">Forest Rail</div>
     </div>
     <div class="stop-content">
-      <div class="stop-category">Historic Transits · Alpine Engineering</div>
+      <div class="stop-category">Stop 01 · Historic Transits · Alpine Engineering</div>
       <h2 class="stop-title">Tozan Mountain Railway</h2>
       <div class="stop-jp">箱根登山電車</div>
-      <p class="stop-desc">Board Japan's oldest mountain railway as it climbs steeply through deep, densely forested valleys[cite: 6]. Experience classic switchback techniques where the train alternates directions to conquer the extreme mountain grade.</p>
+      <p class="stop-desc">Board Japan's oldest mountain railway as it climbs steeply through deep, densely forested valleys. Experience classic switchback techniques where the train alternates directions to conquer the extreme mountain grade.</p>
       <div class="stop-tip">💡 Gorgeous hydrangeas frame the tracks in June, turning into rich fiery foliage deep into autumn.</div>
     </div>
   </div>
@@ -441,16 +473,13 @@
   <!-- Stop 2: Owakudani Volcanic Valley -->
   <div class="stop">
     <div class="stop-img-wrap">
-      <div class="stop-time">Stop 02</div>
-      <div class="stop-num">02</div>
       <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=1000&q=80&fit=crop" alt="Owakudani Volcanic Steam Vents" loading="lazy"/>
-      <div class="stop-badge">Active Caldera</div>
     </div>
     <div class="stop-content">
-      <div class="stop-category">Sulphur Springs · Geothermal Peaks</div>
+      <div class="stop-category">Stop 02 · Sulphur Springs · Geothermal Peaks</div>
       <h2 class="stop-title">Owakudani Valley</h2>
       <div class="stop-jp">大涌谷</div>
-      <p class="stop-desc">Take the high-altitude ropeway over an active volcanic zone defined by rising steam vents, boiling hot springs, and sweeping mountain panoramas[cite: 6]. Taste the famous Kuro-tamago — local eggs boiled directly in sulfur-rich waters until their shells turn ink black[cite: 6].</p>
+      <p class="stop-desc">Take the high-altitude ropeway over an active volcanic zone defined by rising steam vents, boiling hot springs, and sweeping mountain panoramas. Taste the famous Kuro-tamago — local eggs boiled directly in sulfur-rich waters until their shells turn ink black.</p>
       <div class="stop-tip">💡 Local lore says eating just one of these eggs adds seven years to your life expectancy.</div>
     </div>
   </div>
@@ -458,16 +487,13 @@
   <!-- Stop 3: Lake Ashi Cruise -->
   <div class="stop">
     <div class="stop-img-wrap">
-      <div class="stop-time">Stop 03</div>
-      <div class="stop-num">03</div>
       <img src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1000&q=80&fit=crop" alt="Lake Ashi Cruise and Torii Gate" loading="lazy"/>
-      <div class="stop-badge">Crater Waters</div>
     </div>
     <div class="stop-content">
-      <div class="stop-category">Scenic Sails · Shoreline Shrines</div>
+      <div class="stop-category">Stop 03 · Scenic Sails · Shoreline Shrines</div>
       <h2 class="stop-title">Lake Ashi Cruise</h2>
       <div class="stop-jp">芦ノ湖</div>
-      <p class="stop-desc">Sail across a beautifully clear crater lake formed thousands of years ago[cite: 6]. From the open-air deck, observe the iconic bright red torii gate of Hakone Shrine rising dramatically directly out of the deep blue water[cite: 6].</p>
+      <p class="stop-desc">Sail across a beautifully clear crater lake formed thousands of years ago. From the open-air deck, observe the iconic bright red torii gate of Hakone Shrine rising dramatically directly out of the deep blue water.</p>
       <div class="stop-tip">💡 On pristine days, the surface of the lake creates a stunning mirror reflection of Mount Fuji.</div>
     </div>
   </div>
@@ -475,80 +501,108 @@
   <!-- Stop 4: Ancient Cedar Avenue Walk -->
   <div class="stop">
     <div class="stop-img-wrap">
-      <div class="stop-time">Stop 04</div>
-      <div class="stop-num">04</div>
       <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&q=80&fit=crop" alt="Tall Ancient Cedar Trees Pathway" loading="lazy"/>
-      <div class="stop-badge">Samurai Paths</div>
     </div>
     <div class="stop-content">
-      <div class="stop-category">Tokaido Highway · Heritage Groves</div>
+      <div class="stop-category">Stop 04 · Tokaido Highway · Heritage Groves</div>
       <h2 class="stop-title">Cedar Avenue Walk</h2>
       <div class="stop-jp">杉並木</div>
-      <p class="stop-desc">Walk down a perfectly preserved dirt section of the old historic Tokaido highway[cite: 6]. Trek beneath towering, 400-year-old giant cedar trees planted long ago to shade travelers marching between Kyoto and old Edo[cite: 6].</p>
+      <p class="stop-desc">Walk down a perfectly preserved dirt section of the old historic Tokaido highway. Trek beneath towering, 400-year-old giant cedar trees planted long ago to shade travelers marching between Kyoto and old Edo.</p>
       <div class="stop-tip">💡 This atmospheric trail offers a quiet, meditative escape directly from modern tour crowds.</div>
     </div>
   </div>
 
 </div>
 
-<!-- DETAILS BLOCKS -->
-<div class="info-grid">
-  <div class="info-card">
-    <h3>What's Included</h3>
-    <ul>
-      <li>Train travel guidance & express seat allocations[cite: 6]</li>
-      <li>Seamless micro-navigation of the complex multi-transit Hakone Loop[cite: 6]</li>
-      <li>Deep historical and cultural context throughout the region[cite: 6]</li>
-      <li>Curated lunch spot selection & custom local ordering assistance[cite: 6]</li>
-    </ul>
+<!-- TOUR PRICING HOLDER SECTION -->
+<section id="tour-pricing" style="margin: 2rem 0; padding: 4rem 0; border-top: 1px solid var(--border);">
+  <div class="container">
+    <div class="section-label">Rates</div>
+    <h2 class="section-title">Private Guiding Fees</h2>
+    <div class="section-sub">Simple, flat-rate guiding packages based on group size. This baseline fee covers Terry’s dedicated guiding time and regional transit expenses.</div>
+    
+    <div class="price-grid">
+      <!-- 1-2 Guests -->
+      <div class="price-card">
+        <h3>Solo / Couples</h3>
+        <div style="font-size: 0.85rem; color: var(--stone);">1 — 2 Guests</div>
+        <div class="price-amt">From ¥38,000</div>
+        <div class="price-note">Flat fee for private guiding.<br>Covers Terry's transit from Machida and partner attraction admissions.</div>
+      </div>
+      
+      <!-- 3-4 Guests -->
+      <div class="price-card">
+        <h3>Small Group</h3>
+        <div style="font-size: 0.85rem; color: var(--stone);">3 — 4 Guests</div>
+        <div class="price-amt">From ¥45,000</div>
+        <div class="price-note">Flat fee for private guiding.<br>Covers Terry's transit from Machida and partner attraction admissions.</div>
+      </div>
+      
+      <!-- 5+ Guests -->
+      <div class="price-card">
+        <h3>Family Group</h3>
+        <div style="font-size: 0.85rem; color: var(--stone);">5+ Guests</div>
+        <div class="price-amt">From ¥55,000</div>
+        <div class="price-note">Flat fee for private guiding.<br>Covers Terry's transit from Machida and partner attraction admissions.</div>
+      </div>
+    </div>
+    
+    <p style="font-size: 13px; color: var(--stone); text-align: center; margin-top: 1.5rem; font-style: italic;">
+      *Clients self-fund their individual multi-transit transport passes and museum entry tickets along the trail.
+    </p>
   </div>
-  <div class="info-card">
-    <h3>Good to Know</h3>
-    <p>Hakone is further from Tokyo than Kamakura — the journey takes about 75-90 minutes each way via the rapid Romancecar express train[cite: 6].</p>
-    <p style="margin-top: 1rem;">All tours are strictly private — just your personal group with Terry[cite: 6]. No strangers, no rushing schedules, no megaphone tour groups[cite: 6].</p>
-    <p style="margin-top: 1rem;">Terry speaks fluent English and Japanese, seamlessly unlocking regional train transfers and mountain check-ins[cite: 6].</p>
-  </div>
-</div>
+</section>
 
-<!-- PRICING, CTA AND FOOTER -->
-<div style="width: 100%; background: #f9f6f0; border-top: 1px solid rgba(0,0,0,0.08); box-sizing: border-box;">
-  <div style="max-width: 1300px; margin: 0 auto; padding: 2.5rem 4vw; text-align: center; box-sizing: border-box;">
-    <p style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: #8a7040; margin: 0 0 0.5rem 0; font-family: 'DM Sans', sans-serif;">Full day · Private Guiding</p>
-    <p style="font-family: 'Shippori Mincho', serif; font-size: 2.5rem; font-weight: 800; color: #1C2833; margin: 0 0 0.5rem 0;">Premium Day Trip</p>
-    <p style="font-size: 0.85rem; color: #7a7468; margin: 0 0 1.5rem 0; font-family: 'DM Sans', sans-serif;">Price varies by details · Train passes, lake fares, and lunches are paid on location[cite: 6]</p>
-    <a href="../../../Downloads/availability.html" style="display: inline-block; background: #de1c24; color: #fff; padding: 12px 28px; border-radius: 8px; font-size: 0.9rem; text-decoration: none; letter-spacing: 0.05em; font-family: 'DM Sans', sans-serif; font-weight: 500;">Book this tour</a>
-  </div>
+<!-- STANDARDIZED LOGISTICAL DETAILS BLOCK -->
+<div class="container details-section">
+  <dl class="details-grid">
+    <div>
+      <dt>Guiding Inclusions</dt>
+      <dd>
+        <ul>
+          <li>Full seamless micro-navigation of the multi-transit Hakone Loop (Mountain Railway, Cable Car, Ropeway, and Lake Cruise)</li>
+          <li>Pre-trip assistance coordinating Romancecar express train reserved seating selections</li>
+          <li>A traditional hosted treat stop at Terry’s favorite 400-year-old Amazake-jaya teahouse for traditional hot rice drinks and mochi</li>
+          <li>Deep historical storytelling along the ancient Tokaido highway pathways</li>
+        </ul>
+      </dd>
+    </div>
+    <div>
+      <dt>Good to Know</dt>
+      <dd>
+        <p>Hakone is nestled deep in the volcanic mountains — the comfortable Odakyu Romancecar express takes roughly 85 minutes each way from Shinjuku.</p>
+        <p><strong>Out-of-Pocket Costs:</strong> Travelers purchase their own regional transport links (such as the Hakone Free Pass) and chosen museum admission tickets dynamically throughout the day.</p>
+        <p>All tours are strictly private. Your group will have Terry’s exclusive attention with zero rushing, zero strangers, and no rigid megaphone-led schedules.</p>
+      </dd>
+    </div>
+  </dl>
 </div>
 
 <!-- INLINE BOOKING CTA BLOCK -->
-<div style="width: 100%; background: transparent; box-sizing: border-box;">
-  <div style="max-width: 1300px; margin: 4rem auto 0; padding: 0 4vw; box-sizing: border-box;">
-    <div style="background: #de1c24; border-radius: 12px; padding: 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; box-sizing: border-box; text-align: left;">
-      <div style="flex: 2; min-width: 300px; box-sizing: border-box;">
-        <h3 style="font-family: 'DM Serif Display', serif; font-size: 28px; color: #ffffff; font-weight: 400; margin: 0; padding: 0; line-height: 1.2;">Ready to book Hakone?</h3>
-        <p style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: rgba(255, 255, 255, 0.8); margin: 0.5rem 0 0 0; padding: 0; font-weight: 300; line-height: 1.4;">Check Terry's availability and send a booking request — it only takes a minute[cite: 6].</p>
-      </div>
-      <div style="flex: 1; text-align: right; min-width: 200px; box-sizing: border-box;">
-        <a href="../../../Downloads/availability.html" style="background: #ffffff; color: #de1c24; padding: 13px 26px; border-radius: 8px; font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap; transition: opacity 0.15s; display: inline-block; font-family: 'DM Sans', sans-serif; box-sizing: border-box;">View availability &amp; book &#8594;</a>
-      </div>
+<div class="container" style="margin-top: 5rem; margin-bottom: 4rem;">
+  <div style="background: var(--red); border-radius: var(--radius); padding: 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; text-align: left;">
+    <div style="flex: 2; min-width: 300px;">
+      <h3 style="font-family: 'DM Serif Display', serif; font-size: 28px; color: #ffffff; font-weight: 400; margin: 0; line-height: 1.2;">Ready to book Hakone?</h3>
+      <p style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: rgba(255, 255, 255, 0.8); margin: 0.5rem 0 0 0; font-weight: 300; line-height: 1.4;">Check Terry's availability and send a booking request — it only takes a minute.</p>
+    </div>
+    <div style="flex: 1; text-align: right; min-width: 200px;">
+      <a href="../../../Downloads/availability.html" style="background: #ffffff; color: var(--red); padding: 13px 26px; border-radius: var(--radius-sm); font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap; display: inline-block;">View availability &amp; book &#8594;</a>
     </div>
   </div>
 </div>
 
-<div style="padding-bottom: 4rem;"></div>
-
 <!-- PRODUCTION FOOTER -->
-<footer style="background: #f8f0e8; border-top: 4px solid #de1c24; padding: 2.5rem 4vw; font-family: 'DM Sans', sans-serif; box-sizing: border-box; width: 100%;">
-  <div style="max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; box-sizing: border-box;">
-    <div style="text-align: left; box-sizing: border-box;">
+<footer style="background: #f8f0e8; border-top: 4px solid var(--red); padding: 2.5rem 4vw; font-family: 'DM Sans', sans-serif; width: 100%;">
+  <div style="max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+    <div style="text-align: left;">
       <div style="font-size: 15px; font-weight: 700; color: #2d3748; margin-bottom: 4px; letter-spacing: 0.02em;">箱根 · Hakone Day Trip</div>
-      <div style="font-size: 13px; color: #7a6652; margin-bottom: 4px;">A full-day guided experience · Tokyo Private Tours with Terry[cite: 6]</div>
+      <div style="font-size: 13px; color: #7a6652; margin-bottom: 4px;">A full-day guided experience · Tokyo Private Tours with Terry</div>
       <div style="font-size: 12px; color: #a09080;">© 2026 Tokyo with Terry · Japan</div>
     </div>
-    <div style="display: flex; gap: 1.5rem; align-items: center; box-sizing: border-box;">
-      <a href="../../../Downloads/index.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">&#8592; Home</a>
-      <a href="../../../Downloads/availability.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">Availability</a>
-      <a href="../../../Downloads/reservations.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">Reserve</a>
+    <div style="display: flex; gap: 1.5rem; align-items: center;">
+      <a href="../../../Downloads/index.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">&#8592; Home</a>
+      <a href="../../../Downloads/availability.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">Availability</a>
+      <a href="../../../Downloads/reservations.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">Reserve</a>
     </div>
   </div>
 </footer>

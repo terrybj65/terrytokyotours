@@ -3,35 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Discover Nikko with Terry — the gilded Toshogu Shrine, ancient cedar avenues, mountain waterfalls and Japan's most ornate religious architecture."/>
-  <meta name="keywords" content="Nikko tour, Nikko day trip, Toshogu shrine, Nikko UNESCO, day trip from Tokyo, private tour Nikko Japan, Nikko national park"/>
+  <meta name="description" content="Discover Nikko & Utsunomiya with Terry — From the gilded UNESCO Toshogu Shrine and sacred cedar avenues to the famous gyoza and heritage streets of Tochigi."/>
+  <meta name="keywords" content="Nikko tour, Utsunomiya gyoza, Nikko day trip, Toshogu shrine, private guide Japan, custom Tokyo day trip"/>
   <meta name="author" content="Tokyo Private Tours with Terry"/>
   <meta name="robots" content="index, follow"/>
   
-  <!-- Open Graph / Meta -->
-  <meta property="og:title" content="Nikko — UNESCO Shrines & Mountain Forests | Tokyo Private Tours with Terry"/>
-  <meta property="og:description" content="Discover Nikko with Terry — the gilded Toshogu Shrine, ancient cedar avenues, mountain waterfalls and Japan's most ornate religious architecture."/>
+  <meta property="og:title" content="Nikko & Utsunomiya: Custom Mountain & Heritage Tours | Tokyo Private Tours with Terry"/>
+  <meta property="og:description" content="Discover Nikko & Utsunomiya with Terry — From the gilded UNESCO Toshogu Shrine and sacred cedar avenues to the famous gyoza and heritage streets of Tochigi."/>
   <meta property="og:type" content="website"/>
   <link rel="canonical" href="https://tokyowithterry.com/nikko.html"/>
 
-  <title>Nikko — UNESCO Shrines &amp; Mountain Forests | Tokyo Private Tours with Terry</title>
+  <title>Nikko & Utsunomiya — UNESCO Shrines, Sacred Forests & Heritage Stops | Tokyo Private Tours with Terry</title>
   
-  <!-- Shared Premium Google Fonts Bundle -->
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght=400;600;800&family=DM+Sans:ital,wght=0,300;0,400;0,500;1,300&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
   
   <style>
     :root {
       --ink: #14120e;
       --paper: #f0ede6;
-      --moss: #5a2a0a;
-      --sage: #703818;
+      --moss: #3e251c;
+      --sage: #663b2a;
       --stone: #7a7468;
       --gold: #b08020;
       --border: rgba(20,18,14,0.12);
-      --red: #D00000;
+      --red: #de1c24;
       --red-dark: #B00000;
       --radius: 12px;
       --radius-sm: 8px;
+      --bg-card: #ffffff;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -49,6 +48,23 @@
       margin: 0 auto;
       padding: 0 4vw;
     }
+
+    /* ── GENERAL TYPOGRAPHY ── */
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 36px;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+    .section-sub { font-size: 16px; color: var(--stone); margin-bottom: 2.5rem; max-width: 620px; }
 
     /* ── HERO SECTION ── */
     .hero {
@@ -76,9 +92,7 @@
       margin: 0 auto;
       padding: 0 4vw;
     }
-    .hero-text-wrap {
-      max-width: 650px;
-    }
+    .hero-text-wrap { max-width: 700px; }
     .hero-eyebrow {
       font-size: 13px;
       letter-spacing: 0.14em;
@@ -89,7 +103,7 @@
     }
     .hero h1 {
       font-family: 'Shippori Mincho', serif;
-      font-size: clamp(44px, 6vw, 72px);
+      font-size: clamp(40px, 5.5vw, 68px);
       color: #ffffff;
       line-height: 1.15;
       margin-bottom: 1rem;
@@ -104,6 +118,8 @@
       text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
     }
     .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    /* ── BUTTONS ── */
     .btn-primary {
       background: var(--red);
       color: #fff;
@@ -143,7 +159,7 @@
       font-size: 0.7rem;
       letter-spacing: 0.24em;
       text-transform: uppercase;
-      color: var(--moss);
+      color: var(--sage);
       margin-bottom: 1.2rem;
       font-weight: 500;
     }
@@ -199,7 +215,7 @@
       gap: 1.5rem;
       background: rgba(90,42,10,0.04);
       border: 1px solid rgba(90,42,10,0.12);
-      border-left: 4px solid var(--moss);
+      border-left: 4px solid var(--sage);
       padding: 1.2rem 1.8rem;
       flex-wrap: wrap;
     }
@@ -222,7 +238,7 @@
       text-decoration: none;
       transition: all 0.2s ease;
     }
-    .nav-pill:hover { background: var(--moss); color: #fff; border-color: var(--moss); }
+    .nav-pill:hover { background: var(--sage); color: #fff; border-color: var(--sage); }
 
     /* ── SECTION SEPARATOR ── */
     .divider {
@@ -241,7 +257,7 @@
       content: ''; flex: 1; height: 1px; background: var(--border);
     }
 
-    /* ── HIGHLIGHT STOPS GRID (STAGGERED Engine) ── */
+    /* ── HIGHLIGHT STOPS GRID ── */
     .stops {
       max-width: 1300px;
       margin: 0 auto;
@@ -284,8 +300,8 @@
       font-size: 0.65rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      padding: 0.35rem 0.8rem;
       backdrop-filter: blur(6px);
+      padding: 0.35rem 0.8rem;
     }
     .stop-time {
       position: absolute;
@@ -298,14 +314,6 @@
       padding: 0.25rem 0.65rem;
       backdrop-filter: blur(4px);
     }
-    .stop-num {
-      position: absolute;
-      top: 0.25rem; right: 1.25rem;
-      font-family: 'Shippori Mincho', serif;
-      font-size: 5rem; font-weight: 800;
-      color: rgba(255,255,255,0.12);
-      line-height: 1; pointer-events: none;
-    }
 
     .stop-content {
       padding: 0.5rem 0;
@@ -317,7 +325,7 @@
       font-size: 0.65rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--moss);
+      color: var(--sage);
       margin-bottom: 1rem;
       font-weight: 500;
     }
@@ -362,49 +370,124 @@
     .stars { color: var(--gold); margin-right: 0.25rem; }
     .stop-map {
       font-size: 0.82rem;
-      color: var(--moss);
+      color: var(--sage);
       text-decoration: none;
       font-weight: 500;
       transition: opacity 0.2s;
     }
     .stop-map:hover { opacity: 0.65; }
 
-    /* ── PRICING MATRIX ── */
-    .pricing-matrix {
-      max-width: 1300px;
-      margin: 4.5rem auto 0;
-      padding: 0 4vw;
+    /* ── PRICING MATRIX TIER GRID ── */
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 1.5rem;
     }
-    .pricing-wrap {
-      background: #f9f6f0;
+    .price-card {
+      background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 3.5rem 2.5rem;
+      border-radius: var(--radius-sm);
+      padding: 2.5rem 1.5rem;
       text-align: center;
+      transition: transform 0.2s, border-color 0.2s;
     }
-    .pricing-kicker {
-      font-size: 0.75rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #8a7040;
-      margin-bottom: 0.75rem;
-      font-weight: 500;
+    .price-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--sage);
     }
-    .pricing-cost {
+    .price-card h3 {
       font-family: 'Shippori Mincho', serif;
-      font-size: clamp(2.2rem, 4vw, 3rem);
+      font-size: 1.25rem;
       color: var(--ink);
       margin-bottom: 0.5rem;
-      font-weight: 600;
     }
-    .pricing-meta {
-      font-size: 0.9rem;
+    .price-amt {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.2rem;
+      color: var(--red);
+      margin: 0.8rem 0;
+    }
+    .price-note {
+      font-size: 0.85rem;
       color: var(--stone);
+      line-height: 1.4;
+    }
+
+    /* ── INFO UTILITY GRID ── */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
       margin-bottom: 2rem;
+      margin-top: 3rem;
+    }
+    .info-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+    }
+    .info-card h3 {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      color: var(--ink);
+    }
+    .info-card ul { padding-left: 1.4rem; }
+    .info-card li, .info-card p {
+      font-size: 14px;
+      color: var(--stone);
+      line-height: 1.7;
+      margin-bottom: 0.65rem;
+    }
+
+    /* ── LOGISTICAL DETAILS ── */
+    .details-section {
+      border-top: 1px solid var(--border);
+      padding-top: 5rem;
+      margin-top: 3rem;
+    }
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4rem;
+    }
+    .details-grid dt {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+    .details-grid dd { margin: 0; }
+    .details-grid ul { list-style: none; padding: 0; }
+    .details-grid li {
+      position: relative;
+      padding-left: 1.5rem;
+      font-size: 0.98rem;
+      line-height: 1.7;
+      color: var(--stone);
+      margin-bottom: 0.8rem;
+    }
+    .details-grid li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+    .details-grid p {
+      font-size: 0.98rem;
+      line-height: 1.75;
+      color: var(--stone);
+      margin-bottom: 1.2rem;
     }
 
     @media (max-width: 1024px) {
       .stop { gap: 2.5rem; }
+      .price-grid { grid-template-columns: 1fr; }
+      .details-grid { gap: 2.5rem; }
     }
 
     @media (max-width: 768px) {
@@ -414,12 +497,13 @@
       .transport-item { border-right: none; border-bottom: 1px solid rgba(90,42,10,0.15); width: 100%; }
       .transport-item:last-child { border-bottom: none; }
       .section-nav-inner { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.2rem; }
+      .info-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .details-grid { grid-template-columns: 1fr; gap: 3rem; }
     }
   </style>
 </head>
 <body>
 
-<!-- UNIFIED STICKY NAVIGATION -->
 <nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(0,0,0,0.1);padding:0 4vw;display:flex;align-items:center;justify-content:space-between;height:65px;">
   <div style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--ink);">Tokyo with <span style="color:var(--red);">Terry</span></div>
   <ul style="display:flex;list-style:none;justify-content:center;align-items:center;gap:2.5rem;margin:0;padding:0;">
@@ -431,15 +515,14 @@
   <a href="../../../Downloads/availability.html" style="background:var(--red);color:#fff;border:none;padding:10px 22px;border-radius:var(--radius-sm);font-size:14px;cursor:pointer;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:500;">Book a tour</a>
 </nav>
 
-<!-- HERO BLOCK -->
 <section class="hero">
   <img src="https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?w=1600&q=80&fit=crop" alt="The iconic red sacred Shinkyo Bridge arching gracefully across a pristine river canyon in Nikko" />
   <div class="hero-overlay">
     <div class="hero-content">
       <div class="hero-text-wrap">
-        <div class="hero-eyebrow">📍 Nikkō · 2 hours from Tokyo · UNESCO</div>
-        <h1>Nikkō</h1>
-        <p>Gold shrines, sacred cedar forests &amp; mountain lakes[cite: 8].</p>
+        <div class="hero-eyebrow">🌲 UNESCO Shrines · Volcano Lakes · Shinkansen Gyoza</div>
+        <h1>Nikkō & Utsunomiya</h1>
+        <p>A customizable 1 or 2-day private excursion tracking through the extravagant gold leaf architectures of Nikko and the famous culinary heritage hubs of Utsunomiya.</p>
         <div class="hero-btns">
           <a href="#itinerary-start" class="btn-primary">Explore stops ↓</a>
           <a href="../../../Downloads/availability.html" class="btn-ghost">Check availability</a>
@@ -449,200 +532,276 @@
   </div>
 </section>
 
-<!-- EDITORIAL INTRO -->
 <div class="intro">
-  <div class="intro-kicker">Futarasan · Kanmangafuchi · Kegon Falls · Rinnoji · Shinkyo Bridge · Tosho-gu[cite: 8]</div>
-  <p>Nikko is where the Edo shogunate built its most extravagant monument — the Tosho-gu shrine complex, a UNESCO World Heritage site of almost hallucinatory gold and lacquer excess buried in a cedar forest two hours north of Tokyo[cite: 8]. But Nikko is more than its most famous shrine: a sacred mountain town with over 1,200 years of religious history, it also holds a turquoise gorge, one of Japan's finest waterfalls, a riverside walk lined with stone Jizo statues, and a mountain lake ringed by volcanic peaks that turns a brilliant red in November[cite: 8].</p>
+  <div class="intro-kicker">Custom Independent Journeys · Dynamic 1 or 2 Day Frameworks</div>
+  <p>Nikko is home to the Edo shogunate's most excessive monument — the stunning Tosho-gu shrine complex, a UNESCO World Heritage marvel embedded deep in a highland cedar forest. But by designing this route independently, we escape the rigid limitations of basic agency itineraries. We track from mountain waterfalls and moss-lined canyons straight into <strong>Utsunomiya</strong>—either as an exciting Shinkansen gourmet dinner milestone on a single packed day or extended cleanly into a slow-paced two-day overnight regional experience.</p>
 </div>
 
-<!-- TRANSPORT METRICS STRIP -->
 <div class="transport-bar">
   <div class="transport-inner">
-    <div class="transport-item"><span class="transport-label">From Tokyo</span><span class="transport-value">Tobu Nikko Line from Asakusa · ~2 hrs[cite: 8]</span></div>
-    <div class="transport-item"><span class="transport-label">Or JR</span><span class="transport-value">Shinkansen to Utsunomiya + local · ~2 hrs[cite: 8]</span></div>
-    <div class="transport-item"><span class="transport-label">Best Pass</span><span class="transport-value">Tobu Nikko All Area Pass · ~¥4,780[cite: 8]</span></div>
-    <div class="transport-item"><span class="transport-label">Best Season</span><span class="transport-value">Autumn colour · mid-Oct to mid-Nov[cite: 8]</span></div>
-    <div class="transport-item"><span class="transport-label">Stay</span><span class="transport-value">Overnight ryokan recommended[cite: 8]</span></div>
+    <div class="transport-item"><span class="transport-label">From Tokyo</span><span class="transport-value">Shinkansen Route via Utsunomiya · ~2 hrs</span></div>
+    <div class="transport-item"><span class="transport-label">Regional Pace</span><span class="transport-value">Flexible 1-Day or 2-Day Package</span></div>
+    <div class="transport-item"><span class="transport-label">Best Transit Pass</span><span class="transport-value">JR East Tohoku Area Pass / Regular Ticket</span></div>
+    <div class="transport-item"><span class="transport-label">Best Season</span><span class="transport-value">Autumn Canopy (Mid-Oct to Mid-Nov)</span></div>
+    <div class="transport-item"><span class="transport-label">Overnight Option</span><span class="transport-value">Ryokan stays unlockable via 2-Day loop</span></div>
   </div>
 </div>
 
-<!-- CHRONOLOGICAL PILLS -->
 <div class="section-nav">
   <div class="section-nav-inner">
-    <span class="nav-label">Chronological Route</span>
+    <span class="nav-label">Chronological Highlights</span>
     <div class="nav-pills">
       <a class="nav-pill" href="#shinkyo">01 Shinkyo Bridge</a>
       <a class="nav-pill" href="#rinnoji">02 Rinnoji Temple</a>
       <a class="nav-pill" href="#toshogu">03 Tosho-gu Shrine</a>
       <a class="nav-pill" href="#futarasan">04 Futarasan Shrine</a>
       <a class="nav-pill" href="#kanman">05 Kanmangafuchi Abyss</a>
-      <a class="nav-pill" href="#kegon">06 Kegon Falls &amp; Lake</a>
+      <a class="nav-pill" href="#kegon">06 Kegon Falls & Lake</a>
+      <a class="nav-pill" href="#utsunomiya">07 Utsunomiya Culinary Hub</a>
     </div>
   </div>
 </div>
 
-<div class="divider" id="itinerary-start">One Sacred Mountain Town · A Full Day[cite: 8]</div>
+<div class="divider" id="itinerary-start">The Route · Highland Precincts to Local Flavors</div>
 
-<!-- STOPS GRID (Chronological Order) -->
 <div class="stops">
 
-  <!-- Stop 1: Shinkyo Bridge -->
   <div class="stop" id="shinkyo">
     <div class="stop-img-wrap">
       <div class="stop-time">Morning · 09:00 AM</div>
-      <div class="stop-num">01</div>
       <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1000&q=80&fit=crop" alt="Shinkyo Sacred Bridge Nikko red lacquer river" loading="lazy"/>
       <div class="stop-badge">The Threshold</div>
     </div>
     <div class="stop-content">
-      <div class="stop-category">Sacred Bridge · Entrance to the Shrines[cite: 8]</div>
+      <div class="stop-category">Sacred Bridges · Ancient Precinct Boundaries</div>
       <h2 class="stop-title">Shinkyo — The Sacred Bridge</h2>
       <div class="stop-jp">神橋</div>
-      <p class="stop-desc">The approach to Nikko's sacred precinct begins at the Shinkyo — a vermillion lacquered bridge arching over the Daiya River that has marked the boundary between the secular and sacred worlds here since the 8th century[cite: 8]. According to legend, the holy priest Shodo Shonin crossed the river here on the backs of two giant serpents sent by the god Jinja Daioh when he founded the first temple on the mountain in 766 AD[cite: 8]. The current bridge dates from 1636[cite: 8].</p>
-      <div class="stop-tip">💡 The bridge charges a small admission to cross (¥300) but the view from the riverbank is free and arguably better[cite: 8]. In autumn the maple trees frame the red lacquer of the bridge beautifully[cite: 8]. The 20-minute walk up the cedar avenue sets the atmosphere perfectly[cite: 8].</div>
+      <p class="stop-desc">The entry point to Nikko's sacred mountain valleys begins at Shinkyo — a vibrant vermillion lacquered bridge arching over the swift waters of the Daiya River. Serving as the historic border between secular life and the old shrines since the 8th century, the current structure represents timeless master carpentry dating back to 1636.</p>
+      <div class="stop-tip">💡 Skip the minor fee to stand right on the bridge itself; the view looking up from the stone riverbank path is entirely free and makes for much superior camera framing.</div>
       <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 14,000+ reviews[cite: 8]</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Shinkyo+Bridge+Nikko+Japan" target="_blank">→ Google Maps[cite: 8]</a>
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 14,000+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Shinkyo+Bridge+Nikko+Japan" target="_blank">→ Google Maps</a>
       </div>
     </div>
   </div>
 
-  <!-- Stop 2: Rinnoji Temple -->
   <div class="stop" id="rinnoji">
     <div class="stop-img-wrap">
       <div class="stop-time">Morning · 10:00 AM</div>
-      <div class="stop-num">02</div>
       <img src="https://images.unsplash.com/photo-1570521462033-3015e76e7432?w=1000&q=80&fit=crop" alt="Rinnoji Temple Nikko Buddhist hall gold statues" loading="lazy"/>
-      <div class="stop-badge">Oldest Institution</div>
+      <div class="stop-badge">Oldest Foundation</div>
     </div>
     <div class="stop-content">
-      <div class="stop-category">Buddhist Temple · Founded 766 AD[cite: 8]</div>
+      <div class="stop-category">Buddhist Monuments · Established 766 AD</div>
       <h2 class="stop-title">Rinnoji Temple</h2>
       <div class="stop-jp">輪王寺</div>
-      <p class="stop-desc">Founded by Shodo Shonin in 766 AD — nearly 900 years before Tosho-gu was built — Rinnoji is the oldest institution on the mountain and the head temple of the Tendai Buddhist sect in the Nikko area[cite: 8]. The main hall, Sanbutsudo, houses three enormous gilded Buddhist statues standing 8 metres tall, their gold surfaces gleaming in the dim hall in a display of religious art that rivals anything in Kyoto[cite: 8].</p>
-      <div class="stop-tip">💡 The Treasure Hall (Homotsu-den) contains an extraordinary collection accumulated over 1,200 years[cite: 8]. The Shoyoen garden behind the temple is a beautifully maintained stroll garden with a pond and tea house — worth 30 minutes and often nearly empty[cite: 8].</div>
+      <p class="stop-desc">Established nearly 900 years before the sprawling mausoleums of the shogunate appeared, Rinnoji stands as the oldest religious institution on the slopes. The towering Sanbutsudo main hall protects three massive, 8-meter-tall gilded Buddhist avatars whose gold facades gleam out from the quiet shadows.</p>
+      <div class="stop-tip">💡 The beautiful Shoyoen strolling garden tucked right behind the primary hall is incredibly peaceful and remains largely untouched by tour bus crowds.</div>
       <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 9,800+ reviews[cite: 8]</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Rinnoji+Temple+Nikko+Japan" target="_blank">→ Google Maps[cite: 8]</a>
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 9,800+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Rinnoji+Temple+Nikko+Japan" target="_blank">→ Google Maps</a>
       </div>
     </div>
   </div>
 
-  <!-- Stop 3: Tosho-gu Shrine -->
   <div class="stop" id="toshogu">
     <div class="stop-img-wrap">
       <div class="stop-time">Mid-Morning · 11:00 AM</div>
-      <div class="stop-num">03</div>
       <img src="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=1000&q=80&fit=crop" alt="Toshogu Shrine Nikko gold lacquer ornate Yomeimon gate" loading="lazy"/>
-      <div class="stop-badge">Gold Masterpiece</div>
+      <div class="stop-badge">Gold Leaf Masterpiece</div>
     </div>
     <div class="stop-content">
-      <div class="stop-category">Shinto Shrine · UNESCO World Heritage · Built 1636[cite: 8]</div>
+      <div class="stop-category">Shinto Strongholds · UNESCO World Heritage Site</div>
       <h2 class="stop-title">Tosho-gu Shrine</h2>
       <div class="stop-jp">東照宮</div>
-      <p class="stop-desc">Tosho-gu is the mausoleum of Tokugawa Ieyasu — the shogun who unified Japan in 1603 — and the most ornately decorated shrine complex in Japan, possibly in the world[cite: 8]. Built in 1636 by his grandson Iemitsu using the labour of 15,000 craftsmen, the complex covers 22 structures decorated with over 5,000 carved sculptures and 2.4 million sheets of gold leaf[cite: 8]. The famous three wise monkeys are carved above the stable here[cite: 8].</p>
-      <div class="stop-tip">💡 Allow at least two hours for the full complex[cite: 8]. The route leads through multiple gate courtyards and up 207 stone steps to the relatively simple tomb of Ieyasu at the top[cite: 8]. The Nemuri-neko (Sleeping Cat) carving above an inner gate is easy to miss if you don't look up[cite: 8].</div>
+      <p class="stop-desc">The magnificent resting place of Tokugawa Ieyasu stands as the most intricately decorated shrine complex in Japan. Completed using the labor of over 15,000 elite historical artisans, it displays 22 individual structures decorated with 5,000 detailed animal carvings and 2.4 million individual sheets of pure gold leaf.</p>
+      <div class="stop-tip">💡 We'll climb the 207 ancient stone steps to access the quiet forest tomb at the peak, keeping an eye out for the hidden 'Sleeping Cat' woodcarving along the inner portal.</div>
       <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.6 · 42,000+ reviews[cite: 8]</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Toshogu+Shrine+Nikko+Japan" target="_blank">→ Google Maps[cite: 8]</a>
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.6 · 42,000+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Toshogu+Shrine+Nikko+Japan" target="_blank">→ Google Maps</a>
       </div>
     </div>
   </div>
 
-  <!-- Stop 4: Futarasan Shrine -->
   <div class="stop" id="futarasan">
     <div class="stop-img-wrap">
       <div class="stop-time">Early Afternoon · 01:30 PM</div>
-      <div class="stop-num">04</div>
       <img src="https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?w=1000&q=80&fit=crop" alt="Futarasan Shrine Nikko cedar forest ancient stone lanterns" loading="lazy"/>
-      <div class="stop-badge">Sacred Woods</div>
+      <div class="stop-badge">Primeval Forests</div>
     </div>
     <div class="stop-content">
-      <div class="stop-category">Shinto Shrine · Founded 782 AD[cite: 8]</div>
+      <div class="stop-category">Shinto Sanctuary · Mountain Deity Devotions</div>
       <h2 class="stop-title">Futarasan Shrine</h2>
       <div class="stop-jp">二荒山神社</div>
-      <p class="stop-desc">Founded in 782 AD by Shodo Shonin and dedicated to the three peaks of the Nikko mountains, Futarasan is the oldest of Nikko's three main shrines and the one that feels most genuinely sacred — less ornate than Tosho-gu, more deeply embedded in the cedar forest, its pathways worn smooth by 1,200 years of pilgrims' feet[cite: 8]. The inner garden contains the "Bake-doro" (the Goblin Lantern), a large bronze lantern said to be haunted[cite: 8].</p>
-      <div class="stop-tip">💡 Futarasan is included in the combined Nikko shrine ticket and is often rushed through — which means it's the most peaceful stop in the complex[cite: 8]. The inner garden (¥200 additional) is absolutely worth the extra charge[cite: 8]. Allow 45 minutes[cite: 8].</div>
+      <p class="stop-desc">Dedicated wholly to the surrounding volcanic peaks of Nikko, Futarasan features worn stone corridors nestled seamlessly under a dense primeval cedar canopy. The tranquil courtyards preserve ancient bronze structures, including the famous haunted 'Goblin Lantern' showing old sword marks.</p>
+      <div class="stop-tip">💡 This complex is widely skipped over by big tourist groups rushing back to their buses, making it the most meditative spot on the main mountain loop.</div>
       <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 7,400+ reviews[cite: 8]</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Futarasan+Shrine+Nikko+Japan" target="_blank">→ Google Maps[cite: 8]</a>
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 7,400+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Futarasan+Shrine+Nikko+Japan" target="_blank">→ Google Maps</a>
       </div>
     </div>
   </div>
 
-  <!-- Stop 5: Kanmangafuchi Abyss -->
   <div class="stop" id="kanman">
     <div class="stop-img-wrap">
       <div class="stop-time">Afternoon · 02:30 PM</div>
-      <div class="stop-num">05</div>
       <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=1000&q=80&fit=crop" alt="Kanmangafuchi Abyss Nikko stone Jizo statues river gorge" loading="lazy"/>
-      <div class="stop-badge">The Jizo Walk</div>
+      <div class="stop-badge">The Phantom Jizo Walk</div>
     </div>
     <div class="stop-content">
-      <div class="stop-category">Gorge Walk · Kanmangafuchi[cite: 8]</div>
+      <div class="stop-category">Volcanic Chasms · Moss-Covered Heritage Trails</div>
       <h2 class="stop-title">Kanmangafuchi Abyss</h2>
       <div class="stop-jp">含満ヶ淵</div>
-      <p class="stop-desc">A twenty-minute walk from the shrine complex brings you to Kanmangafuchi — a deep gorge carved by ancient volcanic eruptions through which the turquoise Daiya River flows between black basalt walls[cite: 8]. The path along the gorge is lined with approximately 70 stone Jizo statues placed here by monks over several centuries and now heavily moss-covered[cite: 8]. Local legend says that you always get a different number when counting them coming and going[cite: 8].</p>
-      <div class="stop-tip">💡 Kanmangafuchi is one of Nikko's most beautiful and least crowded spots[cite: 8]. Go in the late afternoon when the light comes low through the cedar and the moss on the Jizo statues glows green[cite: 8]. The gorge walk takes about 30 minutes at a gentle pace[cite: 8].</div>
+      <p class="stop-desc">A short, peaceful detour brings us to a deep gorge chiseled out by old lava flows. The rushing turquoise waters of the river run past a line of 70 stone Jizo statues. Covered in thick mountain moss, local folklore claims these phantom figures inexplicably change in count whenever a traveler tries to tally them up twice.</p>
+      <div class="stop-tip">💡 The late afternoon sun streams low right through the cedar branches here, turning the entire mossy path a beautiful, glowing green.</div>
       <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.6 · 6,200+ reviews[cite: 8]</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Kanmangafuchi+Abyss+Nikko+Japan" target="_blank">→ Google Maps[cite: 8]</a>
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.6 · 6,200+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Kanmangafuchi+Abyss+Nikko+Japan" target="_blank">→ Google Maps</a>
       </div>
     </div>
   </div>
 
-  <!-- Stop 6: Kegon Falls & Lake Chuzenji -->
   <div class="stop" id="kegon">
     <div class="stop-img-wrap">
       <div class="stop-time">Late Afternoon · 03:40 PM</div>
-      <div class="stop-num">06</div>
       <img src="https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?w=1000&q=80&fit=crop" alt="Kegon Falls Nikko waterfall Lake Chuzenji autumn" loading="lazy"/>
-      <div class="stop-badge">Scenic Peak</div>
+      <div class="stop-badge">Highland Panoramas</div>
     </div>
     <div class="stop-content">
-      <div class="stop-category">Waterfall &amp; Lake · Lake Chuzenji[cite: 8]</div>
-      <h2 class="stop-title">Kegon Falls &amp; Lake Chuzenji</h2>
+      <div class="stop-category">Alpine Calderas · Great Waterfalls of Japan</div>
+      <h2 class="stop-title">Kegon Falls & Lake Chuzenji</h2>
       <div class="stop-jp">華厳滝 · 中禅寺湖</div>
-      <p class="stop-desc">A bus ride up the spectacular switchback Irohazaka road — 48 hairpin bends ascending 400 metres in 9 kilometres — brings you to Lake Chuzenji, a caldera lake at 1,269 metres, and to Kegon Falls, which drops 97 metres from the lake's edge over a basalt cliff in one of the three finest waterfalls in Japan[cite: 8]. An elevator descends to an observation platform at the base of the falls where the spray is overwhelming[cite: 8].</p>
-      <div class="stop-tip">💡 Time the visit to arrive at the falls by 3 PM to have time to walk the lakeshore before the last bus back[cite: 8]. The observation elevator (¥570) is absolutely worth it — the base view is extraordinary[cite: 8]. In autumn, book buses well in advance as seasonal demand is intense[cite: 8].</div>
+      <p class="stop-desc">Ascending the legendary Irohazaka road—a steep mountain switchback containing 48 tight hairpin bends—we emerge at an alpine caldera lake sitting 1,269 meters high. From its edge, the massive Kegon Falls plummets 97 meters straight down a sheer basalt cliff face in a roar of alpine spray.</p>
+      <div class="stop-tip">💡 We can access an underground rock elevator to reach the lower viewing deck, placing us directly at the foot of the plunging canyon waterfall.</div>
       <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.6 · 28,000+ reviews[cite: 8]</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Kegon+Falls+Nikko+Japan" target="_blank">→ Google Maps[cite: 8]</a>
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.6 · 28,000+ reviews</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Kegon+Falls+Nikko+Japan" target="_blank">→ Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="stop" id="utsunomiya">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Flexible Evening Milestone</div>
+      <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?w=1000&q=80&fit=crop" alt="Pan-fried Japanese gyoza dumplings crisp skillet close up" loading="lazy"/>
+      <div class="stop-badge">Culinary Capital</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Gourmet Stops · The Gyoza Capital of Japan</div>
+      <h2 class="stop-title">Utsunomiya Exploration</h2>
+      <div class="stop-jp">宇都宮市</div>
+      <p class="stop-desc">Whether stopping on the high-speed Shinkansen route back to Tokyo or setting up a multi-day journey, Utsunomiya provides a stark change of pace. Famous across Japan for its unrivaled dumpling culture, the city boasts hundreds of specialized gyoza stalls, old stone quarries, castle park remains, and a thriving jazz bar scene.</p>
+      <div class="stop-tip">💡 If doing a 1-day trip, we'll hit the city for a high-energy pan-fried gyoza dinner crawl before boarding the bullet train back. For a 2-day trip, we can unpack historic stone tunnels and stay overnight in style.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.4 · Local Heritage Spot</div>
+        <a class="stop-map" href="https://maps.google.com/?q=Utsunomiya+Station+Tochigi+Japan" target="_blank">→ Google Maps</a>
       </div>
     </div>
   </div>
 
 </div>
 
-<!-- PRICING MATRIX -->
-<div class="pricing-matrix">
-  <div class="pricing-wrap">
-    <div class="pricing-kicker">Full day · per person[cite: 8]</div>
-    <div class="pricing-cost">From ¥22,000[cite: 8]</div>
-    <div class="pricing-meta">Price varies by group size · Transport not included[cite: 8]</div>
-    <a href="../../../Downloads/index.html#contact" class="btn-primary">Book this private experience</a>
+<div class="container">
+  <div class="info-grid">
+    <div class="info-card">
+      <h3>The Independent Guiding Philosophy</h3>
+      <p><strong>This is not a corporate bus agency tour.</strong> You are not purchasing a seat on a generic, pre-timed schedule managed by a rotating corporate contractor.</p>
+      <p style="margin-top: 0.8rem;">When you book this experience, you are securing my dedicated time, local bilingual navigation, and custom logistical expertise. The route shifts dynamically to match your family's personal rhythms, interests, and energy levels.</p>
+    </div>
+    <div class="info-card">
+      <h3>1-Day Flash vs. 2-Day Package Details</h3>
+      <p>Combining the steep mountain peaks of Nikko with the food scenes of Utsunomiya makes for a highly rewarding but long day trip when utilizing high-speed rail connections.</p>
+      <p style="margin-top: 0.8rem;"><strong>Want a slower pace?</strong> We can easily expand this route into an overnight 2-day package trip. This format unlocks historic stone architecture walks, hot spring ryokans, and relaxed dinner crawls without rushing back to Tokyo.</p>
+    </div>
   </div>
 </div>
 
-<div style="padding-bottom: 5rem;"></div>
-
-<!-- FOOTER -->
-<footer style="background: #f8f0e8; border-top: 4px solid #de1c24; padding: 2.5rem 4vw; font-family: 'DM Sans', sans-serif; box-sizing: border-box; width: 100%;">
-  <div style="max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; box-sizing: border-box;">
-    <div style="text-align: left; box-sizing: border-box;">
-      <div style="font-family:'Shippori Mincho', serif; font-size: 16px; font-weight: 700; color: #2d3748; margin-bottom: 4px; letter-spacing: 0.02em;">日光 · Nikko[cite: 8]</div>
-      <div style="font-size: 13px; color: #7a6652; margin-bottom: 4px;">A full-day guided experience · UNESCO World Heritage[cite: 8]</div>
-      <div style="font-size: 12px; color: #a09080;">© 2026 Tokyo with Terry · Japan[cite: 8]</div>
+<section id="tour-pricing" style="margin: 2rem 0; padding: 4rem 0; border-top: 1px solid var(--border);">
+  <div class="container">
+    <div class="section-label">Dedicated Rates</div>
+    <h2 class="section-title">Flat-Rate Private Guiding Fees</h2>
+    <div class="section-sub">Simple flat daily rates covering my exclusive personal guiding and route coordination. There are no corporate middleman fees. All personal transport, entry passes, and dining costs are paid directly on site.</div>
+    
+    <div class="price-grid">
+      <div class="price-card">
+        <h3>Solo / Couples</h3>
+        <div style="font-size: 0.85rem; color: var(--stone);">1 — 2 Guests</div>
+        <div class="price-amt">¥50,000</div>
+        <div class="price-note">Flat daily guide rate.<br>Perfect for individual travelers or couples wanting a tailored day.</div>
+      </div>
+      
+      <div class="price-card">
+        <h3>Small Group</h3>
+        <div style="font-size: 0.85rem; color: var(--stone);">3 — 4 Guests</div>
+        <div class="price-amt">¥60,000</div>
+        <div class="price-note">Flat daily guide rate.<br>Customizable pace ideal for families or small groups of friends.</div>
+      </div>
+      
+      <div class="price-card">
+        <h3>Family Group</h3>
+        <div style="font-size: 0.85rem; color: var(--stone);">5 — 8 Guests</div>
+        <div class="price-amt">¥70,000</div>
+        <div class="price-note">Flat daily guide rate.<br>Tailored pace to keep multi-generational families perfectly aligned.</div>
+      </div>
     </div>
-    <div style="display: flex; gap: 1.5rem; align-items: center; box-sizing: border-box;">
-      <a href="../../../Downloads/index.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">&#8592; Home[cite: 8]</a>
-      <a href="../../../Downloads/availability.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">Availability[cite: 8]</a>
-      <a href="../../../Downloads/reservations.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">Reserve[cite: 8]</a>
+    
+    <div style="text-align: center; margin-top: 2rem; font-size: 14px; color: var(--stone); font-style: italic;">
+      *Planning a 2-day package trip? Specify an overnight expansion on the booking form for adjusted custom multi-day rates.
+    </div>
+  </div>
+</section>
+
+<div class="container details-section">
+  <dl class="details-grid">
+    <div>
+      <dt>What's Included</dt>
+      <dd>
+        <ul>
+          <li>Terry's dedicated independent time, personalized pacing, and bilingual guidance</li>
+          <li>Complete custom management for train routing, mountain bus transfers, and Shinkansen links</li>
+          <li>Flexible route changes to easily outmaneuver sudden mountain weather patterns</li>
+          <li>My curated personal map of local gyoza highlights and hidden paths</li>
+        </ul>
+      </dd>
+    </div>
+    <div>
+      <dt>Good to Know</dt>
+      <dd>
+        <p>Because we scale from high-elevation canyon viewpoints down to local cities, temperatures change quickly. Bringing light layers and comfortable walking shoes is highly recommended.</p>
+        <p>Out-of-pocket expenses average around ¥6,000 to ¥9,000 per person to cover express train tickets, local highland buses, admissions, and dining.</p>
+        <p>If opting for a 2-day trip, I can directly assist in coordinating premium local hot-spring ryokan reservations along our route.</p>
+      </dd>
+    </div>
+  </dl>
+</div>
+
+<div class="container" style="margin-top: 5rem; margin-bottom: 4rem;">
+  <div style="background: var(--red); border-radius: var(--radius); padding: 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; text-align: left;">
+    <div style="flex: 2; min-width: 300px;">
+      <h3 style="font-family: 'DM Serif Display', serif; font-size: 28px; color: #ffffff; font-weight: 400; margin: 0; line-height: 1.2;">Ready to design your Nikko & Utsunomiya trip?</h3>
+      <p style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: rgba(255, 255, 255, 0.8); margin: 0.5rem 0 0 0; font-weight: 300; line-height: 1.4;">Get in touch to lock in a custom 1-day loop or design a 2-day overnight mountain package.</p>
+    </div>
+    <div style="flex: 1; text-align: right; min-width: 200px;">
+      <a href="../../../Downloads/availability.html" style="background: #ffffff; color: var(--red); padding: 13px 26px; border-radius: var(--radius-sm); font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap; display: inline-block;">Check Terry's Schedule →</a>
+    </div>
+  </div>
+</div>
+
+<footer style="background: #f8f0e8; border-top: 4px solid var(--red); padding: 2.5rem 4vw; font-family: 'DM Sans', sans-serif; width: 100%;">
+  <div style="max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+    <div style="text-align: left;">
+      <div style="font-size: 15px; font-weight: 700; color: #2d3748; margin-bottom: 4px; letter-spacing: 0.02em;">日光 · 宇都宮 · Nikko & Utsunomiya Private Itineraries</div>
+      <div style="font-size: 13px; color: #7a6652; margin-bottom: 4px;">Independent Neighborhood Profiles · Private Tours with Terry</div>
+      <div style="font-size: 12px; color: #a09080;">© 2026 Tokyo with Terry · Japan</div>
+    </div>
+    <div style="display: flex; gap: 1.5rem; align-items: center;">
+      <a href="../../../Downloads/index.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">← Home</a>
+      <a href="../../../Downloads/availability.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">Availability</a>
+      <a href="../../../Downloads/reservations.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">Reserve</a>
     </div>
   </div>
 </footer>
 
-<!-- INTERSECTION SCROLL ANIMATION SYSTEM -->
 <script>
   const stops = document.querySelectorAll('.stop');
   const observer = new IntersectionObserver((entries) => {

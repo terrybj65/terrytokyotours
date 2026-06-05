@@ -21,7 +21,7 @@
   <title>Food & Culture — Tokyo Private Tours with Terry</title>
   
   <!-- Shared Premium Google Fonts Bundle -->
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght=400;600;800&family=DM+Sans:ital,wght=0,300;0,400;0,500;1,300&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
   
   <style>
     :root {
@@ -35,6 +35,7 @@
       --red: #de1c24;
       --radius: 12px;
       --radius-sm: 8px;
+      --bg-card: #ffffff;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -52,6 +53,23 @@
       margin: 0 auto;
       padding: 0 4vw;
     }
+
+    /* ── GENERAL TYPOGRAPHY & HEADINGS ── */
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 36px;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+    .section-sub { font-size: 16px; color: var(--stone); margin-bottom: 2.5rem; max-width: 560px; }
 
     /* ── HERO SECTION ── */
     .hero {
@@ -79,9 +97,7 @@
       margin: 0 auto;
       padding: 0 4vw;
     }
-    .hero-text-wrap {
-      max-width: 650px;
-    }
+    .hero-text-wrap { max-width: 650px; }
     .hero-eyebrow {
       font-size: 13px;
       letter-spacing: 0.14em;
@@ -237,41 +253,10 @@
     .stop-img-wrap img {
       width: 100%; height: 100%;
       object-fit: cover;
+      display: block;
       transition: transform 0.6s ease;
     }
     .stop:hover .stop-img-wrap img { transform: scale(1.02); }
-
-    .stop-badge {
-      position: absolute;
-      bottom: 1.25rem; left: 1.25rem;
-      background: rgba(6,12,20,0.8);
-      border: 1px solid rgba(255,255,255,0.15);
-      color: rgba(255,255,255,0.85);
-      font-size: 0.65rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 0.35rem 0.8rem;
-      backdrop-filter: blur(6px);
-    }
-    .stop-time {
-      position: absolute;
-      top: 1rem; left: 1rem;
-      font-size: 0.62rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.65);
-      background: rgba(6,12,20,0.6);
-      padding: 0.2rem 0.6rem;
-      backdrop-filter: blur(4px);
-    }
-    .stop-num {
-      position: absolute;
-      top: 0.25rem; right: 1.25rem;
-      font-family: 'Shippori Mincho', serif;
-      font-size: 5rem; font-weight: 800;
-      color: rgba(255,255,255,0.12);
-      line-height: 1; pointer-events: none;
-    }
 
     .stop-content {
       padding: 0.5rem 0;
@@ -315,38 +300,89 @@
       line-height: 1.65;
     }
 
-    /* ── OVERVIEW BOXES ── */
-    .info-grid {
+    /* ── PRICING CARD STYLES ── */
+    .price-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5rem;
-      max-width: 1300px;
-      margin: 4.5rem auto;
-      padding: 0 4vw;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 1.5rem;
     }
-    .info-card {
-      background: #ffffff;
+    .price-card {
+      background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 2.5rem;
+      border-radius: var(--radius-sm);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: transform 0.2s, border-color 0.2s;
     }
-    .info-card h3 {
+    .price-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--sage);
+    }
+    .price-card h3 {
       font-family: 'Shippori Mincho', serif;
-      font-size: 22px;
-      font-weight: 600;
-      margin-bottom: 1.25rem;
+      font-size: 1.25rem;
       color: var(--ink);
+      margin-bottom: 0.5rem;
     }
-    .info-card ul { padding-left: 1.4rem; }
-    .info-card li, .info-card p {
-      font-size: 14px;
+    .price-amt {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      color: var(--red);
+      margin: 0.8rem 0;
+    }
+    .price-note {
+      font-size: 0.85rem;
       color: var(--stone);
-      line-height: 1.7;
-      margin-bottom: 0.65rem;
+      line-height: 1.4;
     }
+
+    /* ── STANDARDIZED LOGISTICAL DETAILS GRID ── */
+    .details-section {
+      border-top: 1px solid var(--border);
+      padding-top: 5rem;
+      margin-top: 3rem;
+    }
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4rem;
+    }
+    .details-grid dt {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+    .details-grid dd { margin: 0; }
+    .details-grid ul { list-style: none; padding: 0; }
+    .details-grid li {
+      position: relative;
+      padding-left: 1.5rem;
+      font-size: 0.98rem;
+      line-height: 1.7;
+      color: var(--stone);
+      margin-bottom: 0.8rem;
+    }
+    .details-grid li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+    .details-grid p {
+      font-size: 0.98rem;
+      line-height: 1.75;
+      color: var(--stone);
+      margin-bottom: 1.2rem;
+    }
+    .details-grid p:last-child { margin-bottom: 0; }
 
     @media (max-width: 1024px) {
       .stop { gap: 2rem; }
+      .details-grid { gap: 2.5rem; }
+      .price-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 768px) {
@@ -355,8 +391,7 @@
       .tod-inner { flex-direction: column; }
       .tod-item { border-right: none; border-bottom: 1px solid rgba(26,74,106,0.15); padding: 1.1rem; }
       .tod-item:last-child { border-bottom: none; }
-      .info-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-      .info-card { padding: 2rem; }
+      .details-grid { grid-template-columns: 1fr; gap: 3rem; }
     }
   </style>
 </head>
@@ -366,12 +401,12 @@
 <nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(0,0,0,0.1);padding:0 4vw;display:flex;align-items:center;justify-content:space-between;height:65px;">
   <div style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--ink);">Tokyo with <span style="color:var(--red);">Terry</span></div>
   <ul style="display:flex;list-style:none;justify-content:center;align-items:center;gap:2.5rem;margin:0;padding:0;">
-    <li><a href="index.html#areas" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Areas</a></li>
-    <li><a href="index.html#tours" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Tours</a></li>
-    <li><a href="index.html#about" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">About</a></li>
-    <li><a href="index.html#contact" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Contact</a></li>
+    <li><a href="../../../Downloads/index.html#areas" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Areas</a></li>
+    <li><a href="../../../Downloads/index.html#tours" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Tours</a></li>
+    <li><a href="../../../Downloads/index.html#about" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">About</a></li>
+    <li><a href="../../../Downloads/index.html#contact" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Contact</a></li>
   </ul>
-  <a href="availability.html" style="background:var(--red);color:#fff;border:none;padding:10px 22px;border-radius:var(--radius-sm);font-size:14px;cursor:pointer;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:500;">Book a tour</a>
+  <a href="../../../Downloads/availability.html" style="background:var(--red);color:#fff;border:none;padding:10px 22px;border-radius:var(--radius-sm);font-size:14px;cursor:pointer;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:500;">Book a tour</a>
 </nav>
 
 <!-- HERO BLOCK -->
@@ -385,7 +420,7 @@
         <p>Ramen, sushi, izakayas & street food — eat your way through Tokyo with a local.</p>
         <div class="hero-btns">
           <a href="#highlights-start" class="btn-primary">Explore highlights ↓</a>
-          <a href="availability.html" class="btn-ghost">Check availability</a>
+          <a href="../../../Downloads/availability.html" class="btn-ghost">Check availability</a>
         </div>
       </div>
     </div>
@@ -424,10 +459,7 @@
   <!-- Stop 1: Street Food Exploration -->
   <div class="stop">
     <div class="stop-img-wrap">
-      <div class="stop-time">Stop 01</div>
-      <div class="stop-num">01</div>
       <img src="https://images.unsplash.com/photo-1582450871972-ab5ca641643d?w=1000&q=80&fit=crop" alt="Fresh Takoyaki Japanese Street Food" loading="lazy"/>
-      <div class="stop-badge">Market Bites</div>
     </div>
     <div class="stop-content">
       <div class="stop-category">Everyday Grills · Historic Pastries</div>
@@ -441,10 +473,7 @@
   <!-- Stop 2: Ramen Shop Deep Dive -->
   <div class="stop">
     <div class="stop-img-wrap">
-      <div class="stop-time">Stop 02</div>
-      <div class="stop-num">02</div>
       <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=1000&q=80&fit=crop" alt="Ramen Master Preparations" loading="lazy"/>
-      <div class="stop-badge">Local Masterclass</div>
     </div>
     <div class="stop-content">
       <div class="stop-category">Artisanal Noodles · Standing Bars</div>
@@ -458,10 +487,7 @@
   <!-- Stop 3: Green Tea & Wagashi -->
   <div class="stop">
     <div class="stop-img-wrap">
-      <div class="stop-time">Stop 03</div>
-      <div class="stop-num">03</div>
       <img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=1000&q=80&fit=crop" alt="Traditional Matcha Green Tea and Japanese Wagashi Sweets" loading="lazy"/>
-      <div class="stop-badge">Mindful Finish</div>
     </div>
     <div class="stop-content">
       <div class="stop-category">Zen Aesthetics · Tea Ceremonial Arts</div>
@@ -475,10 +501,7 @@
   <!-- Stop 4: Sushi Counter Experience -->
   <div class="stop">
     <div class="stop-img-wrap">
-      <div class="stop-time">Stop 04</div>
-      <div class="stop-num">04</div>
       <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=1000&q=80&fit=crop" alt="Authentic Tokyo Sushi Counter Chef" loading="lazy"/>
-      <div class="stop-badge">Generational Skills</div>
     </div>
     <div class="stop-content">
       <div class="stop-category">Neighborhood Sushiya · Seasonal Catch</div>
@@ -492,10 +515,7 @@
   <!-- Stop 5: Izakaya Evening Stop -->
   <div class="stop">
     <div class="stop-img-wrap">
-      <div class="stop-time">Stop 05</div>
-      <div class="stop-num">05</div>
       <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&q=80&fit=crop" alt="Cozy Japanese Izakaya Pub Interior" loading="lazy"/>
-      <div class="stop-badge">Nightlife Culture</div>
     </div>
     <div class="stop-content">
       <div class="stop-category">Lantern Alleys · Shared Small Plates</div>
@@ -508,62 +528,91 @@
 
 </div>
 
-<!-- DETAILS BLOCKS -->
-<div class="info-grid">
-  <div class="info-card">
-    <h3>What's Included</h3>
-    <ul>
-      <li>All personalized food recommendations & micro-district navigation</li>
-      <li>Terry ordering custom selections in fluent Japanese at every stall</li>
-      <li>Deep historical and cultural context surrounding food production</li>
-      <li>Completely flexible pairings tailored directly to your personal dietary needs</li>
-    </ul>
+<!-- TOUR PRICING HOLDER SECTION -->
+<section id="tour-pricing" style="margin: 2rem 0; padding: 4rem 0; border-top: 1px solid var(--border);">
+  <div class="container">
+    <div class="section-label">Rates</div>
+    <h2 class="section-title">Private Guiding Fees</h2>
+    <div class="section-sub">Simple, flat-rate guiding packages based on group size. Food and beverage costs are paid directly at each location.</div>
+    
+    <div class="price-grid">
+      <!-- 1-2 Guests -->
+      <div class="price-card">
+        <h3>Solo / Couples</h3>
+        <div style="font-size: 0.85rem; color: var(--stone);">1 — 2 Guests</div>
+        <div class="price-amt">TBD</div>
+        <div class="price-note">Flat fee for private guiding.<br>Customized parameters coming soon.</div>
+      </div>
+      
+      <!-- 3-4 Guests -->
+      <div class="price-card">
+        <h3>Small Group</h3>
+        <div style="font-size: 0.85rem; color: var(--stone);">3 — 4 Guests</div>
+        <div class="price-amt">TBD</div>
+        <div class="price-note">Flat fee for private guiding.<br>Customized parameters coming soon.</div>
+      </div>
+      
+      <!-- 5+ Guests -->
+      <div class="price-card">
+        <h3>Family Group</h3>
+        <div style="font-size: 0.85rem; color: var(--stone);">5+ Guests</div>
+        <div class="price-amt">TBD</div>
+        <div class="price-note">Flat fee for private guiding.<br>Customized parameters coming soon.</div>
+      </div>
+    </div>
   </div>
-  <div class="info-card">
-    <h3>Good to Know</h3>
-    <p>Come hungry. Seriously. We will be sampling continuously throughout the walk.</p>
-    <p style="margin-top: 1rem;">All tours are strictly private — just your personal group with Terry. No strangers, no rushing schedules, no megaphone tour groups.</p>
-    <p style="margin-top: 1rem;">Terry speaks fluent English and Japanese, seamlessly unlocking local interactions that remain inaccessible to solo travelers.</p>
-  </div>
+</section>
+
+<!-- STANDARDIZED LOGISTICAL DETAILS BLOCK -->
+<div class="container details-section">
+  <dl class="details-grid">
+    <div>
+      <dt>What's Included</dt>
+      <dd>
+        <ul>
+          <li>All personalized food recommendations & micro-district navigation</li>
+          <li>Terry ordering custom selections in fluent Japanese at every stall</li>
+          <li>Deep historical and cultural context surrounding food production</li>
+          <li>Completely flexible pairings tailored directly to your personal dietary needs</li>
+        </ul>
+      </dd>
+    </div>
+    <div>
+      <dt>Good to Know</dt>
+      <dd>
+        <p>Come hungry. Seriously. We will be sampling continuously throughout the walk.</p>
+        <p>All tours are strictly private — just your personal group with Terry. No strangers, no rushing schedules, no megaphone tour groups.</p>
+        <p>Terry speaks fluent English and Japanese, seamlessly unlocking local interactions that remain inaccessible to solo travelers.</p>
+      </dd>
+    </div>
+  </dl>
 </div>
 
-<!-- PRICING, CTA AND FOOTER -->
-<div style="width: 100%; background: #f9f6f0; border-top: 1px solid rgba(0,0,0,0.08); box-sizing: border-box;">
-  <div style="max-width: 1300px; margin: 0 auto; padding: 2.5rem 4vw; text-align: center; box-sizing: border-box;">
-    <p style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: #8a7040; margin: 0 0 0.5rem 0; font-family: 'DM Sans', sans-serif;">Half day · per person</p>
-    <p style="font-family: 'Shippori Mincho', serif; font-size: 2.5rem; font-weight: 800; color: #1C2833; margin: 0 0 0.5rem 0;">From ¥12,000</p>
-    <p style="font-size: 0.85rem; color: #7a7468; margin: 0 0 1.5rem 0; font-family: 'DM Sans', sans-serif;">Price varies by group size · Food purchases and transport costs are paid on location</p>
-    <a href="availability.html" style="display: inline-block; background: #de1c24; color: #fff; padding: 12px 28px; border-radius: 8px; font-size: 0.9rem; text-decoration: none; letter-spacing: 0.05em; font-family: 'DM Sans', sans-serif; font-weight: 500;">Book this tour</a>
-  </div>
-</div>
-
-<div style="width: 100%; background: transparent; box-sizing: border-box;">
-  <div style="max-width: 1300px; margin: 4rem auto 0; padding: 0 4vw; box-sizing: border-box;">
-    <div style="background: #de1c24; border-radius: 12px; padding: 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; box-sizing: border-box; text-align: left;">
-      <div style="flex: 2; min-width: 300px; box-sizing: border-box;">
-        <h3 style="font-family: 'DM Serif Display', serif; font-size: 28px; color: #ffffff; font-weight: 400; margin: 0; padding: 0; line-height: 1.2;">Ready to book Food & Culture?</h3>
-        <p style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: rgba(255, 255, 255, 0.8); margin: 0.5rem 0 0 0; padding: 0; font-weight: 300; line-height: 1.4;">Check Terry's availability and send a booking request — it only takes a minute.</p>
-      </div>
-      <div style="flex: 1; text-align: right; min-width: 200px; box-sizing: border-box;">
-        <a href="availability.html" style="background: #ffffff; color: #de1c24; padding: 13px 26px; border-radius: 8px; font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap; transition: opacity 0.15s; display: inline-block; font-family: 'DM Sans', sans-serif; box-sizing: border-box;">View availability &amp; book &#8594;</a>
-      </div>
+<!-- INLINE BOOKING CTA BLOCK -->
+<div class="container" style="margin-top: 5rem; margin-bottom: 4rem;">
+  <div style="background: var(--red); border-radius: var(--radius); padding: 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; text-align: left;">
+    <div style="flex: 2; min-width: 300px;">
+      <h3 style="font-family: 'DM Serif Display', serif; font-size: 28px; color: #ffffff; font-weight: 400; margin: 0; line-height: 1.2;">Ready to book Food & Culture?</h3>
+      <p style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: rgba(255, 255, 255, 0.8); margin: 0.5rem 0 0 0; font-weight: 300; line-height: 1.4;">Check Terry's availability and send a booking request — it only takes a minute.</p>
+    </div>
+    <div style="flex: 1; text-align: right; min-width: 200px;">
+      <a href="../../../Downloads/availability.html" style="background: #ffffff; color: var(--red); padding: 13px 26px; border-radius: var(--radius-sm); font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap; display: inline-block;">View availability &amp; book &#8594;</a>
     </div>
   </div>
 </div>
 
-<div style="padding-bottom: 4rem;"></div>
-
-<footer style="background: #f8f0e8; border-top: 4px solid #de1c24; padding: 2.5rem 4vw; font-family: 'DM Sans', sans-serif; box-sizing: border-box; width: 100%;">
-  <div style="max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; box-sizing: border-box;">
-    <div style="text-align: left; box-sizing: border-box;">
+<!-- PRODUCTION FOOTER -->
+<footer style="background: #f8f0e8; border-top: 4px solid var(--red); padding: 2.5rem 4vw; font-family: 'DM Sans', sans-serif; width: 100%;">
+  <div style="max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+    <div style="text-align: left;">
       <div style="font-size: 15px; font-weight: 700; color: #2d3748; margin-bottom: 4px; letter-spacing: 0.02em;">食文化 · Food & Culture</div>
-      <div style="font-size: 13px; color: #7a6652; margin-bottom: 4px;">A half-day guided experience · From ¥12,000 per person</div>
+      <div style="font-size: 13px; color: #7a6652; margin-bottom: 4px;">A half-day guided experience · Tokyo Private Tours with Terry</div>
       <div style="font-size: 12px; color: #a09080;">© 2026 Tokyo with Terry · Japan</div>
     </div>
-    <div style="display: flex; gap: 1.5rem; align-items: center; box-sizing: border-box;">
-      <a href="index.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">&#8592; Home</a>
-      <a href="availability.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">Availability</a>
-      <a href="reservations.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">Reserve</a>
+    <div style="display: flex; gap: 1.5rem; align-items: center;">
+      <a href="../../../Downloads/index.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">&#8592; Home</a>
+      <a href="../../../Downloads/availability.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">Availability</a>
+      <a href="../../../Downloads/reservations.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">Reserve</a>
     </div>
   </div>
 </footer>
