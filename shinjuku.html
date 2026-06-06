@@ -11,7 +11,7 @@
   <meta property="og:title" content="Shinjuku Neon Canyons: Custom Nightlife & Cultural Tours | Tokyo Private Tours with Terry"/>
   <meta property="og:description" content="Explore Shinjuku with Terry — From the neon canyons of Kabukicho and historic micro-bars of Golden Gai to imperial gardens and hidden towering lookouts."/>
   <meta property="og:type" content="website"/>
-  <link rel="canonical" href="https://tokyowithterry.com/shinjuku.html"/>
+  <link rel="canonical" href="https://terrybj65.github.io/terrytokyotours/shinjuku.html"/>
 
   <title>Shinjuku Exploration — Neon Nightscapes, Historic Alleys & Oasis Gardens | Tokyo Private Tours with Terry</title>
   
@@ -337,9 +337,23 @@
     .stop-jp {
       font-size: 0.88rem;
       color: var(--stone);
-      margin-bottom: 1.5rem;
+      margin-bottom: 0.75rem;
       letter-spacing: 0.06em;
     }
+    
+    /* BLOCK STRUCTURE FIX FOR INTERNAL LINK BEHAVIOR */
+    .stop-map-link {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 12px;
+      color: var(--moss);
+      text-decoration: none;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      transition: color 0.15s;
+    }
+    .stop-map-link:hover { color: var(--red); }
+
     .stop-desc {
       font-size: 0.98rem;
       line-height: 1.8;
@@ -366,14 +380,6 @@
     }
     .stop-rating { font-size: 0.82rem; color: var(--stone); }
     .stars { color: var(--gold); margin-right: 0.25rem; }
-    .stop-map {
-      font-size: 0.82rem;
-      color: var(--sage);
-      text-decoration: none;
-      font-weight: 500;
-      transition: opacity 0.2s;
-    }
-    .stop-map:hover { opacity: 0.65; }
 
     /* ── PRICING MATRIX TIER GRID ── */
     .price-grid {
@@ -505,12 +511,12 @@
 <nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(0,0,0,0.1);padding:0 4vw;display:flex;align-items:center;justify-content:space-between;height:65px;">
   <div style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--ink);">Tokyo with <span style="color:var(--red);">Terry</span></div>
   <ul style="display:flex;list-style:none;justify-content:center;align-items:center;gap:2.5rem;margin:0;padding:0;">
-    <li><a href="../../../../../Downloads/index.html#areas" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Areas</a></li>
-    <li><a href="../../../../../Downloads/index.html#tours" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Tours</a></li>
-    <li><a href="../../../../../Downloads/index.html#about" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">About</a></li>
-    <li><a href="../../../../../Downloads/index.html#contact" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Contact</a></li>
+    <li><a href="/terrytokyotours/index.html#areas" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Areas</a></li>
+    <li><a href="/terrytokyotours/index.html#tours" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Tours</a></li>
+    <li><a href="/terrytokyotours/index.html#about" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">About</a></li>
+    <li><a href="/terrytokyotours/index.html#contact" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Contact</a></li>
   </ul>
-  <a href="../../../../../Downloads/availability.html" style="background:var(--red);color:#fff;border:none;padding:10px 22px;border-radius:var(--radius-sm);font-size:14px;cursor:pointer;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:500;">Book a tour</a>
+  <a href="/terrytokyotours/availability.html" style="background:var(--red);color:#fff;border:none;padding:10px 22px;border-radius:var(--radius-sm);font-size:14px;cursor:pointer;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:500;">Book a tour</a>
 </nav>
 
 <section class="hero">
@@ -523,7 +529,7 @@
         <p>A customizable, deeply curated private urban immersion through Tokyo’s hyper-kinetic core—balancing iconic modern skylines with the raw, hidden subcultures found just out of sight.</p>
         <div class="hero-btns">
           <a href="#itinerary-start" class="btn-primary">Explore stops ↓</a>
-          <a href="../../../../../Downloads/availability.html" class="btn-ghost">Check availability</a>
+          <a href="/terrytokyotours/availability.html" class="btn-ghost">Check availability</a>
         </div>
       </div>
     </div>
@@ -532,7 +538,7 @@
 
 <div class="intro">
   <div class="intro-kicker">Gleaming Skylines · Historic Alleys · Cultural Junctions</div>
-  <p>Shinjuku is Tokyo at full volume — a district of extreme contrasts where gleaming skyscrapers share streets with the narrow red-lit lanes of Golden Gai and Kabukicho[cite: 2]. It's exhausting, thrilling, and completely unmissable[cite: 2]. By traversing this neighborhood on foot as an independent group, we cut past standard tourist bottlenecks. Terry knows every corner, from the tiny jazz bars that hold ten people to the rooftop views that make the whole city snap into focus[cite: 2].</p>
+  <p>Shinjuku is Tokyo at full volume — a district of extreme contrasts where gleaming skyscrapers share streets with the narrow red-lit lanes of Golden Gai and Kabukicho. It's exhausting, thrilling, and completely unmissable. By traversing this neighborhood on foot as an independent group, we cut past standard tourist bottlenecks. Terry knows every corner, from the tiny jazz bars that hold ten people to the rooftop views that make the whole city snap into focus.</p>
 </div>
 
 <div class="transport-bar">
@@ -562,7 +568,6 @@
 
 <div class="stops">
 
-  <!-- Stop 1: Kabukicho -->
   <div class="stop" id="kabukicho">
     <div class="stop-img-wrap">
       <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=1000&q=80&fit=crop" alt="Vibrant neon alley in Kabukicho entertainment quadrant" loading="lazy"/>
@@ -575,16 +580,15 @@
       <div class="stop-category">Neon Streets · Urban Nightlife</div>
       <h2 class="stop-title">Kabukicho</h2>
       <div class="stop-jp">歌舞伎町</div>
-      <p class="stop-desc">Dive headfirst into Tokyo's most famous entertainment quadrant[cite: 2]. Walk through towering glowing archways into a sensory landscape of massive digital display boards, bustling game centers, and dynamic multi-story architecture that truly comes alive after sundown[cite: 2].</p>
-      <div class="stop-tip">💡 Look skyward between the alley buildings to spot the famous giant Godzilla head looming over the cinema complex[cite: 2]. I'll take you to an uncrowded terrace path directly eye-level with the beast.</div>
+      <a href="https://maps.google.com/?q=Kabukicho+Shinjuku+Tokyo+Japan" target="_blank" rel="noopener noreferrer" class="stop-map-link">📍 View on Google Maps ↗</a>
+      <p class="stop-desc">Dive headfirst into Tokyo's most famous entertainment quadrant. Walk through towering glowing archways into a sensory landscape of massive digital display boards, bustling game centers, and dynamic multi-story architecture that truly comes alive after sundown.</p>
+      <div class="stop-tip">💡 Look skyward between the alley buildings to spot the famous giant Godzilla head looming over the cinema complex. I'll take you to an uncrowded terrace path directly eye-level with the beast.</div>
       <div class="stop-footer">
         <div class="stop-rating"><span class="stars">★★★★★</span> 4.3 · 32,000+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Kabukicho+Shinjuku+Tokyo+Japan" target="_blank">→ Google Maps</a>
       </div>
     </div>
   </div>
 
-  <!-- Stop 2: Golden Gai -->
   <div class="stop" id="goldengai">
     <div class="stop-img-wrap">
       <img src="https://images.unsplash.com/photo-1542640244-7e672d6cef21?w=1000&q=80&fit=crop" alt="Narrow historic alleyways of Golden Gai architectural enclave" loading="lazy"/>
@@ -597,16 +601,15 @@
       <div class="stop-category">Micro-Bars · Retro Architecture</div>
       <h2 class="stop-title">Golden Gai</h2>
       <div class="stop-jp">新宿ゴールデン街</div>
-      <p class="stop-desc">Explore a dense, low-slung maze of six architectural alleyways frozen beautifully in Tokyo's post-war era[cite: 2]. This legendary enclave packs over 200 tiny, deeply atmospheric second-story micro-bars, each featuring its own unique subculture style, musical niche, and legacy flavor[cite: 2].</p>
-      <div class="stop-tip">💡 Many doors hide steep stairways to ten-seat rooms; Terry knows exactly which hidden corners are warmly welcoming to international travelers without local-only custom policies[cite: 2].</div>
+      <a href="https://maps.google.com/?q=Shinjuku+Golden+Gai+Tokyo+Japan" target="_blank" rel="noopener noreferrer" class="stop-map-link">📍 View on Google Maps ↗</a>
+      <p class="stop-desc">Explore a dense, low-slung maze of six architectural alleyways frozen beautifully in Tokyo's post-war era. This legendary enclave packs over 200 tiny, deeply atmospheric second-story micro-bars, each featuring its own unique subculture style, musical niche, and legacy flavor.</p>
+      <div class="stop-tip">💡 Many doors hide steep stairways to ten-seat rooms; Terry knows exactly which hidden corners are warmly welcoming to international travelers without local-only custom policies.</div>
       <div class="stop-footer">
         <div class="stop-rating"><span class="stars">★★★★★</span> 4.6 · 8,500+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Shinjuku+Golden+Gai+Tokyo+Japan" target="_blank">→ Google Maps</a>
       </div>
     </div>
   </div>
 
-  <!-- Stop 3: Shinjuku Gyoen -->
   <div class="stop" id="gyoen">
     <div class="stop-img-wrap">
       <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1000&q=80&fit=crop" alt="Serene view of Shinjuku Gyoen with skyscrapers in the background" loading="lazy"/>
@@ -619,16 +622,15 @@
       <div class="stop-category">Botanical Escapes · Landscape Design</div>
       <h2 class="stop-title">Shinjuku Gyoen</h2>
       <div class="stop-jp">新宿御苑</div>
-      <p class="stop-desc">Experience an oasis that feels beautifully impossible amid the surrounding neon grid[cite: 2]. This expansive imperial garden seamlessly transitions between formal French geometric landscapes, English landscape expansive lawns, and traditional historic Japanese ponds[cite: 2].</p>
-      <div class="stop-tip">💡 The frames here are spectacular, capturing pristine traditional reflections with towering skyscrapers framing the sky above[cite: 2]. Perfect for high-contrast architectural photography.</div>
+      <a href="https://maps.google.com/?q=Shinjuku+Gyoen+National+Garden+Tokyo" target="_blank" rel="noopener noreferrer" class="stop-map-link">📍 View on Google Maps ↗</a>
+      <p class="stop-desc">Experience an oasis that feels beautifully impossible amid the surrounding neon grid. This expansive imperial garden seamlessly transitions between formal French geometric landscapes, English landscape expansive lawns, and traditional historic Japanese ponds.</p>
+      <div class="stop-tip">💡 The frames here are spectacular, capturing pristine traditional reflections with towering skyscrapers framing the sky above. Perfect for high-contrast architectural photography.</div>
       <div class="stop-footer">
         <div class="stop-rating"><span class="stars">★★★★★</span> 4.7 · 28,000+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Shinjuku+Gyoen+National+Garden+Tokyo" target="_blank">→ Google Maps</a>
       </div>
     </div>
   </div>
 
-  <!-- Stop 4: Takashimaya Times Square -->
   <div class="stop" id="takashimaya">
     <div class="stop-img-wrap">
       <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=1000&q=80&fit=crop" alt="Bustling modern shopping complex area in Takashimaya Times Square Shinjuku" loading="lazy"/>
@@ -641,16 +643,15 @@
       <div class="stop-category">Premier Shopping · High-End Depachika</div>
       <h2 class="stop-title">Takashimaya Times Square</h2>
       <div class="stop-jp">タカシマヤタイムズスクエア</div>
-      <p class="stop-desc">Witness modern retail engineered on an incredible scale[cite: 2]. Beyond the world-class shopping floors, explore the legendary basement 'depachika' food halls—a premium underground culinary paradise showcasing artisanal sweets, bento craft, and seasonal delicacies[cite: 2].</p>
-      <div class="stop-tip">💡 The complex features open-air upper terrace walkways that offer unique bird's-eye perspectives over the complex train tracks below, a dream spot for train-spotting enthusiasts[cite: 2].</div>
+      <a href="https://maps.google.com/?q=Takashimaya+Times+Square+Shinjuku" target="_blank" rel="noopener noreferrer" class="stop-map-link">📍 View on Google Maps ↗</a>
+      <p class="stop-desc">Witness modern retail engineered on an incredible scale. Beyond the world-class shopping floors, explore the legendary basement 'depachika' food halls—a premium underground culinary paradise showcasing artisanal sweets, bento craft, and seasonal delicacies.</p>
+      <div class="stop-tip">💡 The complex features open-air upper terrace walkways that offer unique bird's-eye perspectives over the complex train tracks below, a dream spot for train-spotting enthusiasts.</div>
       <div class="stop-footer">
         <div class="stop-rating"><span class="stars">★★★★★</span> 4.2 · 5,400+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Takashimaya+Times+Square+Shinjuku" target="_blank">→ Google Maps</a>
       </div>
     </div>
   </div>
 
-  <!-- Stop 5: Hanazono Shrine -->
   <div class="stop" id="hanazono">
     <div class="stop-img-wrap">
       <img src="https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?w=1000&q=80&fit=crop" alt="Bright red torii gates and historical buildings of Hanazono Shrine" loading="lazy"/>
@@ -663,11 +664,11 @@
       <div class="stop-category">Shinto Sanctuaries · Quiet Enclaves</div>
       <h2 class="stop-title">Hanazono Shrine</h2>
       <div class="stop-jp">花園神社</div>
-      <p class="stop-desc">Step instantly out of the urban roar into a historic Shinto sanctuary tucked quietly behind Shinjuku's main thoroughfares[cite: 2]. Dedicated to fertility, performance arts, and commercial success, its bright vermilion structures have guarded the district's creative soul since the Edo period[cite: 2].</p>
-      <div class="stop-tip">💡 Walking through its peaceful courtyard path provides a wonderful palette cleanser and atmospheric twilight transition before navigating back out to the neon avenues[cite: 2].</div>
+      <a href="https://maps.google.com/?q=Hanazono+Shrine+Shinjuku+Tokyo" target="_blank" rel="noopener noreferrer" class="stop-map-link">📍 View on Google Maps ↗</a>
+      <p class="stop-desc">Step instantly out of the urban roar into a historic Shinto sanctuary tucked quietly behind Shinjuku's main thoroughfares. Dedicated to fertility, performance arts, and commercial success, its bright vermilion structures have guarded the district's creative soul since the Edo period.</p>
+      <div class="stop-tip">💡 Walking through its peaceful courtyard path provides a wonderful palette cleanser and atmospheric twilight transition before navigating back out to the neon avenues.</p>
       <div class="stop-footer">
         <div class="stop-rating"><span class="stars">★★★★★</span> 4.4 · 4,100+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Hanazono+Shrine+Shinjuku+Tokyo" target="_blank">→ Google Maps</a>
       </div>
     </div>
   </div>
@@ -755,7 +756,7 @@
       <p style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: rgba(255, 255, 255, 0.8); margin: 0.5rem 0 0 0; font-weight: 300; line-height: 1.4;">Check Terry's calendar availability and submit your tour booking request instantly.</p>
     </div>
     <div style="flex: 1; text-align: right; min-width: 200px;">
-      <a href="../../../../../Downloads/availability.html" style="background: #ffffff; color: var(--red); padding: 13px 26px; border-radius: var(--radius-sm); font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap; display: inline-block;">View availability &amp; book →</a>
+      <a href="/terrytokyotours/availability.html" style="background: #ffffff; color: var(--red); padding: 13px 26px; border-radius: var(--radius-sm); font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap; display: inline-block;">View availability & book →</a>
     </div>
   </div>
 </div>
@@ -768,9 +769,9 @@
       <div style="font-size: 12px; color: #a09080;">© 2026 Tokyo with Terry · Japan</div>
     </div>
     <div style="display: flex; gap: 1.5rem; align-items: center;">
-      <a href="../../../../../Downloads/index.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">← Home</a>
-      <a href="../../../../../Downloads/availability.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">Availability</a>
-      <a href="../../../../../Downloads/reservations.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">Reserve</a>
+      <a href="/terrytokyotours/index.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">← Home</a>
+      <a href="/terrytokyotours/availability.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">Availability</a>
+      <a href="/terrytokyotours/reservations.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">Reserve</a>
     </div>
   </div>
 </footer>

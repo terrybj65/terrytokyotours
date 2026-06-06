@@ -9,14 +9,8 @@
   <meta property="og:title" content="Yanaka Area Guide — Tokyo with Terry"/>
   <meta property="og:description" content="Explore Yanaka with Terry — old shitamachi Tokyo, temple lanes, cats and traditional atmosphere."/>
   <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://tokyowithterry.com/yanaka.html"/>
-  <meta property="og:image" content="https://tokyowithterry.com/yanaka.jpg"/>
-  <meta property="og:locale" content="en_GB"/>
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Yanaka Area Guide — Tokyo with Terry"/>
-  <meta name="twitter:description" content="Explore Yanaka with Terry — old shitamachi Tokyo, temple lanes, cats and traditional atmosphere."/>
-  <meta name="twitter:image" content="https://tokyowithterry.com/yanaka.jpg"/>
-  <link rel="canonical" href="https://tokyowithterry.com/yanaka.html"/>
+  <meta property="og:url" content="https://terrybj65.github.io/terrytokyotours/yanaka.html"/>
+  <link rel="canonical" href="https://terrybj65.github.io/terrytokyotours/yanaka.html"/>
 
   <title>Yanaka — Tokyo Private Tours with Terry</title>
   
@@ -35,6 +29,7 @@
       --red: #de1c24;
       --radius: 12px;
       --radius-sm: 8px;
+      --bg-card: #ffffff;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -52,6 +47,11 @@
       margin: 0 auto;
       padding: 0 4vw;
     }
+
+    /* ── GENERAL TYPOGRAPHY & HEADINGS ── */
+    .section-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red); margin-bottom: 0.5rem; }
+    .section-title { font-family: 'DM Serif Display', serif; font-size: 36px; font-weight: 400; margin-bottom: 0.5rem; line-height: 1.2; }
+    .section-sub { font-size: 16px; color: var(--stone); margin-bottom: 2.5rem; max-width: 560px; }
 
     /* ── HERO SECTION ── */
     .hero {
@@ -333,9 +333,22 @@
     .stop-jp {
       font-size: 0.88rem;
       color: var(--stone);
-      margin-bottom: 1.5rem;
+      margin-bottom: 0.75rem;
       letter-spacing: 0.06em;
     }
+    
+    .stop-map-link {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 12px;
+      color: var(--sage);
+      text-decoration: none;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      transition: color 0.15s;
+    }
+    .stop-map-link:hover { color: var(--red); }
+
     .stop-desc {
       font-size: 0.98rem;
       line-height: 1.8;
@@ -362,52 +375,35 @@
     }
     .stop-rating { font-size: 0.82rem; color: var(--stone); }
     .stars { color: var(--gold); margin-right: 0.25rem; }
-    .stop-map {
-      font-size: 0.82rem;
-      color: var(--sage);
-      text-decoration: none;
-      font-weight: 500;
-      transition: opacity 0.2s;
-    }
-    .stop-map:hover { opacity: 0.65; }
 
-    /* ── OVERVIEW BOXES ── */
-    .info-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5rem;
-      max-width: 1300px;
-      margin: 4.5rem auto;
-      padding: 0 4vw;
-    }
-    .info-card {
-      background: #ffffff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 2.5rem;
-    }
-    .info-card h3 {
-      font-family: 'Shippori Mincho', serif;
-      font-size: 22px;
-      font-weight: 600;
-      margin-bottom: 1.25rem;
-      color: var(--ink);
-    }
-    .info-card ul { padding-left: 1.4rem; list-style-type: square; }
-    .info-card li, .info-card p {
-      font-size: 14px;
-      color: var(--stone);
-      line-height: 1.7;
-      margin-bottom: 0.65rem;
-    }
-    .price-value {
-      font-family: 'Shippori Mincho', serif;
-      color: var(--moss);
-      font-weight: 600;
-    }
+    /* ── PRICING CARD STYLES ── */
+    .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 1.5rem; }
+    .price-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 2.5rem 1.5rem; text-align: center; transition: transform 0.2s, border-color 0.2s; }
+    .price-card:hover { transform: translateY(-2px); border-color: var(--sage); }
+    .price-card h3 { font-family: 'Shippori Mincho', serif; font-size: 1.25rem; color: var(--ink); margin-bottom: 0.5rem; }
+    .price-amt { font-family: 'DM Serif Display', serif; font-size: 2.2rem; color: var(--red); margin: 0.8rem 0; }
+    .price-note { font-size: 0.85rem; color: var(--stone); line-height: 1.4; }
+
+    /* ── STANDARDIZED LOGISTICAL DETAILS GRID ── */
+    .details-section { border-top: 1px solid var(--border); padding-top: 5rem; margin-top: 3rem; }
+    .details-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4rem; }
+    .details-grid dt { font-family: 'Shippori Mincho', serif; font-size: 1.6rem; font-weight: 600; color: var(--ink); margin-bottom: 1.5rem; }
+    .details-grid dd { margin: 0; }
+    .details-grid ul { list-style: none; padding: 0; }
+    .details-grid li { position: relative; padding-left: 1.5rem; font-size: 0.98rem; line-height: 1.7; color: var(--stone); margin-bottom: 0.8rem; }
+    .details-grid li::before { content: "—"; position: absolute; left: 0; color: var(--gold); }
+    .details-grid p { font-size: 0.98rem; line-height: 1.75; color: var(--stone); margin-bottom: 1.2rem; }
+    .details-grid p:last-child { margin-bottom: 0; }
+
+    /* ── REWORKED INLINE ADVANTAGE CARD ── */
+    .info-card-solo { background: #ffffff; border: 1px solid var(--border); border-radius: var(--radius); padding: 2.5rem; margin-top: 4rem; }
+    .info-card-solo h3 { font-family: 'Shippori Mincho', serif; font-size: 22px; font-weight: 600; margin-bottom: 1.25rem; color: var(--ink); }
+    .info-card-solo p { font-size: 14px; color: var(--stone); line-height: 1.7; margin-bottom: 0.65rem; }
 
     @media (max-width: 1024px) {
       .stop { gap: 2rem; }
+      .details-grid { gap: 2.5rem; }
+      .price-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 768px) {
@@ -422,8 +418,7 @@
       .tod-item { border-right: none; border-bottom: 1px solid rgba(42,77,52,0.15); padding: 1.1rem; }
       .tod-item:last-child { border-bottom: none; }
       .section-nav-inner { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.2rem; }
-      .info-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-      .info-card { padding: 2rem; }
+      .details-grid { grid-template-columns: 1fr; gap: 3rem; }
     }
   </style>
 </head>
@@ -433,12 +428,12 @@
 <nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(0,0,0,0.1);padding:0 4vw;display:flex;align-items:center;justify-content:space-between;height:65px;">
   <div style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--ink);">Tokyo with <span style="color:var(--red);">Terry</span></div>
   <ul style="display:flex;list-style:none;justify-content:center;align-items:center;gap:2.5rem;margin:0;padding:0;">
-    <li><a href="../../../../../Downloads/index.html#areas" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Areas</a></li>
-    <li><a href="../../../../../Downloads/index.html#tours" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Tours</a></li>
-    <li><a href="../../../../../Downloads/index.html#about" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">About</a></li>
-    <li><a href="../../../../../Downloads/index.html#contact" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Contact</a></li>
+    <li><a href="/terrytokyotours/index.html#areas" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Areas</a></li>
+    <li><a href="/terrytokyotours/index.html#tours" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Tours</a></li>
+    <li><a href="/terrytokyotours/index.html#about" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">About</a></li>
+    <li><a href="/terrytokyotours/index.html#contact" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Contact</a></li>
   </ul>
-  <a href="../../../../../Downloads/availability.html" style="background:var(--red);color:#fff;border:none;padding:10px 22px;border-radius:var(--radius-sm);font-size:14px;cursor:pointer;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:500;">Book a tour</a>
+  <a href="/terrytokyotours/availability.html" style="background:var(--red);color:#fff;border:none;padding:10px 22px;border-radius:var(--radius-sm);font-size:14px;cursor:pointer;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:500;">Book a tour</a>
 </nav>
 
 <!-- HERO BLOCK -->
@@ -452,7 +447,7 @@
         <p>Old shitamachi — the Tokyo that time forgot. Winding pathways, preserved wooden temples, and local artisan legacy.</p>
         <div class="hero-btns">
           <a href="#highlights-start" class="btn-primary">Explore highlights ↓</a>
-          <a href="../../../../../Downloads/availability.html" class="btn-ghost">Check availability</a>
+          <a href="/terrytokyotours/availability.html" class="btn-ghost">Check availability</a>
         </div>
       </div>
     </div>
@@ -510,11 +505,11 @@
       <div class="stop-category">Historic Grounds · Natural Sanctuaries</div>
       <h2 class="stop-title">Yanaka Cemetery</h2>
       <div class="stop-jp">谷中霊園</div>
+      <a href="https://maps.google.com/?q=Yanaka+Cemetery+Tokyo+Japan" target="_blank" rel="noopener noreferrer" class="stop-map-link">📍 View on Google Maps ↗</a>
       <p class="stop-desc">Stroll along beautiful, deeply atmospheric paths where Tokyo’s elite and historical figures rest. This open park-like expanse features beautiful old tomb structures and exceptional natural beauty that adapts beautifully across each passing season.</p>
       <div class="stop-tip">💡 This sanctuary offers stunning cherry blossom canopies in the spring and peaceful firefly-lit evenings during late summer.</div>
       <div class="stop-footer">
         <div class="stop-rating"><span class="stars">★★★★★</span> 4.4 · 1,800+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Yanaka+Cemetery+Tokyo+Japan" target="_blank">→ Google Maps</a>
       </div>
     </div>
   </div>
@@ -532,11 +527,11 @@
       <div class="stop-category">Alleyway Icons · Neighborhood Wildlife</div>
       <h2 class="stop-title">Cat Town Corners</h2>
       <div class="stop-jp">猫の町</div>
+      <a href="https://maps.google.com/?q=Yanaka+Tokyo+Japan+Cats" target="_blank" rel="noopener noreferrer" class="stop-map-link">📍 View on Google Maps ↗</a>
       <p class="stop-desc">Yanaka is legendary across the capital for its thriving, cherished community of resident street cats. Keep your camera ready as you walk, as you will spot them lounging lazily across weathered wooden fencing, tiled roofs, and sunny doorsteps.</p>
       <div class="stop-tip">💡 Local shops have completely embraced this identity, selling beautiful handcrafted cat-themed pottery, souvenirs, and pastries.</div>
       <div class="stop-footer">
         <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 920+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Yanaka+Tokyo+Japan+Cats" target="_blank">--> Google Maps</a>
       </div>
     </div>
   </div>
@@ -554,11 +549,11 @@
       <div class="stop-category">Community Markets · Nostalgic Flavors</div>
       <h2 class="stop-title">Yanaka Ginza</h2>
       <div class="stop-jp">谷中銀座</div>
+      <a href="https://maps.google.com/?q=Yanaka+Ginza+Tokyo+Japan" target="_blank" rel="noopener noreferrer" class="stop-map-link">📍 View on Google Maps ↗</a>
       <p class="stop-desc">Step down the famous Yuyake Dandan (Sunset Steps) into a charming, retro-style market street. This vibrant neighborhood strip is bursting with independent craft vendors, old-school clothing boutiques, and legendary local street snack stalls.</p>
       <div class="stop-tip">💡 Stand at the top of the steps late in the afternoon to catch one of the most celebrated urban sunset views in traditional Tokyo.</div>
       <div class="stop-footer">
         <div class="stop-rating"><span class="stars">★★★★★</span> 4.2 · 4,600+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Yanaka+Ginza+Tokyo+Japan" target="_blank">→ Google Maps</a>
       </div>
     </div>
   </div>
@@ -576,11 +571,11 @@
       <div class="stop-category">Sacred Spaces · Edo Period Structures</div>
       <h2 class="stop-title">Temple-Hopping Lanes</h2>
       <div class="stop-jp">寺院巡り</div>
+      <a href="https://maps.google.com/?q=Temples+Yanaka+Tokyo+Japan" target="_blank" rel="noopener noreferrer" class="stop-map-link">📍 View on Google Maps ↗</a>
       <p class="stop-desc">Discover dozens of beautiful, historic temples quietly tucked behind ordinary residential corners. Because this district was spared from modern developers, these centuries-old wooden structures maintain an incredibly raw, understated architectural intimacy.</p>
       <div class="stop-tip">💡 Look out for the historic, unique mud-and-tile walls (Tsujibei) that still border several of the old temple boundaries.</div>
       <div class="stop-footer">
         <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 1,200+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=Temples+Yanaka+Tokyo+Japan" target="_blank">→ Google Maps</a>
       </div>
     </div>
   </div>
@@ -598,33 +593,80 @@
       <div class="stop-category">Artisan Craft · Contemporary Adaptations</div>
       <h2 class="stop-title">Art Gallery District</h2>
       <div class="stop-jp">ギャラリー街</div>
+      <a href="https://maps.google.com/?q=SCAI+The+Bathhouse+Tokyo" target="_blank" rel="noopener noreferrer" class="stop-map-link">📍 View on Google Maps ↗</a>
       <p class="stop-desc">Experience an inspiring architectural renaissance where historical structures find modern purpose. Dozens of independent contemporary art galleries, designer ateliers, and independent pottery studios are set inside beautifully restored traditional townhouses and old public bathhouses.</p>
       <div class="stop-tip">💡 Make time to stop by Scai the Bathhouse, a widely celebrated contemporary gallery located inside an old 200-year-old public bath structure.</div>
       <div class="stop-footer">
         <div class="stop-rating"><span class="stars">★★★★★</span> 4.6 · 340+ reviews</div>
-        <a class="stop-map" href="https://maps.google.com/?q=SCAI+The+Bathhouse+Tokyo" target="_blank">→ Google Maps</a>
       </div>
     </div>
   </div>
 
 </div>
 
-<!-- DETAILS BLOCKS WITH PRICING -->
-<div class="info-grid">
-  <div class="info-card">
-    <h3>Private Tour Packages &amp; Pricing</h3>
-    <p>Every itinerary is exclusively private, crafted to match your exact pace, curiosity, and aesthetic style.</p>
-    <ul style="margin-top: 1rem; margin-bottom: 1rem;">
-      <li><strong>Half-Day Immersive:</strong> <span class="price-value">¥35,000</span> (Up to 4 hours)</li>
-      <li><strong>Full-Day Masterclass:</strong> <span class="price-value">¥60,000</span> (Up to 8 hours)</li>
-      <li><strong>Multi-Day Curated Journeys:</strong> Custom rates available upon request</li>
-    </ul>
-    <p style="font-size: 13px; font-style: italic;">* Please note: Client transportation, temple admission fees, and dining selections are handled independently on the day of the tour.</p>
+<!-- TOUR PRICING HOLDER SECTION (STRUCTURE MAPPED FROM ASAKUSA) -->
+<section id="tour-pricing" style="margin: 2rem 0; padding: 4rem 0; border-top: 1px solid var(--border);">
+  <div class="container">
+    <div class="section-label">Rates</div>
+    <h2 class="section-title">Private Tour Rates</h2>
+    <div class="section-sub">Simple, flat hourly and daily private guiding fees. Custom routing options included.</div>
+    
+    <div class="price-grid">
+      <!-- Half-Day Tier -->
+      <div class="price-card">
+        <h3>Half-Day Immersive</h3>
+        <div style="font-size: 0.85rem; color: var(--stone);">Up to 4 Hours</div>
+        <div class="price-amt">¥35,000</div>
+        <div class="price-note">Perfect for deep neighborhood walks,<br>local gallery viewings, or afternoon tea market crawls.</div>
+      </div>
+      
+      <!-- Full-Day Tier -->
+      <div class="price-card">
+        <h3>Full-Day Masterclass</h3>
+        <div style="font-size: 0.85rem; color: var(--stone);">Up to 8 Hours</div>
+        <div class="price-amt">¥60,000</div>
+        <div class="price-note">Total deep-dive exploration rate.<br>Includes complete custom cross-district structural layout routing plans.</div>
+      </div>
+      
+      <!-- Custom Tier -->
+      <div class="price-card">
+        <h3>Multi-Day Journeys</h3>
+        <div style="font-size: 0.85rem; color: var(--stone);">Tailored Experiences</div>
+        <div class="price-amt">Custom</div>
+        <div class="price-note">Bespoke pricing solutions<br>available immediately upon request.</div>
+      </div>
+    </div>
   </div>
-  <div class="info-card">
-    <h3>Logistics &amp; Arrivals</h3>
-    <p>Terry coordinates seamless meeting points directly at your hotel lobby or your preferred transit terminal before set departure times.</p>
-    <p style="margin-top: 1rem;">Yanaka's pathways are beautifully historic but can occasionally present uneven stone paths. High-comfort walking shoes are highly recommended to ensure a relaxed experience throughout our exploration.</p>
+</section>
+
+<!-- STANDARDIZED LOGISTICAL DETAILS BLOCK (STRUCTURE MAPPED FROM ASAKUSA) -->
+<div class="container details-section">
+  <dl class="details-grid">
+    <div>
+      <dt>What's Included</dt>
+      <dd>
+        <ul>
+          <li>Terry’s dedicated private guiding services and bespoke historical shitamachi commentary.</li>
+          <li>Completely flexible, self-paced control over our milestones and walking speeds.</li>
+          <li>Curated artisan workshop connections and local gallery navigation assistance.</li>
+          <li>Custom hotel lobby pick-up arrangements and personalized routing support.</li>
+        </ul>
+      </dd>
+    </div>
+    <div>
+      <dt>Good to Know</dt>
+      <dd>
+        <p>Yanaka's pathways are beautifully historic but can occasionally present uneven stone lanes. High-comfort walking shoes are highly recommended to ensure a relaxed experience.</p>
+        <p>Dynamic individual personal expenses like your daily meals, local train transfers, and gallery admission fees are handled independently on the day of the tour.</p>
+        <p>All guiding experiences are strictly private with zero strangers or rigid tour bus schedules tracking your group.</p>
+      </dd>
+    </div>
+  </dl>
+
+  <!-- PRIVATE ADVANTAGE CARD EXTENSION -->
+  <div class="info-card-solo">
+    <h3>The Custom Private Advantage</h3>
+    <p>Because these historic backstreets and traditional craft blocks naturally involve steady exploration, we walk at your exact chosen pace. Since this is a completely tailored, private experience, Terry seamlessly syncs tracking options to accommodate heavy packaging management or custom artisanal targets without any stress.</p>
   </div>
 </div>
 
@@ -637,7 +679,7 @@
         <p style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: rgba(255, 255, 255, 0.8); margin: 0.5rem 0 0 0; padding: 0; font-weight: 300; line-height: 1.4;">Check Terry's calendar availability and submit your tour booking request instantly.</p>
       </div>
       <div style="flex: 1; text-align: right; min-width: 200px; box-sizing: border-box;">
-        <a href="../../../../../Downloads/availability.html" style="background: #ffffff; color: #de1c24; padding: 13px 26px; border-radius: 8px; font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap; transition: opacity 0.15s; display: inline-block; font-family: 'DM Sans', sans-serif; box-sizing: border-box;">View availability &amp; book &#8594;</a>
+        <a href="/terrytokyotours/availability.html" style="background: #ffffff; color: #de1c24; padding: 13px 26px; border-radius: 8px; font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap; transition: opacity 0.15s; display: inline-block; font-family: 'DM Sans', sans-serif; box-sizing: border-box;">View availability &amp; book &#8594;</a>
       </div>
     </div>
   </div>
@@ -653,9 +695,9 @@
       <div style="font-size: 12px; color: #a09080;">© 2026 Tokyo with Terry · Japan</div>
     </div>
     <div style="display: flex; gap: 1.5rem; align-items: center; box-sizing: border-box;">
-      <a href="../../../../../Downloads/index.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">&#8592; Home</a>
-      <a href="../../../../../Downloads/availability.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">Availability</a>
-      <a href="../../../../../Downloads/reservations.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">Reserve</a>
+      <a href="/terrytokyotours/index.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">← Home</a>
+      <a href="/terrytokyotours/availability.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">Availability</a>
+      <a href="/terrytokyotours/reservations.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">Reserve</a>
     </div>
   </div>
 </footer>

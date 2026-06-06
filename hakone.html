@@ -9,14 +9,10 @@
   <meta property="og:title" content="Hakone Day Trip — Tokyo with Terry"/>
   <meta property="og:description" content="Full-day private tour of Hakone — Mt Fuji views, Lake Ashi cruise, sulphur vents and mountain rail."/>
   <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://tokyowithterry.com/hakone.html"/>
+  <meta property="og:url" content="https://terrybj65.github.io/terrytokyotours/hakone.html"/>
   <meta property="og:image" content="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=1200&q=85&fit=crop"/>
   <meta property="og:locale" content="en_GB"/>
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Hakone Day Trip — Tokyo with Terry"/>
-  <meta name="twitter:description" content="Full-day private tour of Hakone — Mt Fuji views, Lake Ashi cruise, sulphur vents and mountain rail."/>
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=1200&q=85&fit=crop"/>
-  <link rel="canonical" href="https://tokyowithterry.com/hakone.html"/>
+  <link rel="canonical" href="https://terrybj65.github.io/terrytokyotours/hakone.html"/>
 
   <title>Hakone Day Trip — Tokyo Private Tours with Terry</title>
   
@@ -282,9 +278,21 @@
     .stop-jp {
       font-size: 0.88rem;
       color: var(--stone);
-      margin-bottom: 1.5rem;
+      margin-bottom: 0.75rem;
       letter-spacing: 0.06em;
     }
+    .stop-map-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      color: var(--moss);
+      text-decoration: none;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      transition: color 0.15s;
+    }
+    .stop-map-link:hover { color: var(--red); }
     .stop-desc {
       font-size: 0.98rem;
       line-height: 1.8;
@@ -401,12 +409,12 @@
 <nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(0,0,0,0.1);padding:0 4vw;display:flex;align-items:center;justify-content:space-between;height:65px;">
   <div style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--ink);">Tokyo with <span style="color:var(--red);">Terry</span></div>
   <ul style="display:flex;list-style:none;justify-content:center;align-items:center;gap:2.5rem;margin:0;padding:0;">
-    <li><a href="../../../Downloads/index.html#areas" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Areas</a></li>
-    <li><a href="../../../Downloads/index.html#tours" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Tours</a></li>
-    <li><a href="../../../Downloads/index.html#about" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">About</a></li>
-    <li><a href="../../../Downloads/index.html#contact" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Contact</a></li>
+    <li><a href="/terrytokyotours/index.html#areas" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Areas</a></li>
+    <li><a href="/terrytokyotours/index.html#tours" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Tours</a></li>
+    <li><a href="/terrytokyotours/index.html#about" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">About</a></li>
+    <li><a href="/terrytokyotours/index.html#contact" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Contact</a></li>
   </ul>
-  <a href="../../../Downloads/availability.html" style="background:var(--red);color:#fff;border:none;padding:10px 22px;border-radius:var(--radius-sm);font-size:14px;cursor:pointer;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:500;">Book a tour</a>
+  <a href="/terrytokyotours/availability.html" style="background:var(--red);color:#fff;border:none;padding:10px 22px;border-radius:var(--radius-sm);font-size:14px;cursor:pointer;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:500;">Book a tour</a>
 </nav>
 
 <!-- HERO BLOCK -->
@@ -420,7 +428,7 @@
         <p>Mountain railways, volcanic valley views, and a cruise across Lake Ashi beneath Mt. Fuji.</p>
         <div class="hero-btns">
           <a href="#highlights-start" class="btn-primary">Explore highlights ↓</a>
-          <a href="../../../Downloads/availability.html" class="btn-ghost">Check availability</a>
+          <a href="/terrytokyotours/availability.html" class="btn-ghost">Check availability</a>
         </div>
       </div>
     </div>
@@ -465,6 +473,7 @@
       <div class="stop-category">Stop 01 · Historic Transits · Alpine Engineering</div>
       <h2 class="stop-title">Tozan Mountain Railway</h2>
       <div class="stop-jp">箱根登山電車</div>
+      <a href="https://maps.google.com/?q=Hakone+Tozan+Railway" target="_blank" rel="noopener noreferrer" class="stop-map-link">📍 View on Google Maps ↗</a>
       <p class="stop-desc">Board Japan's oldest mountain railway as it climbs steeply through deep, densely forested valleys. Experience classic switchback techniques where the train alternates directions to conquer the extreme mountain grade.</p>
       <div class="stop-tip">💡 Gorgeous hydrangeas frame the tracks in June, turning into rich fiery foliage deep into autumn.</div>
     </div>
@@ -479,6 +488,7 @@
       <div class="stop-category">Stop 02 · Sulphur Springs · Geothermal Peaks</div>
       <h2 class="stop-title">Owakudani Valley</h2>
       <div class="stop-jp">大涌谷</div>
+      <a href="https://maps.google.com/?q=Owakudani+Valley+Hakone" target="_blank" rel="noopener noreferrer" class="stop-map-link">📍 View on Google Maps ↗</a>
       <p class="stop-desc">Take the high-altitude ropeway over an active volcanic zone defined by rising steam vents, boiling hot springs, and sweeping mountain panoramas. Taste the famous Kuro-tamago — local eggs boiled directly in sulfur-rich waters until their shells turn ink black.</p>
       <div class="stop-tip">💡 Local lore says eating just one of these eggs adds seven years to your life expectancy.</div>
     </div>
@@ -493,6 +503,7 @@
       <div class="stop-category">Stop 03 · Scenic Sails · Shoreline Shrines</div>
       <h2 class="stop-title">Lake Ashi Cruise</h2>
       <div class="stop-jp">芦ノ湖</div>
+      <a href="https://maps.google.com/?q=Lake+Ashi+Hakone" target="_blank" rel="noopener noreferrer" class="stop-map-link">📍 View on Google Maps ↗</a>
       <p class="stop-desc">Sail across a beautifully clear crater lake formed thousands of years ago. From the open-air deck, observe the iconic bright red torii gate of Hakone Shrine rising dramatically directly out of the deep blue water.</p>
       <div class="stop-tip">💡 On pristine days, the surface of the lake creates a stunning mirror reflection of Mount Fuji.</div>
     </div>
@@ -507,6 +518,7 @@
       <div class="stop-category">Stop 04 · Tokaido Highway · Heritage Groves</div>
       <h2 class="stop-title">Cedar Avenue Walk</h2>
       <div class="stop-jp">杉並木</div>
+      <a href="https://maps.google.com/?q=Hakone+Cedar+Avenue" target="_blank" rel="noopener noreferrer" class="stop-map-link">📍 View on Google Maps ↗</a>
       <p class="stop-desc">Walk down a perfectly preserved dirt section of the old historic Tokaido highway. Trek beneath towering, 400-year-old giant cedar trees planted long ago to shade travelers marching between Kyoto and old Edo.</p>
       <div class="stop-tip">💡 This atmospheric trail offers a quiet, meditative escape directly from modern tour crowds.</div>
     </div>
@@ -586,7 +598,7 @@
       <p style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: rgba(255, 255, 255, 0.8); margin: 0.5rem 0 0 0; font-weight: 300; line-height: 1.4;">Check Terry's availability and send a booking request — it only takes a minute.</p>
     </div>
     <div style="flex: 1; text-align: right; min-width: 200px;">
-      <a href="../../../Downloads/availability.html" style="background: #ffffff; color: var(--red); padding: 13px 26px; border-radius: var(--radius-sm); font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap; display: inline-block;">View availability &amp; book &#8594;</a>
+      <a href="/terrytokyotours/availability.html" style="background: #ffffff; color: var(--red); padding: 13px 26px; border-radius: var(--radius-sm); font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap; display: inline-block;">View availability &amp; book &#8594;</a>
     </div>
   </div>
 </div>
@@ -600,9 +612,9 @@
       <div style="font-size: 12px; color: #a09080;">© 2026 Tokyo with Terry · Japan</div>
     </div>
     <div style="display: flex; gap: 1.5rem; align-items: center;">
-      <a href="../../../Downloads/index.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">&#8592; Home</a>
-      <a href="../../../Downloads/availability.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">Availability</a>
-      <a href="../../../Downloads/reservations.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">Reserve</a>
+      <a href="/terrytokyotours/index.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">&#8592; Home</a>
+      <a href="/terrytokyotours/availability.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">Availability</a>
+      <a href="/terrytokyotours/reservations.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">Reserve</a>
     </div>
   </div>
 </footer>
