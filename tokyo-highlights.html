@@ -11,7 +11,7 @@
   <meta property="og:type" content="website"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tokyo Tours: Top City Highlights | Terry's Travel Japan</title>
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght=400;600;800&family=DM+Sans:ital,wght=0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
   <style>
     :root {
       --ink: #1a1612;
@@ -20,6 +20,8 @@
       --gold: #b8952a;
       --muted: #7a7068;
       --border: rgba(26,22,18,0.12);
+      --bg-card: #ffffff;
+      --radius: 12px;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -31,15 +33,6 @@
       font-weight: 300;
       overflow-x: hidden;
     }
-
-    /* ── HERO ── */
-    
-
-    
-
-    
-
-    
 
     .hero h1 {
       position: relative;
@@ -59,14 +52,6 @@
       letter-spacing: 0.08em;
       margin-top: 0.6rem;
     }
-
-    
-
-    
-
-    
-
-    
 
     @keyframes scrollline {
       0%, 100% { opacity: 0.25; transform: scaleY(1); }
@@ -109,7 +94,7 @@
     .stops {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 0 6vw 8rem;
+      padding: 0 6vw 4rem;
     }
 
     .stop {
@@ -143,11 +128,11 @@
     }
 
     .stop-img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* 👈 Add this line right here */
-  transition: transform 0.7s ease;
-}
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
 
     .stop:hover .stop-img-wrap img {
       transform: scale(1.04);
@@ -241,9 +226,6 @@
 
     .stop-map:hover { opacity: 0.7; }
 
-    /* ── FOOTER ── */
-    
-
     /* ── RESPONSIVE ── */
     @media (max-width: 700px) {
       .stop {
@@ -331,42 +313,38 @@
     display: inline-block;
   }
   .btn-ghost:hover { background:transparent; }
-footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-size:13px;}
-.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
-.footer-logo{font-size:15px;font-weight:700;color:#2d3748;margin-bottom:4px;letter-spacing:0.02em;}
-.footer-desc{font-size:13px;color:#7a6652;margin-bottom:4px;}
-.footer-copy{font-size:12px;color:#a09080;}
-.footer-links{display:flex;gap:1.25rem;align-items:center;}
-.footer-links a{color:#a0522d;text-decoration:none;font-size:13px;transition:color .15s;}
-.footer-links a:hover{color:#de1c24;}
 
-/* ── PRICING BLOCK ── */
-.pricing-block{background:var(--bg-card);border:0.5px solid var(--border);border-radius:var(--radius);padding:2rem;margin:2rem 0;}
-.pricing-intro{font-size:15px;color:var(--text-muted);line-height:1.7;margin-bottom:1.25rem;}
-.pricing-section-title{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--red);font-weight:600;margin:1.25rem 0 .5rem;}
-.pricing-grid{margin:.5rem 0 1.25rem;}
-.pricing-row{display:flex;align-items:baseline;justify-content:space-between;padding:.65rem 0;border-bottom:0.5px solid var(--border);}
-.pricing-row:last-child{border-bottom:none;}
-.pricing-group{font-weight:600;font-size:15px;color:var(--text);}
-.pricing-amount{font-size:16px;color:var(--red);font-weight:600;text-align:right;}
-.pricing-amount span{font-size:13px;color:var(--text-muted);font-weight:400;}
-.pricing-amount em{font-size:13px;color:var(--text-muted);font-weight:400;font-style:normal;}
-.pricing-notes{margin-top:1.25rem;display:flex;flex-direction:column;gap:.5rem;border-top:0.5px solid var(--border);padding-top:1rem;}
-.pricing-notes p{font-size:14px;color:var(--text-muted);line-height:1.6;}
-.pricing-notes strong{color:var(--text);}
+  footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-size:13px;}
+  .footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+  .footer-logo{font-size:15px;font-weight:700;color:#2d3748;margin-bottom:4px;letter-spacing:0.02em;}
+  .footer-desc{font-size:13px;color:#7a6652;margin-bottom:4px;}
+  .footer-copy{font-size:12px;color:#a09080;}
+  .footer-links{display:flex;gap:1.25rem;align-items:center;}
+  .footer-links a{color:#a0522d;text-decoration:none;font-size:13px;transition:color .15s;}
+  .footer-links a:hover{color:#de1c24;}
+
+  /* ── CUSTOM PRICING GRID LAYOUT ── */
+  .custom-price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1100px; margin: 0 auto; padding: 0 6vw 4rem; }
+  .custom-price-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2.5rem 1.5rem; text-align: center; }
+  .custom-price-card h3 { font-family: 'Shippori Mincho', serif; font-size: 1.25rem; color: var(--ink); margin-bottom: 0.5rem; }
+  .custom-price-amt { font-family: 'DM Serif Display', serif; font-size: 2.2rem; color: var(--red); margin: 0.8rem 0; }
+  .custom-price-note { font-size: 0.85rem; color: var(--muted); line-height: 1.4; }
+
+  @media (max-width: 850px) {
+    .custom-price-grid { grid-template-columns: 1fr; gap: 1rem; }
+  }
 </style>
 </head>
 <body>
 <nav style="position:sticky;top:0;z-index:100;background:rgba(245,240,232,0.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(26,22,18,0.1);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;">
-  <a href="index.html" style="font-family:'Shippori Mincho',serif;font-size:18px;color:#1a1612;text-decoration:none;font-weight:600;">Tokyo with <span style="color:#c0392b;">Terry</span></a>
+  <a href="../../../Downloads/index.html" style="font-family:'Shippori Mincho',serif;font-size:18px;color:#1a1612;text-decoration:none;font-weight:600;">Tokyo with <span style="color:#c0392b;">Terry</span></a>
   <div style="display:flex;align-items:center;gap:1.5rem;">
-    <a href="index.html" style="font-size:14px;color:#7a7068;text-decoration:none;">&#8592; Home</a>
-    <a href="reservations.html" style="font-size:14px;color:#7a7068;text-decoration:none;">Reserve</a>
-    <a href="availability.html" style="background:#c0392b;color:#fff;padding:9px 20px;border-radius:8px;font-size:14px;font-family:'DM Sans',sans-serif;text-decoration:none;">Check availability</a>
+    <a href="../../../Downloads/index.html" style="font-size:14px;color:#7a7068;text-decoration:none;">← Home</a>
+    <a href="../../../Downloads/reservations.html" style="font-size:14px;color:#7a7068;text-decoration:none;">Reserve</a>
+    <a href="../../../Downloads/availability.html" style="background:#c0392b;color:#fff;padding:9px 20px;border-radius:8px;font-size:14px;font-family:'DM Sans',sans-serif;text-decoration:none;">Check availability</a>
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <img src="https://images.unsplash.com/photo-1513407030348-c983a97b98d8?w=1400&q=80&fit=crop" alt="Tokyo Highlights" />
   <div class="hero-overlay">
@@ -376,27 +354,24 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
       <p>Shibuya, Asakusa, Harajuku & more — with local insight at every stop.</p>
       <div class="hero-btns">
         <a href="#stop1" class="btn-primary">See highlights ↓</a>
-        <a href="availability.html" class="btn-ghost">Book a tour</a>
+        <a href="../../../Downloads/availability.html" class="btn-ghost">Book a tour</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- INTRO -->
 <div class="intro">
   <p>From the electric scramble of Shibuya to the forest paths of a centuries-old shrine, this tour threads together the very best of Tokyo — blending ancient tradition with breathless modernity, each stop chosen for its story as much as its spectacle.</p>
 </div>
 
 <div class="divider">The Itinerary</div>
 
-<!-- STOPS -->
 <div class="stops">
 
-  <!-- 1. Harajuku & Takeshita Street -->
-  <div class="stop">
+  <div class="stop" id="stop1">
     <div class="stop-img-wrap">
       <div class="stop-num">01</div>
-    <img src="harajuku.jpg" alt="Harajuku"/>
+      <img src="../../../Downloads/harajuku.jpg" alt="Harajuku"/>
 	  </div>
     <div class="stop-content">
       <div class="stop-category">Fashion & Culture · Harajuku</div>
@@ -409,11 +384,10 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
     </div>
   </div>
 
-  <!-- 2. Meiji Jingū -->
   <div class="stop">
     <div class="stop-img-wrap">
       <div class="stop-num">02</div>
-      <img src="meijiingu.jpg" alt="Meiji Jingu"/>
+      <img src="../../../Downloads/meijiingu.jpg" alt="Meiji Jingu"/>
 	  </div>
     <div class="stop-content">
       <div class="stop-category">Shinto Shrine · Shibuya</div>
@@ -426,11 +400,10 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
     </div>
   </div>
 
-  <!-- 3. Sensō-ji Temple -->
   <div class="stop">
     <div class="stop-img-wrap">
       <div class="stop-num">03</div>
-      <img src="sensoji.jpg" alt="Sensoji"/>
+      <img src="../../../Downloads/sensoji.jpg" alt="Sensoji"/>
 	  </div>
     <div class="stop-content">
       <div class="stop-category">Buddhist Temple · Asakusa</div>
@@ -443,7 +416,6 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
     </div>
   </div>
 
-  <!-- 4. Shibuya Crossing -->
   <div class="stop">
     <div class="stop-img-wrap">
       <div class="stop-num">04</div>
@@ -460,7 +432,6 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
     </div>
   </div>
 
-  <!-- 5. Shinjuku Gyoen -->
   <div class="stop">
     <div class="stop-img-wrap">
       <div class="stop-num">05</div>
@@ -477,11 +448,10 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
     </div>
   </div>
 
-  <!-- 6. Tokyo Skytree -->
   <div class="stop">
     <div class="stop-img-wrap">
       <div class="stop-num">06</div>
-    <img src="tokyoskytree.jpg" alt="Tokyo Skytree"/>
+      <img src="../../../Downloads/tokyoskytree.jpg" alt="Tokyo Skytree"/>
 	  </div>
     <div class="stop-content">
       <div class="stop-category">Observation Tower · Sumida</div>
@@ -496,26 +466,45 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
 
 </div>
 
-<!-- FOOTER -->
-
-<!-- PRICING -->
-<div style="background:#f9f6f0; border-top:1px solid rgba(0,0,0,0.08); padding:2.5rem 6vw; text-align:center;">
-  <p style="font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:#8a7040; margin-bottom:0.5rem;">Full day · per person</p>
-  <p style="font-family:'DM Serif Display','Shippori Mincho',serif; font-size:2.5rem; color:#1C2833; margin-bottom:0.5rem;">From ¥15,000</p>
-  <p style="font-size:0.85rem; color:#7a7468; margin-bottom:1.5rem;">Price varies by group size · Transport not included</p>
-  <a href="availability.html" style="display:inline-block; background:#D00000; color:#fff; padding:12px 28px; border-radius:8px; font-size:0.9rem; text-decoration:none; letter-spacing:0.05em;">Check availability &amp; book</a>
+<div class="divider">Tour Rates</div>
+<div class="custom-price-grid">
+  <div class="custom-price-card">
+    <h3>Solo / Couples</h3>
+    <div style="font-size: 0.85rem; color: var(--muted);">1 — 2 Guests</div>
+    <div class="custom-price-amt">Varies</div>
+    <div class="custom-price-note">Subject to chosen locations.<br>(Custom route extensions or short-duration bundles available)</div>
+  </div>
+  
+  <div class="custom-price-card">
+    <h3>Small Group</h3>
+    <div style="font-size: 0.85rem; color: var(--muted);">3 Travelers</div>
+    <div class="custom-price-amt">Varies</div>
+    <div class="custom-price-note">Total group multi-stop rate.<br>(Calculated dynamically depending on itinerary zones)</div>
+  </div>
+  
+  <div class="custom-price-card">
+    <h3>Group Bundle</h3>
+    <div style="font-size: 0.85rem; color: var(--muted);">4+ Travelers</div>
+    <div class="custom-price-amt">Varies</div>
+    <div class="custom-price-note">Total group multi-stop rate.<br>(Optimized flat tier adjustments built for full milestone days)</div>
+  </div>
 </div>
+
+<div style="text-align:center; padding-bottom: 4rem;">
+  <a href="../../../Downloads/availability.html" style="display:inline-block; background:#D00000; color:#fff; padding:14px 36px; border-radius:8px; font-size:0.95rem; text-decoration:none; letter-spacing:0.05em; font-weight:500;">Check availability & book</a>
+</div>
+
 <footer>
   <div class="footer-inner">
     <div class="footer-left">
       <div class="footer-logo">東京 · Tokyo Highlights</div>
-      <div class="footer-desc">A full-day guided experience · From ¥15,000 per person</div>
+      <div class="footer-desc">A full-day guided experience · Rates vary based on route selection</div>
       <div class="footer-copy">© 2026 Tokyo with Terry · Japan</div>
     </div>
     <div class="footer-links">
-      <a href="index.html">&#8592; Home</a>
-      <a href="availability.html">Availability</a>
-      <a href="reservations.html">Reserve</a>
+      <a href="../../../Downloads/index.html">← Home</a>
+      <a href="../../../Downloads/availability.html">Availability</a>
+      <a href="../../../Downloads/reservations.html">Reserve</a>
     </div>
   </div>
 </footer>

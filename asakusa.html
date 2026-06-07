@@ -45,7 +45,7 @@
     .section-title { font-family: 'DM Serif Display', serif; font-size: 36px; font-weight: 400; margin-bottom: 0.5rem; line-height: 1.2; }
     .section-sub { font-size: 16px; color: var(--stone); margin-bottom: 2.5rem; max-width: 560px; }
 
-  /* ── HERO SECTION ── */
+    /* ── HERO SECTION ── */
     .hero { 
       position: relative; 
       height: 45vh;             /* Reduced from 70vh for a sleeker banner look */
@@ -67,20 +67,21 @@
       display: flex; 
       align-items: center; 
     }
-.hero-content { 
-  width: 100%; 
-  max-width: 1300px; 
-  margin: 0 auto; 
-  padding: 0 4vw; 
-}
-.hero-text-wrap { max-width: 650px; }
-.hero-eyebrow { font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #f9a07a; margin-bottom: 1rem; text-shadow: 1px 1px 6px rgba(0,0,0,0.8); }
-.hero h1 { font-family: 'Shippori Mincho', serif; font-size: clamp(38px, 4.5vw, 54px); color: #ffffff; line-height: 1.15; margin-bottom: 1rem; font-weight: 800; text-shadow: 1px 1px 8px rgba(0,0,0,0.8); }
-.hero p { font-size: 17px; color: #ffffff; line-height: 1.5; margin-bottom: 2rem; text-shadow: 1px 1px 6px rgba(0,0,0,0.8); }
-.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
-.btn-primary { background: var(--red); color: #fff; border: none; padding: 13px 28px; border-radius: var(--radius-sm); font-size: 15px; cursor: pointer; text-decoration: none; transition: background 0.15s; display: inline-block; font-weight: 500; }
-.btn-primary:hover { background: #B00000; }
-.btn-ghost { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.7); padding: 13px 28px; border-radius: var(--radius-sm); font-size: 15px; cursor: pointer; text-decoration: none; transition: background 0.15s; display: inline-block; }
+    .hero-content { 
+      width: 100%; 
+      max-width: 1300px; 
+      margin: 0 auto; 
+      padding: 0 4vw; 
+    }
+    .hero-text-wrap { max-width: 650px; }
+    .hero-eyebrow { font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #f9a07a; margin-bottom: 1rem; text-shadow: 1px 1px 6px rgba(0,0,0,0.8); }
+    .hero h1 { font-family: 'Shippori Mincho', serif; font-size: clamp(38px, 4.5vw, 54px); color: #ffffff; line-height: 1.15; margin-bottom: 1rem; font-weight: 800; text-shadow: 1px 1px 8px rgba(0,0,0,0.8); }
+    .hero p { font-size: 17px; color: #ffffff; line-height: 1.5; margin-bottom: 2rem; text-shadow: 1px 1px 6px rgba(0,0,0,0.8); }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary { background: var(--red); color: #fff; border: none; padding: 13px 28px; border-radius: var(--radius-sm); font-size: 15px; cursor: pointer; text-decoration: none; transition: background 0.15s; display: inline-block; font-weight: 500; }
+    .btn-primary:hover { background: #B00000; }
+    .btn-ghost { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.7); padding: 13px 28px; border-radius: var(--radius-sm); font-size: 15px; cursor: pointer; text-decoration: none; transition: background 0.15s; display: inline-block; }
+    
     /* ── EDITORIAL INTRO ── */
     .intro { max-width: 900px; margin: 5rem auto; padding: 0 4vw; text-align: center; }
     .intro-kicker { display: inline-block; font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--moss); margin-bottom: 1.2rem; font-weight: 500; }
@@ -143,6 +144,7 @@
     .info-card-solo h3 { font-family: 'Shippori Mincho', serif; font-size: 22px; font-weight: 600; margin-bottom: 1.25rem; color: var(--ink); }
     .info-card-solo p { font-size: 14px; color: var(--stone); line-height: 1.7; margin-bottom: 0.65rem; }
 
+    /* ── MOBILE PHONE RESPONSIVE CODE ── */
     @media (max-width: 1024px) {
       .stop { gap: 2rem; }
       .details-grid { gap: 2.5rem; }
@@ -160,7 +162,6 @@
 </head>
 <body>
 
-<!-- UNIFIED FIXED NAVIGATION HEADER -->
 <nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(0,0,0,0.1);padding:0 4vw;display:flex;align-items:center;justify-content:space-between;height:65px;">
   <div style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--ink);">Tokyo with <span style="color:var(--red);">Terry</span></div>
   <ul style="display:flex;list-style:none;justify-content:center;align-items:center;gap:2.5rem;margin:0;padding:0;">
@@ -172,9 +173,8 @@
   <a href="/terrytokyotours/availability.html" style="background:var(--red);color:#fff;border:none;padding:10px 22px;border-radius:var(--radius-sm);font-size:14px;cursor:pointer;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:500;">Book a tour</a>
 </nav>
 
-<!-- HERO BLOCK -->
- <section class="hero">
-  <img src="Sensoji_(Asakusa_Kannon_Temple)_-_panoramio.jpg" width="1280" height="704" alt=""/>
+<section class="hero">
+  <img src="../../../Downloads/Sensoji_(Asakusa_Kannon_Temple)_-_panoramio.jpg" width="1280" height="704" alt=""/>
 <div class="hero-overlay">
     <div class="hero-content">
       <div class="hero-text-wrap">
@@ -190,13 +190,11 @@
   </div>
 </section>
 
-<!-- EDITORIAL INTRO -->
 <div class="intro">
   <div class="intro-kicker">Edo Heritage · Kitchen Masterpieces · Historic Enclaves</div>
   <p>This dynamic route bridges the ancient spiritual past with contemporary artisan mastery. Terry guides you down the dramatic entryways of Senso-ji—Tokyo's oldest temple—through the vibrant retail backstreets of historic Asakusa, and directly into the wholesale blocks of Kappabashi, where top international chefs source handmade knives and culinary items.</p>
 </div>
 
-<!-- METRICS STRIP -->
 <div class="tod-bar">
   <div class="tod-inner">
     <div class="tod-item">
@@ -212,7 +210,6 @@
 
 <div class="divider" id="highlights-start">Our Path · Temple & Artisan Corridors</div>
 
-<!-- STOPS GRID -->
 <div class="stops">
   <div class="stop">
     <div class="stop-img-wrap">
@@ -224,7 +221,7 @@
         <span class="stop-timeline">— Morning · 09:30 AM</span>
       </div>
       <div class="stop-category">Tokyo's Oldest Temple · Market Path</div>
-      <h2 class="stop-title">Senso-ji &amp; Nakamise</h2>
+      <h2 class="stop-title">Senso-ji & Nakamise</h2>
       <div class="stop-jp">浅草寺 · 仲見世通り</div>
       <a href="https://maps.google.com/?q=Senso-ji+Temple+Asakusa" target="_blank" rel="noopener noreferrer" class="stop-map-link">📍 View on Google Maps ↗</a>
       <p class="stop-desc">Walk beneath the massive red paper lantern of the Kaminarimon (Thunder Gate) and down Nakamise-dori's centuries-old retail stalls. Terry navigates the grand main hall and spectacular five-story pagoda, revealing ancient layout details missed by standard tourist crowds.</p>
@@ -244,117 +241,3 @@
       <div class="stop-category">Wholesale Tool District · Handmade Knives</div>
       <h2 class="stop-title">Kappabashi Kitchen Town</h2>
       <div class="stop-jp">合羽橋道具街</div>
-      <a href="https://maps.google.com/?q=Kappabashi+Kitchen+Town" target="_blank" rel="noopener noreferrer" class="stop-map-link">📍 View on Google Maps ↗</a>
-      <p class="stop-desc">Explore the legendary district serving Tokyo’s professional culinary trade for over a century. Browse hand-forged Japanese chef knives, beautifully glazed regional ceramics, historic lacquerware, and the famous, incredibly realistic food wax models.</p>
-      <div class="stop-tip">💡 Terry provides translation help directly at exclusive knife studios, ensuring you find a blade shaped perfectly for your home kitchen needs.</div>
-    </div>
-  </div>
-</div>
-
-<!-- TOUR PRICING HOLDER SECTION (REWORKED TO MATCH KAMAKURA) -->
-<section id="tour-pricing" style="margin: 2rem 0; padding: 4rem 0; border-top: 1px solid var(--border);">
-  <div class="container">
-    <div class="section-label">Rates</div>
-    <h2 class="section-title">Private Tour Rates</h2>
-    <div class="section-sub">Simple, flat hourly and daily private guiding fees. Custom routing options included.</div>
-    
-    <div class="price-grid">
-      <!-- Solo / Couples -->
-      <div class="price-card">
-        <h3>Solo / Couples</h3>
-        <div style="font-size: 0.85rem; color: var(--stone);">1 — 2 Guests</div>
-        <div class="price-amt">¥40,000</div>
-        <div class="price-note">Based on 8-hour day rate.<br>(Or hourly at ¥5,000 solo / ¥3,500 per person)</div>
-      </div>
-      
-      <!-- 3 Travelers -->
-      <div class="price-card">
-        <h3>Small Group</h3>
-        <div style="font-size: 0.85rem; color: var(--stone);">3 Travelers</div>
-        <div class="price-amt">¥72,000</div>
-        <div class="price-note">Total group day rate.<br>(Calculated at ¥24,000 per person / 8 hours or ¥3,000 hourly)</div>
-      </div>
-      
-      <!-- 4 Travelers -->
-      <div class="price-card">
-        <h3>Group Bundle</h3>
-        <div style="font-size: 0.85rem; color: var(--stone);">4 Travelers</div>
-        <div class="price-amt">¥100,000</div>
-        <div class="price-note">Total group day rate.<br>(Calculated at ¥25,000 per person / 8 hours or ¥2,500 hourly)</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- STANDARDIZED LOGISTICAL DETAILS BLOCK (REWORKED TO MATCH KAMAKURA) -->
-<div class="container details-section">
-  <dl class="details-grid">
-    <div>
-      <dt>What's Included</dt>
-      <dd>
-        <ul>
-          <li>Terry’s dedicated bilingual layout navigation, historic context, and wholesale commentary.</li>
-          <li>Full translation guidance at exclusive knife forging studios and pottery workshops.</li>
-          <li>Complete flexible freedom to speed up or slow down milestones based on your retail preferences.</li>
-          <li>Custom hotel lobby pick-up arrangements and seamless transit coordination.</li>
-        </ul>
-      </dd>
-    </div>
-    <div>
-      <dt>Good to Know</dt>
-      <dd>
-        <p>Asakusa pairs perfectly with an afternoon water bus ride down the Sumida River or a modern look around the nearby Tokyo Skytree area.</p>
-        <p>Dynamic personal expenses like your meals, local train transfers, and retail purchases are paid separately directly on location.</p>
-        <p>All guiding experiences are strictly private with zero strangers or rigid tour bus schedules tracking your group.</p>
-      </dd>
-    </div>
-  </dl>
-
-  <!-- PRIVATE ADVANTAGE CARD EXTENSION -->
-  <div class="info-card-solo">
-    <h3>The Custom Private Advantage</h3>
-    <p>Because these historic backstreets and wholesale blocks naturally involve steady exploration, we walk at your exact chosen pace. Since this is a completely tailored, private experience, Terry seamlessly syncs tracking options to accommodate heavy packaging management or custom artisanal targets without any stress.</p>
-  </div>
-</div>
-
-<!-- INLINE BOOKING CTA BLOCK -->
-<div class="container" style="margin-top: 5rem; margin-bottom: 4rem;">
-  <div style="background: var(--red); border-radius: var(--radius); padding: 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; text-align: left;">
-    <div style="flex: 2; min-width: 300px;">
-      <h3 style="font-family: 'DM Serif Display', serif; font-size: 28px; color: #ffffff; font-weight: 400; margin: 0; line-height: 1.2;">Ready to explore Asakusa?</h3>
-      <p style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: rgba(255, 255, 255, 0.8); margin: 0.5rem 0 0 0; font-weight: 300; line-height: 1.4;">Check Terry's calendar availability and submit your tour booking request instantly.</p>
-    </div>
-    <div style="flex: 1; text-align: right; min-width: 200px;">
-      <a href="/terrytokyotours/availability.html" style="background: #ffffff; color: var(--red); padding: 13px 26px; border-radius: var(--radius-sm); font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap; display: inline-block;">View availability &amp; book &#8594;</a>
-    </div>
-  </div>
-</div>
-
-<div style="padding-bottom: 4rem;"></div>
-
-<!-- UNIFIED FIXED NAVIGATION FOOTER -->
-<footer style="background: #f8f0e8; border-top: 4px solid var(--red); padding: 2.5rem 4vw; font-family: 'DM Sans', sans-serif; width: 100%;">
-  <div style="max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
-    <div style="text-align: left;">
-      <div style="font-size: 15px; font-weight: 700; color: #2d3748; margin-bottom: 4px; letter-spacing: 0.02em;">浅草 · Asakusa & Kappabashi</div>
-      <div style="font-size: 13px; color: #7a6652; margin-bottom: 4px;">A full-day guided experience · Tokyo Private Tours with Terry</div>
-      <div style="font-size: 12px; color: #a09080;">© 2026 Tokyo with Terry · Japan</div>
-    </div>
-    <div style="display: flex; gap: 1.5rem; align-items: center;">
-      <a href="/terrytokyotours/index.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">&#8592; Home</a>
-      <a href="/terrytokyotours/availability.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">Availability</a>
-      <a href="/terrytokyotours/reservations.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">Reserve</a>
-    </div>
-  </div>
-</footer>
-
-<script>
-  const stops = document.querySelectorAll('.stop');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  stops.forEach(s => observer.observe(s));
-</script>
-
-</body>
-</html>
