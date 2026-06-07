@@ -13,7 +13,7 @@
 
   <title>Yanaka — Tokyo Private Tours with Terry</title>
   
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght=400;600;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght=400;600;800&family=DM+Sans:ital,wght=0,300;0,400;0,500;1,300&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
   
   <style>
     :root {
@@ -52,325 +52,66 @@
     .section-sub { font-size: 16px; color: var(--stone); margin-bottom: 2.5rem; max-width: 560px; }
 
     /* ── HERO SECTION ── */
-    .hero {
-      position: relative;
-      height: 70vh;
-      min-height: 480px;
-      overflow: hidden;
-    }
-    .hero img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.35);
-      display: flex;
-      align-items: center;
-    }
-    .hero-content {
-      width: 100%;
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 0 4vw;
-    }
-    .hero-text-wrap {
-      max-width: 650px;
-    }
-    .hero-eyebrow {
-      font-size: 13px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #f9a07a;
-      margin-bottom: 1rem;
-      text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
-    }
-    .hero h1 {
-      font-family: 'Shippori Mincho', serif;
-      font-size: clamp(44px, 5vw, 64px);
-      color: #ffffff;
-      line-height: 1.15;
-      margin-bottom: 1rem;
-      font-weight: 800;
-      text-shadow: 1px 1px 8px rgba(0,0,0,0.8);
-    }
-    .hero p {
-      font-size: 18px;
-      color: #ffffff;
-      line-height: 1.6;
-      margin-bottom: 2rem;
-      text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
-    }
+    .hero { position: relative; height: 70vh; min-height: 480px; overflow: hidden; }
+    .hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .hero-overlay { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.35); display: flex; align-items: center; }
+    .hero-content { width: 100%; max-width: 1300px; margin: 0 auto; padding: 0 4vw; }
+    .hero-text-wrap { max-width: 650px; }
+    .hero-eyebrow { font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #f9a07a; margin-bottom: 1rem; text-shadow: 1px 1px 6px rgba(0,0,0,0.8); }
+    .hero h1 { font-family: 'Shippori Mincho', serif; font-size: clamp(44px, 5vw, 64px); color: #ffffff; line-height: 1.15; margin-bottom: 1rem; font-weight: 800; text-shadow: 1px 1px 8px rgba(0,0,0,0.8); }
+    .hero p { font-size: 18px; color: #ffffff; line-height: 1.6; margin-bottom: 2rem; text-shadow: 1px 1px 6px rgba(0,0,0,0.8); }
     .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
-    .btn-primary {
-      background: var(--red);
-      color: #fff;
-      border: none;
-      padding: 13px 28px;
-      border-radius: var(--radius-sm);
-      font-size: 15px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.15s;
-      display: inline-block;
-      font-weight: 500;
-    }
+    .btn-primary { background: var(--red); color: #fff; border: none; padding: 13px 28px; border-radius: var(--radius-sm); font-size: 15px; cursor: pointer; text-decoration: none; transition: background 0.15s; display: inline-block; font-weight: 500; }
     .btn-primary:hover { background: #B00000; }
-    .btn-ghost {
-      background: transparent;
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.7);
-      padding: 13px 28px;
-      border-radius: var(--radius-sm);
-      font-size: 15px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.15s;
-      display: inline-block;
-    }
+    .btn-ghost { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.7); padding: 13px 28px; border-radius: var(--radius-sm); font-size: 15px; cursor: pointer; text-decoration: none; transition: background 0.15s; display: inline-block; }
 
     /* ── EDITORIAL INTRO ── */
-    .intro {
-      max-width: 900px;
-      margin: 5rem auto;
-      padding: 0 4vw;
-      text-align: center;
-    }
-    .intro-kicker {
-      display: inline-block;
-      font-size: 0.7rem;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--moss);
-      margin-bottom: 1.2rem;
-      font-weight: 500;
-    }
-    .intro p {
-      font-size: 1.2rem;
-      line-height: 1.8;
-      color: var(--stone);
-    }
+    .intro { max-width: 900px; margin: 5rem auto; padding: 0 4vw; text-align: center; }
+    .intro-kicker { display: inline-block; font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--moss); margin-bottom: 1.2rem; font-weight: 500; }
+    .intro p { font-size: 1.2rem; line-height: 1.8; color: var(--stone); }
 
     /* ── METRIC STRIP ── */
-    .tod-bar {
-      max-width: 1300px;
-      margin: 0 auto 4.5rem;
-      padding: 0 4vw;
-    }
-    .tod-inner {
-      display: flex;
-      align-items: center;
-      border: 1px solid rgba(42,77,52,0.15);
-      background: rgba(255, 255, 255, 0.2);
-    }
-    .tod-item {
-      flex: 1;
-      padding: 1.25rem 1.75rem;
-      border-right: 1px solid rgba(42,77,52,0.15);
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
+    .tod-bar { max-width: 1300px; margin: 0 auto 4.5rem; padding: 0 4vw; }
+    .tod-inner { display: flex; align-items: center; border: 1px solid rgba(42,77,52,0.15); background: rgba(255, 255, 255, 0.2); }
+    .tod-item { flex: 1; padding: 1.25rem 1.75rem; border-right: 1px solid rgba(42,77,52,0.15); display: flex; flex-direction: column; gap: 0.25rem; }
     .tod-item:last-child { border-right: none; }
-    .tod-label {
-      font-size: 0.62rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--moss);
-    }
-    .tod-value {
-      font-size: 0.92rem;
-      font-weight: 500;
-      color: var(--ink);
-      line-height: 1.4;
-    }
+    .tod-label { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--moss); }
+    .tod-value { font-size: 0.92rem; font-weight: 500; color: var(--ink); line-height: 1.4; }
 
     /* ── CHRONOLOGICAL PILLS ── */
-    .section-nav {
-      max-width: 1300px;
-      margin: 0 auto 4rem;
-      padding: 0 4vw;
-    }
-    .section-nav-inner {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      background: rgba(42,77,52,0.04);
-      border: 1px solid rgba(42,77,52,0.12);
-      border-left: 4px solid var(--sage);
-      padding: 1.2rem 1.8rem;
-      flex-wrap: wrap;
-    }
-    .nav-label {
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--moss);
-      font-weight: 500;
-    }
+    .section-nav { max-width: 1300px; margin: 0 auto 4rem; padding: 0 4vw; }
+    .section-nav-inner { display: flex; align-items: center; gap: 1.5rem; background: rgba(42,77,52,0.04); border: 1px solid rgba(42,77,52,0.12); border-left: 4px solid var(--sage); padding: 1.2rem 1.8rem; flex-wrap: wrap; }
+    .nav-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--moss); font-weight: 500; }
     .nav-pills { display: flex; gap: 0.6rem; flex-wrap: wrap; }
-    .nav-pill {
-      font-size: 0.78rem;
-      font-weight: 400;
-      color: var(--ink);
-      background: rgba(255,255,255,0.6);
-      border: 1px solid rgba(42,77,52,0.15);
-      padding: 0.4rem 1rem;
-      border-radius: 100px;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
+    .nav-pill { font-size: 0.78rem; font-weight: 400; color: var(--ink); background: rgba(255,255,255,0.6); border: 1px solid rgba(42,77,52,0.15); padding: 0.4rem 1rem; border-radius: 100px; text-decoration: none; transition: all 0.2s ease; }
     .nav-pill:hover { background: var(--sage); color: #fff; border-color: var(--sage); }
 
     /* ── SECTION SEPARATOR ── */
-    .divider {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      max-width: 1300px;
-      margin: 0 auto 3rem;
-      padding: 0 4vw;
-      color: var(--sage);
-      font-size: 0.68rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-    }
-    .divider::before, .divider::after {
-      content: ''; flex: 1; height: 1px; background: var(--border);
-    }
+    .divider { display: flex; align-items: center; gap: 1.5rem; max-width: 1300px; margin: 0 auto 3rem; padding: 0 4vw; color: var(--sage); font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; }
+    .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
     /* ── HIGHLIGHT STOPS GRID ── */
-    .stops {
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 0 4vw 2rem;
-    }
-    .stop {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 3.5rem;
-      border-top: 1px solid var(--border);
-      padding: 4rem 0;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-      align-items: center;
-    }
+    .stops { max-width: 1300px; margin: 0 auto; padding: 0 4vw 2rem; }
+    .stop { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3.5rem; border-top: 1px solid var(--border); padding: 4rem 0; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; align-items: center; }
     .stop.visible { opacity: 1; transform: translateY(0); }
-    
-    .stop:nth-child(even) {
-      grid-template-columns: 0.9fr 1.1fr;
-    }
-    .stop:nth-child(even) .stop-img-wrap {
-      order: 2;
-    }
-    .stop:nth-child(even) .stop-content {
-      order: 1;
-    }
-
-    .stop-img-wrap {
-      position: relative;
-      overflow: hidden;
-      aspect-ratio: 16/11;
-      border-radius: 6px;
-      width: 100%;
-    }
-    .stop-img-wrap img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s ease;
-    }
+    .stop:nth-child(even) { grid-template-columns: 0.9fr 1.1fr; }
+    .stop:nth-child(even) .stop-img-wrap { order: 2; }
+    .stop:nth-child(even) .stop-content { order: 1; }
+    .stop-img-wrap { position: relative; overflow: hidden; aspect-ratio: 16/11; border-radius: 6px; width: 100%; }
+    .stop-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
     .stop:hover .stop-img-wrap img { transform: scale(1.02); }
-
-    .stop-meta-header {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 0.5rem;
-      flex-wrap: wrap;
-    }
-    .stop-tag {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.05em;
-      color: var(--gold);
-      background: rgba(176, 120, 32, 0.08);
-      padding: 0.2rem 0.6rem;
-      border-radius: 4px;
-    }
-    .stop-timeline {
-      font-size: 12px;
-      color: var(--stone);
-      font-weight: 400;
-    }
-
-    .stop-content {
-      padding: 0.5rem 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .stop-category {
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--moss);
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-    }
-    .stop-title {
-      font-family: 'Shippori Mincho', serif;
-      font-size: clamp(2rem, 2.4vw, 2.6rem);
-      font-weight: 600;
-      line-height: 1.25;
-      margin-bottom: 0.3rem;
-    }
-    .stop-jp {
-      font-size: 0.88rem;
-      color: var(--stone);
-      margin-bottom: 0.75rem;
-      letter-spacing: 0.06em;
-    }
-    
-    .stop-map-link {
-      display: inline-block;
-      vertical-align: middle;
-      font-size: 12px;
-      color: var(--sage);
-      text-decoration: none;
-      font-weight: 500;
-      margin-bottom: 1.5rem;
-      transition: color 0.15s;
-    }
+    .stop-meta-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+    .stop-tag { font-size: 11px; font-weight: 500; letter-spacing: 0.05em; color: var(--gold); background: rgba(176, 120, 32, 0.08); padding: 0.2rem 0.6rem; border-radius: 4px; }
+    .stop-timeline { font-size: 12px; color: var(--stone); font-weight: 400; }
+    .stop-content { padding: 0.5rem 0; display: flex; flex-direction: column; justify-content: center; }
+    .stop-category { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--moss); margin-bottom: 0.5rem; font-weight: 500; }
+    .stop-title { font-family: 'Shippori Mincho', serif; font-size: clamp(2rem, 2.4vw, 2.6rem); font-weight: 600; line-height: 1.25; margin-bottom: 0.3rem; }
+    .stop-jp { font-size: 0.88rem; color: var(--stone); margin-bottom: 0.75rem; letter-spacing: 0.06em; }
+    .stop-map-link { display: inline-block; vertical-align: middle; font-size: 12px; color: var(--sage); text-decoration: none; font-weight: 500; margin-bottom: 1.5rem; transition: color 0.15s; }
     .stop-map-link:hover { color: var(--red); }
-
-    .stop-desc {
-      font-size: 0.98rem;
-      line-height: 1.8;
-      color: #3e3a34;
-      margin-bottom: 1.5rem;
-    }
-    .stop-tip {
-      border-left: 3px solid var(--gold);
-      padding-left: 1.1rem;
-      font-size: 0.85rem;
-      color: var(--stone);
-      font-style: italic;
-      line-height: 1.65;
-    }
-    .stop-footer {
-      margin-top: 1.75rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      border-top: 1px solid rgba(20,18,14,0.06);
-      padding-top: 1.25rem;
-    }
+    .stop-desc { font-size: 0.98rem; line-height: 1.8; color: #3e3a34; margin-bottom: 1.5rem; }
+    .stop-tip { border-left: 3px solid var(--gold); padding-left: 1.1rem; font-size: 0.85rem; color: var(--stone); font-style: italic; line-height: 1.65; }
+    .stop-footer { margin-top: 1.75rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem; border-top: 1px solid rgba(20,18,14,0.06); padding-top: 1.25rem; }
     .stop-rating { font-size: 0.82rem; color: var(--stone); }
     .stars { color: var(--gold); margin-right: 0.25rem; }
 
@@ -392,25 +133,20 @@
     .details-grid li::before { content: "—"; position: absolute; left: 0; color: var(--gold); }
     .details-grid p { font-size: 0.98rem; line-height: 1.75; color: var(--stone); margin-bottom: 1.2rem; }
     .details-grid p:last-child { margin-bottom: 0; }
-
-    /* ── REWORKED INLINE ADVANTAGE CARD ── */
     .info-card-solo { background: #ffffff; border: 1px solid var(--border); border-radius: var(--radius); padding: 2.5rem; margin-top: 4rem; }
     .info-card-solo h3 { font-family: 'Shippori Mincho', serif; font-size: 22px; font-weight: 600; margin-bottom: 1.25rem; color: var(--ink); }
     .info-card-solo p { font-size: 14px; color: var(--stone); line-height: 1.7; margin-bottom: 0.65rem; }
 
-    @media (max-width: 700px) {
+    /* ── MOBILE RESPONSIVE MEDIA QUERY ── */
+    @media (max-width: 768px) {
       .nav-links { display: none; }
-      .areas-grid { grid-template-columns: 1fr 1fr !important; gap: 10px; }
-      .area-card { height: 140px; }
-      .stats-section .container { grid-template-columns: 1fr; }
-      .stat-item { border-right: none; border-bottom: 0.5px solid var(--border); }
-      .stat-item:last-child { border-bottom: none; }
-      .profile-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .profile-avatar { width: 100%; height: 260px; }
-      .section-title { font-size: 28px; }
-      .hero h1 { font-size: 36px; }
-      .cta-content h2 { font-size: 32px; }
-      .cta-input { width: 100%; }
+      .stop { grid-template-columns: 1fr !important; gap: 2rem !important; }
+      .stop:nth-child(even) .stop-img-wrap { order: 1 !important; }
+      .stop:nth-child(even) .stop-content { order: 2 !important; }
+      .price-grid { grid-template-columns: 1fr !important; }
+      .details-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+      .hero h1 { font-size: 36px !important; }
+      .section-title { font-size: 28px !important; }
     }
   </style>
 </head>
@@ -478,11 +214,8 @@
 <div class="divider" id="highlights-start">Our Path · Preserved Shitamachi Lanes</div>
 
 <div class="stops">
-
   <div class="stop" id="cemetery">
-    <div class="stop-img-wrap">
-      <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=1000&q=80&fit=crop" alt="Scenic sakura-lined paths of a quiet cemetery courtyard" loading="lazy"/>
-    </div>
+    <div class="stop-img-wrap"><img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=1000&q=80&fit=crop" alt="Scenic sakura-lined paths of a quiet cemetery courtyard" loading="lazy"/></div>
     <div class="stop-content">
       <div class="stop-meta-header">
         <span class="stop-tag">Stop 01 · Atmospheric Rest</span>
@@ -494,16 +227,12 @@
       <a href="https://maps.google.com/?q=Yanaka+Cemetery+Tokyo+Japan" target="_blank" rel="noopener noreferrer" class="stop-map-link">📍 View on Google Maps ↗</a>
       <p class="stop-desc">Stroll along beautiful, deeply atmospheric paths where Tokyo’s elite and historical figures rest. This open park-like expanse features beautiful old tomb structures and exceptional natural beauty that adapts beautifully across each passing season.</p>
       <div class="stop-tip">💡 This sanctuary offers stunning cherry blossom canopies in the spring and peaceful firefly-lit evenings during late summer.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.4 · 1,800+ reviews</div>
-      </div>
+      <div class="stop-footer"><div class="stop-rating"><span class="stars">★★★★★</span> 4.4 · 1,800+ reviews</div></div>
     </div>
   </div>
 
   <div class="stop" id="cats">
-    <div class="stop-img-wrap">
-      <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=1000&q=80&fit=crop" alt="A resident cat basking along a residential brick wall" loading="lazy"/>
-    </div>
+    <div class="stop-img-wrap"><img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=1000&q=80&fit=crop" alt="A resident cat basking along a residential brick wall" loading="lazy"/></div>
     <div class="stop-content">
       <div class="stop-meta-header">
         <span class="stop-tag">Stop 02 · Local Charm</span>
@@ -515,16 +244,12 @@
       <a href="https://maps.google.com/?q=Yanaka+Tokyo+Japan+Cats" target="_blank" rel="noopener noreferrer" class="stop-map-link">📍 View on Google Maps ↗</a>
       <p class="stop-desc">Yanaka is legendary across the capital for its thriving, cherished community of resident street cats. Keep your camera ready as you walk, as you will spot them lounging lazily across weathered wooden fencing, tiled roofs, and sunny doorsteps.</p>
       <div class="stop-tip">💡 Local shops have completely embraced this identity, selling beautiful handcrafted cat-themed pottery, souvenirs, and pastries.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 920+ reviews</div>
-      </div>
+      <div class="stop-footer"><div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 920+ reviews</div></div>
     </div>
   </div>
 
   <div class="stop" id="ginza">
-    <div class="stop-img-wrap">
-      <img src="https://images.unsplash.com/photo-1542640244-7e672d6cef21?w=1000&q=80&fit=crop" alt="The nostalgic merchant stalls of Yanaka Ginza marketplace" loading="lazy"/>
-    </div>
+    <div class="stop-img-wrap"><img src="https://images.unsplash.com/photo-1542640244-7e672d6cef21?w=1000&q=80&fit=crop" alt="The nostalgic merchant stalls of Yanaka Ginza marketplace" loading="lazy"/></div>
     <div class="stop-content">
       <div class="stop-meta-header">
         <span class="stop-tag">Stop 03 · Yanaka Ginza</span>
@@ -536,16 +261,12 @@
       <a href="https://maps.google.com/?q=Yanaka+Ginza+Tokyo+Japan" target="_blank" rel="noopener noreferrer" class="stop-map-link">📍 View on Google Maps ↗</a>
       <p class="stop-desc">Step down the famous Yuyake Dandan (Sunset Steps) into a charming, retro-style market street. This vibrant neighborhood strip is bursting with independent craft vendors, old-school clothing boutiques, and legendary local street snack stalls.</p>
       <div class="stop-tip">💡 Stand at the top of the steps late in the afternoon to catch one of the most celebrated urban sunset views in traditional Tokyo.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.2 · 4,600+ reviews</div>
-      </div>
+      <div class="stop-footer"><div class="stop-rating"><span class="stars">★★★★★</span> 4.2 · 4,600+ reviews</div></div>
     </div>
   </div>
 
   <div class="stop" id="temples">
-    <div class="stop-img-wrap">
-      <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1000&q=80&fit=crop" alt="A modest, hidden temple entrance tucked behind wooden alleyways" loading="lazy"/>
-    </div>
+    <div class="stop-img-wrap"><img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1000&q=80&fit=crop" alt="A modest, hidden temple entrance tucked behind wooden alleyways" loading="lazy"/></div>
     <div class="stop-content">
       <div class="stop-meta-header">
         <span class="stop-tag">Stop 04 · Spiritual Pockets</span>
@@ -557,16 +278,12 @@
       <a href="https://maps.google.com/?q=Temples+Yanaka+Tokyo+Japan" target="_blank" rel="noopener noreferrer" class="stop-map-link">📍 View on Google Maps ↗</a>
       <p class="stop-desc">Discover dozens of beautiful, historic temples quietly tucked behind ordinary residential corners. Because this district was spared from modern developers, these centuries-old wooden structures maintain an incredibly raw, understated architectural intimacy.</p>
       <div class="stop-tip">💡 Look out for the historic, unique mud-and-tile walls (Tsujibei) that still border several of the old temple boundaries.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 1,200+ reviews</div>
-      </div>
+      <div class="stop-footer"><div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 1,200+ reviews</div></div>
     </div>
   </div>
 
   <div class="stop" id="gallery">
-    <div class="stop-img-wrap">
-      <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1000&q=80&fit=crop" alt="An old renovated warehouse structure turned modern art atelier" loading="lazy"/>
-    </div>
+    <div class="stop-img-wrap"><img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1000&q=80&fit=crop" alt="An old renovated warehouse structure turned modern art atelier" loading="lazy"/></div>
     <div class="stop-content">
       <div class="stop-meta-header">
         <span class="stop-tag">Stop 05 · Creative Hubs</span>
@@ -578,12 +295,9 @@
       <a href="https://maps.google.com/?q=SCAI+The+Bathhouse+Tokyo" target="_blank" rel="noopener noreferrer" class="stop-map-link">📍 View on Google Maps ↗</a>
       <p class="stop-desc">Experience an inspiring architectural renaissance where historical structures find modern purpose. Dozens of independent contemporary art galleries, designer ateliers, and independent pottery studios are set inside beautifully restored traditional townhouses and old public bathhouses.</p>
       <div class="stop-tip">💡 Make time to stop by Scai the Bathhouse, a widely celebrated contemporary gallery located inside an old 200-year-old public bath structure.</div>
-      <div class="stop-footer">
-        <div class="stop-rating"><span class="stars">★★★★★</span> 4.6 · 340+ reviews</div>
-      </div>
+      <div class="stop-footer"><div class="stop-rating"><span class="stars">★★★★★</span> 4.6 · 340+ reviews</div></div>
     </div>
   </div>
-
 </div>
 
 <section id="tour-pricing" style="margin: 2rem 0; padding: 4rem 0; border-top: 1px solid var(--border);">
@@ -591,101 +305,33 @@
     <div class="section-label">Rates</div>
     <h2 class="section-title">Private Tour Rates</h2>
     <div class="section-sub">Simple, flat hourly and daily private guiding fees. Custom routing options included.</div>
-    
     <div class="price-grid">
-      <div class="price-card">
-        <h3>Half-Day Immersive</h3>
-        <div style="font-size: 0.85rem; color: var(--stone);">Up to 4 Hours</div>
-        <div class="price-amt">¥35,000</div>
-        <div class="price-note">Perfect for deep neighborhood walks,<br>local gallery viewings, or afternoon tea market crawls.</div>
-      </div>
-      
-      <div class="price-card">
-        <h3>Full-Day Masterclass</h3>
-        <div style="font-size: 0.85rem; color: var(--stone);">Up to 8 Hours</div>
-        <div class="price-amt">¥60,000</div>
-        <div class="price-note">Total deep-dive exploration rate.<br>Includes complete custom cross-district structural layout routing plans.</div>
-      </div>
-      
-      <div class="price-card">
-        <h3>Multi-Day Journeys</h3>
-        <div style="font-size: 0.85rem; color: var(--stone);">Tailored Experiences</div>
-        <div class="price-amt">Custom</div>
-        <div class="price-note">Bespoke pricing solutions<br>available immediately upon request.</div>
-      </div>
+      <div class="price-card"><h3>Half-Day Immersive</h3><div class="price-amt">¥35,000</div></div>
+      <div class="price-card"><h3>Full-Day Masterclass</h3><div class="price-amt">¥60,000</div></div>
+      <div class="price-card"><h3>Multi-Day Journeys</h3><div class="price-amt">Custom</div></div>
     </div>
   </div>
 </section>
 
 <div class="container details-section">
   <dl class="details-grid">
-    <div>
-      <dt>What's Included</dt>
-      <dd>
-        <ul>
-          <li>Terry’s dedicated private guiding services and bespoke historical shitamachi commentary.</li>
-          <li>Completely flexible, self-paced control over our milestones and walking speeds.</li>
-          <li>Curated artisan workshop connections and local gallery navigation assistance.</li>
-          <li>Custom hotel lobby pick-up arrangements and personalized routing support.</li>
-        </ul>
-      </dd>
-    </div>
-    <div>
-      <dt>Good to Know</dt>
-      <dd>
-        <p>Yanaka's pathways are beautifully historic but can occasionally present uneven stone lanes. High-comfort walking shoes are highly recommended to ensure a relaxed experience.</p>
-        <p>Dynamic individual personal expenses like your daily meals, local train transfers, and gallery admission fees are handled independently on the day of the tour.</p>
-        <p>All guiding experiences are strictly private with zero strangers or rigid tour bus schedules tracking your group.</p>
-      </dd>
-    </div>
+    <div><dt>What's Included</dt><dd><ul><li>Private guiding services.</li><li>Flexible, self-paced control.</li><li>Artisan connections.</li><li>Personalized routing.</li></ul></dd></div>
+    <div><dt>Good to Know</dt><dd><p>High-comfort walking shoes are recommended.</p><p>All guiding experiences are strictly private.</p></dd></div>
   </dl>
-
-  <div class="info-card-solo">
-    <h3>The Custom Private Advantage</h3>
-    <p>Because these historic backstreets and traditional craft blocks naturally involve steady exploration, we walk at your exact chosen pace. Since this is a completely tailored, private experience, Terry seamlessly syncs tracking options to accommodate heavy packaging management or custom artisanal targets without any stress.</p>
-  </div>
+  <div class="info-card-solo"><h3>The Custom Private Advantage</h3><p>We walk at your exact chosen pace.</p></div>
 </div>
 
-<div style="width: 100%; background: transparent; box-sizing: border-box;">
-  <div style="max-width: 1300px; margin: 4rem auto 0; padding: 0 4vw; box-sizing: border-box;">
-    <div style="background: #de1c24; border-radius: 12px; padding: 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; box-sizing: border-box; text-align: left;">
-      <div style="flex: 2; min-width: 300px; box-sizing: border-box;">
-        <h3 style="font-family: 'DM Serif Display', serif; font-size: 28px; color: #ffffff; font-weight: 400; margin: 0; padding: 0; line-height: 1.2;">Ready to book a tour of Yanaka?</h3>
-        <p style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: rgba(255, 255, 255, 0.8); margin: 0.5rem 0 0 0; padding: 0; font-weight: 300; line-height: 1.4;">Check Terry's calendar availability and submit your tour booking request instantly.</p>
-      </div>
-      <div style="flex: 1; text-align: right; min-width: 200px; box-sizing: border-box;">
-        <a href="/terrytokyotours/availability.html" style="background: #ffffff; color: #de1c24; padding: 13px 26px; border-radius: 8px; font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap; transition: opacity 0.15s; display: inline-block; font-family: 'DM Sans', sans-serif; box-sizing: border-box;">View availability & book →</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div style="padding-bottom: 4rem;"></div>
-
-<footer style="background: #f8f0e8; border-top: 4px solid #de1c24; padding: 2.5rem 4vw; font-family: 'DM Sans', sans-serif; box-sizing: border-box; width: 100%;">
-  <div style="max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; box-sizing: border-box;">
-    <div style="text-align: left; box-sizing: border-box;">
-      <div style="font-size: 15px; font-weight: 700; color: #2d3748; margin-bottom: 4px; letter-spacing: 0.02em;">谷中 · Yanaka</div>
-      <div style="font-size: 13px; color: #7a6652; margin-bottom: 4px;">Tokyo area guide · Tokyo Private Tours with Terry</div>
-      <div style="font-size: 12px; color: #a09080;">© 2026 Tokyo with Terry · Japan</div>
-    </div>
-    <div style="display: flex; gap: 1.5rem; align-items: center; box-sizing: border-box;">
-      <a href="/terrytokyotours/index.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">← Home</a>
-      <a href="/terrytokyotours/availability.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">Availability</a>
-      <a href="/terrytokyotours/reservations.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">Reserve</a>
-    </div>
+<footer style="background: #f8f0e8; border-top: 4px solid #de1c24; padding: 2.5rem 4vw; margin-top: 4rem;">
+  <div style="max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+    <div><div style="font-size: 15px; font-weight: 700; color: #2d3748;">谷中 · Yanaka</div></div>
+    <div style="display: flex; gap: 1.5rem;"><a href="/terrytokyotours/index.html">← Home</a></div>
   </div>
 </footer>
 
 <script>
   const stops = document.querySelectorAll('.stop');
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
   }, { threshold: 0.12 });
   stops.forEach(s => observer.observe(s));
 </script>
