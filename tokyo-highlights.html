@@ -20,8 +20,6 @@
       --gold: #b8952a;
       --muted: #7a7068;
       --border: rgba(26,22,18,0.12);
-      --bg-card: #ffffff;
-      --radius: 12px;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -33,6 +31,15 @@
       font-weight: 300;
       overflow-x: hidden;
     }
+
+    /* ── HERO ── */
+    
+
+    
+
+    
+
+    
 
     .hero h1 {
       position: relative;
@@ -52,6 +59,14 @@
       letter-spacing: 0.08em;
       margin-top: 0.6rem;
     }
+
+    
+
+    
+
+    
+
+    
 
     @keyframes scrollline {
       0%, 100% { opacity: 0.25; transform: scaleY(1); }
@@ -94,7 +109,7 @@
     .stops {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 0 6vw 4rem;
+      padding: 0 6vw 8rem;
     }
 
     .stop {
@@ -128,11 +143,11 @@
     }
 
     .stop-img-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.7s ease;
-    }
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 👈 Add this line right here */
+  transition: transform 0.7s ease;
+}
 
     .stop:hover .stop-img-wrap img {
       transform: scale(1.04);
@@ -226,6 +241,9 @@
 
     .stop-map:hover { opacity: 0.7; }
 
+    /* ── FOOTER ── */
+    
+
     /* ── RESPONSIVE ── */
     @media (max-width: 700px) {
       .stop {
@@ -267,262 +285,4 @@
     text-transform: uppercase;
     color: #f9a07a;
     margin-bottom: 1rem;
-    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
-  }
-  .hero h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(40px, 6vw, 64px);
-    color: #ffffff;
-    line-height: 1.1;
-    margin-bottom: 1rem;
-    font-weight: 400;
-    text-shadow: 1px 1px 8px rgba(0,0,0,0.9), 0 0 30px rgba(0,0,0,0.8);
-  }
-  .hero p {
-    font-size: 17px;
-    color: #ffffff;
-    line-height: 1.7;
-    margin-bottom: 2rem;
-    max-width: 420px;
-    text-shadow: 1px 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
-  }
-  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
-  .btn-primary {
-    background: #D00000;
-    color: #fff;
-    border: none;
-    padding: 13px 26px;
-    border-radius: 8px;
-    font-size: 15px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.15s;
-    display: inline-block;
-  }
-  .btn-primary:hover { background: #B00000; }
-  .btn-ghost {
-    background:transparent;
-    color: #fff;
-    border: 1px solid rgba(255,255,255,0.6);
-    padding: 13px 26px;
-    border-radius: 8px;
-    font-size: 15px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.15s;
-    display: inline-block;
-  }
-  .btn-ghost:hover { background:transparent; }
-
-  footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-size:13px;}
-  .footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
-  .footer-logo{font-size:15px;font-weight:700;color:#2d3748;margin-bottom:4px;letter-spacing:0.02em;}
-  .footer-desc{font-size:13px;color:#7a6652;margin-bottom:4px;}
-  .footer-copy{font-size:12px;color:#a09080;}
-  .footer-links{display:flex;gap:1.25rem;align-items:center;}
-  .footer-links a{color:#a0522d;text-decoration:none;font-size:13px;transition:color .15s;}
-  .footer-links a:hover{color:#de1c24;}
-
-  /* ── CUSTOM PRICING GRID LAYOUT ── */
-  .custom-price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1100px; margin: 0 auto; padding: 0 6vw 4rem; }
-  .custom-price-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2.5rem 1.5rem; text-align: center; }
-  .custom-price-card h3 { font-family: 'Shippori Mincho', serif; font-size: 1.25rem; color: var(--ink); margin-bottom: 0.5rem; }
-  .custom-price-amt { font-family: 'DM Serif Display', serif; font-size: 2.2rem; color: var(--red); margin: 0.8rem 0; }
-  .custom-price-note { font-size: 0.85rem; color: var(--muted); line-height: 1.4; }
-
-  @media (max-width: 850px) {
-    .custom-price-grid { grid-template-columns: 1fr; gap: 1rem; }
-  }
-</style>
-</head>
-<body>
-<nav style="position:sticky;top:0;z-index:100;background:rgba(245,240,232,0.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(26,22,18,0.1);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;">
-  <a href="../../../Downloads/index.html" style="font-family:'Shippori Mincho',serif;font-size:18px;color:#1a1612;text-decoration:none;font-weight:600;">Tokyo with <span style="color:#c0392b;">Terry</span></a>
-  <div style="display:flex;align-items:center;gap:1.5rem;">
-    <a href="../../../Downloads/index.html" style="font-size:14px;color:#7a7068;text-decoration:none;">← Home</a>
-    <a href="../../../Downloads/reservations.html" style="font-size:14px;color:#7a7068;text-decoration:none;">Reserve</a>
-    <a href="../../../Downloads/availability.html" style="background:#c0392b;color:#fff;padding:9px 20px;border-radius:8px;font-size:14px;font-family:'DM Sans',sans-serif;text-decoration:none;">Check availability</a>
-  </div>
-</nav>
-
-<section class="hero">
-  <img src="https://images.unsplash.com/photo-1513407030348-c983a97b98d8?w=1400&q=80&fit=crop" alt="Tokyo Highlights" />
-  <div class="hero-overlay">
-    <div class="hero-content">
-      <div class="hero-eyebrow">📍 Tokyo · Full day highlights tour</div>
-      <h1>Tokyo<br>Highlights</h1>
-      <p>Shibuya, Asakusa, Harajuku & more — with local insight at every stop.</p>
-      <div class="hero-btns">
-        <a href="#stop1" class="btn-primary">See highlights ↓</a>
-        <a href="../../../Downloads/availability.html" class="btn-ghost">Book a tour</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="intro">
-  <p>From the electric scramble of Shibuya to the forest paths of a centuries-old shrine, this tour threads together the very best of Tokyo — blending ancient tradition with breathless modernity, each stop chosen for its story as much as its spectacle.</p>
-</div>
-
-<div class="divider">The Itinerary</div>
-
-<div class="stops">
-
-  <div class="stop" id="stop1">
-    <div class="stop-img-wrap">
-      <div class="stop-num">01</div>
-      <img src="../../../Downloads/harajuku.jpg" alt="Harajuku"/>
-	  </div>
-    <div class="stop-content">
-      <div class="stop-category">Fashion & Culture · Harajuku</div>
-      <h2 class="stop-title">Harajuku & Takeshita Street</h2>
-      <div class="stop-jp">原宿・竹下通り</div>
-      <p class="stop-desc">A 350-metre pedestrian lane that launched global youth fashion trends. Takeshita Street is an explosion of colour, noise, and creativity — crepe stalls compete with vintage boutiques and kawaii candy shops in a corridor designed entirely for maximum sensory overload. It's Tokyo's most self-consciously expressive neighbourhood, where subcultures that might seem extreme anywhere else are simply everyday wear. Wander freely; there's no wrong direction.</p>
-      <div class="stop-tip">💡 Visit on a Sunday afternoon for the most elaborate street fashion. The side streets off Takeshita hide smaller, more eclectic shops worth discovering.</div>
-      <div class="stop-rating"><span class="stars">★★★★</span> Well-rated street attraction</div>
-      <a class="stop-map" href="https://maps.google.com/?q=Takeshita+Street+Harajuku+Tokyo" target="_blank">→ Open in Google Maps</a>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-img-wrap">
-      <div class="stop-num">02</div>
-      <img src="../../../Downloads/meijiingu.jpg" alt="Meiji Jingu"/>
-	  </div>
-    <div class="stop-content">
-      <div class="stop-category">Shinto Shrine · Shibuya</div>
-      <h2 class="stop-title">Meiji Jingū</h2>
-      <div class="stop-jp">明治神宮</div>
-      <p class="stop-desc">A ten-minute walk from the chaos of Harajuku brings you to one of the most serene places in all of Tokyo. Meiji Shrine sits within a 70-hectare evergreen forest — home to 120,000 trees — dedicated to Emperor Meiji and Empress Shōken. The approach through towering torii gates feels like entering another world. Visitors write wishes on ema wooden plaques, watch wedding processions, or simply stand still and let the silence be the experience.</p>
-      <div class="stop-tip">💡 The sake barrel display near the entrance is one of Tokyo's most photographed spots. Early mornings offer a chance to witness Shinto rituals performed by resident priests.</div>
-      <div class="stop-rating"><span class="stars">★★★★★</span> 4.6 · 50,000+ reviews</div>
-      <a class="stop-map" href="https://maps.google.com/?q=Meiji+Jingu+Shrine+Tokyo" target="_blank">→ Open in Google Maps</a>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-img-wrap">
-      <div class="stop-num">03</div>
-      <img src="../../../Downloads/sensoji.jpg" alt="Sensoji"/>
-	  </div>
-    <div class="stop-content">
-      <div class="stop-category">Buddhist Temple · Asakusa</div>
-      <h2 class="stop-title">Sensō-ji Temple</h2>
-      <div class="stop-jp">浅草寺</div>
-      <p class="stop-desc">Tokyo's oldest and most visited temple has drawn worshippers since 645 AD. Pass beneath the great Kaminarimon gate — its lantern alone weighs 670 kg — and walk Nakamise-dōri, a covered lane of traditional snack stalls and souvenir shops that has been trading for over 200 years. The incense smoke at the main hall is said to bring good health; cup it toward you before stepping inside to pray.</p>
-      <div class="stop-tip">💡 Arrive before 8 AM to experience the temple in near silence, with morning light filtering through the smoke — a completely different world from the daytime crowds.</div>
-      <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 94,000+ reviews</div>
-      <a class="stop-map" href="https://maps.google.com/?q=Senso-ji+Temple+Asakusa+Tokyo" target="_blank">→ Open in Google Maps</a>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-img-wrap">
-      <div class="stop-num">04</div>
-      <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=800&q=80&fit=crop" alt="Shibuya Crossing" loading="lazy"/>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">Iconic Landmark · Shibuya</div>
-      <h2 class="stop-title">Shibuya Crossing</h2>
-      <div class="stop-jp">渋谷スクランブル交差点</div>
-      <p class="stop-desc">No image prepares you for the real thing. The moment the lights turn red in every direction, hundreds of people surge from all sides at once — a perfectly orchestrated urban ballet that has defined Tokyo's image worldwide. On peak evenings, close to 3,000 people cross in a single cycle. Yet somehow, nobody bumps into anyone. Watch from the famous Starbucks above for a bird's-eye view, then plunge into the chaos yourself.</p>
-      <div class="stop-tip">💡 Best experienced at rush hour (5–8 PM) or on weekend evenings when the crowds — and the neon — are at their most theatrical.</div>
-      <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 20,000+ reviews</div>
-      <a class="stop-map" href="https://maps.google.com/?q=Shibuya+Crossing+Tokyo" target="_blank">→ Open in Google Maps</a>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-img-wrap">
-      <div class="stop-num">05</div>
-      <img src="https://images.unsplash.com/photo-1522383225653-ed111181a951?w=800&q=80&fit=crop" alt="Shinjuku Gyoen Garden Tokyo" loading="lazy"/>
-    </div>
-    <div class="stop-content">
-      <div class="stop-category">National Garden · Shinjuku</div>
-      <h2 class="stop-title">Shinjuku Gyoen</h2>
-      <div class="stop-jp">新宿御苑</div>
-      <p class="stop-desc">Once a private garden for the Imperial family, Shinjuku Gyoen is now Tokyo's most beloved public park — and for good reason. Within its 58 hectares, three distinct garden styles coexist: formal French gardens, open English landscape, and a classical Japanese stroll garden with koi ponds and a traditional tea house. In cherry blossom season it becomes almost mythically beautiful, but it rewards a visit in any month.</p>
-      <div class="stop-tip">💡 Don't miss the tropical greenhouse, a hidden gem packed with rare plant species. The Taiwanese Pavilion is a peaceful spot for reflection beside the water.</div>
-      <div class="stop-rating"><span class="stars">★★★★★</span> 4.6 · 44,000+ reviews</div>
-      <a class="stop-map" href="https://maps.google.com/?q=Shinjuku+Gyoen+National+Garden+Tokyo" target="_blank">→ Open in Google Maps</a>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-img-wrap">
-      <div class="stop-num">06</div>
-      <img src="../../../Downloads/tokyoskytree.jpg" alt="Tokyo Skytree"/>
-	  </div>
-    <div class="stop-content">
-      <div class="stop-category">Observation Tower · Sumida</div>
-      <h2 class="stop-title">Tokyo Skytree</h2>
-      <div class="stop-jp">東京スカイツリー</div>
-      <p class="stop-desc">At 634 metres, Tokyo Skytree is the tallest tower in the world — and its height wasn't chosen by accident. The digits 6, 3, and 4 spell "Musashi" in old Japanese, honouring the historic province on which Tokyo stands. From the Tembo Deck at 350 m, on a clear day, the entire Kanto Plain unfolds below you: the grid of Tokyo giving way to mountains on one side, Tokyo Bay on the other, and on exceptional days, the snow-capped peak of Mount Fuji 100 km away.</p>
-      <div class="stop-tip">💡 Book tickets in advance online to skip the queues. Night visits offer the most dramatic views — the city transforms into a galaxy of light stretching to the horizon.</div>
-      <div class="stop-rating"><span class="stars">★★★★</span> 4.4 · 114,000+ reviews</div>
-      <a class="stop-map" href="https://maps.google.com/?q=Tokyo+Skytree+Sumida" target="_blank">→ Open in Google Maps</a>
-    </div>
-  </div>
-
-</div>
-
-<div class="divider">Tour Rates</div>
-<div class="custom-price-grid">
-  <div class="custom-price-card">
-    <h3>Solo / Couples</h3>
-    <div style="font-size: 0.85rem; color: var(--muted);">1 — 2 Guests</div>
-    <div class="custom-price-amt">Varies</div>
-    <div class="custom-price-note">Subject to chosen locations.<br>(Custom route extensions or short-duration bundles available)</div>
-  </div>
-  
-  <div class="custom-price-card">
-    <h3>Small Group</h3>
-    <div style="font-size: 0.85rem; color: var(--muted);">3 Travelers</div>
-    <div class="custom-price-amt">Varies</div>
-    <div class="custom-price-note">Total group multi-stop rate.<br>(Calculated dynamically depending on itinerary zones)</div>
-  </div>
-  
-  <div class="custom-price-card">
-    <h3>Group Bundle</h3>
-    <div style="font-size: 0.85rem; color: var(--muted);">4+ Travelers</div>
-    <div class="custom-price-amt">Varies</div>
-    <div class="custom-price-note">Total group multi-stop rate.<br>(Optimized flat tier adjustments built for full milestone days)</div>
-  </div>
-</div>
-
-<div style="text-align:center; padding-bottom: 4rem;">
-  <a href="../../../Downloads/availability.html" style="display:inline-block; background:#D00000; color:#fff; padding:14px 36px; border-radius:8px; font-size:0.95rem; text-decoration:none; letter-spacing:0.05em; font-weight:500;">Check availability & book</a>
-</div>
-
-<footer>
-  <div class="footer-inner">
-    <div class="footer-left">
-      <div class="footer-logo">東京 · Tokyo Highlights</div>
-      <div class="footer-desc">A full-day guided experience · Rates vary based on route selection</div>
-      <div class="footer-copy">© 2026 Tokyo with Terry · Japan</div>
-    </div>
-    <div class="footer-links">
-      <a href="../../../Downloads/index.html">← Home</a>
-      <a href="../../../Downloads/availability.html">Availability</a>
-      <a href="../../../Downloads/reservations.html">Reserve</a>
-    </div>
-  </div>
-</footer>
-
-<script>
-  // Intersection Observer for scroll-in animation
-  const stops = document.querySelectorAll('.stop');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.15 });
-
-  stops.forEach(s => observer.observe(s));
-</script>
-
-</body>
-</html>
+    text-shadow
