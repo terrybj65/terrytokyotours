@@ -49,6 +49,24 @@
     .section-title { font-family: 'DM Serif Display', serif; font-size: 36px; font-weight: 400; margin-bottom: 0.5rem; line-height: 1.2; }
     .section-sub { font-size: 16px; color: var(--stone); margin-bottom: 2.5rem; max-width: 560px; }
 
+    /* ── NAV ── */
+    .nav-desktop-links { display: flex; list-style: none; justify-content: center; align-items: center; gap: 2.5rem; margin: 0; padding: 0; }
+    .nav-book-btn { background: var(--red); color: #fff; border: none; padding: 10px 22px; border-radius: var(--radius-sm); font-size: 14px; cursor: pointer; text-decoration: none; font-family: 'DM Sans', sans-serif; font-weight: 500; white-space: nowrap; }
+
+    /* Hamburger */
+    .nav-hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; transition: transform 0.25s, opacity 0.25s; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile drawer */
+    .nav-mobile-drawer { display: none; position: absolute; top: 65px; left: 0; right: 0; background: rgba(250,250,248,0.98); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 1.25rem 4vw 1.5rem; z-index: 99; }
+    .nav-mobile-drawer.open { display: block; }
+    .nav-mobile-drawer ul { list-style: none; padding: 0; margin: 0 0 1.25rem; display: flex; flex-direction: column; gap: 0; }
+    .nav-mobile-drawer li a { display: block; padding: 0.75rem 0; font-size: 16px; color: var(--stone); text-decoration: none; border-bottom: 1px solid var(--border); }
+    .nav-mobile-drawer .nav-book-mobile { display: block; width: 100%; text-align: center; background: var(--red); color: #fff; padding: 13px; border-radius: var(--radius-sm); font-size: 15px; font-weight: 500; text-decoration: none; }
+
     /* ── HERO SECTION ── */
     .hero { position: relative; height: 70vh; min-height: 480px; overflow: hidden; }
     .hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -56,7 +74,7 @@
     .hero-content { width: 100%; max-width: 1300px; margin: 0 auto; padding: 0 4vw; }
     .hero-text-wrap { max-width: 650px; }
     .hero-eyebrow { font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #f9a07a; margin-bottom: 1rem; text-shadow: 1px 1px 6px rgba(0,0,0,0.8); }
-    .hero h1 { font-family: 'Shippori Mincho', serif; font-size: clamp(44px, 5vw, 64px); color: #ffffff; line-height: 1.15; margin-bottom: 1rem; font-weight: 800; text-shadow: 1px 1px 8px rgba(0,0,0,0.8); }
+    .hero h1 { font-family: 'Shippori Mincho', serif; font-size: clamp(36px, 5vw, 64px); color: #ffffff; line-height: 1.15; margin-bottom: 1rem; font-weight: 800; text-shadow: 1px 1px 8px rgba(0,0,0,0.8); }
     .hero p { font-size: 18px; color: #ffffff; line-height: 1.6; margin-bottom: 2rem; text-shadow: 1px 1px 6px rgba(0,0,0,0.8); }
     .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
     .btn-primary { background: var(--red); color: #fff; border: none; padding: 13px 28px; border-radius: var(--radius-sm); font-size: 15px; cursor: pointer; text-decoration: none; transition: background 0.15s; display: inline-block; font-weight: 500; }
@@ -64,13 +82,13 @@
     .btn-ghost { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.7); padding: 13px 28px; border-radius: var(--radius-sm); font-size: 15px; cursor: pointer; text-decoration: none; transition: background 0.15s; display: inline-block; }
 
     /* ── EDITORIAL INTRO ── */
-    .intro { max-width: 900px; margin: 5rem auto; padding: 0 4vw; text-align: center; }
+    .intro { max-width: 900px; margin: 4rem auto; padding: 0 4vw; text-align: center; }
     .intro-kicker { display: inline-block; font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--moss); margin-bottom: 1.2rem; font-weight: 500; }
-    .intro p { font-size: 1.2rem; line-height: 1.8; color: var(--stone); }
+    .intro p { font-size: 1.1rem; line-height: 1.8; color: var(--stone); }
 
     /* ── METRIC STRIP ── */
-    .tod-bar { max-width: 1300px; margin: 0 auto 4.5rem; padding: 0 4vw; }
-    .tod-inner { display: flex; align-items: center; border: 1px solid rgba(26,74,106,0.15); background: rgba(255, 255, 255, 0.2); }
+    .tod-bar { max-width: 1300px; margin: 0 auto 4rem; padding: 0 4vw; }
+    .tod-inner { display: flex; align-items: stretch; border: 1px solid rgba(26,74,106,0.15); background: rgba(255,255,255,0.2); }
     .tod-item { flex: 1; padding: 1.25rem 1.75rem; border-right: 1px solid rgba(26,74,106,0.15); display: flex; flex-direction: column; gap: 0.25rem; }
     .tod-item:last-child { border-right: none; }
     .tod-label { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--moss); }
@@ -84,21 +102,28 @@
     .stops { max-width: 1300px; margin: 0 auto; padding: 0 4vw 2rem; }
     .stop { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3.5rem; border-top: 1px solid var(--border); padding: 4rem 0; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; align-items: center; }
     .stop.visible { opacity: 1; transform: translateY(0); }
-    .stop:nth-child(even) { direction: rtl; }
-    .stop:nth-child(even) > * { direction: ltr; }
-    
+
+    /* Even stops: swap column order with CSS, no direction:rtl hack */
+    .stop:nth-child(even) { direction: ltr; }
+    .stop:nth-child(even) .stop-img-wrap { order: 2; }
+    .stop:nth-child(even) .stop-content  { order: 1; }
+
     .stop-img-wrap { position: relative; overflow: hidden; aspect-ratio: 16/11; border-radius: 6px; width: 100%; }
     .stop-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; }
     .stop:hover .stop-img-wrap img { transform: scale(1.02); }
-    
+
     .stop-meta-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
-    .stop-tag { font-size: 11px; font-weight: 500; letter-spacing: 0.05em; color: var(--gold); background: rgba(176, 120, 32, 0.08); padding: 0.2rem 0.6rem; border-radius: 4px; }
+    .stop-tag { font-size: 11px; font-weight: 500; letter-spacing: 0.05em; color: var(--gold); background: rgba(176,120,32,0.08); padding: 0.2rem 0.6rem; border-radius: 4px; }
     .stop-timeline { font-size: 12px; color: var(--stone); font-weight: 400; }
-    
+
     .stop-content { padding: 0.5rem 0; display: flex; flex-direction: column; justify-content: center; }
     .stop-category { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--moss); margin-bottom: 0.5rem; font-weight: 500; }
-    .stop-title { font-family: 'Shippori Mincho', serif; font-size: clamp(2rem, 2.4vw, 2.6rem); font-weight: 600; line-height: 1.25; margin-bottom: 0.3rem; }
-    
+    .stop-title { font-family: 'Shippori Mincho', serif; font-size: clamp(1.7rem, 2.4vw, 2.6rem); font-weight: 600; line-height: 1.25; margin-bottom: 0.3rem; }
+    .stop-jp { font-size: 0.88rem; color: var(--stone); margin-bottom: 0.75rem; letter-spacing: 0.06em; }
+
+    .stop-map-link { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; color: var(--moss); text-decoration: none; font-weight: 500; margin-bottom: 1.5rem; transition: color 0.15s; }
+    .stop-map-link:hover { color: var(--red); }
+
     .stop-desc { font-size: 0.98rem; line-height: 1.8; color: #3e3a34; margin-bottom: 1.5rem; }
     .stop-tip { border-left: 3px solid var(--gold); padding-left: 1.1rem; font-size: 0.85rem; color: var(--stone); font-style: italic; line-height: 1.65; }
 
@@ -126,26 +151,86 @@
     .info-card-solo h3 { font-family: 'Shippori Mincho', serif; font-size: 22px; font-weight: 600; margin-bottom: 1.25rem; color: var(--ink); }
     .info-card-solo p { font-size: 14px; color: var(--stone); line-height: 1.7; margin-bottom: 0.65rem; }
 
-    @media (max-width: 850px) {
-      .price-grid, .details-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
-      .stop { grid-template-columns: 1fr !important; gap: 2rem !important; padding: 3rem 0 !important; }
-      .stop:nth-child(even) { direction: ltr !important; }
-      .hero { height: 50vh; }
+    /* ══════════════════════════════════════════
+       MOBILE RESPONSIVE — max-width: 768px
+    ══════════════════════════════════════════ */
+    @media (max-width: 768px) {
+
+      /* Nav */
+      .nav-desktop-links { display: none; }
+      .nav-book-btn { display: none; }
+      .nav-hamburger { display: flex; }
+
+      /* Hero */
+      .hero { height: 60vh; min-height: 380px; }
+      .hero p { font-size: 15px; }
+      .hero-btns { flex-direction: column; gap: 10px; }
+      .btn-primary, .btn-ghost { width: 100%; text-align: center; padding: 13px 20px; }
+
+      /* Intro */
+      .intro { margin: 2.5rem auto; }
+      .intro p { font-size: 1rem; }
+
+      /* Metric strip: stack vertically */
+      .tod-inner { flex-direction: column; }
+      .tod-item { border-right: none; border-bottom: 1px solid rgba(26,74,106,0.15); padding: 1rem 1.25rem; }
+      .tod-item:last-child { border-bottom: none; }
+
+      /* Stops: single column, natural order */
+      .stop { grid-template-columns: 1fr; gap: 1.5rem; padding: 2.5rem 0; }
+      .stop:nth-child(even) .stop-img-wrap { order: 0; }
+      .stop:nth-child(even) .stop-content  { order: 0; }
+      .stop-title { font-size: 1.7rem; }
+
+      /* Pricing: 1 column */
+      .price-grid { grid-template-columns: 1fr; gap: 1rem; }
+
+      /* Details: 1 column */
+      .details-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .details-section { padding-top: 3rem; }
+
+      /* Section headings */
+      .section-title { font-size: 26px; }
+
+      /* Info card */
+      .info-card-solo { padding: 1.75rem 1.25rem; }
+
+      /* CTA banner */
+      .cta-banner { flex-direction: column !important; text-align: center !important; }
+      .cta-banner-text { min-width: unset !important; }
+      .cta-banner-btn { text-align: center !important; min-width: unset !important; }
+      .cta-banner-btn a { display: block; width: 100%; text-align: center; }
+
+      /* Footer */
+      .footer-inner { flex-direction: column !important; text-align: center !important; align-items: center !important; }
+      .footer-links { justify-content: center !important; }
     }
   </style>
 </head>
 <body>
 
 <nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(0,0,0,0.1);padding:0 4vw;display:flex;align-items:center;justify-content:space-between;height:65px;">
-  <div style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--ink);">Tokyo with <span style="color:var(--red);">Terry</span></div>
-  <ul style="display:flex;list-style:none;justify-content:center;align-items:center;gap:2.5rem;margin:0;padding:0;">
-    <li><a href="../../../../../Downloads/index.html#areas" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Areas</a></li>
-    <li><a href="../../../../../Downloads/index.html#tours" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Tours</a></li>
-    <li><a href="../../../../../Downloads/index.html#about" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">About</a></li>
-    <li><a href="../../../../../Downloads/index.html#contact" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Contact</a></li>
+  <a href="index.html" style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--ink);text-decoration:none;">Tokyo with <span style="color:var(--red);">Terry</span></a>
+  <ul class="nav-desktop-links">
+    <li><a href="index.html#areas" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Areas</a></li>
+    <li><a href="index.html#tours" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Tours</a></li>
+    <li><a href="index.html#about" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">About</a></li>
+    <li><a href="index.html#contact" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Contact</a></li>
   </ul>
-  <a href="../../../../../Downloads/availability.html" style="background:var(--red);color:#fff;border:none;padding:10px 22px;border-radius:var(--radius-sm);font-size:14px;cursor:pointer;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:500;">Book a tour</a>
+  <a href="availability.html" class="nav-book-btn">Book a tour</a>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="nav-mobile-drawer" id="navDrawer">
+  <ul>
+    <li><a href="index.html#areas">Areas</a></li>
+    <li><a href="index.html#tours">Tours</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <a href="availability.html" class="nav-book-mobile">Book a tour →</a>
+</div>
 
 <section class="hero">
   <img src="https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=1600&q=85&fit=crop" alt="Tokyo Izakaya and Food Alley" />
@@ -157,7 +242,7 @@
         <p>Ramen, sushi, izakayas & street food — eat your way through Tokyo with a local.</p>
         <div class="hero-btns">
           <a href="#highlights-start" class="btn-primary">Explore highlights ↓</a>
-          <a href="../../../../../Downloads/availability.html" class="btn-ghost">Check availability</a>
+          <a href="availability.html" class="btn-ghost">Check availability</a>
         </div>
       </div>
     </div>
@@ -329,38 +414,56 @@
 </div>
 
 <div class="container" style="margin-top: 5rem; margin-bottom: 4rem;">
-  <div style="background: var(--red); border-radius: var(--radius); padding: 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; text-align: left;">
-    <div style="flex: 2; min-width: 300px;">
+  <div class="cta-banner" style="background: var(--red); border-radius: var(--radius); padding: 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; text-align: left;">
+    <div class="cta-banner-text" style="flex: 2; min-width: 260px;">
       <h3 style="font-family: 'DM Serif Display', serif; font-size: 28px; color: #ffffff; font-weight: 400; margin: 0; line-height: 1.2;">Ready to book Food & Culture?</h3>
       <p style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: rgba(255, 255, 255, 0.8); margin: 0.5rem 0 0 0; font-weight: 300; line-height: 1.4;">Check Terry's availability and send a booking request — it only takes a minute.</p>
     </div>
-    <div style="flex: 1; text-align: right; min-width: 200px;">
-      <a href="../../../../../Downloads/availability.html" style="background: #ffffff; color: var(--red); padding: 13px 26px; border-radius: var(--radius-sm); font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap; display: inline-block;">View availability & book →</a>
+    <div class="cta-banner-btn" style="flex: 1; text-align: right; min-width: 200px;">
+      <a href="availability.html" style="background: #ffffff; color: var(--red); padding: 13px 26px; border-radius: var(--radius-sm); font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap; display: inline-block;">View availability & book →</a>
     </div>
   </div>
 </div>
 
 <footer style="background: #f8f0e8; border-top: 4px solid var(--red); padding: 2.5rem 4vw; font-family: 'DM Sans', sans-serif; width: 100%;">
-  <div style="max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+  <div class="footer-inner" style="max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
     <div style="text-align: left;">
       <div style="font-size: 15px; font-weight: 700; color: #2d3748; margin-bottom: 4px; letter-spacing: 0.02em;">食文化 · Food & Culture</div>
       <div style="font-size: 13px; color: #7a6652; margin-bottom: 4px;">A half-day guided experience · Tokyo Private Tours with Terry</div>
       <div style="font-size: 12px; color: #a09080;">© 2026 Tokyo with Terry · Japan</div>
     </div>
-    <div style="display: flex; gap: 1.5rem; align-items: center;">
-      <a href="../../../../../Downloads/index.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">← Home</a>
-      <a href="../../../../../Downloads/availability.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">Availability</a>
-      <a href="../../../../../Downloads/reservations.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">Reserve</a>
+    <div class="footer-links" style="display: flex; gap: 1.5rem; align-items: center;">
+      <a href="index.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">← Home</a>
+      <a href="availability.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">Availability</a>
+      <a href="reservations.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">Reserve</a>
     </div>
   </div>
 </footer>
 
 <script>
+  // ── Scroll-in animation for stops ──
   const stops = document.querySelectorAll('.stop');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
   }, { threshold: 0.12 });
   stops.forEach(s => observer.observe(s));
+
+  // ── Hamburger nav toggle ──
+  const hamburger = document.getElementById('navHamburger');
+  const drawer    = document.getElementById('navDrawer');
+  hamburger.addEventListener('click', () => {
+    const isOpen = drawer.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+  // Close drawer on link click
+  drawer.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      drawer.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
 </script>
 
 </body>
