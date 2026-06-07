@@ -10,8 +10,8 @@
   <meta property="og:description" content="Continue exploring Tokyo's highlights with Terry — more iconic districts, hidden neighbourhoods and the experiences that make Tokyo one of the world's great cities."/>
   <meta property="og:type" content="website"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tokyo Highlights — Part Two | Tokyo Private Tours with Terry</title>
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <title>Tokyo Tours: Top City Highlights | Terry's Travel Japan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght=400;600;800&family=DM+Sans:ital,wght=0,300;0,400;0,500;1,300&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
   <style>
     :root {
       --ink: #1a1612;
@@ -20,6 +20,8 @@
       --gold: #b8952a;
       --muted: #7a7068;
       --border: rgba(26,22,18,0.12);
+      --radius-sm: 8px;
+      --bg-card: #ffffff;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -32,14 +34,15 @@
       overflow-x: hidden;
     }
 
-    /* ── HERO ── */
-    
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 6vw;
+    }
 
-    
-
-    
-
-    
+    .section-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red); margin-bottom: 0.5rem; }
+    .section-title { font-family: 'DM Serif Display', serif; font-size: 36px; font-weight: 400; margin-bottom: 0.5rem; line-height: 1.2; }
+    .section-sub { font-size: 16px; color: var(--muted); margin-bottom: 2.5rem; max-width: 560px; }
 
     .hero h1 {
       position: relative;
@@ -58,19 +61,6 @@
       color: rgba(255,255,255,0.55);
       letter-spacing: 0.08em;
       margin-top: 0.6rem;
-    }
-
-    
-
-    
-
-    
-
-    
-
-    @keyframes scrollline {
-      0%, 100% { opacity: 0.25; transform: scaleY(1); }
-      50% { opacity: 0.6; transform: scaleY(0.6); }
     }
 
     /* ── NAV / INTRO ── */
@@ -109,18 +99,19 @@
     .stops {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 0 6vw 8rem;
+      padding: 0 6vw 4rem;
     }
 
     .stop {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0;
+      gap: 3.5rem;
       border-top: 1px solid var(--border);
       padding: 4rem 0;
       opacity: 0;
       transform: translateY(30px);
       transition: opacity 0.7s ease, transform 0.7s ease;
+      align-items: center;
     }
 
     .stop.visible {
@@ -140,6 +131,7 @@
       position: relative;
       overflow: hidden;
       aspect-ratio: 4/3;
+      border-radius: 6px;
     }
 
     .stop-img-wrap img {
@@ -163,10 +155,11 @@
       color: rgba(255,255,255,0.18);
       line-height: 1;
       pointer-events: none;
+      z-index: 2;
     }
 
     .stop-content {
-      padding: 3rem 3.5rem;
+      padding: 1rem 0;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -177,7 +170,7 @@
       letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--red);
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
 
     .stop-title {
@@ -185,15 +178,29 @@
       font-size: clamp(1.8rem, 3vw, 2.6rem);
       font-weight: 600;
       line-height: 1.2;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.3rem;
     }
 
     .stop-jp {
       font-size: 0.85rem;
       color: var(--muted);
-      margin-bottom: 1.6rem;
+      margin-bottom: 0.75rem;
       letter-spacing: 0.06em;
     }
+
+    /* MAP LINK */
+    .stop-map {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      transition: color 0.15s;
+    }
+    .stop-map:hover { color: var(--red); }
 
     .stop-desc {
       font-size: 0.95rem;
@@ -225,53 +232,28 @@
       letter-spacing: 1px;
     }
 
-    /* ── MAP LINK ── */
-    .stop-map {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-top: 0.8rem;
-      font-size: 0.78rem;
-      color: var(--red);
-      text-decoration: none;
-      letter-spacing: 0.05em;
-      font-weight: 500;
-      transition: opacity 0.2s;
-    }
-
-    .stop-map:hover { opacity: 0.7; }
-
-    /* ── FOOTER ── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 3rem 6vw;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    footer p {
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    .footer-logo {
-      font-family: 'Shippori Mincho', serif;
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--ink);
-    }
+    /* ── PRICING CARD STYLES ── */
+    .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 1.5rem; }
+    .price-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 2.5rem 1.5rem; text-align: center; transition: transform 0.2s, border-color 0.2s; }
+    .price-card:hover { transform: translateY(-2px); border-color: var(--gold); }
+    .price-card h3 { font-family: 'Shippori Mincho', serif; font-size: 1.25rem; color: var(--ink); margin-bottom: 0.5rem; }
+    .price-amt { font-family: 'DM Serif Display', serif; font-size: 2.2rem; color: var(--red); margin: 0.8rem 0; }
+    .price-note { font-size: 0.85rem; color: var(--muted); line-height: 1.4; }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 700px) {
-      .stop {
-        grid-template-columns: 1fr;
-        direction: ltr !important;
-      }
-      .stop-content { padding: 2rem 0; }
-      .stop:nth-child(even) > * { direction: ltr; }
+      .nav-links { display: none; }
+      .areas-grid { grid-template-columns: 1fr 1fr !important; gap: 10px; }
+      .area-card { height: 140px; }
+      .stats-section .container { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 0.5px solid var(--border); }
+      .stat-item:last-child { border-bottom: none; }
+      .profile-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .profile-avatar { width: 100%; height: 260px; }
+      .section-title { font-size: 28px; }
+      .hero h1 { font-size: 36px; }
+      .cta-content h2 { font-size: 32px; }
+      .cta-input { width: 100%; }
     }
   
   /* ── HERO ── */
@@ -339,7 +321,7 @@
   }
   .btn-primary:hover { background: #B00000; }
   .btn-ghost {
-    background: rgba(0,0,0,0.45);
+    background:transparent;
     color: #fff;
     border: 1px solid rgba(255,255,255,0.6);
     padding: 13px 26px;
@@ -350,39 +332,28 @@
     transition: background 0.15s;
     display: inline-block;
   }
-  .btn-ghost:hover { background: rgba(0,0,0,0.65); }
+  .btn-ghost:hover { background:transparent; }
 
-/* ── PRICING BLOCK ── */
-.pricing-block{background:var(--bg-card);border:0.5px solid var(--border);border-radius:var(--radius);padding:2rem;margin:2rem 0;}
-.pricing-intro{font-size:15px;color:var(--text-muted);line-height:1.7;margin-bottom:1.25rem;}
-.pricing-section-title{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--red);font-weight:600;margin:1.25rem 0 .5rem;}
-.pricing-grid{margin:.5rem 0 1.25rem;}
-.pricing-row{display:flex;align-items:baseline;justify-content:space-between;padding:.65rem 0;border-bottom:0.5px solid var(--border);}
-.pricing-row:last-child{border-bottom:none;}
-.pricing-group{font-weight:600;font-size:15px;color:var(--text);}
-.pricing-amount{font-size:16px;color:var(--red);font-weight:600;text-align:right;}
-.pricing-amount span{font-size:13px;color:var(--text-muted);font-weight:400;}
-.pricing-amount em{font-size:13px;color:var(--text-muted);font-weight:400;font-style:normal;}
-.pricing-notes{margin-top:1.25rem;display:flex;flex-direction:column;gap:.5rem;border-top:0.5px solid var(--border);padding-top:1rem;}
-.pricing-notes p{font-size:14px;color:var(--text-muted);line-height:1.6;}
-.pricing-notes strong{color:var(--text);}
+  footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-size:13px;}
+  .footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+  .footer-logo{font-size:15px;font-weight:700;color:#2d3748;margin-bottom:4px;letter-spacing:0.02em;}
+  .footer-desc{font-size:13px;color:#7a6652;margin-bottom:4px;}
+  .footer-copy{font-size:12px;color:#a09080;}
+  .footer-links{display:flex;gap:1.25rem;align-items:center;}
+  .footer-links a{color:#a0522d;text-decoration:none;font-size:13px;transition:color .15s;}
+  .footer-links a:hover{color:#de1c24;}
 </style>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
 </head>
 <body>
-
-<!-- NAV -->
-<nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(0,0,0,0.1);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;">
-  <ul style="display:flex;list-style:none;justify-content:center;align-items:center;gap:2rem;flex:1;margin:0;padding:0;">
-    <li><a href="index.html#areas" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Areas</a></li>
-    <li><a href="index.html#tours" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Tours</a></li>
-    <li><a href="index.html#about" style="font-size:14px;color:#5D6D7E;text-decoration:none;">About</a></li>
-    <li><a href="index.html#contact" style="font-size:14px;color:#5D6D7E;text-decoration:none;">Contact</a></li>
-  </ul>
-  <a href="index.html#contact" style="background:#D00000;color:#fff;border:none;padding:9px 20px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none;">Book a tour</a>
+<nav style="position:sticky;top:0;z-index:100;background:rgba(245,240,232,0.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(26,22,18,0.1);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;">
+  <a href="index.html" style="font-family:'Shippori Mincho',serif;font-size:18px;color:#1a1612;text-decoration:none;font-weight:600;">Tokyo with <span style="color:#c0392b;">Terry</span></a>
+  <div style="display:flex;align-items:center;gap:1.5rem;">
+    <a href="index.html" style="font-size:14px;color:#7a7068;text-decoration:none;">← Home</a>
+    <a href="reservations.html" style="font-size:14px;color:#7a7068;text-decoration:none;">Reserve</a>
+    <a href="availability.html" style="background:#c0392b;color:#fff;padding:9px 20px;border-radius:8px;font-size:14px;font-family:'DM Sans',sans-serif;text-decoration:none;">Check availability</a>
+  </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <img src="https://images.unsplash.com/photo-1513407030348-c983a97b98d8?w=1400&q=80&fit=crop" alt="Tokyo Highlights" />
   <div class="hero-overlay">
@@ -391,75 +362,69 @@
       <h1>Tokyo<br>Highlights</h1>
       <p>Shibuya, Asakusa, Harajuku & more — with local insight at every stop.</p>
       <div class="hero-btns">
-        <a href="#stop1" class="btn-primary">See highlights ↓</a>
-        <a href="index.html#contact" class="btn-ghost">Book a tour</a>
+        <a href="#highlights-start" class="btn-primary">See highlights ↓</a>
+        <a href="availability.html" class="btn-ghost">Book a tour</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- INTRO -->
-<div class="intro">
+<div class="intro" id="highlights-start">
   <p>From the electric scramble of Shibuya to the forest paths of a centuries-old shrine, this tour threads together the very best of Tokyo — blending ancient tradition with breathless modernity, each stop chosen for its story as much as its spectacle.</p>
 </div>
 
 <div class="divider">The Itinerary</div>
 
-<!-- STOPS -->
 <div class="stops">
 
-  <!-- 1. Harajuku & Takeshita Street -->
   <div class="stop">
     <div class="stop-img-wrap">
       <div class="stop-num">01</div>
-      <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=800&q=80&fit=crop" alt="Harajuku Tokyo" loading="lazy"/>
-    </div>
+      <img src="harajuku.jpg" alt="Harajuku"/>
+	  </div>
     <div class="stop-content">
       <div class="stop-category">Fashion & Culture · Harajuku</div>
       <h2 class="stop-title">Harajuku & Takeshita Street</h2>
       <div class="stop-jp">原宿・竹下通り</div>
+      <a href="https://maps.google.com/?q=Takeshita+Street+Harajuku+Tokyo" target="_blank" rel="noopener noreferrer" class="stop-map">📍 View on Google Maps ↗</a>
       <p class="stop-desc">A 350-metre pedestrian lane that launched global youth fashion trends. Takeshita Street is an explosion of colour, noise, and creativity — crepe stalls compete with vintage boutiques and kawaii candy shops in a corridor designed entirely for maximum sensory overload. It's Tokyo's most self-consciously expressive neighbourhood, where subcultures that might seem extreme anywhere else are simply everyday wear. Wander freely; there's no wrong direction.</p>
       <div class="stop-tip">💡 Visit on a Sunday afternoon for the most elaborate street fashion. The side streets off Takeshita hide smaller, more eclectic shops worth discovering.</div>
       <div class="stop-rating"><span class="stars">★★★★</span> Well-rated street attraction</div>
-      <a class="stop-map" href="https://maps.google.com/?q=Takeshita+Street+Harajuku+Tokyo" target="_blank">→ Open in Google Maps</a>
     </div>
   </div>
 
-  <!-- 2. Meiji Jingū -->
   <div class="stop">
     <div class="stop-img-wrap">
       <div class="stop-num">02</div>
-      <img src="https://images.unsplash.com/photo-1570459027562-4a916cc6113f?w=800&q=80&fit=crop" alt="Meiji Shrine Tokyo" loading="lazy"/>
-    </div>
+      <img src="meijiingu.jpg" alt="Meiji Jingu"/>
+	  </div>
     <div class="stop-content">
       <div class="stop-category">Shinto Shrine · Shibuya</div>
       <h2 class="stop-title">Meiji Jingū</h2>
       <div class="stop-jp">明治神宮</div>
+      <a href="https://maps.google.com/?q=Meiji+Jingu+Shrine+Tokyo" target="_blank" rel="noopener noreferrer" class="stop-map">📍 View on Google Maps ↗</a>
       <p class="stop-desc">A ten-minute walk from the chaos of Harajuku brings you to one of the most serene places in all of Tokyo. Meiji Shrine sits within a 70-hectare evergreen forest — home to 120,000 trees — dedicated to Emperor Meiji and Empress Shōken. The approach through towering torii gates feels like entering another world. Visitors write wishes on ema wooden plaques, watch wedding processions, or simply stand still and let the silence be the experience.</p>
       <div class="stop-tip">💡 The sake barrel display near the entrance is one of Tokyo's most photographed spots. Early mornings offer a chance to witness Shinto rituals performed by resident priests.</div>
       <div class="stop-rating"><span class="stars">★★★★★</span> 4.6 · 50,000+ reviews</div>
-      <a class="stop-map" href="https://maps.google.com/?q=Meiji+Jingu+Shrine+Tokyo" target="_blank">→ Open in Google Maps</a>
     </div>
   </div>
 
-  <!-- 3. Sensō-ji Temple -->
   <div class="stop">
     <div class="stop-img-wrap">
       <div class="stop-num">03</div>
-      <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80&fit=crop" alt="Senso-ji Temple Asakusa" loading="lazy"/>
-    </div>
+      <img src="sensoji.jpg" alt="Sensoji"/>
+	  </div>
     <div class="stop-content">
       <div class="stop-category">Buddhist Temple · Asakusa</div>
       <h2 class="stop-title">Sensō-ji Temple</h2>
       <div class="stop-jp">浅草寺</div>
+      <a href="https://maps.google.com/?q=Senso-ji+Temple+Asakusa+Tokyo" target="_blank" rel="noopener noreferrer" class="stop-map">📍 View on Google Maps ↗</a>
       <p class="stop-desc">Tokyo's oldest and most visited temple has drawn worshippers since 645 AD. Pass beneath the great Kaminarimon gate — its lantern alone weighs 670 kg — and walk Nakamise-dōri, a covered lane of traditional snack stalls and souvenir shops that has been trading for over 200 years. The incense smoke at the main hall is said to bring good health; cup it toward you before stepping inside to pray.</p>
       <div class="stop-tip">💡 Arrive before 8 AM to experience the temple in near silence, with morning light filtering through the smoke — a completely different world from the daytime crowds.</div>
       <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 94,000+ reviews</div>
-      <a class="stop-map" href="https://maps.google.com/?q=Senso-ji+Temple+Asakusa+Tokyo" target="_blank">→ Open in Google Maps</a>
     </div>
   </div>
 
-  <!-- 4. Shibuya Crossing -->
   <div class="stop">
     <div class="stop-img-wrap">
       <div class="stop-num">04</div>
@@ -469,14 +434,13 @@
       <div class="stop-category">Iconic Landmark · Shibuya</div>
       <h2 class="stop-title">Shibuya Crossing</h2>
       <div class="stop-jp">渋谷スクランブル交差点</div>
+      <a href="https://maps.google.com/?q=Shibuya+Crossing+Tokyo" target="_blank" rel="noopener noreferrer" class="stop-map">📍 View on Google Maps ↗</a>
       <p class="stop-desc">No image prepares you for the real thing. The moment the lights turn red in every direction, hundreds of people surge from all sides at once — a perfectly orchestrated urban ballet that has defined Tokyo's image worldwide. On peak evenings, close to 3,000 people cross in a single cycle. Yet somehow, nobody bumps into anyone. Watch from the famous Starbucks above for a bird's-eye view, then plunge into the chaos yourself.</p>
       <div class="stop-tip">💡 Best experienced at rush hour (5–8 PM) or on weekend evenings when the crowds — and the neon — are at their most theatrical.</div>
       <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 20,000+ reviews</div>
-      <a class="stop-map" href="https://maps.google.com/?q=Shibuya+Crossing+Tokyo" target="_blank">→ Open in Google Maps</a>
     </div>
   </div>
 
-  <!-- 5. Shinjuku Gyoen -->
   <div class="stop">
     <div class="stop-img-wrap">
       <div class="stop-num">05</div>
@@ -486,76 +450,74 @@
       <div class="stop-category">National Garden · Shinjuku</div>
       <h2 class="stop-title">Shinjuku Gyoen</h2>
       <div class="stop-jp">新宿御苑</div>
+      <a href="https://maps.google.com/?q=Shinjuku+Gyoen+National+Garden+Tokyo" target="_blank" rel="noopener noreferrer" class="stop-map">📍 View on Google Maps ↗</a>
       <p class="stop-desc">Once a private garden for the Imperial family, Shinjuku Gyoen is now Tokyo's most beloved public park — and for good reason. Within its 58 hectares, three distinct garden styles coexist: formal French gardens, open English landscape, and a classical Japanese stroll garden with koi ponds and a traditional tea house. In cherry blossom season it becomes almost mythically beautiful, but it rewards a visit in any month.</p>
       <div class="stop-tip">💡 Don't miss the tropical greenhouse, a hidden gem packed with rare plant species. The Taiwanese Pavilion is a peaceful spot for reflection beside the water.</div>
       <div class="stop-rating"><span class="stars">★★★★★</span> 4.6 · 44,000+ reviews</div>
-      <a class="stop-map" href="https://maps.google.com/?q=Shinjuku+Gyoen+National+Garden+Tokyo" target="_blank">→ Open in Google Maps</a>
     </div>
   </div>
 
-  <!-- 6. Tokyo Skytree -->
   <div class="stop">
     <div class="stop-img-wrap">
       <div class="stop-num">06</div>
-      <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&q=80&fit=crop" alt="Tokyo Skytree" loading="lazy"/>
-    </div>
+      <img src="tokyoskytree.jpg" alt="Tokyo Skytree"/>
+	  </div>
     <div class="stop-content">
       <div class="stop-category">Observation Tower · Sumida</div>
       <h2 class="stop-title">Tokyo Skytree</h2>
       <div class="stop-jp">東京スカイツリー</div>
+      <a href="https://maps.google.com/?q=Tokyo+Skytree+Sumida" target="_blank" rel="noopener noreferrer" class="stop-map">📍 View on Google Maps ↗</a>
       <p class="stop-desc">At 634 metres, Tokyo Skytree is the tallest tower in the world — and its height wasn't chosen by accident. The digits 6, 3, and 4 spell "Musashi" in old Japanese, honouring the historic province on which Tokyo stands. From the Tembo Deck at 350 m, on a clear day, the entire Kanto Plain unfolds below you: the grid of Tokyo giving way to mountains on one side, Tokyo Bay on the other, and on exceptional days, the snow-capped peak of Mount Fuji 100 km away.</p>
       <div class="stop-tip">💡 Book tickets in advance online to skip the queues. Night visits offer the most dramatic views — the city transforms into a galaxy of light stretching to the horizon.</div>
       <div class="stop-rating"><span class="stars">★★★★</span> 4.4 · 114,000+ reviews</div>
-      <a class="stop-map" href="https://maps.google.com/?q=Tokyo+Skytree+Sumida" target="_blank">→ Open in Google Maps</a>
     </div>
   </div>
 
 </div>
 
-<!-- FOOTER -->
-
-<!-- PRICING -->
-<div style="background:#f9f6f0; border-top:1px solid rgba(0,0,0,0.08); padding:2.5rem 6vw; text-align:center;">
-  <p style="font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:#8a7040; margin-bottom:0.5rem;">Full day · per person</p>
-  <p style="font-family:'DM Serif Display','Shippori Mincho',serif; font-size:2.5rem; color:#1C2833; margin-bottom:0.5rem;">From ¥15,000</p>
-  <p style="font-size:0.85rem; color:#7a7468; margin-bottom:1.5rem;">Price varies by group size · Transport not included</p>
-  <a href="index.html#contact" style="display:inline-block; background:#D00000; color:#fff; padding:12px 28px; border-radius:8px; font-size:0.9rem; text-decoration:none; letter-spacing:0.05em;">Book this tour</a>
-</div>
-<footer>
-  <div class="footer-logo">東京 · Tokyo Highlights</div>
-  <p>A full-day guided experience · From ¥15,000 per person</p>
-  <p>© 2026 Tokyo Highlights Tour</p>
-  <div style="text-align:center; padding: 1.5rem 0 2rem;">
-    <a href="index.html" style="
-      display: inline-block;
-      margin-top: 1rem;
-      font-size: 0.8rem;
-      color: var(--stone);
-      text-decoration: none;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      border-bottom: 1px solid var(--gold);
-      padding-bottom: 2px;
-      transition: opacity 0.2s;
-    " onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">
-      ← Back to Home
-    </a>
+<section id="tour-pricing" style="margin: 2rem 0; padding: 4rem 0; border-top: 1px solid var(--border);">
+  <div class="container">
+    <div class="section-label">Rates</div>
+    <h2 class="section-title">Private Tour Rates</h2>
+    <div class="section-sub">Simple, private guiding configurations. Rates depend strictly on custom target distances, locations, and time blocks.</div>
+    
+    <div class="price-grid">
+      <div class="price-card">
+        <h3>Solo / Couples</h3>
+        <div style="font-size: 0.85rem; color: var(--muted);">1 — 2 Guests</div>
+        <div class="price-amt">Varies</div>
+        <div class="price-note">Subject to chosen locations.<br>(Custom route extensions or short-duration bundles available)</div>
+      </div>
+      
+      <div class="price-card">
+        <h3>Small Group</h3>
+        <div style="font-size: 0.85rem; color: var(--muted);">3 Travelers</div>
+        <div class="price-amt">Varies</div>
+        <div class="price-note">Total group multi-stop rate.<br>(Calculated dynamically depending on itinerary zones)</div>
+      </div>
+      
+      <div class="price-card">
+        <h3>Group Bundle</h3>
+        <div style="font-size: 0.85rem; color: var(--muted);">4 Travelers</div>
+        <div class="price-amt">Varies</div>
+        <div class="price-note">Total group multi-stop rate.<br>(Optimized flat tier adjustments built for full milestone days)</div>
+      </div>
+    </div>
   </div>
-  <div style="text-align:center; padding: 1.5rem 0 2rem;">
-    <a href="index.html" style="
-      display: inline-block;
-      margin-top: 1rem;
-      font-size: 0.8rem;
-      color: var(--stone);
-      text-decoration: none;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      border-bottom: 1px solid var(--gold);
-      padding-bottom: 2px;
-      transition: opacity 0.2s;
-    " onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">
-      ← Back to Home
-    </a>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="footer-logo">東京 · Tokyo Highlights</div>
+      <div class="footer-desc">A full-day guided experience · Rates vary based on route selection</div>
+      <div class="footer-copy">© 2026 Tokyo with Terry · Japan</div>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">← Home</a>
+      <a href="availability.html">Availability</a>
+      <a href="reservations.html">Reserve</a>
+    </div>
   </div>
 </footer>
 

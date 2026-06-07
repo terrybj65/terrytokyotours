@@ -488,21 +488,19 @@
       margin-bottom: 1.2rem;
     }
 
-    @media (max-width: 1024px) {
-      .stop { gap: 2.5rem; }
-      .price-grid { grid-template-columns: 1fr; }
-      .details-grid { gap: 2.5rem; }
-    }
-
-    @media (max-width: 768px) {
-      .stop { grid-template-columns: 1fr; direction: ltr !important; gap: 1.5rem; padding: 2.5rem 0; }
-      .stop:nth-child(even) > * { direction: ltr; }
-      .transport-inner { flex-direction: column; }
-      .transport-item { border-right: none; border-bottom: 1px solid rgba(26,74,106,0.15); width: 100%; }
-      .transport-item:last-child { border-bottom: none; }
-      .section-nav-inner { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.2rem; }
-      .info-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-      .details-grid { grid-template-columns: 1fr; gap: 3rem; }
+     @media (max-width: 700px) {
+      .nav-links { display: none; }
+      .areas-grid { grid-template-columns: 1fr 1fr !important; gap: 10px; }
+      .area-card { height: 140px; }
+      .stats-section .container { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 0.5px solid var(--border); }
+      .stat-item:last-child { border-bottom: none; }
+      .profile-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .profile-avatar { width: 100%; height: 260px; }
+      .section-title { font-size: 28px; }
+      .hero h1 { font-size: 36px; }
+      .cta-content h2 { font-size: 32px; }
+      .cta-input { width: 100%; }
     }
   </style>
 </head>

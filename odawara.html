@@ -74,13 +74,18 @@
     .footer-logo { font-family: 'Shippori Mincho', serif; font-size: 1.25rem; font-weight: 600; }
 
     @media (max-width: 700px) {
-      .stop { grid-template-columns: 1fr; direction: ltr !important; }
-      .stop-content { padding: 2rem 0; }
-      .stop:nth-child(even) > * { direction: ltr; }
-      .transport-inner { flex-direction: column; }
-      .transport-item { border-right: none; border-bottom: 1px solid rgba(58,42,10,0.18); }
-      .transport-item:last-child { border-bottom: none; }
-      .section-nav-inner { flex-direction: column; align-items: flex-start; }
+      .nav-links { display: none; }
+      .areas-grid { grid-template-columns: 1fr 1fr !important; gap: 10px; }
+      .area-card { height: 140px; }
+      .stats-section .container { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 0.5px solid var(--border); }
+      .stat-item:last-child { border-bottom: none; }
+      .profile-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .profile-avatar { width: 100%; height: 260px; }
+      .section-title { font-size: 28px; }
+      .hero h1 { font-size: 36px; }
+      .cta-content h2 { font-size: 32px; }
+      .cta-input { width: 100%; }
     }
   
   /* ── HERO ── */

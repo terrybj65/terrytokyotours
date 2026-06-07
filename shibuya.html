@@ -124,18 +124,19 @@
     .info-card-solo h3 { font-family: 'Shippori Mincho', serif; font-size: 22px; font-weight: 600; margin-bottom: 1.25rem; color: var(--ink); }
     .info-card-solo p { font-size: 14px; color: var(--stone); line-height: 1.7; margin-bottom: 0.65rem; }
 
-    @media (max-width: 1024px) {
-      .stop { gap: 2rem; }
-      .details-grid { gap: 2.5rem; }
-      .price-grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 768px) {
-      .stop { grid-template-columns: 1fr !important; direction: ltr !important; gap: 1.5rem; padding: 2.5rem 0; }
-      .stop:nth-child(even) > * { direction: ltr; }
-      .tod-inner { flex-direction: column; }
-      .tod-item { border-right: none; border-bottom: 1px solid rgba(26,74,106,0.15); padding: 1.1rem; }
-      .tod-item:last-child { border-bottom: none; }
-      .details-grid { grid-template-columns: 1fr; gap: 3rem; }
+     @media (max-width: 700px) {
+      .nav-links { display: none; }
+      .areas-grid { grid-template-columns: 1fr 1fr !important; gap: 10px; }
+      .area-card { height: 140px; }
+      .stats-section .container { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 0.5px solid var(--border); }
+      .stat-item:last-child { border-bottom: none; }
+      .profile-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .profile-avatar { width: 100%; height: 260px; }
+      .section-title { font-size: 28px; }
+      .hero h1 { font-size: 36px; }
+      .cta-content h2 { font-size: 32px; }
+      .cta-input { width: 100%; }
     }
   </style>
 </head>

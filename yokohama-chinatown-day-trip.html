@@ -35,6 +35,7 @@
       --red: #de1c24;
       --radius: 12px;
       --radius-sm: 8px;
+      --bg-card: #ffffff;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -52,6 +53,11 @@
       margin: 0 auto;
       padding: 0 4vw;
     }
+
+    /* ── GENERAL TYPOGRAPHY & HEADINGS ── */
+    .section-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red); margin-bottom: 0.5rem; }
+    .section-title { font-family: 'DM Serif Display', serif; font-size: 36px; font-weight: 400; margin-bottom: 0.5rem; line-height: 1.2; }
+    .section-sub { font-size: 16px; color: var(--stone); margin-bottom: 2.5rem; max-width: 560px; }
 
     /* ── HERO SECTION ── */
     .hero {
@@ -190,6 +196,43 @@
       line-height: 1.4;
     }
 
+    /* ── CHRONOLOGICAL PILLS ── */
+    .section-nav {
+      max-width: 1300px;
+      margin: 0 auto 4rem;
+      padding: 0 4vw;
+    }
+    .section-nav-inner {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      background: rgba(26,74,106,0.04);
+      border: 1px solid rgba(26,74,106,0.12);
+      border-left: 4px solid var(--sage);
+      padding: 1.2rem 1.8rem;
+      flex-wrap: wrap;
+    }
+    .nav-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--moss);
+      font-weight: 500;
+    }
+    .nav-pills { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+    .nav-pill {
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: var(--ink);
+      background: rgba(255,255,255,0.6);
+      border: 1px solid rgba(26,74,106,0.15);
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .nav-pill:hover { background: var(--sage); color: #fff; border-color: var(--sage); }
+
     /* ── SECTION SEPARATOR ── */
     .divider {
       display: flex;
@@ -296,9 +339,22 @@
     .stop-jp {
       font-size: 0.88rem;
       color: var(--stone);
-      margin-bottom: 1.5rem;
+      margin-bottom: 0.75rem;
       letter-spacing: 0.06em;
     }
+
+    .stop-map-link {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 12px;
+      color: var(--sage);
+      text-decoration: none;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      transition: color 0.15s;
+    }
+    .stop-map-link:hover { color: var(--red); }
+
     .stop-desc {
       font-size: 0.98rem;
       line-height: 1.8;
@@ -313,59 +369,56 @@
       font-style: italic;
       line-height: 1.65;
     }
+    .stop-footer {
+      margin-top: 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      border-top: 1px solid rgba(20,18,14,0.06);
+      padding-top: 1.25rem;
+    }
+    .stop-rating { font-size: 0.82rem; color: var(--stone); }
+    .stars { color: var(--gold); margin-right: 0.25rem; }
 
-    /* ── OVERVIEW BOXES ── */
-    .info-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5rem;
-      max-width: 1300px;
-      margin: 4.5rem auto;
-      padding: 0 4vw;
-    }
-    .info-card {
-      background: #ffffff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 2.5rem;
-    }
-    .info-card h3 {
-      font-family: 'Shippori Mincho', serif;
-      font-size: 22px;
-      font-weight: 600;
-      margin-bottom: 1.25rem;
-      color: var(--ink);
-    }
-    .info-card ul { padding-left: 1.4rem; list-style-type: square; }
-    .info-card li, .info-card p {
-      font-size: 14px;
-      color: var(--stone);
-      line-height: 1.7;
-      margin-bottom: 0.65rem;
-    }
-    .price-value {
-      font-family: 'Shippori Mincho', serif;
-      color: var(--moss);
-      font-weight: 600;
-    }
+    /* ── PRICING CARD STYLES ── */
+    .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 1.5rem; }
+    .price-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 2.5rem 1.5rem; text-align: center; transition: transform 0.2s, border-color 0.2s; }
+    .price-card:hover { transform: translateY(-2px); border-color: var(--sage); }
+    .price-card h3 { font-family: 'Shippori Mincho', serif; font-size: 1.25rem; color: var(--ink); margin-bottom: 0.5rem; }
+    .price-amt { font-family: 'DM Serif Display', serif; font-size: 2.2rem; color: var(--red); margin: 0.8rem 0; }
+    .price-note { font-size: 0.85rem; color: var(--stone); line-height: 1.4; }
 
-    @media (max-width: 1024px) {
-      .stop { gap: 2rem; }
-    }
+    /* ── STANDARDIZED LOGISTICAL DETAILS GRID ── */
+    .details-section { border-top: 1px solid var(--border); padding-top: 5rem; margin-top: 3rem; }
+    .details-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4rem; }
+    .details-grid dt { font-family: 'Shippori Mincho', serif; font-size: 1.6rem; font-weight: 600; color: var(--ink); margin-bottom: 1.5rem; }
+    .details-grid dd { margin: 0; }
+    .details-grid ul { list-style: none; padding: 0; }
+    .details-grid li { position: relative; padding-left: 1.5rem; font-size: 0.98rem; line-height: 1.7; color: var(--stone); margin-bottom: 0.8rem; }
+    .details-grid li::before { content: "—"; position: absolute; left: 0; color: var(--gold); }
+    .details-grid p { font-size: 0.98rem; line-height: 1.75; color: var(--stone); margin-bottom: 1.2rem; }
+    .details-grid p:last-child { margin-bottom: 0; }
 
-    @media (max-width: 768px) {
-      .stop { 
-        grid-template-columns: 1fr !important; 
-        gap: 1.5rem; 
-        padding: 2.5rem 0; 
-      }
-      .stop-img-wrap { order: 1 !important; }
-      .stop-content { order: 2 !important; }
-      .tod-inner { flex-direction: column; }
-      .tod-item { border-right: none; border-bottom: 1px solid rgba(26,74,106,0.15); padding: 1.1rem; }
-      .tod-item:last-child { border-bottom: none; }
-      .info-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-      .info-card { padding: 2rem; }
+    /* ── REWORKED INLINE ADVANTAGE CARD ── */
+    .info-card-solo { background: #ffffff; border: 1px solid var(--border); border-radius: var(--radius); padding: 2.5rem; margin-top: 4rem; }
+    .info-card-solo h3 { font-family: 'Shippori Mincho', serif; font-size: 22px; font-weight: 600; margin-bottom: 1.25rem; color: var(--ink); }
+    .info-card-solo p { font-size: 14px; color: var(--stone); line-height: 1.7; margin-bottom: 0.65rem; }
+
+    @media (max-width: 700px) {
+      .nav-links { display: none; }
+      .areas-grid { grid-template-columns: 1fr 1fr !important; gap: 10px; }
+      .area-card { height: 140px; }
+      .stats-section .container { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 0.5px solid var(--border); }
+      .stat-item:last-child { border-bottom: none; }
+      .profile-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .profile-avatar { width: 100%; height: 260px; }
+      .section-title { font-size: 28px; }
+      .hero h1 { font-size: 36px; }
+      .cta-content h2 { font-size: 32px; }
+      .cta-input { width: 100%; }
     }
   </style>
 </head>
@@ -375,12 +428,12 @@
 <nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(0,0,0,0.1);padding:0 4vw;display:flex;align-items:center;justify-content:space-between;height:65px;">
   <div style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--ink);">Tokyo with <span style="color:var(--red);">Terry</span></div>
   <ul style="display:flex;list-style:none;justify-content:center;align-items:center;gap:2.5rem;margin:0;padding:0;">
-    <li><a href="../../../../../Downloads/index.html#areas" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Areas</a></li>
-    <li><a href="../../../../../Downloads/index.html#tours" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Tours</a></li>
-    <li><a href="../../../../../Downloads/index.html#about" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">About</a></li>
-    <li><a href="../../../../../Downloads/index.html#contact" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Contact</a></li>
+    <li><a href="../../../Downloads/index.html#areas" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Areas</a></li>
+    <li><a href="../../../Downloads/index.html#tours" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Tours</a></li>
+    <li><a href="../../../Downloads/index.html#about" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">About</a></li>
+    <li><a href="../../../Downloads/index.html#contact" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Contact</a></li>
   </ul>
-  <a href="../../../../../Downloads/availability.html" style="background:var(--red);color:#fff;border:none;padding:10px 22px;border-radius:var(--radius-sm);font-size:14px;cursor:pointer;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:500;">Book a tour</a>
+  <a href="../../../Downloads/availability.html" style="background:var(--red);color:#fff;border:none;padding:10px 22px;border-radius:var(--radius-sm);font-size:14px;cursor:pointer;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:500;">Book a tour</a>
 </nav>
 
 <!-- HERO BLOCK -->
@@ -394,7 +447,7 @@
         <p>Waterfront promenades, rich historic districts, and the incredible food paths of Japan's largest Chinatown.</p>
         <div class="hero-btns">
           <a href="#highlights-start" class="btn-primary">Explore highlights ↓</a>
-          <a href="../../../../../Downloads/availability.html" class="btn-ghost">Check availability</a>
+          <a href="../../../Downloads/availability.html" class="btn-ghost">Check availability</a>
         </div>
       </div>
     </div>
@@ -421,13 +474,25 @@
   </div>
 </div>
 
+<div class="section-nav">
+  <div class="section-nav-inner">
+    <span class="nav-label">Chronological Highlights</span>
+    <div class="nav-pills">
+      <a class="nav-pill" href="#yamate">01 Yamate Bluff</a>
+      <a class="nav-pill" href="#chinatown">02 Yokohama Chinatown</a>
+      <a class="nav-pill" href="#yamashita">03 Yamashita Park</a>
+      <a class="nav-pill" href="#minatomirai">04 Minato Mirai</a>
+    </div>
+  </div>
+</div>
+
 <div class="divider" id="highlights-start">Our Path · Harbor & Cultural Corridors</div>
 
 <!-- STOPS GRID -->
 <div class="stops">
 
   <!-- Stop 1: Yamate Bluff District -->
-  <div class="stop">
+  <div class="stop" id="yamate">
     <div class="stop-img-wrap">
       <img src="https://images.unsplash.com/photo-1542640244-7e672d6cef21?w=1000&q=80&fit=crop" alt="Charming historical architecture on the bluff" loading="lazy"/>
     </div>
@@ -439,13 +504,17 @@
       <div class="stop-category">Western Architecture · Harbor Overlooks</div>
       <h2 class="stop-title">Yamate Bluff District</h2>
       <div class="stop-jp">山手町</div>
+      <a href="https://maps.google.com/?q=Yamate+District+Yokohama+Japan" target="_blank" rel="noopener noreferrer" class="stop-map-link">📍 View on Google Maps ↗</a>
       <p class="stop-desc">Ascend to the historic residential hillside overlooking the modern port city. Wander past beautiful 19th-century Western-style residences, elegant brick structures, and lush garden properties established when Japan first opened its doors to global trading merchants.</p>
       <div class="stop-tip">💡 The quiet neighborhoods up here feature elegant rose gardens that offer fantastic, uncrowded landscape frames of the bay.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.4 · 850+ reviews</div>
+      </div>
     </div>
   </div>
 
   <!-- Stop 2: Yokohama Chinatown -->
-  <div class="stop">
+  <div class="stop" id="chinatown">
     <div class="stop-img-wrap">
       <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?w=1000&q=80&fit=crop" alt="Bright colorful gates of Yokohama Chinatown" loading="lazy"/>
     </div>
@@ -457,13 +526,17 @@
       <div class="stop-category">Culinary Mainstays · Vibrant Landmarks</div>
       <h2 class="stop-title">Yokohama Chinatown</h2>
       <div class="stop-jp">横浜中華街</div>
+      <a href="https://maps.google.com/?q=Yokohama+Chinatown+Japan" target="_blank" rel="noopener noreferrer" class="stop-map-link">📍 View on Google Maps ↗</a>
       <p class="stop-desc">Step through monumental, ornately designed gates into Japan's largest Chinatown, home to over 600 diverse shops and dynamic restaurants. Take in the aromas of street food and explore lively cross-cultural paths filled with generations of local culinary legacy.</p>
       <div class="stop-tip">💡 Terry skips the modern commercial tourist traps to seat you at authentic, hidden local kitchens for lunch.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.5 · 24,000+ reviews</div>
+      </div>
     </div>
   </div>
 
   <!-- Stop 3: Yamashita Park Promenade -->
-  <div class="stop">
+  <div class="stop" id="yamashita">
     <div class="stop-img-wrap">
       <img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=1000&q=80&fit=crop" alt="Yamashita Park waterfront walkway" loading="lazy"/>
     </div>
@@ -475,13 +548,17 @@
       <div class="stop-category">Coastal Relaxation · Maritime Heritage</div>
       <h2 class="stop-title">Yamashita Park</h2>
       <div class="stop-jp">山下公園</div>
+      <a href="https://maps.google.com/?q=Yamashita+Park+Yokohama+Japan" target="_blank" rel="noopener noreferrer" class="stop-map-link">📍 View on Google Maps ↗</a>
       <p class="stop-desc">Stroll down a spacious, beautiful waterfront promenade park that stretches directly along the active bay front. Watch modern ships navigate the harbor waters while enjoying refreshing sea breezes right next to historic vessels like the docked Hikawa Maru liner.</p>
       <div class="stop-tip">💡 The park is an ideal location to experience a peaceful moment away from the mid-day urban bustle.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.3 · 9,800+ reviews</div>
+      </div>
     </div>
   </div>
 
   <!-- Stop 4: Minato Mirai Skyline -->
-  <div class="stop">
+  <div class="stop" id="minatomirai">
     <div class="stop-img-wrap">
       <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=1000&q=80&fit=crop" alt="Minato Mirai neon skyline at dusk" loading="lazy"/>
     </div>
@@ -493,29 +570,81 @@
       <div class="stop-category">Modern Landscapes · Architectural Feats</div>
       <h2 class="stop-title">Minato Mirai Waterfront</h2>
       <div class="stop-jp">みなとみらい21</div>
+      <a href="https://maps.google.com/?q=Minato+Mirai+Yokohama+Japan" target="_blank" rel="noopener noreferrer" class="stop-map-link">📍 View on Google Maps ↗</a>
       <p class="stop-desc">Conclude your journey amid the striking, state-of-the-art skyline profile of the "Harbor of the Future." Admire massive high-rise architectural marvels, repurposed historic red-brick storehouses, and the vibrant neon display of the iconic Cosmo Clock Ferris wheel.</p>
       <div class="stop-tip">💡 Watching the architectural harbor lights turn on at dusk provides a breathtaking finale to the day.</div>
+      <div class="stop-footer">
+        <div class="stop-rating"><span class="stars">★★★★★</span> 4.6 · 15,000+ reviews</div>
+      </div>
     </div>
   </div>
 
 </div>
 
-<!-- DETAILS BLOCKS WITH UNIFORM FLAT PRICE -->
-<div class="info-grid">
-  <div class="info-card">
-    <h3>Private Tour Rates</h3>
-    <p>Every itinerary is completely exclusive to your party, crafted to match your exact pace, curiosities, and aesthetic style.</p>
-    <ul style="margin-top: 1rem; margin-bottom: 1rem;">
-      <li><strong>Private Day Tour Rate:</strong> <span class="price-value">¥60,000</span></li>
-      <li><strong>Group Capacity:</strong> Up to 6 guests included at no extra charge</li>
-      <li><strong>Duration:</strong> Full day (~8 hours of custom exploration)</li>
-    </ul>
-    <p style="font-size: 13px; font-style: italic;">* Please note: Client transportation, transit fares outside Tokyo central, and dining selections are handled independently directly on location.</p>
+<!-- TOUR PRICING HOLDER SECTION (STRUCTURE MAPPED FROM ASAKUSA) -->
+<section id="tour-pricing" style="margin: 2rem 0; padding: 4rem 0; border-top: 1px solid var(--border);">
+  <div class="container">
+    <div class="section-label">Rates</div>
+    <h2 class="section-title">Private Tour Rates</h2>
+    <div class="section-sub">Simple, flat hourly and daily private guiding fees. Custom routing options included.</div>
+    
+    <div class="price-grid">
+      <!-- Half-Day Tier -->
+      <div class="price-card">
+        <h3>Half-Day Immersive</h3>
+        <div style="font-size: 0.85rem; color: var(--stone);">Up to 4 Hours</div>
+        <div class="price-amt">¥35,000</div>
+        <div class="price-note">Perfect for focused regional treks,<br>waterfront rambles, or early market lunch sweeps.</div>
+      </div>
+      
+      <!-- Full-Day Tier -->
+      <div class="price-card">
+        <h3>Full-Day Masterclass</h3>
+        <div style="font-size: 0.85rem; color: var(--stone);">Up to 8 Hours</div>
+        <div class="price-amt">¥60,000</div>
+        <div class="price-note">Our recommended complete exploration track.<br>Covers the full-day (~8 hours) premium bespoke journey.</div>
+      </div>
+      
+      <!-- Custom Tier -->
+      <div class="price-card">
+        <h3>Multi-Day Journeys</h3>
+        <div style="font-size: 0.85rem; color: var(--stone);">Tailored Experiences</div>
+        <div class="price-amt">Custom</div>
+        <div class="price-note">Bespoke pricing solutions<br>available immediately upon request.</div>
+      </div>
+    </div>
   </div>
-  <div class="info-card">
-    <h3>Logistics &amp; Transitions</h3>
-    <p>Yokohama pairs beautifully with a Kamakura itinerary — let Terry know if you are interested in potentially combining both destinations into your travel window.</p>
-    <p style="margin-top: 1rem;">Terry coordinates seamless meeting points directly at your hotel lobby or preferred transit terminal. All guiding experiences are strictly private with zero strangers or rigid bus tracking schedules.</p>
+</section>
+
+<!-- STANDARDIZED LOGISTICAL DETAILS BLOCK (STRUCTURE MAPPED FROM ASAKUSA) -->
+<div class="container details-section">
+  <dl class="details-grid">
+    <div>
+      <dt>What's Included</dt>
+      <dd>
+        <ul>
+          <li>Terry’s dedicated private guiding services and deep maritime historical commentary.</li>
+          <li>Completely flexible, self-paced control over our milestones and exploration speeds.</li>
+          <li>Curated artisan street-food selections and premium restaurant mapping support.</li>
+          <li>Custom hotel lobby or regional transit hub pick-up arrangements.</li>
+          <li>Up to 6 guests included in your private party at zero extra charge.</li>
+        </ul>
+      </dd>
+    </div>
+    <div>
+      <dt>Logistics &amp; Transitions</dt>
+      <dd>
+        <p>Yokohama pairs beautifully with an extended Kamakura historical itinerary — let Terry know if you are interested in potentially combining both destinations into your custom travel window.</p>
+        <p>Terry coordinates seamless meeting points directly at your hotel lobby or preferred transit terminal. All guiding experiences are strictly private with zero strangers or rigid bus tracking schedules.</p>
+        <p>Dynamic individual personal expenses like your daily meals, transit fares outside central Tokyo, and custom retail selections are handled independently on location.</p>
+      </dd>
+    </div>
+  </dl>
+
+  <!-- PRIVATE ADVANTAGE CARD EXTENSION -->
+  <div class="info-card-solo">
+    <h3>The Custom Private Advantage</h3>
+    <p>Every itinerary is completely exclusive to your party, crafted to match your exact pace, curiosities, and aesthetic style. Since this is a completely tailored, private experience, Terry seamlessly syncs tracking options to accommodate dynamic culinary detours or landscape photography targets without any stress.</p>
   </div>
 </div>
 
@@ -528,7 +657,7 @@
         <p style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: rgba(255, 255, 255, 0.8); margin: 0.5rem 0 0 0; padding: 0; font-weight: 300; line-height: 1.4;">Check Terry's calendar availability and submit your tour booking request instantly.</p>
       </div>
       <div style="flex: 1; text-align: right; min-width: 200px; box-sizing: border-box;">
-        <a href="../../../../../Downloads/availability.html" style="background: #ffffff; color: #de1c24; padding: 13px 26px; border-radius: 8px; font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap; transition: opacity 0.15s; display: inline-block; font-family: 'DM Sans', sans-serif; box-sizing: border-box;">View availability &amp; book &#8594;</a>
+        <a href="../../../Downloads/availability.html" style="background: #ffffff; color: #de1c24; padding: 13px 26px; border-radius: 8px; font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap; transition: opacity 0.15s; display: inline-block; font-family: 'DM Sans', sans-serif; box-sizing: border-box;">View availability &amp; book &#8594;</a>
       </div>
     </div>
   </div>
@@ -536,6 +665,7 @@
 
 <div style="padding-bottom: 4rem;"></div>
 
+<!-- FIXED FOOTER -->
 <footer style="background: #f8f0e8; border-top: 4px solid #de1c24; padding: 2.5rem 4vw; font-family: 'DM Sans', sans-serif; box-sizing: border-box; width: 100%;">
   <div style="max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; box-sizing: border-box;">
     <div style="text-align: left; box-sizing: border-box;">
@@ -544,9 +674,9 @@
       <div style="font-size: 12px; color: #a09080;">© 2026 Tokyo with Terry · Japan</div>
     </div>
     <div style="display: flex; gap: 1.5rem; align-items: center; box-sizing: border-box;">
-      <a href="../../../../../Downloads/index.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">&#8592; Home</a>
-      <a href="../../../../../Downloads/availability.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">Availability</a>
-      <a href="../../../../../Downloads/reservations.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">Reserve</a>
+      <a href="../../../Downloads/index.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">&#8592; Home</a>
+      <a href="../../../Downloads/availability.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">Availability</a>
+      <a href="../../../Downloads/reservations.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">Reserve</a>
     </div>
   </div>
 </footer>
