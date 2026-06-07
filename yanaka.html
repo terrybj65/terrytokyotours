@@ -53,6 +53,24 @@
     .section-title { font-family: 'DM Serif Display', serif; font-size: 36px; font-weight: 400; margin-bottom: 0.5rem; line-height: 1.2; }
     .section-sub { font-size: 16px; color: var(--stone); margin-bottom: 2.5rem; max-width: 560px; }
 
+    /* ── NAV ── */
+    .nav-desktop-links { display: flex; list-style: none; justify-content: center; align-items: center; gap: 2.5rem; margin: 0; padding: 0; }
+    .nav-book-btn { background: var(--red); color: #fff; border: none; padding: 10px 22px; border-radius: var(--radius-sm); font-size: 14px; cursor: pointer; text-decoration: none; font-family: 'DM Sans', sans-serif; font-weight: 500; white-space: nowrap; }
+
+    /* Hamburger button */
+    .nav-hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; transition: transform 0.25s, opacity 0.25s; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile drawer */
+    .nav-mobile-drawer { display: none; position: absolute; top: 65px; left: 0; right: 0; background: rgba(250,250,248,0.98); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 1.25rem 4vw 1.5rem; z-index: 99; }
+    .nav-mobile-drawer.open { display: block; }
+    .nav-mobile-drawer ul { list-style: none; padding: 0; margin: 0 0 1.25rem; display: flex; flex-direction: column; gap: 0; }
+    .nav-mobile-drawer li a { display: block; padding: 0.75rem 0; font-size: 16px; color: var(--stone); text-decoration: none; border-bottom: 1px solid var(--border); }
+    .nav-mobile-drawer .nav-book-mobile { display: block; width: 100%; text-align: center; background: var(--red); color: #fff; padding: 13px; border-radius: var(--radius-sm); font-size: 15px; font-weight: 500; text-decoration: none; }
+
     /* ── HERO SECTION ── */
     .hero { position: relative; height: 70vh; min-height: 480px; overflow: hidden; }
     .hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -60,7 +78,7 @@
     .hero-content { width: 100%; max-width: 1300px; margin: 0 auto; padding: 0 4vw; }
     .hero-text-wrap { max-width: 650px; }
     .hero-eyebrow { font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #f9a07a; margin-bottom: 1rem; text-shadow: 1px 1px 6px rgba(0,0,0,0.8); }
-    .hero h1 { font-family: 'Shippori Mincho', serif; font-size: clamp(44px, 5vw, 64px); color: #ffffff; line-height: 1.15; margin-bottom: 1rem; font-weight: 800; text-shadow: 1px 1px 8px rgba(0,0,0,0.8); }
+    .hero h1 { font-family: 'Shippori Mincho', serif; font-size: clamp(36px, 5vw, 64px); color: #ffffff; line-height: 1.15; margin-bottom: 1rem; font-weight: 800; text-shadow: 1px 1px 8px rgba(0,0,0,0.8); }
     .hero p { font-size: 18px; color: #ffffff; line-height: 1.6; margin-bottom: 2rem; text-shadow: 1px 1px 6px rgba(0,0,0,0.8); }
     .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
     .btn-primary { background: var(--red); color: #fff; border: none; padding: 13px 28px; border-radius: var(--radius-sm); font-size: 15px; cursor: pointer; text-decoration: none; transition: background 0.15s; display: inline-block; font-weight: 500; }
@@ -157,12 +175,16 @@
       .intro p { font-size: 1rem; }
 
       /* Metric strip */
-      .tod-inner { flex-direction: column; }
-      .tod-item { border-right: none; border-bottom: 1px solid rgba(26,74,106,0.15); padding: 1rem 1.25rem; }
+      .tod-inner { flex-direction: column; align-items: stretch; }
+      .tod-item { border-right: none; border-bottom: 1px solid rgba(42,77,52,0.15); padding: 1rem 1.25rem; }
       .tod-item:last-child { border-bottom: none; }
 
-      /* Stops: single column */
-      .stop { grid-template-columns: 1fr; gap: 1.5rem; padding: 2.5rem 0; }
+      /* Nav pills — allow horizontal scroll on mobile */
+      .section-nav-inner { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+      .nav-pills { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 4px; width: 100%; -webkit-overflow-scrolling: touch; }
+
+      /* Stops: single column, reset even-row ordering */
+      .stop { grid-template-columns: 1fr !important; gap: 1.5rem; padding: 2.5rem 0; }
       .stop:nth-child(even) .stop-img-wrap { order: 0; }
       .stop:nth-child(even) .stop-content  { order: 0; }
       .stop-title { font-size: 1.7rem; }
@@ -189,20 +211,27 @@
 <body>
 
 <nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(0,0,0,0.1);padding:0 4vw;display:flex;align-items:center;justify-content:space-between;height:65px;">
-  <div style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--ink);">Tokyo with <span style="color:var(--red);">Terry</span></div>
-  <ul class="nav-desktop-links" style="display:flex;list-style:none;justify-content:center;align-items:center;gap:2.5rem;margin:0;padding:0;">
-    <li><a href="/terrytokyotours/index.html#areas" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Areas</a></li>
-    <li><a href="/terrytokyotours/index.html#tours" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Tours</a></li>
-    <li><a href="/terrytokyotours/index.html#about" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">About</a></li>
-    <li><a href="/terrytokyotours/index.html#contact" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Contact</a></li>
+  <a href="index.html" style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--ink);text-decoration:none;">Tokyo with <span style="color:var(--red);">Terry</span></a>
+  <ul class="nav-desktop-links">
+    <li><a href="index.html#areas" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Areas</a></li>
+    <li><a href="index.html#tours" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Tours</a></li>
+    <li><a href="index.html#about" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">About</a></li>
+    <li><a href="index.html#contact" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Contact</a></li>
   </ul>
-  <a href="/terrytokyotours/availability.html" class="nav-book-btn" style="background:var(--red);color:#fff;border:none;padding:10px 22px;border-radius:var(--radius-sm);font-size:14px;cursor:pointer;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:500;">Book a tour</a>
-  <div id="navHamburger" class="nav-hamburger" style="display:none; flex-direction:column; gap:4px; cursor:pointer;">
-    <div style="width:24px; height:2px; background:var(--ink);"></div>
-    <div style="width:24px; height:2px; background:var(--ink);"></div>
-    <div style="width:24px; height:2px; background:var(--ink);"></div>
-  </div>
+  <a href="availability.html" class="nav-book-btn">Book a tour</a>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="nav-mobile-drawer" id="navDrawer">
+  <ul>
+    <li><a href="index.html#areas">Areas</a></li>
+    <li><a href="index.html#tours">Tours</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <a href="availability.html" class="nav-book-mobile">Book a tour →</a>
+</div>
 
 <section class="hero">
   <img src="https://images.unsplash.com/photo-1578469550956-0e16b69c6a3d?w=1600&q=85&fit=crop" alt="Quiet morning light filtering down a historic temple lane in Yanaka" />
@@ -214,7 +243,7 @@
         <p>Old shitamachi — the Tokyo that time forgot. Winding pathways, preserved wooden temples, and local artisan legacy.</p>
         <div class="hero-btns">
           <a href="#highlights-start" class="btn-primary">Explore highlights ↓</a>
-          <a href="/terrytokyotours/availability.html" class="btn-ghost">Check availability</a>
+          <a href="availability.html" class="btn-ghost">Check availability</a>
         </div>
       </div>
     </div>
@@ -365,7 +394,7 @@
 <footer style="background: #f8f0e8; border-top: 4px solid #de1c24; padding: 2.5rem 4vw; margin-top: 4rem;">
   <div class="footer-inner" style="max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
     <div><div style="font-size: 15px; font-weight: 700; color: #2d3748;">谷中 · Yanaka</div></div>
-    <div class="footer-links" style="display: flex; gap: 1.5rem;"><a href="/terrytokyotours/index.html">← Home</a></div>
+    <div class="footer-links" style="display: flex; gap: 1.5rem;"><a href="index.html" style="color:#a0522d;text-decoration:none;font-size:13px;">← Home</a></div>
   </div>
 </footer>
 
