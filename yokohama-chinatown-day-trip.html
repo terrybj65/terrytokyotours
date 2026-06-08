@@ -450,6 +450,9 @@
       .info-card-solo { padding: 1.75rem 1.25rem; }
       .footer-inner { flex-direction: column !important; text-align: center !important; align-items: center !important; }
       .footer-links { justify-content: center !important; }
+      .cta-flex { flex-direction: column !important; }
+      .cta-flex-btn { text-align: center !important; }
+      .cta-flex-btn a { display: block; width: 100%; text-align: center; }
     }
   </style>
 </head>
@@ -694,12 +697,12 @@
 <!-- CTA CARD AND FOOTER -->
 <div style="width: 100%; background: transparent; box-sizing: border-box;">
   <div style="max-width: 1300px; margin: 4rem auto 0; padding: 0 4vw; box-sizing: border-box;">
-    <div style="background: #de1c24; border-radius: 12px; padding: 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; box-sizing: border-box; text-align: left;">
-      <div style="flex: 2; min-width: 300px; box-sizing: border-box;">
+    <div class="cta-flex" style="background: #de1c24; border-radius: 12px; padding: 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; box-sizing: border-box; text-align: left;">
+      <div style="flex: 2; min-width: 0; box-sizing: border-box;">
         <h3 style="font-family: 'DM Serif Display', serif; font-size: 28px; color: #ffffff; font-weight: 400; margin: 0; padding: 0; line-height: 1.2;">Ready to discover Yokohama?</h3>
         <p style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: rgba(255, 255, 255, 0.8); margin: 0.5rem 0 0 0; padding: 0; font-weight: 300; line-height: 1.4;">Check Terry's calendar availability and submit your tour booking request instantly.</p>
       </div>
-      <div style="flex: 1; text-align: right; min-width: 0; box-sizing: border-box;">
+      <div class="cta-flex-btn" style="flex: 1; text-align: right; min-width: 0; box-sizing: border-box;">
         <a href="../../../Downloads/availability.html" style="background: #ffffff; color: #de1c24; padding: 13px 26px; border-radius: 8px; font-size: 15px; font-weight: 500; text-decoration: none; display: inline-block; font-family: 'DM Sans', sans-serif; box-sizing: border-box;">View availability &amp; book &#8594;</a>
       </div>
     </div>
