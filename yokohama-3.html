@@ -1,170 +1,472 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" content="Explore Yokohama with Terry — private guided tours of Yokohama, Tokyo."/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Explore Yokohama with Terry — private guided tours of Chinatown, Minato Mirai waterfront, and Japan's most international city."/>
   <meta property="og:title" content="Yokohama Area Guide — Tokyo with Terry"/>
   <meta property="og:description" content="Explore Yokohama with Terry — Chinatown, Minato Mirai waterfront and Japan's most international city."/>
   <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://tokyowithterry.com/yokohama-3.html"/>
+  <meta property="og:url" content="https://terrybj65.github.io/terrytokyotours/yokohama-3.html"/>
   <meta property="og:image" content="https://tokyowithterry.com/yokohama evening.jpg"/>
   <meta property="og:locale" content="en_GB"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Yokohama Area Guide — Tokyo with Terry"/>
   <meta name="twitter:description" content="Explore Yokohama with Terry — Chinatown, Minato Mirai waterfront and Japan's most international city."/>
   <meta name="twitter:image" content="https://tokyowithterry.com/yokohama evening.jpg"/>
-  <link rel="canonical" href="https://tokyowithterry.com/yokohama-3.html"/>
-<title>Yokohama — Tokyo Private Tours with Terry</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-:root{--red:#D00000;--red-dark:#B00000;--red-light:#FFE5E5;--text:#1C2833;--text-muted:#5D6D7E;--border:rgba(0,0,0,0.1);--bg:#FAFAF8;--bg-card:#ffffff;--bg-surface:#F4F3EF;--radius:12px;--radius-sm:8px;}
-html{scroll-behavior:smooth;}html,body{overflow-x:hidden;}img,video{max-width:100%;}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.6;}
-nav{position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;}
-.nav-logo{font-family:'DM Serif Display',serif;font-size:20px;color:var(--text);display:flex;align-items:center;gap:8px;text-decoration:none;}
-.nav-logo span{color:var(--red);}
-.nav-right{display:flex;align-items:center;gap:1.5rem;}
-.back-link{font-size:14px;color:var(--text-muted);text-decoration:none;transition:color .15s;}
-.back-link:hover{color:var(--text);}
-.book-btn{background:var(--red);color:#fff;padding:9px 20px;border-radius:var(--radius-sm);font-size:14px;font-family:'DM Sans',sans-serif;text-decoration:none;transition:background .15s;}
-.book-btn:hover{background:var(--red-dark);}
-.container{max-width:1100px;margin:0 auto;padding:0 2rem;}
-section{padding:5rem 0;}
-.section-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem;}
-.section-title{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,42px);font-weight:400;margin-bottom:.5rem;line-height:1.2;}
-.section-sub{font-size:16px;color:var(--text-muted);margin-bottom:2.5rem;max-width:560px;}
-/* Hero */
-.page-hero{position:relative;height:52vh;min-height:340px;overflow:hidden;}
-.page-hero img{width:100%;height:100%;object-fit:cover;display:block;}
-.page-hero-overlay{position:absolute;inset:0;background:transparent;display:flex;align-items:flex-end;}
-.page-hero-content{padding:2.5rem 2rem;max-width:1100px;margin:0 auto;width:100%;}
-.page-hero-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#f9a07a;margin-bottom:.5rem;}
-.page-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(32px,5vw,52px);color:#fff;font-weight:400;line-height:1.15;text-shadow:0 2px 12px rgba(0,0,0,.5);}
-.page-hero p{font-size:16px;color:rgba(255,255,255,.8);margin-top:.75rem;max-width:480px;text-shadow:0 1px 6px rgba(0,0,0,.5);}
-/* Content cards */
-.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
-.info-card{background:var(--bg-card);border:0.5px solid var(--border);border-radius:var(--radius);padding:1.75rem;}
-.info-card h3{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;margin-bottom:.75rem;}
-.info-card p,.info-card li{font-size:15px;color:var(--text-muted);line-height:1.8;}
-.info-card ul{padding-left:1.25rem;}
-.info-card li{margin-bottom:.35rem;}
-/* Highlights */
-.highlights{display:flex;gap:2rem;flex-wrap:wrap;margin-bottom:2.5rem;}
-.highlight{display:flex;align-items:flex-start;gap:12px;}
-.highlight-icon{font-size:24px;flex-shrink:0;}
-.highlight-text h4{font-size:15px;font-weight:600;margin-bottom:2px;}
-.highlight-text p{font-size:14px;color:var(--text-muted);}
-/* Meta strip */
-.meta-strip{display:flex;gap:2rem;flex-wrap:wrap;padding:1.5rem 0;border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);margin-bottom:2.5rem;}
-.meta-item{display:flex;flex-direction:column;gap:3px;}
-.meta-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);}
-.meta-value{font-size:15px;font-weight:500;color:var(--text);}
-/* CTA card */
-.cta-card{background:var(--red);border-radius:var(--radius);padding:2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-top:3rem;}
-.cta-card h3{font-family:'DM Serif Display',serif;font-size:26px;color:#fff;font-weight:400;}
-.cta-card p{font-size:15px;color:rgba(255,255,255,.8);margin-top:.35rem;}
-.cta-card a{background:#fff;color:var(--red);padding:12px 26px;border-radius:var(--radius-sm);font-size:15px;font-weight:500;text-decoration:none;white-space:nowrap;transition:opacity .15s;}
-.cta-card a:hover{opacity:.88;}
+  <link rel="canonical" href="https://terrybj65.github.io/terrytokyotours/yokohama-3.html"/>
 
+  <title>Yokohama — Tokyo Private Tours with Terry</title>
 
- @media (max-width: 700px) {
-      .nav-links { display: none; }
-      .areas-grid { grid-template-columns: 1fr 1fr !important; gap: 10px; }
-      .area-card { height: 140px; }
-      .stats-section .container { grid-template-columns: 1fr; }
-      .stat-item { border-right: none; border-bottom: 0.5px solid var(--border); }
-      .stat-item:last-child { border-bottom: none; }
-      .profile-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .profile-avatar { width: 100%; height: 260px; }
-      .section-title { font-size: 28px; }
-      .hero h1 { font-size: 36px; }
-      .cta-content h2 { font-size: 32px; }
-      .cta-input { width: 100%; }
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --ink: #14120e;
+      --paper: #f0ede6;
+      --moss: #1a4a6a;
+      --sage: #255a80;
+      --stone: #7a7468;
+      --gold: #b07820;
+      --border: rgba(20,18,14,0.12);
+      --red: #de1c24;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --bg-card: #ffffff;
     }
-</style>
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    img { max-width: 100%; height: auto; display: block; }
+    html { overflow-x: hidden; max-width: 100%; }
+    body { background: var(--paper); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 300; overflow-x: hidden; max-width: 100%; }
+
+    .container { max-width: 1300px; margin: 0 auto; padding: 0 4vw; }
+
+    .section-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red); margin-bottom: 0.5rem; }
+    .section-title { font-family: 'DM Serif Display', serif; font-size: 36px; font-weight: 400; margin-bottom: 0.5rem; line-height: 1.2; }
+    .section-sub { font-size: 16px; color: var(--stone); margin-bottom: 2.5rem; max-width: 560px; }
+
+    /* ── NAV ── */
+    .nav-desktop-links { display: flex; list-style: none; justify-content: center; align-items: center; gap: 2.5rem; margin: 0; padding: 0; }
+    .nav-book-btn { background: var(--red); color: #fff; border: none; padding: 10px 22px; border-radius: var(--radius-sm); font-size: 14px; cursor: pointer; text-decoration: none; font-family: 'DM Sans', sans-serif; font-weight: 500; white-space: nowrap; }
+    .nav-hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; transition: transform 0.25s, opacity 0.25s; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-mobile-drawer { display: none; position: absolute; top: 65px; left: 0; right: 0; background: rgba(250,250,248,0.98); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 1.25rem 4vw 1.5rem; z-index: 99; }
+    .nav-mobile-drawer.open { display: block; }
+    .nav-mobile-drawer ul { list-style: none; padding: 0; margin: 0 0 1.25rem; display: flex; flex-direction: column; }
+    .nav-mobile-drawer li a { display: block; padding: 0.75rem 0; font-size: 16px; color: var(--stone); text-decoration: none; border-bottom: 1px solid var(--border); }
+    .nav-mobile-drawer .nav-book-mobile { display: block; width: 100%; text-align: center; background: var(--red); color: #fff; padding: 13px; border-radius: var(--radius-sm); font-size: 15px; font-weight: 500; text-decoration: none; }
+
+    /* ── HERO ── */
+    .hero { position: relative; height: 70vh; min-height: 480px; overflow: hidden; }
+    .hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.35); display: flex; align-items: center; }
+    .hero-content { width: 100%; max-width: 1300px; margin: 0 auto; padding: 0 4vw; }
+    .hero-text-wrap { max-width: 650px; }
+    .hero-eyebrow { font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #f9a07a; margin-bottom: 1rem; text-shadow: 1px 1px 6px rgba(0,0,0,0.8); }
+    .hero h1 { font-family: 'Shippori Mincho', serif; font-size: clamp(36px, 5vw, 64px); color: #ffffff; line-height: 1.15; margin-bottom: 1rem; font-weight: 800; text-shadow: 1px 1px 8px rgba(0,0,0,0.8); }
+    .hero p { font-size: 18px; color: #ffffff; line-height: 1.6; margin-bottom: 2rem; text-shadow: 1px 1px 6px rgba(0,0,0,0.8); }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary { background: var(--red); color: #fff; border: none; padding: 13px 28px; border-radius: var(--radius-sm); font-size: 15px; cursor: pointer; text-decoration: none; transition: background 0.15s; display: inline-block; font-weight: 500; }
+    .btn-primary:hover { background: #B00000; }
+    .btn-ghost { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.7); padding: 13px 28px; border-radius: var(--radius-sm); font-size: 15px; cursor: pointer; text-decoration: none; display: inline-block; }
+
+    /* ── INTRO ── */
+    .intro { max-width: 900px; margin: 5rem auto; padding: 0 4vw; text-align: center; }
+    .intro-kicker { display: inline-block; font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--moss); margin-bottom: 1.2rem; font-weight: 500; }
+    .intro p { font-size: 1.2rem; line-height: 1.8; color: var(--stone); }
+
+    /* ── METRIC STRIP ── */
+    .tod-bar { max-width: 1300px; margin: 0 auto 4.5rem; padding: 0 4vw; }
+    .tod-inner { display: flex; align-items: center; border: 1px solid rgba(26,74,106,0.15); background: rgba(255,255,255,0.2); }
+    .tod-item { flex: 1; padding: 1.25rem 1.75rem; border-right: 1px solid rgba(26,74,106,0.15); display: flex; flex-direction: column; gap: 0.25rem; }
+    .tod-item:last-child { border-right: none; }
+    .tod-label { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--moss); }
+    .tod-value { font-size: 0.92rem; font-weight: 500; color: var(--ink); line-height: 1.4; }
+
+    /* ── SECTION NAV PILLS ── */
+    .section-nav { max-width: 1300px; margin: 0 auto 4rem; padding: 0 4vw; }
+    .section-nav-inner { display: flex; align-items: center; gap: 1.5rem; background: rgba(26,74,106,0.04); border: 1px solid rgba(26,74,106,0.12); border-left: 4px solid var(--sage); padding: 1.2rem 1.8rem; flex-wrap: wrap; }
+    .nav-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--moss); font-weight: 500; }
+    .nav-pills { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+    .nav-pill { font-size: 0.78rem; font-weight: 400; color: var(--ink); background: rgba(255,255,255,0.6); border: 1px solid rgba(26,74,106,0.15); padding: 0.4rem 1rem; border-radius: 100px; text-decoration: none; transition: all 0.2s ease; }
+    .nav-pill:hover { background: var(--sage); color: #fff; border-color: var(--sage); }
+
+    /* ── DIVIDER ── */
+    .divider { display: flex; align-items: center; gap: 1.5rem; max-width: 1300px; margin: 0 auto 3rem; padding: 0 4vw; color: var(--sage); font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; }
+    .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    /* ── STOPS ── */
+    .stops { max-width: 1300px; margin: 0 auto; padding: 0 4vw 2rem; }
+    .stop { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3.5rem; border-top: 1px solid var(--border); padding: 4rem 0; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; align-items: center; }
+    .stop.visible { opacity: 1; transform: translateY(0); }
+    .stop:nth-child(even) .stop-img-wrap { order: 2; }
+    .stop:nth-child(even) .stop-content  { order: 1; }
+    .stop-img-wrap { position: relative; overflow: hidden; aspect-ratio: 16/11; border-radius: 6px; width: 100%; }
+    .stop-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+    .stop:hover .stop-img-wrap img { transform: scale(1.02); }
+    .stop-meta-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+    .stop-tag { font-size: 11px; font-weight: 500; letter-spacing: 0.05em; color: var(--gold); background: rgba(176,120,32,0.08); padding: 0.2rem 0.6rem; border-radius: 4px; }
+    .stop-timeline { font-size: 12px; color: var(--stone); font-weight: 400; }
+    .stop-content { padding: 0.5rem 0; display: flex; flex-direction: column; justify-content: center; }
+    .stop-category { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--moss); margin-bottom: 0.5rem; font-weight: 500; }
+    .stop-title { font-family: 'Shippori Mincho', serif; font-size: clamp(2rem, 2.4vw, 2.6rem); font-weight: 600; line-height: 1.25; margin-bottom: 0.3rem; }
+    .stop-jp { font-size: 0.88rem; color: var(--stone); margin-bottom: 0.75rem; letter-spacing: 0.06em; }
+    .stop-map-link { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; color: var(--moss); text-decoration: none; font-weight: 500; margin-bottom: 1.5rem; transition: color 0.15s; }
+    .stop-map-link:hover { color: var(--red); }
+    .stop-desc { font-size: 0.98rem; line-height: 1.8; color: #3e3a34; margin-bottom: 1.5rem; }
+    .stop-tip { border-left: 3px solid var(--gold); padding-left: 1.1rem; font-size: 0.85rem; color: var(--stone); font-style: italic; line-height: 1.65; }
+
+    /* ── PRICING ── */
+    .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 1.5rem; }
+    .price-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 2.5rem 1.5rem; text-align: center; transition: transform 0.2s, border-color 0.2s; }
+    .price-card:hover { transform: translateY(-2px); border-color: var(--sage); }
+    .price-card h3 { font-family: 'Shippori Mincho', serif; font-size: 1.25rem; color: var(--ink); margin-bottom: 0.5rem; }
+    .price-amt { font-family: 'DM Serif Display', serif; font-size: 2.2rem; color: var(--red); margin: 0.8rem 0; }
+    .price-note { font-size: 0.85rem; color: var(--stone); line-height: 1.4; }
+
+    /* ── DETAILS ── */
+    .details-section { border-top: 1px solid var(--border); padding-top: 5rem; margin-top: 3rem; }
+    .details-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4rem; }
+    .details-grid dt { font-family: 'Shippori Mincho', serif; font-size: 1.6rem; font-weight: 600; color: var(--ink); margin-bottom: 1.5rem; }
+    .details-grid dd { margin: 0; }
+    .details-grid ul { list-style: none; padding: 0; }
+    .details-grid li { position: relative; padding-left: 1.5rem; font-size: 0.98rem; line-height: 1.7; color: var(--stone); margin-bottom: 0.8rem; }
+    .details-grid li::before { content: "—"; position: absolute; left: 0; color: var(--gold); }
+    .details-grid p { font-size: 0.98rem; line-height: 1.75; color: var(--stone); margin-bottom: 1.2rem; }
+    .details-grid p:last-child { margin-bottom: 0; }
+    .info-card-solo { background: #ffffff; border: 1px solid var(--border); border-radius: var(--radius); padding: 2.5rem; margin-top: 4rem; }
+    .info-card-solo h3 { font-family: 'Shippori Mincho', serif; font-size: 22px; font-weight: 600; margin-bottom: 1.25rem; color: var(--ink); }
+    .info-card-solo p { font-size: 14px; color: var(--stone); line-height: 1.7; margin-bottom: 0.65rem; }
+
+    /* ── FOOTER ── */
+    .footer-inner { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+    .footer-links { display: flex; gap: 1.5rem; align-items: center; }
+    .footer-links a { color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      .nav-desktop-links { display: none; }
+      .nav-book-btn { display: none; }
+      .nav-hamburger { display: flex; }
+      .hero { height: 55vh; min-height: 320px; }
+      .hero p { font-size: 15px; }
+      .hero-btns { flex-direction: column; gap: 10px; }
+      .btn-primary, .btn-ghost { width: 100%; text-align: center; padding: 13px 20px; }
+      .intro { margin: 2.5rem auto; }
+      .intro p { font-size: 1rem; }
+      .tod-inner { flex-direction: column; align-items: stretch; }
+      .tod-item { border-right: none; border-bottom: 1px solid rgba(26,74,106,0.15); padding: 1rem 1.25rem; }
+      .tod-item:last-child { border-bottom: none; }
+      .section-nav-inner { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+      .nav-pills { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 4px; width: 100%; -webkit-overflow-scrolling: touch; }
+      .stop { grid-template-columns: 1fr !important; gap: 1.5rem; padding: 2.5rem 0; }
+      .stop:nth-child(even) .stop-img-wrap { order: 0; }
+      .stop:nth-child(even) .stop-content  { order: 0; }
+      .stop-title { font-size: 1.7rem; }
+      .price-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .details-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .details-section { padding-top: 3rem; }
+      .section-title { font-size: 26px; }
+      .info-card-solo { padding: 1.75rem 1.25rem; }
+      .cta-banner { flex-direction: column !important; }
+      .cta-banner-btn { text-align: center !important; }
+      .cta-banner-btn a { display: block; width: 100%; text-align: center; }
+      .footer-inner { flex-direction: column !important; text-align: center !important; align-items: center !important; }
+      .footer-links { justify-content: center !important; }
+    }
+  </style>
 </head>
 <body>
-<nav>
-  <a class="nav-logo" href="index.html">Tokyo with <span>Terry</span></a>
-  <div class="nav-right">
-    <a class="back-link" href="index.html">&#8592; Home</a>
-    <a class="back-link" href="reservations.html">Reserve</a>
-    <a class="book-btn" href="availability.html">Check availability</a>
-  </div>
-</nav>
 
-<div class="page-hero">
-  <img src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=1200&q=85&fit=crop" alt="Yokohama"/>
-  <div class="page-hero-overlay">
-    <div class="page-hero-content container">
-      <div class="page-hero-label">Area Guide</div>
-      <h1>Yokohama</h1>
-      <p>Japan's most international city — port, Chinatown, and the open sea.</p>
+<nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(0,0,0,0.1);padding:0 4vw;display:flex;align-items:center;justify-content:space-between;height:65px;">
+  <a href="index.html" style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--ink);text-decoration:none;">Tokyo with <span style="color:var(--red);">Terry</span></a>
+  <ul class="nav-desktop-links">
+    <li><a href="index.html#areas" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Areas</a></li>
+    <li><a href="index.html#tours" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Tours</a></li>
+    <li><a href="index.html#about" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">About</a></li>
+    <li><a href="index.html#contact" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Contact</a></li>
+  </ul>
+  <a href="availability.html" class="nav-book-btn">Book a tour</a>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile-drawer" id="navDrawer">
+  <ul>
+    <li><a href="index.html#areas">Areas</a></li>
+    <li><a href="index.html#tours">Tours</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <a href="availability.html" class="nav-book-mobile">Book a tour →</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <img src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=1600&q=85&fit=crop" alt="Yokohama waterfront at dusk"/>
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <div class="hero-text-wrap">
+        <div class="hero-eyebrow">Day Trip from Tokyo · Area Guide</div>
+        <h1>Yokohama</h1>
+        <p>Japan's most international city — a port, Chinatown, and the open sea. Only 30 minutes from Tokyo but a world apart.</p>
+        <div class="hero-btns">
+          <a href="availability.html" class="btn-primary">Book this day trip</a>
+          <a href="availability.html" class="btn-ghost">Check availability</a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<section>
-  <div class="container">
-    <div class="meta-strip">
-      <div class="meta-item"><div class="meta-label">Best for</div><div class="meta-value">Day trips from Tokyo, waterfront walks, food, international history</div></div>
-      <div class="meta-item"><div class="meta-label">Best time to visit</div><div class="meta-value">Full day — there's too much to rush</div></div>
+<!-- INTRO -->
+<div class="intro">
+  <div class="intro-kicker">横浜 · Yokohama</div>
+  <p>Yokohama grew up differently from Tokyo — shaped by its port and the foreign traders who settled here from the 1850s onward. That international character still runs through the city today: in its vast Chinatown, its breezy waterfront, and the Meiji-era Western houses perched quietly above the bay. Terry has been coming here for decades and knows exactly where to take you.</p>
+</div>
+
+<!-- METRIC STRIP -->
+<div class="tod-bar">
+  <div class="tod-inner">
+    <div class="tod-item">
+      <div class="tod-label">From Tokyo</div>
+      <div class="tod-value">30 min by train</div>
     </div>
+    <div class="tod-item">
+      <div class="tod-label">Best Duration</div>
+      <div class="tod-value">Full day</div>
+    </div>
+    <div class="tod-item">
+      <div class="tod-label">Best For</div>
+      <div class="tod-value">Food, history, waterfront, architecture</div>
+    </div>
+    <div class="tod-item">
+      <div class="tod-label">Tour Type</div>
+      <div class="tod-value">Fully private · No groups</div>
+    </div>
+    <div class="tod-item">
+      <div class="tod-label">Character</div>
+      <div class="tod-value">Cosmopolitan · Port city · Relaxed</div>
+    </div>
+  </div>
+</div>
 
-    <div class="section-label">Area Guide</div>
-    <div class="section-title">Yokohama</div>
-    <p style="font-size:16px;color:var(--text-muted);line-height:1.9;max-width:680px;margin-bottom:3rem;">Yokohama grew up differently from Tokyo — shaped by its port and the foreign traders who settled here from the 1850s onward. That international character still runs through the city today: in its Chinatown (Japan's largest), its Western-style Yamate bluff houses, and its breezy waterfront feel. Only 30 minutes from central Tokyo but a completely different atmosphere.</p>
+<!-- SECTION NAV -->
+<div class="section-nav">
+  <div class="section-nav-inner">
+    <span class="nav-label">Highlights</span>
+    <div class="nav-pills">
+      <a href="#chinatown" class="nav-pill">Chinatown</a>
+      <a href="#minatomirai" class="nav-pill">Minato Mirai</a>
+      <a href="#yamashita" class="nav-pill">Yamashita Park</a>
+      <a href="#osanbashi" class="nav-pill">Osanbashi Pier</a>
+      <a href="#yamate" class="nav-pill">Yamate District</a>
+      <a href="#motomachi" class="nav-pill">Motomachi</a>
+    </div>
+  </div>
+</div>
 
-    <div class="section-label">What to see</div>
-    <div class="section-title" style="font-size:28px;">Highlights</div>
-    <div class="highlights" style="margin-top:1.5rem;"><div class="highlight">
-      <div class="highlight-icon">🏮</div>
-      <div class="highlight-text"><h4>Chinatown</h4><p>600+ restaurants, red lanterns, and the energy of Japan's biggest Chinese community</p></div>
-    </div><div class="highlight">
-      <div class="highlight-icon">🌊</div>
-      <div class="highlight-text"><h4>Minato Mirai</h4><p>Sleek modern waterfront with the iconic Landmark Tower</p></div>
-    </div><div class="highlight">
-      <div class="highlight-icon">⛵</div>
-      <div class="highlight-text"><h4>Yamashita Park</h4><p>Historic promenade with views of the harbour and moored ships</p></div>
-    </div><div class="highlight">
-      <div class="highlight-icon">🏘️</div>
-      <div class="highlight-text"><h4>Yamate District</h4><p>Meiji-era Western houses on a quiet hilltop above the city</p></div>
-    </div><div class="highlight">
-      <div class="highlight-icon">🚢</div>
-      <div class="highlight-text"><h4>Osanbashi Pier</h4><p>A stunning wave-shaped pier extending into the bay</p></div>
-    </div></div>
+<div class="divider">Six highlights · Private guided experience</div>
 
-    <div class="info-grid" style="margin-top:2rem;">
-      <div class="info-card">
-        <h3>Touring this area with Terry</h3>
-        <p>Terry has been exploring Yokohama for years and knows it at every level — the famous spots and the hidden ones. He can include it as part of a wider day tour, or design a visit specifically around it.</p>
-        <p style="margin-top:1rem;">All tours are fully private — no shared groups, no set script. Tell Terry what you're interested in and he'll shape the experience around you.</p>
+<!-- STOPS -->
+<div class="stops">
+
+  <!-- STOP 01: Chinatown -->
+  <div class="stop" id="chinatown">
+    <div class="stop-img-wrap">
+      <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=900&q=85&fit=crop" alt="Yokohama Chinatown red lanterns"/>
+    </div>
+    <div class="stop-content">
+      <div class="stop-meta-header">
+        <span class="stop-tag">Food & Culture</span>
+        <span class="stop-timeline">Morning · Stop 01</span>
       </div>
-      <div class="info-card">
-        <h3>Getting here</h3>
-        <p>Terry will advise on the best way to reach Yokohama from wherever you're staying. Tokyo's train network is excellent, and he'll make sure you don't spend time lost at stations.</p>
-        <p style="margin-top:1rem;">Most areas in Greater Tokyo are within 30–60 minutes of central Tokyo by train.</p>
+      <div class="stop-category">Neighbourhood</div>
+      <h2 class="stop-title">Chinatown</h2>
+      <div class="stop-jp">横浜中華街</div>
+      <a href="https://maps.google.com/?q=Yokohama+Chinatown" target="_blank" rel="noopener noreferrer" class="stop-map-link">📍 View on Google Maps ↗</a>
+      <p class="stop-desc">Japan's largest Chinatown is a dense, intoxicating world unto itself — nearly 600 restaurants, traditional medicine shops, dim sum parlours, and ornate ceremonial gates draped in red lanterns. The community here has roots going back over 150 years to the opening of Yokohama port, and that depth of history is felt in every alleyway. Terry knows which restaurants the locals actually eat at, not just the tourist traps lining the main boulevard.</p>
+      <div class="stop-tip">💡 Come hungry — the steamed pork buns (nikuman) sold at street stalls here are legendary and should not be skipped under any circumstances.</div>
+    </div>
+  </div>
+
+  <!-- STOP 02: Minato Mirai -->
+  <div class="stop" id="minatomirai">
+    <div class="stop-img-wrap">
+      <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=900&q=85&fit=crop" alt="Minato Mirai waterfront Yokohama"/>
+    </div>
+    <div class="stop-content">
+      <div class="stop-meta-header">
+        <span class="stop-tag">Architecture & Views</span>
+        <span class="stop-timeline">Mid-Morning · Stop 02</span>
+      </div>
+      <div class="stop-category">Waterfront District</div>
+      <h2 class="stop-title">Minato Mirai</h2>
+      <div class="stop-jp">みなとみらい</div>
+      <a href="https://maps.google.com/?q=Minato+Mirai+Yokohama" target="_blank" rel="noopener noreferrer" class="stop-map-link">📍 View on Google Maps ↗</a>
+      <p class="stop-desc">The sleek, modern face of Yokohama — a reclaimed waterfront district of sweeping plazas, glittering towers, and the iconic 296-metre Landmark Tower. Minato Mirai, meaning "harbour of the future," was built on the site of the old Mitsubishi shipyards and retains fragments of that industrial past alongside its contemporary ambitions. Terry explains the remarkable urban transformation that turned this working port district into one of Japan's most admired city planning projects.</p>
+      <div class="stop-tip">💡 The Cosmo Clock 21 Ferris wheel is beautifully lit at dusk — if your timing works out, it makes for a spectacular end to the afternoon here.</div>
+    </div>
+  </div>
+
+  <!-- STOP 03: Yamashita Park -->
+  <div class="stop" id="yamashita">
+    <div class="stop-img-wrap">
+      <img src="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=900&q=85&fit=crop" alt="Yamashita Park Yokohama harbour"/>
+    </div>
+    <div class="stop-content">
+      <div class="stop-meta-header">
+        <span class="stop-tag">History & Harbour</span>
+        <span class="stop-timeline">Late Morning · Stop 03</span>
+      </div>
+      <div class="stop-category">Promenade</div>
+      <h2 class="stop-title">Yamashita Park</h2>
+      <div class="stop-jp">山下公園</div>
+      <a href="https://maps.google.com/?q=Yamashita+Park+Yokohama" target="_blank" rel="noopener noreferrer" class="stop-map-link">📍 View on Google Maps ↗</a>
+      <p class="stop-desc">Japan's first Western-style seaside promenade stretches along the edge of the bay where Yokohama opened to the world in 1859. The permanent mooring of the Hikawa Maru ocean liner — a retired 1930s passenger ship that once sailed between Yokohama and Seattle — acts as a centrepiece for the park. Stroll the waterfront as Terry recounts the extraordinary story of how this fishing village became Japan's gateway to the West within a single generation.</p>
+      <div class="stop-tip">💡 The Hikawa Maru can be boarded and explored inside — Terry recommends taking 30 minutes to walk its Art Deco interiors, which are remarkably well preserved.</div>
+    </div>
+  </div>
+
+  <!-- STOP 04: Osanbashi Pier -->
+  <div class="stop" id="osanbashi">
+    <div class="stop-img-wrap">
+      <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=900&q=85&fit=crop" alt="Osanbashi International Passenger Terminal Yokohama"/>
+    </div>
+    <div class="stop-content">
+      <div class="stop-meta-header">
+        <span class="stop-tag">Design & Architecture</span>
+        <span class="stop-timeline">Afternoon · Stop 04</span>
+      </div>
+      <div class="stop-category">Landmark</div>
+      <h2 class="stop-title">Osanbashi Pier</h2>
+      <div class="stop-jp">大さん橋</div>
+      <a href="https://maps.google.com/?q=Osanbashi+Pier+Yokohama" target="_blank" rel="noopener noreferrer" class="stop-map-link">📍 View on Google Maps ↗</a>
+      <p class="stop-desc">One of the most striking pieces of contemporary architecture in Japan — a vast undulating pier that extends 458 metres into Yokohama Bay, its rooftop forming an open public deck of gently rolling cedar-clad waves. Designed by London-based architects Farshid Moussavi and Alejandro Zaera-Polo, Osanbashi serves as the city's international cruise terminal while functioning as a beloved public park above the water. Walking its timber surface at golden hour, with the Minato Mirai skyline behind you and cargo ships in the distance, is genuinely unforgettable.</p>
+      <div class="stop-tip">💡 The rooftop is always open to the public and free to access — one of the best viewpoints in the entire city, and almost always beautifully uncrowded.</div>
+    </div>
+  </div>
+
+  <!-- STOP 05: Yamate District -->
+  <div class="stop" id="yamate">
+    <div class="stop-img-wrap">
+      <img src="https://images.unsplash.com/photo-1578469645742-46cae010e5d4?w=900&q=85&fit=crop" alt="Yamate Bluff Western houses Yokohama"/>
+    </div>
+    <div class="stop-content">
+      <div class="stop-meta-header">
+        <span class="stop-tag">History & Architecture</span>
+        <span class="stop-timeline">Mid-Afternoon · Stop 05</span>
+      </div>
+      <div class="stop-category">Hilltop Neighbourhood</div>
+      <h2 class="stop-title">Yamate District</h2>
+      <div class="stop-jp">山手</div>
+      <a href="https://maps.google.com/?q=Yamate+District+Yokohama" target="_blank" rel="noopener noreferrer" class="stop-map-link">📍 View on Google Maps ↗</a>
+      <p class="stop-desc">Climb the bluff above the city to Yamate — the leafy hilltop neighbourhood where Yokohama's foreign residents built their homes in the Meiji era. Elegant Victorian and Edwardian villas still stand along quiet, tree-lined streets, many now open as heritage museums. The contrast with the city below is remarkable: a tranquil, almost European enclave preserved above the noise and density of modern Yokohama. Terry brings the stories of the merchants, diplomats, and missionaries who shaped this quarter to vivid life.</p>
+      <div class="stop-tip">💡 The Harbour View Park at the edge of Yamate offers arguably the finest panoramic view of Yokohama Bay — arrive late afternoon for the best light over the water.</div>
+    </div>
+  </div>
+
+  <!-- STOP 06: Motomachi -->
+  <div class="stop" id="motomachi">
+    <div class="stop-img-wrap">
+      <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=900&q=85&fit=crop" alt="Motomachi shopping street Yokohama"/>
+    </div>
+    <div class="stop-content">
+      <div class="stop-meta-header">
+        <span class="stop-tag">Shopping & Local Life</span>
+        <span class="stop-timeline">Late Afternoon · Stop 06</span>
+      </div>
+      <div class="stop-category">Shopping Street</div>
+      <h2 class="stop-title">Motomachi</h2>
+      <div class="stop-jp">元町</div>
+      <a href="https://maps.google.com/?q=Motomachi+Shopping+Street+Yokohama" target="_blank" rel="noopener noreferrer" class="stop-map-link">📍 View on Google Maps ↗</a>
+      <p class="stop-desc">Running parallel to the base of the Yamate bluff, Motomachi is Yokohama's most distinctive shopping street — a graceful, low-rise boulevard of independent boutiques, long-established family businesses, and European-influenced café culture that grew up serving the foreign community above. Unlike Tokyo's fashion districts, Motomachi has resisted chain-store homogenisation and retains genuine neighbourhood character. Look for the old craftsmen's workshops tucked between the boutiques, producing leather goods, hats, and tailored clothing by hand as they have for generations.</p>
+      <div class="stop-tip">💡 End the day at one of the French-style bakeries on the street — Motomachi has been famous for its Western-style bread since the Meiji era, and the quality remains exceptional.</div>
+    </div>
+  </div>
+
+</div><!-- end .stops -->
+
+<!-- PRICING -->
+<section style="margin: 2rem 0; padding: 4rem 0; border-top: 1px solid var(--border);">
+  <div class="container">
+    <div class="section-label">Rates</div>
+    <h2 class="section-title">Private Tour Rates</h2>
+    <div class="section-sub">Flat hourly private guiding fees — no hidden costs. Transit from Tokyo not included.</div>
+    <div class="price-grid">
+      <div class="price-card">
+        <h3>Solo Explorer</h3>
+        <div class="price-amt">¥5,000<span style="font-size:1rem;color:var(--stone)">/hr</span></div>
+        <div class="price-note">One guest</div>
+      </div>
+      <div class="price-card">
+        <h3>Couple</h3>
+        <div class="price-amt">¥3,500<span style="font-size:1rem;color:var(--stone)">/hr</span></div>
+        <div class="price-note">Per person</div>
+      </div>
+      <div class="price-card">
+        <h3>Small Group</h3>
+        <div class="price-amt">¥2,500<span style="font-size:1rem;color:var(--stone)">/hr</span></div>
+        <div class="price-note">Per person · 3–5 guests</div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="container"><div class="cta-card">
-  <div><h3>Ready to book a tour of Yokohama?</h3><p>Check Terry's availability and send a booking request — it only takes a minute.</p></div>
-  <a href="availability.html">View availability &amp; book &#8594;</a>
-</div></div>
-<div style="padding-bottom:2rem;"></div>
+<!-- DETAILS -->
+<div class="container details-section">
+  <dl class="details-grid">
+    <div>
+      <dt>What's Included</dt>
+      <dd>
+        <ul>
+          <li>Fully private guiding throughout the day</li>
+          <li>Flexible self-paced itinerary built around your interests</li>
+          <li>Terry's personal introductions to local businesses</li>
+          <li>Insider food recommendations and ordering assistance</li>
+          <li>Historical and cultural context at every stop</li>
+        </ul>
+      </dd>
+    </div>
+    <div>
+      <dt>Good to Know</dt>
+      <dd>
+        <p>Yokohama is best enjoyed as a full-day trip from Tokyo — there's genuinely too much to see in half a day. Comfortable walking shoes are strongly recommended.</p>
+        <p>Transit costs (Yokohama is approx. 30–45 min from central Tokyo by Tokyu Toyoko Line or JR) are not included in the guiding rate. Terry will advise on the best route from your hotel.</p>
+      </dd>
+    </div>
+  </dl>
+  <div class="info-card-solo">
+    <h3>A City That Rewards Curiosity</h3>
+    <p>Most visitors see only Chinatown and Minato Mirai — and miss the quiet layers that make Yokohama genuinely special. Terry has spent decades exploring this city and knows where the real stories are: the side streets of Noge, the old warehouses of Bashamichi, the extraordinary Foreigners' Cemetery on the Yamate bluff. Tell him what interests you most and he'll build a day that goes well beyond the standard itinerary.</p>
+    <p>All tours are entirely private — no shared groups, no fixed script, no rushing to keep up with strangers.</p>
+  </div>
+</div>
 
-<footer>
+<!-- CTA BANNER -->
+<div class="container" style="margin-top:5rem;margin-bottom:4rem;">
+  <div style="background:var(--red);border-radius:var(--radius);padding:2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;">
+    <div class="cta-banner-text" style="flex:2;min-width:0;">
+      <h3 style="font-family:'DM Serif Display',serif;font-size:28px;color:#fff;font-weight:400;margin:0;line-height:1.2;">Ready to book a Yokohama day trip?</h3>
+      <p style="font-size:15px;color:rgba(255,255,255,0.8);margin:0.5rem 0 0;font-weight:300;line-height:1.4;">Check Terry's availability and send a booking request — it only takes a minute.</p>
+    </div>
+    <div class="cta-banner-btn" style="flex:1;text-align:right;min-width:0;">
+      <a href="availability.html" style="background:#fff;color:var(--red);padding:13px 26px;border-radius:var(--radius-sm);font-size:15px;font-weight:500;text-decoration:none;white-space:nowrap;display:inline-block;">View availability &amp; book &#8594;</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer style="background:#f8f0e8;border-top:4px solid var(--red);padding:2.5rem 4vw;font-family:'DM Sans',sans-serif;width:100%;">
   <div class="footer-inner">
-    <div class="footer-left">
-      <div class="footer-logo">横浜 · Yokohama</div>
-      <div class="footer-desc">Area guide · Tokyo Private Tours with Terry</div>
-      <div class="footer-copy">© 2026 Tokyo with Terry · Japan</div>
+    <div style="text-align:left;">
+      <div style="font-size:15px;font-weight:700;color:#2d3748;margin-bottom:4px;letter-spacing:0.02em;">横浜 · Yokohama</div>
+      <div style="font-size:13px;color:#7a6652;margin-bottom:4px;">Day trip area guide · Tokyo Private Tours with Terry</div>
+      <div style="font-size:12px;color:#a09080;">© 2026 Tokyo with Terry · Japan</div>
     </div>
     <div class="footer-links">
       <a href="index.html">&#8592; Home</a>
@@ -173,5 +475,31 @@ section{padding:5rem 0;}
     </div>
   </div>
 </footer>
+
+<script>
+  // Hamburger nav toggle
+  const hamburger = document.getElementById('navHamburger');
+  const drawer    = document.getElementById('navDrawer');
+  hamburger.addEventListener('click', () => {
+    const isOpen = drawer.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+  drawer.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      drawer.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Scroll animation
+  const stops = document.querySelectorAll('.stop');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  stops.forEach(s => observer.observe(s));
+</script>
+
 </body>
 </html>
