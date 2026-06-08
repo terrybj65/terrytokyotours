@@ -209,11 +209,11 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
 <body>
 
 <nav>
-  <a class="nav-logo" href="index.html">Tokyo with <span>Terry</span></a>
+  <a class="nav-logo" href="../../../Downloads/index.html">Tokyo with <span>Terry</span></a>
   <div class="nav-right">
-    <a class="nav-link" href="index.html">&#8592; Home</a>
-    <a class="nav-link" href="availability.html">Availability</a>
-    <a class="nav-btn" href="availability.html">Check dates</a>
+    <a class="nav-link" href="../../../Downloads/index.html">&#8592; Home</a>
+    <a class="nav-link" href="../../../Downloads/availability.html">Availability</a>
+    <a class="nav-btn" href="../../../Downloads/availability.html">Check dates</a>
   </div>
   <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -221,10 +221,10 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
 </nav>
 <div class="nav-mobile-drawer" id="navDrawer">
   <ul>
-    <li><a href="index.html">&#8592; Home</a></li>
-    <li><a href="availability.html">Availability</a></li>
+    <li><a href="../../../Downloads/index.html">&#8592; Home</a></li>
+    <li><a href="../../../Downloads/availability.html">Availability</a></li>
   </ul>
-  <a href="availability.html" class="nav-book-mobile">Check dates →</a>
+  <a href="../../../Downloads/availability.html" class="nav-book-mobile">Check dates →</a>
 </div>
 
 <!-- PAGE HEADER -->
@@ -268,12 +268,13 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
             <label for="tour">Tour *</label>
             <select id="tour" required>
               <option value="" disabled selected>Select a tour…</option>
-              <option value="Tokyo Highlights — Full Day (¥15,000 pp)">Tokyo Highlights — Full Day (¥15,000 pp)</option>
-              <option value="Hidden Tokyo — Half Day (¥12,000 pp)">Hidden Tokyo — Half Day (¥12,000 pp)</option>
-              <option value="Food & Culture — Half Day (¥12,000 pp)">Food & Culture — Half Day (¥12,000 pp)</option>
-              <option value="Kamakura Day Trip — Full Day (¥12,000 pp)">Kamakura Day Trip — Full Day (¥12,000 pp)</option>
-              <option value="Yokohama & Chinatown — Full Day (¥15,000 pp)">Yokohama & Chinatown — Full Day (¥15,000 pp)</option>
-              <option value="Custom Private Tour — Custom quote">Custom Private Tour — Custom quote</option>
+              <option value="Tokyo Highlights">Tokyo Highlights — Full Day</option>
+              <option value="Hidden Tokyo">Hidden Tokyo — Full Day</option>
+              <option value="Food & Culture">Food & Culture — Half Day</option>
+              <option value="Yanaka Walking Tour">Yanaka Walking Tour — Half Day</option>
+              <option value="Kamakura Day Trip" data-regional="true">Kamakura Day Trip — Full Day (+¥10,000 regional fee)</option>
+              <option value="Yokohama & Chinatown" data-regional="true">Yokohama & Chinatown — Full Day (+¥10,000 regional fee)</option>
+              <option value="Custom Private Tour">Custom Private Tour — Flexible</option>
             </select>
           </div>
 
@@ -298,13 +299,21 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
 
           <div class="form-group">
             <label for="slot">Preferred time slot *</label>
-            <select id="slot" required>
+            <select id="slot" required onchange="updatePriceEstimate()">
               <option value="" disabled selected>Select…</option>
-              <option value="Full Day (all day)">Full Day (all day)</option>
-              <option value="Morning (8am – 12pm)">Morning (8am – 12pm)</option>
-              <option value="Afternoon (12pm – 5pm)">Afternoon (12pm – 5pm)</option>
-              <option value="Evening (5pm – 9pm)">Evening (5pm – 9pm)</option>
+              <option value="Full Day (all day)">Full Day (all day) — 8 hours</option>
+              <option value="Half Day Morning (8am – 12pm)">Half Day Morning (8am – 12pm) — 4 hours</option>
+              <option value="Half Day Afternoon (12pm – 5pm)">Half Day Afternoon (12pm – 5pm) — 4 hours</option>
+              <option value="Evening (5pm – 9pm)">Evening (5pm – 9pm) — 4 hours</option>
             </select>
+          </div>
+
+          <!-- LIVE PRICE ESTIMATE -->
+          <div id="price-estimate-box" style="display:none; background: #fff8f0; border: 1px solid #f0d0a0; border-left: 4px solid var(--red); border-radius: var(--radius-sm); padding: 1.25rem 1.5rem; margin-bottom: 1.25rem;">
+            <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--red); font-weight: 600; margin-bottom: 0.5rem;">Estimated price</div>
+            <div id="price-estimate-total" style="font-family: 'DM Serif Display', serif; font-size: 32px; color: var(--text); margin-bottom: 0.25rem;">—</div>
+            <div id="price-estimate-breakdown" style="font-size: 13px; color: var(--text-muted); line-height: 1.6;"></div>
+            <div style="font-size: 11px; color: var(--text-muted); margin-top: 0.75rem; padding-top: 0.75rem; border-top: 0.5px solid #e0c8a0;">Terry will confirm the final price when he replies to your request.</div>
           </div>
 
           <div class="form-group">
@@ -496,11 +505,11 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
       <div class="card">
         <h2>Tour prices</h2>
         <ul class="info-list">
-          <li><span>🗾</span><div><strong>Tokyo Highlights</strong><br>Full day · From ¥15,000 pp</div></li>
-          <li><span>🌆</span><div><strong>Hidden Tokyo</strong><br>Half day · From ¥12,000 pp</div></li>
-          <li><span>🍜</span><div><strong>Food & Culture</strong><br>Half day · From ¥12,000 pp</div></li>
-          <li><span>🙏</span><div><strong>Kamakura Day Trip</strong><br>Full day · From ¥12,000 pp</div></li>
-          <li><span>🏮</span><div><strong>Yokohama & Chinatown</strong><br>Full day · From ¥15,000 pp</div></li>
+          <li><span>👤</span><div><strong>1 person (Solo)</strong><br>¥5,000/hr · ¥40,000 full day</div></li>
+          <li><span>👫</span><div><strong>2 people (Couples)</strong><br>¥3,500 pp/hr · ¥28,000 pp full day</div></li>
+          <li><span>👨‍👩‍👦</span><div><strong>3 travelers</strong><br>¥3,000 pp/hr · ¥24,000 pp full day</div></li>
+          <li><span>👨‍👩‍👧‍👦</span><div><strong>4 travelers</strong><br>¥2,500 pp/hr · ¥20,000 pp full day</div></li>
+          <li><span>🚆</span><div><strong>Out-of-city trips</strong><br>+¥10,000 per group (Kamakura, Yokohama)</div></li>
           <li><span>✨</span><div><strong>Custom Private Tour</strong><br>Flexible · Custom quote</div></li>
         </ul>
       </div>
@@ -535,7 +544,7 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
       <div class="card" style="background:var(--red);border-color:var(--red);">
         <h2 style="color:#fff;border-bottom-color:rgba(255,255,255,0.2);">Check availability first</h2>
         <p style="color:rgba(255,255,255,0.85);font-size:14px;line-height:1.7;">Before booking, check Terry's calendar to make sure your preferred date and slot are open.</p>
-        <a href="availability.html" style="display:block;margin-top:1.25rem;text-align:center;padding:11px 0;border-radius:var(--radius-sm);background:#fff;color:var(--red);font-size:14px;font-weight:500;text-decoration:none;">View availability &#8594;</a>
+        <a href="../../../Downloads/availability.html" style="display:block;margin-top:1.25rem;text-align:center;padding:11px 0;border-radius:var(--radius-sm);background:#fff;color:var(--red);font-size:14px;font-weight:500;text-decoration:none;">View availability &#8594;</a>
       </div>
 
     </div><!-- /sidebar -->
@@ -551,114 +560,128 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
       <div class="footer-copy">© 2026 Tokyo with Terry · Japan</div>
     </div>
     <div class="footer-links">
-      <a href="index.html">&#8592; Home</a>
-      <a href="availability.html">Availability</a>
+      <a href="../../../Downloads/index.html">&#8592; Home</a>
+      <a href="../../../Downloads/availability.html">Availability</a>
       <a href="mailto:terrybj65@msn.com">terrybj65@msn.com</a>
     </div>
   </div>
 </footer>
 
 <script>
+// ── PRICING TABLE (per person per hour by group size) ──
+var RATES = { 1: 5000, 2: 3500, 3: 3000, 4: 2500 };
+var REGIONAL_FEE = 10000; // Added for Kamakura & Yokohama
+
+function getGuestCount() {
+  var v = parseInt(document.getElementById('guests').value, 10);
+  return isNaN(v) ? 0 : Math.min(v, 4); // cap at 4 for rate lookup (5–6 use 4-person rate)
+}
+
+function getRawGuestCount() {
+  var v = parseInt(document.getElementById('guests').value, 10);
+  return isNaN(v) ? 0 : v;
+}
+
+function getHours() {
+  var slot = document.getElementById('slot').value;
+  if (!slot) return 0;
+  return slot.indexOf('Full Day') !== -1 ? 8 : 4;
+}
+
+function isRegionalTour() {
+  var tour = document.getElementById('tour').value;
+  return tour === 'Kamakura Day Trip' || tour === 'Yokohama & Chinatown';
+}
+
+function getTotalPrice() {
+  var guests = getRawGuestCount();
+  var rateKey = Math.min(guests, 4);
+  var rate = RATES[rateKey] || 0;
+  var hours = getHours();
+  if (!guests || !hours || !rate) return null;
+  var base = rate * guests * hours;
+  var regional = isRegionalTour() ? REGIONAL_FEE : 0;
+  return { base: base, regional: regional, total: base + regional, rate: rate, guests: guests, hours: hours };
+}
+
+function updatePriceEstimate() {
+  var box = document.getElementById('price-estimate-box');
+  var p = getTotalPrice();
+  if (!p) { box.style.display = 'none'; return; }
+
+  box.style.display = 'block';
+  document.getElementById('price-estimate-total').innerText = '¥' + p.total.toLocaleString();
+
+  var breakdown = '¥' + p.rate.toLocaleString() + ' pp/hr × ' + p.guests + ' guest' + (p.guests > 1 ? 's' : '') + ' × ' + p.hours + ' hrs = ¥' + p.base.toLocaleString();
+  if (p.regional) breakdown += '<br>+ ¥' + p.regional.toLocaleString() + ' regional transit fee';
+  document.getElementById('price-estimate-breakdown').innerHTML = breakdown;
+
+  // Also refresh refund calculator
+  updateCalc();
+}
+
 // 1. Auto-Fill Form from URL Parameters
 function autoFillFromURL() {
   var params = new URLSearchParams(window.location.search);
-  var dateParam = params.get('date'); // Expects YYYY-MM-DD
-  var slotParam = params.get('slot'); // Expects 'full', 'morning', 'afternoon', 'evening'
-
-  if (dateParam) {
-    document.getElementById('tour-date').value = dateParam;
-  }
-
+  var dateParam = params.get('date');
+  var slotParam = params.get('slot');
+  if (dateParam) document.getElementById('tour-date').value = dateParam;
   if (slotParam) {
     var slotSelect = document.getElementById('slot');
-    // Map internal IDs to form option values
-    if (slotParam === 'full') slotSelect.value = 'Full Day (all day)';
-    if (slotParam === 'morning') slotSelect.value = 'Morning (8am – 12pm)';
-    if (slotParam === 'afternoon') slotSelect.value = 'Afternoon (12pm – 5pm)';
-    if (slotParam === 'evening') slotSelect.value = 'Evening (5pm – 9pm)';
+    if (slotParam === 'full')      slotSelect.value = 'Full Day (all day)';
+    if (slotParam === 'morning')   slotSelect.value = 'Half Day Morning (8am – 12pm)';
+    if (slotParam === 'afternoon') slotSelect.value = 'Half Day Afternoon (12pm – 5pm)';
+    if (slotParam === 'evening')   slotSelect.value = 'Evening (5pm – 9pm)';
   }
 }
 
-// 2. Interactive Refund Calculator Logic
+// 2. Refund Calculator
 function updateCalc() {
   var slider = document.getElementById('days-slider');
   var days = parseInt(slider.value, 10);
-  
-  // Dynamic labels
   document.getElementById('days-label').innerText = days;
-  
-  // Read current tour selection to estimate price base
-  var tourSelect = document.getElementById('tour').value;
-  var pricePerPerson = 15000; // Default fallback
-  if (tourSelect.indexOf('12,000') !== -1) {
-    pricePerPerson = 12000;
-  }
-  
-  var guestsSelect = document.getElementById('guests').value || "1";
-  var guestCount = parseInt(guestsSelect, 10);
-  
-  var totalCost = pricePerPerson * guestCount;
-  
-  // Calculate refund percentages based on policy thresholds
-  var refundPercent = 0;
-  var labelText = "No refund (0–2 days notice)";
-  
-  if (days >= 30) {
-    refundPercent = 1.00;
-    labelText = "Full refund (30+ days notice)";
-  } else if (days >= 14) {
-    refundPercent = 0.75;
-    labelText = "75% refund (14–29 days notice)";
-  } else if (days >= 7) {
-    refundPercent = 0.50;
-    labelText = "50% refund (7–13 days notice)";
-  } else if (days >= 3) {
-    refundPercent = 0.25;
-    labelText = "25% refund (3–6 days notice)";
-  }
-  
-  var refundAmount = Math.floor(totalCost * refundPercent);
-  
-  // Update UI display
-  document.getElementById('calc-price-label').innerText = "¥" + pricePerPerson.toLocaleString();
+
+  var p = getTotalPrice();
+  var totalCost = p ? p.total : 40000; // fallback for illustration
+  var guestCount = getRawGuestCount() || 1;
+
+  var refundPercent = 0, labelText = 'No refund (0–2 days notice)';
+  if      (days >= 30) { refundPercent = 1.00; labelText = 'Full refund (30+ days notice)'; }
+  else if (days >= 14) { refundPercent = 0.75; labelText = '75% refund (14–29 days notice)'; }
+  else if (days >= 7)  { refundPercent = 0.50; labelText = '50% refund (7–13 days notice)'; }
+  else if (days >= 3)  { refundPercent = 0.25; labelText = '25% refund (3–6 days notice)'; }
+
+  document.getElementById('calc-price-label').innerText = p ? '¥' + p.total.toLocaleString() + ' total' : '—';
   document.getElementById('calc-guests-label').innerText = guestCount;
-  document.getElementById('calc-refund').innerText = "¥" + refundAmount.toLocaleString();
+  document.getElementById('calc-refund').innerText = '¥' + Math.floor(totalCost * refundPercent).toLocaleString();
   document.getElementById('calc-lbl').innerText = labelText;
 }
 
-// 3. Form Submission Handling
+// 3. Form Submission
 function submitBooking() {
-  // Check required validation variables manually
-  var fname = document.getElementById('fname').value.trim();
-  var lname = document.getElementById('lname').value.trim();
-  var email = document.getElementById('email').value.trim();
-  var tour = document.getElementById('tour').value;
-  var date = document.getElementById('tour-date').value;
-  var guests = document.getElementById('guests').value;
-  var slot = document.getElementById('slot').value;
-
+  var fname   = document.getElementById('fname').value.trim();
+  var lname   = document.getElementById('lname').value.trim();
+  var email   = document.getElementById('email').value.trim();
+  var tour    = document.getElementById('tour').value;
+  var date    = document.getElementById('tour-date').value;
+  var guests  = document.getElementById('guests').value;
+  var slot    = document.getElementById('slot').value;
   if (!fname || !lname || !email || !tour || !date || !guests || !slot) {
     alert('Please fill in all required fields marked with an asterisk (*).');
     return;
   }
-
-  // Hide form view container and reveal success message state
   document.getElementById('the-form').style.display = 'none';
   document.getElementById('success-msg').style.display = 'block';
-  
-  // Smoothly scroll user view back up to the confirmation screen frame
   document.getElementById('booking-form-card').scrollIntoView({ behavior: 'smooth' });
 }
 
-// Initialize logic setups on window page load states
 window.onload = function() {
   autoFillFromURL();
   updateCalc();
-  
-  // Recalculate if user shifts tour or guest dropdown selections
-  document.getElementById('tour').onchange = updateCalc;
-  document.getElementById('guests').onchange = updateCalc;
-};
+  document.getElementById('tour').onchange   = updatePriceEstimate;
+  document.getElementById('guests').onchange = updatePriceEstimate;
+  document.getElementById('slot').onchange   = updatePriceEstimate;
+};;
 </script>
 <script>
   const hamburger = document.getElementById('navHamburger');
