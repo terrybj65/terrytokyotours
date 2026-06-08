@@ -48,30 +48,25 @@
       padding: 0 4vw;
     }
 
-    /* ── GENERAL TYPOGRAPHY & HEADINGS ── */
     .section-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red); margin-bottom: 0.5rem; }
     .section-title { font-family: 'DM Serif Display', serif; font-size: 36px; font-weight: 400; margin-bottom: 0.5rem; line-height: 1.2; }
     .section-sub { font-size: 16px; color: var(--stone); margin-bottom: 2.5rem; max-width: 560px; }
 
-    /* ── NAV ── */
     .nav-desktop-links { display: flex; list-style: none; justify-content: center; align-items: center; gap: 2.5rem; margin: 0; padding: 0; }
     .nav-book-btn { background: var(--red); color: #fff; border: none; padding: 10px 22px; border-radius: var(--radius-sm); font-size: 14px; cursor: pointer; text-decoration: none; font-family: 'DM Sans', sans-serif; font-weight: 500; white-space: nowrap; }
 
-    /* Hamburger button */
     .nav-hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
     .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; transition: transform 0.25s, opacity 0.25s; }
     .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .nav-hamburger.open span:nth-child(2) { opacity: 0; }
     .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    /* Mobile drawer */
     .nav-mobile-drawer { display: none; position: absolute; top: 65px; left: 0; right: 0; background: rgba(250,250,248,0.98); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 1.25rem 4vw 1.5rem; z-index: 99; }
     .nav-mobile-drawer.open { display: block; }
     .nav-mobile-drawer ul { list-style: none; padding: 0; margin: 0 0 1.25rem; display: flex; flex-direction: column; gap: 0; }
     .nav-mobile-drawer li a { display: block; padding: 0.75rem 0; font-size: 16px; color: var(--stone); text-decoration: none; border-bottom: 1px solid var(--border); }
     .nav-mobile-drawer .nav-book-mobile { display: block; width: 100%; text-align: center; background: var(--red); color: #fff; padding: 13px; border-radius: var(--radius-sm); font-size: 15px; font-weight: 500; text-decoration: none; }
 
-    /* ── HERO SECTION ── */
     .hero { position: relative; height: 70vh; min-height: 480px; overflow: hidden; }
     .hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .hero-overlay { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.35); display: flex; align-items: center; }
@@ -85,12 +80,10 @@
     .btn-primary:hover { background: #B00000; }
     .btn-ghost { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.7); padding: 13px 28px; border-radius: var(--radius-sm); font-size: 15px; cursor: pointer; text-decoration: none; transition: background 0.15s; display: inline-block; }
 
-    /* ── EDITORIAL INTRO ── */
     .intro { max-width: 900px; margin: 5rem auto; padding: 0 4vw; text-align: center; }
     .intro-kicker { display: inline-block; font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--moss); margin-bottom: 1.2rem; font-weight: 500; }
     .intro p { font-size: 1.2rem; line-height: 1.8; color: var(--stone); }
 
-    /* ── METRIC STRIP ── */
     .tod-bar { max-width: 1300px; margin: 0 auto 4.5rem; padding: 0 4vw; }
     .tod-inner { display: flex; align-items: center; border: 1px solid rgba(42,77,52,0.15); background: rgba(255, 255, 255, 0.2); }
     .tod-item { flex: 1; padding: 1.25rem 1.75rem; border-right: 1px solid rgba(42,77,52,0.15); display: flex; flex-direction: column; gap: 0.25rem; }
@@ -98,7 +91,6 @@
     .tod-label { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--moss); }
     .tod-value { font-size: 0.92rem; font-weight: 500; color: var(--ink); line-height: 1.4; }
 
-    /* ── CHRONOLOGICAL PILLS ── */
     .section-nav { max-width: 1300px; margin: 0 auto 4rem; padding: 0 4vw; }
     .section-nav-inner { display: flex; align-items: center; gap: 1.5rem; background: rgba(42,77,52,0.04); border: 1px solid rgba(42,77,52,0.12); border-left: 4px solid var(--sage); padding: 1.2rem 1.8rem; flex-wrap: wrap; }
     .nav-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--moss); font-weight: 500; }
@@ -106,11 +98,9 @@
     .nav-pill { font-size: 0.78rem; font-weight: 400; color: var(--ink); background: rgba(255,255,255,0.6); border: 1px solid rgba(42,77,52,0.15); padding: 0.4rem 1rem; border-radius: 100px; text-decoration: none; transition: all 0.2s ease; }
     .nav-pill:hover { background: var(--sage); color: #fff; border-color: var(--sage); }
 
-    /* ── SECTION SEPARATOR ── */
     .divider { display: flex; align-items: center; gap: 1.5rem; max-width: 1300px; margin: 0 auto 3rem; padding: 0 4vw; color: var(--sage); font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; }
     .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
-    /* ── HIGHLIGHT STOPS GRID ── */
     .stops { max-width: 1300px; margin: 0 auto; padding: 0 4vw 2rem; }
     .stop { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3.5rem; border-top: 1px solid var(--border); padding: 4rem 0; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; align-items: center; }
     .stop.visible { opacity: 1; transform: translateY(0); }
@@ -135,7 +125,6 @@
     .stop-rating { font-size: 0.82rem; color: var(--stone); }
     .stars { color: var(--gold); margin-right: 0.25rem; }
 
-    /* ── PRICING CARD STYLES ── */
     .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 1.5rem; }
     .price-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 2.5rem 1.5rem; text-align: center; transition: transform 0.2s, border-color 0.2s; }
     .price-card:hover { transform: translateY(-2px); border-color: var(--sage); }
@@ -143,7 +132,6 @@
     .price-amt { font-family: 'DM Serif Display', serif; font-size: 2.2rem; color: var(--red); margin: 0.8rem 0; }
     .price-note { font-size: 0.85rem; color: var(--stone); line-height: 1.4; }
 
-    /* ── STANDARDIZED LOGISTICAL DETAILS GRID ── */
     .details-section { border-top: 1px solid var(--border); padding-top: 5rem; margin-top: 3rem; }
     .details-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4rem; }
     .details-grid dt { font-family: 'Shippori Mincho', serif; font-size: 1.6rem; font-weight: 600; color: var(--ink); margin-bottom: 1.5rem; }
@@ -157,52 +145,40 @@
     .info-card-solo h3 { font-family: 'Shippori Mincho', serif; font-size: 22px; font-weight: 600; margin-bottom: 1.25rem; color: var(--ink); }
     .info-card-solo p { font-size: 14px; color: var(--stone); line-height: 1.7; margin-bottom: 0.65rem; }
 
-    /* ── MOBILE RESPONSIVE MEDIA QUERIES ── */
     @media (max-width: 768px) {
-      /* Nav */
       .nav-desktop-links { display: none; }
       .nav-book-btn { display: none; }
       .nav-hamburger { display: flex; }
 
-      /* Hero */
       .hero { height: 60vh; min-height: 380px; }
       .hero p { font-size: 15px; }
       .hero-btns { flex-direction: column; gap: 10px; }
       .btn-primary, .btn-ghost { width: 100%; text-align: center; padding: 13px 20px; }
 
-      /* Intro */
       .intro { margin: 2.5rem auto; }
       .intro p { font-size: 1rem; }
 
-      /* Metric strip */
       .tod-inner { flex-direction: column; align-items: stretch; }
       .tod-item { border-right: none; border-bottom: 1px solid rgba(42,77,52,0.15); padding: 1rem 1.25rem; }
       .tod-item:last-child { border-bottom: none; }
 
-      /* Nav pills — allow horizontal scroll on mobile */
       .section-nav-inner { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
       .nav-pills { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 4px; width: 100%; -webkit-overflow-scrolling: touch; }
 
-      /* Stops: single column, reset even-row ordering */
       .stop { grid-template-columns: 1fr !important; gap: 1.5rem; padding: 2.5rem 0; }
       .stop:nth-child(even) .stop-img-wrap { order: 0; }
       .stop:nth-child(even) .stop-content  { order: 0; }
       .stop-title { font-size: 1.7rem; }
 
-      /* Pricing */
       .price-grid { grid-template-columns: 1fr; gap: 1rem; }
 
-      /* Details */
       .details-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .details-section { padding-top: 3rem; }
 
-      /* Section headings */
       .section-title { font-size: 26px; }
 
-      /* Info card */
       .info-card-solo { padding: 1.75rem 1.25rem; }
 
-      /* Footer */
       .footer-inner { flex-direction: column !important; text-align: center !important; align-items: center !important; }
       .footer-links { justify-content: center !important; }
     }
@@ -211,26 +187,26 @@
 <body>
 
 <nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(0,0,0,0.1);padding:0 4vw;display:flex;align-items:center;justify-content:space-between;height:65px;">
-  <a href="index.html" style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--ink);text-decoration:none;">Tokyo with <span style="color:var(--red);">Terry</span></a>
+  <a href="../../../Downloads/index.html" style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--ink);text-decoration:none;">Tokyo with <span style="color:var(--red);">Terry</span></a>
   <ul class="nav-desktop-links">
-    <li><a href="index.html#areas" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Areas</a></li>
-    <li><a href="index.html#tours" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Tours</a></li>
-    <li><a href="index.html#about" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">About</a></li>
-    <li><a href="index.html#contact" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Contact</a></li>
+    <li><a href="../../../Downloads/index.html#areas" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Areas</a></li>
+    <li><a href="../../../Downloads/index.html#tours" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Tours</a></li>
+    <li><a href="../../../Downloads/index.html#about" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">About</a></li>
+    <li><a href="../../../Downloads/index.html#contact" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Contact</a></li>
   </ul>
-  <a href="availability.html" class="nav-book-btn">Book a tour</a>
+  <a href="../../../Downloads/availability.html" class="nav-book-btn">Book a tour</a>
   <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
 <div class="nav-mobile-drawer" id="navDrawer">
   <ul>
-    <li><a href="index.html#areas">Areas</a></li>
-    <li><a href="index.html#tours">Tours</a></li>
-    <li><a href="index.html#about">About</a></li>
-    <li><a href="index.html#contact">Contact</a></li>
+    <li><a href="../../../Downloads/index.html#areas">Areas</a></li>
+    <li><a href="../../../Downloads/index.html#tours">Tours</a></li>
+    <li><a href="../../../Downloads/index.html#about">About</a></li>
+    <li><a href="../../../Downloads/index.html#contact">Contact</a></li>
   </ul>
-  <a href="availability.html" class="nav-book-mobile">Book a tour →</a>
+  <a href="../../../Downloads/availability.html" class="nav-book-mobile">Book a tour →</a>
 </div>
 
 <section class="hero">
@@ -243,7 +219,7 @@
         <p>Old shitamachi — the Tokyo that time forgot. Winding pathways, preserved wooden temples, and local artisan legacy.</p>
         <div class="hero-btns">
           <a href="#highlights-start" class="btn-primary">Explore highlights ↓</a>
-          <a href="availability.html" class="btn-ghost">Check availability</a>
+          <a href="../../../Downloads/availability.html" class="btn-ghost">Check availability</a>
         </div>
       </div>
     </div>
@@ -391,15 +367,22 @@
   <div class="info-card-solo"><h3>The Custom Private Advantage</h3><p>We walk at your exact chosen pace.</p></div>
 </div>
 
-<footer style="background: #f8f0e8; border-top: 4px solid #de1c24; padding: 2.5rem 4vw; margin-top: 4rem;">
-  <div class="footer-inner" style="max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
-    <div><div style="font-size: 15px; font-weight: 700; color: #2d3748;">谷中 · Yanaka</div></div>
-    <div class="footer-links" style="display: flex; gap: 1.5rem;"><a href="index.html" style="color:#a0522d;text-decoration:none;font-size:13px;">← Home</a></div>
+<footer style="background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 4vw;margin-top:4rem;">
+  <div class="footer-inner" style="max-width:1300px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;">
+    <div>
+      <div style="font-size:15px;font-weight:700;color:#2d3748;margin-bottom:4px;">谷中 · Yanaka</div>
+      <div style="font-size:13px;color:#7a6652;margin-bottom:4px;">Private walking tour · Tokyo with Terry</div>
+      <div style="font-size:12px;color:#a09080;">© 2026 Tokyo with Terry · Japan</div>
+    </div>
+    <div class="footer-links" style="display:flex;gap:1.5rem;align-items:center;">
+      <a href="../../../Downloads/index.html" style="color:#a0522d;text-decoration:none;font-size:13px;">← Home</a>
+      <a href="../../../Downloads/availability.html" style="color:#a0522d;text-decoration:none;font-size:13px;">Availability</a>
+      <a href="../../../Downloads/reservations.html" style="color:#a0522d;text-decoration:none;font-size:13px;">Reserve</a>
+    </div>
   </div>
 </footer>
 
 <script>
-  // Mobile Hamburger Menu Logic
   const hamburger = document.getElementById('navHamburger');
   const drawer    = document.getElementById('navDrawer');
   
@@ -423,7 +406,6 @@
     });
   }
 
-  // Scroll Observer for animation
   const stops = document.querySelectorAll('.stop');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
