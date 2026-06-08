@@ -29,7 +29,21 @@
   --green:#2e7d32;--green-bg:#f1f8f1;--green-border:#a5d6a7;
   --amber:#b45309;--amber-bg:#fffbeb;--amber-border:#fcd34d;
 }
-html{scroll-behavior:smooth;}html,body{overflow-x:hidden;}img,video{max-width:100%;}
+html{scroll-behavior:smooth;}html,body{overflow-x:hidden;max-width:100%;}img,video{max-width:100%;}
+.nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#1C2833;border-radius:2px;transition:transform .25s,opacity .25s;}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-hamburger.open span:nth-child(2){opacity:0;}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.nav-mobile-drawer{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(250,250,248,0.98);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.1);padding:1.25rem 2rem 1.5rem;z-index:99;}
+.nav-mobile-drawer.open{display:block;}
+.nav-mobile-drawer ul{list-style:none;padding:0;margin:0 0 1.25rem;display:flex;flex-direction:column;}
+.nav-mobile-drawer li a{display:block;padding:.75rem 0;font-size:16px;color:#5D6D7E;text-decoration:none;border-bottom:1px solid rgba(0,0,0,0.08);}
+.nav-mobile-drawer .nav-book-mobile{display:block;width:100%;text-align:center;background:#D00000;color:#fff;padding:13px;border-radius:8px;font-size:15px;font-weight:500;text-decoration:none;}
+@media(max-width:768px){
+  .nav-right{display:none;}
+  .nav-hamburger{display:flex;}
+}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.6;}
 
 /* NAV */
@@ -201,7 +215,17 @@ footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-
     <a class="nav-link" href="availability.html">Availability</a>
     <a class="nav-btn" href="availability.html">Check dates</a>
   </div>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="nav-mobile-drawer" id="navDrawer">
+  <ul>
+    <li><a href="index.html">&#8592; Home</a></li>
+    <li><a href="availability.html">Availability</a></li>
+  </ul>
+  <a href="availability.html" class="nav-book-mobile">Check dates →</a>
+</div>
 
 <!-- PAGE HEADER -->
 <div class="page-header">
@@ -635,6 +659,22 @@ window.onload = function() {
   document.getElementById('tour').onchange = updateCalc;
   document.getElementById('guests').onchange = updateCalc;
 };
+</script>
+<script>
+  const hamburger = document.getElementById('navHamburger');
+  const drawer    = document.getElementById('navDrawer');
+  hamburger.addEventListener('click', () => {
+    const isOpen = drawer.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+  drawer.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      drawer.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
 </script>
 </body>
 </html>
