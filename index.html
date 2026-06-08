@@ -47,7 +47,8 @@
       --radius-sm: 8px;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; max-width: 100%; }
+    img { max-width: 100%; height: auto; display: block; }
 
     body {
       font-family: 'DM Sans', sans-serif;
@@ -55,6 +56,8 @@
       color: var(--text);
       font-size: 16px;
       line-height: 1.6;
+      overflow-x: hidden;
+      max-width: 100%;
     }
 
     /* ── NAV ── */
@@ -97,6 +100,16 @@
       text-decoration: none;
     }
     .nav-cta:hover { background: var(--red-dark); }
+    .nav-hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.25s, opacity 0.25s; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-mobile-drawer { display: none; position: absolute; top: 60px; left: 0; right: 0; background: rgba(250,250,248,0.98); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 1.25rem 2rem 1.5rem; z-index: 99; }
+    .nav-mobile-drawer.open { display: block; }
+    .nav-mobile-drawer ul { list-style: none; padding: 0; margin: 0 0 1.25rem; display: flex; flex-direction: column; }
+    .nav-mobile-drawer li a { display: block; padding: 0.75rem 0; font-size: 16px; color: var(--text-muted); text-decoration: none; border-bottom: 1px solid var(--border); }
+    .nav-mobile-drawer .nav-book-mobile { display: block; width: 100%; text-align: center; background: var(--red); color: #fff; padding: 13px; border-radius: var(--radius-sm); font-size: 15px; font-weight: 500; text-decoration: none; }
 
     /* ── LAYOUT ── */
     .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
@@ -310,19 +323,27 @@
     .footer-links a:hover { color: #de1c24; }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 700px) {
+    @media (max-width: 768px) {
       .nav-links { display: none; }
-      .areas-grid { grid-template-columns: 1fr 1fr !important; gap: 10px; }
-      .area-card { height: 140px; }
+      .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+      .hero { height: 70vh; min-height: 420px; }
+      .hero h1 { font-size: 36px; }
+      .hero p { font-size: 15px; }
+      .hero-btns { flex-direction: column; gap: 10px; }
+      .btn-primary, .btn-ghost { width: 100%; text-align: center; padding: 13px 20px; }
       .stats-section .container { grid-template-columns: 1fr; }
       .stat-item { border-right: none; border-bottom: 0.5px solid var(--border); }
       .stat-item:last-child { border-bottom: none; }
       .profile-grid { grid-template-columns: 1fr; gap: 2rem; }
       .profile-avatar { width: 100%; height: 260px; }
+      .areas-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .area-card { height: 140px; }
       .section-title { font-size: 28px; }
-      .hero h1 { font-size: 36px; }
       .cta-content h2 { font-size: 32px; }
       .cta-input { width: 100%; }
+      .footer-inner { flex-direction: column; text-align: center; align-items: center; }
+      .footer-links { justify-content: center; }
     }
   </style>
 </head>
@@ -340,7 +361,21 @@
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a href="availability.html" class="nav-cta">Book a tour</a>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="nav-mobile-drawer" id="navDrawer">
+  <ul>
+    <li><a href="shinjuku.html">Areas</a></li>
+    <li><a href="tokyo-highlights.html">Tours</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="availability.html">Availability</a></li>
+    <li><a href="reservations.html">Reservations</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="availability.html" class="nav-book-mobile">Book a tour →</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -560,7 +595,7 @@
 
       <div class="area-card">
         <a href="shibuya.html">
-          <img src="shibuya.jpg" width="360" height="240" alt=""/>
+          <img src="shibuya.jpg" alt="Shibuya"/>
           <div class="area-overlay">
             <div class="area-name">Shibuya</div>
             <div class="area-desc">Modern Tokyo</div>
@@ -590,7 +625,7 @@
 
       <div class="area-card">
         <a href="kamakura-2.html">
-          <img src="kamakura_greatbuddha_02.jpg" width="639" height="428" alt=""/>
+          <img src="kamakura_greatbuddha_02.jpg" alt="Kamakura Great Buddha"/>
           <div class="area-overlay">
             <div class="area-name">Kamakura</div>
             <div class="area-desc">Temples & coast</div>
@@ -702,5 +737,24 @@
   </div>
 </footer>
 
+<script>
+  const hamburger = document.getElementById('navHamburger');
+  const drawer    = document.getElementById('navDrawer');
+  if (hamburger) {
+    hamburger.addEventListener('click', () => {
+      const isOpen = drawer ? drawer.classList.toggle('open') : false;
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+  }
+  if (drawer) {
+    drawer.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        drawer.classList.remove('open');
+        if (hamburger) { hamburger.classList.remove('open'); hamburger.setAttribute('aria-expanded', 'false'); }
+      });
+    });
+  }
+</script>
 </body>
 </html>
