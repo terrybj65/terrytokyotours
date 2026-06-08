@@ -45,13 +45,27 @@
       font-family: 'DM Sans', sans-serif;
       font-weight: 300;
       overflow-x: hidden;
+      max-width: 100%;
     }
 
-    .container {
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 0 4vw;
-    }
+    html { overflow-x: hidden; max-width: 100%; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    .container { max-width: 1300px; margin: 0 auto; padding: 0 4vw; }
+
+    /* ── NAV ── */
+    .nav-desktop-links { display: flex; list-style: none; justify-content: center; align-items: center; gap: 2.5rem; margin: 0; padding: 0; }
+    .nav-book-btn { background: var(--red); color: #fff; border: none; padding: 10px 22px; border-radius: var(--radius-sm); font-size: 14px; cursor: pointer; text-decoration: none; font-family: 'DM Sans', sans-serif; font-weight: 500; white-space: nowrap; }
+    .nav-hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; transition: transform 0.25s, opacity 0.25s; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-mobile-drawer { display: none; position: absolute; top: 65px; left: 0; right: 0; background: rgba(250,250,248,0.98); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 1.25rem 4vw 1.5rem; z-index: 99; }
+    .nav-mobile-drawer.open { display: block; }
+    .nav-mobile-drawer ul { list-style: none; padding: 0; margin: 0 0 1.25rem; display: flex; flex-direction: column; }
+    .nav-mobile-drawer li a { display: block; padding: 0.75rem 0; font-size: 16px; color: var(--stone); text-decoration: none; border-bottom: 1px solid var(--border); }
+    .nav-mobile-drawer .nav-book-mobile { display: block; width: 100%; text-align: center; background: var(--red); color: #fff; padding: 13px; border-radius: var(--radius-sm); font-size: 15px; font-weight: 500; text-decoration: none; }
 
     /* ── HERO SECTION ── */
     .hero {
@@ -225,8 +239,8 @@
       align-items: center;
     }
     .stop.visible { opacity: 1; transform: translateY(0); }
-    .stop:nth-child(even) { direction: rtl; }
-    .stop:nth-child(even) > * { direction: ltr; }
+    .stop:nth-child(even) .stop-img-wrap { order: 2; }
+    .stop:nth-child(even) .stop-content  { order: 1; }
 
     .stop-img-wrap {
       position: relative;
@@ -344,18 +358,33 @@
       margin-bottom: 0.65rem;
     }
 
-    @media (max-width: 1024px) {
-      .stop { gap: 2rem; }
-    }
-
     @media (max-width: 768px) {
-      .stop { grid-template-columns: 1fr; direction: ltr !important; gap: 1.5rem; padding: 2.5rem 0; }
-      .stop:nth-child(even) > * { direction: ltr; }
-      .tod-inner { flex-direction: column; }
-      .tod-item { border-right: none; border-bottom: 1px solid rgba(74,93,78,0.15); padding: 1.1rem; }
+      .nav-desktop-links { display: none; }
+      .nav-book-btn { display: none; }
+      .nav-hamburger { display: flex; }
+      .hero { height: 55vh; min-height: 320px; }
+      .hero p { font-size: 15px; }
+      .hero-btns { flex-direction: column; gap: 10px; }
+      .btn-primary, .btn-ghost { width: 100%; text-align: center; padding: 13px 20px; }
+      .intro { margin: 2.5rem auto; }
+      .intro p { font-size: 1rem; }
+      .tod-inner { flex-direction: column; align-items: stretch; }
+      .tod-item { border-right: none; border-bottom: 1px solid rgba(26,74,106,0.15); padding: 1rem 1.25rem; }
       .tod-item:last-child { border-bottom: none; }
-      .info-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-      .info-card { padding: 2rem; }
+      .stop { grid-template-columns: 1fr !important; gap: 1.5rem; padding: 2.5rem 0; }
+      .stop:nth-child(even) .stop-img-wrap { order: 0; }
+      .stop:nth-child(even) .stop-content  { order: 0; }
+      .stop-title { font-size: 1.7rem; }
+      .price-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .details-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .details-section { padding-top: 3rem; }
+      .section-title { font-size: 26px; }
+      .info-card-solo { padding: 1.75rem 1.25rem; }
+      .cta-banner { flex-direction: column !important; }
+      .cta-banner-btn { text-align: center !important; }
+      .cta-banner-btn a { display: block; width: 100%; text-align: center; }
+      .footer-inner { flex-direction: column !important; text-align: center !important; align-items: center !important; }
+      .footer-links { justify-content: center !important; }
     }
   </style>
 </head>
@@ -363,15 +392,27 @@
 
 <!-- UNIFIED STICKY NAVIGATION -->
 <nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(0,0,0,0.1);padding:0 4vw;display:flex;align-items:center;justify-content:space-between;height:65px;">
-  <div style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--ink);">Tokyo with <span style="color:var(--red);">Terry</span></div>
-  <ul style="display:flex;list-style:none;justify-content:center;align-items:center;gap:2.5rem;margin:0;padding:0;">
-    <li><a href="../../../Downloads/index.html#areas" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Areas</a></li>
-    <li><a href="../../../Downloads/index.html#tours" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Tours</a></li>
-    <li><a href="../../../Downloads/index.html#about" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">About</a></li>
-    <li><a href="../../../Downloads/index.html#contact" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Contact</a></li>
+  <a href="index.html" style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--ink);text-decoration:none;">Tokyo with <span style="color:var(--red);">Terry</span></a>
+  <ul class="nav-desktop-links">
+    <li><a href="index.html#areas" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Areas</a></li>
+    <li><a href="index.html#tours" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Tours</a></li>
+    <li><a href="index.html#about" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">About</a></li>
+    <li><a href="index.html#contact" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Contact</a></li>
   </ul>
-  <a href="../../../Downloads/availability.html" style="background:var(--red);color:#fff;border:none;padding:10px 22px;border-radius:var(--radius-sm);font-size:14px;cursor:pointer;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:500;">Book a tour</a>
+  <a href="availability.html" class="nav-book-btn">Book a tour</a>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="nav-mobile-drawer" id="navDrawer">
+  <ul>
+    <li><a href="index.html#areas">Areas</a></li>
+    <li><a href="index.html#tours">Tours</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <a href="availability.html" class="nav-book-mobile">Book a tour →</a>
+</div>
 
 <!-- HERO BLOCK -->
 <section class="hero">
@@ -384,7 +425,7 @@
         <p>Local life, community hubs, and character-rich neighborhoods thriving entirely beyond the textbook guidebook loops[cite: 7].</p>
         <div class="hero-btns">
           <a href="#highlights-start" class="btn-primary">Explore highlights ↓</a>
-          <a href="../../../Downloads/availability.html" class="btn-ghost">Check availability</a>
+          <a href="availability.html" class="btn-ghost">Check availability</a>
         </div>
       </div>
     </div>
@@ -521,12 +562,12 @@
 <div style="width: 100%; background: transparent; box-sizing: border-box;">
   <div style="max-width: 1300px; margin: 4rem auto 0; padding: 0 4vw; box-sizing: border-box;">
     <div style="background: #de1c24; border-radius: 12px; padding: 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; box-sizing: border-box; text-align: left;">
-      <div style="flex: 2; min-width: 300px; box-sizing: border-box;">
+      <div class="cta-banner-text" style="flex: 2; min-width: 0; box-sizing: border-box;">
         <h3 style="font-family: 'DM Serif Display', serif; font-size: 28px; color: #ffffff; font-weight: 400; margin: 0; padding: 0; line-height: 1.2;">Ready to book a tour of Tokyo Suburbs?</h3>
         <p style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: rgba(255, 255, 255, 0.8); margin: 0.5rem 0 0 0; padding: 0; font-weight: 300; line-height: 1.4;">Check Terry's availability and send a booking request — it only takes a minute[cite: 7].</p>
       </div>
-      <div style="flex: 1; text-align: right; min-width: 200px; box-sizing: border-box;">
-        <a href="../../../Downloads/availability.html" style="background: #ffffff; color: #de1c24; padding: 13px 26px; border-radius: 8px; font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap; transition: opacity 0.15s; display: inline-block; font-family: 'DM Sans', sans-serif; box-sizing: border-box;">View availability &amp; book &#8594;</a>
+      <div class="cta-banner-btn" style="flex: 1; text-align: right; min-width: 0; box-sizing: border-box;">
+        <a href="availability.html" style="background: #ffffff; color: #de1c24; padding: 13px 26px; border-radius: 8px; font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap; transition: opacity 0.15s; display: inline-block; font-family: 'DM Sans', sans-serif; box-sizing: border-box;">View availability &amp; book &#8594;</a>
       </div>
     </div>
   </div>
@@ -535,22 +576,39 @@
 <div style="padding-bottom: 4rem;"></div>
 
 <footer style="background: #f8f0e8; border-top: 4px solid #de1c24; padding: 2.5rem 4vw; font-family: 'DM Sans', sans-serif; box-sizing: border-box; width: 100%;">
-  <div style="max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; box-sizing: border-box;">
+  <div class="footer-inner" style="max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; box-sizing: border-box;">
     <div style="text-align: left; box-sizing: border-box;">
       <div style="font-size: 15px; font-weight: 700; color: #2d3748; margin-bottom: 4px; letter-spacing: 0.02em;">郊外 · Tokyo Suburbs</div>
-      <div style="font-size: 13px; color: #7a6652; margin-bottom: 4px;">Area guide · Tokyo Private Tours with Terry[cite: 7]</div>
-      <div style="font-size: 12px; color: #a09080;">© 2026 Tokyo with Terry · Japan[cite: 7]</div>
+      <div style="font-size: 13px; color: #7a6652; margin-bottom: 4px;">Area guide · Tokyo Private Tours with Terry</div>
+      <div style="font-size: 12px; color: #a09080;">© 2026 Tokyo with Terry · Japan</div>
     </div>
-    <div style="display: flex; gap: 1.5rem; align-items: center; box-sizing: border-box;">
-      <a href="../../../Downloads/index.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">&#8592; Home[cite: 7]</a>
-      <a href="../../../Downloads/availability.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">Availability[cite: 7]</a>
-      <a href="../../../Downloads/reservations.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">Reserve[cite: 7]</a>
+    <div class="footer-links" style="display: flex; gap: 1.5rem; align-items: center; box-sizing: border-box;">
+      <a href="index.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">&#8592; Home</a>
+      <a href="availability.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">Availability</a>
+      <a href="reservations.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">Reserve</a>
     </div>
   </div>
 </footer>
 
 <!-- VIEWPORT ANIMATION CONTROLLER -->
 <script>
+  // Hamburger nav toggle
+  const hamburger = document.getElementById('navHamburger');
+  const drawer    = document.getElementById('navDrawer');
+  hamburger.addEventListener('click', () => {
+    const isOpen = drawer.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+  drawer.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      drawer.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Scroll animation
   const stops = document.querySelectorAll('.stop');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
