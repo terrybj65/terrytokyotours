@@ -27,6 +27,8 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    img { max-width: 100%; height: auto; display: block; }
+    html { overflow-x: hidden; max-width: 100%; }
 
     body {
       background: var(--paper);
@@ -34,6 +36,7 @@
       font-family: 'DM Sans', sans-serif;
       font-weight: 300;
       overflow-x: hidden;
+      max-width: 100%;
     }
 
     /* ── HERO ── */
@@ -265,8 +268,8 @@
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
     .stop.visible { opacity: 1; transform: translateY(0); }
-    .stop:nth-child(even) { direction: rtl; }
-    .stop:nth-child(even) > * { direction: ltr; }
+    .stop:nth-child(even) .stop-img { order: 2; }
+    .stop:nth-child(even) .stop-body { order: 1; }
 
     .stop-img-wrap {
       position: relative;
@@ -399,19 +402,19 @@
       font-size: 1.25rem; font-weight: 600;
     }
 
-     @media (max-width: 700px) {
-      .nav-links { display: none; }
-      .areas-grid { grid-template-columns: 1fr 1fr !important; gap: 10px; }
-      .area-card { height: 140px; }
-      .stats-section .container { grid-template-columns: 1fr; }
-      .stat-item { border-right: none; border-bottom: 0.5px solid var(--border); }
-      .stat-item:last-child { border-bottom: none; }
-      .profile-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .profile-avatar { width: 100%; height: 260px; }
-      .section-title { font-size: 28px; }
-      .hero h1 { font-size: 36px; }
-      .cta-content h2 { font-size: 32px; }
-      .cta-input { width: 100%; }
+    @media (max-width: 768px) {
+      .hero { height: 70vh; min-height: 400px; padding: 2.5rem 4vw; }
+      .hero h1 { font-size: clamp(2rem, 8vw, 3rem); }
+      .hero-sub { font-size: 15px; }
+      .hero-meta { flex-wrap: wrap; gap: 8px; }
+      .stop { grid-template-columns: 1fr !important; gap: 1.5rem; }
+      .stop:nth-child(even) .stop-img { order: 0; }
+      .stop:nth-child(even) .stop-body { order: 0; }
+      .stop-footer { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+      .stop-map { align-self: flex-start; }
+      .section-title { font-size: 26px; }
+      .footer-inner { flex-direction: column !important; text-align: center !important; align-items: center !important; }
+      .footer-links { justify-content: center !important; flex-wrap: wrap !important; }
     }
 
   footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-size:13px;}
