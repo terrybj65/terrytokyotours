@@ -38,6 +38,9 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    html { overflow-x: hidden; max-width: 100%; }
 
     body {
       background: var(--paper);
@@ -45,6 +48,7 @@
       font-family: 'DM Sans', sans-serif;
       font-weight: 300;
       overflow-x: hidden;
+      max-width: 100%;
     }
 
     .container {
@@ -345,19 +349,40 @@
       margin-bottom: 0.65rem;
     }
 
-    @media (max-width: 700px) {
-      .nav-links { display: none; }
-      .areas-grid { grid-template-columns: 1fr 1fr !important; gap: 10px; }
-      .area-card { height: 140px; }
-      .stats-section .container { grid-template-columns: 1fr; }
-      .stat-item { border-right: none; border-bottom: 0.5px solid var(--border); }
-      .stat-item:last-child { border-bottom: none; }
-      .profile-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .profile-avatar { width: 100%; height: 260px; }
-      .section-title { font-size: 28px; }
-      .hero h1 { font-size: 36px; }
-      .cta-content h2 { font-size: 32px; }
-      .cta-input { width: 100%; }
+    /* ── NAV ── */
+    .nav-desktop-links { display: flex; list-style: none; justify-content: center; align-items: center; gap: 2.5rem; margin: 0; padding: 0; }
+    .nav-book-btn { background: var(--red); color: #fff; border: none; padding: 10px 22px; border-radius: var(--radius-sm); font-size: 14px; cursor: pointer; text-decoration: none; font-family: 'DM Sans', sans-serif; font-weight: 500; white-space: nowrap; }
+    .nav-hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; transition: transform 0.25s, opacity 0.25s; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-mobile-drawer { display: none; position: absolute; top: 65px; left: 0; right: 0; background: rgba(250,250,248,0.98); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 1.25rem 4vw 1.5rem; z-index: 99; }
+    .nav-mobile-drawer.open { display: block; }
+    .nav-mobile-drawer ul { list-style: none; padding: 0; margin: 0 0 1.25rem; display: flex; flex-direction: column; }
+    .nav-mobile-drawer li a { display: block; padding: 0.75rem 0; font-size: 16px; color: var(--stone); text-decoration: none; border-bottom: 1px solid var(--border); }
+    .nav-mobile-drawer .nav-book-mobile { display: block; width: 100%; text-align: center; background: var(--red); color: #fff; padding: 13px; border-radius: var(--radius-sm); font-size: 15px; font-weight: 500; text-decoration: none; }
+
+    @media (max-width: 768px) {
+      .nav-desktop-links { display: none; }
+      .nav-book-btn { display: none; }
+      .nav-hamburger { display: flex; }
+      .hero { height: 55vh; min-height: 320px; }
+      .hero p { font-size: 15px; }
+      .hero-btns { flex-direction: column; gap: 10px; }
+      .btn-primary, .btn-ghost { width: 100%; text-align: center; padding: 13px 20px; }
+      .stop { grid-template-columns: 1fr !important; gap: 1.5rem; padding: 2.5rem 0; }
+      .stop:nth-child(even) .stop-img-wrap { order: 0; }
+      .stop:nth-child(even) .stop-content  { order: 0; }
+      .stop-title { font-size: 1.7rem; }
+      .info-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .section-title { font-size: 26px; }
+      .cta-banner { flex-direction: column !important; }
+      .cta-banner-text { text-align: center !important; }
+      .cta-banner-btn { text-align: center !important; }
+      .cta-banner-btn a { display: block; width: 100%; text-align: center; }
+      .footer-inner { flex-direction: column !important; text-align: center !important; align-items: center !important; }
+      .footer-links { justify-content: center !important; }
     }
   </style>
 </head>
@@ -365,15 +390,27 @@
 
 <!-- UNIFIED STICKY NAVIGATION -->
 <nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(0,0,0,0.1);padding:0 4vw;display:flex;align-items:center;justify-content:space-between;height:65px;">
-  <div style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--ink);">Tokyo with <span style="color:var(--red);">Terry</span></div>
-  <ul style="display:flex;list-style:none;justify-content:center;align-items:center;gap:2.5rem;margin:0;padding:0;">
+  <a href="../../../Downloads/index.html" style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--ink);text-decoration:none;">Tokyo with <span style="color:var(--red);">Terry</span></a>
+  <ul class="nav-desktop-links">
     <li><a href="../../../Downloads/index.html#areas" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Areas</a></li>
     <li><a href="../../../Downloads/index.html#tours" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Tours</a></li>
     <li><a href="../../../Downloads/index.html#about" style="font-family:'DM Sans',sans-serif;font-weight:400;color:#5D6D7E;text-decoration:none;">About</a></li>
     <li><a href="../../../Downloads/index.html#contact" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Contact</a></li>
   </ul>
-  <a href="../../../Downloads/availability.html" style="background:var(--red);color:#fff;border:none;padding:10px 22px;border-radius:var(--radius-sm);font-size:14px;cursor:pointer;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:500;">Book a tour</a>
+  <a href="../../../Downloads/availability.html" class="nav-book-btn">Book a tour</a>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="nav-mobile-drawer" id="navDrawer">
+  <ul>
+    <li><a href="../../../Downloads/index.html#areas">Areas</a></li>
+    <li><a href="../../../Downloads/index.html#tours">Tours</a></li>
+    <li><a href="../../../Downloads/index.html#about">About</a></li>
+    <li><a href="../../../Downloads/index.html#contact">Contact</a></li>
+  </ul>
+  <a href="../../../Downloads/availability.html" class="nav-book-mobile">Book a tour →</a>
+</div>
 
 <!-- HERO BLOCK -->
 <section class="hero">
@@ -383,7 +420,7 @@
       <div class="hero-text-wrap">
         <div class="hero-eyebrow">🌊 Coastal Zen · Shogunate History</div>
         <h1>Kamakura</h1>
-        <p>A beautiful seaside town surrounded by forested hills, ancient Zen temples, and giant bamboo groves[cite: 7].</p>
+        <p>A beautiful seaside town surrounded by forested hills, ancient Zen temples, and giant bamboo groves.</p>
         <div class="hero-btns">
           <a href="#highlights-start" class="btn-primary">Explore highlights ↓</a>
           <a href="../../../Downloads/availability.html" class="btn-ghost">Check availability</a>
@@ -396,7 +433,7 @@
 <!-- EDITORIAL INTRO -->
 <div class="intro">
   <div class="intro-kicker">Samurai Legacies · Heritage Sanctuaries · Pacific Waves</div>
-  <p>Kamakura served as the political capital of Japan during the Kamakura shogunate era from 1185 to 1333[cite: 7]. Today, it is a highly popular destination renowned for its collection of beautifully preserved shrines and temples[cite: 7]. Tucked into a natural valley framework facing the Pacific Ocean, it offers travelers an incredible mix of rich historical monuments and relaxed beachside market streets[cite: 7].</p>
+  <p>Kamakura served as the political capital of Japan during the Kamakura shogunate era from 1185 to 1333. Today, it is a highly popular destination renowned for its collection of beautifully preserved shrines and temples. Tucked into a natural valley framework facing the Pacific Ocean, it offers travelers an incredible mix of rich historical monuments and relaxed beachside market streets.</p>
 </div>
 
 <!-- METRICS STRIP -->
@@ -404,15 +441,15 @@
   <div class="tod-inner">
     <div class="tod-item">
       <span class="tod-label">Vibe</span>
-      <span class="tod-value">Coastal Zen[cite: 7]</span>
+      <span class="tod-value">Coastal Zen</span>
     </div>
     <div class="tod-item">
       <span class="tod-label">Best Time</span>
-      <span class="tod-value">Spring & Autumn weekdays[cite: 7]</span>
+      <span class="tod-value">Spring & Autumn weekdays</span>
     </div>
     <div class="tod-item">
       <span class="tod-label">Access</span>
-      <span class="tod-value">50 mins via JR Shonan-Shinjuku Line[cite: 7]</span>
+      <span class="tod-value">50 mins via JR Shonan-Shinjuku Line</span>
     </div>
   </div>
 </div>
@@ -434,7 +471,7 @@
       <div class="stop-category">Historic Icons · Outdoor Shrines</div>
       <h2 class="stop-title">The Great Buddha (Daibutsu)</h2>
       <div class="stop-jp">鎌倉大仏</div>
-      <p class="stop-desc">Stand before the legendary outdoor bronze monument standing at Kotoku-in Temple[cite: 7]. Cast originally in the 13th century, this majestic structure survived ancient tidal waves and storms that swept away its housing hall, leaving it exposed beautifully to the open coastal air.</p>
+      <p class="stop-desc">Stand before the legendary outdoor bronze monument standing at Kotoku-in Temple. Cast originally in the 13th century, this majestic structure survived ancient tidal waves and storms that swept away its housing hall, leaving it exposed beautifully to the open coastal air.</p>
       <div class="stop-tip">💡 Step inside the hollow interior of the bronze casing to admire the ancient casting joinery up close.</div>
     </div>
   </div>
@@ -451,7 +488,7 @@
       <div class="stop-category">Zen Sanctuaries · Forest Paths</div>
       <h2 class="stop-title">Hokoku-ji Bamboo Grove</h2>
       <div class="stop-jp">報国寺</div>
-      <p class="stop-desc">Wander through an immersive small forest of giant bamboo stalks hidden directly behind an understated Zen temple complex[cite: 7]. Hear the gentle creaking of the towering green timber swaying softly in the ocean breeze.</p>
+      <p class="stop-desc">Wander through an immersive small forest of giant bamboo stalks hidden directly behind an understated Zen temple complex. Hear the gentle creaking of the towering green timber swaying softly in the ocean breeze.</p>
       <div class="stop-tip">💡 Enjoy a cup of freshly whisked matcha tea right within the forest floor at the small wooden open-air teahouse.</div>
     </div>
   </div>
@@ -468,7 +505,7 @@
       <div class="stop-category">Samurai Clans · Sacred Approaches</div>
       <h2 class="stop-title">Tsurugaoka Hachimangu</h2>
       <div class="stop-jp">鶴岡八幡宮</div>
-      <p class="stop-desc">Traverse the sprawling Shinto centerpiece shrine linked to the old samurai clans[cite: 7]. The grand stone paths lead through large lotus ponds, arching bridges, and massive red gates up to the elevated main sanctuary building overlooking the city center layout.</p>
+      <p class="stop-desc">Traverse the sprawling Shinto centerpiece shrine linked to the old samurai clans. The grand stone paths lead through large lotus ponds, arching bridges, and massive red gates up to the elevated main sanctuary building overlooking the city center layout.</p>
       <div class="stop-tip">💡 Walk down the central cherry-tree shaded approach path (Dankazura) constructed specifically for the shogunate's prayers.</div>
     </div>
   </div>
@@ -485,8 +522,8 @@
       <div class="stop-category">Local Crafts · Pedestrian Eats</div>
       <h2 class="stop-title">Komachi-dori Street</h2>
       <div class="stop-jp">小町通り</div>
-      <p class="stop-desc">Dive down a bustling pedestrian path packed with unique snacks, local crafts, and modern lifestyle cafes[cite: 7]. It provides the perfect culinary transition point to refuel with artisanal street treats between temple hikes.</p>
-      <div class="stop-tip">💡 Keep an eye out for purple sweet potato soft-serve ice cream and traditional pigeon-shaped butter cookies[cite: 7].</div>
+      <p class="stop-desc">Dive down a bustling pedestrian path packed with unique snacks, local crafts, and modern lifestyle cafes. It provides the perfect culinary transition point to refuel with artisanal street treats between temple hikes.</p>
+      <div class="stop-tip">💡 Keep an eye out for purple sweet potato soft-serve ice cream and traditional pigeon-shaped butter cookies.</div>
     </div>
   </div>
 
@@ -497,15 +534,15 @@
   <div class="info-card">
     <h3>Terry's Insider Tips</h3>
     <ul>
-      <li><strong>Ride the Enoden train:</strong> The charming, retro green train line hugs the coast closely[cite: 7]. It's a gorgeous ride down toward Enoshima[cite: 7].</li>
-      <li><strong>Beat the Crowds:</strong> The popular core areas fill up quickly during nice weather; exploring on early morning weekdays allows you to witness the true spiritual serenity of the Zen structures[cite: 7].</li>
+      <li><strong>Ride the Enoden train:</strong> The charming, retro green train line hugs the coast closely. It's a gorgeous ride down toward Enoshima.</li>
+      <li><strong>Beat the Crowds:</strong> The popular core areas fill up quickly during nice weather; exploring on early morning weekdays allows you to witness the true spiritual serenity of the Zen structures.</li>
       <li><strong>Local Flavor Targets:</strong> Sample fresh seafood bowls incorporating shirasu (baby whitebait), a coastal specialty unique to Sagami Bay.</li>
     </ul>
   </div>
   <div class="info-card">
     <h3>Getting Around</h3>
-    <p>The temples are somewhat spread apart[cite: 7]. While the main core from the station to Tsurugaoka Hachimangu is easily walkable, you will want to utilize the local bus lines or the Enoden train line to access the Great Buddha and bamboo forests efficiently[cite: 7].</p>
-    <p style="margin-top: 1rem;">All excursions are private and fully customizable—ensuring you move smoothly at your own ideal pace with Terry[cite: 6, 7].</p>
+    <p>The temples are somewhat spread apart. While the main core from the station to Tsurugaoka Hachimangu is easily walkable, you will want to utilize the local bus lines or the Enoden train line to access the Great Buddha and bamboo forests efficiently.</p>
+    <p style="margin-top: 1rem;">All excursions are private and fully customizable—ensuring you move smoothly at your own ideal pace with Terry.</p>
   </div>
 </div>
 
@@ -514,20 +551,20 @@
   <div style="max-width: 1300px; margin: 0 auto; padding: 2.5rem 4vw; text-align: center; box-sizing: border-box;">
     <p style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: #8a7040; margin: 0 0 0.5rem 0; font-family: 'DM Sans', sans-serif;">Full day · Custom Curations</p>
     <p style="font-family: 'Shippori Mincho', serif; font-size: 2.5rem; font-weight: 800; color: #1C2833; margin: 0 0 0.5rem 0;">Seaside Itinerary</p>
-    <p style="font-size: 0.85rem; color: #7a7468; margin: 0 0 1.5rem 0; font-family: 'DM Sans', sans-serif;">Flexible paths customized to you · Travel fares and entry fees are arranged directly on location[cite: 6, 7]</p>
+    <p style="font-size: 0.85rem; color: #7a7468; margin: 0 0 1.5rem 0; font-family: 'DM Sans', sans-serif;">Flexible paths customized to you · Travel fares and entry fees are arranged directly on location</p>
     <a href="../../../Downloads/availability.html" style="display: inline-block; background: #de1c24; color: #fff; padding: 12px 28px; border-radius: 8px; font-size: 0.9rem; text-decoration: none; letter-spacing: 0.05em; font-family: 'DM Sans', sans-serif; font-weight: 500;">Book this tour</a>
   </div>
 </div>
 
 <div style="width: 100%; background: transparent; box-sizing: border-box;">
   <div style="max-width: 1300px; margin: 4rem auto 0; padding: 0 4vw; box-sizing: border-box;">
-    <div style="background: #de1c24; border-radius: 12px; padding: 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; box-sizing: border-box; text-align: left;">
-      <div style="flex: 2; min-width: 300px; box-sizing: border-box;">
+    <div class="cta-banner" style="background: #de1c24; border-radius: 12px; padding: 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; box-sizing: border-box; text-align: left;">
+      <div class="cta-banner-text" style="flex: 2; min-width: 0; box-sizing: border-box;">
         <h3 style="font-family: 'DM Serif Display', serif; font-size: 28px; color: #ffffff; font-weight: 400; margin: 0; padding: 0; line-height: 1.2;">Want a curated day trip to Kamakura?</h3>
-        <p style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: rgba(255, 255, 255, 0.8); margin: 0.5rem 0 0 0; padding: 0; font-weight: 300; line-height: 1.4;">Let's map out a seamless itinerary combining the best temples with seaside walks[cite: 7].</p>
+        <p style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: rgba(255, 255, 255, 0.8); margin: 0.5rem 0 0 0; padding: 0; font-weight: 300; line-height: 1.4;">Let's map out a seamless itinerary combining the best temples with seaside walks.</p>
       </div>
-      <div style="flex: 1; text-align: right; min-width: 200px; box-sizing: border-box;">
-        <a href="../../../Downloads/availability.html" style="background: #ffffff; color: #de1c24; padding: 13px 26px; border-radius: 8px; font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap; transition: opacity 0.15s; display: inline-block; font-family: 'DM Sans', sans-serif; box-sizing: border-box;">View availability &#8594;</a>
+      <div class="cta-banner-btn" style="flex: 1; text-align: right; min-width: 0; box-sizing: border-box;">
+        <a href="../../../Downloads/availability.html" style="background: #ffffff; color: #de1c24; padding: 13px 26px; border-radius: 8px; font-size: 15px; font-weight: 500; text-decoration: none; display: inline-block; font-family: 'DM Sans', sans-serif; box-sizing: border-box;">View availability &#8594;</a>
       </div>
     </div>
   </div>
@@ -536,32 +573,51 @@
 <div style="padding-bottom: 4rem;"></div>
 
 <footer style="background: #f8f0e8; border-top: 4px solid #de1c24; padding: 2.5rem 4vw; font-family: 'DM Sans', sans-serif; box-sizing: border-box; width: 100%;">
-  <div style="max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; box-sizing: border-box;">
+  <div class="footer-inner" style="max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; box-sizing: border-box;">
     <div style="text-align: left; box-sizing: border-box;">
       <div style="font-size: 15px; font-weight: 700; color: #2d3748; margin-bottom: 4px; letter-spacing: 0.02em;">鎌倉 · Kamakura Area Guide</div>
-      <div style="font-size: 13px; color: #7a6652; margin-bottom: 4px;">Curated Neighborhood Profiles · Tokyo Private Tours with Terry[cite: 7]</div>
+      <div style="font-size: 13px; color: #7a6652; margin-bottom: 4px;">Curated Neighborhood Profiles · Tokyo Private Tours with Terry</div>
       <div style="font-size: 12px; color: #a09080;">© 2026 Tokyo with Terry · Japan</div>
     </div>
-    <div style="display: flex; gap: 1.5rem; align-items: center; box-sizing: border-box;">
-      <a href="../../../Downloads/index.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">&#8592; Home</a>
-      <a href="../../../Downloads/availability.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">Availability</a>
-      <a href="../../../Downloads/reservations.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">Reserve</a>
+    <div class="footer-links" style="display: flex; gap: 1.5rem; align-items: center; box-sizing: border-box;">
+      <a href="../../../Downloads/index.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">&#8592; Home</a>
+      <a href="../../../Downloads/availability.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">Availability</a>
+      <a href="../../../Downloads/reservations.html" style="color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400;">Reserve</a>
     </div>
   </div>
 </footer>
 
 <!-- VIEWPORT ANIMATION CONTROLLER -->
 <script>
-  const stops = document.querySelectorAll('.stop');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  stops.forEach(s => observer.observe(s));
+  document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('navHamburger');
+    const drawer    = document.getElementById('navDrawer');
+    if (hamburger && drawer) {
+      hamburger.addEventListener('click', () => {
+        const isOpen = drawer.classList.toggle('open');
+        hamburger.classList.toggle('open', isOpen);
+        hamburger.setAttribute('aria-expanded', isOpen);
+      });
+      drawer.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          drawer.classList.remove('open');
+          hamburger.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    const stops = document.querySelectorAll('.stop');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    stops.forEach(s => observer.observe(s));
+  });
 </script>
 
 </body>
