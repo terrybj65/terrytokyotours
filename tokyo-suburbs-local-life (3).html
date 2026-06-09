@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Explore Tokyo Suburbs with Terry — private guided tours of Shimokitazawa, Koenji, Kichijoji and the real neighbourhoods locals love."/>
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Tokyo Suburbs & Local Life — Tokyo with Terry"/>
+  <meta property="og:description" content="Explore Tokyo's suburbs with Terry — Shimokitazawa, Koenji, Kichijoji and the real neighbourhoods locals love."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://tokyowithterry.com/tokyo-suburbs-local-life.html"/>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1480796927426-f609979314bd?w=1200&q=85&fit=crop"/>
+  <meta property="og:locale" content="en_GB"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Tokyo Suburbs & Local Life — Tokyo with Terry"/>
+  <meta name="twitter:description" content="Explore Tokyo's suburbs with Terry — Shimokitazawa, Koenji, Kichijoji and the real neighbourhoods locals love."/>
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1480796927426-f609979314bd?w=1200&q=85&fit=crop"/>
+  <link rel="canonical" href="https://tokyowithterry.com/tokyo-suburbs-local-life.html"/>
+
+  <title>Tokyo Suburbs &amp; Local Life — Tokyo Private Tours with Terry</title>
+  
+  <!-- Shared Premium Google Fonts Bundle -->
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght=400;600;800&family=DM+Sans:ital,wght=0,300;0,400;0,500;1,300&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+  
+  <style>
+    :root {
+      --ink: #14120e;
+      --paper: #f0ede6;
+      --moss: #4a5d4e;
+      --sage: #607764;
+      --stone: #7a7468;
+      --gold: #b07820;
+      --border: rgba(20,18,14,0.12);
+      --red: #de1c24;
+      --radius: 12px;
+      --radius-sm: 8px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+
+    html { overflow-x: hidden; max-width: 100%; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    .container { max-width: 1300px; margin: 0 auto; padding: 0 4vw; }
+
+    /* ── NAV ── */
+    .nav-desktop-links { display: flex; list-style: none; justify-content: center; align-items: center; gap: 2.5rem; margin: 0; padding: 0; }
+    .nav-book-btn { background: var(--red); color: #fff; border: none; padding: 10px 22px; border-radius: var(--radius-sm); font-size: 14px; cursor: pointer; text-decoration: none; font-family: 'DM Sans', sans-serif; font-weight: 500; white-space: nowrap; }
+    .nav-hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; transition: transform 0.25s, opacity 0.25s; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-mobile-drawer { display: none; position: absolute; top: 65px; left: 0; right: 0; background: rgba(250,250,248,0.98); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 1.25rem 4vw 1.5rem; z-index: 99; }
+    .nav-mobile-drawer.open { display: block; }
+    .nav-mobile-drawer ul { list-style: none; padding: 0; margin: 0 0 1.25rem; display: flex; flex-direction: column; }
+    .nav-mobile-drawer li a { display: block; padding: 0.75rem 0; font-size: 16px; color: var(--stone); text-decoration: none; border-bottom: 1px solid var(--border); }
+    .nav-mobile-drawer .nav-book-mobile { display: block; width: 100%; text-align: center; background: var(--red); color: #fff; padding: 13px; border-radius: var(--radius-sm); font-size: 15px; font-weight: 500; text-decoration: none; }
+
+    /* ── HERO SECTION ── */
+    .hero {
+      position: relative;
+      height: 70vh;
+      min-height: 480px;
+      overflow: hidden;
+    }
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+    }
+    .hero-content {
+      width: 100%;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 4vw;
+    }
+    .hero-text-wrap {
+      max-width: 650px;
+    }
+    .hero-eyebrow {
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #f9a07a;
+      margin-bottom: 1rem;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
+    }
+    .hero h1 {
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(44px, 5vw, 64px);
+      color: #ffffff;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      font-weight: 800;
+      text-shadow: 1px 1px 8px rgba(0,0,0,0.8);
+    }
+    .hero p {
+      font-size: 18px;
+      color: #ffffff;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
+    }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--red);
+      color: #fff;
+      border: none;
+      padding: 13px 28px;
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s;
+      display: inline-block;
+      font-weight: 500;
+    }
+    .btn-primary:hover { background: #B00000; }
+    .btn-ghost {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.7);
+      padding: 13px 28px;
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s;
+      display: inline-block;
+    }
+
+    /* ── EDITORIAL INTRO ── */
+    .intro {
+      max-width: 900px;
+      margin: 5rem auto;
+      padding: 0 4vw;
+      text-align: center;
+    }
+    .intro-kicker {
+      display: inline-block;
+      font-size: 0.7rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--moss);
+      margin-bottom: 1.2rem;
+      font-weight: 500;
+    }
+    .intro p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: var(--stone);
+    }
+
+    /* ── METRIC STRIP ── */
+    .tod-bar {
+      max-width: 1300px;
+      margin: 0 auto 4.5rem;
+      padding: 0 4vw;
+    }
+    .tod-inner {
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(74,93,78,0.15);
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .tod-item {
+      flex: 1;
+      padding: 1.25rem 1.75rem;
+      border-right: 1px solid rgba(74,93,78,0.15);
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .tod-item:last-child { border-right: none; }
+    .tod-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--moss);
+    }
+    .tod-value {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.4;
+    }
+
+    /* ── SECTION SEPARATOR ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      max-width: 1300px;
+      margin: 0 auto 3rem;
+      padding: 0 4vw;
+      color: var(--sage);
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+    .divider::before, .divider::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+
+    /* ── HIGHLIGHT STOPS GRID ── */
+    .stops {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 4vw 2rem;
+    }
+    .stop {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3.5rem;
+      border-top: 1px solid var(--border);
+      padding: 4rem 0;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      align-items: center;
+    }
+    .stop.visible { opacity: 1; transform: translateY(0); }
+    .stop:nth-child(even) .stop-img-wrap { order: 2; }
+    .stop:nth-child(even) .stop-content  { order: 1; }
+
+    .stop-img-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 16/11;
+      border-radius: 6px;
+    }
+    .stop-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .stop:hover .stop-img-wrap img { transform: scale(1.02); }
+
+    .stop-badge {
+      position: absolute;
+      bottom: 1.25rem; left: 1.25rem;
+      background: rgba(6,12,20,0.8);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.85);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.8rem;
+      backdrop-filter: blur(6px);
+    }
+    .stop-time {
+      position: absolute;
+      top: 1rem; left: 1rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      background: rgba(6,12,20,0.6);
+      padding: 0.2rem 0.6rem;
+      backdrop-filter: blur(4px);
+    }
+    .stop-num {
+      position: absolute;
+      top: 0.25rem; right: 1.25rem;
+      font-family: 'Shippori Mincho', serif;
+      font-size: 5rem; font-weight: 800;
+      color: rgba(255,255,255,0.12);
+      line-height: 1; pointer-events: none;
+    }
+
+    .stop-content {
+      padding: 0.5rem 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .stop-category {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--moss);
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+    .stop-title {
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(2rem, 2.4vw, 2.6rem);
+      font-weight: 600;
+      line-height: 1.25;
+      margin-bottom: 0.3rem;
+    }
+    .stop-jp {
+      font-size: 0.88rem;
+      color: var(--stone);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.06em;
+    }
+    .stop-desc {
+      font-size: 0.98rem;
+      line-height: 1.8;
+      color: #3e3a34;
+      margin-bottom: 1.5rem;
+    }
+    .stop-tip {
+      border-left: 3px solid var(--gold);
+      padding-left: 1.1rem;
+      font-size: 0.85rem;
+      color: var(--stone);
+      font-style: italic;
+      line-height: 1.65;
+    }
+
+    /* ── OVERVIEW BOXES ── */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      max-width: 1300px;
+      margin: 4.5rem auto;
+      padding: 0 4vw;
+    }
+    .info-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+    }
+    .info-card h3 {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      color: var(--ink);
+    }
+    .info-card p {
+      font-size: 14px;
+      color: var(--stone);
+      line-height: 1.7;
+      margin-bottom: 0.65rem;
+    }
+
+    @media (max-width: 768px) {
+      .nav-desktop-links { display: none; }
+      .nav-book-btn { display: none; }
+      .nav-hamburger { display: flex; }
+      .hero { height: 55vh; min-height: 320px; }
+      .hero p { font-size: 15px; }
+      .hero-btns { flex-direction: column; gap: 10px; }
+      .btn-primary, .btn-ghost { width: 100%; text-align: center; padding: 13px 20px; }
+      .intro { margin: 2.5rem auto; }
+      .intro p { font-size: 1rem; }
+      .tod-inner { flex-direction: column; align-items: stretch; }
+      .tod-item { border-right: none; border-bottom: 1px solid rgba(26,74,106,0.15); padding: 1rem 1.25rem; }
+      .tod-item:last-child { border-bottom: none; }
+      .stop { grid-template-columns: 1fr !important; gap: 1.5rem; padding: 2.5rem 0; }
+      .stop:nth-child(even) .stop-img-wrap { order: 0; }
+      .stop:nth-child(even) .stop-content  { order: 0; }
+      .stop-title { font-size: 1.7rem; }
+      .price-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .details-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .info-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .details-section { padding-top: 3rem; }
+      .section-title { font-size: 26px; }
+      .info-card-solo { padding: 1.75rem 1.25rem; }
+      .cta-banner { flex-direction: column !important; }
+      .cta-banner-text { text-align: center !important; }
+      .cta-banner-btn { text-align: center !important; }
+      .cta-banner-btn a { display: block; width: 100%; text-align: center; white-space: normal; box-sizing: border-box; }
+      .footer-inner { flex-direction: column !important; text-align: center !important; align-items: center !important; }
+      .footer-links { justify-content: center !important; flex-wrap: wrap !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- UNIFIED STICKY NAVIGATION -->
+<nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(0,0,0,0.1);padding:0 4vw;display:flex;align-items:center;justify-content:space-between;height:65px;">
+  <a href="file:///C|/Users/terry/Downloads/index.html" style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--ink);text-decoration:none;">Tokyo with <span style="color:var(--red);">Terry</span></a>
+  <ul class="nav-desktop-links">
+    <li><a href="file:///C|/Users/terry/Downloads/index.html#areas" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Areas</a></li>
+    <li><a href="file:///C|/Users/terry/Downloads/index.html#tours" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Tours</a></li>
+    <li><a href="file:///C|/Users/terry/Downloads/index.html#about" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">About</a></li>
+    <li><a href="file:///C|/Users/terry/Downloads/index.html#contact" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#5D6D7E;text-decoration:none;font-weight:400;">Contact</a></li>
+  </ul>
+  <a href="file:///C|/Users/terry/Downloads/availability.html" class="nav-book-btn">Book a tour</a>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile-drawer" id="navDrawer">
+  <ul>
+    <li><a href="file:///C|/Users/terry/Downloads/index.html#areas">Areas</a></li>
+    <li><a href="file:///C|/Users/terry/Downloads/index.html#tours">Tours</a></li>
+    <li><a href="file:///C|/Users/terry/Downloads/index.html#about">About</a></li>
+    <li><a href="file:///C|/Users/terry/Downloads/index.html#contact">Contact</a></li>
+  </ul>
+  <a href="file:///C|/Users/terry/Downloads/availability.html" class="nav-book-mobile">Book a tour →</a>
+</div>
+
+<!-- HERO BLOCK -->
+<section class="hero">
+  <img src="https://images.unsplash.com/photo-1480796927426-f609979314bd?w=1600&q=85&fit=crop" alt="The nostalgic neon aesthetic of residential Tokyo neighborhoods at twilight" />
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <div class="hero-text-wrap">
+        <div class="hero-eyebrow">🏙️ Residential Gems · Authentic Footsteps</div>
+        <h1>Tokyo Suburbs</h1>
+        <p>Local life, community hubs, and character-rich neighborhoods thriving entirely beyond the textbook guidebook loops.</p>
+        <div class="hero-btns">
+          <a href="#highlights-start" class="btn-primary">Explore highlights ↓</a>
+          <a href="file:///C|/Users/terry/Downloads/availability.html" class="btn-ghost">Check availability</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDITORIAL INTRO -->
+<div class="intro">
+  <div class="intro-kicker">Independent Subcultures · Slow Exploration · Everyday Traditions</div>
+  <p>Most visitors never leave the tourist circuit between Shinjuku and Asakusa. But the suburbs — Shimokitazawa, Koenji, Sangenjaya, Kichijoji — are where Tokyo's real personality lives. Independent music venues, second-hand bookshops, neighborhood festivals, and parks where families spend their Sunday. Terry grew up in this kind of environment and loves showing visitors what daily life in Japan actually looks like.</p>
+</div>
+
+<!-- METRICS STRIP -->
+<div class="tod-bar">
+  <div class="tod-inner">
+    <div class="tod-item">
+      <span class="tod-label">Best For</span>
+      <span class="tod-value">Authentic local life, music culture, slow exploration, off the beaten path</span>
+    </div>
+    <div class="tod-item">
+      <span class="tod-label">Best Time to Visit</span>
+      <span class="tod-value">Weekend afternoons — neighborhood markets and events come alive</span>
+    </div>
+  </div>
+</div>
+
+<div class="divider" id="highlights-start">Our Path · Authentic Local Hotspots</div>
+
+<!-- STOPS GRID -->
+<div class="stops">
+
+  <!-- Stop 1: Shimokitazawa -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Stop 01</div>
+      <div class="stop-num">01</div>
+      <img src="https://images.unsplash.com/photo-1540959733332-eab4deceeaf7?w=1000&q=80&fit=crop" alt="Bohemian boutique storefronts in Shimokitazawa" loading="lazy"/>
+      <div class="stop-badge">Bohemian Hub</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Vintage Fashion · Indie Theatre</div>
+      <h2 class="stop-title">Shimokitazawa</h2>
+      <div class="stop-jp">下北沢</div>
+      <p class="stop-desc">Dive headfirst into Tokyo's premiere counter-culture bohemian hub. Renowned for its highly dynamic network of winding, pedestrianized narrow streets, this area is home to incredible vintage clothing emporiums, vinyl records, and independent playhouses.</p>
+      <div class="stop-tip">🎸 Indulge in the district's legendary live music cafes and savory soup curry houses.</div>
+    </div>
+  </div>
+
+  <!-- Stop 2: Koenji -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Stop 02</div>
+      <div class="stop-num">02</div>
+      <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=1000&q=80&fit=crop" alt="Retro alleyway bars and shops in alternative Koenji" loading="lazy"/>
+      <div class="stop-badge">Alternative Pulse</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Retro Shopping · Punk Subcultures</div>
+      <h2 class="stop-title">Koenji</h2>
+      <div class="stop-jp">高円寺</div>
+      <p class="stop-desc">Uncover an unfiltered alternative community overflowing with retro shotengai marketplaces, vintage record boutiques, and an unpretentious punk rock history. It retains a classic post-war architectural charm missed by major redevelopments.</p>
+      <div class="stop-tip">🎵 Koenji hosts the iconic Awa Odori festival each August, bringing Tokyo's best matsuri energy right to the streets.</div>
+    </div>
+  </div>
+
+  <!-- Stop 3: Kichijoji & Inokashira Park -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Stop 03</div>
+      <div class="stop-num">03</div>
+      <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1000&q=80&fit=crop" alt="Serene reflections over Inokashira Park boating lake" loading="lazy"/>
+      <div class="stop-badge">Lakeside Escape</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Civic Parks · Weekend Gatherings</div>
+      <h2 class="stop-title">Inokashira Park</h2>
+      <div class="stop-jp">吉祥寺 · 井の頭公園</div>
+      <p class="stop-desc">Consistently voted by Tokyoites as their dream neighborhood, Kichijoji delivers a gorgeous integration of urban convenience and natural sanctuary. Stroll the vast lake park to observe local families, vibrant street musicians, and artisan craft fair stalls.</p>
+      <div class="stop-tip">🦆 Rent a swan boat out on the water or duck down the nearby retro Harmonica Yokocho food alleys.</div>
+    </div>
+  </div>
+
+  <!-- Stop 4: Sangenjaya -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Stop 04</div>
+      <div class="stop-num">04</div>
+      <img src="https://images.unsplash.com/photo-1542640244-7e672d6cef21?w=1000&q=80&fit=crop" alt="Cozy neighborhood izakayas glowing at dusk" loading="lazy"/>
+      <div class="stop-badge">Local Izakayas</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Yokocho Culture · Community Bars</div>
+      <h2 class="stop-title">Sangenjaya</h2>
+      <div class="stop-jp">三軒茶屋</div>
+      <p class="stop-desc">Affectionately called "Sancha" by locals, this neighborhood brings an incredibly community-focused nightlife scene to the table. Navigate deep, tiny corridor alleys filled with charming counter-only izakayas, micro-breweries, and modern specialty coffee roasters.</p>
+      <div class="stop-tip">🍺 Walk down the hidden paths of Echo Nakamise for the most authentic residential tavern feel in the area.</div>
+    </div>
+  </div>
+
+  <!-- Stop 5: Jimbocho Book Town -->
+  <div class="stop">
+    <div class="stop-img-wrap">
+      <div class="stop-time">Stop 05</div>
+      <div class="stop-num">05</div>
+      <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1000&q=80&fit=crop" alt="Towers of second-hand books inside a cozy bookshop" loading="lazy"/>
+      <div class="stop-badge">Literary Haven</div>
+    </div>
+    <div class="stop-content">
+      <div class="stop-category">Bibliophile Alleys · Print Ephemera</div>
+      <h2 class="stop-title">Jimbocho Book Town</h2>
+      <div class="stop-jp">神保町古書街</div>
+      <p class="stop-desc">A true paradise for readers and collectors alike. Jimbocho boasts the largest concentration of second-hand bookshops and publishing houses anywhere on Earth, hosting historic storefronts stacked high with vintage woodblock prints, maps, and indie magazines.</p>
+      <div class="stop-tip">📚 Many shops align books outward toward the north street walls to prevent delicate retro pages from sun bleaching.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- DETAILS BLOCKS -->
+<div class="info-grid">
+  <div class="info-card">
+    <h3>Touring this area with Terry</h3>
+    <p>Terry has been exploring Tokyo Suburbs for years and knows it at every level — the famous spots and the hidden ones. He can include it as part of a wider day tour, or design a visit specifically around it.</p>
+    <p style="margin-top:1rem;">All tours are fully private — no shared groups, no set script. Tell Terry what you're interested in and he'll shape the experience around you.</p>
+  </div>
+  <div class="info-card">
+    <h3>Getting here</h3>
+    <p>Terry will advise on the best way to reach Tokyo Suburbs from wherever you're staying. Tokyo's train network is excellent, and he'll make sure you don't spend time lost at stations.</p>
+    <p style="margin-top:1rem;">Most areas in Greater Tokyo are within 30–60 minutes of central Tokyo by train.</p>
+  </div>
+</div>
+
+<!-- CTA CARD AND FOOTER -->
+<div style="width: 100%; background: transparent; box-sizing: border-box;">
+  <div style="max-width: 1300px; margin: 4rem auto 0; padding: 0 4vw; box-sizing: border-box;">
+    <div class="cta-banner" style="background: #de1c24; border-radius: 12px; padding: 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; box-sizing: border-box; text-align: left;">
+      <div class="cta-banner-text" style="flex: 2; min-width: 0; box-sizing: border-box;">
+        <h3 style="font-family: 'DM Serif Display', serif; font-size: 28px; color: #ffffff; font-weight: 400; margin: 0; padding: 0; line-height: 1.2;">Ready to book a tour of Tokyo Suburbs?</h3>
+        <p style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: rgba(255, 255, 255, 0.8); margin: 0.5rem 0 0 0; padding: 0; font-weight: 300; line-height: 1.4;">Check Terry's availability and send a booking request — it only takes a minute.</p>
+      </div>
+      <div class="cta-banner-btn" style="flex: 1; text-align: right; min-width: 0; box-sizing: border-box;">
+        <a href="file:///C|/Users/terry/Downloads/availability.html" style="background: #ffffff; color: #de1c24; padding: 13px 26px; border-radius: 8px; font-size: 15px; font-weight: 500; text-decoration: none; display: inline-block; font-family: 'DM Sans', sans-serif; box-sizing: border-box;">View availability &amp; book &#8594;</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="padding-bottom: 4rem;"></div>
+
+<footer style="background: #f8f0e8; border-top: 4px solid #de1c24; padding: 2.5rem 4vw; font-family: 'DM Sans', sans-serif; box-sizing: border-box; width: 100%;">
+  <div class="footer-inner" style="max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; box-sizing: border-box;">
+    <div style="text-align: left; box-sizing: border-box;">
+      <div style="font-size: 15px; font-weight: 700; color: #2d3748; margin-bottom: 4px; letter-spacing: 0.02em;">郊外 · Tokyo Suburbs</div>
+      <div style="font-size: 13px; color: #7a6652; margin-bottom: 4px;">Area guide · Tokyo Private Tours with Terry</div>
+      <div style="font-size: 12px; color: #a09080;">© 2026 Tokyo with Terry · Japan</div>
+    </div>
+    <div class="footer-links" style="display: flex; gap: 1.5rem; align-items: center; box-sizing: border-box;">
+      <a href="file:///C|/Users/terry/Downloads/index.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">&#8592; Home</a>
+      <a href="file:///C|/Users/terry/Downloads/availability.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">Availability</a>
+      <a href="file:///C|/Users/terry/Downloads/reservations.html" style="color: #a0522d; text-decoration: none; font-size: 13px; transition: color 0.15s; font-weight: 400;">Reserve</a>
+    </div>
+  </div>
+</footer>
+
+<!-- VIEWPORT ANIMATION CONTROLLER -->
+<script>
+  // Hamburger nav toggle
+  const hamburger = document.getElementById('navHamburger');
+  const drawer    = document.getElementById('navDrawer');
+  hamburger.addEventListener('click', () => {
+    const isOpen = drawer.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+  drawer.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      drawer.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Scroll animation
+  const stops = document.querySelectorAll('.stop');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  stops.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
