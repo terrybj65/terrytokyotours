@@ -314,7 +314,7 @@
 
     /* ── FOOTER ── */
     footer { background: #f8f0e8; border-top: 4px solid #de1c24; padding: 2.5rem 2rem; font-size: 13px; }
-    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: center; align-items: center; flex-direction: column; align-items: center; text-align: center; flex-wrap: wrap; gap: 1rem; }
     .footer-logo { font-size: 15px; font-weight: 700; color:#2d3748; margin-bottom: 4px; letter-spacing: 0.02em; }
     .footer-desc { font-size: 13px; color: #7a6652; margin-bottom: 4px; }
     .footer-copy { font-size: 12px; color: #a09080; }
@@ -344,6 +344,7 @@
       .cta-input { width: 100%; }
       .footer-inner { flex-direction: column; text-align: center; align-items: center; }
       .footer-links { justify-content: center; flex-wrap: wrap; }
+      #rates .container > div[style] { grid-template-columns: 1fr !important; }
     }
   </style>
 </head>
@@ -722,17 +723,17 @@
 </section>
 
 <!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-left">
-      <div class="footer-logo">東京 · Tokyo with Terry</div>
-      <div class="footer-desc">Private guided tours of Tokyo and beyond</div>
-      <div class="footer-copy">© 2026 Tokyo with Terry · Japan</div>
+<footer style="background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-family:'DM Sans',sans-serif;width:100%;box-sizing:border-box;">
+  <div style="max-width:1100px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;gap:1rem;">
+    <div>
+      <div style="font-size:15px;font-weight:700;color:#2d3748;margin-bottom:4px;letter-spacing:0.02em;">東京 · Tokyo with Terry</div>
+      <div style="font-size:13px;color:#7a6652;margin-bottom:4px;">Private guided tours of Tokyo and beyond</div>
+      <div style="font-size:12px;color:#a09080;">© 2026 Terry's Tokyo Tours · Japan</div>
     </div>
-    <div class="footer-links">
-      <a href="index.html">&#8592; Home</a>
-      <a href="availability.html">Availability</a>
-      <a href="reservations.html">Reserve</a>
+    <div style="display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;">
+      <a href="index.html" style="color:#a0522d;text-decoration:none;font-size:13px;">&#8592; Home</a>
+      <a href="availability.html" style="color:#a0522d;text-decoration:none;font-size:13px;">Availability</a>
+      <a href="reservations.html" style="color:#a0522d;text-decoration:none;font-size:13px;">Reserve</a>
     </div>
   </div>
 </footer>

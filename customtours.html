@@ -418,11 +418,11 @@
     }
 
   footer{background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-size:13px;}
-.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content: center;align-items:center;flex-direction: column; align-items: center; text-align: center; flex-wrap:wrap;gap:1rem;}
 .footer-logo{font-size:15px;font-weight:700;color:#2d3748;margin-bottom:4px;letter-spacing:0.02em;}
 .footer-desc{font-size:13px;color:#7a6652;margin-bottom:4px;}
 .footer-copy{font-size:12px;color:#a09080;}
-.footer-links{display:flex;gap:1.25rem;align-items:center;}
+.footer-links{display:flex;justify-content:center;gap:1.25rem;align-items:center;}
 .footer-links a{color:#a0522d;text-decoration:none;font-size:13px;transition:color .15s;}
 .footer-links a:hover{color:#de1c24;}
 
@@ -671,17 +671,17 @@
   <p style="font-size:0.85rem; color:#7a7468; margin-bottom:1.5rem;">Price varies by group size · Transport not included</p>
   <a href="index.html#contact" style="display:inline-block; background:#D00000; color:#fff; padding:12px 28px; border-radius:8px; font-size:0.9rem; text-decoration:none; letter-spacing:0.05em;">Book this tour</a>
 </div>
-<footer>
-  <div class="footer-inner">
-    <div class="footer-left">
-      <div class="footer-logo">カスタムツアー · Custom Tours</div>
-      <div class="footer-desc">Fully tailored private tours · All destinations from Tokyo</div>
-      <div class="footer-copy">© 2026 Tokyo with Terry · Japan</div>
+<footer style="background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-family:'DM Sans',sans-serif;width:100%;box-sizing:border-box;">
+  <div style="max-width:1100px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;gap:1rem;">
+    <div>
+      <div style="font-size:15px;font-weight:700;color:#2d3748;margin-bottom:4px;letter-spacing:0.02em;">カスタムツアー · Custom Tours</div>
+      <div style="font-size:13px;color:#7a6652;margin-bottom:4px;">Fully tailored private tours · All destinations from Tokyo</div>
+      <div style="font-size:12px;color:#a09080;">© 2026 Terry's Tokyo Tours · Japan</div>
     </div>
-    <div class="footer-links">
-      <a href="index.html">&#8592; Home</a>
-      <a href="availability.html">Availability</a>
-      <a href="reservations.html">Reserve</a>
+    <div style="display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;">
+      <a href="index.html" style="color:#a0522d;text-decoration:none;font-size:13px;">&#8592; Home</a>
+      <a href="availability.html" style="color:#a0522d;text-decoration:none;font-size:13px;">Availability</a>
+      <a href="reservations.html" style="color:#a0522d;text-decoration:none;font-size:13px;">Reserve</a>
     </div>
   </div>
 </footer>

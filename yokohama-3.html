@@ -143,7 +143,7 @@
     .info-card-solo p { font-size: 14px; color: var(--stone); line-height: 1.7; margin-bottom: 0.65rem; }
 
     /* ── FOOTER ── */
-    .footer-inner { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+    .footer-inner { max-width: 1300px; margin: 0 auto; display: flex; justify-content: center; align-items: center; flex-direction: column; align-items: center; text-align: center; flex-wrap: wrap; gap: 1.5rem; }
     .footer-links { display: flex; gap: 1.5rem; align-items: center; }
     .footer-links a { color: #a0522d; text-decoration: none; font-size: 13px; font-weight: 400; }
 
@@ -461,17 +461,17 @@
 </div>
 
 <!-- FOOTER -->
-<footer style="background:#f8f0e8;border-top:4px solid var(--red);padding:2.5rem 4vw;font-family:'DM Sans',sans-serif;width:100%;">
-  <div class="footer-inner">
-    <div style="text-align:left;">
+<footer style="background:#f8f0e8;border-top:4px solid #de1c24;padding:2.5rem 2rem;font-family:'DM Sans',sans-serif;width:100%;box-sizing:border-box;">
+  <div style="max-width:1100px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;gap:1rem;">
+    <div>
       <div style="font-size:15px;font-weight:700;color:#2d3748;margin-bottom:4px;letter-spacing:0.02em;">横浜 · Yokohama</div>
       <div style="font-size:13px;color:#7a6652;margin-bottom:4px;">Day trip area guide · Tokyo Private Tours with Terry</div>
-      <div style="font-size:12px;color:#a09080;">© 2026 Tokyo with Terry · Japan</div>
+      <div style="font-size:12px;color:#a09080;">© 2026 Terry's Tokyo Tours · Japan</div>
     </div>
-    <div class="footer-links">
-      <a href="index.html">&#8592; Home</a>
-      <a href="availability.html">Availability</a>
-      <a href="reservations.html">Reserve</a>
+    <div style="display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;">
+      <a href="index.html" style="color:#a0522d;text-decoration:none;font-size:13px;">&#8592; Home</a>
+      <a href="availability.html" style="color:#a0522d;text-decoration:none;font-size:13px;">Availability</a>
+      <a href="reservations.html" style="color:#a0522d;text-decoration:none;font-size:13px;">Reserve</a>
     </div>
   </div>
 </footer>
